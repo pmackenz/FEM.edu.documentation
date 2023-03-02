@@ -1,3 +1,7 @@
 #####################################
 Welcome to the FEM.edu documentation!
 #####################################
+
+.. image:: ./images/FEMedu-CoverPicture.png
+    :alt: FEM.edu logo
+
