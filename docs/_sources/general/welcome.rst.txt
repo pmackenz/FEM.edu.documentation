@@ -6,6 +6,7 @@ Welcome to the FEM.edu documentation!
     :alt: FEM.edu logo
 
 Revision Log
+==================
 
 .. git_changelog::
     :revisions: 3
