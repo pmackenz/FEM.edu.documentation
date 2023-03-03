@@ -1,0 +1,20 @@
+Example: truss01
+==================
+
+.. image:: triangle_deformed.png
+    :width: 45%
+
+.. image:: triangle_forces.png
+    :width: 45%
+
+
+**Importing the example**
+
+.. code:: python
+
+    from femedu.examples.trusses.truss01 import *
+
+    # load the example
+    ex = ExampleTruss01()
+
+**More truss examples**: :ref:`Truss Examples`

@@ -25,7 +25,7 @@ To run a specific example use, e.g.:
 
     * - Example
       - Description
-    * - **truss01**
+    * - :doc:`trusses/truss01/truss01`
       - Basic truss triangle
     * - **truss02**
       - Simple statically determinate bridge
@@ -34,4 +34,4 @@ To run a specific example use, e.g.:
     * - **truss04**
       - 3D truss example
 
-
+**More**: :ref:`Example Problems`
