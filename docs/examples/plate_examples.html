@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Continuum Examples" href="continuum_examples.html" />
-    <link rel="prev" title="Frame Examples" href="frame_examples.html" /> 
+    <link rel="prev" title="Example: frame04" href="frames/frame04/frame04.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,7 +45,10 @@
 <li class="toctree-l2"><a class="reference internal" href="truss_examples.html">Truss Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="beam_examples.html">Beam Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="frame_examples.html">Frame Examples</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Plate Examples</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Plate Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-run-a-plate-example-from-the-distribution">How to run a plate example from the distribution</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="continuum_examples.html">Continuum Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mixed_structures_examples.html">Mixed Structures Examples</a></li>
 </ul>
@@ -81,20 +84,7 @@
              
   <section id="plate-examples">
 <h1>Plate Examples<a class="headerlink" href="#plate-examples" title="Permalink to this heading"></a></h1>
-<p>All Plate examples are packaged in <code class="code docutils literal notranslate"><span class="pre">examples.plates</span></code>.
-To run a specific example use, e.g.:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.examples.plates.plate01</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="c1"># load the example</span>
-<span class="n">ex</span> <span class="o">=</span> <span class="n">ExamplePlate01</span><span class="p">()</span>
-
-<span class="c1"># print the doc-string for the current example</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
-
-<span class="c1"># run the actual problem</span>
-<span class="n">ex</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
+<div class="toctree-wrapper compound">
 </div>
 <table class="colwidths-given docutils align-default" id="id1">
 <caption><span class="caption-text">Available Examples</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
@@ -114,13 +104,31 @@ To run a specific example use, e.g.:</p>
 </tbody>
 </table>
 <p><strong>More</strong>: <a class="reference internal" href="../examples.html"><span class="doc">Example Problems</span></a></p>
+<section id="how-to-run-a-plate-example-from-the-distribution">
+<h2>How to run a plate example from the distribution<a class="headerlink" href="#how-to-run-a-plate-example-from-the-distribution" title="Permalink to this heading"></a></h2>
+<p>All Plate examples are packaged in <code class="code docutils literal notranslate"><span class="pre">examples.plates</span></code>.
+To run a specific example use, e.g.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.examples.plates.plate01</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># load the example</span>
+<span class="n">ex</span> <span class="o">=</span> <span class="n">ExamplePlate01</span><span class="p">()</span>
+
+<span class="c1"># print the doc-string for the current example</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+
+<span class="c1"># run the actual problem</span>
+<span class="n">ex</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="frame_examples.html" class="btn btn-neutral float-left" title="Frame Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="frames/frame04/frame04.html" class="btn btn-neutral float-left" title="Example: frame04" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="continuum_examples.html" class="btn btn-neutral float-right" title="Continuum Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
