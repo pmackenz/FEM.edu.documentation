@@ -1,4 +1,4 @@
-Example: frame01
+Example: frame02
 ==================
 
 .. figure:: frame2_deformed.png
