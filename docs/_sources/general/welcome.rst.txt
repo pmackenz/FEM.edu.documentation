@@ -5,3 +5,7 @@ Welcome to the FEM.edu documentation!
 .. image:: ./images/FEMedu-CoverPicture.png
     :alt: FEM.edu logo
 
+Revision Log
+
+.. git_changelog::
+    :revisions: 3
