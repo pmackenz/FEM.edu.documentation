@@ -1,24 +1,42 @@
 Example: frame04
 ==================
 
-.. figure:: frame4_deformed.png
+.. figure:: frame04_deformed.png
     :align: center
 
     system and deformation
 
-.. figure:: frame4_force.png
+.. figure:: frame04_force.png
     :align: center
 
-.. figure:: frame4_shear.png
+.. figure:: frame04_shear.png
     :align: center
 
-.. figure:: frame4_moment.png
+.. figure:: frame04_moment.png
     :align: center
 
-.. figure:: frame4_buckling_mode0.png
+.. figure:: frame04_buckling_mode0.png
     :align: center
 
-    buckling mode shape
+    first buckling mode shape
+
+
+.. figure:: frame04_buckling_mode1.png
+    :align: center
+
+    second buckling mode shape
+
+
+.. figure:: frame04_buckling_mode2.png
+    :align: center
+
+    third buckling mode shape
+
+
+.. figure:: frame04_buckling_mode3.png
+    :align: center
+
+    fourth buckling mode shape
 
 
 **Importing the example**
@@ -30,4 +48,4 @@ Example: frame04
     # load the example
     ex = ExampleFrame04()
 
-**More truss examples**: :doc:`../../frame_examples`
+**More frame examples**: :doc:`../../frame_examples`

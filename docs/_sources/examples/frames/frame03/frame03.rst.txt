@@ -30,4 +30,4 @@ Example: frame03
     # load the example
     ex = ExampleFrame03()
 
-**More truss examples**: :doc:`../../frame_examples`
+**More frame examples**: :doc:`../../frame_examples`
