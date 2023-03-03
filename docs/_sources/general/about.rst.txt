@@ -44,7 +44,7 @@ About the Developers
 
 .. |PeterMH| image:: ../images/peter-mackenzie-helnwein.jpeg
     :alt: image of Peter
-    :scale: 50 %
+    :width: 150
 
 .. |TatsuS| image:: ../images/tatsu-sweet.jpeg
     :alt: image of Tatsu
@@ -54,7 +54,7 @@ About the Developers
     :alt: image of Bill
     :scale: 100 %
 
-.. |JordanS| image:: ../images/jordan-seawright.jpeg
+.. |JordanS| image:: ../images/jordan-seawright2.jpg
     :alt: image of Jordan
-    :scale: 100 %
+    :width: 150
 
