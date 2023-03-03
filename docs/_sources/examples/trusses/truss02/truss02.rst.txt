@@ -1,11 +1,18 @@
 Example: truss02
 ==================
 
-.. image:: triangle_deformed.png
-    :width: 45%
+.. figure:: truss02_deformed.png
+    :width: 90%
+    :align: center
 
-.. image:: triangle_forces.png
-    :width: 45%
+    System and deformed shape
+
+
+.. figure:: truss02_forces.png
+    :width: 90%
+    :align: center
+
+    Axial force diagram
 
 
 **Importing the example**
