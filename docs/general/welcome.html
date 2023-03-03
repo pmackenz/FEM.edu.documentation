@@ -16,6 +16,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" /> 
@@ -70,7 +71,80 @@
              
   <section id="welcome-to-the-fem-edu-documentation">
 <h1>Welcome to the FEM.edu documentation!<a class="headerlink" href="#welcome-to-the-fem-edu-documentation" title="Permalink to this heading"></a></h1>
+<p>A finite element framework designed with higher education in mind.</p>
 <img alt="FEM.edu logo" src="general/images/FEMedu-CoverPicture.png" />
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Easy integration with any python environment.</p></li>
+<li><dl class="simple">
+<dt>Linear finite element analysis</dt><dd><ul>
+<li><p>Spring models</p></li>
+<li><p>2D and 3D Truss models</p></li>
+<li><p>1D beam models (continuous beams)</p></li>
+<li><p>2D and 3D frame models (<span class="math notranslate nohighlight">\(P-\Delta\)</span> and nuumerically integrated FE)</p></li>
+<li><p>Plate models (triangles and quadrilaterals)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Geometrically and physically nonlinear finite element analysis</dt><dd><ul>
+<li><dl class="simple">
+<dt>Elements</dt><dd><ul>
+<li><p>2D and 3D Truss models for finite deformation</p></li>
+<li><p>1D beam models (continuous beams)</p></li>
+<li><p>2D and 3D frame models (<span class="math notranslate nohighlight">\(P-\Delta\)</span> and numerically integrated FE)</p></li>
+<li><p>Plate models (triangles and quadrilaterals)</p></li>
+<li><p>Continuum models</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Materials</dt><dd><ul>
+<li><p>Fiber-materials for metals</p></li>
+<li><p>Section-models for beams</p></li>
+<li><p>Section-models for plates</p></li>
+<li><p><span class="math notranslate nohighlight">\(J_2\)</span>-plasticity with hardening for plane stress, plane strain, and 3D</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Solvers</dt><dd><ul>
+<li><p>Newton-Raphson solver (load stepping)</p></li>
+<li><p>Displacement control (with arbitrary load pattern)</p></li>
+<li><p>Arc-length control (with arbitrary load pattern)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Basic plot features for built-in and User-defined elements</dt><dd><ul>
+<li><p>Deformeation plot</p></li>
+<li><p>Beam diagrams (moment, shear, axial force; for beams and frames)</p></li>
+<li><p>Time history plots</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Easy integration of</dt><dd><ul>
+<li><p>User defined elements (<cite>Element</cite> objects)</p></li>
+<li><p>User defined materials (<cite>Material</cite> objects)</p></li>
+<li><p>User defined solution algorithms (<cite>Solver</cite> objects)</p></li>
+<li><p>User defined report generators (<cite>Reporter</cite> objects)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
 <section id="revision-log">
 <h2>Revision Log<a class="headerlink" href="#revision-log" title="Permalink to this heading"></a></h2>
 <ul>
