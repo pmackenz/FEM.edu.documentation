@@ -1,4 +1,4 @@
-Example: truss01
+Example: truss03
 ==================
 
 .. image:: triangle_deformed.png
@@ -12,9 +12,9 @@ Example: truss01
 
 .. code:: python
 
-    from femedu.examples.trusses.truss01 import *
+    from femedu.examples.trusses.truss03 import *
 
     # load the example
-    ex = ExampleTruss01()
+    ex = ExampleTruss03()
 
 **More truss examples**: :doc:`../../truss_examples`
