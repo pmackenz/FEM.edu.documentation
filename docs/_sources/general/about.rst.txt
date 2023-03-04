@@ -46,9 +46,9 @@ About the Developers
     :alt: image of Peter
     :width: 150
 
-.. |TatsuS| image:: ../images/tatsu-sweet.jpeg
+.. |TatsuS| image:: ../images/tatsu-sweet.jpg
     :alt: image of Tatsu
-    :scale: 100 %
+    :width: 150
 
 .. |BillG| image:: ../images/galik_william.jpg
     :alt: image of Bill
