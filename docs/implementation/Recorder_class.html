@@ -107,6 +107,17 @@ See below for more details.</p>
 </dd>
 </dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.recorder.Recorder.Recorder.addData">
+<span class="sig-name descname"><span class="pre">addData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.addData" title="Permalink to this definition"></a></dt>
+<dd><p><em>For internal use only.</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dta</strong> (<em>dict</em>) – variable code as key and scalar value pairs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.recorder.Recorder.Recorder.disable">
 <span class="sig-name descname"><span class="pre">disable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.disable" title="Permalink to this definition"></a></dt>
 <dd><p>Disables the recorder.  You may resume data collection without loss of previous data by calling <code class="docutils literal notranslate"><span class="pre">enable()</span></code></p>
@@ -141,10 +152,13 @@ Recognized file types are</p>
 <tr class="row-even"><td><p>.csv</p></td>
 <td><p>comma-separated text file</p></td>
 </tr>
-<tr class="row-odd"><td><p>.json, .jsn</p></td>
+<tr class="row-odd"><td><p>.hdf</p></td>
+<td><p>HDF5 file</p></td>
+</tr>
+<tr class="row-even"><td><p>.json, .jsn</p></td>
 <td><p>comma-separated text file</p></td>
 </tr>
-<tr class="row-even"><td><p>.xlsx</p></td>
+<tr class="row-odd"><td><p>.xlsx</p></td>
 <td><p>MicroSoft Excel file (see the <cite>pandas</cite> package for more detail)</p></td>
 </tr>
 </tbody>
@@ -166,6 +180,15 @@ Recognized file types are</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.recorder.Recorder.Recorder.export_excel">
 <span class="sig-name descname"><span class="pre">export_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.export_excel" title="Permalink to this definition"></a></dt>
+<dd><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method is has not yet been implemented.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.recorder.Recorder.Recorder.export_hdf">
+<span class="sig-name descname"><span class="pre">export_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.export_hdf" title="Permalink to this definition"></a></dt>
 <dd><div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This method is has not yet been implemented.</p>

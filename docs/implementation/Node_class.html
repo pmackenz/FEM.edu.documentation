@@ -176,6 +176,16 @@ Do not forget the <code class="code docutils literal notranslate"><span class="p
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getID">
+<span class="sig-name descname"><span class="pre">getID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getID" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the node ID (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.getLoad">
 <span class="sig-name descname"><span class="pre">getLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dof_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_load_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getLoad" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
@@ -225,6 +235,12 @@ Do not forget the <code class="code docutils literal notranslate"><span class="p
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.pushU">
 <span class="sig-name descname"><span class="pre">pushU</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.pushU" title="Permalink to this definition"></a></dt>
 <dd><p>Store the current displacement vector for later restore using <code class="code docutils literal notranslate"><span class="pre">popU()</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.recordThisStep">
+<span class="sig-name descname"><span class="pre">recordThisStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_level</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.recordThisStep" title="Permalink to this definition"></a></dt>
+<dd><p>record current state of the system</p>
 </dd></dl>
 
 <dl class="py method">

@@ -16,6 +16,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -94,6 +95,28 @@
              
   <section id="lineartriangle-class">
 <h1>LinearTriangle class<a class="headerlink" href="#lineartriangle-class" title="Permalink to this heading"></a></h1>
+<p>Coordinate-free formulation for a finite deformation bi-linear triangle.</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{X}=\mathbf{X}_0+\mathbf{G}_i \xi^i \quad i=1,2,3 \quad \xi^i \geqslant 0 ~\&amp;~ \xi^1+\xi^2+\xi^3 \leq 1\]</div>
+<div class="math notranslate nohighlight">
+\[d\mathbf{X}=\mathbf{G}_i d \xi^i \rightarrow d \xi^i=\mathbf{G}^i \cdot d \mathbf{X} \quad w/ ~~ \mathbf{G}^i \mathbf{G}_j=\delta_j^i\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}=\mathbf{x}_0+ \mathbf{g}_i \xi^i\]</div>
+<div class="math notranslate nohighlight">
+\[d\mathbf{x}=\mathbf{g}_i d \xi^i=\left(\mathbf{g} \otimes \mathbf{G}^i\right) \cdot d \mathbf{X}=\mathbf{F} \cdot d\mathbf{\bar{x}} \Longrightarrow \mathbf{F}=\mathbf{g}_i \otimes \mathbf{G}^i\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{F}^t \mathbf{F}=g_{i j} \mathbf{G}^i \otimes \mathbf{G}^j \rightarrow \mathbf{E}=\frac{1}{2}\left(\mathbf{F}^t \mathbf{F}-\mathbf{1}\right)=\frac{1}{2}\left(g_{i j}-G_{i j}\right) \mathbf{G}^i \otimes \mathbf{G}^j\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\delta \mathbf{E}=\delta\mathbf{g}_i \otimes \mathbf{G}^i=\left(\delta \mathbf{x}_i-\delta \mathbf{x}_0\right) \otimes \mathbf{G}^i=\delta \mathbf{x}_\alpha \otimes \mathbf{G}^\alpha \quad \underline{\text { note }}: \quad \begin{array}{l}
+i=1,2,3 \\
+\alpha=0,1,2,3
+\end{array}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{G}^0=-\mathbf{G}^1-\mathbf{G}^2-\mathbf{G}^3\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[\delta\mathbf{F}
+=\left(\mathbf{G}^\alpha \otimes \delta\mathbf{x}_\alpha\right)\left(\mathbf{g}_i \otimes \mathbf{G}^i\right)
+=\delta\mathbf{x}_\alpha \cdot \underbrace{\mathbf{g}_i \otimes \overbrace{\mathbf{G}^\alpha \otimes \mathbf{G}^i}^{\bar{\mathbf{G}}^a}}_{=: {\mathbf{B}^{\alpha}}^t}
+=\delta\mathbf{x}_\alpha \cdot{\mathbf{B^{\alpha}}^t}\]</div>
 <section id="parent-class">
 <h2>Parent class<a class="headerlink" href="#parent-class" title="Permalink to this heading"></a></h2>
 <ul class="simple">

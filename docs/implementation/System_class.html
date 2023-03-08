@@ -120,7 +120,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>variable</strong> – string code for variable</p></li>
 <li><p><strong>deformed</strong> – True | <strong>False</strong></p></li>
-<li><p><strong>file</strong> – filename (str)</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -147,9 +147,47 @@ If a list of keys is given, a <cite>list of np.array()</cite> is returned.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.historyPlot">
+<span class="sig-name descname"><span class="pre">historyPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">varY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.historyPlot" title="Permalink to this definition"></a></dt>
+<dd><p>Create a generic X-Y plot using recorder data for load-level (horizontal)
+and varY (vertical).</p>
+<p>If <strong>filename</strong> is given, store the plot to that file.
+Use proper file extensions to indicate the desired format (.png, .pdf)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>varY</strong> (<em>str</em>) – a variable code previously set by <a class="reference internal" href="#femedu.domain.System.System.initRecorder" title="femedu.domain.System.System.initRecorder"><code class="xref py py-meth docutils literal notranslate"><span class="pre">initRecorder()</span></code></a></p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.System.System.initRecorder">
 <span class="sig-name descname"><span class="pre">initRecorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.initRecorder" title="Permalink to this definition"></a></dt>
 <dd><p>initializes data arrays for gathering of load history data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>variables</strong> (<em>list-type</em>) – list of variables or d.o.f.-codes to be recorded</p></li>
+<li><p><strong>nodes</strong> (list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code>) – nodes for which to record</p></li>
+<li><p><strong>elements</strong> (list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code>) – elements for which to record</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># examples:</span>
+
+<span class="c1"># system recorder tracking the stability index</span>
+<span class="n">initRecorder</span><span class="p">(</span><span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;stability&#39;</span><span class="p">,])</span>
+
+<span class="c1"># tracking &#39;ux&#39; at nodes X1 and X7</span>
+<span class="n">initRecorder</span><span class="p">(</span><span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ux&#39;</span><span class="p">,],</span> <span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="n">X1</span><span class="p">,</span> <span class="n">X7</span><span class="p">])</span>
+
+<span class="c1"># tracking all components of stress at Elem2 and Elem42</span>
+<span class="n">initRecorder</span><span class="p">(</span><span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;stress&#39;</span><span class="p">,],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="n">Elem2</span><span class="p">,</span> <span class="n">Elem42</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -316,7 +354,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>variable</strong> – string code for variable to show</p></li>
 <li><p><strong>factor</strong> – deformation magnification factor (default is undeformed)</p></li>
-<li><p><strong>filename</strong> – filename (str)</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – </p></li>
 </ul>
 </dd>
 </dl>
