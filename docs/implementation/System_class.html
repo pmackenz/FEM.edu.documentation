@@ -45,11 +45,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">Example Problems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../design.html">Program Design</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../implementation.html">Implementation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="DOF_class.html">DoF class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Element_class.html">Element classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Material_class.html">Material class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Node_class.html">Node class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plot_Support_Classes.html">Plot Support classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Recorder_class.html">Recorder class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Solver_class.html">Solver class</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">System class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Transformation_class.html">Transformation class</a></li>
@@ -128,10 +128,13 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.System.System.fetchRecord">
-<span class="sig-name descname"><span class="pre">fetchRecord</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.fetchRecord" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<span class="sig-name descname"><span class="pre">fetchRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.fetchRecord" title="Permalink to this definition"></a></dt>
+<dd><p>Request recorded time history data for the listed keys.
+If a single key is given as a string, a single <cite>np.array()</cite> is returned.
+If a list of keys is given, a <cite>list of np.array()</cite> is returned.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>a tuple of ndarrays: (loadfactors, list of system deformations, stability index)</p>
+<dd class="field-odd"><p>time history data for the listed keys.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -145,8 +148,15 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.System.System.initRecorder">
-<span class="sig-name descname"><span class="pre">initRecorder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.initRecorder" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">initRecorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.initRecorder" title="Permalink to this definition"></a></dt>
 <dd><p>initializes data arrays for gathering of load history data</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.pauseRecorder">
+<span class="sig-name descname"><span class="pre">pauseRecorder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.pauseRecorder" title="Permalink to this definition"></a></dt>
+<dd><p>pauses the recorder.  You can restart the recorder by calling
+<cite>startRecorder()</cite>.</p>
 </dd></dl>
 
 <dl class="py method">

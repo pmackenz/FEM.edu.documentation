@@ -159,6 +159,8 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="implementation/Recorder_class.html#femedu.recorder.Recorder.Recorder.disable">disable() (femedu.recorder.Recorder.Recorder method)</a>
+</li>
       <li><a href="implementation/Plot_Support_Classes.html#femedu.plotter.AbstractPlotter.AbstractPlotter.displacementPlot">displacementPlot() (femedu.plotter.AbstractPlotter.AbstractPlotter method)</a>
 
       <ul>
@@ -199,11 +201,23 @@
 </li>
       <li><a href="implementation/Element_class.html#femedu.elements.Element.Element">Element (class in femedu.elements.Element)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="implementation/ElementPlotter_class.html#femedu.plotter.ElementPlotter.ElementPlotter">ElementPlotter (class in femedu.plotter.ElementPlotter)</a>
 </li>
       <li><a href="implementation/ElementPlotter3D_class.html#femedu.plotter.ElementPlotter3D.ElementPlotter3D">ElementPlotter3D (class in femedu.plotter.ElementPlotter3D)</a>
+</li>
+      <li><a href="implementation/Recorder_class.html#femedu.recorder.Recorder.Recorder.enable">enable() (femedu.recorder.Recorder.Recorder method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="implementation/Recorder_class.html#femedu.recorder.Recorder.Recorder.export">export() (femedu.recorder.Recorder.Recorder method)</a>
+</li>
+      <li><a href="implementation/Recorder_class.html#femedu.recorder.Recorder.Recorder.export_csv">export_csv() (femedu.recorder.Recorder.Recorder method)</a>
+</li>
+      <li><a href="implementation/Recorder_class.html#femedu.recorder.Recorder.Recorder.export_excel">export_excel() (femedu.recorder.Recorder.Recorder method)</a>
+</li>
+      <li><a href="implementation/Recorder_class.html#femedu.recorder.Recorder.Recorder.export_json">export_json() (femedu.recorder.Recorder.Recorder method)</a>
+</li>
+      <li><a href="implementation/Recorder_class.html#femedu.recorder.Recorder.Recorder.export_text">export_text() (femedu.recorder.Recorder.Recorder method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -302,8 +316,6 @@
         <li><a href="implementation/Material_class.html#module-femedu.materials.Material">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     femedu.materials.PlaneStrain
 
@@ -311,6 +323,8 @@
         <li><a href="implementation/PlaneStrain.html#module-femedu.materials.PlaneStrain">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     femedu.materials.PlaneStress
 
@@ -361,6 +375,13 @@
 </li>
       </ul></li>
       <li>
+    femedu.recorder.Recorder
+
+      <ul>
+        <li><a href="implementation/Recorder_class.html#module-femedu.recorder.Recorder">module</a>
+</li>
+      </ul></li>
+      <li>
     femedu.solver.LinearSolver
 
       <ul>
@@ -382,7 +403,11 @@
 </li>
       </ul></li>
       <li><a href="implementation/System_class.html#femedu.domain.System.System.fetchRecord">fetchRecord() (femedu.domain.System.System method)</a>
+
+      <ul>
+        <li><a href="implementation/Recorder_class.html#femedu.recorder.Recorder.Recorder.fetchRecord">(femedu.recorder.Recorder.Recorder method)</a>
 </li>
+      </ul></li>
       <li><a href="implementation/Solver_class.html#femedu.solver.Solver.Solver.fetchState">fetchState() (femedu.solver.Solver.Solver method)</a>
 </li>
       <li><a href="implementation/FiberMaterial.html#femedu.materials.FiberMaterial.FiberMaterial">FiberMaterial (class in femedu.materials.FiberMaterial)</a>
@@ -453,9 +478,11 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="implementation/Solver_class.html#femedu.solver.Solver.Solver.initialize">initialize() (femedu.solver.Solver.Solver method)</a>
 </li>
+      <li><a href="implementation/System_class.html#femedu.domain.System.System.initRecorder">initRecorder() (femedu.domain.System.System method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="implementation/System_class.html#femedu.domain.System.System.initRecorder">initRecorder() (femedu.domain.System.System method)</a>
+      <li><a href="implementation/Recorder_class.html#femedu.recorder.Recorder.Recorder.isActive">isActive() (femedu.recorder.Recorder.Recorder method)</a>
 </li>
       <li><a href="implementation/Node_class.html#femedu.domain.Node.Node.isFixed">isFixed() (femedu.domain.Node.Node method)</a>
 </li>
@@ -525,6 +552,8 @@
 </li>
         <li><a href="implementation/Plotter3D_class.html#module-femedu.plotter.Plotter3D">femedu.plotter.Plotter3D</a>
 </li>
+        <li><a href="implementation/Recorder_class.html#module-femedu.recorder.Recorder">femedu.recorder.Recorder</a>
+</li>
         <li><a href="implementation/LinearSolver_class.html#module-femedu.solver.LinearSolver">femedu.solver.LinearSolver</a>
 </li>
         <li><a href="implementation/NewtonRaphsonSolver_class.html#module-femedu.solver.NewtonRaphsonSolver">femedu.solver.NewtonRaphsonSolver</a>
@@ -550,6 +579,8 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="implementation/System_class.html#femedu.domain.System.System.pauseRecorder">pauseRecorder() (femedu.domain.System.System method)</a>
+</li>
       <li><a href="implementation/PlaneStrain.html#femedu.materials.PlaneStrain.PlaneStrain">PlaneStrain (class in femedu.materials.PlaneStrain)</a>
 </li>
       <li><a href="implementation/PlaneStress.html#femedu.materials.PlaneStress.PlaneStress">PlaneStress (class in femedu.materials.PlaneStress)</a>
@@ -594,28 +625,34 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="implementation/Recorder_class.html#femedu.recorder.Recorder.Recorder">Recorder (class in femedu.recorder.Recorder)</a>
+</li>
       <li><a href="implementation/System_class.html#femedu.domain.System.System.recordThisStep">recordThisStep() (femedu.domain.System.System method)</a>
 </li>
       <li><a href="implementation/System_class.html#femedu.domain.System.System.report">report() (femedu.domain.System.System method)</a>
 </li>
       <li><a href="implementation/Node_class.html#femedu.domain.Node.Node.request">request() (femedu.domain.Node.Node method)</a>
 </li>
-      <li><a href="implementation/Solver_class.html#femedu.solver.Solver.Solver.reset">reset() (femedu.solver.Solver.Solver method)</a>
+      <li><a href="implementation/Recorder_class.html#femedu.recorder.Recorder.Recorder.reset">reset() (femedu.recorder.Recorder.Recorder method)</a>
+
+      <ul>
+        <li><a href="implementation/Solver_class.html#femedu.solver.Solver.Solver.reset">(femedu.solver.Solver.Solver method)</a>
 </li>
+      </ul></li>
       <li><a href="implementation/Node_class.html#femedu.domain.Node.Node.resetAll">resetAll() (femedu.domain.Node.Node method)</a>
 
       <ul>
         <li><a href="implementation/System_class.html#femedu.domain.System.System.resetAll">(femedu.domain.System.System method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="implementation/Node_class.html#femedu.domain.Node.Node.resetDisp">resetDisp() (femedu.domain.Node.Node method)</a>
 
       <ul>
         <li><a href="implementation/System_class.html#femedu.domain.System.System.resetDisp">(femedu.domain.System.System method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="implementation/Solver_class.html#femedu.solver.Solver.Solver.resetDisplacements">resetDisplacements() (femedu.solver.Solver.Solver method)</a>
 </li>
       <li><a href="implementation/Solver_class.html#femedu.solver.Solver.Solver.resetForces">resetForces() (femedu.solver.Solver.Solver method)</a>
