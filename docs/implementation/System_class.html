@@ -47,6 +47,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../implementation.html">Implementation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Element_class.html">Element classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Material_class.html">Material class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mesher_class.html">Mesher classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Node_class.html">Node class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plot_Support_Classes.html">Plot Support classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Recorder_class.html">Recorder class</a></li>
@@ -122,6 +123,29 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <li><p><strong>deformed</strong> – True | <strong>False</strong></p></li>
 <li><p><strong>filename</strong> (<em>str</em>) – </p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.checkStability">
+<span class="sig-name descname"><span class="pre">checkStability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwdargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.checkStability" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the stability index as</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathop{det}([{\bf K}_t])\)</span> for systems with less than 25 d.o.f.s</p></li>
+<li><p><span class="math notranslate nohighlight">\(\min\lambda_i\)</span> where <span class="math notranslate nohighlight">\(\lambda_i\)</span> are the eigenvalues of <span class="math notranslate nohighlight">\({\bf K}_t\)</span></p></li>
+</ul>
+<p><strong>Implemented</strong> by <code class="xref py py-class docutils literal notranslate"><span class="pre">Solver</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>verbose</strong> – set to <strong>True</strong> for log info</p></li>
+<li><p><strong>num_eigen</strong> – if set to a value greater than 0, show the <strong>num_eigen</strong> eigenvalues
+closest to the current load level.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>stability index</p>
 </dd>
 </dl>
 </dd></dl>
