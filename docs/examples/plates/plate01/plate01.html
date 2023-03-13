@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example: plate01 &mdash; FEM.edu FEM.edu-v0.9-pre3.8.23 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Example: plate02" href="../plate02/plate02.html" />
+    <link rel="prev" title="Plate Examples" href="../../plate_examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../examples.html">Example Problems</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../truss_examples.html">Truss Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../beam_examples.html">Beam Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../frame_examples.html">Frame Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../plate_examples.html">Plate Examples</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Example: plate01</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plate02/plate02.html">Example: plate02</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plate03/plate03.html">Example: plate03</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../plate_examples.html#how-to-run-a-plate-example-from-the-distribution">How to run a plate example from the distribution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../continuum_examples.html">Continuum Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mixed_structures_examples.html">Mixed Structures Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../design.html">Program Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../implementation.html">Implementation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../examples.html">Example Problems</a> &raquo;</li>
+          <li><a href="../../plate_examples.html">Plate Examples</a> &raquo;</li>
+      <li>Example: plate01</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/examples/plates/plate01/plate01.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="example-plate01">
+<h1>Example: plate01<a class="headerlink" href="#example-plate01" title="Permalink to this heading"></a></h1>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../../_images/plate01_undeformed.png"><img alt="../../../_images/plate01_undeformed.png" src="../../../_images/plate01_undeformed.png" style="width: 480.0px; height: 360.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">Initial system and meshing for the patch test.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>We build the model based a few parameters as follows.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>        <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+<span class="linenos">2</span>            <span class="n">E</span>  <span class="o">=</span> <span class="mf">10.</span><span class="p">,</span>   <span class="c1"># Young&#39;s modulus</span>
+<span class="linenos">3</span>            <span class="n">nu</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>   <span class="c1"># Poisson&#39;s ratio</span>
+<span class="linenos">4</span>            <span class="n">t</span>  <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>   <span class="c1"># thickness of the plate</span>
+<span class="linenos">5</span>            <span class="n">fy</span> <span class="o">=</span> <span class="mf">1.e30</span>  <span class="c1"># yield stress</span>
+<span class="linenos">6</span>        <span class="p">)</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span>        <span class="n">a</span> <span class="o">=</span> <span class="mf">10.</span>     <span class="c1"># length of the plate in the x-direction</span>
+<span class="linenos">9</span>        <span class="n">b</span> <span class="o">=</span> <span class="mf">10.</span>     <span class="c1"># length of the plate in the y-direction</span>
+</pre></div>
+</div>
+<p>All mesh creation is based solely on the above parameters to allow for easy
+manipulation of the model.</p>
+<p>The actual model is built by the block below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">10</span>        <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span>        <span class="n">nd0</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="linenos">13</span>        <span class="n">nd1</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>   <span class="n">a</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="linenos">14</span>        <span class="n">nd2</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>   <span class="n">a</span><span class="p">,</span>   <span class="n">b</span><span class="p">)</span>
+<span class="linenos">15</span>        <span class="n">nd3</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span> <span class="mf">0.0</span><span class="p">,</span>   <span class="n">b</span><span class="p">)</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span>        <span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">nd0</span><span class="p">,</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">nd2</span><span class="p">,</span> <span class="n">nd3</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span>        <span class="n">elemA</span> <span class="o">=</span> <span class="n">LinearTriangle</span><span class="p">(</span><span class="n">nd0</span><span class="p">,</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">nd3</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+<span class="linenos">20</span>        <span class="n">elemB</span> <span class="o">=</span> <span class="n">LinearTriangle</span><span class="p">(</span><span class="n">nd2</span><span class="p">,</span> <span class="n">nd3</span><span class="p">,</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span>        <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">elemA</span><span class="p">,</span> <span class="n">elemB</span><span class="p">)</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span>        <span class="n">elemB</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="n">face</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span>        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Undeformed system&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate01_undeformed.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Line 9 instantiates one model space.</p>
+<p>Lines 11-14 create the nodes, and
+lines 16 adds them to the model space.</p>
+<p>Lines 18-19 create the elements and line 21 adds them to the model space.
+You only need to create variables for <cite>Node</cite> and <cite>Element</cite> objects, respectively,
+if you need to either add or retrieve information from that object later.</p>
+<p>Line 23 adds a surface load to face 2 of element <code class="xref py py-obj docutils literal notranslate"><span class="pre">elemB</span></code>. See <a class="reference internal" href="../../../implementation/LinearTriangle_class.html"><span class="doc">LinearTriangle class</span></a>
+for the definition of faces for this element.</p>
+<p>Set the load factor to 1.00 to activate and check element loads,
+and prescribe all degrees of freedom to eliminate the need for solving
+the system equations.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">27</span>        <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span>        <span class="n">nd0</span><span class="o">.</span><span class="n">setDisp</span><span class="p">(</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span> <span class="p">)</span>
+<span class="linenos">30</span>        <span class="n">nd1</span><span class="o">.</span><span class="n">setDisp</span><span class="p">(</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span> <span class="p">)</span>
+<span class="linenos">31</span>        <span class="n">nd2</span><span class="o">.</span><span class="n">setDisp</span><span class="p">(</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">,</span><span class="o">-</span><span class="mf">5.0</span><span class="p">]</span> <span class="p">)</span>
+<span class="linenos">32</span>        <span class="n">nd3</span><span class="o">.</span><span class="n">setDisp</span><span class="p">(</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">5.0</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Force the elements to update their state of strain and stress based on the prescribed
+nodal displacements and generate a report.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">32</span>        <span class="n">elemA</span><span class="o">.</span><span class="n">updateState</span><span class="p">()</span>
+<span class="linenos">33</span>        <span class="n">elemB</span><span class="o">.</span><span class="n">updateState</span><span class="p">()</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span>        <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Here the generated report (release: 3/12/2023):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">System</span> <span class="n">Analysis</span> <span class="n">Report</span>
+<span class="o">=======================</span>
+
+<span class="n">Nodes</span><span class="p">:</span>
+<span class="o">---------------------</span>
+  <span class="n">Node_0</span><span class="p">:</span>
+      <span class="n">x</span><span class="p">:</span>    <span class="p">[</span><span class="mf">0.</span> <span class="mf">0.</span><span class="p">]</span>
+      <span class="n">u</span><span class="p">:</span>    <span class="p">[</span><span class="mf">0.</span> <span class="mf">0.</span><span class="p">]</span>
+  <span class="n">Node_1</span><span class="p">:</span>
+      <span class="n">x</span><span class="p">:</span>    <span class="p">[</span><span class="mf">10.</span>  <span class="mf">0.</span><span class="p">]</span>
+      <span class="n">u</span><span class="p">:</span>    <span class="p">[</span><span class="mf">5.</span> <span class="mf">0.</span><span class="p">]</span>
+  <span class="n">Node_2</span><span class="p">:</span>
+      <span class="n">x</span><span class="p">:</span>    <span class="p">[</span><span class="mf">10.</span> <span class="mf">10.</span><span class="p">]</span>
+      <span class="n">u</span><span class="p">:</span>    <span class="p">[</span> <span class="mf">5.</span> <span class="o">-</span><span class="mf">5.</span><span class="p">]</span>
+  <span class="n">Node_3</span><span class="p">:</span>
+      <span class="n">x</span><span class="p">:</span>    <span class="p">[</span> <span class="mf">0.</span> <span class="mf">10.</span><span class="p">]</span>
+      <span class="n">u</span><span class="p">:</span>    <span class="p">[</span> <span class="mf">0.</span> <span class="o">-</span><span class="mf">5.</span><span class="p">]</span>
+
+<span class="n">Elements</span><span class="p">:</span>
+<span class="o">---------------------</span>
+  <span class="n">LinearTriangle</span><span class="p">:</span> <span class="n">nodes</span> <span class="p">(</span> <span class="n">Node_0</span> <span class="n">Node_1</span> <span class="n">Node_3</span> <span class="p">)</span>
+      <span class="n">material</span><span class="p">:</span> <span class="n">PlaneStress</span>
+      <span class="n">strain</span><span class="p">:</span> <span class="n">xx</span><span class="o">=</span><span class="mf">6.250e-01</span> <span class="n">yy</span><span class="o">=-</span><span class="mf">3.750e-01</span> <span class="n">xy</span><span class="o">=</span><span class="mf">0.000e+00</span> <span class="n">zz</span><span class="o">=-</span><span class="mf">7.500e-02</span>
+      <span class="n">stress</span><span class="p">:</span> <span class="n">xx</span><span class="o">=</span><span class="mf">5.632e+00</span> <span class="n">yy</span><span class="o">=-</span><span class="mf">2.060e+00</span> <span class="n">xy</span><span class="o">=</span><span class="mf">0.000e+00</span> <span class="n">zz</span><span class="o">=</span><span class="mf">0.000e+00</span>
+  <span class="n">LinearTriangle</span><span class="p">:</span> <span class="n">nodes</span> <span class="p">(</span> <span class="n">Node_2</span> <span class="n">Node_3</span> <span class="n">Node_1</span> <span class="p">)</span>
+      <span class="n">material</span><span class="p">:</span> <span class="n">PlaneStress</span>
+      <span class="n">strain</span><span class="p">:</span> <span class="n">xx</span><span class="o">=</span><span class="mf">6.250e-01</span> <span class="n">yy</span><span class="o">=-</span><span class="mf">3.750e-01</span> <span class="n">xy</span><span class="o">=</span><span class="mf">0.000e+00</span> <span class="n">zz</span><span class="o">=-</span><span class="mf">7.500e-02</span>
+      <span class="n">stress</span><span class="p">:</span> <span class="n">xx</span><span class="o">=</span><span class="mf">5.632e+00</span> <span class="n">yy</span><span class="o">=-</span><span class="mf">2.060e+00</span> <span class="n">xy</span><span class="o">=</span><span class="mf">0.000e+00</span> <span class="n">zz</span><span class="o">=</span><span class="mf">0.000e+00</span>
+      <span class="n">element</span> <span class="n">forces</span> <span class="n">added</span> <span class="n">to</span> <span class="n">node</span><span class="p">:</span>
+          <span class="n">Node_2</span><span class="p">:</span> <span class="p">[</span><span class="mf">5.</span> <span class="mf">0.</span><span class="p">]</span>
+          <span class="n">Node_3</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.</span> <span class="mf">0.</span><span class="p">]</span>
+          <span class="n">Node_1</span><span class="p">:</span> <span class="p">[</span><span class="mf">5.</span> <span class="mf">0.</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<figure class="align-center" id="id2">
+<img alt="../../../_images/plate01_deformed.png" src="../../../_images/plate01_deformed.png" />
+<figcaption>
+<p><span class="caption-text">Deformed system at load level 1.00</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Importing the example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples.plates.plate01</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># load the example</span>
+<span class="n">ex</span> <span class="o">=</span> <span class="n">ExamplePlate01</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>More frame examples</strong>: <a class="reference internal" href="../../plate_examples.html"><span class="doc">Plate Examples</span></a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../plate_examples.html" class="btn btn-neutral float-left" title="Plate Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../plate02/plate02.html" class="btn btn-neutral float-right" title="Example: plate02" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
