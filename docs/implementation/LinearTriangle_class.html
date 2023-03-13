@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LinearTriangle class &mdash; FEM.edu FEM.edu-v0.9-pre3.2.23 documentation</title>
+  <title>LinearTriangle class &mdash; FEM.edu FEM.edu-v0.9-pre3.8.23 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -130,6 +130,47 @@ i=1,2,3 \\
 <dt class="sig sig-object py" id="femedu.elements.LinearTriangle.LinearTriangle">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.LinearTriangle.</span></span><span class="sig-name descname"><span class="pre">LinearTriangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.LinearTriangle.LinearTriangle" title="Permalink to this definition"></a></dt>
 <dd><p>class: representing a single truss element</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.LinearTriangle.LinearTriangle.resetLoads">
+<span class="sig-name descname"><span class="pre">resetLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.LinearTriangle.LinearTriangle.resetLoads" title="Permalink to this definition"></a></dt>
+<dd><p>default implementation for resetting element loads.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.LinearTriangle.LinearTriangle.setSurfaceLoad">
+<span class="sig-name descname"><span class="pre">setSurfaceLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.LinearTriangle.LinearTriangle.setSurfaceLoad" title="Permalink to this definition"></a></dt>
+<dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>face ID</p></th>
+<th class="head"><p>nodes defining that face</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">0</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">1</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">2</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>face</strong> – face ID for the laoded face</p></li>
+<li><p><strong>w</strong> – magnitude of distributed load per area. Tension on a surface is positive.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.LinearTriangle.LinearTriangle.updateState">
 <span class="sig-name descname"><span class="pre">updateState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.LinearTriangle.LinearTriangle.updateState" title="Permalink to this definition"></a></dt>

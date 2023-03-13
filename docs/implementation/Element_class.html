@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Element classes &mdash; FEM.edu FEM.edu-v0.9-pre3.2.23 documentation</title>
+  <title>Element classes &mdash; FEM.edu FEM.edu-v0.9-pre3.8.23 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -195,6 +195,23 @@ Local nodes start at 0 and go to N-1, where N is the number of elements in this 
 to be multiplied by a scalar load factor, <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
 <p>If no load factor is set explicitly, a factor of 1.0 is assumed, i.e., the
 entire entered load is applied in full.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.Element.Element.setSurfaceLoad">
+<span class="sig-name descname"><span class="pre">setSurfaceLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.setSurfaceLoad" title="Permalink to this definition"></a></dt>
+<dd><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method needs to be implemented by every element that shall accept a surface load.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>face</strong> – face ID for the laoded face</p></li>
+<li><p><strong>w</strong> – magnitude of distributed load per area. Tension on a surface is positive.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
