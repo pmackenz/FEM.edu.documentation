@@ -97,6 +97,24 @@ as the highest polynomial order of the function you want to integrate exactly.</
 <li><p>call <code class="xref py py-meth docutils literal notranslate"><span class="pre">points()</span></code> or <code class="xref py py-meth docutils literal notranslate"><span class="pre">weights()</span></code> or <code class="xref py py-meth docutils literal notranslate"><span class="pre">parameters()</span></code>
 to obatin a list of integration point coordinates or weights or both, respectively.</p></li>
 </ul>
+<p>Integrating a 4th-order function f(s,t) over a triangular domain</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">integrator</span> <span class="o">=</span> <span class="n">TrangleIntegration</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">xi</span><span class="p">,</span> <span class="n">wi</span> <span class="ow">in</span> <span class="n">integrator</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+    <span class="n">F</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">xi</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xi</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">J</span><span class="p">(</span><span class="n">xi</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xi</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">wi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Int_A f(s,t) dA = </span><span class="si">{</span><span class="n">F</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Integrating a tri-quadratic function g(s,t,u) over a brick-shaped domain</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">integrator</span> <span class="o">=</span> <span class="n">BrickIntegration</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">xi</span><span class="p">,</span> <span class="n">wi</span> <span class="ow">in</span> <span class="n">integrator</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+    <span class="n">F</span> <span class="o">+=</span> <span class="n">g</span><span class="p">(</span><span class="n">xi</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xi</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xi</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="n">J</span><span class="p">(</span><span class="n">xi</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xi</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xi</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="n">wi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Int_V g(s,t,u) dV = </span><span class="si">{</span><span class="n">F</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <section id="module-femedu.utilities.Integration">
 <span id="abstract-integration-class"></span><h2>Abstract Integration Class<a class="headerlink" href="#module-femedu.utilities.Integration" title="Permalink to this heading"></a></h2>
 <dl class="py class">
