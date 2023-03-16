@@ -44,15 +44,22 @@
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Example Problems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="design.html">Program Design</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Implementation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="implementation/Element_class.html">Element classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="implementation/Material_class.html">Material class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="implementation/Mesher_class.html">Mesher classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="implementation/Node_class.html">Node class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="implementation/Plot_Support_Classes.html">Plot Support classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="implementation/Recorder_class.html">Recorder class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="implementation/Solver_class.html">Solver class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="implementation/System_class.html">System class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="implementation/Transformation_class.html">Transformation class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fem-component-classes">FEM Component Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="implementation/Element_class.html">Element classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implementation/Material_class.html">Material class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implementation/Mesher_class.html">Mesher classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implementation/Node_class.html">Node class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implementation/Solver_class.html">Solver class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implementation/System_class.html">System class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implementation/Transformation_class.html">Transformation class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#utility-classes">Utility Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="implementation/Integration_class.html">Integration classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implementation/Plot_Support_Classes.html">Plot Support classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implementation/Recorder_class.html">Recorder class</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -83,6 +90,8 @@
              
   <section id="implementation">
 <h1>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading"></a></h1>
+<section id="fem-component-classes">
+<h2>FEM Component Classes<a class="headerlink" href="#fem-component-classes" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="implementation/Element_class.html">Element classes</a><ul>
@@ -117,17 +126,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="implementation/Node_class.html">Node class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="implementation/Plot_Support_Classes.html">Plot Support classes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="implementation/Plot_Support_Classes.html#derived-classes">Derived Classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="implementation/Plotter_class.html">Plotter class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="implementation/Plotter3D_class.html">Plotter3D class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="implementation/ElementPlotter_class.html">ElementPlotter class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="implementation/ElementPlotter3D_class.html">ElementPlotter3D class</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="implementation/Recorder_class.html">Recorder class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="implementation/Solver_class.html">Solver class</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="implementation/Solver_class.html#derived-classes">Derived Classes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="implementation/LinearSolver_class.html">Linear Solver class</a></li>
@@ -140,6 +138,30 @@
 <li class="toctree-l1"><a class="reference internal" href="implementation/Transformation_class.html">Transformation class</a></li>
 </ul>
 </div>
+</section>
+<section id="utility-classes">
+<h2>Utility Classes<a class="headerlink" href="#utility-classes" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="implementation/Integration_class.html">Integration classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="implementation/Integration_class.html#module-femedu.utilities.Integration">Abstract Integration Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="implementation/Integration_class.html#module-femedu.utilities.LineIntegration">Derived Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="implementation/Plot_Support_Classes.html">Plot Support classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="implementation/Plot_Support_Classes.html#derived-classes">Derived Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="implementation/Plotter_class.html">Plotter class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implementation/Plotter3D_class.html">Plotter3D class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implementation/ElementPlotter_class.html">ElementPlotter class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implementation/ElementPlotter3D_class.html">ElementPlotter3D class</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="implementation/Recorder_class.html">Recorder class</a></li>
+</ul>
+</div>
+</section>
 </section>
 
 

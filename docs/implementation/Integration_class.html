@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integration classes &mdash; FEM.edu FEM.edu-v0.9-pre3.8.23 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Plot Support classes" href="Plot_Support_Classes.html" />
+    <link rel="prev" title="Transformation class" href="Transformation_class.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../general/about.html">About the Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Example Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design.html">Program Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../implementation.html">Implementation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../implementation.html#fem-component-classes">FEM Component Classes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../implementation.html#utility-classes">Utility Classes</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Integration classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#module-femedu.utilities.Integration">Abstract Integration Class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-femedu.utilities.LineIntegration">Derived Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Plot_Support_Classes.html">Plot Support classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Recorder_class.html">Recorder class</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../implementation.html">Implementation</a> &raquo;</li>
+      <li>Integration classes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/implementation/Integration_class.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="integration-classes">
+<h1>Integration classes<a class="headerlink" href="#integration-classes" title="Permalink to this heading"></a></h1>
+<p>This class and its sub-classes provide support for numeric integration over
+common element domains.</p>
+<p>Implement most of the methods presented in <a class="reference external" href="http://me.rice.edu/~akin/Elsevier/Chap_10.pdf">http://me.rice.edu/~akin/Elsevier/Chap_10.pdf</a>.</p>
+<p><strong>Usage</strong>:</p>
+<ul class="simple">
+<li><p>Instantiate the Integration object most suitable for your element domain. Provide <code class="xref py py-data docutils literal notranslate"><span class="pre">order</span></code>
+as the highest polynomial order of the function you want to integrate exactly.</p></li>
+<li><p>call <code class="xref py py-meth docutils literal notranslate"><span class="pre">points()</span></code> or <code class="xref py py-meth docutils literal notranslate"><span class="pre">weights()</span></code> or <code class="xref py py-meth docutils literal notranslate"><span class="pre">parameters()</span></code>
+to obatin a list of integration point coordinates or weights or both, respectively.</p></li>
+</ul>
+<section id="module-femedu.utilities.Integration">
+<span id="abstract-integration-class"></span><h2>Abstract Integration Class<a class="headerlink" href="#module-femedu.utilities.Integration" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="femedu.utilities.Integration.Integration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.Integration.</span></span><span class="sig-name descname"><span class="pre">Integration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.Integration.Integration" title="Permalink to this definition"></a></dt>
+<dd><p>Abstract interface definition for all Integration classes.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.utilities.Integration.Integration.dunavant">
+<span class="sig-name descname"><span class="pre">dunavant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.Integration.Integration.dunavant" title="Permalink to this definition"></a></dt>
+<dd><p>Triangular domain integration for polynomial of order &lt;= p</p>
+<p>For internal use only.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.utilities.Integration.Integration.gauss1D">
+<span class="sig-name descname"><span class="pre">gauss1D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nGP</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.Integration.Integration.gauss1D" title="Permalink to this definition"></a></dt>
+<dd><p>Gauss integration data for <code class="xref py py-data docutils literal notranslate"><span class="pre">nGP</span></code> on the domain <span class="math notranslate nohighlight">\([-1,+1]\)</span></p>
+<p>For internal use only.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.utilities.Integration.Integration.parameters">
+<span class="sig-name descname"><span class="pre">parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.Integration.Integration.parameters" title="Permalink to this definition"></a></dt>
+<dd><p>This is a short form of</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xi</span> <span class="o">=</span> <span class="n">points</span><span class="p">()</span>
+<span class="n">w</span>  <span class="o">=</span> <span class="n">weights</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of integration point coordinates, list of weights for those points</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.utilities.Integration.Integration.points">
+<span class="sig-name descname"><span class="pre">points</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.Integration.Integration.points" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of integration point coordinates</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.utilities.Integration.Integration.weights">
+<span class="sig-name descname"><span class="pre">weights</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.Integration.Integration.weights" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of weights for all integration points</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-femedu.utilities.LineIntegration">
+<span id="derived-classes"></span><h2>Derived Classes<a class="headerlink" href="#module-femedu.utilities.LineIntegration" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="femedu.utilities.LineIntegration.LineIntegration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.LineIntegration.</span></span><span class="sig-name descname"><span class="pre">LineIntegration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.LineIntegration.LineIntegration" title="Permalink to this definition"></a></dt>
+<dd><p>Provides integration points and weights for 1D integration</p>
+</dd></dl>
+
+<span class="target" id="module-femedu.utilities.TriangleIntegration"></span><dl class="py class">
+<dt class="sig sig-object py" id="femedu.utilities.TriangleIntegration.TriangleIntegration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.TriangleIntegration.</span></span><span class="sig-name descname"><span class="pre">TriangleIntegration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.TriangleIntegration.TriangleIntegration" title="Permalink to this definition"></a></dt>
+<dd><p>Provides integration points and weights for a triangular domain (2d)</p>
+</dd></dl>
+
+<span class="target" id="module-femedu.utilities.QuadIntegration"></span><dl class="py class">
+<dt class="sig sig-object py" id="femedu.utilities.QuadIntegration.QuadIntegration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.QuadIntegration.</span></span><span class="sig-name descname"><span class="pre">QuadIntegration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.QuadIntegration.QuadIntegration" title="Permalink to this definition"></a></dt>
+<dd><p>Provides integration points and weights for quadrilateral domains (2D)</p>
+</dd></dl>
+
+<span class="target" id="module-femedu.utilities.TetraIntegration"></span><dl class="py class">
+<dt class="sig sig-object py" id="femedu.utilities.TetraIntegration.TetraIntegration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.TetraIntegration.</span></span><span class="sig-name descname"><span class="pre">TetraIntegration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.TetraIntegration.TetraIntegration" title="Permalink to this definition"></a></dt>
+<dd><p>Provides integration points and weights for tetrahedral domains</p>
+</dd></dl>
+
+<span class="target" id="module-femedu.utilities.BrickIntegration"></span><dl class="py class">
+<dt class="sig sig-object py" id="femedu.utilities.BrickIntegration.BrickIntegration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.BrickIntegration.</span></span><span class="sig-name descname"><span class="pre">BrickIntegration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.BrickIntegration.BrickIntegration" title="Permalink to this definition"></a></dt>
+<dd><p>Provides integration points and weights for brick-like domains (3d)</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Transformation_class.html" class="btn btn-neutral float-left" title="Transformation class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Plot_Support_Classes.html" class="btn btn-neutral float-right" title="Plot Support classes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
