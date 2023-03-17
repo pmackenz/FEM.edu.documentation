@@ -16,7 +16,6 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -48,7 +47,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../implementation.html#fem-component-classes">FEM Component Classes</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../implementation.html#utility-classes">Utility Classes</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Integration classes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#module-femedu.utilities.Integration">Abstract Integration Class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#abstract-integration-class">Abstract Integration Class</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-femedu.utilities.LineIntegration">Derived Classes</a></li>
 </ul>
 </li>
@@ -115,63 +114,8 @@ to obatin a list of integration point coordinates or weights or both, respective
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Int_V g(s,t,u) dV = </span><span class="si">{</span><span class="n">F</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="module-femedu.utilities.Integration">
-<span id="abstract-integration-class"></span><h2>Abstract Integration Class<a class="headerlink" href="#module-femedu.utilities.Integration" title="Permalink to this heading"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="femedu.utilities.Integration.Integration">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.Integration.</span></span><span class="sig-name descname"><span class="pre">Integration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.Integration.Integration" title="Permalink to this definition"></a></dt>
-<dd><p>Abstract interface definition for all Integration classes.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="femedu.utilities.Integration.Integration.dunavant">
-<span class="sig-name descname"><span class="pre">dunavant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.Integration.Integration.dunavant" title="Permalink to this definition"></a></dt>
-<dd><p>Triangular domain integration for polynomial of order &lt;= p</p>
-<p>For internal use only.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="femedu.utilities.Integration.Integration.gauss1D">
-<span class="sig-name descname"><span class="pre">gauss1D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nGP</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.Integration.Integration.gauss1D" title="Permalink to this definition"></a></dt>
-<dd><p>Gauss integration data for <code class="xref py py-data docutils literal notranslate"><span class="pre">nGP</span></code> on the domain <span class="math notranslate nohighlight">\([-1,+1]\)</span></p>
-<p>For internal use only.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="femedu.utilities.Integration.Integration.parameters">
-<span class="sig-name descname"><span class="pre">parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.Integration.Integration.parameters" title="Permalink to this definition"></a></dt>
-<dd><p>This is a short form of</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xi</span> <span class="o">=</span> <span class="n">points</span><span class="p">()</span>
-<span class="n">w</span>  <span class="o">=</span> <span class="n">weights</span><span class="p">()</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>list of integration point coordinates, list of weights for those points</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="femedu.utilities.Integration.Integration.points">
-<span class="sig-name descname"><span class="pre">points</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.Integration.Integration.points" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>list of integration point coordinates</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="femedu.utilities.Integration.Integration.weights">
-<span class="sig-name descname"><span class="pre">weights</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.Integration.Integration.weights" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>list of weights for all integration points</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
+<section id="abstract-integration-class">
+<h2>Abstract Integration Class<a class="headerlink" href="#abstract-integration-class" title="Permalink to this heading"></a></h2>
 </section>
 <section id="module-femedu.utilities.LineIntegration">
 <span id="derived-classes"></span><h2>Derived Classes<a class="headerlink" href="#module-femedu.utilities.LineIntegration" title="Permalink to this heading"></a></h2>
