@@ -1,0 +1,101 @@
+
+
+.. _sphx_glr_auto_examples_trusses:
+
+.. _truss_examples:
+
+Truss Examples
+------------------
+
+For more in-depth information about the colormaps available in matplotlib
+as well as a description of their properties,
+see the :ref:`Tutorials <tutorials>`.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for easy validation of calculated deformation, r...">
+
+.. only:: html
+
+  .. image:: /auto_examples/trusses/images/thumb/sphx_glr_plot_truss01_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_trusses_plot_truss01.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Simple triangular truss.</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for relatively easy validation of calculated def...">
+
+.. only:: html
+
+  .. image:: /auto_examples/trusses/images/thumb/sphx_glr_plot_truss02_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_trusses_plot_truss02.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Statically determinate truss bridge.</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example is structurally identical to ExampleTruss01 but utilizes the alternative input sty...">
+
+.. only:: html
+
+  .. image:: /auto_examples/trusses/images/thumb/sphx_glr_plot_truss03_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_trusses_plot_truss03.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Simple triangular truss.</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for easy validation of calculated deformation, r...">
+
+.. only:: html
+
+  .. image:: /auto_examples/trusses/images/thumb/sphx_glr_plot_truss04_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_trusses_plot_truss04.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">3d truss example demonstrating large deformation analysis.</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/trusses/plot_truss01
+   /auto_examples/trusses/plot_truss02
+   /auto_examples/trusses/plot_truss03
+   /auto_examples/trusses/plot_truss04
+

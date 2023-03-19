@@ -1,0 +1,19 @@
+
+:orphan:
+
+.. _sphx_glr_auto_examples_trusses_sg_execution_times:
+
+
+Computation times
+=================
+**00:00.813** total execution time for **auto_examples_trusses** files:
+
++-----------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_trusses_plot_truss02.py` (``plot_truss02.py``) | 00:00.370 | 0.0 MB |
++-----------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_trusses_plot_truss01.py` (``plot_truss01.py``) | 00:00.185 | 0.0 MB |
++-----------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_trusses_plot_truss03.py` (``plot_truss03.py``) | 00:00.181 | 0.0 MB |
++-----------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_trusses_plot_truss04.py` (``plot_truss04.py``) | 00:00.077 | 0.0 MB |
++-----------------------------------------------------------------------------+-----------+--------+

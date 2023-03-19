@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buckling of a building frame &mdash; FEM.edu FEM.edu-v0.9.2-pre documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Buckling of a building frame" href="plot_frame04.html" />
+    <link rel="prev" title="Buckling of a vertical beam with pin-pin support" href="plot_frame02.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Frame Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot_frame01.html">Buckling of a beam with pin-pin support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_frame02.html">Buckling of a vertical beam with pin-pin support</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Buckling of a building frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_frame04.html">Buckling of a building frame</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../plates/index.html">Plate Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Example Gallery</a> &raquo;</li>
+          <li><a href="index.html">Frame Examples</a> &raquo;</li>
+      <li>Buckling of a building frame</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/auto_examples/frames/plot_frame03.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-frames-plot-frame03-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code</p>
+</div>
+<section class="sphx-glr-example-title" id="buckling-of-a-building-frame">
+<span id="sphx-glr-auto-examples-frames-plot-frame03-py"></span><h1>Buckling of a building frame<a class="headerlink" href="#buckling-of-a-building-frame" title="Permalink to this heading"></a></h1>
+<p>modeled using a 2D frame element</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">setting given parameters</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>N  = 2</p></td>
+<td><p>number of elements</p></td>
+</tr>
+<tr class="row-even"><td><p>L  = 100.0</p></td>
+<td><p>column length</p></td>
+</tr>
+<tr class="row-odd"><td><p>EA = 2000000.0</p></td>
+<td><p>axial stiffness</p></td>
+</tr>
+<tr class="row-even"><td><p>EI = 21000.0</p></td>
+<td><p>flexural stiffness</p></td>
+</tr>
+<tr class="row-odd"><td><p>w  = 0.1</p></td>
+<td><p>applied lateral load</p></td>
+</tr>
+</tbody>
+</table>
+<p>Author: Peter Mackenzie-Helnwein</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples.Example</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.solver.NewtonRaphsonSolver</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.Frame2D</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.materials.ElasticSection</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="k">class</span> <span class="nc">ExampleFrame03</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># initialize a system model</span>
+
+        <span class="n">N</span>  <span class="o">=</span> <span class="mi">8</span>     <span class="c1"># number of elements</span>
+
+        <span class="n">B</span> <span class="o">=</span> <span class="mf">240.</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="mf">200.</span>
+
+        <span class="n">E</span>  <span class="o">=</span> <span class="mf">29000.0</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="mf">20.0</span>
+        <span class="n">I</span> <span class="o">=</span> <span class="mf">10.0</span>
+
+        <span class="n">w</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">load_at_nodes_only</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># set to True to apply equivalent nodal forces and moments</span>
+
+        <span class="n">Ph</span> <span class="o">=</span> <span class="mf">0.01</span>      <span class="c1"># additional horizontal load per floor</span>
+        <span class="n">Ph</span> <span class="o">=</span> <span class="mf">0.10</span>      <span class="c1"># additional horizontal load per floor</span>
+        <span class="n">Ph</span> <span class="o">=</span> <span class="mf">1.00</span>      <span class="c1"># additional horizontal load per floor</span>
+        <span class="n">Ph</span> <span class="o">=</span> <span class="mf">0.00</span>      <span class="c1"># additional horizontal load per floor</span>
+
+        <span class="c1"># ========== setting global parameters ==============</span>
+
+        <span class="n">target_load_level</span> <span class="o">=</span> <span class="mi">27</span>
+        <span class="n">max_steps</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">load_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">target_load_level</span><span class="p">,</span> <span class="n">max_steps</span><span class="p">)</span>
+
+        <span class="c1"># ========= build your structural model =============</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">setSolver</span><span class="p">(</span><span class="n">NewtonRaphsonSolver</span><span class="p">())</span>
+
+        <span class="n">x0</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">B</span> <span class="o">/</span> <span class="mi">3</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">B</span> <span class="o">/</span> <span class="mi">3</span>
+        <span class="n">x3</span> <span class="o">=</span> <span class="n">B</span>
+
+        <span class="n">y0</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">H</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="n">y2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">H</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="n">y3</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">H</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="n">y4</span> <span class="o">=</span> <span class="n">H</span>
+
+        <span class="n">X10</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>
+        <span class="n">X11</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+
+        <span class="n">X20</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>
+        <span class="n">X21</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">X10</span><span class="p">,</span><span class="n">X11</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">X20</span><span class="p">,</span><span class="n">X21</span><span class="p">)</span>
+
+        <span class="c1"># columns</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="n">E</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="n">A</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="n">I</span><span class="p">}</span>
+
+        <span class="n">C11</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X10</span><span class="p">,</span> <span class="n">X11</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">C21</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X20</span><span class="p">,</span> <span class="n">X21</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">C11</span><span class="p">,</span><span class="n">C21</span><span class="p">)</span>
+
+        <span class="c1"># floors</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="n">E</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="n">A</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="o">*</span><span class="n">I</span><span class="p">}</span>
+
+        <span class="n">F11</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X11</span><span class="p">,</span> <span class="n">X21</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">F11</span><span class="p">)</span>
+
+        <span class="c1"># fixities</span>
+        <span class="n">X10</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">)</span>   <span class="c1"># fixed</span>
+        <span class="n">X20</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">)</span>   <span class="c1"># fixed</span>
+
+        <span class="c1"># reference load</span>
+        <span class="c1">#Pcr = np.pi**2 * EI / L**2</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">resetLoad</span><span class="p">()</span>            <span class="c1"># size load vector and initialize</span>
+        <span class="c1">#model.addLoad(Xn, -Pcr, dof=0) # add a horizontal force (first dof only) ; remember C-style indexing: 0,1,...,(n-1)</span>
+
+        <span class="k">if</span> <span class="n">load_at_nodes_only</span><span class="p">:</span>
+
+            <span class="c1"># floor loading as nodal loads ...</span>
+            <span class="n">Pe</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="n">B</span><span class="o">/</span><span class="mi">3</span>
+            <span class="n">Mi</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="p">(</span><span class="n">B</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span><span class="mi">12</span>
+
+            <span class="n">X11</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="o">-</span><span class="n">Mi</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+            <span class="n">X21</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># floor loading as distributed loads ...</span>
+            <span class="n">F11</span><span class="o">.</span><span class="n">setDistLoad</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">)</span>
+
+        <span class="c1"># wind load ...</span>
+        <span class="n">X11</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="n">Ph</span><span class="p">],[</span><span class="s1">&#39;ux&#39;</span><span class="p">])</span>   <span class="c1"># horizontal load</span>
+
+
+        <span class="c1"># show model information</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">==== perform the analysis ===</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># * apply the load in multiple smaller load steps</span>
+
+        <span class="c1"># set up data recorder</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">initRecorder</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">trackStability</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># initialize the analysis:</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">resetDisplacements</span><span class="p">()</span>   <span class="c1"># set U to all zeros</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>     <span class="c1"># define a known equilibrium solution</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">startRecorder</span><span class="p">()</span>
+
+        <span class="n">detKt</span>   <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">lambdas</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># solve for all load_levels</span>
+        <span class="k">for</span> <span class="n">loadfactor</span> <span class="ow">in</span> <span class="n">load_levels</span><span class="p">:</span>
+
+            <span class="c1"># define node X2 as the controled node; downward direction is prescribed:</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="n">loadfactor</span><span class="p">)</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="c1"># stability check</span>
+            <span class="n">lambdas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">loadfactor</span><span class="p">)</span>
+            <span class="n">detKt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">checkStability</span><span class="p">())</span>
+
+            <span class="c1"># report results</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
+            <span class="c1">#model.report()</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== next load level ===</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1">#</span>
+        <span class="c1"># ==== create some nice plots ===</span>
+        <span class="c1">#</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame3_deformed.png&quot;</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span><span class="n">detKt</span><span class="p">,</span><span class="s1">&#39;--*r&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Load factor, $ \lambda $&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Stability index, $ </span><span class="si">{det}</span><span class="s2">\: {</span><span class="se">\\</span><span class="s2">bf K}_t $&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;frame3_stability.png&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame3_force.png&quot;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s2">&quot;V&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame3_shear.png&quot;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame3_moment.png&quot;</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">plotBucklingMode</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">25.</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame3_buckling_mode0.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ex</span> <span class="o">=</span> <span class="n">ExampleFrame03</span><span class="p">()</span>
+    <span class="n">ex</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_frame03_001.png" srcset="../../_images/sphx_glr_plot_frame03_001.png" alt="Deformed System (magnification=1.00)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame03_002.png" srcset="../../_images/sphx_glr_plot_frame03_002.png" alt="Axial Forces" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame03_003.png" srcset="../../_images/sphx_glr_plot_frame03_003.png" alt="Shear Forces" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame03_004.png" srcset="../../_images/sphx_glr_plot_frame03_004.png" alt="Bending Moment" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame03_005.png" srcset="../../_images/sphx_glr_plot_frame03_005.png" alt="Mode Shape for $ \lambda = -0.21 $" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System object
+Node_0(x=[0. 0.], u=None)
+Node_1(x=[ 0. 50.], u=None)
+Node_2(x=[80.  0.], u=None)
+Node_3(x=[80. 50.], u=None)
+Frame2D(Node_0, Node_1, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_2, Node_3, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_1, Node_3, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 80.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+
+==== perform the analysis ===
+
+norm of the out-of-balance force:   0.0000e+00
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 25.362866066892394
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   2.2691e+03
+norm of the out-of-balance force:   2.7690e+01
+norm of the out-of-balance force:   2.5832e-02
+norm of the out-of-balance force:   5.8606e-05
+norm of the out-of-balance force:   1.3304e-07
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 22.553344322698855
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   2.2691e+03
+norm of the out-of-balance force:   5.7335e+01
+norm of the out-of-balance force:   1.0732e-01
+norm of the out-of-balance force:   4.9127e-04
+norm of the out-of-balance force:   2.2490e-06
+norm of the out-of-balance force:   1.0102e-08
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 19.736675218770774
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   2.2691e+03
+norm of the out-of-balance force:   8.9173e+01
+norm of the out-of-balance force:   2.5073e-01
+norm of the out-of-balance force:   1.7372e-03
+norm of the out-of-balance force:   1.2036e-05
+norm of the out-of-balance force:   8.3318e-08
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 16.91257943490218
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   2.2691e+03
+norm of the out-of-balance force:   1.2348e+02
+norm of the out-of-balance force:   4.6258e-01
+norm of the out-of-balance force:   4.3136e-03
+norm of the out-of-balance force:   4.0225e-05
+norm of the out-of-balance force:   3.7531e-07
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 14.080761870683443
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   2.2691e+03
+norm of the out-of-balance force:   1.6058e+02
+norm of the out-of-balance force:   7.4959e-01
+norm of the out-of-balance force:   8.8231e-03
+norm of the out-of-balance force:   1.0385e-04
+norm of the out-of-balance force:   1.2225e-06
+norm of the out-of-balance force:   1.4351e-08
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 11.240910493711116
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   2.2691e+03
+norm of the out-of-balance force:   2.0086e+02
+norm of the out-of-balance force:   1.1185e+00
+norm of the out-of-balance force:   1.5960e-02
+norm of the out-of-balance force:   2.2773e-04
+norm of the out-of-balance force:   3.2493e-06
+norm of the out-of-balance force:   4.6227e-08
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 8.392695084554578
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   2.2691e+03
+norm of the out-of-balance force:   2.4477e+02
+norm of the out-of-balance force:   1.5757e+00
+norm of the out-of-balance force:   2.6511e-02
+norm of the out-of-balance force:   4.4606e-04
+norm of the out-of-balance force:   7.5051e-06
+norm of the out-of-balance force:   1.2614e-07
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 5.535765867198983
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   2.2691e+03
+norm of the out-of-balance force:   2.9285e+02
+norm of the out-of-balance force:   2.1268e+00
+norm of the out-of-balance force:   4.1357e-02
+norm of the out-of-balance force:   8.0422e-04
+norm of the out-of-balance force:   1.5638e-05
+norm of the out-of-balance force:   3.0421e-07
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 2.6697520126212138
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   2.2691e+03
+norm of the out-of-balance force:   3.4574e+02
+norm of the out-of-balance force:   2.7763e+00
+norm of the out-of-balance force:   6.1460e-02
+norm of the out-of-balance force:   1.3605e-03
+norm of the out-of-balance force:   3.0118e-05
+norm of the out-of-balance force:   6.6648e-07
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = -0.20573999905063703
+
++
+
+=== next load level ===
+
+
+System Analysis Report
+=======================
+
+Nodes:
+---------------------
+  Node_0:
+      x:    [0. 0.]
+      fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
+      u:    [0. 0. 0.]
+  Node_1:
+      x:    [ 0. 50.]
+      u:    [ 0.00807668 -0.09310345 -0.20194602]
+  Node_2:
+      x:    [80.  0.]
+      fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
+      u:    [0. 0. 0.]
+  Node_3:
+      x:    [80. 50.]
+      u:    [-0.00807668 -0.09310345  0.20194602]
+
+Elements:
+---------------------
+  Frame2D: nodes ( Node_0 Node_1 )
+      material: ElasticSection
+      internal forces: f0=-1080.00 V0=-117.11 M0=2842.69 fl=-1080.00 Vl=-117.11 Ml=-3004.18 Pw=0.00 Mw=0.00
+  Frame2D: nodes ( Node_2 Node_3 )
+      material: ElasticSection
+      internal forces: f0=-1080.00 V0=117.11 M0=-2842.69 fl=-1080.00 Vl=117.11 Ml=3004.18 Pw=0.00 Mw=0.00
+  Frame2D: nodes ( Node_1 Node_3 )
+      material: ElasticSection
+      internal forces: f0=-117.11 V0=-0.00 M0=11395.82 fl=-117.11 Vl=-0.00 Ml=11395.82 Pw=-1080.00 Mw=-14400.00
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.717 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-frames-plot-frame03-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/32fd880e109e940272d694bbf6555869/plot_frame03.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_frame03.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/6e026a8327aaf7199ddd04976d668792/plot_frame03.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_frame03.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="plot_frame02.html" class="btn btn-neutral float-left" title="Buckling of a vertical beam with pin-pin support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plot_frame04.html" class="btn btn-neutral float-right" title="Buckling of a building frame" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
