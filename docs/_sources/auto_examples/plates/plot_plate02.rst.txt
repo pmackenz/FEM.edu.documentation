@@ -75,7 +75,7 @@ Basic implementation test with applied loads.
 
 Author: Peter Mackenzie-Helnwein
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-116
+.. GENERATED FROM PYTHON SOURCE LINES 59-114
 
 .. code-block:: default
 
@@ -125,9 +125,7 @@ Author: Peter Mackenzie-Helnwein
             model.setLoadFactor(0.0)
             model.solve()
             #model.report()  # activate this line for lots of debug info
-            model.plot(factor=1.0,
-                       title="Undeformed system",
-                       filename="plate02_undeformed.png")
+            model.plot(factor=0.0, title="Undeformed system", filename="plate02_undeformed.png", show_bc=1)
 
             model.setLoadFactor(1.0)
             model.solve()
@@ -143,12 +141,12 @@ Author: Peter Mackenzie-Helnwein
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 176-178
+.. GENERATED FROM PYTHON SOURCE LINES 174-176
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 178-184
+.. GENERATED FROM PYTHON SOURCE LINES 176-182
 
 .. code-block:: default
 
@@ -235,7 +233,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.256 seconds)
+   **Total running time of the script:** ( 0 minutes  0.280 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate02.py:

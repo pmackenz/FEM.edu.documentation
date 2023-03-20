@@ -299,7 +299,7 @@ Author: Peter Mackenzie-Helnwein
 
             model.report()
 
-            model.plot(factor=10.0, filename="frame4_deformed.png")
+            model.plot(factor=10.0, filename="frame4_deformed.png", show_bc=1)
 
             fig, ax = plt.subplots()
 
@@ -764,7 +764,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.186 seconds)
+   **Total running time of the script:** ( 0 minutes  5.151 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame04.py:

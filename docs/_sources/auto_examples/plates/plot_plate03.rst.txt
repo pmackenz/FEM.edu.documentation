@@ -173,7 +173,7 @@ Author: Peter Mackenzie-Helnwein
 
             model.report()
 
-            model.plot(factor=10., title="undeformed system", filename="plate03_undeformed.png")
+            model.plot(factor=0., title="undeformed system", filename="plate03_undeformed.png", show_bc=1)
 
             model.setLoadFactor(10.0)
             model.solve()
@@ -626,7 +626,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.651 seconds)
+   **Total running time of the script:** ( 0 minutes  0.658 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate03.py:

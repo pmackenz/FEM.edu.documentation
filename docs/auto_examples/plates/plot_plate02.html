@@ -46,16 +46,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Plate Examples</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="plot_plate01.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate03.html">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate04.html">Patch test for triangular plate under in-plane loading</a></li>
-<li class="toctree-l4"><a class="reference internal" href="plot_plate5.html">Pulling a plate with a circular hole</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate05.html">Pulling a plate with a circular hole</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
@@ -199,9 +201,7 @@ to download the full example code</p>
         <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
         <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
         <span class="c1">#model.report()  # activate this line for lots of debug info</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-                   <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Undeformed system&quot;</span><span class="p">,</span>
-                   <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate02_undeformed.png&quot;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Undeformed system&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate02_undeformed.png&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
         <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
         <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
@@ -266,7 +266,7 @@ Elements:
           Node_1: [5. 0.]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.256 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.280 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate02-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/b94a6b667a7a0e628ad0a181381ed7cf/plot_plate02.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate02.py</span></code></a></p>
