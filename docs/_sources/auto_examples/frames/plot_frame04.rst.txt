@@ -39,7 +39,7 @@ modeled using a 2D frame element
 
 Author: Peter Mackenzie-Helnwein
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-297
+.. GENERATED FROM PYTHON SOURCE LINES 23-301
 
 .. code-block:: default
 
@@ -301,11 +301,15 @@ Author: Peter Mackenzie-Helnwein
 
             model.plot(factor=10.0, filename="frame4_deformed.png")
 
-            plt.plot(lambdas,detKt,'--*r')
-            plt.grid(True)
-            plt.xlabel('Load factor, $ \lambda $')
-            plt.ylabel("Stability index, $ {det}\: {\\bf K}_t $")
-            plt.show()
+            fig, ax = plt.subplots()
+
+            ax.plot(lambdas,detKt,'--*r')
+            ax.grid(True)
+            ax.set_xlabel('Load factor, $ \lambda $')
+            ax.set_ylabel("Stability index, $ {det}\: {\\bf K}_t $")
+
+            fig.savefig("frame4_stability.png")
+            fig.show()
 
             model.beamValuePlot("F", filename="frame4_force.png")
             model.beamValuePlot("V", filename="frame4_shear.png")
@@ -324,12 +328,12 @@ Author: Peter Mackenzie-Helnwein
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 313-315
+.. GENERATED FROM PYTHON SOURCE LINES 317-319
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 315-321
+.. GENERATED FROM PYTHON SOURCE LINES 319-325
 
 .. code-block:: default
 
@@ -355,50 +359,57 @@ Run the example by creating an instance of the problem and executing it by calli
     *
 
       .. image-sg:: /auto_examples/frames/images/sphx_glr_plot_frame04_002.png
-         :alt: Axial Forces
+         :alt: plot frame04
          :srcset: /auto_examples/frames/images/sphx_glr_plot_frame04_002.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/frames/images/sphx_glr_plot_frame04_003.png
-         :alt: Shear Forces
+         :alt: Axial Forces
          :srcset: /auto_examples/frames/images/sphx_glr_plot_frame04_003.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/frames/images/sphx_glr_plot_frame04_004.png
-         :alt: Bending Moment
+         :alt: Shear Forces
          :srcset: /auto_examples/frames/images/sphx_glr_plot_frame04_004.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/frames/images/sphx_glr_plot_frame04_005.png
-         :alt: Mode Shape for $ \lambda = -0.05 $
+         :alt: Bending Moment
          :srcset: /auto_examples/frames/images/sphx_glr_plot_frame04_005.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/frames/images/sphx_glr_plot_frame04_006.png
-         :alt: Mode Shape for $ \lambda = 3.53 $
+         :alt: Mode Shape for $ \lambda = -0.05 $
          :srcset: /auto_examples/frames/images/sphx_glr_plot_frame04_006.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/frames/images/sphx_glr_plot_frame04_007.png
-         :alt: Mode Shape for $ \lambda = 13.51 $
+         :alt: Mode Shape for $ \lambda = 3.53 $
          :srcset: /auto_examples/frames/images/sphx_glr_plot_frame04_007.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/frames/images/sphx_glr_plot_frame04_008.png
-         :alt: Mode Shape for $ \lambda = 34.10 $
+         :alt: Mode Shape for $ \lambda = 13.51 $
          :srcset: /auto_examples/frames/images/sphx_glr_plot_frame04_008.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/frames/images/sphx_glr_plot_frame04_009.png
+         :alt: Mode Shape for $ \lambda = 34.10 $
+         :srcset: /auto_examples/frames/images/sphx_glr_plot_frame04_009.png
          :class: sphx-glr-multi-img
 
 
@@ -753,7 +764,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.503 seconds)
+   **Total running time of the script:** ( 0 minutes  5.186 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame04.py:

@@ -88,6 +88,23 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Using PatchMesher to model a quarter of the plate">
+
+.. only:: html
+
+  .. image:: /auto_examples/plates/images/thumb/sphx_glr_plot_plate5_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_plates_plot_plate5.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pulling a plate with a circular hole</div>
+    </div>
+
+
+.. raw:: html
+
     </div>
 
 
@@ -98,4 +115,5 @@ see the :ref:`Tutorials <tutorials>`.
    /auto_examples/plates/plot_plate02
    /auto_examples/plates/plot_plate03
    /auto_examples/plates/plot_plate04
+   /auto_examples/plates/plot_plate5
 

@@ -142,12 +142,33 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dd><p>Create a deformed system plot</p>
 <p>If <strong>file</strong> is given, store the plot to that file.
 Use proper file extensions to indicate the desired format (.png, .pdf)</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>factor</strong> – displacement scaling factor</p></li>
 <li><p><strong>file</strong> – filename (str)</p></li>
+<li><p><strong>**kwargs</strong> – see list of optional parameters below.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Keywords</dt>
+<dd class="field-even"><p>optional parameters</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_bc</span></code></p></td>
+<td><p>set to <strong>True</strong> to mark fixed DOFs</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_loads</span></code></p></td>
+<td><p>set to <strong>True</strong> to plot loads</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_reactions</span></code></p></td>
+<td><p>set to <strong>True</strong> to plot nodal reactions</p></td>
+</tr>
+</tbody>
+</table>
 </dd>
 </dl>
 </dd></dl>

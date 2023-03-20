@@ -39,11 +39,11 @@ modeled using a 2D frame element
 
 Author: Peter Mackenzie-Helnwein
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-187
+.. GENERATED FROM PYTHON SOURCE LINES 23-190
 
 .. code-block:: default
 
-
+    import matplotlib.pyplot as plt
     from femedu.examples.Example import *
 
     from femedu.domain import *
@@ -193,12 +193,15 @@ Author: Peter Mackenzie-Helnwein
 
             model.plot(factor=1.0, filename="frame3_deformed.png")
 
-            plt.plot(lambdas,detKt,'--*r')
-            plt.grid(True)
-            plt.xlabel('Load factor, $ \lambda $')
-            plt.ylabel("Stability index, $ {det}\: {\\bf K}_t $")
-            plt.savefig("frame3_stability.png")
-            plt.show()
+            fig, ax = plt.subplots()
+
+            ax.plot(lambdas,detKt,'--*r')
+            ax.grid(True)
+            ax.set_xlabel('Load factor, $ \lambda $')
+            ax.set_ylabel("Stability index, $ {det}\: {\\bf K}_t $")
+
+            fig.savefig("frame3_stability.png")
+            fig.show()
 
             model.beamValuePlot("F", filename="frame3_force.png")
             model.beamValuePlot("V", filename="frame3_shear.png")
@@ -214,12 +217,12 @@ Author: Peter Mackenzie-Helnwein
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 203-205
+.. GENERATED FROM PYTHON SOURCE LINES 206-208
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 205-212
+.. GENERATED FROM PYTHON SOURCE LINES 208-215
 
 .. code-block:: default
 
@@ -246,29 +249,36 @@ Run the example by creating an instance of the problem and executing it by calli
     *
 
       .. image-sg:: /auto_examples/frames/images/sphx_glr_plot_frame03_002.png
-         :alt: Axial Forces
+         :alt: plot frame03
          :srcset: /auto_examples/frames/images/sphx_glr_plot_frame03_002.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/frames/images/sphx_glr_plot_frame03_003.png
-         :alt: Shear Forces
+         :alt: Axial Forces
          :srcset: /auto_examples/frames/images/sphx_glr_plot_frame03_003.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/frames/images/sphx_glr_plot_frame03_004.png
-         :alt: Bending Moment
+         :alt: Shear Forces
          :srcset: /auto_examples/frames/images/sphx_glr_plot_frame03_004.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/frames/images/sphx_glr_plot_frame03_005.png
-         :alt: Mode Shape for $ \lambda = -0.21 $
+         :alt: Bending Moment
          :srcset: /auto_examples/frames/images/sphx_glr_plot_frame03_005.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/frames/images/sphx_glr_plot_frame03_006.png
+         :alt: Mode Shape for $ \lambda = -0.21 $
+         :srcset: /auto_examples/frames/images/sphx_glr_plot_frame03_006.png
          :class: sphx-glr-multi-img
 
 
@@ -466,7 +476,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.717 seconds)
+   **Total running time of the script:** ( 0 minutes  1.166 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame03.py:

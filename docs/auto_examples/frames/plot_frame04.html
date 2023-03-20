@@ -384,11 +384,15 @@ to download the full example code</p>
 
         <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame4_deformed.png&quot;</span><span class="p">)</span>
 
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span><span class="n">detKt</span><span class="p">,</span><span class="s1">&#39;--*r&#39;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Load factor, $ \lambda $&#39;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Stability index, $ </span><span class="si">{det}</span><span class="s2">\: {</span><span class="se">\\</span><span class="s2">bf K}_t $&quot;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span><span class="n">detKt</span><span class="p">,</span><span class="s1">&#39;--*r&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Load factor, $ \lambda $&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Stability index, $ </span><span class="si">{det}</span><span class="s2">\: {</span><span class="se">\\</span><span class="s2">bf K}_t $&quot;</span><span class="p">)</span>
+
+        <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;frame4_stability.png&quot;</span><span class="p">)</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
         <span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame4_force.png&quot;</span><span class="p">)</span>
         <span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s2">&quot;V&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame4_shear.png&quot;</span><span class="p">)</span>
@@ -408,13 +412,14 @@ to download the full example code</p>
 </div>
 <ul class="sphx-glr-horizontal">
 <li><img src="../../_images/sphx_glr_plot_frame04_001.png" srcset="../../_images/sphx_glr_plot_frame04_001.png" alt="Deformed System (magnification=10.00)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_frame04_002.png" srcset="../../_images/sphx_glr_plot_frame04_002.png" alt="Axial Forces" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_frame04_003.png" srcset="../../_images/sphx_glr_plot_frame04_003.png" alt="Shear Forces" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_frame04_004.png" srcset="../../_images/sphx_glr_plot_frame04_004.png" alt="Bending Moment" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_frame04_005.png" srcset="../../_images/sphx_glr_plot_frame04_005.png" alt="Mode Shape for $ \lambda = -0.05 $" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_frame04_006.png" srcset="../../_images/sphx_glr_plot_frame04_006.png" alt="Mode Shape for $ \lambda = 3.53 $" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_frame04_007.png" srcset="../../_images/sphx_glr_plot_frame04_007.png" alt="Mode Shape for $ \lambda = 13.51 $" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_frame04_008.png" srcset="../../_images/sphx_glr_plot_frame04_008.png" alt="Mode Shape for $ \lambda = 34.10 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_002.png" srcset="../../_images/sphx_glr_plot_frame04_002.png" alt="plot frame04" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_003.png" srcset="../../_images/sphx_glr_plot_frame04_003.png" alt="Axial Forces" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_004.png" srcset="../../_images/sphx_glr_plot_frame04_004.png" alt="Shear Forces" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_005.png" srcset="../../_images/sphx_glr_plot_frame04_005.png" alt="Bending Moment" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_006.png" srcset="../../_images/sphx_glr_plot_frame04_006.png" alt="Mode Shape for $ \lambda = -0.05 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_007.png" srcset="../../_images/sphx_glr_plot_frame04_007.png" alt="Mode Shape for $ \lambda = 3.53 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_008.png" srcset="../../_images/sphx_glr_plot_frame04_008.png" alt="Mode Shape for $ \lambda = 13.51 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_009.png" srcset="../../_images/sphx_glr_plot_frame04_009.png" alt="Mode Shape for $ \lambda = 34.10 $" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System object
 Node_0(x=[0. 0.], u=None)
@@ -757,7 +762,7 @@ Elements:
       internal forces: f0=-63.72 V0=52.87 M0=-3007.97 fl=-63.72 Vl=52.87 Ml=9679.65 Pw=-396.00 Mw=-15840.00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.503 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.186 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-frames-plot-frame04-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/40d880429670bf5ce54912b139b4e5d9/plot_frame04.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_frame04.py</span></code></a></p>
