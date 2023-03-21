@@ -18,6 +18,7 @@ from femedu.materials.ElasticSection import *
 
 class ExampleBeam01(Example):
 
+    # sphinx_gallery_start_ignore
     def docString(self):
         s = """
         Single span beam under uniform load. 
@@ -29,6 +30,7 @@ class ExampleBeam01(Example):
         """
         return s
 
+    # sphinx_gallery_end_ignore
     def problem(self):
         # initialize a system model
         SpanLength = 10.0 * 12

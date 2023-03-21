@@ -17,6 +17,7 @@ from femedu.materials.ElasticSection import *
 
 class ExampleBeam02(Example):
 
+    # sphinx_gallery_start_ignore
     def docString(self):
         s = """
         Three-span continuous beam under uniform load. 
@@ -28,6 +29,7 @@ class ExampleBeam02(Example):
         """
         return s
 
+    # sphinx_gallery_end_ignore
     def problem(self):
         # initialize a system model
         SpanLengths = [ 8.0 * 12, 10.0 * 12, 8.0 * 12 ]

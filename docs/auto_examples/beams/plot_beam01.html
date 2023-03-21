@@ -23,7 +23,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Three-span continuous beam under uniform load." href="beam02.html" />
+    <link rel="next" title="Three-span continuous beam under uniform load." href="plot_beam02.html" />
     <link rel="prev" title="Beam Examples" href="index.html" /> 
 </head>
 
@@ -52,7 +52,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Beam Examples</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Single span beam under uniform load.</a></li>
-<li class="toctree-l4"><a class="reference internal" href="beam02.html">Three-span continuous beam under uniform load.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_beam02.html">Three-span continuous beam under uniform load.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
@@ -85,7 +85,7 @@
           <li><a href="index.html">Beam Examples</a> &raquo;</li>
       <li>Single span beam under uniform load.</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/auto_examples/beams/beam01.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/auto_examples/beams/plot_beam01.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -95,11 +95,11 @@
              
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
-<p><a class="reference internal" href="#sphx-glr-download-auto-examples-beams-beam01-py"><span class="std std-ref">Go to the end</span></a>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-beams-plot-beam01-py"><span class="std std-ref">Go to the end</span></a>
 to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="single-span-beam-under-uniform-load">
-<span id="sphx-glr-auto-examples-beams-beam01-py"></span><h1>Single span beam under uniform load.<a class="headerlink" href="#single-span-beam-under-uniform-load" title="Permalink to this heading"></a></h1>
+<span id="sphx-glr-auto-examples-beams-plot-beam01-py"></span><h1>Single span beam under uniform load.<a class="headerlink" href="#single-span-beam-under-uniform-load" title="Permalink to this heading"></a></h1>
 <p>The system is statically determined and allows for easy validation of
 calculated deformation, reactions and internal forces.</p>
 <p>Author: Peter Mackenzie-Helnwein</p>
@@ -112,17 +112,6 @@ calculated deformation, reactions and internal forces.</p>
 
 
 <span class="k">class</span> <span class="nc">ExampleBeam01</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="nf">docString</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        Single span beam under uniform load.</span>
-
-<span class="s2">        The system is statically determined and allows for easy validation of</span>
-<span class="s2">        calculated deformation, reactions and internal forces.</span>
-
-<span class="s2">        Author: Peter Mackenzie-Helnwein</span>
-<span class="s2">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">s</span>
 
     <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># initialize a system model</span>
@@ -197,13 +186,58 @@ calculated deformation, reactions and internal forces.</p>
     <span class="n">ex</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-beams-beam01-py">
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_beam01_001.png" srcset="../../_images/sphx_glr_plot_beam01_001.png" alt="Deformed System (magnification=10.00)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_beam01_002.png" srcset="../../_images/sphx_glr_plot_beam01_002.png" alt="Shear Forces" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_beam01_003.png" srcset="../../_images/sphx_glr_plot_beam01_003.png" alt="Bending Moment" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System Analysis Report
+=======================
+
+Nodes:
+---------------------
+  Node_0:
+      x:    [0. 0.]
+      fix:  [&#39;ux&#39;, &#39;uy&#39;]
+      u:    [ 0.         -0.03615668]
+  Node_1:
+      x:    [30.  0.]
+      u:    [-0.97547707 -0.02561098]
+  Node_2:
+      x:    [60.  0.]
+      P:    [-40.   0.]
+      u:    [-1.38600603e+00 -1.37017950e-17]
+  Node_3:
+      x:    [90.  0.]
+      u:    [-0.97547707  0.02561098]
+  Node_4:
+      x:    [120.   0.]
+      fix:  [&#39;uy&#39;]
+      u:    [0.         0.03615668]
+
+Elements:
+---------------------
+  Beam2D: node 0 to node 1:
+     material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
+     nodal forces: Vi:65.0 Mi:-74.99999999999909 Vj:-65.0 Mj:2024.999999999989
+  Beam2D: node 1 to node 2:
+     material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
+     nodal forces: Vi:34.999999999999886 Mi:-2024.9999999999864 Vj:-34.999999999999886 Mj:3074.999999999981
+  Beam2D: node 2 to node 3:
+     material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
+     nodal forces: Vi:-34.999999999999716 Mi:-3074.99999999998 Vj:34.999999999999716 Mj:2024.9999999999936
+  Beam2D: node 3 to node 4:
+     material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
+     nodal forces: Vi:-65.00000000000023 Mi:-2024.9999999999936 Vj:65.00000000000023 Mj:74.99999999999818
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.798 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-beams-plot-beam01-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/656fedca07ca60211c16c57ac78c4cab/beam01.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">beam01.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/307073f7a96c279b06430f73afb4cc59/plot_beam01.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_beam01.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/0db615ce5cca17dab5f2a210c2bdc24d/beam01.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">beam01.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/82d91fdc436177ddf50bd42c32fddf6c/plot_beam01.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_beam01.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -214,7 +248,7 @@ calculated deformation, reactions and internal forces.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Beam Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="beam02.html" class="btn btn-neutral float-right" title="Three-span continuous beam under uniform load." accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="plot_beam02.html" class="btn btn-neutral float-right" title="Three-span continuous beam under uniform load." accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
