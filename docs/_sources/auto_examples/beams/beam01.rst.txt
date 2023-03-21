@@ -27,7 +27,7 @@ calculated deformation, reactions and internal forces.
 
 Author: Peter Mackenzie-Helnwein
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-98
+.. GENERATED FROM PYTHON SOURCE LINES 11-99
 
 .. code-block:: default
 
@@ -117,6 +117,22 @@ Author: Peter Mackenzie-Helnwein
 
             model.beamValuePlot('V', filename="beam01_shear.png")
             model.beamValuePlot('M', filename="beam01_moment.png")
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 100-102
+
+Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 102-107
+
+.. code-block:: default
+
+
+    if __name__ == "__main__":
+        ex = ExampleBeam01()
+        ex.run()
 
 
 

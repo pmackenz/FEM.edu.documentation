@@ -92,3 +92,11 @@ class ExampleBeam02(Example):
         model.beamValuePlot('V', filename="beam02_shear.png")
         model.beamValuePlot('M', filename="beam02_moment.png")
 
+
+# %%
+# Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
+#
+
+if __name__ == "__main__":
+    ex = ExampleBeam02()
+    ex.run()
