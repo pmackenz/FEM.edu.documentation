@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Face classes &mdash; FEM.edu FEM.edu-v0.9.2-pre documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Truss class" href="Truss_class.html" />
+    <link rel="prev" title="Element classes" href="Element_class.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Example Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../implementation.html">Implementation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../implementation.html#fem-component-classes">FEM Component Classes</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="Element_class.html">Element classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Element_class.html#module-femedu.elements.DrawElement">Inherited methods</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="Element_class.html#helper-classes">Helper Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Element_class.html#derived-classes">Derived Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Materials/Material_class.html">Material class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Mesher/Mesher_class.html">Mesher classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Domain/Node_class.html">Node class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Solvers/Solver_class.html">Solver class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Domain/System_class.html">System class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Domain/Transformation_class.html">Transformation class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../implementation.html#utility-classes">Utility Classes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../implementation.html">Implementation</a> &raquo;</li>
+          <li><a href="Element_class.html">Element classes</a> &raquo;</li>
+      <li>Face classes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/implementation/Elements/Face_classes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="face-classes">
+<h1>Face classes<a class="headerlink" href="#face-classes" title="Permalink to this heading"></a></h1>
+<p>This class represents faces of 2D and 3D elements.
+The are used to store and compute surface loads on elements.</p>
+<p>Future applications will include contact.</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">Faces</span></code> class is an abstract class defining the interface for all face classes.</p>
+<span class="target" id="module-femedu.elements.Faces"></span><dl class="py class">
+<dt class="sig sig-object py" id="femedu.elements.Faces.Faces">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.Faces.</span></span><span class="sig-name descname"><span class="pre">Faces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">nds</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Faces.Faces" title="Permalink to this definition"></a></dt>
+<dd><p>abstract class: representing one face of a 2D or 3D element</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.Faces.Faces.computeNodalForces">
+<span class="sig-name descname"><span class="pre">computeNodalForces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Faces.Faces.computeNodalForces" title="Permalink to this definition"></a></dt>
+<dd><p>This is a virtual method.  Any class derived from <a class="reference internal" href="#femedu.elements.Faces.Faces" title="femedu.elements.Faces.Faces"><code class="xref py py-class docutils literal notranslate"><span class="pre">Faces</span></code></a> must implement this function.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.Faces.Faces.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Faces.Faces.initialize" title="Permalink to this definition"></a></dt>
+<dd><p>This is a virtual method.  Any class derived from <a class="reference internal" href="#femedu.elements.Faces.Faces" title="femedu.elements.Faces.Faces"><code class="xref py py-class docutils literal notranslate"><span class="pre">Faces</span></code></a> must implement this function.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.Faces.Faces.setLoad">
+<span class="sig-name descname"><span class="pre">setLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Faces.Faces.setLoad" title="Permalink to this definition"></a></dt>
+<dd><p>Defines surface loading on this Face.
+Coordinates n and s are outward normal and tangent directions, respectively.
+The local tangent is defined from the first to th esecond (to the third) node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pn</strong> – normal force per unit length</p></li>
+<li><p><strong>ps</strong> – tangential force per unit length</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<section id="module-femedu.elements.Face2D">
+<span id="derived-classes"></span><h2>Derived Classes<a class="headerlink" href="#module-femedu.elements.Face2D" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="femedu.elements.Face2D.Face2D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.Face2D.</span></span><span class="sig-name descname"><span class="pre">Face2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">nds</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Face2D.Face2D" title="Permalink to this definition"></a></dt>
+<dd><p>Implementation representing one face of a 2D element</p>
+<p>The face may be defined by two nodes (liner interpolation)
+or three nodes (quadratic interpolation).
+The node order for quadratic elements is nodes at <cite>[-1, 0, +1]</cite></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.Face2D.Face2D.computeNodalForces">
+<span class="sig-name descname"><span class="pre">computeNodalForces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Face2D.Face2D.computeNodalForces" title="Permalink to this definition"></a></dt>
+<dd><p>Implementation of nodal force calculation from surface loads.</p>
+<p>The surface is described  as</p>
+<div class="math notranslate nohighlight">
+\[{\boldsymbol\varphi}(s) = \sum_k \phi_k(s) {\bf X}_k\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi_k(s)\)</span> is the k-th shape function on <cite>[-1,1]</cite>,
+and <span class="math notranslate nohighlight">\({\bf X}_k\)</span> is the coordinate of the k-th node.</p>
+<p>The nodal forces are obtained as</p>
+<div class="math notranslate nohighlight">
+\[{\bf P}_i = \int_{-1}^{+1} \phi_i(s)
+\left(
+    p_n \, {\boldsymbol\varphi}_{,s} \times {\bf k}
+    + p_s \, {\boldsymbol\varphi}_{,s}
+\right) ds\]</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.Face2D.Face2D.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Face2D.Face2D.initialize" title="Permalink to this definition"></a></dt>
+<dd><p>This method computes area and normals for <a class="reference internal" href="#femedu.elements.Face2D.Face2D" title="femedu.elements.Face2D.Face2D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Face2D</span></code></a>.</p>
+<p>It is called by the constructor of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Faces</span></code> class.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-femedu.elements.Face3D"></span><dl class="py class">
+<dt class="sig sig-object py" id="femedu.elements.Face3D.Face3D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.Face3D.</span></span><span class="sig-name descname"><span class="pre">Face3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">nds</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Face3D.Face3D" title="Permalink to this definition"></a></dt>
+<dd><p>Implementation representing one face of a 3D brick or tetrahedral element</p>
+<p>The face may be defined by</p>
+<ul class="simple">
+<li><p>three nodes: liner interpolation of triangular face</p></li>
+<li><p>four nodes:  linear interpolation of an 8-node brick.</p></li>
+<li><p>six nodes:   quadratic interpolation of triangular face</p></li>
+<li><p>eight nodes: quadratic interpolation of a 20-node brick.</p></li>
+<li><p>nine nodes:  quadratic interpolation of a 27-node brick.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The node order of 3D faces follows the node order of similar shaped 2D elements.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.Face3D.Face3D.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Face3D.Face3D.initialize" title="Permalink to this definition"></a></dt>
+<dd><p>This method computes area and normals for <a class="reference internal" href="#femedu.elements.Face3D.Face3D" title="femedu.elements.Face3D.Face3D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Face3D</span></code></a>.</p>
+<p>It is called by the constructor of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Faces</span></code> class.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Element_class.html" class="btn btn-neutral float-left" title="Element classes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Truss_class.html" class="btn btn-neutral float-right" title="Truss class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
