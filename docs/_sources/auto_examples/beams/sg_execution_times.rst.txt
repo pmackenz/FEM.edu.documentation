@@ -6,10 +6,10 @@
 
 Computation times
 =================
-**00:01.085** total execution time for **auto_examples_beams** files:
+**00:01.876** total execution time for **auto_examples_beams** files:
 
 +-------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_beams_plot_beam01.py` (``plot_beam01.py``) | 00:00.798 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_beams_plot_beam01.py` (``plot_beam01.py``) | 00:01.498 | 0.0 MB |
 +-------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_beams_plot_beam02.py` (``plot_beam02.py``) | 00:00.286 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_beams_plot_beam02.py` (``plot_beam02.py``) | 00:00.377 | 0.0 MB |
 +-------------------------------------------------------------------------+-----------+--------+

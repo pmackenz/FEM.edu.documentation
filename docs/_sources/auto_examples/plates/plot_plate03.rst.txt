@@ -301,7 +301,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Elements:
     ---------------------
-      LinearTriangle: nodes ( Node_0 Node_1 Node_5 )
+      LinearTriangle_0: nodes ( Node_0 Node_1 Node_5 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -309,31 +309,31 @@ Run the example by creating an instance of the problem and executing it by calli
               Node_0: []
               Node_1: []
               Node_5: []
-      LinearTriangle: nodes ( Node_1 Node_2 Node_6 )
+      LinearTriangle_0: nodes ( Node_1 Node_2 Node_6 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_2 Node_3 Node_7 )
+      LinearTriangle_0: nodes ( Node_2 Node_3 Node_7 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_3 Node_4 Node_8 )
+      LinearTriangle_0: nodes ( Node_3 Node_4 Node_8 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_6 Node_5 Node_1 )
+      LinearTriangle_0: nodes ( Node_6 Node_5 Node_1 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_7 Node_6 Node_2 )
+      LinearTriangle_0: nodes ( Node_7 Node_6 Node_2 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_8 Node_7 Node_3 )
+      LinearTriangle_0: nodes ( Node_8 Node_7 Node_3 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_9 Node_8 Node_4 )
+      LinearTriangle_0: nodes ( Node_9 Node_8 Node_4 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -341,7 +341,7 @@ Run the example by creating an instance of the problem and executing it by calli
               Node_9: []
               Node_8: []
               Node_4: []
-      LinearTriangle: nodes ( Node_5 Node_6 Node_10 )
+      LinearTriangle_0: nodes ( Node_5 Node_6 Node_10 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -349,31 +349,31 @@ Run the example by creating an instance of the problem and executing it by calli
               Node_5: []
               Node_6: []
               Node_10: []
-      LinearTriangle: nodes ( Node_6 Node_7 Node_11 )
+      LinearTriangle_0: nodes ( Node_6 Node_7 Node_11 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_7 Node_8 Node_12 )
+      LinearTriangle_0: nodes ( Node_7 Node_8 Node_12 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_8 Node_9 Node_13 )
+      LinearTriangle_0: nodes ( Node_8 Node_9 Node_13 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_11 Node_10 Node_6 )
+      LinearTriangle_0: nodes ( Node_11 Node_10 Node_6 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_12 Node_11 Node_7 )
+      LinearTriangle_0: nodes ( Node_12 Node_11 Node_7 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_13 Node_12 Node_8 )
+      LinearTriangle_0: nodes ( Node_13 Node_12 Node_8 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_14 Node_13 Node_9 )
+      LinearTriangle_0: nodes ( Node_14 Node_13 Node_9 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -381,7 +381,7 @@ Run the example by creating an instance of the problem and executing it by calli
               Node_14: []
               Node_13: []
               Node_9: []
-      LinearTriangle: nodes ( Node_10 Node_11 Node_15 )
+      LinearTriangle_0: nodes ( Node_10 Node_11 Node_15 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -389,31 +389,31 @@ Run the example by creating an instance of the problem and executing it by calli
               Node_10: []
               Node_11: []
               Node_15: []
-      LinearTriangle: nodes ( Node_11 Node_12 Node_16 )
+      LinearTriangle_0: nodes ( Node_11 Node_12 Node_16 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_12 Node_13 Node_17 )
+      LinearTriangle_0: nodes ( Node_12 Node_13 Node_17 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_13 Node_14 Node_18 )
+      LinearTriangle_0: nodes ( Node_13 Node_14 Node_18 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_16 Node_15 Node_11 )
+      LinearTriangle_0: nodes ( Node_16 Node_15 Node_11 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_17 Node_16 Node_12 )
+      LinearTriangle_0: nodes ( Node_17 Node_16 Node_12 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_18 Node_17 Node_13 )
+      LinearTriangle_0: nodes ( Node_18 Node_17 Node_13 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_19 Node_18 Node_14 )
+      LinearTriangle_0: nodes ( Node_19 Node_18 Node_14 )
           material: PlaneStress
           strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
           stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -498,7 +498,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Elements:
     ---------------------
-      LinearTriangle: nodes ( Node_0 Node_1 Node_5 )
+      LinearTriangle_0: nodes ( Node_0 Node_1 Node_5 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=-6.038e-17 zz=-9.329e-04
           stress: xx=9.951e+01 yy=2.959e-12 xy=-4.830e-13 zz=0.000e+00
@@ -506,31 +506,31 @@ Run the example by creating an instance of the problem and executing it by calli
               Node_0: [-800.    0.]
               Node_1: [0. 0.]
               Node_5: [-800.    0.]
-      LinearTriangle: nodes ( Node_1 Node_2 Node_6 )
+      LinearTriangle_0: nodes ( Node_1 Node_2 Node_6 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=-7.754e-17 zz=-9.329e-04
           stress: xx=9.951e+01 yy=1.776e-12 xy=-6.203e-13 zz=0.000e+00
-      LinearTriangle: nodes ( Node_2 Node_3 Node_7 )
+      LinearTriangle_0: nodes ( Node_2 Node_3 Node_7 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=2.659e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=6.516e-12 xy=2.127e-12 zz=0.000e+00
-      LinearTriangle: nodes ( Node_3 Node_4 Node_8 )
+      LinearTriangle_0: nodes ( Node_3 Node_4 Node_8 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=-5.043e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=5.933e-13 xy=-4.035e-12 zz=0.000e+00
-      LinearTriangle: nodes ( Node_6 Node_5 Node_1 )
+      LinearTriangle_0: nodes ( Node_6 Node_5 Node_1 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=-5.579e-17 zz=-9.329e-04
           stress: xx=9.951e+01 yy=4.146e-12 xy=-4.463e-13 zz=0.000e+00
-      LinearTriangle: nodes ( Node_7 Node_6 Node_2 )
+      LinearTriangle_0: nodes ( Node_7 Node_6 Node_2 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=5.017e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=4.146e-12 xy=4.014e-12 zz=0.000e+00
-      LinearTriangle: nodes ( Node_8 Node_7 Node_3 )
+      LinearTriangle_0: nodes ( Node_8 Node_7 Node_3 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=-5.017e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=1.776e-12 xy=-4.014e-12 zz=0.000e+00
-      LinearTriangle: nodes ( Node_9 Node_8 Node_4 )
+      LinearTriangle_0: nodes ( Node_9 Node_8 Node_4 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=1.109e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=5.329e-12 xy=8.871e-13 zz=0.000e+00
@@ -538,7 +538,7 @@ Run the example by creating an instance of the problem and executing it by calli
               Node_9: [800.   0.]
               Node_8: [0. 0.]
               Node_4: [800.   0.]
-      LinearTriangle: nodes ( Node_5 Node_6 Node_10 )
+      LinearTriangle_0: nodes ( Node_5 Node_6 Node_10 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=8.474e-17 zz=-9.329e-04
           stress: xx=9.951e+01 yy=-5.933e-13 xy=6.779e-13 zz=0.000e+00
@@ -546,31 +546,31 @@ Run the example by creating an instance of the problem and executing it by calli
               Node_5: [-1600.     0.]
               Node_6: [0. 0.]
               Node_10: [-1600.     0.]
-      LinearTriangle: nodes ( Node_6 Node_7 Node_11 )
+      LinearTriangle_0: nodes ( Node_6 Node_7 Node_11 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=-2.841e-17 zz=-9.329e-04
           stress: xx=9.951e+01 yy=7.695e-12 xy=-2.273e-13 zz=0.000e+00
-      LinearTriangle: nodes ( Node_7 Node_8 Node_12 )
+      LinearTriangle_0: nodes ( Node_7 Node_8 Node_12 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=-5.544e-17 zz=-9.329e-04
           stress: xx=9.951e+01 yy=-4.142e-12 xy=-4.435e-13 zz=0.000e+00
-      LinearTriangle: nodes ( Node_8 Node_9 Node_13 )
+      LinearTriangle_0: nodes ( Node_8 Node_9 Node_13 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=5.010e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=1.776e-12 xy=4.008e-12 zz=0.000e+00
-      LinearTriangle: nodes ( Node_11 Node_10 Node_6 )
+      LinearTriangle_0: nodes ( Node_11 Node_10 Node_6 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=1.653e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=-5.933e-13 xy=1.322e-12 zz=0.000e+00
-      LinearTriangle: nodes ( Node_12 Node_11 Node_7 )
+      LinearTriangle_0: nodes ( Node_12 Node_11 Node_7 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=-4.456e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=-2.959e-12 xy=-3.565e-12 zz=0.000e+00
-      LinearTriangle: nodes ( Node_13 Node_12 Node_8 )
+      LinearTriangle_0: nodes ( Node_13 Node_12 Node_8 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=3.902e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=1.776e-12 xy=3.121e-12 zz=0.000e+00
-      LinearTriangle: nodes ( Node_14 Node_13 Node_9 )
+      LinearTriangle_0: nodes ( Node_14 Node_13 Node_9 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=8.055e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=5.933e-13 xy=6.444e-12 zz=0.000e+00
@@ -578,7 +578,7 @@ Run the example by creating an instance of the problem and executing it by calli
               Node_14: [2400.    0.]
               Node_13: [0. 0.]
               Node_9: [2400.    0.]
-      LinearTriangle: nodes ( Node_10 Node_11 Node_15 )
+      LinearTriangle_0: nodes ( Node_10 Node_11 Node_15 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=5.383e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=1.006e-11 xy=4.306e-12 zz=0.000e+00
@@ -586,31 +586,31 @@ Run the example by creating an instance of the problem and executing it by calli
               Node_10: [-1600.     0.]
               Node_11: [0. 0.]
               Node_15: [-1600.     0.]
-      LinearTriangle: nodes ( Node_11 Node_12 Node_16 )
+      LinearTriangle_0: nodes ( Node_11 Node_12 Node_16 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=-1.105e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=4.146e-12 xy=-8.843e-13 zz=0.000e+00
-      LinearTriangle: nodes ( Node_12 Node_13 Node_17 )
+      LinearTriangle_0: nodes ( Node_12 Node_13 Node_17 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=5.579e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=1.007e-11 xy=4.463e-12 zz=0.000e+00
-      LinearTriangle: nodes ( Node_13 Node_14 Node_18 )
+      LinearTriangle_0: nodes ( Node_13 Node_14 Node_18 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=1.925e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=4.146e-12 xy=1.540e-12 zz=0.000e+00
-      LinearTriangle: nodes ( Node_16 Node_15 Node_11 )
+      LinearTriangle_0: nodes ( Node_16 Node_15 Node_11 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=8.174e-17 zz=-9.329e-04
           stress: xx=9.951e+01 yy=4.146e-12 xy=6.539e-13 zz=0.000e+00
-      LinearTriangle: nodes ( Node_17 Node_16 Node_12 )
+      LinearTriangle_0: nodes ( Node_17 Node_16 Node_12 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=-1.246e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=-6.516e-12 xy=-9.965e-13 zz=0.000e+00
-      LinearTriangle: nodes ( Node_18 Node_17 Node_13 )
+      LinearTriangle_0: nodes ( Node_18 Node_17 Node_13 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=-4.463e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=-1.776e-12 xy=-3.570e-12 zz=0.000e+00
-      LinearTriangle: nodes ( Node_19 Node_18 Node_14 )
+      LinearTriangle_0: nodes ( Node_19 Node_18 Node_14 )
           material: PlaneStress
           strain: xx=4.975e-03 yy=-1.244e-03 xy=7.097e-16 zz=-9.329e-04
           stress: xx=9.951e+01 yy=1.125e-11 xy=5.677e-12 zz=0.000e+00
@@ -626,7 +626,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.456 seconds)
+   **Total running time of the script:** ( 0 minutes  0.593 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate03.py:

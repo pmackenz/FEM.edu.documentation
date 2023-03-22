@@ -672,88 +672,88 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Elements:
     ---------------------
-      Frame2D: nodes ( Node_0 Node_1 )
+      Frame2D_0: nodes ( Node_0 Node_1 )
           material: ElasticSection
           internal forces: f0=-1412.58 V0=-28.72 M0=2190.63 fl=-1412.58 Vl=-28.72 Ml=-2981.99 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_1 Node_2 )
+      Frame2D_0: nodes ( Node_1 Node_2 )
           material: ElasticSection
           internal forces: f0=-1060.65 V0=-54.15 M0=4967.18 fl=-1060.65 Vl=-54.15 Ml=-4777.61 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_2 Node_3 )
+      Frame2D_0: nodes ( Node_2 Node_3 )
           material: ElasticSection
           internal forces: f0=-702.83 V0=-48.56 M0=4417.41 fl=-702.83 Vl=-48.56 Ml=-4323.51 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_3 Node_4 )
+      Frame2D_0: nodes ( Node_3 Node_4 )
           material: ElasticSection
           internal forces: f0=-343.13 V0=-63.72 M0=5307.41 fl=-343.13 Vl=-63.72 Ml=-6160.35 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_5 Node_6 )
+      Frame2D_0: nodes ( Node_5 Node_6 )
           material: ElasticSection
           internal forces: f0=-3339.42 V0=7.47 M0=-673.83 fl=-3339.42 Vl=7.47 Ml=668.39 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_6 Node_7 )
+      Frame2D_0: nodes ( Node_6 Node_7 )
           material: ElasticSection
           internal forces: f0=-2503.35 V0=12.97 M0=-1196.02 fl=-2503.35 Vl=12.97 Ml=1140.41 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_7 Node_8 )
+      Frame2D_0: nodes ( Node_7 Node_8 )
           material: ElasticSection
           internal forces: f0=-1673.17 V0=9.16 M0=-851.26 fl=-1673.17 Vl=9.16 Ml=797.45 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_8 Node_9 )
+      Frame2D_0: nodes ( Node_8 Node_9 )
           material: ElasticSection
           internal forces: f0=-844.87 V0=17.25 M0=-1328.12 fl=-844.87 Vl=17.25 Ml=1778.43 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_10 Node_11 )
+      Frame2D_0: nodes ( Node_10 Node_11 )
           material: ElasticSection
           internal forces: f0=-3339.42 V0=-7.47 M0=673.83 fl=-3339.42 Vl=-7.47 Ml=-668.39 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_11 Node_12 )
+      Frame2D_0: nodes ( Node_11 Node_12 )
           material: ElasticSection
           internal forces: f0=-2503.35 V0=-12.97 M0=1196.02 fl=-2503.35 Vl=-12.97 Ml=-1140.41 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_12 Node_13 )
+      Frame2D_0: nodes ( Node_12 Node_13 )
           material: ElasticSection
           internal forces: f0=-1673.17 V0=-9.16 M0=851.26 fl=-1673.17 Vl=-9.16 Ml=-797.45 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_13 Node_14 )
+      Frame2D_0: nodes ( Node_13 Node_14 )
           material: ElasticSection
           internal forces: f0=-844.87 V0=-17.25 M0=1328.12 fl=-844.87 Vl=-17.25 Ml=-1778.43 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_15 Node_16 )
+      Frame2D_0: nodes ( Node_15 Node_16 )
           material: ElasticSection
           internal forces: f0=-1412.58 V0=28.72 M0=-2190.63 fl=-1412.58 Vl=28.72 Ml=2981.99 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_16 Node_17 )
+      Frame2D_0: nodes ( Node_16 Node_17 )
           material: ElasticSection
           internal forces: f0=-1060.65 V0=54.15 M0=-4967.18 fl=-1060.65 Vl=54.15 Ml=4777.61 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_17 Node_18 )
+      Frame2D_0: nodes ( Node_17 Node_18 )
           material: ElasticSection
           internal forces: f0=-702.83 V0=48.56 M0=-4417.41 fl=-702.83 Vl=48.56 Ml=4323.51 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_18 Node_19 )
+      Frame2D_0: nodes ( Node_18 Node_19 )
           material: ElasticSection
           internal forces: f0=-343.13 V0=63.72 M0=-5307.41 fl=-343.13 Vl=63.72 Ml=6160.35 Pw=0.00 Mw=0.00
-      Frame2D: nodes ( Node_1 Node_6 )
+      Frame2D_0: nodes ( Node_1 Node_6 )
           material: ElasticSection
           internal forces: f0=25.43 V0=-44.07 M0=7890.83 fl=25.43 Vl=-44.07 Ml=-2686.63 Pw=-396.00 Mw=-15840.00
-      Frame2D: nodes ( Node_6 Node_11 )
+      Frame2D_0: nodes ( Node_6 Node_11 )
           material: ElasticSection
           internal forces: f0=19.93 V0=0.00 M0=-822.22 fl=19.93 Vl=0.00 Ml=-822.22 Pw=-396.00 Mw=-15840.00
-      Frame2D: nodes ( Node_11 Node_16 )
+      Frame2D_0: nodes ( Node_11 Node_16 )
           material: ElasticSection
           internal forces: f0=25.43 V0=44.07 M0=-2686.63 fl=25.43 Vl=44.07 Ml=7890.83 Pw=-396.00 Mw=-15840.00
-      Frame2D: nodes ( Node_2 Node_7 )
+      Frame2D_0: nodes ( Node_2 Node_7 )
           material: ElasticSection
           internal forces: f0=-5.60 V0=-38.17 M0=6644.98 fl=-5.60 Vl=-38.17 Ml=-2516.78 Pw=-396.00 Mw=-15840.00
-      Frame2D: nodes ( Node_7 Node_12 )
+      Frame2D_0: nodes ( Node_7 Node_12 )
           material: ElasticSection
           internal forces: f0=-1.79 V0=0.00 M0=-525.10 fl=-1.79 Vl=0.00 Ml=-525.10 Pw=-396.00 Mw=-15840.00
-      Frame2D: nodes ( Node_12 Node_17 )
+      Frame2D_0: nodes ( Node_12 Node_17 )
           material: ElasticSection
           internal forces: f0=-5.60 V0=38.17 M0=-2516.78 fl=-5.60 Vl=38.17 Ml=6644.98 Pw=-396.00 Mw=-15840.00
-      Frame2D: nodes ( Node_3 Node_8 )
+      Frame2D_0: nodes ( Node_3 Node_8 )
           material: ElasticSection
           internal forces: f0=15.17 V0=-36.30 M0=6209.08 fl=15.17 Vl=-36.30 Ml=-2503.48 Pw=-396.00 Mw=-15840.00
-      Frame2D: nodes ( Node_8 Node_13 )
+      Frame2D_0: nodes ( Node_8 Node_13 )
           material: ElasticSection
           internal forces: f0=7.08 V0=-0.00 M0=-377.91 fl=7.08 Vl=-0.00 Ml=-377.91 Pw=-396.00 Mw=-15840.00
-      Frame2D: nodes ( Node_13 Node_18 )
+      Frame2D_0: nodes ( Node_13 Node_18 )
           material: ElasticSection
           internal forces: f0=15.17 V0=36.30 M0=-2503.48 fl=15.17 Vl=36.30 Ml=6209.08 Pw=-396.00 Mw=-15840.00
-      Frame2D: nodes ( Node_4 Node_9 )
+      Frame2D_0: nodes ( Node_4 Node_9 )
           material: ElasticSection
           internal forces: f0=-63.72 V0=-52.87 M0=9679.65 fl=-63.72 Vl=-52.87 Ml=-3007.97 Pw=-396.00 Mw=-15840.00
-      Frame2D: nodes ( Node_9 Node_14 )
+      Frame2D_0: nodes ( Node_9 Node_14 )
           material: ElasticSection
           internal forces: f0=-46.47 V0=-0.00 M0=-1229.55 fl=-46.47 Vl=-0.00 Ml=-1229.55 Pw=-396.00 Mw=-15840.00
-      Frame2D: nodes ( Node_14 Node_19 )
+      Frame2D_0: nodes ( Node_14 Node_19 )
           material: ElasticSection
           internal forces: f0=-63.72 V0=52.87 M0=-3007.97 fl=-63.72 Vl=52.87 Ml=9679.65 Pw=-396.00 Mw=-15840.00
 
@@ -764,7 +764,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.490 seconds)
+   **Total running time of the script:** ( 0 minutes  4.518 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame04.py:

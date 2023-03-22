@@ -213,11 +213,11 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Elements:
     ---------------------
-      LinearTriangle: nodes ( Node_0 Node_1 Node_3 )
+      LinearTriangle_0: nodes ( Node_0 Node_1 Node_3 )
           material: PlaneStress
           strain: xx=9.191e-02 yy=-2.757e-02 xy=0.000e+00 zz=-1.930e-02
           stress: xx=9.191e-01 yy=2.054e-15 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle: nodes ( Node_2 Node_3 Node_1 )
+      LinearTriangle_0: nodes ( Node_2 Node_3 Node_1 )
           material: PlaneStress
           strain: xx=9.191e-02 yy=-2.757e-02 xy=1.727e-16 zz=-1.930e-02
           stress: xx=9.191e-01 yy=3.886e-15 xy=6.641e-16 zz=0.000e+00
@@ -233,7 +233,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.184 seconds)
+   **Total running time of the script:** ( 0 minutes  0.248 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate02.py:

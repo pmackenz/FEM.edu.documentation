@@ -258,28 +258,28 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Elements:
     ---------------------
-      Frame2D: nodes ( Node_0 Node_1 )
+      Frame2D_0: nodes ( Node_0 Node_1 )
           material: ElasticSection
           internal forces: f0=-103.63 V0=4.37 M0=1.30 fl=-103.63 Vl=4.37 Ml=105.64 Pw=-0.62 Mw=-1.30
-      Frame2D: nodes ( Node_1 Node_2 )
+      Frame2D_0: nodes ( Node_1 Node_2 )
           material: ElasticSection
           internal forces: f0=-103.63 V0=3.12 M0=105.64 fl=-103.63 Vl=3.12 Ml=186.45 Pw=-0.62 Mw=-1.30
-      Frame2D: nodes ( Node_2 Node_3 )
+      Frame2D_0: nodes ( Node_2 Node_3 )
           material: ElasticSection
           internal forces: f0=-103.63 V0=1.87 M0=186.45 fl=-103.63 Vl=1.87 Ml=237.56 Pw=-0.62 Mw=-1.30
-      Frame2D: nodes ( Node_3 Node_4 )
+      Frame2D_0: nodes ( Node_3 Node_4 )
           material: ElasticSection
           internal forces: f0=-103.63 V0=0.62 M0=237.56 fl=-103.63 Vl=0.62 Ml=255.04 Pw=-0.62 Mw=-1.30
-      Frame2D: nodes ( Node_4 Node_5 )
+      Frame2D_0: nodes ( Node_4 Node_5 )
           material: ElasticSection
           internal forces: f0=-103.63 V0=-0.63 M0=255.04 fl=-103.63 Vl=-0.63 Ml=237.56 Pw=-0.62 Mw=-1.30
-      Frame2D: nodes ( Node_5 Node_6 )
+      Frame2D_0: nodes ( Node_5 Node_6 )
           material: ElasticSection
           internal forces: f0=-103.63 V0=-1.88 M0=237.56 fl=-103.63 Vl=-1.88 Ml=186.45 Pw=-0.62 Mw=-1.30
-      Frame2D: nodes ( Node_6 Node_7 )
+      Frame2D_0: nodes ( Node_6 Node_7 )
           material: ElasticSection
           internal forces: f0=-103.63 V0=-3.13 M0=186.45 fl=-103.63 Vl=-3.13 Ml=105.64 Pw=-0.62 Mw=-1.30
-      Frame2D: nodes ( Node_7 Node_8 )
+      Frame2D_0: nodes ( Node_7 Node_8 )
           material: ElasticSection
           internal forces: f0=-103.63 V0=-4.38 M0=105.64 fl=-103.63 Vl=-4.38 Ml=1.30 Pw=-0.62 Mw=-1.30
 
@@ -290,7 +290,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.445 seconds)
+   **Total running time of the script:** ( 0 minutes  0.618 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame02.py:
