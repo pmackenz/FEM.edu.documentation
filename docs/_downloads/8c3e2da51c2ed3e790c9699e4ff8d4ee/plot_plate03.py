@@ -175,7 +175,7 @@ class ExamplePlate03(Example):
 
         model.report()
 
-        model.plot(factor=10., filename="plate03_deformed.png")
+        model.plot(factor=100., filename="plate03_deformed.png")
 
 
 # %%

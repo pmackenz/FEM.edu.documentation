@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patch test for quadrilateral plate elements under in-plane loading &mdash; FEM.edu FEM.edu-v0.9.2-pre documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tutorials" href="../../tutorials.html" />
+    <link rel="prev" title="A square patch made of one quadrilateral plate elements" href="plot_plate08.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Plate Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot_plate01.html">A square patch made of two triangular plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate02.html">A square patch made of two triangular plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate03.html">Patch test for triangular plate under in-plane loading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate04.html">Patch test for triangular plate under in-plane loading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate05.html">Pulling a plate with a circular hole</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate06.html">Pulling a plate with a circular hole</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate07.html">A square patch made of one quadrilateral plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate08.html">A square patch made of one quadrilateral plate elements</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Patch test for quadrilateral plate elements under in-plane loading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Example Gallery</a> &raquo;</li>
+          <li><a href="index.html">Plate Examples</a> &raquo;</li>
+      <li>Patch test for quadrilateral plate elements under in-plane loading</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/auto_examples/plates/plot_plate09.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-plates-plot-plate09-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code</p>
+</div>
+<section class="sphx-glr-example-title" id="patch-test-for-quadrilateral-plate-elements-under-in-plane-loading">
+<span id="sphx-glr-auto-examples-plates-plot-plate09-py"></span><h1>Patch test for quadrilateral plate elements under in-plane loading<a class="headerlink" href="#patch-test-for-quadrilateral-plate-elements-under-in-plane-loading" title="Permalink to this heading"></a></h1>
+<p>The patch test is an empirical minimum test which every finite element has to pass to ensure convergence with mesh refinement.</p>
+<p>It consists of a problem for which a known homogeneous solution exists.
+For plates, we commonly use a rectangular plate subject to homogeneous edge loading,
+e.g., constant tension in the x-direction, or constant shear, etc.</p>
+<p>The mesh must contain distorted elements and at least one element not attached to any node on the boundary.</p>
+<p>Author: Peter Mackenzie-Helnwein</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples.Example</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.solver.NewtonRaphsonSolver</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.Quad</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.materials.PlaneStress</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="k">class</span> <span class="nc">ExamplePlate09</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># ========== setting mesh parameters ==============</span>
+
+        <span class="n">N</span> <span class="o">=</span> <span class="mi">8</span>         <span class="c1"># number of elements in the mesh</span>
+        <span class="n">Lx</span> <span class="o">=</span> <span class="mf">100.0</span>    <span class="c1"># length of plate in the x-direction</span>
+        <span class="n">Ly</span> <span class="o">=</span>  <span class="mf">80.0</span>    <span class="c1"># length of plate in the y-direction</span>
+
+        <span class="c1"># ========== setting material parameters ==============</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">E</span>  <span class="o">=</span> <span class="mf">20000.</span><span class="p">,</span>    <span class="c1"># Young&#39;s modulus</span>
+            <span class="n">nu</span> <span class="o">=</span> <span class="mf">0.250</span><span class="p">,</span>     <span class="c1"># Poisson&#39;s ratio</span>
+            <span class="n">t</span>  <span class="o">=</span> <span class="mf">1.00</span>       <span class="c1"># thickness of the plate</span>
+        <span class="p">)</span>
+
+        <span class="c1"># ========== setting load parameters ==============</span>
+
+        <span class="n">px</span>  <span class="o">=</span> <span class="mf">10.0</span>         <span class="c1"># uniform load normal to x=const</span>
+        <span class="n">py</span>  <span class="o">=</span>  <span class="mf">0.0</span>         <span class="c1"># uniform load normal to y=const</span>
+        <span class="n">pxy</span> <span class="o">=</span>  <span class="mf">0.0</span>         <span class="c1"># uniform shear load on x=const and y=const</span>
+
+        <span class="c1"># ========== setting analysis parameters ==============</span>
+
+        <span class="n">target_load_level</span> <span class="o">=</span> <span class="mf">1.00</span>     <span class="c1"># reference load</span>
+        <span class="n">max_steps</span> <span class="o">=</span> <span class="mi">2</span>                <span class="c1"># number of load steps: 2 -&gt; [0.0, 1.0]</span>
+
+        <span class="c1"># define a list of target load levels</span>
+        <span class="n">load_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">target_load_level</span><span class="p">,</span> <span class="n">max_steps</span><span class="p">)</span>
+
+        <span class="c1">#</span>
+        <span class="c1"># ==== Build the system model ====</span>
+        <span class="c1">#</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">setSolver</span><span class="p">(</span><span class="n">NewtonRaphsonSolver</span><span class="p">())</span>
+
+        <span class="c1"># create nodes</span>
+
+        <span class="n">nodes</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.0</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 0</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.2</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 1</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 2</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.7</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 3</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">1.0</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 4</span>
+            <span class="c1">#</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.0</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 5</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.15</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span><span class="mf">0.3</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 6</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 7</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.8</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.3</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 8</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">1.0</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 9</span>
+            <span class="c1">#</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.0</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.6</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 10</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.2</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 11</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.7</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.7</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 12</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.9</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.6</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 13</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">1.0</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.7</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 14</span>
+            <span class="c1">#</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.0</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 15</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.3</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 16</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.55</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span><span class="mf">1.0</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 17</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">0.8</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 18</span>
+            <span class="n">Node</span><span class="p">(</span><span class="mf">1.0</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">Ly</span><span class="p">),</span>  <span class="c1"># nd 19</span>
+        <span class="p">)</span>
+
+        <span class="n">elements</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">Quad</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">)),</span>  <span class="c1"># elem 0</span>
+            <span class="n">Quad</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">)),</span>  <span class="c1"># elem 1</span>
+            <span class="n">Quad</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span><span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">)),</span>  <span class="c1"># elem 2</span>
+            <span class="n">Quad</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span><span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">)),</span>  <span class="c1"># elem 3</span>
+            <span class="c1">#</span>
+            <span class="n">Quad</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span><span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">)),</span>  <span class="c1"># elem 4</span>
+            <span class="n">Quad</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span><span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">)),</span>  <span class="c1"># elem 5</span>
+            <span class="n">Quad</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span><span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">)),</span>  <span class="c1"># elem 6</span>
+            <span class="n">Quad</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span><span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">)),</span>  <span class="c1"># elem 7</span>
+            <span class="c1">#</span>
+            <span class="n">Quad</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span><span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">)),</span>  <span class="c1"># elem 8</span>
+            <span class="n">Quad</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span><span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">)),</span>  <span class="c1"># elem 9</span>
+            <span class="n">Quad</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span><span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">)),</span>  <span class="c1"># elem 10</span>
+            <span class="n">Quad</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span><span class="n">nodes</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span><span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">)),</span>  <span class="c1"># elem 11</span>
+            <span class="c1">#</span>
+        <span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="o">*</span><span class="n">nodes</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="o">*</span><span class="n">elements</span><span class="p">)</span>
+
+        <span class="c1"># define support(s)</span>
+
+        <span class="n">fix_x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,)</span>
+        <span class="n">fix_y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">fix_x</span><span class="p">:</span>
+            <span class="n">nodes</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">)</span>    <span class="c1"># horizontal support left end</span>
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">fix_y</span><span class="p">:</span>
+            <span class="n">nodes</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;uy&#39;</span><span class="p">)</span>          <span class="c1"># vertical support right end</span>
+
+        <span class="c1"># ==== complete the reference load ====</span>
+
+        <span class="c1"># surface loads on the left side</span>
+        <span class="n">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">px</span><span class="p">)</span>
+        <span class="n">elements</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">px</span><span class="p">)</span>
+        <span class="n">elements</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">px</span><span class="p">)</span>
+
+        <span class="c1"># surface loads on the right side</span>
+        <span class="n">elements</span><span class="p">[</span> <span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">px</span><span class="p">)</span>
+        <span class="n">elements</span><span class="p">[</span> <span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">px</span><span class="p">)</span>
+        <span class="n">elements</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">px</span><span class="p">)</span>
+
+        <span class="c1"># these are only nodal forces as part of the reference load</span>
+        <span class="c1"># .. load only the upper node</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;undeformed system&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate09_undeformed.png&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+        <span class="c1"># for k in range(25):</span>
+        <span class="c1">#     name = f&quot;plate08_mode{k:2d}.png&quot;</span>
+        <span class="c1">#     model.plotBucklingMode(mode=k,filename=name,factor=25)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">10.0</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">showKt</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate09_spy_Kt.png&quot;</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">100.</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate09_deformed.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ex</span> <span class="o">=</span> <span class="n">ExamplePlate09</span><span class="p">()</span>
+    <span class="n">ex</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_plate09_001.png" srcset="../../_images/sphx_glr_plot_plate09_001.png" alt="undeformed system" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate09_002.png" srcset="../../_images/sphx_glr_plot_plate09_002.png" alt="plot plate09" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate09_003.png" srcset="../../_images/sphx_glr_plot_plate09_003.png" alt="Deformed System (magnification=100.00)" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>norm of the out-of-balance force:   7.6951e-10
++
+norm of the out-of-balance force:   6.2225e+03
+norm of the out-of-balance force:   4.8343e+01
+norm of the out-of-balance force:   2.6885e-03
+norm of the out-of-balance force:   7.1925e-10
++
+
+System Analysis Report
+=======================
+
+Nodes:
+---------------------
+  Node_20:
+      x:    [0. 0.]
+      fix:  [&#39;ux&#39;, &#39;uy&#39;]
+      u:    [0. 0.]
+  Node_21:
+      x:    [20.  0.]
+      u:    [ 9.92598389e-02 -3.93688077e-15]
+  Node_22:
+      x:    [50.  0.]
+      u:    [ 2.48149597e-01 -2.83524536e-15]
+  Node_23:
+      x:    [70.  0.]
+      u:    [ 3.47409436e-01 -7.60896825e-15]
+  Node_24:
+      x:    [100.   0.]
+      fix:  [&#39;uy&#39;]
+      u:    [0.49629919 0.        ]
+  Node_25:
+      x:    [ 0. 16.]
+      u:    [-6.99484238e-16 -1.99136226e-02]
+  Node_26:
+      x:    [15. 24.]
+      u:    [ 0.07444488 -0.02987043]
+  Node_27:
+      x:    [50. 16.]
+      u:    [ 0.2481496  -0.01991362]
+  Node_28:
+      x:    [80. 24.]
+      u:    [ 0.39703936 -0.02987043]
+  Node_29:
+      x:    [100.  16.]
+      u:    [ 0.49629919 -0.01991362]
+  Node_30:
+      x:    [ 0. 48.]
+      u:    [ 4.51362115e-15 -5.97408678e-02]
+  Node_31:
+      x:    [20. 40.]
+      u:    [ 0.09925984 -0.04978406]
+  Node_32:
+      x:    [70. 56.]
+      u:    [ 0.34740944 -0.06969768]
+  Node_33:
+      x:    [90. 48.]
+      u:    [ 0.44666927 -0.05974087]
+  Node_34:
+      x:    [100.  56.]
+      u:    [ 0.49629919 -0.06969768]
+  Node_35:
+      x:    [ 0. 80.]
+      u:    [ 3.76943857e-16 -9.95681131e-02]
+  Node_36:
+      x:    [30. 80.]
+      u:    [ 0.14888976 -0.09956811]
+  Node_37:
+      x:    [55. 80.]
+      u:    [ 0.27296456 -0.09956811]
+  Node_38:
+      x:    [80. 80.]
+      u:    [ 0.39703936 -0.09956811]
+  Node_39:
+      x:    [100.  80.]
+      u:    [ 0.49629919 -0.09956811]
+
+Elements:
+---------------------
+  Quad_24: nodes ( Node_20 Node_21 Node_26 Node_25 )
+      material: list
+      strain (0): xx=4.975e-03 yy=-1.244e-03 xy=-2.070e-16 zz=-9.329e-04
+      stress (0): xx=9.951e+01 yy=-5.933e-13 xy=-1.656e-12 zz=0.000e+00
+      strain (1): xx=4.975e-03 yy=-1.244e-03 xy=-1.668e-16 zz=-9.329e-04
+      stress (1): xx=9.951e+01 yy=5.898e-13 xy=-1.335e-12 zz=0.000e+00
+      strain (2): xx=4.975e-03 yy=-1.244e-03 xy=-1.522e-16 zz=-9.329e-04
+      stress (2): xx=9.951e+01 yy=1.776e-12 xy=-1.218e-12 zz=0.000e+00
+      strain (3): xx=4.975e-03 yy=-1.244e-03 xy=7.617e-17 zz=-9.329e-04
+      stress (3): xx=9.951e+01 yy=1.776e-12 xy=6.094e-13 zz=0.000e+00
+  Quad_25: nodes ( Node_21 Node_22 Node_27 Node_26 )
+      material: list
+      strain (0): xx=4.975e-03 yy=-1.244e-03 xy=1.146e-16 zz=-9.329e-04
+      stress (0): xx=9.951e+01 yy=4.146e-12 xy=9.166e-13 zz=0.000e+00
+      strain (1): xx=4.975e-03 yy=-1.244e-03 xy=1.661e-17 zz=-9.329e-04
+      stress (1): xx=9.951e+01 yy=5.898e-13 xy=1.329e-13 zz=0.000e+00
+      strain (2): xx=4.975e-03 yy=-1.244e-03 xy=-2.123e-16 zz=-9.329e-04
+      stress (2): xx=9.951e+01 yy=-2.959e-12 xy=-1.699e-12 zz=0.000e+00
+      strain (3): xx=4.975e-03 yy=-1.244e-03 xy=-3.489e-17 zz=-9.329e-04
+      stress (3): xx=9.951e+01 yy=-5.933e-13 xy=-2.791e-13 zz=0.000e+00
+  Quad_26: nodes ( Node_22 Node_23 Node_28 Node_27 )
+      material: list
+      strain (0): xx=4.975e-03 yy=-1.244e-03 xy=1.586e-16 zz=-9.329e-04
+      stress (0): xx=9.951e+01 yy=1.776e-12 xy=1.269e-12 zz=0.000e+00
+      strain (1): xx=4.975e-03 yy=-1.244e-03 xy=-6.285e-16 zz=-9.329e-04
+      stress (1): xx=9.951e+01 yy=7.695e-12 xy=-5.028e-12 zz=0.000e+00
+      strain (2): xx=4.975e-03 yy=-1.244e-03 xy=2.520e-17 zz=-9.329e-04
+      stress (2): xx=9.951e+01 yy=5.898e-13 xy=2.016e-13 zz=0.000e+00
+      strain (3): xx=4.975e-03 yy=-1.244e-03 xy=-2.923e-16 zz=-9.329e-04
+      stress (3): xx=9.951e+01 yy=2.959e-12 xy=-2.339e-12 zz=0.000e+00
+  Quad_27: nodes ( Node_23 Node_24 Node_29 Node_28 )
+      material: list
+      strain (0): xx=4.975e-03 yy=-1.244e-03 xy=-2.677e-16 zz=-9.329e-04
+      stress (0): xx=9.951e+01 yy=-6.512e-12 xy=-2.141e-12 zz=0.000e+00
+      strain (1): xx=4.975e-03 yy=-1.244e-03 xy=-7.906e-16 zz=-9.329e-04
+      stress (1): xx=9.951e+01 yy=-5.329e-12 xy=-6.324e-12 zz=0.000e+00
+      strain (2): xx=4.975e-03 yy=-1.244e-03 xy=-2.833e-16 zz=-9.329e-04
+      stress (2): xx=9.951e+01 yy=-1.776e-12 xy=-2.266e-12 zz=0.000e+00
+      strain (3): xx=4.975e-03 yy=-1.244e-03 xy=-1.166e-17 zz=-9.329e-04
+      stress (3): xx=9.951e+01 yy=5.933e-13 xy=-9.328e-14 zz=0.000e+00
+  Quad_28: nodes ( Node_25 Node_26 Node_31 Node_30 )
+      material: list
+      strain (0): xx=4.975e-03 yy=-1.244e-03 xy=1.452e-16 zz=-9.329e-04
+      stress (0): xx=9.951e+01 yy=-5.933e-13 xy=1.162e-12 zz=0.000e+00
+      strain (1): xx=4.975e-03 yy=-1.244e-03 xy=2.596e-16 zz=-9.329e-04
+      stress (1): xx=9.951e+01 yy=5.898e-13 xy=2.077e-12 zz=0.000e+00
+      strain (2): xx=4.975e-03 yy=-1.244e-03 xy=-1.949e-17 zz=-9.329e-04
+      stress (2): xx=9.951e+01 yy=5.898e-13 xy=-1.559e-13 zz=0.000e+00
+      strain (3): xx=4.975e-03 yy=-1.244e-03 xy=-1.367e-16 zz=-9.329e-04
+      stress (3): xx=9.951e+01 yy=2.959e-12 xy=-1.093e-12 zz=0.000e+00
+  Quad_29: nodes ( Node_26 Node_27 Node_32 Node_31 )
+      material: list
+      strain (0): xx=4.975e-03 yy=-1.244e-03 xy=-5.692e-17 zz=-9.329e-04
+      stress (0): xx=9.951e+01 yy=5.933e-13 xy=-4.554e-13 zz=0.000e+00
+      strain (1): xx=4.975e-03 yy=-1.244e-03 xy=-1.845e-16 zz=-9.329e-04
+      stress (1): xx=9.951e+01 yy=-2.959e-12 xy=-1.476e-12 zz=0.000e+00
+      strain (2): xx=4.975e-03 yy=-1.244e-03 xy=2.767e-16 zz=-9.329e-04
+      stress (2): xx=9.951e+01 yy=-6.512e-12 xy=2.214e-12 zz=0.000e+00
+      strain (3): xx=4.975e-03 yy=-1.244e-03 xy=-1.386e-16 zz=-9.329e-04
+      stress (3): xx=9.951e+01 yy=1.776e-12 xy=-1.109e-12 zz=0.000e+00
+  Quad_30: nodes ( Node_27 Node_28 Node_33 Node_32 )
+      material: list
+      strain (0): xx=4.975e-03 yy=-1.244e-03 xy=8.076e-17 zz=-9.329e-04
+      stress (0): xx=9.951e+01 yy=5.329e-12 xy=6.461e-13 zz=0.000e+00
+      strain (1): xx=4.975e-03 yy=-1.244e-03 xy=2.449e-17 zz=-9.329e-04
+      stress (1): xx=9.951e+01 yy=2.959e-12 xy=1.960e-13 zz=0.000e+00
+      strain (2): xx=4.975e-03 yy=-1.244e-03 xy=-5.378e-16 zz=-9.329e-04
+      stress (2): xx=9.951e+01 yy=-1.776e-12 xy=-4.303e-12 zz=0.000e+00
+      strain (3): xx=4.975e-03 yy=-1.244e-03 xy=5.476e-17 zz=-9.329e-04
+      stress (3): xx=9.951e+01 yy=5.329e-12 xy=4.381e-13 zz=0.000e+00
+  Quad_31: nodes ( Node_28 Node_29 Node_34 Node_33 )
+      material: list
+      strain (0): xx=4.975e-03 yy=-1.244e-03 xy=1.611e-16 zz=-9.329e-04
+      stress (0): xx=9.951e+01 yy=4.146e-12 xy=1.289e-12 zz=0.000e+00
+      strain (1): xx=4.975e-03 yy=-1.244e-03 xy=1.997e-16 zz=-9.329e-04
+      stress (1): xx=9.951e+01 yy=-5.933e-13 xy=1.598e-12 zz=0.000e+00
+      strain (2): xx=4.975e-03 yy=-1.244e-03 xy=-9.159e-17 zz=-9.329e-04
+      stress (2): xx=9.951e+01 yy=-4.142e-12 xy=-7.327e-13 zz=0.000e+00
+      strain (3): xx=4.975e-03 yy=-1.244e-03 xy=8.349e-16 zz=-9.329e-04
+      stress (3): xx=9.951e+01 yy=5.329e-12 xy=6.679e-12 zz=0.000e+00
+  Quad_32: nodes ( Node_30 Node_31 Node_36 Node_35 )
+      material: list
+      strain (0): xx=4.975e-03 yy=-1.244e-03 xy=-1.697e-16 zz=-9.329e-04
+      stress (0): xx=9.951e+01 yy=1.243e-11 xy=-1.358e-12 zz=0.000e+00
+      strain (1): xx=4.975e-03 yy=-1.244e-03 xy=-9.474e-17 zz=-9.329e-04
+      stress (1): xx=9.951e+01 yy=4.146e-12 xy=-7.579e-13 zz=0.000e+00
+      strain (2): xx=4.975e-03 yy=-1.244e-03 xy=-5.752e-16 zz=-9.329e-04
+      stress (2): xx=9.951e+01 yy=2.959e-12 xy=-4.602e-12 zz=0.000e+00
+      strain (3): xx=4.975e-03 yy=-1.244e-03 xy=-3.859e-16 zz=-9.329e-04
+      stress (3): xx=9.951e+01 yy=2.959e-12 xy=-3.087e-12 zz=0.000e+00
+  Quad_33: nodes ( Node_31 Node_32 Node_37 Node_36 )
+      material: list
+      strain (0): xx=4.975e-03 yy=-1.244e-03 xy=3.477e-17 zz=-9.329e-04
+      stress (0): xx=9.951e+01 yy=5.933e-13 xy=2.782e-13 zz=0.000e+00
+      strain (1): xx=4.975e-03 yy=-1.244e-03 xy=3.334e-17 zz=-9.329e-04
+      stress (1): xx=9.951e+01 yy=5.329e-12 xy=2.667e-13 zz=0.000e+00
+      strain (2): xx=4.975e-03 yy=-1.244e-03 xy=3.715e-16 zz=-9.329e-04
+      stress (2): xx=9.951e+01 yy=-5.933e-13 xy=2.972e-12 zz=0.000e+00
+      strain (3): xx=4.975e-03 yy=-1.244e-03 xy=9.277e-18 zz=-9.329e-04
+      stress (3): xx=9.951e+01 yy=1.480e-11 xy=7.422e-14 zz=0.000e+00
+  Quad_34: nodes ( Node_32 Node_33 Node_38 Node_37 )
+      material: list
+      strain (0): xx=4.975e-03 yy=-1.244e-03 xy=1.533e-16 zz=-9.329e-04
+      stress (0): xx=9.951e+01 yy=1.362e-11 xy=1.226e-12 zz=0.000e+00
+      strain (1): xx=4.975e-03 yy=-1.244e-03 xy=-3.942e-16 zz=-9.329e-04
+      stress (1): xx=9.951e+01 yy=-5.933e-13 xy=-3.153e-12 zz=0.000e+00
+      strain (2): xx=4.975e-03 yy=-1.244e-03 xy=-8.389e-16 zz=-9.329e-04
+      stress (2): xx=9.951e+01 yy=-4.142e-12 xy=-6.711e-12 zz=0.000e+00
+      strain (3): xx=4.975e-03 yy=-1.244e-03 xy=-9.498e-16 zz=-9.329e-04
+      stress (3): xx=9.951e+01 yy=1.776e-12 xy=-7.599e-12 zz=0.000e+00
+  Quad_35: nodes ( Node_33 Node_34 Node_39 Node_38 )
+      material: list
+      strain (0): xx=4.975e-03 yy=-1.244e-03 xy=-4.637e-17 zz=-9.329e-04
+      stress (0): xx=9.951e+01 yy=-6.512e-12 xy=-3.709e-13 zz=0.000e+00
+      strain (1): xx=4.975e-03 yy=-1.244e-03 xy=-2.224e-16 zz=-9.329e-04
+      stress (1): xx=9.951e+01 yy=4.142e-12 xy=-1.779e-12 zz=0.000e+00
+      strain (2): xx=4.975e-03 yy=-1.244e-03 xy=6.565e-16 zz=-9.329e-04
+      stress (2): xx=9.951e+01 yy=4.146e-12 xy=5.252e-12 zz=0.000e+00
+      strain (3): xx=4.975e-03 yy=-1.244e-03 xy=-9.645e-16 zz=-9.329e-04
+      stress (3): xx=9.951e+01 yy=-1.362e-11 xy=-7.716e-12 zz=0.000e+00
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.612 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate09-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/02eebd5a31e82a4a7d2597ea7b311397/plot_plate09.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate09.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/72d3487998023b182536b3a270a2199e/plot_plate09.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate09.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="plot_plate08.html" class="btn btn-neutral float-left" title="A square patch made of one quadrilateral plate elements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../tutorials.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
