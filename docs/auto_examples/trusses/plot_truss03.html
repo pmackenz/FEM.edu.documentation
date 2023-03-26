@@ -47,12 +47,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../plates/index.html">Plate Examples</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Truss Examples</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="plot_truss01.html">Simple triangular truss.</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_truss02.html">Statically determinate truss bridge.</a></li>
@@ -60,6 +58,8 @@
 <li class="toctree-l4"><a class="reference internal" href="plot_truss04.html">3d truss example demonstrating large deformation analysis.</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plates/index.html">Plate Examples</a></li>
 </ul>
 </li>
 </ul>
@@ -192,30 +192,30 @@ calculated deformation, reactions and internal forces.</p>
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_61:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0. 0.]
-  Node_1:
+  Node_62:
       x:    [72.  0.]
       fix:  [&#39;uy&#39;]
       u:    [3.6 0. ]
-  Node_2:
+  Node_63:
       x:    [36. 36.]
       P:    [ 0. -1.]
       u:    [ 1.8        -6.89116882]
 
 Elements:
 ---------------------
-  Truss: node 0 to node 1:
+  Truss: Node_61 to Node_62:
      material properties: FiberMaterial(Material)({&#39;E&#39;: 10.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.04761904761904761   stress:{&#39;xx&#39;: 0.4761904761904761, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
      internal force: 0.4761904761904761
      Pe: [ 0.4761904761904761 0.0 ]
-  Truss: node 0 to node 2:
+  Truss: Node_61 to Node_63:
      material properties: FiberMaterial(Material)({&#39;E&#39;: 10.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.05823563981487166   stress:{&#39;xx&#39;: -0.5823563981487166, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
      internal force: -0.5823563981487166
      Pe: [ -0.46140136076020055 -0.3553136062035647 ]
-  Truss: node 1 to node 2:
+  Truss: Node_62 to Node_63:
      material properties: FiberMaterial(Material)({&#39;E&#39;: 10.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.058235639814871655   stress:{&#39;xx&#39;: -0.5823563981487165, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
      internal force: -0.5823563981487165
      Pe: [ 0.4614013607602005 -0.3553136062035646 ]
@@ -226,36 +226,36 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_61:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0. 0.]
-  Node_1:
+  Node_62:
       x:    [72.  0.]
       fix:  [&#39;uy&#39;, &#39;ux&#39;]
       u:    [0. 0.]
-  Node_2:
+  Node_63:
       x:    [36. 36.]
       P:    [ 0. -1.]
       u:    [ 0.         -5.09116882]
 
 Elements:
 ---------------------
-  Truss: node 0 to node 1:
+  Truss: Node_61 to Node_62:
      material properties: FiberMaterial(Material)({&#39;E&#39;: 10.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
      internal force: 0.0
      Pe: [ 0.0 0.0 ]
-  Truss: node 0 to node 2:
+  Truss: Node_61 to Node_63:
      material properties: FiberMaterial(Material)({&#39;E&#39;: 10.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.06989658167930027   stress:{&#39;xx&#39;: -0.6989658167930026, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
      internal force: -0.6989658167930026
      Pe: [ -0.530317996923979 -0.4553197065619366 ]
-  Truss: node 1 to node 2:
+  Truss: Node_62 to Node_63:
      material properties: FiberMaterial(Material)({&#39;E&#39;: 10.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.06989658167930027   stress:{&#39;xx&#39;: -0.6989658167930026, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
      internal force: -0.6989658167930026
      Pe: [ 0.530317996923979 -0.4553197065619366 ]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.226 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.179 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-trusses-plot-truss03-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/d1163735e23686ab15e7e676ea45e8b9/plot_truss03.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_truss03.py</span></code></a></p>

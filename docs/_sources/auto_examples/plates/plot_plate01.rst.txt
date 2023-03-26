@@ -106,7 +106,7 @@ Author: Peter Mackenzie-Helnwein
 
             model.addElement(elemA, elemB)
 
-            elemB.setSurfaceLoad(face=2, w=1.0)
+            elemB.setSurfaceLoad(face=2, pn=1.0)
 
             model.plot(factor=0, title="Undeformed system", filename="plate01_undeformed.png", show_bc=1)
 
@@ -195,14 +195,10 @@ Run the example by creating an instance of the problem and executing it by calli
           material: PlaneStress
           strain: xx=6.250e-01 yy=-3.750e-01 xy=0.000e+00 zz=-7.500e-02
           stress: xx=5.632e+00 yy=-2.060e+00 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle_0: nodes ( Node_2 Node_3 Node_1 )
+      LinearTriangle_1: nodes ( Node_2 Node_3 Node_1 )
           material: PlaneStress
           strain: xx=6.250e-01 yy=-3.750e-01 xy=0.000e+00 zz=-7.500e-02
           stress: xx=5.632e+00 yy=-2.060e+00 xy=0.000e+00 zz=0.000e+00
-          element forces added to node:
-              Node_2: [5. 0.]
-              Node_3: [0. 0.]
-              Node_1: [5. 0.]
 
 
 
@@ -211,7 +207,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.516 seconds)
+   **Total running time of the script:** ( 0 minutes  0.484 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate01.py:

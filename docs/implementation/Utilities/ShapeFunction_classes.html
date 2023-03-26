@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shape Function classes &mdash; FEM.edu FEM.edu-v0.9.2-pre documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Plot Support classes" href="../Plotter/Plot_Support_Classes.html" />
+    <link rel="prev" title="Integration classes" href="Integration_class.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Example Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../implementation.html">Implementation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../implementation.html#fem-component-classes">FEM Component Classes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../implementation.html#utility-classes">Utility Classes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Integration_class.html">Integration classes</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Shape Function classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#module-femedu.utilities.ShapeFunctions">Abstract Integration Class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-femedu.utilities.LineShapes">Derived Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Plotter/Plot_Support_Classes.html">Plot Support classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Recorder/Recorder_class.html">Recorder class</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../implementation.html">Implementation</a> &raquo;</li>
+      <li>Shape Function classes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/implementation/Utilities/ShapeFunction_classes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="shape-function-classes">
+<h1>Shape Function classes<a class="headerlink" href="#shape-function-classes" title="Permalink to this heading"></a></h1>
+<p>This family of classes computes common shape functions in 1D (Lines), 2D (Quads and Triangles), and
+3D (Bricks and Tetrahedron elements).</p>
+<p><strong>LineShapes</strong> are defined over a unit-interval <span class="math notranslate nohighlight">\([0,1]\)</span>.</p>
+<p><strong>QuadShapes</strong> are defined over a bi-unit-square <span class="math notranslate nohighlight">\([-1,1]\times[-1,1]\)</span>.</p>
+<p><strong>TriangleShapes</strong> are defined over a domain (triangular coordinates) <span class="math notranslate nohighlight">\([0,1]\times[0,1]\times[0,1]\)</span>.</p>
+<p><strong>BrickShapes</strong> are defined over a tri-unit-cube <span class="math notranslate nohighlight">\([-1,1]\times[-1,1]\times[-1,1]\)</span>.</p>
+<p><strong>TetraShapes</strong> are defined over a domain (tetrahedral coordinates) <span class="math notranslate nohighlight">\([0,1]\times[0,1]\times[0,1]\times[0,1]\)</span>.</p>
+<p>In its final form, they will support up to tri-quadratic shape functions, and up to 5th-order polynomials for lines.</p>
+<p><strong>Usage</strong>:</p>
+<p>Integrating a bi-quadratic function g(s,t,u) over a quad-shaped domain</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">integrator</span> <span class="o">=</span> <span class="n">QuadIntegration</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">xi</span><span class="p">,</span> <span class="n">wi</span> <span class="ow">in</span> <span class="n">integrator</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+    <span class="n">F</span> <span class="o">+=</span> <span class="n">g</span><span class="p">(</span><span class="n">xi</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xi</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xi</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="n">J</span><span class="p">(</span><span class="n">xi</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xi</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xi</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="n">wi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Int_V g(s,t,u) dV = </span><span class="si">{</span><span class="n">F</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="module-femedu.utilities.ShapeFunctions">
+<span id="abstract-integration-class"></span><h2>Abstract Integration Class<a class="headerlink" href="#module-femedu.utilities.ShapeFunctions" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="femedu.utilities.ShapeFunctions.ShapeFunctions">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.ShapeFunctions.</span></span><span class="sig-name descname"><span class="pre">ShapeFunctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.ShapeFunctions.ShapeFunctions" title="Permalink to this definition"></a></dt>
+<dd><p>Abstract parent class for shape functions or their
+n-th (mixed) derivative for various interpolation functions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.utilities.ShapeFunctions.ShapeFunctions.shape">
+<span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argvs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.ShapeFunctions.ShapeFunctions.shape" title="Permalink to this definition"></a></dt>
+<dd><p>interface function to gets shape functions or their
+n-th derivative for various interpolation functions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a virtual function that needs to be implemented
+by any subclass</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-femedu.utilities.LineShapes">
+<span id="derived-classes"></span><h2>Derived Classes<a class="headerlink" href="#module-femedu.utilities.LineShapes" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="femedu.utilities.LineShapes.LineShapes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.LineShapes.</span></span><span class="sig-name descname"><span class="pre">LineShapes</span></span><a class="headerlink" href="#femedu.utilities.LineShapes.LineShapes" title="Permalink to this definition"></a></dt>
+<dd><p>Shape functions or their n-th derivative
+for one-dimensional domains <span class="math notranslate nohighlight">\([0,+1]\)</span>.</p>
+<p>Derivatives are with respect to the normalized coordinate and need to be scaled accordingly.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.utilities.LineShapes.LineShapes.shape">
+<span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Le</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.LineShapes.LineShapes.shape" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> – polynomial order of the shape functions. Options: 0,1,2,3,4,5</p></li>
+<li><p><strong>xi</strong> – normalized location on interval [0,1]</p></li>
+<li><p><strong>n</strong> – return n-th derivative of the requested shape function</p></li>
+<li><p><strong>Le</strong> – element length; needed to correct for rotational dof</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PHI: a list of shape function values</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-femedu.utilities.TriangleShapes"></span><dl class="py class">
+<dt class="sig sig-object py" id="femedu.utilities.TriangleShapes.TriangleShapes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.TriangleShapes.</span></span><span class="sig-name descname"><span class="pre">TriangleShapes</span></span><a class="headerlink" href="#femedu.utilities.TriangleShapes.TriangleShapes" title="Permalink to this definition"></a></dt>
+<dd><p>Shape functions or their <cite>*n-th</cite> mixed derivative
+for the unit-triangle (two-dimensional domain <span class="math notranslate nohighlight">\((s,t)\in[0,+1]\times[0,+1]\)</span> with <span class="math notranslate nohighlight">\(s+t\le +1\)</span>).</p>
+<p>Derivatives are with respect to the normalized coordinate and need to be scaled accordingly.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.utilities.TriangleShapes.TriangleShapes.shape">
+<span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.TriangleShapes.TriangleShapes.shape" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> – polynomial order of the shape functions. Options: 0,1,2,</p></li>
+<li><p><strong>s</strong> (<em>float</em><em> or </em><em>np.array</em>) – first coordinate of point of interest on interval [-1,1]</p></li>
+<li><p><strong>t</strong> (<em>float</em><em> or </em><em>np.array</em>) – second coordinate location on interval [-1,1]</p></li>
+<li><p><strong>n</strong> – return n-th derivative of the requested shape function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PHI: a list of shape function values</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-femedu.utilities.QuadShapes"></span><dl class="py class">
+<dt class="sig sig-object py" id="femedu.utilities.QuadShapes.QuadShapes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.QuadShapes.</span></span><span class="sig-name descname"><span class="pre">QuadShapes</span></span><a class="headerlink" href="#femedu.utilities.QuadShapes.QuadShapes" title="Permalink to this definition"></a></dt>
+<dd><p>Shape functions or their <code class="code docutils literal notranslate"><span class="pre">*n-th</span></code> mixed derivative
+for the bi-unit-square (two-dimensional domain <span class="math notranslate nohighlight">\((s,t)\in[-1,+1]\times[-1,+1]\)</span>.</p>
+<p>Derivatives are with respect to the normalized coordinate and need to be scaled accordingly.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.utilities.QuadShapes.QuadShapes.shape">
+<span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serendipity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.QuadShapes.QuadShapes.shape" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> – polynomial order of the shape functions. Options: 0,1,2,</p></li>
+<li><p><strong>s</strong> (<em>float</em><em> or </em><em>np.array</em>) – first coordinate of point of interest on interval [-1,1]</p></li>
+<li><p><strong>t</strong> (<em>float</em><em> or </em><em>np.array</em>) – second coordinate location on interval [-1,1]</p></li>
+<li><p><strong>n</strong> – return n-th derivative of the requested shape function.</p></li>
+<li><p><strong>serendipity</strong> (<em>bool</em>) – set to <strong>True</strong> for 8-node serendipity or <strong>False</strong> for bi-quadratic (9-node) quads.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>PHI: a list of shape function values</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Integration_class.html" class="btn btn-neutral float-left" title="Integration classes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Plotter/Plot_Support_Classes.html" class="btn btn-neutral float-right" title="Plot Support classes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

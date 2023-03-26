@@ -23,7 +23,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Tutorials" href="../../tutorials.html" />
+    <link rel="next" title="Frame Examples" href="../frames/index.html" />
     <link rel="prev" title="Simple triangular truss." href="plot_truss03.html" /> 
 </head>
 
@@ -47,12 +47,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../plates/index.html">Plate Examples</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Truss Examples</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="plot_truss01.html">Simple triangular truss.</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_truss02.html">Statically determinate truss bridge.</a></li>
@@ -60,6 +58,8 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">3d truss example demonstrating large deformation analysis.</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plates/index.html">Plate Examples</a></li>
 </ul>
 </li>
 </ul>
@@ -175,63 +175,63 @@ calculated deformation, reactions and internal forces.</p>
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_64:
       x:    [0. 5. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;uz&#39;]
       u:    [0. 0. 0.]
-  Node_1:
+  Node_65:
       x:    [9.5 5.  0. ]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;uz&#39;]
       u:    [0. 0. 0.]
-  Node_2:
+  Node_66:
       x:    [0. 0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;uz&#39;]
       u:    [0. 0. 0.]
-  Node_3:
+  Node_67:
       x:    [9.5 0.  0. ]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;uz&#39;]
       u:    [0. 0. 0.]
-  Node_4:
+  Node_68:
       x:    [5.5  3.75 5.  ]
       P:    [   0.    0. -100.]
       u:    [-0.08746953 -0.01252906 -0.2503495 ]
-  Node_5:
+  Node_69:
       x:    [5.5  1.25 5.  ]
       u:    [-0.00264455 -0.01179569  0.00083329]
 
 Elements:
 ---------------------
-  Truss: node 0 to node 4:
+  Truss: Node_64 to Node_68:
      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.03080874756565243   stress:{&#39;xx&#39;: -64.6983698878701, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
      internal force: -64.6983698878701
      Pe: [ -47.89887800994586 11.172911754774251 ]
-  Truss: node 0 to node 5:
+  Truss: Node_64 to Node_69:
      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0004900825606249915   stress:{&#39;xx&#39;: 1.029173377312482, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
      internal force: 1.029173377312482
      Pe: [ 0.6792413178924864 -0.46479931794631324 ]
-  Truss: node 1 to node 4:
+  Truss: Node_65 to Node_68:
      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.019963631417440297   stress:{&#39;xx&#39;: -41.92362597662462, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
      internal force: -41.92362597662462
      Pe: [ 26.80779992002458 8.280337288436849 ]
-  Truss: node 2 to node 5:
+  Truss: Node_66 to Node_69:
      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.00044001607956029384   stress:{&#39;xx&#39;: -0.9240337670766171, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
      internal force: -0.9240337670766171
      Pe: [ -0.6742349860506781 -0.15186223081588743 ]
-  Truss: node 3 to node 4:
+  Truss: Node_67 to Node_68:
      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.01649978443469319   stress:{&#39;xx&#39;: -34.6495473128557, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
      internal force: -34.6495473128557
      Pe: [ 19.411197930646246 -17.749071323615393 ]
-  Truss: node 3 to node 5:
+  Truss: Node_67 to Node_69:
      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:3.449653904093755e-06   stress:{&#39;xx&#39;: 0.007244273198596885, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
      internal force: 0.007244273198596885
      Pe: [ -0.004444547285224895 0.0013749053957862894 ]
-  Truss: node 4 to node 5:
+  Truss: Node_68 to Node_69:
      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.010837311867015104   stress:{&#39;xx&#39;: 22.75835492073172, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
      internal force: 22.75835492073172
      Pe: [ 0.7681078647978632 -22.631379155484087 ]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.099 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.073 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-trusses-plot-truss04-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/553115917cd4150d729e7db698151426/plot_truss04.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_truss04.py</span></code></a></p>
@@ -248,7 +248,7 @@ Elements:
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="plot_truss03.html" class="btn btn-neutral float-left" title="Simple triangular truss." accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../tutorials.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../frames/index.html" class="btn btn-neutral float-right" title="Frame Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

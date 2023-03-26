@@ -47,10 +47,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Frame Examples</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="plot_frame01.html">Buckling of a beam with pin-pin support</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_frame02.html">Buckling of a vertical beam with pin-pin support</a></li>
@@ -59,7 +60,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../plates/index.html">Plate Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
 </ul>
 </li>
 </ul>
@@ -310,13 +310,13 @@ to download the full example code</p>
 <li><img src="../../_images/sphx_glr_plot_frame03_006.png" srcset="../../_images/sphx_glr_plot_frame03_006.png" alt="Mode Shape for $ \lambda = -0.21 $" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System object
-Node_0(x=[0. 0.], u=None)
-Node_1(x=[ 0. 50.], u=None)
-Node_2(x=[80.  0.], u=None)
-Node_3(x=[80. 50.], u=None)
-Frame2D(Node_0, Node_1, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_2, Node_3, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_1, Node_3, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 80.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Node_9(x=[0. 0.], u=None)
+Node_10(x=[ 0. 50.], u=None)
+Node_11(x=[80.  0.], u=None)
+Node_12(x=[80. 50.], u=None)
+Frame2D(Node_9, Node_10, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_11, Node_12, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_10, Node_12, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 80.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
 
 ==== perform the analysis ===
 
@@ -465,35 +465,35 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_9:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_1:
+  Node_10:
       x:    [ 0. 50.]
       u:    [ 0.00807668 -0.09310345 -0.20194602]
-  Node_2:
+  Node_11:
       x:    [80.  0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_3:
+  Node_12:
       x:    [80. 50.]
       u:    [-0.00807668 -0.09310345  0.20194602]
 
 Elements:
 ---------------------
-  Frame2D_0: nodes ( Node_0 Node_1 )
+  Frame2D_8: nodes ( Node_9 Node_10 )
       material: ElasticSection
       internal forces: f0=-1080.00 V0=-117.11 M0=2842.69 fl=-1080.00 Vl=-117.11 Ml=-3004.18 Pw=0.00 Mw=0.00
-  Frame2D_0: nodes ( Node_2 Node_3 )
+  Frame2D_9: nodes ( Node_11 Node_12 )
       material: ElasticSection
       internal forces: f0=-1080.00 V0=117.11 M0=-2842.69 fl=-1080.00 Vl=117.11 Ml=3004.18 Pw=0.00 Mw=0.00
-  Frame2D_0: nodes ( Node_1 Node_3 )
+  Frame2D_10: nodes ( Node_10 Node_12 )
       material: ElasticSection
       internal forces: f0=-117.11 V0=-0.00 M0=11395.82 fl=-117.11 Vl=-0.00 Ml=11395.82 Pw=-1080.00 Mw=-14400.00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.085 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.940 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-frames-plot-frame03-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/32fd880e109e940272d694bbf6555869/plot_frame03.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_frame03.py</span></code></a></p>

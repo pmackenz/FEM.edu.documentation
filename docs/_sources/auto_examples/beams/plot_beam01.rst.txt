@@ -188,16 +188,16 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Elements:
     ---------------------
-      Beam2D: node 0 to node 1:
+      Beam2D: Node_0 to Node_1:
          material ElasticSection properties: {'E': 29000.0, 'A': 4.7, 'I': 103, 'nu': 0.0, 'fy': 1e+30}  strain:{'axial': 0.0, 'flexure': 0.0}   stress:{'axial': 0.0, 'flexure': 0.0}
          nodal forces: Vi:65.0 Mi:-74.99999999999909 Vj:-65.0 Mj:2024.999999999989
-      Beam2D: node 1 to node 2:
+      Beam2D: Node_1 to Node_2:
          material ElasticSection properties: {'E': 29000.0, 'A': 4.7, 'I': 103, 'nu': 0.0, 'fy': 1e+30}  strain:{'axial': 0.0, 'flexure': 0.0}   stress:{'axial': 0.0, 'flexure': 0.0}
          nodal forces: Vi:34.999999999999886 Mi:-2024.9999999999864 Vj:-34.999999999999886 Mj:3074.999999999981
-      Beam2D: node 2 to node 3:
+      Beam2D: Node_2 to Node_3:
          material ElasticSection properties: {'E': 29000.0, 'A': 4.7, 'I': 103, 'nu': 0.0, 'fy': 1e+30}  strain:{'axial': 0.0, 'flexure': 0.0}   stress:{'axial': 0.0, 'flexure': 0.0}
          nodal forces: Vi:-34.999999999999716 Mi:-3074.99999999998 Vj:34.999999999999716 Mj:2024.9999999999936
-      Beam2D: node 3 to node 4:
+      Beam2D: Node_3 to Node_4:
          material ElasticSection properties: {'E': 29000.0, 'A': 4.7, 'I': 103, 'nu': 0.0, 'fy': 1e+30}  strain:{'axial': 0.0, 'flexure': 0.0}   stress:{'axial': 0.0, 'flexure': 0.0}
          nodal forces: Vi:-65.00000000000023 Mi:-2024.9999999999936 Vj:65.00000000000023 Mj:74.99999999999818
 
@@ -208,7 +208,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.498 seconds)
+   **Total running time of the script:** ( 0 minutes  0.919 seconds)
 
 
 .. _sphx_glr_download_auto_examples_beams_plot_beam01.py:

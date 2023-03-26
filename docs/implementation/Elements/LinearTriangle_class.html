@@ -133,6 +133,14 @@ i=1,2,3 \\
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.LinearTriangle.</span></span><span class="sig-name descname"><span class="pre">LinearTriangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.LinearTriangle.LinearTriangle" title="Permalink to this definition"></a></dt>
 <dd><p>class: representing a single truss element</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.LinearTriangle.LinearTriangle.computeSurfaceLoads">
+<span class="sig-name descname"><span class="pre">computeSurfaceLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.LinearTriangle.LinearTriangle.computeSurfaceLoads" title="Permalink to this definition"></a></dt>
+<dd><p>compute surface loads using faces</p>
+<p>This method should be called during <a class="reference internal" href="#femedu.elements.LinearTriangle.LinearTriangle.updateState" title="femedu.elements.LinearTriangle.LinearTriangle.updateState"><code class="xref py py-meth docutils literal notranslate"><span class="pre">updateState()</span></code></a> by every
+element supporting surface loads</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.LinearTriangle.LinearTriangle.resetLoads">
 <span class="sig-name descname"><span class="pre">resetLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.LinearTriangle.LinearTriangle.resetLoads" title="Permalink to this definition"></a></dt>
 <dd><p>default implementation for resetting element loads.</p>
@@ -140,7 +148,7 @@ i=1,2,3 \\
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.LinearTriangle.LinearTriangle.setSurfaceLoad">
-<span class="sig-name descname"><span class="pre">setSurfaceLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.LinearTriangle.LinearTriangle.setSurfaceLoad" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setSurfaceLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.LinearTriangle.LinearTriangle.setSurfaceLoad" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
@@ -167,7 +175,8 @@ i=1,2,3 \\
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>face</strong> – face ID for the laoded face</p></li>
-<li><p><strong>w</strong> – magnitude of distributed load per area. Tension on a surface is positive.</p></li>
+<li><p><strong>pn</strong> – magnitude of distributed normal load per area. Tension on a surface is positive.</p></li>
+<li><p><strong>ps</strong> – magnitude of distributed shear load per area. Positive direction is defined as shown in the above table.</p></li>
 </ul>
 </dd>
 </dl>

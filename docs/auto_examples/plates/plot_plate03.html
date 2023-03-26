@@ -47,10 +47,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Plate Examples</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="plot_plate01.html">A square patch made of two triangular plate elements</a></li>
@@ -58,9 +59,9 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate04.html">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate05.html">Pulling a plate with a circular hole</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate06.html">Pulling a plate with a circular hole</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
 </ul>
 </li>
 </ul>
@@ -232,7 +233,7 @@ e.g., constant tension in the x-direction, or constant shear, etc.</p>
 
         <span class="c1"># surface loads on the left side</span>
         <span class="n">elements</span><span class="p">[</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">px</span><span class="p">)</span>
-        <span class="n">elements</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">px</span><span class="p">)</span>
+        <span class="n">elements</span><span class="p">[</span> <span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">px</span><span class="p">)</span>
         <span class="n">elements</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">px</span><span class="p">)</span>
 
         <span class="c1"># surface loads on the right side</span>
@@ -251,6 +252,8 @@ e.g., constant tension in the x-direction, or constant shear, etc.</p>
         <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">10.0</span><span class="p">)</span>
         <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 
+        <span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">showKt</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate03_spy_Kt.png&quot;</span><span class="p">)</span>
+
         <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
 
         <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate03_deformed.png&quot;</span><span class="p">)</span>
@@ -264,198 +267,175 @@ e.g., constant tension in the x-direction, or constant shear, etc.</p>
 </div>
 <ul class="sphx-glr-horizontal">
 <li><img src="../../_images/sphx_glr_plot_plate03_001.png" srcset="../../_images/sphx_glr_plot_plate03_001.png" alt="undeformed system" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_plate03_002.png" srcset="../../_images/sphx_glr_plot_plate03_002.png" alt="Deformed System (magnification=10.00)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate03_002.png" srcset="../../_images/sphx_glr_plot_plate03_002.png" alt="plot plate03" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate03_003.png" srcset="../../_images/sphx_glr_plot_plate03_003.png" alt="Deformed System (magnification=10.00)" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System Analysis Report
 =======================
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_62:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    None
-  Node_1:
+  Node_63:
       x:    [20.  0.]
       u:    None
-  Node_2:
+  Node_64:
       x:    [50.  0.]
       u:    None
-  Node_3:
+  Node_65:
       x:    [70.  0.]
       u:    None
-  Node_4:
+  Node_66:
       x:    [100.   0.]
       fix:  [&#39;uy&#39;]
       u:    None
-  Node_5:
+  Node_67:
       x:    [ 0. 16.]
       u:    None
-  Node_6:
+  Node_68:
       x:    [15. 24.]
       u:    None
-  Node_7:
+  Node_69:
       x:    [50. 16.]
       u:    None
-  Node_8:
+  Node_70:
       x:    [80. 24.]
       u:    None
-  Node_9:
+  Node_71:
       x:    [100.  16.]
       u:    None
-  Node_10:
+  Node_72:
       x:    [ 0. 48.]
       u:    None
-  Node_11:
+  Node_73:
       x:    [20. 40.]
       u:    None
-  Node_12:
+  Node_74:
       x:    [70. 56.]
       u:    None
-  Node_13:
+  Node_75:
       x:    [90. 48.]
       u:    None
-  Node_14:
+  Node_76:
       x:    [100.  64.]
       u:    None
-  Node_15:
+  Node_77:
       x:    [ 0. 80.]
       u:    None
-  Node_16:
+  Node_78:
       x:    [30. 80.]
       u:    None
-  Node_17:
+  Node_79:
       x:    [55. 80.]
       u:    None
-  Node_18:
+  Node_80:
       x:    [80. 80.]
       u:    None
-  Node_19:
+  Node_81:
       x:    [100.  80.]
       u:    None
 
 Elements:
 ---------------------
-  LinearTriangle_0: nodes ( Node_0 Node_1 Node_5 )
+  LinearTriangle_61: nodes ( Node_62 Node_63 Node_67 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      element forces added to node:
-          Node_0: []
-          Node_1: []
-          Node_5: []
-  LinearTriangle_0: nodes ( Node_1 Node_2 Node_6 )
+  LinearTriangle_62: nodes ( Node_63 Node_64 Node_68 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_2 Node_3 Node_7 )
+  LinearTriangle_63: nodes ( Node_64 Node_65 Node_69 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_3 Node_4 Node_8 )
+  LinearTriangle_64: nodes ( Node_65 Node_66 Node_70 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_6 Node_5 Node_1 )
+  LinearTriangle_65: nodes ( Node_68 Node_67 Node_63 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_7 Node_6 Node_2 )
+  LinearTriangle_66: nodes ( Node_69 Node_68 Node_64 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_8 Node_7 Node_3 )
+  LinearTriangle_67: nodes ( Node_70 Node_69 Node_65 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_9 Node_8 Node_4 )
+  LinearTriangle_68: nodes ( Node_71 Node_70 Node_66 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      element forces added to node:
-          Node_9: []
-          Node_8: []
-          Node_4: []
-  LinearTriangle_0: nodes ( Node_5 Node_6 Node_10 )
+  LinearTriangle_69: nodes ( Node_67 Node_68 Node_72 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      element forces added to node:
-          Node_5: []
-          Node_6: []
-          Node_10: []
-  LinearTriangle_0: nodes ( Node_6 Node_7 Node_11 )
+  LinearTriangle_70: nodes ( Node_68 Node_69 Node_73 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_7 Node_8 Node_12 )
+  LinearTriangle_71: nodes ( Node_69 Node_70 Node_74 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_8 Node_9 Node_13 )
+  LinearTriangle_72: nodes ( Node_70 Node_71 Node_75 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_11 Node_10 Node_6 )
+  LinearTriangle_73: nodes ( Node_73 Node_72 Node_68 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_12 Node_11 Node_7 )
+  LinearTriangle_74: nodes ( Node_74 Node_73 Node_69 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_13 Node_12 Node_8 )
+  LinearTriangle_75: nodes ( Node_75 Node_74 Node_70 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_14 Node_13 Node_9 )
+  LinearTriangle_76: nodes ( Node_76 Node_75 Node_71 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      element forces added to node:
-          Node_14: []
-          Node_13: []
-          Node_9: []
-  LinearTriangle_0: nodes ( Node_10 Node_11 Node_15 )
+  LinearTriangle_77: nodes ( Node_72 Node_73 Node_77 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      element forces added to node:
-          Node_10: []
-          Node_11: []
-          Node_15: []
-  LinearTriangle_0: nodes ( Node_11 Node_12 Node_16 )
+  LinearTriangle_78: nodes ( Node_73 Node_74 Node_78 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_12 Node_13 Node_17 )
+  LinearTriangle_79: nodes ( Node_74 Node_75 Node_79 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_13 Node_14 Node_18 )
+  LinearTriangle_80: nodes ( Node_75 Node_76 Node_80 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_16 Node_15 Node_11 )
+  LinearTriangle_81: nodes ( Node_78 Node_77 Node_73 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_17 Node_16 Node_12 )
+  LinearTriangle_82: nodes ( Node_79 Node_78 Node_74 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_18 Node_17 Node_13 )
+  LinearTriangle_83: nodes ( Node_80 Node_79 Node_75 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_19 Node_18 Node_14 )
+  LinearTriangle_84: nodes ( Node_81 Node_80 Node_76 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      element forces added to node:
-          Node_19: []
-          Node_18: []
-          Node_14: []
 
 norm of the out-of-balance force:   6.3498e+03
 norm of the out-of-balance force:   4.9320e+01
@@ -468,194 +448,170 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_62:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0. 0.]
-  Node_1:
+  Node_63:
       x:    [20.  0.]
       u:    [9.92598389e-02 3.57659354e-16]
-  Node_2:
+  Node_64:
       x:    [50.  0.]
       u:    [2.48149597e-01 7.56113665e-16]
-  Node_3:
+  Node_65:
       x:    [70.  0.]
       u:    [ 3.47409436e-01 -2.85562579e-15]
-  Node_4:
+  Node_66:
       x:    [100.   0.]
       fix:  [&#39;uy&#39;]
       u:    [0.49629919 0.        ]
-  Node_5:
+  Node_67:
       x:    [ 0. 16.]
       u:    [-1.24563302e-15 -1.99136226e-02]
-  Node_6:
+  Node_68:
       x:    [15. 24.]
       u:    [ 0.07444488 -0.02987043]
-  Node_7:
+  Node_69:
       x:    [50. 16.]
       u:    [ 0.2481496  -0.01991362]
-  Node_8:
+  Node_70:
       x:    [80. 24.]
       u:    [ 0.39703936 -0.02987043]
-  Node_9:
+  Node_71:
       x:    [100.  16.]
       u:    [ 0.49629919 -0.01991362]
-  Node_10:
+  Node_72:
       x:    [ 0. 48.]
       u:    [-2.07810604e-15 -5.97408678e-02]
-  Node_11:
+  Node_73:
       x:    [20. 40.]
       u:    [ 0.09925984 -0.04978406]
-  Node_12:
+  Node_74:
       x:    [70. 56.]
       u:    [ 0.34740944 -0.06969768]
-  Node_13:
+  Node_75:
       x:    [90. 48.]
       u:    [ 0.44666927 -0.05974087]
-  Node_14:
+  Node_76:
       x:    [100.  64.]
       u:    [ 0.49629919 -0.07965449]
-  Node_15:
+  Node_77:
       x:    [ 0. 80.]
       u:    [-2.59181541e-15 -9.95681131e-02]
-  Node_16:
+  Node_78:
       x:    [30. 80.]
       u:    [ 0.14888976 -0.09956811]
-  Node_17:
+  Node_79:
       x:    [55. 80.]
       u:    [ 0.27296456 -0.09956811]
-  Node_18:
+  Node_80:
       x:    [80. 80.]
       u:    [ 0.39703936 -0.09956811]
-  Node_19:
+  Node_81:
       x:    [100.  80.]
       u:    [ 0.49629919 -0.09956811]
 
 Elements:
 ---------------------
-  LinearTriangle_0: nodes ( Node_0 Node_1 Node_5 )
+  LinearTriangle_61: nodes ( Node_62 Node_63 Node_67 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=-6.038e-17 zz=-9.329e-04
       stress: xx=9.951e+01 yy=2.959e-12 xy=-4.830e-13 zz=0.000e+00
-      element forces added to node:
-          Node_0: [-800.    0.]
-          Node_1: [0. 0.]
-          Node_5: [-800.    0.]
-  LinearTriangle_0: nodes ( Node_1 Node_2 Node_6 )
+  LinearTriangle_62: nodes ( Node_63 Node_64 Node_68 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=-7.754e-17 zz=-9.329e-04
       stress: xx=9.951e+01 yy=1.776e-12 xy=-6.203e-13 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_2 Node_3 Node_7 )
+  LinearTriangle_63: nodes ( Node_64 Node_65 Node_69 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=2.659e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=6.516e-12 xy=2.127e-12 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_3 Node_4 Node_8 )
+  LinearTriangle_64: nodes ( Node_65 Node_66 Node_70 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=-5.043e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=5.933e-13 xy=-4.035e-12 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_6 Node_5 Node_1 )
+  LinearTriangle_65: nodes ( Node_68 Node_67 Node_63 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=-5.579e-17 zz=-9.329e-04
       stress: xx=9.951e+01 yy=4.146e-12 xy=-4.463e-13 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_7 Node_6 Node_2 )
+  LinearTriangle_66: nodes ( Node_69 Node_68 Node_64 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=5.017e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=4.146e-12 xy=4.014e-12 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_8 Node_7 Node_3 )
+  LinearTriangle_67: nodes ( Node_70 Node_69 Node_65 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=-5.017e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=1.776e-12 xy=-4.014e-12 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_9 Node_8 Node_4 )
+  LinearTriangle_68: nodes ( Node_71 Node_70 Node_66 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=1.109e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=5.329e-12 xy=8.871e-13 zz=0.000e+00
-      element forces added to node:
-          Node_9: [800.   0.]
-          Node_8: [0. 0.]
-          Node_4: [800.   0.]
-  LinearTriangle_0: nodes ( Node_5 Node_6 Node_10 )
+  LinearTriangle_69: nodes ( Node_67 Node_68 Node_72 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=8.474e-17 zz=-9.329e-04
       stress: xx=9.951e+01 yy=-5.933e-13 xy=6.779e-13 zz=0.000e+00
-      element forces added to node:
-          Node_5: [-1600.     0.]
-          Node_6: [0. 0.]
-          Node_10: [-1600.     0.]
-  LinearTriangle_0: nodes ( Node_6 Node_7 Node_11 )
+  LinearTriangle_70: nodes ( Node_68 Node_69 Node_73 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=-2.841e-17 zz=-9.329e-04
       stress: xx=9.951e+01 yy=7.695e-12 xy=-2.273e-13 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_7 Node_8 Node_12 )
+  LinearTriangle_71: nodes ( Node_69 Node_70 Node_74 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=-5.544e-17 zz=-9.329e-04
       stress: xx=9.951e+01 yy=-4.142e-12 xy=-4.435e-13 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_8 Node_9 Node_13 )
+  LinearTriangle_72: nodes ( Node_70 Node_71 Node_75 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=5.010e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=1.776e-12 xy=4.008e-12 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_11 Node_10 Node_6 )
+  LinearTriangle_73: nodes ( Node_73 Node_72 Node_68 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=1.653e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=-5.933e-13 xy=1.322e-12 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_12 Node_11 Node_7 )
+  LinearTriangle_74: nodes ( Node_74 Node_73 Node_69 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=-4.456e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=-2.959e-12 xy=-3.565e-12 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_13 Node_12 Node_8 )
+  LinearTriangle_75: nodes ( Node_75 Node_74 Node_70 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=3.902e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=1.776e-12 xy=3.121e-12 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_14 Node_13 Node_9 )
+  LinearTriangle_76: nodes ( Node_76 Node_75 Node_71 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=8.055e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=5.933e-13 xy=6.444e-12 zz=0.000e+00
-      element forces added to node:
-          Node_14: [2400.    0.]
-          Node_13: [0. 0.]
-          Node_9: [2400.    0.]
-  LinearTriangle_0: nodes ( Node_10 Node_11 Node_15 )
+  LinearTriangle_77: nodes ( Node_72 Node_73 Node_77 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=5.383e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=1.006e-11 xy=4.306e-12 zz=0.000e+00
-      element forces added to node:
-          Node_10: [-1600.     0.]
-          Node_11: [0. 0.]
-          Node_15: [-1600.     0.]
-  LinearTriangle_0: nodes ( Node_11 Node_12 Node_16 )
+  LinearTriangle_78: nodes ( Node_73 Node_74 Node_78 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=-1.105e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=4.146e-12 xy=-8.843e-13 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_12 Node_13 Node_17 )
+  LinearTriangle_79: nodes ( Node_74 Node_75 Node_79 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=5.579e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=1.007e-11 xy=4.463e-12 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_13 Node_14 Node_18 )
+  LinearTriangle_80: nodes ( Node_75 Node_76 Node_80 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=1.925e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=4.146e-12 xy=1.540e-12 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_16 Node_15 Node_11 )
+  LinearTriangle_81: nodes ( Node_78 Node_77 Node_73 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=8.174e-17 zz=-9.329e-04
       stress: xx=9.951e+01 yy=4.146e-12 xy=6.539e-13 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_17 Node_16 Node_12 )
+  LinearTriangle_82: nodes ( Node_79 Node_78 Node_74 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=-1.246e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=-6.516e-12 xy=-9.965e-13 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_18 Node_17 Node_13 )
+  LinearTriangle_83: nodes ( Node_80 Node_79 Node_75 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=-4.463e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=-1.776e-12 xy=-3.570e-12 zz=0.000e+00
-  LinearTriangle_0: nodes ( Node_19 Node_18 Node_14 )
+  LinearTriangle_84: nodes ( Node_81 Node_80 Node_76 )
       material: PlaneStress
       strain: xx=4.975e-03 yy=-1.244e-03 xy=7.097e-16 zz=-9.329e-04
       stress: xx=9.951e+01 yy=1.125e-11 xy=5.677e-12 zz=0.000e+00
-      element forces added to node:
-          Node_19: [800.   0.]
-          Node_18: [0. 0.]
-          Node_14: [800.   0.]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.593 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.587 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate03-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/8c3e2da51c2ed3e790c9699e4ff8d4ee/plot_plate03.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate03.py</span></code></a></p>

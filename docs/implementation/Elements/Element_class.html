@@ -201,7 +201,7 @@ entire entered load is applied in full.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.setSurfaceLoad">
-<span class="sig-name descname"><span class="pre">setSurfaceLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.setSurfaceLoad" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setSurfaceLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.setSurfaceLoad" title="Permalink to this definition"></a></dt>
 <dd><div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This method needs to be implemented by every element that shall accept a surface load.</p>
@@ -209,8 +209,9 @@ entire entered load is applied in full.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>face</strong> – face ID for the laoded face</p></li>
-<li><p><strong>w</strong> – magnitude of distributed load per area. Tension on a surface is positive.</p></li>
+<li><p><strong>face_ix</strong> – face index for the laoded face (integer starting at 0)</p></li>
+<li><p><strong>pn</strong> – magnitude of distributed normal load per unit length. Tension on a surface is positive.</p></li>
+<li><p><strong>ps</strong> – magnitude of distributed shear load per unit length. Positive shear rotates the element counter-clockwise.</p></li>
 </ul>
 </dd>
 </dl>
