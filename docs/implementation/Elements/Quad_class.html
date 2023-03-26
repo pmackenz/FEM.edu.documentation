@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LinearTriangle class &mdash; FEM.edu FEM.edu-v0.9.2-pre documentation</title>
+  <title>Quad class &mdash; FEM.edu FEM.edu-v0.9.2-pre documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
@@ -20,12 +20,11 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Quad class" href="Quad_class.html" />
-    <link rel="prev" title="Frame2D class" href="Frame2D_class.html" /> 
+    <link rel="next" title="Quad8 class" href="Quad8_class.html" />
+    <link rel="prev" title="LinearTriangle class" href="LinearTriangle_class.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -86,9 +85,9 @@
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../implementation.html">Implementation</a> &raquo;</li>
           <li><a href="Element_class.html">Element classes</a> &raquo;</li>
-      <li>LinearTriangle class</li>
+      <li>Quad class</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/implementation/Elements/LinearTriangle_class.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/implementation/Elements/Quad_class.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -96,59 +95,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="lineartriangle-class">
-<h1>LinearTriangle class<a class="headerlink" href="#lineartriangle-class" title="Permalink to this heading"></a></h1>
-<p>Coordinate-free formulation for a finite deformation bi-linear triangle.</p>
-<div class="math notranslate nohighlight">
-\[\mathbf{X}=\mathbf{X}_0+\mathbf{G}_i \xi^i \quad i=1,2,3 \quad \xi^i \geqslant 0 ~\&amp;~ \xi^1+\xi^2+\xi^3 \leq 1\]</div>
-<div class="math notranslate nohighlight">
-\[d\mathbf{X}=\mathbf{G}_i d \xi^i \rightarrow d \xi^i=\mathbf{G}^i \cdot d \mathbf{X} \quad w/ ~~ \mathbf{G}^i \mathbf{G}_j=\delta_j^i\]</div>
-<div class="math notranslate nohighlight">
-\[\mathbf{x}=\mathbf{x}_0+ \mathbf{g}_i \xi^i\]</div>
-<div class="math notranslate nohighlight">
-\[d\mathbf{x}=\mathbf{g}_i d \xi^i=\left(\mathbf{g} \otimes \mathbf{G}^i\right) \cdot d \mathbf{X}=\mathbf{F} \cdot d\mathbf{\bar{x}} \Longrightarrow \mathbf{F}=\mathbf{g}_i \otimes \mathbf{G}^i\]</div>
-<div class="math notranslate nohighlight">
-\[\mathbf{F}^t \mathbf{F}=g_{i j} \mathbf{G}^i \otimes \mathbf{G}^j \rightarrow \mathbf{E}=\frac{1}{2}\left(\mathbf{F}^t \mathbf{F}-\mathbf{1}\right)=\frac{1}{2}\left(g_{i j}-G_{i j}\right) \mathbf{G}^i \otimes \mathbf{G}^j\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}\delta \mathbf{E}=\delta\mathbf{g}_i \otimes \mathbf{G}^i=\left(\delta \mathbf{x}_i-\delta \mathbf{x}_0\right) \otimes \mathbf{G}^i=\delta \mathbf{x}_\alpha \otimes \mathbf{G}^\alpha \quad \underline{\text { note }}: \quad \begin{array}{l}
-i=1,2,3 \\
-\alpha=0,1,2,3
-\end{array}\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{G}^0=-\mathbf{G}^1-\mathbf{G}^2-\mathbf{G}^3\)</span> and</p>
-<div class="math notranslate nohighlight">
-\[\delta\mathbf{F}
-=\left(\mathbf{G}^\alpha \otimes \delta\mathbf{x}_\alpha\right)\left(\mathbf{g}_i \otimes \mathbf{G}^i\right)
-=\delta\mathbf{x}_\alpha \cdot \underbrace{\mathbf{g}_i \otimes \overbrace{\mathbf{G}^\alpha \otimes \mathbf{G}^i}^{\bar{\mathbf{G}}^a}}_{=: {\mathbf{B}^{\alpha}}^t}
-=\delta\mathbf{x}_\alpha \cdot{\mathbf{B^{\alpha}}^t}\]</div>
+  <section id="quad-class">
+<h1>Quad class<a class="headerlink" href="#quad-class" title="Permalink to this heading"></a></h1>
 <section id="parent-class">
 <h2>Parent class<a class="headerlink" href="#parent-class" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="Element_class.html"><span class="doc">Element classes</span></a></p></li>
 </ul>
 </section>
-<section id="module-femedu.elements.LinearTriangle">
-<span id="class-doc"></span><h2>Class doc<a class="headerlink" href="#module-femedu.elements.LinearTriangle" title="Permalink to this heading"></a></h2>
+<section id="module-femedu.elements.Quad">
+<span id="class-doc"></span><h2>Class doc<a class="headerlink" href="#module-femedu.elements.Quad" title="Permalink to this heading"></a></h2>
+<section id="node-quadrilateral">
+<h3>4-node quadrilateral<a class="headerlink" href="#node-quadrilateral" title="Permalink to this heading"></a></h3>
+<p>incomplete bi-quadratic interpolation</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="mi">1</span>
+<span class="n">x</span>     <span class="n">y</span>
+  <span class="n">x</span><span class="o">*</span><span class="n">y</span>
+</pre></div>
+</div>
 <dl class="py class">
-<dt class="sig sig-object py" id="femedu.elements.LinearTriangle.LinearTriangle">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.LinearTriangle.</span></span><span class="sig-name descname"><span class="pre">LinearTriangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.LinearTriangle.LinearTriangle" title="Permalink to this definition"></a></dt>
-<dd><p>class: representing a single truss element</p>
+<dt class="sig sig-object py" id="femedu.elements.Quad.Quad">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.Quad.</span></span><span class="sig-name descname"><span class="pre">Quad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Quad.Quad" title="Permalink to this definition"></a></dt>
+<dd><p>class: representing a plane 4-node quadrilateral</p>
+<p>This element works as 2D plate, loaded in-plane, and as a 3D membrane element.</p>
+<ul class="simple">
+<li><p>For 2D plate behavior, define nodes as two-dimensional nodes</p></li>
+<li><p>For 3D membrane behavior, define nodes as three-dimensional nodes</p></li>
+</ul>
 <dl class="py method">
-<dt class="sig sig-object py" id="femedu.elements.LinearTriangle.LinearTriangle.computeSurfaceLoads">
-<span class="sig-name descname"><span class="pre">computeSurfaceLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.LinearTriangle.LinearTriangle.computeSurfaceLoads" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="femedu.elements.Quad.Quad.computeSurfaceLoads">
+<span class="sig-name descname"><span class="pre">computeSurfaceLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Quad.Quad.computeSurfaceLoads" title="Permalink to this definition"></a></dt>
 <dd><p>compute surface loads using faces</p>
-<p>This method should be called during <a class="reference internal" href="#femedu.elements.LinearTriangle.LinearTriangle.updateState" title="femedu.elements.LinearTriangle.LinearTriangle.updateState"><code class="xref py py-meth docutils literal notranslate"><span class="pre">updateState()</span></code></a> by every
+<p>This method should be called during <a class="reference internal" href="#femedu.elements.Quad.Quad.updateState" title="femedu.elements.Quad.Quad.updateState"><code class="xref py py-meth docutils literal notranslate"><span class="pre">updateState()</span></code></a> by every
 element supporting surface loads</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="femedu.elements.LinearTriangle.LinearTriangle.resetLoads">
-<span class="sig-name descname"><span class="pre">resetLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.LinearTriangle.LinearTriangle.resetLoads" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="femedu.elements.Quad.Quad.resetLoads">
+<span class="sig-name descname"><span class="pre">resetLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Quad.Quad.resetLoads" title="Permalink to this definition"></a></dt>
 <dd><p>default implementation for resetting element loads.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="femedu.elements.LinearTriangle.LinearTriangle.setSurfaceLoad">
-<span class="sig-name descname"><span class="pre">setSurfaceLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.LinearTriangle.LinearTriangle.setSurfaceLoad" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="femedu.elements.Quad.Quad.setSurfaceLoad">
+<span class="sig-name descname"><span class="pre">setSurfaceLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Quad.Quad.setSurfaceLoad" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
@@ -167,7 +157,10 @@ element supporting surface loads</p>
 <td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">1</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">2</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>2</p></td>
-<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">2</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">0</span></code></p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">2</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">3</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">0</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -183,12 +176,13 @@ element supporting surface loads</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="femedu.elements.LinearTriangle.LinearTriangle.updateState">
-<span class="sig-name descname"><span class="pre">updateState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.LinearTriangle.LinearTriangle.updateState" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="femedu.elements.Quad.Quad.updateState">
+<span class="sig-name descname"><span class="pre">updateState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Quad.Quad.updateState" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
+</section>
 </section>
 </section>
 
@@ -196,8 +190,8 @@ element supporting surface loads</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Frame2D_class.html" class="btn btn-neutral float-left" title="Frame2D class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Quad_class.html" class="btn btn-neutral float-right" title="Quad class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="LinearTriangle_class.html" class="btn btn-neutral float-left" title="LinearTriangle class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Quad8_class.html" class="btn btn-neutral float-right" title="Quad8 class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
