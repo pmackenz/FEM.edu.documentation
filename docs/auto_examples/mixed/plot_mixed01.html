@@ -245,34 +245,34 @@ to download the full example code</p>
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_2857:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    None
-  Node_1:
+  Node_2858:
       x:    [ 0. 50.]
       P:    [20.  0.  0.]
       u:    None
-  Node_2:
+  Node_2859:
       x:    [80.  0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    None
-  Node_3:
+  Node_2860:
       x:    [80. 50.]
       u:    None
 
 Elements:
 ---------------------
-  Frame2D_0: nodes ( Node_0 Node_1 )
+  Frame2D_5204: nodes ( Node_2857 Node_2858 )
       material: ElasticSection
       internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-  Frame2D_1: nodes ( Node_2 Node_3 )
+  Frame2D_5205: nodes ( Node_2859 Node_2860 )
       material: ElasticSection
       internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-  Frame2D_2: nodes ( Node_1 Node_3 )
+  Frame2D_5206: nodes ( Node_2858 Node_2860 )
       material: ElasticSection
       internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-  Truss: Node_0 to Node_3:
+  Truss: Node_2857 to Node_2860:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 0.0
 
@@ -287,7 +287,7 @@ norm of the out-of-balance force:   0.0000e+00
 norm of the out-of-balance force:   4.2079e+02
 norm of the out-of-balance force:   2.6166e+00
 norm of the out-of-balance force:   3.7928e-03
-norm of the out-of-balance force:   7.4666e-07
+norm of the out-of-balance force:   7.4668e-07
 +
 
 === next load level ===
@@ -324,7 +324,7 @@ norm of the out-of-balance force:   1.3721e+01
 norm of the out-of-balance force:   1.0343e-01
 norm of the out-of-balance force:   1.1694e-04
 norm of the out-of-balance force:   1.0397e-06
-norm of the out-of-balance force:   6.6361e-09
+norm of the out-of-balance force:   6.6345e-09
 +
 
 === next load level ===
@@ -334,7 +334,7 @@ norm of the out-of-balance force:   1.6668e+01
 norm of the out-of-balance force:   1.5230e-01
 norm of the out-of-balance force:   2.1431e-04
 norm of the out-of-balance force:   2.2310e-06
-norm of the out-of-balance force:   1.7561e-08
+norm of the out-of-balance force:   1.7566e-08
 +
 
 === next load level ===
@@ -344,7 +344,7 @@ norm of the out-of-balance force:   1.9690e+01
 norm of the out-of-balance force:   2.1203e-01
 norm of the out-of-balance force:   3.6123e-04
 norm of the out-of-balance force:   4.2790e-06
-norm of the out-of-balance force:   4.0324e-08
+norm of the out-of-balance force:   4.0334e-08
 +
 
 === next load level ===
@@ -375,39 +375,39 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_2857:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_1:
+  Node_2858:
       x:    [ 0. 50.]
       P:    [20.  0.  0.]
       u:    [ 0.81266732 -0.01624899 -0.03775534]
-  Node_2:
+  Node_2859:
       x:    [80.  0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_3:
+  Node_2860:
       x:    [80. 50.]
       u:    [ 0.78416849 -0.02726845  0.03214935]
 
 Elements:
 ---------------------
-  Frame2D_0: nodes ( Node_0 Node_1 )
+  Frame2D_5204: nodes ( Node_2857 Node_2858 )
       material: ElasticSection
       internal forces: f0=-188.49 V0=-6.62 M0=-99.67 fl=-188.49 Vl=-6.62 Ml=-277.32 Pw=0.00 Mw=0.00
-  Frame2D_1: nodes ( Node_2 Node_3 )
+  Frame2D_5205: nodes ( Node_2859 Node_2860 )
       material: ElasticSection
       internal forces: f0=-316.31 V0=37.20 M0=-911.91 fl=-316.31 Vl=37.20 Ml=1195.98 Pw=0.00 Mw=0.00
-  Frame2D_2: nodes ( Node_1 Node_3 )
+  Frame2D_5206: nodes ( Node_2858 Node_2860 )
       material: ElasticSection
       internal forces: f0=-206.62 V0=-11.51 M0=2389.35 fl=-206.62 Vl=-11.51 Ml=1470.69 Pw=-200.00 Mw=-2666.67
-  Truss: Node_0 to Node_3:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.006869475390917045   stress:{&#39;xx&#39;: 199.2147863365943, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
-      internal force: 199.2147863365943
+  Truss: Node_2857 to Node_2860:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.006869475390917047   stress:{&#39;xx&#39;: 199.21478633659436, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 199.21478633659436
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.870 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.664 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-mixed-plot-mixed01-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/01088434f2f8ec92eeb08fc4c886169f/plot_mixed01.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_mixed01.py</span></code></a></p>
@@ -431,7 +431,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 01, 2023.
+      <span class="lastupdated">Last updated on Apr 02, 2023.
       </span></p>
   </div>
 

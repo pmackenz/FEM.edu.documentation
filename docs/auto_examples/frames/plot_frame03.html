@@ -313,13 +313,13 @@ to download the full example code</p>
 <li><img src="../../_images/sphx_glr_plot_frame03_006.png" srcset="../../_images/sphx_glr_plot_frame03_006.png" alt="Mode Shape for $ \lambda = -0.21 $" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System object
-Node_9(x=[0. 0.], u=None)
-Node_10(x=[ 0. 50.], u=None)
-Node_11(x=[80.  0.], u=None)
-Node_12(x=[80. 50.], u=None)
-Frame2D(Node_9, Node_10, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_11, Node_12, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_10, Node_12, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 80.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Node_51(x=[0. 0.], u=None)
+Node_52(x=[ 0. 50.], u=None)
+Node_53(x=[80.  0.], u=None)
+Node_54(x=[80. 50.], u=None)
+Frame2D(Node_51, Node_52, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_53, Node_54, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_52, Node_54, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 80.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
 
 ==== perform the analysis ===
 
@@ -453,10 +453,10 @@ norm of the out-of-balance force:   2.7763e+00
 norm of the out-of-balance force:   6.1460e-02
 norm of the out-of-balance force:   1.3605e-03
 norm of the out-of-balance force:   3.0118e-05
-norm of the out-of-balance force:   6.6648e-07
+norm of the out-of-balance force:   6.6663e-07
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = -0.20573999905063703
+ ** Stability check: (smallest eigenvalue of Kt) = -0.20573999904530507
 
 +
 
@@ -468,35 +468,35 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_9:
+  Node_51:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_10:
+  Node_52:
       x:    [ 0. 50.]
       u:    [ 0.00807668 -0.09310345 -0.20194602]
-  Node_11:
+  Node_53:
       x:    [80.  0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_12:
+  Node_54:
       x:    [80. 50.]
       u:    [-0.00807668 -0.09310345  0.20194602]
 
 Elements:
 ---------------------
-  Frame2D_8: nodes ( Node_9 Node_10 )
+  Frame2D_54: nodes ( Node_51 Node_52 )
       material: ElasticSection
       internal forces: f0=-1080.00 V0=-117.11 M0=2842.69 fl=-1080.00 Vl=-117.11 Ml=-3004.18 Pw=0.00 Mw=0.00
-  Frame2D_9: nodes ( Node_11 Node_12 )
+  Frame2D_55: nodes ( Node_53 Node_54 )
       material: ElasticSection
       internal forces: f0=-1080.00 V0=117.11 M0=-2842.69 fl=-1080.00 Vl=117.11 Ml=3004.18 Pw=0.00 Mw=0.00
-  Frame2D_10: nodes ( Node_10 Node_12 )
+  Frame2D_56: nodes ( Node_52 Node_54 )
       material: ElasticSection
       internal forces: f0=-117.11 V0=-0.00 M0=11395.82 fl=-117.11 Vl=-0.00 Ml=11395.82 Pw=-1080.00 Mw=-14400.00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.940 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.908 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-frames-plot-frame03-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/32fd880e109e940272d694bbf6555869/plot_frame03.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_frame03.py</span></code></a></p>
@@ -520,7 +520,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 01, 2023.
+      <span class="lastupdated">Last updated on Apr 02, 2023.
       </span></p>
   </div>
 
