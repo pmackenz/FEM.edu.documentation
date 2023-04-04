@@ -83,7 +83,7 @@ Author: Peter Mackenzie-Helnwein
 
     from femedu.domain.System import *
     from femedu.solver.NewtonRaphsonSolver import *
-    from femedu.elements.LinearTriangle import *
+    from femedu.elements.linear.Triangle import *
     from femedu.materials.PlaneStress import *
 
 
@@ -115,8 +115,8 @@ Author: Peter Mackenzie-Helnwein
 
             model.addNode(nd0, nd1, nd2, nd3)
 
-            elemA = LinearTriangle(nd0, nd1, nd3, PlaneStress(params))
-            elemB = LinearTriangle(nd2, nd3, nd1, PlaneStress(params))
+            elemA = Triangle(nd0, nd1, nd3, PlaneStress(params))
+            elemB = Triangle(nd2, nd3, nd1, PlaneStress(params))
 
             model.addElement(elemA, elemB)
 
@@ -195,29 +195,29 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_79:
+      Node_4:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    [0. 0.]
-      Node_80:
+      Node_5:
           x:    [10.  0.]
           fix:  ['uy']
           u:    [0.88033915 0.        ]
-      Node_81:
+      Node_6:
           x:    [10. 10.]
           u:    [ 0.88033915 -0.27963653]
-      Node_82:
+      Node_7:
           x:    [ 0. 10.]
           fix:  ['ux']
           u:    [ 0.         -0.27963653]
 
     Elements:
     ---------------------
-      LinearTriangle_87: nodes ( Node_79 Node_80 Node_82 )
+      Triangle_2: nodes ( Node_4 Node_5 Node_7 )
           material: PlaneStress
           strain: xx=9.191e-02 yy=-2.757e-02 xy=0.000e+00 zz=-1.930e-02
           stress: xx=9.191e-01 yy=2.054e-15 xy=0.000e+00 zz=0.000e+00
-      LinearTriangle_88: nodes ( Node_81 Node_82 Node_80 )
+      Triangle_3: nodes ( Node_6 Node_7 Node_5 )
           material: PlaneStress
           strain: xx=9.191e-02 yy=-2.757e-02 xy=1.727e-16 zz=-1.930e-02
           stress: xx=9.191e-01 yy=3.886e-15 xy=6.641e-16 zz=0.000e+00
@@ -229,7 +229,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.205 seconds)
+   **Total running time of the script:** ( 0 minutes  0.268 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate02.py:

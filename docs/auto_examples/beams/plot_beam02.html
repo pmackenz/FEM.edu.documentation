@@ -110,7 +110,7 @@ deformation, reactions and internal forces.</p>
 
 <span class="kn">from</span> <span class="nn">femedu.domain.System</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">femedu.domain.Node</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.Beam2D</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear.Beam2D</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">femedu.materials.ElasticSection</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="k">class</span> <span class="nc">ExampleBeam02</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
@@ -199,52 +199,52 @@ Nodes:
   Node_5:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
-      u:    [0. 0.]
+      u:    [ 0.        -0.0123663]
   Node_6:
       x:    [48.  0.]
-      u:    [0. 0.]
+      u:    [-0.292646    0.00326429]
   Node_7:
       x:    [96.  0.]
       fix:  [&#39;uy&#39;]
-      u:    [0. 0.]
+      u:    [ 0.         -0.00069085]
   Node_8:
       x:    [156.   0.]
-      u:    [0. 0.]
+      u:    [-3.93139430e-01 -4.24063967e-19]
   Node_9:
       x:    [216.   0.]
       fix:  [&#39;uy&#39;]
-      u:    [0. 0.]
+      u:    [0.         0.00069085]
   Node_10:
       x:    [264.   0.]
-      u:    [0. 0.]
+      u:    [-0.292646   -0.00326429]
   Node_11:
       x:    [312.   0.]
       fix:  [&#39;uy&#39;]
-      u:    [0. 0.]
+      u:    [0.        0.0123663]
 
 Elements:
 ---------------------
   Beam2D: Node_5 to Node_6:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:0.0 Mi:0.0 Vj:-0.0 Mj:0.0
+     nodal forces: Vi:11.673913043478258 Mi:-191.99999999999994 Vj:-11.673913043478258 Mj:752.3478260869563
   Beam2D: Node_6 to Node_7:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:0.0 Mi:0.0 Vj:-0.0 Mj:0.0
+     nodal forces: Vi:-36.32608695652172 Mi:-752.347826086956 Vj:36.32608695652172 Mj:-991.3043478260865
   Beam2D: Node_7 to Node_8:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:0.0 Mi:0.0 Vj:-0.0 Mj:0.0
+     nodal forces: Vi:29.999999999999993 Mi:883.3043478260867 Vj:-29.999999999999993 Mj:916.6956521739128
   Beam2D: Node_8 to Node_9:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:0.0 Mi:0.0 Vj:-0.0 Mj:0.0
+     nodal forces: Vi:-29.99999999999999 Mi:-916.6956521739127 Vj:29.99999999999999 Mj:-883.3043478260865
   Beam2D: Node_9 to Node_10:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:0.0 Mi:0.0 Vj:-0.0 Mj:0.0
+     nodal forces: Vi:36.32608695652173 Mi:991.3043478260865 Vj:-36.32608695652173 Mj:752.347826086956
   Beam2D: Node_10 to Node_11:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:0.0 Mi:0.0 Vj:-0.0 Mj:0.0
+     nodal forces: Vi:-11.673913043478258 Mi:-752.347826086956 Vj:11.673913043478258 Mj:192.0
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.281 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.421 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-beams-plot-beam02-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/afc506c2ca5f3fc81e20ac6ff43b557e/plot_beam02.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_beam02.py</span></code></a></p>
@@ -268,7 +268,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 02, 2023.
+      <span class="lastupdated">Last updated on Apr 03, 2023.
       </span></p>
   </div>
 

@@ -24,7 +24,7 @@ Pulling a plate with a circular hole
 
 Using PatchMesher to model a quarter of the plate
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-149
+.. GENERATED FROM PYTHON SOURCE LINES 9-151
 
 .. code-block:: default
 
@@ -36,7 +36,7 @@ Using PatchMesher to model a quarter of the plate
 
     from femedu.domain import *
     from femedu.solver.NewtonRaphsonSolver import *
-    from femedu.elements.LinearTriangle import *
+    from femedu.elements.linear.Triangle import *
     from femedu.materials.PlaneStress import *
     from femedu.mesher import *
 
@@ -107,13 +107,13 @@ Using PatchMesher to model a quarter of the plate
             )
 
             mesher1 = PatchMesher(model, pts[3], pts[4], pts[6], pts[5], pts[8])
-            nodes1, elements1 = mesher1.triangleMesh(Nx, Ny, LinearTriangle, PlaneStress(params))
+            nodes1, elements1 = mesher1.triangleMesh(Nx, Ny, Triangle, PlaneStress(params))
 
             mesher2 = PatchMesher(model, pts[0], pts[1], pts[6], pts[4], None, None, None, pts[9])                                               # center node
-            nodes2, elements2 = mesher2.triangleMesh(Ny, Nx, LinearTriangle, PlaneStress(params))
+            nodes2, elements2 = mesher2.triangleMesh(Ny, Nx, Triangle, PlaneStress(params))
 
             mesher3 = PatchMesher(model, pts[1], pts[2], pts[7], pts[6])
-            nodes3, elements3 = mesher3.triangleMesh(Nx, Nx, LinearTriangle, PlaneStress(params))
+            nodes3, elements3 = mesher3.triangleMesh(Nx, Nx, Triangle, PlaneStress(params))
 
             nodes    = nodes1    + nodes2    + nodes3
             elements = elements1 + elements2 + elements3
@@ -140,7 +140,9 @@ Using PatchMesher to model a quarter of the plate
 
             model.plot(factor=0, title="undeformed system", filename="plate05_undeformed.png", show_bc=1, show_loads=1)
 
-        def _buffer(self):
+        def _buffer(self, model):
+
+            elements = model.elements
 
             # surface loads on the left side
             elements[ 0].setSurfaceLoad(2,px)
@@ -175,12 +177,12 @@ Using PatchMesher to model a quarter of the plate
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 167-169
+.. GENERATED FROM PYTHON SOURCE LINES 169-171
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 169-175
+.. GENERATED FROM PYTHON SOURCE LINES 171-177
 
 .. code-block:: default
 
@@ -203,100 +205,101 @@ Run the example by creating an instance of the problem and executing it by calli
 
  .. code-block:: none
 
-    Node_283:
+    Node_208:
         x:    [120.   0.]
         fix:  ['uy']
         u:    None
-    + LinearTriangle_327: nodes ( Node_282 Node_283 Node_289 )
+    + Triangle_242: nodes ( Node_207 Node_208 Node_214 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + LinearTriangle_328: nodes ( Node_290 Node_289 Node_283 )
+    + Triangle_243: nodes ( Node_215 Node_214 Node_208 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    Node_290:
+    Node_215:
         x:    [120.          13.33333333]
         u:    None
-    + LinearTriangle_328: nodes ( Node_290 Node_289 Node_283 )
+    + Triangle_243: nodes ( Node_215 Node_214 Node_208 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + LinearTriangle_339: nodes ( Node_289 Node_290 Node_296 )
+    + Triangle_254: nodes ( Node_214 Node_215 Node_221 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + LinearTriangle_340: nodes ( Node_297 Node_296 Node_290 )
+    + Triangle_255: nodes ( Node_222 Node_221 Node_215 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    Node_297:
+    Node_222:
         x:    [120.          26.66666667]
         u:    None
-    + LinearTriangle_340: nodes ( Node_297 Node_296 Node_290 )
+    + Triangle_255: nodes ( Node_222 Node_221 Node_215 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + LinearTriangle_351: nodes ( Node_296 Node_297 Node_303 )
+    + Triangle_266: nodes ( Node_221 Node_222 Node_228 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + LinearTriangle_352: nodes ( Node_304 Node_303 Node_297 )
+    + Triangle_267: nodes ( Node_229 Node_228 Node_222 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    Node_304:
+    Node_229:
         x:    [120.  40.]
         u:    None
-    + LinearTriangle_352: nodes ( Node_304 Node_303 Node_297 )
+    + Triangle_267: nodes ( Node_229 Node_228 Node_222 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + LinearTriangle_363: nodes ( Node_303 Node_304 Node_310 )
+    + Triangle_278: nodes ( Node_228 Node_229 Node_235 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + LinearTriangle_364: nodes ( Node_311 Node_310 Node_304 )
+    + Triangle_279: nodes ( Node_236 Node_235 Node_229 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    Node_311:
+    Node_236:
         x:    [120.          53.33333333]
         u:    None
-    + LinearTriangle_364: nodes ( Node_311 Node_310 Node_304 )
+    + Triangle_279: nodes ( Node_236 Node_235 Node_229 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + LinearTriangle_375: nodes ( Node_310 Node_311 Node_317 )
+    + Triangle_290: nodes ( Node_235 Node_236 Node_242 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + LinearTriangle_376: nodes ( Node_318 Node_317 Node_311 )
+    + Triangle_291: nodes ( Node_243 Node_242 Node_236 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    Node_318:
+    Node_243:
         x:    [120.          66.66666667]
         u:    None
-    + LinearTriangle_376: nodes ( Node_318 Node_317 Node_311 )
+    + Triangle_291: nodes ( Node_243 Node_242 Node_236 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + LinearTriangle_387: nodes ( Node_317 Node_318 Node_324 )
+    + Triangle_302: nodes ( Node_242 Node_243 Node_249 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + LinearTriangle_388: nodes ( Node_325 Node_324 Node_318 )
+    + Triangle_303: nodes ( Node_250 Node_249 Node_243 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    Node_325:
+    Node_250:
         x:    [120.  80.]
         u:    None
-    + LinearTriangle_388: nodes ( Node_325 Node_324 Node_318 )
+    + Triangle_303: nodes ( Node_250 Node_249 Node_243 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
+    ** WARNING ** ElementPlotter.addForces not implemented
 
 
 
@@ -304,7 +307,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.369 seconds)
+   **Total running time of the script:** ( 0 minutes  0.515 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate05.py:

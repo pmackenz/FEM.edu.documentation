@@ -62,7 +62,7 @@ Author: Peter Mackenzie-Helnwein
 
     from femedu.domain.System import *
     from femedu.solver.NewtonRaphsonSolver import *
-    from femedu.elements.Quad import *
+    from femedu.elements.linear.Quad import *
     from femedu.materials.PlaneStress import *
 
 
@@ -256,10 +256,7 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   1.0304e-14
     +
     norm of the out-of-balance force:   7.0711e+00
-    norm of the out-of-balance force:   1.1533e+00
-    norm of the out-of-balance force:   1.7293e-02
-    norm of the out-of-balance force:   4.2366e-06
-    norm of the out-of-balance force:   2.5404e-13
+    norm of the out-of-balance force:   3.3496e-14
     +
 
 
@@ -268,7 +265,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.134 seconds)
+   **Total running time of the script:** ( 0 minutes  1.858 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate08.py:

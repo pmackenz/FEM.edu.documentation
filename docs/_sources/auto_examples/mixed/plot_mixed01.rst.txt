@@ -36,8 +36,8 @@ Author: Peter Mackenzie-Helnwein
 
     from femedu.domain import *
     from femedu.solver.NewtonRaphsonSolver import *
-    from femedu.elements.Truss import *
-    from femedu.elements.Frame2D import *
+    from femedu.elements.finite.Truss import *
+    from femedu.elements.finite.Frame2D import *
     from femedu.materials.FiberMaterial import *
     from femedu.materials.ElasticSection import *
 
@@ -229,34 +229,34 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_2857:
+      Node_293:
           x:    [0. 0.]
           fix:  ['ux', 'uy', 'rz']
           u:    None
-      Node_2858:
+      Node_294:
           x:    [ 0. 50.]
           P:    [20.  0.  0.]
           u:    None
-      Node_2859:
+      Node_295:
           x:    [80.  0.]
           fix:  ['ux', 'uy', 'rz']
           u:    None
-      Node_2860:
+      Node_296:
           x:    [80. 50.]
           u:    None
 
     Elements:
     ---------------------
-      Frame2D_5204: nodes ( Node_2857 Node_2858 )
+      Frame2D_351: nodes ( Node_293 Node_294 )
           material: ElasticSection
           internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-      Frame2D_5205: nodes ( Node_2859 Node_2860 )
+      Frame2D_352: nodes ( Node_295 Node_296 )
           material: ElasticSection
           internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-      Frame2D_5206: nodes ( Node_2858 Node_2860 )
+      Frame2D_353: nodes ( Node_294 Node_296 )
           material: ElasticSection
           internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-      Truss: Node_2857 to Node_2860:
+      NLTruss: Node_293 to Node_296:
           material properties: FiberMaterial(Material)({'E': 29000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 0.0
 
@@ -269,86 +269,87 @@ Run the example by creating an instance of the problem and executing it by calli
     === next load level ===
 
     norm of the out-of-balance force:   4.2079e+02
-    norm of the out-of-balance force:   2.6166e+00
-    norm of the out-of-balance force:   3.7928e-03
-    norm of the out-of-balance force:   7.4668e-07
+    norm of the out-of-balance force:   2.6164e+00
+    norm of the out-of-balance force:   3.8196e-03
+    norm of the out-of-balance force:   2.1116e-06
+    norm of the out-of-balance force:   2.4122e-09
     +
 
     === next load level ===
 
     norm of the out-of-balance force:   4.2079e+02
-    norm of the out-of-balance force:   5.2946e+00
-    norm of the out-of-balance force:   1.5499e-02
-    norm of the out-of-balance force:   6.3093e-06
-    norm of the out-of-balance force:   2.4070e-08
+    norm of the out-of-balance force:   5.2938e+00
+    norm of the out-of-balance force:   1.6230e-02
+    norm of the out-of-balance force:   1.8540e-05
+    norm of the out-of-balance force:   4.5215e-08
     +
 
     === next load level ===
 
     norm of the out-of-balance force:   4.2079e+02
-    norm of the out-of-balance force:   8.0364e+00
-    norm of the out-of-balance force:   3.5633e-02
-    norm of the out-of-balance force:   2.2517e-05
-    norm of the out-of-balance force:   1.2596e-07
+    norm of the out-of-balance force:   8.0343e+00
+    norm of the out-of-balance force:   3.7783e-02
+    norm of the out-of-balance force:   6.6350e-05
+    norm of the out-of-balance force:   2.4887e-07
     +
 
     === next load level ===
 
     norm of the out-of-balance force:   4.2079e+02
-    norm of the out-of-balance force:   1.0844e+01
-    norm of the out-of-balance force:   6.4746e-02
-    norm of the out-of-balance force:   5.6502e-05
-    norm of the out-of-balance force:   4.1168e-07
+    norm of the out-of-balance force:   1.0840e+01
+    norm of the out-of-balance force:   6.9061e-02
+    norm of the out-of-balance force:   1.6541e-04
+    norm of the out-of-balance force:   8.4113e-07
     +
 
     === next load level ===
 
     norm of the out-of-balance force:   4.2079e+02
-    norm of the out-of-balance force:   1.3721e+01
-    norm of the out-of-balance force:   1.0343e-01
-    norm of the out-of-balance force:   1.1694e-04
-    norm of the out-of-balance force:   1.0397e-06
-    norm of the out-of-balance force:   6.6345e-09
+    norm of the out-of-balance force:   1.3714e+01
+    norm of the out-of-balance force:   1.1068e-01
+    norm of the out-of-balance force:   3.3876e-04
+    norm of the out-of-balance force:   2.1826e-06
+    norm of the out-of-balance force:   1.0903e-08
     +
 
     === next load level ===
 
     norm of the out-of-balance force:   4.2079e+02
-    norm of the out-of-balance force:   1.6668e+01
-    norm of the out-of-balance force:   1.5230e-01
-    norm of the out-of-balance force:   2.1431e-04
-    norm of the out-of-balance force:   2.2310e-06
-    norm of the out-of-balance force:   1.7566e-08
+    norm of the out-of-balance force:   1.6658e+01
+    norm of the out-of-balance force:   1.6331e-01
+    norm of the out-of-balance force:   6.1296e-04
+    norm of the out-of-balance force:   4.7969e-06
+    norm of the out-of-balance force:   2.9011e-08
     +
 
     === next load level ===
 
     norm of the out-of-balance force:   4.2079e+02
-    norm of the out-of-balance force:   1.9690e+01
-    norm of the out-of-balance force:   2.1203e-01
-    norm of the out-of-balance force:   3.6123e-04
-    norm of the out-of-balance force:   4.2790e-06
-    norm of the out-of-balance force:   4.0334e-08
+    norm of the out-of-balance force:   1.9675e+01
+    norm of the out-of-balance force:   2.2764e-01
+    norm of the out-of-balance force:   1.0186e-03
+    norm of the out-of-balance force:   9.4058e-06
+    norm of the out-of-balance force:   6.7091e-08
     +
 
     === next load level ===
 
     norm of the out-of-balance force:   4.2079e+02
-    norm of the out-of-balance force:   2.2788e+01
-    norm of the out-of-balance force:   2.8335e-01
-    norm of the out-of-balance force:   5.7278e-04
-    norm of the out-of-balance force:   7.5603e-06
-    norm of the out-of-balance force:   8.3499e-08
+    norm of the out-of-balance force:   2.2768e+01
+    norm of the out-of-balance force:   3.0444e-01
+    norm of the out-of-balance force:   1.5908e-03
+    norm of the out-of-balance force:   1.6971e-05
+    norm of the out-of-balance force:   1.3989e-07
     +
 
     === next load level ===
 
     norm of the out-of-balance force:   4.2079e+02
-    norm of the out-of-balance force:   2.5966e+01
-    norm of the out-of-balance force:   3.6701e-01
-    norm of the out-of-balance force:   8.6689e-04
-    norm of the out-of-balance force:   1.2548e-05
-    norm of the out-of-balance force:   1.5984e-07
+    norm of the out-of-balance force:   2.5940e+01
+    norm of the out-of-balance force:   3.9449e-01
+    norm of the out-of-balance force:   2.3697e-03
+    norm of the out-of-balance force:   2.8743e-05
+    norm of the out-of-balance force:   2.6942e-07
     +
 
     === next load level ===
@@ -359,36 +360,36 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_2857:
+      Node_293:
           x:    [0. 0.]
           fix:  ['ux', 'uy', 'rz']
           u:    [0. 0. 0.]
-      Node_2858:
+      Node_294:
           x:    [ 0. 50.]
           P:    [20.  0.  0.]
-          u:    [ 0.81266732 -0.01624899 -0.03775534]
-      Node_2859:
+          u:    [ 0.81143807 -0.01625057 -0.03775122]
+      Node_295:
           x:    [80.  0.]
           fix:  ['ux', 'uy', 'rz']
           u:    [0. 0. 0.]
-      Node_2860:
+      Node_296:
           x:    [80. 50.]
-          u:    [ 0.78416849 -0.02726845  0.03214935]
+          u:    [ 0.78293564 -0.02726958  0.03215376]
 
     Elements:
     ---------------------
-      Frame2D_5204: nodes ( Node_2857 Node_2858 )
+      Frame2D_351: nodes ( Node_293 Node_294 )
           material: ElasticSection
-          internal forces: f0=-188.49 V0=-6.62 M0=-99.67 fl=-188.49 Vl=-6.62 Ml=-277.32 Pw=0.00 Mw=0.00
-      Frame2D_5205: nodes ( Node_2859 Node_2860 )
+          internal forces: f0=-188.51 V0=-6.64 M0=-98.88 fl=-188.51 Vl=-6.64 Ml=-278.06 Pw=0.00 Mw=0.00
+      Frame2D_352: nodes ( Node_295 Node_296 )
           material: ElasticSection
-          internal forces: f0=-316.31 V0=37.20 M0=-911.91 fl=-316.31 Vl=37.20 Ml=1195.98 Pw=0.00 Mw=0.00
-      Frame2D_5206: nodes ( Node_2858 Node_2860 )
+          internal forces: f0=-316.33 V0=37.17 M0=-911.14 fl=-316.33 Vl=37.17 Ml=1195.25 Pw=0.00 Mw=0.00
+      Frame2D_353: nodes ( Node_294 Node_296 )
           material: ElasticSection
-          internal forces: f0=-206.62 V0=-11.51 M0=2389.35 fl=-206.62 Vl=-11.51 Ml=1470.69 Pw=-200.00 Mw=-2666.67
-      Truss: Node_2857 to Node_2860:
-          material properties: FiberMaterial(Material)({'E': 29000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.006869475390917047   stress:{'xx': 199.21478633659436, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 199.21478633659436
+          internal forces: f0=-206.64 V0=-11.49 M0=2388.61 fl=-206.64 Vl=-11.49 Ml=1471.42 Pw=-200.00 Mw=-2666.67
+      NLTruss: Node_293 to Node_296:
+          material properties: FiberMaterial(Material)({'E': 29000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.006871468961325107   stress:{'xx': 199.27259987842808, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 199.27259987842808
 
 
 
@@ -397,7 +398,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.664 seconds)
+   **Total running time of the script:** ( 0 minutes  1.252 seconds)
 
 
 .. _sphx_glr_download_auto_examples_mixed_plot_mixed01.py:

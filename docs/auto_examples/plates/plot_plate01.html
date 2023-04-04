@@ -157,7 +157,7 @@ to download the full example code</p>
 
 <span class="kn">from</span> <span class="nn">femedu.domain.System</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">femedu.domain.Node</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.LinearTriangle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear.Triangle</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">femedu.materials.PlaneStress</span> <span class="kn">import</span> <span class="o">*</span>
 
 
@@ -184,8 +184,8 @@ to download the full example code</p>
 
         <span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">nd0</span><span class="p">,</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">nd2</span><span class="p">,</span> <span class="n">nd3</span><span class="p">)</span>
 
-        <span class="n">elemA</span> <span class="o">=</span> <span class="n">LinearTriangle</span><span class="p">(</span><span class="n">nd0</span><span class="p">,</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">nd3</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
-        <span class="n">elemB</span> <span class="o">=</span> <span class="n">LinearTriangle</span><span class="p">(</span><span class="n">nd2</span><span class="p">,</span> <span class="n">nd3</span><span class="p">,</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">elemA</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="n">nd0</span><span class="p">,</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">nd3</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">elemB</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="n">nd2</span><span class="p">,</span> <span class="n">nd3</span><span class="p">,</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
 
         <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">elemA</span><span class="p">,</span> <span class="n">elemB</span><span class="p">)</span>
 
@@ -223,32 +223,32 @@ to download the full example code</p>
 
 Nodes:
 ---------------------
-  Node_75:
+  Node_0:
       x:    [0. 0.]
       u:    [0. 0.]
-  Node_76:
+  Node_1:
       x:    [10.  0.]
       u:    [5. 0.]
-  Node_77:
+  Node_2:
       x:    [10. 10.]
       u:    [ 5. -5.]
-  Node_78:
+  Node_3:
       x:    [ 0. 10.]
       u:    [ 0. -5.]
 
 Elements:
 ---------------------
-  LinearTriangle_85: nodes ( Node_75 Node_76 Node_78 )
+  Triangle_0: nodes ( Node_0 Node_1 Node_3 )
       material: PlaneStress
       strain: xx=6.250e-01 yy=-3.750e-01 xy=0.000e+00 zz=-7.500e-02
       stress: xx=5.632e+00 yy=-2.060e+00 xy=0.000e+00 zz=0.000e+00
-  LinearTriangle_86: nodes ( Node_77 Node_78 Node_76 )
+  Triangle_1: nodes ( Node_2 Node_3 Node_1 )
       material: PlaneStress
       strain: xx=6.250e-01 yy=-3.750e-01 xy=0.000e+00 zz=-7.500e-02
       stress: xx=5.632e+00 yy=-2.060e+00 xy=0.000e+00 zz=0.000e+00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.176 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.572 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate01-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/12c7c24aea89d6338595bd26263e0d0b/plot_plate01.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate01.py</span></code></a></p>
@@ -272,7 +272,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 02, 2023.
+      <span class="lastupdated">Last updated on Apr 03, 2023.
       </span></p>
   </div>
 

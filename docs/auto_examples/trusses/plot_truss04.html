@@ -113,7 +113,7 @@ calculated deformation, reactions and internal forces.</p>
 
 <span class="kn">from</span> <span class="nn">femedu.domain.System</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">femedu.domain.Node</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.Truss</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear.Truss</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">femedu.materials.FiberMaterial</span> <span class="kn">import</span> <span class="o">*</span>
 
 
@@ -205,29 +205,29 @@ Nodes:
 Elements:
 ---------------------
   Truss: Node_27 to Node_31:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.03080874756565243   stress:{&#39;xx&#39;: -64.6983698878701, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
-      internal force: -64.6983698878701
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.030225189837957574   stress:{&#39;xx&#39;: -63.47289865971091, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: -63.47289865971091
   Truss: Node_27 to Node_32:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0004900825606249915   stress:{&#39;xx&#39;: 1.029173377312482, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
-      internal force: 1.029173377312482
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0004884440295917132   stress:{&#39;xx&#39;: 1.0257324621425976, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 1.0257324621425976
   Truss: Node_28 to Node_31:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.019963631417440297   stress:{&#39;xx&#39;: -41.92362597662462, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
-      internal force: -41.92362597662462
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.020821334755632026   stress:{&#39;xx&#39;: -43.72480298682726, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: -43.72480298682726
   Truss: Node_29 to Node_32:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.00044001607956029384   stress:{&#39;xx&#39;: -0.9240337670766171, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
-      internal force: -0.9240337670766171
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.00044221245864870754   stress:{&#39;xx&#39;: -0.9286461631622859, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: -0.9286461631622859
   Truss: Node_30 to Node_31:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.01649978443469319   stress:{&#39;xx&#39;: -34.6495473128557, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
-      internal force: -34.6495473128557
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.01723229689893104   stress:{&#39;xx&#39;: -36.18782348775518, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: -36.18782348775518
   Truss: Node_30 to Node_32:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:3.449653904093755e-06   stress:{&#39;xx&#39;: 0.007244273198596885, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
-      internal force: 0.007244273198596885
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:1.6618687008980175e-20   stress:{&#39;xx&#39;: 3.489924271885837e-17, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 3.489924271885837e-17
   Truss: Node_31 to Node_32:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.010837311867015104   stress:{&#39;xx&#39;: 22.75835492073172, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
-      internal force: 22.75835492073172
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.00029334522821977335   stress:{&#39;xx&#39;: -0.616024979261524, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: -0.616024979261524
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.076 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.098 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-trusses-plot-truss04-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/553115917cd4150d729e7db698151426/plot_truss04.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_truss04.py</span></code></a></p>
@@ -251,7 +251,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 02, 2023.
+      <span class="lastupdated">Last updated on Apr 03, 2023.
       </span></p>
   </div>
 

@@ -135,7 +135,7 @@ to download the full example code</p>
 
 <span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">femedu.solver.NewtonRaphsonSolver</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.Frame2D</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.finite.Frame2D</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">femedu.materials.ElasticSection</span> <span class="kn">import</span> <span class="o">*</span>
 
 
@@ -427,54 +427,54 @@ to download the full example code</p>
 <li><img src="../../_images/sphx_glr_plot_frame04_009.png" srcset="../../_images/sphx_glr_plot_frame04_009.png" alt="Mode Shape for $ \lambda = 34.10 $" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System object
-Node_55(x=[0. 0.], u=None)
-Node_56(x=[  0. 180.], u=None)
-Node_57(x=[  0. 360.], u=None)
-Node_58(x=[  0. 540.], u=None)
-Node_59(x=[  0. 720.], u=None)
-Node_60(x=[240.   0.], u=None)
-Node_61(x=[240. 180.], u=None)
-Node_62(x=[240. 360.], u=None)
-Node_63(x=[240. 540.], u=None)
-Node_64(x=[240. 720.], u=None)
-Node_65(x=[480.   0.], u=None)
-Node_66(x=[480. 180.], u=None)
-Node_67(x=[480. 360.], u=None)
-Node_68(x=[480. 540.], u=None)
-Node_69(x=[480. 720.], u=None)
-Node_70(x=[720.   0.], u=None)
-Node_71(x=[720. 180.], u=None)
-Node_72(x=[720. 360.], u=None)
-Node_73(x=[720. 540.], u=None)
-Node_74(x=[720. 720.], u=None)
-Frame2D(Node_55, Node_56, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_56, Node_57, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_57, Node_58, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_58, Node_59, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_60, Node_61, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_61, Node_62, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_62, Node_63, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_63, Node_64, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_65, Node_66, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_66, Node_67, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_67, Node_68, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_68, Node_69, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_70, Node_71, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_71, Node_72, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_72, Node_73, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_73, Node_74, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_56, Node_61, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_61, Node_66, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_66, Node_71, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_57, Node_62, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_62, Node_67, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_67, Node_72, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_58, Node_63, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_63, Node_68, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_68, Node_73, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_59, Node_64, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_64, Node_69, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_69, Node_74, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Node_22(x=[0. 0.], u=None)
+Node_23(x=[  0. 180.], u=None)
+Node_24(x=[  0. 360.], u=None)
+Node_25(x=[  0. 540.], u=None)
+Node_26(x=[  0. 720.], u=None)
+Node_27(x=[240.   0.], u=None)
+Node_28(x=[240. 180.], u=None)
+Node_29(x=[240. 360.], u=None)
+Node_30(x=[240. 540.], u=None)
+Node_31(x=[240. 720.], u=None)
+Node_32(x=[480.   0.], u=None)
+Node_33(x=[480. 180.], u=None)
+Node_34(x=[480. 360.], u=None)
+Node_35(x=[480. 540.], u=None)
+Node_36(x=[480. 720.], u=None)
+Node_37(x=[720.   0.], u=None)
+Node_38(x=[720. 180.], u=None)
+Node_39(x=[720. 360.], u=None)
+Node_40(x=[720. 540.], u=None)
+Node_41(x=[720. 720.], u=None)
+Frame2D(Node_22, Node_23, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_23, Node_24, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_24, Node_25, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_25, Node_26, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_27, Node_28, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_28, Node_29, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_29, Node_30, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_30, Node_31, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_32, Node_33, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_33, Node_34, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_34, Node_35, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_35, Node_36, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_37, Node_38, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_38, Node_39, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_39, Node_40, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_40, Node_41, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_23, Node_28, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_28, Node_33, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_33, Node_38, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_24, Node_29, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_29, Node_34, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_34, Node_39, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_25, Node_30, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_30, Node_35, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_35, Node_40, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_26, Node_31, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_31, Node_36, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_36, Node_41, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
 
 ==== perform the analysis ===
 
@@ -614,160 +614,160 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_55:
+  Node_22:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_56:
+  Node_23:
       x:    [  0. 180.]
       u:    [-0.00195269 -0.05845162 -0.02403623]
-  Node_57:
+  Node_24:
       x:    [  0. 360.]
       u:    [ 0.00035802 -0.10234068 -0.01990617]
-  Node_58:
+  Node_25:
       x:    [  0. 540.]
       u:    [-0.00103192 -0.13142317 -0.01829479]
-  Node_59:
+  Node_26:
       x:    [  0. 720.]
       u:    [ 0.00479755 -0.14562156 -0.0304816 ]
-  Node_60:
+  Node_27:
       x:    [240.   0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_61:
+  Node_28:
       x:    [240. 180.]
       u:    [-0.00054966 -0.06909143  0.00451655]
-  Node_62:
+  Node_29:
       x:    [240. 360.]
       u:    [ 4.92702919e-05 -1.20884831e-01  2.89826296e-03]
-  Node_63:
+  Node_30:
       x:    [240. 540.]
       u:    [-0.00019519 -0.15550221  0.00208175]
-  Node_64:
+  Node_31:
       x:    [240. 720.]
       u:    [ 0.00128191 -0.17298232  0.00685415]
-  Node_65:
+  Node_32:
       x:    [480.   0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_66:
+  Node_33:
       x:    [480. 180.]
       u:    [ 0.00054966 -0.06909143 -0.00451655]
-  Node_67:
+  Node_34:
       x:    [480. 360.]
       u:    [-4.92702908e-05 -1.20884831e-01 -2.89826296e-03]
-  Node_68:
+  Node_35:
       x:    [480. 540.]
       u:    [ 0.00019519 -0.15550221 -0.00208175]
-  Node_69:
+  Node_36:
       x:    [480. 720.]
       u:    [-0.00128191 -0.17298232 -0.00685415]
-  Node_70:
+  Node_37:
       x:    [720.   0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_71:
+  Node_38:
       x:    [720. 180.]
       u:    [ 0.00195269 -0.05845162  0.02403623]
-  Node_72:
+  Node_39:
       x:    [720. 360.]
       u:    [-0.00035802 -0.10234068  0.01990617]
-  Node_73:
+  Node_40:
       x:    [720. 540.]
       u:    [ 0.00103192 -0.13142317  0.01829479]
-  Node_74:
+  Node_41:
       x:    [720. 720.]
       u:    [-0.00479755 -0.14562156  0.0304816 ]
 
 Elements:
 ---------------------
-  Frame2D_57: nodes ( Node_55 Node_56 )
+  Frame2D_19: nodes ( Node_22 Node_23 )
       material: ElasticSection
       internal forces: f0=-1412.58 V0=-28.72 M0=2190.63 fl=-1412.58 Vl=-28.72 Ml=-2981.99 Pw=0.00 Mw=0.00
-  Frame2D_58: nodes ( Node_56 Node_57 )
+  Frame2D_20: nodes ( Node_23 Node_24 )
       material: ElasticSection
       internal forces: f0=-1060.65 V0=-54.15 M0=4967.18 fl=-1060.65 Vl=-54.15 Ml=-4777.61 Pw=0.00 Mw=0.00
-  Frame2D_59: nodes ( Node_57 Node_58 )
+  Frame2D_21: nodes ( Node_24 Node_25 )
       material: ElasticSection
       internal forces: f0=-702.83 V0=-48.56 M0=4417.41 fl=-702.83 Vl=-48.56 Ml=-4323.51 Pw=0.00 Mw=0.00
-  Frame2D_60: nodes ( Node_58 Node_59 )
+  Frame2D_22: nodes ( Node_25 Node_26 )
       material: ElasticSection
       internal forces: f0=-343.13 V0=-63.72 M0=5307.41 fl=-343.13 Vl=-63.72 Ml=-6160.35 Pw=0.00 Mw=0.00
-  Frame2D_61: nodes ( Node_60 Node_61 )
+  Frame2D_23: nodes ( Node_27 Node_28 )
       material: ElasticSection
       internal forces: f0=-3339.42 V0=7.47 M0=-673.83 fl=-3339.42 Vl=7.47 Ml=668.39 Pw=0.00 Mw=0.00
-  Frame2D_62: nodes ( Node_61 Node_62 )
+  Frame2D_24: nodes ( Node_28 Node_29 )
       material: ElasticSection
       internal forces: f0=-2503.35 V0=12.97 M0=-1196.02 fl=-2503.35 Vl=12.97 Ml=1140.41 Pw=0.00 Mw=0.00
-  Frame2D_63: nodes ( Node_62 Node_63 )
+  Frame2D_25: nodes ( Node_29 Node_30 )
       material: ElasticSection
       internal forces: f0=-1673.17 V0=9.16 M0=-851.26 fl=-1673.17 Vl=9.16 Ml=797.45 Pw=0.00 Mw=0.00
-  Frame2D_64: nodes ( Node_63 Node_64 )
+  Frame2D_26: nodes ( Node_30 Node_31 )
       material: ElasticSection
       internal forces: f0=-844.87 V0=17.25 M0=-1328.12 fl=-844.87 Vl=17.25 Ml=1778.43 Pw=0.00 Mw=0.00
-  Frame2D_65: nodes ( Node_65 Node_66 )
+  Frame2D_27: nodes ( Node_32 Node_33 )
       material: ElasticSection
       internal forces: f0=-3339.42 V0=-7.47 M0=673.83 fl=-3339.42 Vl=-7.47 Ml=-668.39 Pw=0.00 Mw=0.00
-  Frame2D_66: nodes ( Node_66 Node_67 )
+  Frame2D_28: nodes ( Node_33 Node_34 )
       material: ElasticSection
       internal forces: f0=-2503.35 V0=-12.97 M0=1196.02 fl=-2503.35 Vl=-12.97 Ml=-1140.41 Pw=0.00 Mw=0.00
-  Frame2D_67: nodes ( Node_67 Node_68 )
+  Frame2D_29: nodes ( Node_34 Node_35 )
       material: ElasticSection
       internal forces: f0=-1673.17 V0=-9.16 M0=851.26 fl=-1673.17 Vl=-9.16 Ml=-797.45 Pw=0.00 Mw=0.00
-  Frame2D_68: nodes ( Node_68 Node_69 )
+  Frame2D_30: nodes ( Node_35 Node_36 )
       material: ElasticSection
       internal forces: f0=-844.87 V0=-17.25 M0=1328.12 fl=-844.87 Vl=-17.25 Ml=-1778.43 Pw=0.00 Mw=0.00
-  Frame2D_69: nodes ( Node_70 Node_71 )
+  Frame2D_31: nodes ( Node_37 Node_38 )
       material: ElasticSection
       internal forces: f0=-1412.58 V0=28.72 M0=-2190.63 fl=-1412.58 Vl=28.72 Ml=2981.99 Pw=0.00 Mw=0.00
-  Frame2D_70: nodes ( Node_71 Node_72 )
+  Frame2D_32: nodes ( Node_38 Node_39 )
       material: ElasticSection
       internal forces: f0=-1060.65 V0=54.15 M0=-4967.18 fl=-1060.65 Vl=54.15 Ml=4777.61 Pw=0.00 Mw=0.00
-  Frame2D_71: nodes ( Node_72 Node_73 )
+  Frame2D_33: nodes ( Node_39 Node_40 )
       material: ElasticSection
       internal forces: f0=-702.83 V0=48.56 M0=-4417.41 fl=-702.83 Vl=48.56 Ml=4323.51 Pw=0.00 Mw=0.00
-  Frame2D_72: nodes ( Node_73 Node_74 )
+  Frame2D_34: nodes ( Node_40 Node_41 )
       material: ElasticSection
       internal forces: f0=-343.13 V0=63.72 M0=-5307.41 fl=-343.13 Vl=63.72 Ml=6160.35 Pw=0.00 Mw=0.00
-  Frame2D_73: nodes ( Node_56 Node_61 )
+  Frame2D_35: nodes ( Node_23 Node_28 )
       material: ElasticSection
       internal forces: f0=25.43 V0=-44.07 M0=7890.83 fl=25.43 Vl=-44.07 Ml=-2686.63 Pw=-396.00 Mw=-15840.00
-  Frame2D_74: nodes ( Node_61 Node_66 )
+  Frame2D_36: nodes ( Node_28 Node_33 )
       material: ElasticSection
       internal forces: f0=19.93 V0=-0.00 M0=-822.22 fl=19.93 Vl=-0.00 Ml=-822.22 Pw=-396.00 Mw=-15840.00
-  Frame2D_75: nodes ( Node_66 Node_71 )
+  Frame2D_37: nodes ( Node_33 Node_38 )
       material: ElasticSection
       internal forces: f0=25.43 V0=44.07 M0=-2686.63 fl=25.43 Vl=44.07 Ml=7890.83 Pw=-396.00 Mw=-15840.00
-  Frame2D_76: nodes ( Node_57 Node_62 )
+  Frame2D_38: nodes ( Node_24 Node_29 )
       material: ElasticSection
       internal forces: f0=-5.60 V0=-38.17 M0=6644.98 fl=-5.60 Vl=-38.17 Ml=-2516.78 Pw=-396.00 Mw=-15840.00
-  Frame2D_77: nodes ( Node_62 Node_67 )
+  Frame2D_39: nodes ( Node_29 Node_34 )
       material: ElasticSection
       internal forces: f0=-1.79 V0=0.00 M0=-525.10 fl=-1.79 Vl=0.00 Ml=-525.10 Pw=-396.00 Mw=-15840.00
-  Frame2D_78: nodes ( Node_67 Node_72 )
+  Frame2D_40: nodes ( Node_34 Node_39 )
       material: ElasticSection
       internal forces: f0=-5.60 V0=38.17 M0=-2516.78 fl=-5.60 Vl=38.17 Ml=6644.98 Pw=-396.00 Mw=-15840.00
-  Frame2D_79: nodes ( Node_58 Node_63 )
+  Frame2D_41: nodes ( Node_25 Node_30 )
       material: ElasticSection
       internal forces: f0=15.17 V0=-36.30 M0=6209.08 fl=15.17 Vl=-36.30 Ml=-2503.48 Pw=-396.00 Mw=-15840.00
-  Frame2D_80: nodes ( Node_63 Node_68 )
+  Frame2D_42: nodes ( Node_30 Node_35 )
       material: ElasticSection
       internal forces: f0=7.08 V0=0.00 M0=-377.91 fl=7.08 Vl=0.00 Ml=-377.91 Pw=-396.00 Mw=-15840.00
-  Frame2D_81: nodes ( Node_68 Node_73 )
+  Frame2D_43: nodes ( Node_35 Node_40 )
       material: ElasticSection
       internal forces: f0=15.17 V0=36.30 M0=-2503.48 fl=15.17 Vl=36.30 Ml=6209.08 Pw=-396.00 Mw=-15840.00
-  Frame2D_82: nodes ( Node_59 Node_64 )
+  Frame2D_44: nodes ( Node_26 Node_31 )
       material: ElasticSection
       internal forces: f0=-63.72 V0=-52.87 M0=9679.65 fl=-63.72 Vl=-52.87 Ml=-3007.97 Pw=-396.00 Mw=-15840.00
-  Frame2D_83: nodes ( Node_64 Node_69 )
+  Frame2D_45: nodes ( Node_31 Node_36 )
       material: ElasticSection
       internal forces: f0=-46.47 V0=0.00 M0=-1229.55 fl=-46.47 Vl=0.00 Ml=-1229.55 Pw=-396.00 Mw=-15840.00
-  Frame2D_84: nodes ( Node_69 Node_74 )
+  Frame2D_46: nodes ( Node_36 Node_41 )
       material: ElasticSection
       internal forces: f0=-63.72 V0=52.87 M0=-3007.97 fl=-63.72 Vl=52.87 Ml=9679.65 Pw=-396.00 Mw=-15840.00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.209 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.395 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-frames-plot-frame04-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/40d880429670bf5ce54912b139b4e5d9/plot_frame04.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_frame04.py</span></code></a></p>
@@ -791,7 +791,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 02, 2023.
+      <span class="lastupdated">Last updated on Apr 03, 2023.
       </span></p>
   </div>
 

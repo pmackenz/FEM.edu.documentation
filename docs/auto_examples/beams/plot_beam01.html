@@ -110,7 +110,7 @@ calculated deformation, reactions and internal forces.</p>
 
 <span class="kn">from</span> <span class="nn">femedu.domain.System</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">femedu.domain.Node</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.Beam2D</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear.Beam2D</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">femedu.materials.ElasticSection</span> <span class="kn">import</span> <span class="o">*</span>
 
 
@@ -202,39 +202,39 @@ Nodes:
   Node_0:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
-      u:    [ 0.         -0.01205223]
+      u:    [ 0.         -0.03615668]
   Node_1:
       x:    [30.  0.]
-      u:    [-0.33143622 -0.00903917]
+      u:    [-0.97547707 -0.02561098]
   Node_2:
       x:    [60.  0.]
       P:    [-40.   0.]
-      u:    [-4.82089053e-01 -3.42544874e-18]
+      u:    [-1.38600603e+00 -1.37017950e-17]
   Node_3:
       x:    [90.  0.]
-      u:    [-0.33143622  0.00903917]
+      u:    [-0.97547707  0.02561098]
   Node_4:
       x:    [120.   0.]
       fix:  [&#39;uy&#39;]
-      u:    [0.         0.01205223]
+      u:    [0.         0.03615668]
 
 Elements:
 ---------------------
   Beam2D: Node_0 to Node_1:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:19.999999999999943 Mi:-2.2737367544323206e-13 Vj:-19.999999999999943 Mj:599.9999999999977
+     nodal forces: Vi:65.0 Mi:-74.99999999999909 Vj:-65.0 Mj:2024.999999999989
   Beam2D: Node_1 to Node_2:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:19.999999999999744 Mi:-599.9999999999989 Vj:-19.999999999999744 Mj:1199.9999999999907
+     nodal forces: Vi:34.999999999999886 Mi:-2024.9999999999864 Vj:-34.999999999999886 Mj:3074.999999999981
   Beam2D: Node_2 to Node_3:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:-19.999999999999943 Mi:-1199.9999999999936 Vj:19.999999999999943 Mj:599.9999999999973
+     nodal forces: Vi:-34.999999999999716 Mi:-3074.99999999998 Vj:34.999999999999716 Mj:2024.9999999999936
   Beam2D: Node_3 to Node_4:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:-20.000000000000057 Mi:-599.9999999999982 Vj:20.000000000000057 Mj:-9.094947017729282e-13
+     nodal forces: Vi:-65.00000000000023 Mi:-2024.9999999999936 Vj:65.00000000000023 Mj:74.99999999999818
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.684 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.910 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-beams-plot-beam01-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/307073f7a96c279b06430f73afb4cc59/plot_beam01.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_beam01.py</span></code></a></p>
@@ -258,7 +258,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 02, 2023.
+      <span class="lastupdated">Last updated on Apr 03, 2023.
       </span></p>
   </div>
 

@@ -136,7 +136,7 @@ to download the full example code</p>
 
 <span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">femedu.solver.NewtonRaphsonSolver</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.Frame2D</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.finite.Frame2D</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">femedu.materials.ElasticSection</span> <span class="kn">import</span> <span class="o">*</span>
 
 
@@ -313,13 +313,13 @@ to download the full example code</p>
 <li><img src="../../_images/sphx_glr_plot_frame03_006.png" srcset="../../_images/sphx_glr_plot_frame03_006.png" alt="Mode Shape for $ \lambda = -0.21 $" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System object
-Node_51(x=[0. 0.], u=None)
-Node_52(x=[ 0. 50.], u=None)
-Node_53(x=[80.  0.], u=None)
-Node_54(x=[80. 50.], u=None)
-Frame2D(Node_51, Node_52, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_53, Node_54, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_52, Node_54, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 80.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Node_18(x=[0. 0.], u=None)
+Node_19(x=[ 0. 50.], u=None)
+Node_20(x=[80.  0.], u=None)
+Node_21(x=[80. 50.], u=None)
+Frame2D(Node_18, Node_19, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_20, Node_21, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_19, Node_21, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 80.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
 
 ==== perform the analysis ===
 
@@ -468,35 +468,35 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_51:
+  Node_18:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_52:
+  Node_19:
       x:    [ 0. 50.]
       u:    [ 0.00807668 -0.09310345 -0.20194602]
-  Node_53:
+  Node_20:
       x:    [80.  0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_54:
+  Node_21:
       x:    [80. 50.]
       u:    [-0.00807668 -0.09310345  0.20194602]
 
 Elements:
 ---------------------
-  Frame2D_54: nodes ( Node_51 Node_52 )
+  Frame2D_16: nodes ( Node_18 Node_19 )
       material: ElasticSection
       internal forces: f0=-1080.00 V0=-117.11 M0=2842.69 fl=-1080.00 Vl=-117.11 Ml=-3004.18 Pw=0.00 Mw=0.00
-  Frame2D_55: nodes ( Node_53 Node_54 )
+  Frame2D_17: nodes ( Node_20 Node_21 )
       material: ElasticSection
       internal forces: f0=-1080.00 V0=117.11 M0=-2842.69 fl=-1080.00 Vl=117.11 Ml=3004.18 Pw=0.00 Mw=0.00
-  Frame2D_56: nodes ( Node_52 Node_54 )
+  Frame2D_18: nodes ( Node_19 Node_21 )
       material: ElasticSection
       internal forces: f0=-117.11 V0=-0.00 M0=11395.82 fl=-117.11 Vl=-0.00 Ml=11395.82 Pw=-1080.00 Mw=-14400.00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.908 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.106 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-frames-plot-frame03-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/32fd880e109e940272d694bbf6555869/plot_frame03.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_frame03.py</span></code></a></p>
@@ -520,7 +520,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 02, 2023.
+      <span class="lastupdated">Last updated on Apr 03, 2023.
       </span></p>
   </div>
 

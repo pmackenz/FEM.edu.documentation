@@ -104,88 +104,8 @@
 <li><p><a class="reference internal" href="Element_class.html"><span class="doc">Element classes</span></a></p></li>
 </ul>
 </section>
-<section id="module-femedu.elements.Quad9">
-<span id="class-doc"></span><h2>Class doc<a class="headerlink" href="#module-femedu.elements.Quad9" title="Permalink to this heading"></a></h2>
-<section id="node-quadrilateral">
-<h3>9-node quadrilateral<a class="headerlink" href="#node-quadrilateral" title="Permalink to this heading"></a></h3>
-<p>Full bi-quadratic interpolation</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>       <span class="mi">1</span>
-    <span class="n">x</span>     <span class="n">y</span>
-<span class="n">x</span><span class="o">^</span><span class="mi">2</span>   <span class="n">x</span><span class="o">*</span><span class="n">y</span>   <span class="n">y</span><span class="o">^</span><span class="mi">2</span>
-  <span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span>
-    <span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span>
-</pre></div>
-</div>
-<dl class="py class">
-<dt class="sig sig-object py" id="femedu.elements.Quad9.Quad9">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.Quad9.</span></span><span class="sig-name descname"><span class="pre">Quad9</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Quad9.Quad9" title="Permalink to this definition"></a></dt>
-<dd><p>class: representing a plane 9-node quadrilateral</p>
-<p>This element works as 2D plate, loaded in-plane, and as a 3D membrane element.</p>
-<ul class="simple">
-<li><p>For 2D plate behavior, define nodes as two-dimensional nodes</p></li>
-<li><p>For 3D membrane behavior, define nodes as three-dimensional nodes</p></li>
-</ul>
-<dl class="py method">
-<dt class="sig sig-object py" id="femedu.elements.Quad9.Quad9.computeSurfaceLoads">
-<span class="sig-name descname"><span class="pre">computeSurfaceLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Quad9.Quad9.computeSurfaceLoads" title="Permalink to this definition"></a></dt>
-<dd><p>compute surface loads using faces</p>
-<p>This method should be called during <a class="reference internal" href="#femedu.elements.Quad9.Quad9.updateState" title="femedu.elements.Quad9.Quad9.updateState"><code class="xref py py-meth docutils literal notranslate"><span class="pre">updateState()</span></code></a> by every
-element supporting surface loads</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="femedu.elements.Quad9.Quad9.resetLoads">
-<span class="sig-name descname"><span class="pre">resetLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Quad9.Quad9.resetLoads" title="Permalink to this definition"></a></dt>
-<dd><p>default implementation for resetting element loads.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="femedu.elements.Quad9.Quad9.setSurfaceLoad">
-<span class="sig-name descname"><span class="pre">setSurfaceLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Quad9.Quad9.setSurfaceLoad" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>face ID</p></th>
-<th class="head"><p>nodes defining that face</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">0</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">4</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">1</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">1</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">5</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">2</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>2</p></td>
-<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">2</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">6</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">3</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>3</p></td>
-<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">3</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">7</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">0</span></code></p></td>
-</tr>
-</tbody>
-</table>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>face</strong> – face ID for the laoded face</p></li>
-<li><p><strong>pn</strong> – magnitude of distributed normal load per area. Tension on a surface is positive.</p></li>
-<li><p><strong>ps</strong> – magnitude of distributed shear load per area. Positive direction is defined as shown in the above table.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="femedu.elements.Quad9.Quad9.updateState">
-<span class="sig-name descname"><span class="pre">updateState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Quad9.Quad9.updateState" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</section>
+<section id="class-doc">
+<h2>Class doc<a class="headerlink" href="#class-doc" title="Permalink to this heading"></a></h2>
 </section>
 </section>
 
@@ -201,7 +121,7 @@ element supporting surface loads</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 02, 2023.
+      <span class="lastupdated">Last updated on Apr 03, 2023.
       </span></p>
   </div>
 

@@ -200,6 +200,14 @@ for the node.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.Element.Element.on_converged">
+<span class="sig-name descname"><span class="pre">on_converged</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.on_converged" title="Permalink to this definition"></a></dt>
+<dd><p>This method is called by the solver if convergence has been achieved.</p>
+<p>The element shall perform all necessary state updates,
+especially inform it’s material instances about the necessary updates.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.recordThisStep">
 <span class="sig-name descname"><span class="pre">recordThisStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_level</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.recordThisStep" title="Permalink to this definition"></a></dt>
 <dd><p>record current state of the system</p>
@@ -209,6 +217,15 @@ for the node.</p>
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.resetLoads">
 <span class="sig-name descname"><span class="pre">resetLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.resetLoads" title="Permalink to this definition"></a></dt>
 <dd><p>default implementation for resetting element loads.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.Element.Element.revert">
+<span class="sig-name descname"><span class="pre">revert</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.revert" title="Permalink to this definition"></a></dt>
+<dd><p>This method is called by the solver if the current load step failed to converge
+and the system shall be returned to the last converged state.</p>
+<p>The element shall perform all necessary state updates,
+especially inform it’s material instances about the necessary updates.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -378,7 +395,7 @@ For the undeformed element, set <code class="code docutils literal notranslate">
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 02, 2023.
+      <span class="lastupdated">Last updated on Apr 03, 2023.
       </span></p>
   </div>
 
