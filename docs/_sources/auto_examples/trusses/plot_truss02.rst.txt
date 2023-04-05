@@ -107,7 +107,7 @@ Author: Peter Mackenzie-Helnwein
             model.report()
 
             # create plots
-            model.plot(factor=20.,  filename="truss02_deformed.png")
+            model.plot(factor=50.,  filename="truss02_deformed.png", show_loads=1, show_reactions=1)
             model.beamValuePlot('f',filename="truss02_forces.png")
 
 
@@ -148,7 +148,7 @@ Run the example by creating an instance of the problem and executing it by calli
     *
 
       .. image-sg:: /auto_examples/trusses/images/sphx_glr_plot_truss02_002.png
-         :alt: Deformed System (magnification=20.00)
+         :alt: Deformed System (magnification=50.00)
          :srcset: /auto_examples/trusses/images/sphx_glr_plot_truss02_002.png
          :class: sphx-glr-multi-img
 
@@ -262,7 +262,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.597 seconds)
+   **Total running time of the script:** ( 0 minutes  0.360 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss02.py:

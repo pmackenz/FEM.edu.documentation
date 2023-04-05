@@ -241,7 +241,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.System.System.plot">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.plot" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_reactions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_loads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.plot" title="Permalink to this definition"></a></dt>
 <dd><p>Create mesh plot showing the undeformed and the deformed system</p>
 <p>If <strong>filename</strong> is given, store the plot to that file.
 Use proper file extensions to indicate the desired format (.png, .pdf)</p>
@@ -249,6 +249,9 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>factor</strong> – deformation magnification factor</p></li>
+<li><p><strong>show_reactions</strong> – plot reaction forces if this evaluates to <strong>True</strong></p></li>
+<li><p><strong>show_loads</strong> – plot nodal load vectors if this evaluates to <strong>True</strong></p></li>
+<li><p><strong>force_limit</strong> – don’t plot forces smaller than this value</p></li>
 <li><p><strong>filename</strong> – filename (str)</p></li>
 </ul>
 </dd>
@@ -418,7 +421,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 03, 2023.
+      <span class="lastupdated">Last updated on Apr 04, 2023.
       </span></p>
   </div>
 

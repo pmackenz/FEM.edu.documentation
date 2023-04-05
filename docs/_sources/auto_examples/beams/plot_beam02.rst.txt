@@ -99,7 +99,7 @@ Author: Peter Mackenzie-Helnwein
             model.report()
 
             # create plots
-            model.plot(factor=100., filename="beam02_deformed.png", show_bc=1)
+            model.plot(factor=100., filename="beam02_deformed.png", show_bc=1, show_reactions=1)
 
             model.beamValuePlot('V', filename="beam02_shear.png")
             model.beamValuePlot('M', filename="beam02_moment.png")
@@ -217,7 +217,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.421 seconds)
+   **Total running time of the script:** ( 0 minutes  0.290 seconds)
 
 
 .. _sphx_glr_download_auto_examples_beams_plot_beam02.py:
