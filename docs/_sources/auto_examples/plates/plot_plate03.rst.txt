@@ -578,6 +578,10 @@ Run the example by creating an instance of the problem and executing it by calli
           strain: xx=5.000e-03 yy=-1.250e-03 xy=7.105e-16 zz=-9.375e-04
           stress: xx=1.000e+02 yy=8.288e-12 xy=5.684e-12 zz=0.000e+00
 
+    /usr/local/lib/python3.10/site-packages/matplotlib/quiver.py:635: RuntimeWarning: Mean of empty slice.
+      amean = a.mean()
+    /usr/local/lib/python3.10/site-packages/numpy/core/_methods.py:190: RuntimeWarning: invalid value encountered in double_scalars
+      ret = ret.dtype.type(ret / rcount)
 
 
 
@@ -585,7 +589,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.505 seconds)
+   **Total running time of the script:** ( 0 minutes  0.588 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate03.py:
