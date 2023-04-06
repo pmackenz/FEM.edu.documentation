@@ -27,7 +27,7 @@ calculated deformation, reactions and internal forces.
 
 Author: Peter Mackenzie-Helnwein
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-91
+.. GENERATED FROM PYTHON SOURCE LINES 11-93
 
 .. code-block:: default
 
@@ -98,9 +98,11 @@ Author: Peter Mackenzie-Helnwein
             nd7.setLoad((P,), ('uy',))
             nd8.setLoad((P,), ('uy',))
 
-            model.plot(factor=1.,  filename="truss02_undeformed.png", title="Undeformed System")
+            model.setLoadFactor(0.0)
+            model.plot(factor=1., filename="truss02_undeformed.png", title="Undeformed System", show_bc=1)
 
             # analyze the model
+            model.setLoadFactor(1.0)
             model.solve()
 
             # write out report
@@ -118,12 +120,12 @@ Author: Peter Mackenzie-Helnwein
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-107
+.. GENERATED FROM PYTHON SOURCE LINES 107-109
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-112
+.. GENERATED FROM PYTHON SOURCE LINES 109-114
 
 .. code-block:: default
 
@@ -164,6 +166,10 @@ Run the example by creating an instance of the problem and executing it by calli
 
  .. code-block:: none
 
+    /usr/local/lib/python3.10/site-packages/matplotlib/quiver.py:635: RuntimeWarning: Mean of empty slice.
+      amean = a.mean()
+    /usr/local/lib/python3.10/site-packages/numpy/core/_methods.py:190: RuntimeWarning: invalid value encountered in double_scalars
+      ret = ret.dtype.type(ret / rcount)
     norm of the out-of-balance force:   2.0000e+01
     norm of the out-of-balance force:   2.8291e-14
     +
@@ -262,7 +268,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.409 seconds)
+   **Total running time of the script:** ( 0 minutes  0.593 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss02.py:

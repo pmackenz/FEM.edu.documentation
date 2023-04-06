@@ -6,14 +6,14 @@
 
 Computation times
 =================
-**00:05.768** total execution time for **auto_examples_frames** files:
+**00:09.849** total execution time for **auto_examples_frames** files:
 
 +----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_frames_plot_frame04.py` (``plot_frame04.py``) | 00:03.149 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_frames_plot_frame04.py` (``plot_frame04.py``) | 00:05.789 | 0.0 MB |
 +----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_frames_plot_frame01.py` (``plot_frame01.py``) | 00:01.295 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_frames_plot_frame01.py` (``plot_frame01.py``) | 00:01.999 | 0.0 MB |
 +----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_frames_plot_frame03.py` (``plot_frame03.py``) | 00:00.796 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_frames_plot_frame03.py` (``plot_frame03.py``) | 00:01.205 | 0.0 MB |
 +----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_frames_plot_frame02.py` (``plot_frame02.py``) | 00:00.527 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_frames_plot_frame02.py` (``plot_frame02.py``) | 00:00.857 | 0.0 MB |
 +----------------------------------------------------------------------------+-----------+--------+
