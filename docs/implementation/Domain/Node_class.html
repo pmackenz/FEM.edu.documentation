@@ -205,6 +205,16 @@ Do not forget the <code class="code docutils literal notranslate"><span class="p
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getLeadID">
+<span class="sig-name descname"><span class="pre">getLeadID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getLeadID" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the node ID of the <strong>lead</strong> node (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.getLoad">
 <span class="sig-name descname"><span class="pre">getLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dof_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_load_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getLoad" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
@@ -243,6 +253,17 @@ Do not forget the <code class="code docutils literal notranslate"><span class="p
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>dof</strong> – dof code as defined in <code class="code docutils literal notranslate"><span class="pre">request()</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.make_follower">
+<span class="sig-name descname"><span class="pre">make_follower</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lead</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.make_follower" title="Permalink to this definition"></a></dt>
+<dd><p>this command tells the current node (<strong>self</strong>) to “follow” whatever the <strong>lead</strong> node is doing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lead</strong> (<a class="reference internal" href="#femedu.domain.Node.Node" title="femedu.domain.Node.Node"><em>Node</em></a>) – pointer to the lead node</p>
 </dd>
 </dl>
 </dd></dl>
@@ -385,7 +406,7 @@ entire entered load is applied in full.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 06, 2023.
+      <span class="lastupdated">Last updated on Apr 09, 2023.
       </span></p>
   </div>
 
