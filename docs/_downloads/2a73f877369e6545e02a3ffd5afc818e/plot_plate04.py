@@ -102,6 +102,12 @@ class ExamplePlate04(Example):
         nodes2, elements2 = mesher2.triangleMesh(Ny, Triangle, PlaneStress(params))
         #nodes2, elements2 = mesher2.quadMesh(Ny, Triangle, PlaneStress(params))
 
+        # tie the patches together
+        for nd1 in nodes1:
+            for nd2 in nodes2:
+                if np.linalg.norm(nd2.getPos() - nd1.getPos()) < 1.0e-3:
+                    nd2.make_follower(nd1)
+
         nodes    = nodes1    + nodes2
         elements = elements1 + elements2
 
@@ -118,6 +124,9 @@ class ExamplePlate04(Example):
 
         # ==== complete the reference load ====
 
+        Xo = np.array([Lx, 0.0])
+        No = np.array([1.0, 0.0])
+
         for node in nodes:
             X = node.getPos()
             if math.isclose(X[0],Lx):
@@ -125,7 +134,10 @@ class ExamplePlate04(Example):
                 for elem in node.elements:
                     print('+', elem)
                     for face in elem.faces:
-                        print(face)
+                        for x, area in zip(face.pos, face.area):
+                            if np.abs( (x - Xo) @ No ) < 1.0e-2 and  No @ area / np.linalg.norm(area):
+                                face.setLoad(px, 0.0)
+
 
         #model.report()
 

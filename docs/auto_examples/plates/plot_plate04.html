@@ -189,6 +189,12 @@ to download the full example code</p>
         <span class="n">nodes2</span><span class="p">,</span> <span class="n">elements2</span> <span class="o">=</span> <span class="n">mesher2</span><span class="o">.</span><span class="n">triangleMesh</span><span class="p">(</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Triangle</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
         <span class="c1">#nodes2, elements2 = mesher2.quadMesh(Ny, Triangle, PlaneStress(params))</span>
 
+        <span class="c1"># tie the patches together</span>
+        <span class="k">for</span> <span class="n">nd1</span> <span class="ow">in</span> <span class="n">nodes1</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">nd2</span> <span class="ow">in</span> <span class="n">nodes2</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">nd2</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span> <span class="o">-</span> <span class="n">nd1</span><span class="o">.</span><span class="n">getPos</span><span class="p">())</span> <span class="o">&lt;</span> <span class="mf">1.0e-3</span><span class="p">:</span>
+                    <span class="n">nd2</span><span class="o">.</span><span class="n">make_follower</span><span class="p">(</span><span class="n">nd1</span><span class="p">)</span>
+
         <span class="n">nodes</span>    <span class="o">=</span> <span class="n">nodes1</span>    <span class="o">+</span> <span class="n">nodes2</span>
         <span class="n">elements</span> <span class="o">=</span> <span class="n">elements1</span> <span class="o">+</span> <span class="n">elements2</span>
 
@@ -205,6 +211,9 @@ to download the full example code</p>
 
         <span class="c1"># ==== complete the reference load ====</span>
 
+        <span class="n">Xo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+        <span class="n">No</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+
         <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
             <span class="n">X</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
             <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">Lx</span><span class="p">):</span>
@@ -212,7 +221,10 @@ to download the full example code</p>
                 <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">elements</span><span class="p">:</span>
                     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span>
                     <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">elem</span><span class="o">.</span><span class="n">faces</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="n">face</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">area</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">face</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">area</span><span class="p">):</span>
+                            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">Xo</span><span class="p">)</span> <span class="o">@</span> <span class="n">No</span> <span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1.0e-2</span> <span class="ow">and</span>  <span class="n">No</span> <span class="o">@</span> <span class="n">area</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">area</span><span class="p">):</span>
+                                <span class="n">face</span><span class="o">.</span><span class="n">setLoad</span><span class="p">(</span><span class="n">px</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
 
         <span class="c1">#model.report()</span>
 
@@ -236,10 +248,10 @@ to download the full example code</p>
 <li><img src="../../_images/sphx_glr_plot_plate04_001.png" srcset="../../_images/sphx_glr_plot_plate04_001.png" alt="undeformed system" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate04_002.png" srcset="../../_images/sphx_glr_plot_plate04_002.png" alt="Deformed System (magnification=10.00)" class = "sphx-glr-multi-img"/></li>
 </ul>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Node_55:
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Node_158:
     x:    [100.  80.]
     u:    None
-+ Quad_41: nodes ( Node_46 Node_47 Node_55 Node_54 )
++ Quad_154: nodes ( Node_149 Node_150 Node_158 Node_157 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -249,160 +261,107 @@ to download the full example code</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_41.0
-Face2D_41.1
-Face2D_41.2
-Face2D_41.3
-Node_62:
++ Triangle_189: nodes ( Node_184 Node_185 Node_186 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
+Node_165:
     x:    [100.   0.]
     fix:  [&#39;uy&#39;]
     u:    None
-+ Triangle_47: nodes ( Node_61 Node_62 Node_68 )
++ Triangle_160: nodes ( Node_164 Node_165 Node_171 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_47.0
-Face2D_47.1
-Face2D_47.2
-Node_68:
+Node_171:
     x:    [100.          13.33333333]
     u:    None
-+ Triangle_47: nodes ( Node_61 Node_62 Node_68 )
++ Triangle_160: nodes ( Node_164 Node_165 Node_171 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_47.0
-Face2D_47.1
-Face2D_47.2
-+ Triangle_56: nodes ( Node_67 Node_68 Node_73 )
++ Triangle_169: nodes ( Node_170 Node_171 Node_176 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_56.0
-Face2D_56.1
-Face2D_56.2
-+ Triangle_57: nodes ( Node_68 Node_67 Node_61 )
++ Triangle_170: nodes ( Node_171 Node_170 Node_164 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_57.0
-Face2D_57.1
-Face2D_57.2
-Node_73:
+Node_176:
     x:    [100.          26.66666667]
     u:    None
-+ Triangle_56: nodes ( Node_67 Node_68 Node_73 )
++ Triangle_169: nodes ( Node_170 Node_171 Node_176 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_56.0
-Face2D_56.1
-Face2D_56.2
-+ Triangle_64: nodes ( Node_72 Node_73 Node_77 )
++ Triangle_177: nodes ( Node_175 Node_176 Node_180 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_64.0
-Face2D_64.1
-Face2D_64.2
-+ Triangle_65: nodes ( Node_73 Node_72 Node_67 )
++ Triangle_178: nodes ( Node_176 Node_175 Node_170 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_65.0
-Face2D_65.1
-Face2D_65.2
-Node_77:
+Node_180:
     x:    [100.  40.]
     u:    None
-+ Triangle_64: nodes ( Node_72 Node_73 Node_77 )
++ Triangle_177: nodes ( Node_175 Node_176 Node_180 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_64.0
-Face2D_64.1
-Face2D_64.2
-+ Triangle_70: nodes ( Node_76 Node_77 Node_80 )
++ Triangle_183: nodes ( Node_179 Node_180 Node_183 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_70.0
-Face2D_70.1
-Face2D_70.2
-+ Triangle_71: nodes ( Node_77 Node_76 Node_72 )
++ Triangle_184: nodes ( Node_180 Node_179 Node_175 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_71.0
-Face2D_71.1
-Face2D_71.2
-Node_80:
+Node_183:
     x:    [100.          53.33333333]
     u:    None
-+ Triangle_70: nodes ( Node_76 Node_77 Node_80 )
++ Triangle_183: nodes ( Node_179 Node_180 Node_183 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_70.0
-Face2D_70.1
-Face2D_70.2
-+ Triangle_74: nodes ( Node_79 Node_80 Node_82 )
++ Triangle_187: nodes ( Node_182 Node_183 Node_185 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_74.0
-Face2D_74.1
-Face2D_74.2
-+ Triangle_75: nodes ( Node_80 Node_79 Node_76 )
++ Triangle_188: nodes ( Node_183 Node_182 Node_179 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_75.0
-Face2D_75.1
-Face2D_75.2
-Node_82:
+Node_185:
     x:    [100.          66.66666667]
     u:    None
-+ Triangle_74: nodes ( Node_79 Node_80 Node_82 )
++ Triangle_187: nodes ( Node_182 Node_183 Node_185 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_74.0
-Face2D_74.1
-Face2D_74.2
-+ Triangle_76: nodes ( Node_81 Node_82 Node_83 )
++ Triangle_189: nodes ( Node_184 Node_185 Node_186 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_76.0
-Face2D_76.1
-Face2D_76.2
-+ Triangle_77: nodes ( Node_82 Node_81 Node_79 )
++ Triangle_190: nodes ( Node_185 Node_184 Node_182 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_77.0
-Face2D_77.1
-Face2D_77.2
-Node_83:
+Node_186:
     x:    [100.  80.]
+    following Node_158
     u:    None
-+ Triangle_76: nodes ( Node_81 Node_82 Node_83 )
++ Triangle_189: nodes ( Node_184 Node_185 Node_186 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Face2D_76.0
-Face2D_76.1
-Face2D_76.2
-/usr/local/lib/python3.10/site-packages/matplotlib/quiver.py:635: RuntimeWarning: Mean of empty slice.
-  amean = a.mean()
-/usr/local/lib/python3.10/site-packages/numpy/core/_methods.py:190: RuntimeWarning: invalid value encountered in double_scalars
-  ret = ret.dtype.type(ret / rcount)
-norm of the out-of-balance force:   6.4627e-10
+norm of the out-of-balance force:   3.1269e+03
+norm of the out-of-balance force:   1.6669e-09
 +
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.477 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.267 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate04-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/2a73f877369e6545e02a3ffd5afc818e/plot_plate04.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate04.py</span></code></a></p>
@@ -426,7 +385,7 @@ norm of the out-of-balance force:   6.4627e-10
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 09, 2023.
+      <span class="lastupdated">Last updated on Apr 12, 2023.
       </span></p>
   </div>
 

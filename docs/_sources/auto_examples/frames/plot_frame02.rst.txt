@@ -290,7 +290,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.594 seconds)
+   **Total running time of the script:** ( 0 minutes  0.457 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame02.py:
