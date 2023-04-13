@@ -100,11 +100,17 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.addLoad">
 <span class="sig-name descname"><span class="pre">addLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loads</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.addLoad" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Nodes are applied as components energetically linked to any degree of freedom provided at this node.</p>
+<p>For example, in a 2D-problem with the x-axis to the right and the y-axis pointing up,
+applying a vertical downward force, P, and a counter-clockwise moment, M, at a node, xn:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xn</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">P</span><span class="p">,</span> <span class="n">M</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>loads</strong> – </p></li>
-<li><p><strong>dofs</strong> – </p></li>
+<li><p><strong>loads</strong> (<em>list of floats</em>) – </p></li>
+<li><p><strong>dofs</strong> (<em>list of dof-codes</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -160,7 +166,7 @@ element’s request() call. (called during initialization.)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.getDisp">
-<span class="sig-name descname"><span class="pre">getDisp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getDisp" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">getDisp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getDisp" title="Permalink to this definition"></a></dt>
 <dd><p>return a vector (nd.array) of (generalized) displacements.</p>
 <p>If a <code class="code docutils literal notranslate"><span class="pre">caller</span></code> is given, the element-specific d.o.f.s will be returned as a sequence
 in the same order as given by the element’s <code class="code docutils literal notranslate"><span class="pre">request()</span></code> call.</p>
