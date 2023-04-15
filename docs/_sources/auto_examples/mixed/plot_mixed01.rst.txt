@@ -229,34 +229,34 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_2851:
+      Node_3037:
           x:    [0. 0.]
           fix:  ['ux', 'uy', 'rz']
           u:    None
-      Node_2852:
+      Node_3038:
           x:    [ 0. 50.]
           P:    [20.  0.  0.]
           u:    None
-      Node_2853:
+      Node_3039:
           x:    [80.  0.]
           fix:  ['ux', 'uy', 'rz']
           u:    None
-      Node_2854:
+      Node_3040:
           x:    [80. 50.]
           u:    None
 
     Elements:
     ---------------------
-      Frame2D_5198: nodes ( Node_2851 Node_2852 )
+      Frame2D_5526: nodes ( Node_3037 Node_3038 )
           material: ElasticSection
           internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-      Frame2D_5199: nodes ( Node_2853 Node_2854 )
+      Frame2D_5527: nodes ( Node_3039 Node_3040 )
           material: ElasticSection
           internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-      Frame2D_5200: nodes ( Node_2852 Node_2854 )
+      Frame2D_5528: nodes ( Node_3038 Node_3040 )
           material: ElasticSection
           internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-      NLTruss: Node_2851 to Node_2854:
+      Truss: Node_3037 to Node_3040:
           material properties: FiberMaterial(Material)({'E': 29000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 0.0
 
@@ -364,34 +364,34 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_2851:
+      Node_3037:
           x:    [0. 0.]
           fix:  ['ux', 'uy', 'rz']
           u:    [0. 0. 0.]
-      Node_2852:
+      Node_3038:
           x:    [ 0. 50.]
           P:    [20.  0.  0.]
           u:    [ 0.81143807 -0.01625057 -0.03775122]
-      Node_2853:
+      Node_3039:
           x:    [80.  0.]
           fix:  ['ux', 'uy', 'rz']
           u:    [0. 0. 0.]
-      Node_2854:
+      Node_3040:
           x:    [80. 50.]
           u:    [ 0.78293564 -0.02726958  0.03215376]
 
     Elements:
     ---------------------
-      Frame2D_5198: nodes ( Node_2851 Node_2852 )
+      Frame2D_5526: nodes ( Node_3037 Node_3038 )
           material: ElasticSection
           internal forces: f0=-188.51 V0=-6.64 M0=-98.88 fl=-188.51 Vl=-6.64 Ml=-278.06 Pw=0.00 Mw=0.00
-      Frame2D_5199: nodes ( Node_2853 Node_2854 )
+      Frame2D_5527: nodes ( Node_3039 Node_3040 )
           material: ElasticSection
           internal forces: f0=-316.33 V0=37.17 M0=-911.14 fl=-316.33 Vl=37.17 Ml=1195.25 Pw=0.00 Mw=0.00
-      Frame2D_5200: nodes ( Node_2852 Node_2854 )
+      Frame2D_5528: nodes ( Node_3038 Node_3040 )
           material: ElasticSection
           internal forces: f0=-206.64 V0=-11.49 M0=2388.61 fl=-206.64 Vl=-11.49 Ml=1471.42 Pw=-200.00 Mw=-2666.67
-      NLTruss: Node_2851 to Node_2854:
+      Truss: Node_3037 to Node_3040:
           material properties: FiberMaterial(Material)({'E': 29000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.006871468961325107   stress:{'xx': 199.27259987842808, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 199.27259987842808
 
@@ -402,7 +402,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.000 seconds)
+   **Total running time of the script:** ( 0 minutes  0.845 seconds)
 
 
 .. _sphx_glr_download_auto_examples_mixed_plot_mixed01.py:

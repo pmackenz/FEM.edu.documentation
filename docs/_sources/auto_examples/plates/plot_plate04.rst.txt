@@ -24,7 +24,7 @@ Patch test for triangular plate under in-plane loading
 
 PatchMesher test for the LinearTriangle (Constant Strain Triangle)
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-136
+.. GENERATED FROM PYTHON SOURCE LINES 9-133
 
 .. code-block:: default
 
@@ -107,10 +107,7 @@ PatchMesher test for the LinearTriangle (Constant Strain Triangle)
             #nodes2, elements2 = mesher2.quadMesh(Ny, Triangle, PlaneStress(params))
 
             # tie the patches together
-            for nd1 in nodes1:
-                for nd2 in nodes2:
-                    if np.linalg.norm(nd2.getPos() - nd1.getPos()) < 1.0e-3:
-                        nd2.make_follower(nd1)
+            mesher1.tie(mesher2)
 
             nodes    = nodes1    + nodes2
             elements = elements1 + elements2
@@ -162,12 +159,12 @@ PatchMesher test for the LinearTriangle (Constant Strain Triangle)
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-157
+.. GENERATED FROM PYTHON SOURCE LINES 152-154
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 157-163
+.. GENERATED FROM PYTHON SOURCE LINES 154-160
 
 .. code-block:: default
 
@@ -320,7 +317,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.584 seconds)
+   **Total running time of the script:** ( 0 minutes  1.334 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate04.py:

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Patch test for triangular plate under in-plane loading &mdash; FEM.edu FEM.edu-v0.9.2-pre documentation</title>
+  <title>Patch test for triangular plate under in-plane loading &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
@@ -190,10 +190,7 @@ to download the full example code</p>
         <span class="c1">#nodes2, elements2 = mesher2.quadMesh(Ny, Triangle, PlaneStress(params))</span>
 
         <span class="c1"># tie the patches together</span>
-        <span class="k">for</span> <span class="n">nd1</span> <span class="ow">in</span> <span class="n">nodes1</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">nd2</span> <span class="ow">in</span> <span class="n">nodes2</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">nd2</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span> <span class="o">-</span> <span class="n">nd1</span><span class="o">.</span><span class="n">getPos</span><span class="p">())</span> <span class="o">&lt;</span> <span class="mf">1.0e-3</span><span class="p">:</span>
-                    <span class="n">nd2</span><span class="o">.</span><span class="n">make_follower</span><span class="p">(</span><span class="n">nd1</span><span class="p">)</span>
+        <span class="n">mesher1</span><span class="o">.</span><span class="n">tie</span><span class="p">(</span><span class="n">mesher2</span><span class="p">)</span>
 
         <span class="n">nodes</span>    <span class="o">=</span> <span class="n">nodes1</span>    <span class="o">+</span> <span class="n">nodes2</span>
         <span class="n">elements</span> <span class="o">=</span> <span class="n">elements1</span> <span class="o">+</span> <span class="n">elements2</span>
@@ -361,7 +358,7 @@ norm of the out-of-balance force:   1.6669e-09
 +
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.584 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.334 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate04-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/2a73f877369e6545e02a3ffd5afc818e/plot_plate04.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate04.py</span></code></a></p>
@@ -385,7 +382,7 @@ norm of the out-of-balance force:   1.6669e-09
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 12, 2023.
+      <span class="lastupdated">Last updated on Apr 15, 2023.
       </span></p>
   </div>
 
