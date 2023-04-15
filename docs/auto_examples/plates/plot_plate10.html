@@ -112,7 +112,9 @@ to download the full example code</p>
 <section class="sphx-glr-example-title" id="profiling-the-code">
 <span id="sphx-glr-auto-examples-plates-plot-plate10-py"></span><h1>Profiling the code<a class="headerlink" href="#profiling-the-code" title="Permalink to this heading"></a></h1>
 <p>Using PatchMesher to model a quarter of the plate</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SPARSE</span> <span class="o">=</span> <span class="kc">False</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_path = &#39;_static/profiler.png&#39;</span>
+
+<span class="n">SPARSE</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -233,272 +235,267 @@ to download the full example code</p>
 </pre></div>
 </div>
 <p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<p>This time, we are running the example in the profiler, writing profiling data to file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cProfile</span>
 
-    <span class="kn">import</span> <span class="nn">cProfile</span>
-    <span class="kn">import</span> <span class="nn">pstats</span>
-    <span class="kn">from</span> <span class="nn">pstats</span> <span class="kn">import</span> <span class="n">SortKey</span>
+<span class="n">ex</span> <span class="o">=</span> <span class="n">ExamplePlate10</span><span class="p">()</span>
 
-
-    <span class="n">ex</span> <span class="o">=</span> <span class="n">ExamplePlate10</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">SPARSE</span><span class="p">:</span>
-        <span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;ex.run()&#39;</span><span class="p">,</span><span class="s1">&#39;profile_data_sparse.txt&#39;</span><span class="p">)</span>
-
-        <span class="c1">#</span>
-        <span class="c1"># processing the profiling data</span>
-        <span class="c1">#</span>
-
-        <span class="n">p</span> <span class="o">=</span> <span class="n">pstats</span><span class="o">.</span><span class="n">Stats</span><span class="p">(</span><span class="s1">&#39;profile_data_sparse.txt&#39;</span><span class="p">)</span>
-        <span class="n">p</span><span class="o">.</span><span class="n">strip_dirs</span><span class="p">()</span> <span class="c1">#.sort_stats(-1).print_stats()</span>
-        <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span>
-        <span class="c1">#p.print_stats()</span>
-
-        <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">CUMULATIVE</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-
-        <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">TIME</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;ex.run()&#39;</span><span class="p">,</span><span class="s1">&#39;profile_data_full.txt&#39;</span><span class="p">)</span>
-
-        <span class="c1">#</span>
-        <span class="c1"># processing the profiling data</span>
-        <span class="c1">#</span>
-
-        <span class="n">p</span> <span class="o">=</span> <span class="n">pstats</span><span class="o">.</span><span class="n">Stats</span><span class="p">(</span><span class="s1">&#39;profile_data_full.txt&#39;</span><span class="p">)</span>
-        <span class="n">p</span><span class="o">.</span><span class="n">strip_dirs</span><span class="p">()</span> <span class="c1">#.sort_stats(-1).print_stats()</span>
-        <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span>
-        <span class="c1">#p.print_stats()</span>
-
-        <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">CUMULATIVE</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-
-        <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">TIME</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">SPARSE</span><span class="p">:</span>
+    <span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;ex.run()&#39;</span><span class="p">,</span><span class="s1">&#39;profile_data_sparse.txt&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;ex.run()&#39;</span><span class="p">,</span><span class="s1">&#39;profile_data_full.txt&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Node_379 [120.   0.]
-+ Elem_378
-+ Elem_379 379.2 : [[2. 0.]]
-Node_440 [120.   2.]
-+ Elem_379 379.2 : [[2. 0.]]
-+ Elem_498
-+ Elem_499 499.2 : [[2.00000000e+00 1.42108547e-14]]
-Node_501 [120.   4.]
-+ Elem_499 499.2 : [[2.00000000e+00 1.42108547e-14]]
-+ Elem_618
-+ Elem_619 619.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-Node_562 [120.   6.]
-+ Elem_619 619.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-+ Elem_738
-+ Elem_739 739.2 : [[2. 0.]]
-Node_623 [120.   8.]
-+ Elem_739 739.2 : [[2. 0.]]
-+ Elem_858
-+ Elem_859 859.2 : [[2. 0.]]
-Node_684 [120.  10.]
-+ Elem_859 859.2 : [[2. 0.]]
-+ Elem_978
-+ Elem_979 979.2 : [[2. 0.]]
-Node_745 [120.  12.]
-+ Elem_979 979.2 : [[2. 0.]]
-+ Elem_1098
-+ Elem_1099 1099.2 : [[2. 0.]]
-Node_806 [120.  14.]
-+ Elem_1099 1099.2 : [[2. 0.]]
-+ Elem_1218
-+ Elem_1219 1219.2 : [[2. 0.]]
-Node_867 [120.  16.]
-+ Elem_1219 1219.2 : [[2. 0.]]
-+ Elem_1338
-+ Elem_1339 1339.2 : [[2. 0.]]
-Node_928 [120.  18.]
-+ Elem_1339 1339.2 : [[2. 0.]]
-+ Elem_1458
-+ Elem_1459 1459.2 : [[2. 0.]]
-Node_989 [120.  20.]
-+ Elem_1459 1459.2 : [[2. 0.]]
-+ Elem_1578
-+ Elem_1579 1579.2 : [[2. 0.]]
-Node_1050 [120.  22.]
-+ Elem_1579 1579.2 : [[2. 0.]]
-+ Elem_1698
-+ Elem_1699 1699.2 : [[2. 0.]]
-Node_1111 [120.  24.]
-+ Elem_1699 1699.2 : [[2. 0.]]
-+ Elem_1818
-+ Elem_1819 1819.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-Node_1172 [120.  26.]
-+ Elem_1819 1819.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-+ Elem_1938
-+ Elem_1939 1939.2 : [[2.00000000e+00 2.84217094e-14]]
-Node_1233 [120.  28.]
-+ Elem_1939 1939.2 : [[2.00000000e+00 2.84217094e-14]]
-+ Elem_2058
-+ Elem_2059 2059.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-Node_1294 [120.  30.]
-+ Elem_2059 2059.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-+ Elem_2178
-+ Elem_2179 2179.2 : [[2.00000000e+00 1.42108547e-14]]
-Node_1355 [120.  32.]
-+ Elem_2179 2179.2 : [[2.00000000e+00 1.42108547e-14]]
-+ Elem_2298
-+ Elem_2299 2299.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-Node_1416 [120.  34.]
-+ Elem_2299 2299.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-+ Elem_2418
-+ Elem_2419 2419.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-Node_1477 [120.  36.]
-+ Elem_2419 2419.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-+ Elem_2538
-+ Elem_2539 2539.2 : [[2.00000000e+00 2.84217094e-14]]
-Node_1538 [120.  38.]
-+ Elem_2539 2539.2 : [[2.00000000e+00 2.84217094e-14]]
-+ Elem_2658
-+ Elem_2659 2659.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-Node_1599 [120.  40.]
-+ Elem_2659 2659.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-+ Elem_2778
-+ Elem_2779 2779.2 : [[2.00000000e+00 1.42108547e-14]]
-Node_1660 [120.  42.]
-+ Elem_2779 2779.2 : [[2.00000000e+00 1.42108547e-14]]
-+ Elem_2898
-+ Elem_2899 2899.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-Node_1721 [120.  44.]
-+ Elem_2899 2899.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-+ Elem_3018
-+ Elem_3019 3019.2 : [[2. 0.]]
-Node_1782 [120.  46.]
-+ Elem_3019 3019.2 : [[2. 0.]]
-+ Elem_3138
-+ Elem_3139 3139.2 : [[2. 0.]]
-Node_1843 [120.  48.]
-+ Elem_3139 3139.2 : [[2. 0.]]
-+ Elem_3258
-+ Elem_3259 3259.2 : [[2. 0.]]
-Node_1904 [120.  50.]
-+ Elem_3259 3259.2 : [[2. 0.]]
-+ Elem_3378
-+ Elem_3379 3379.2 : [[2. 0.]]
-Node_1965 [120.  52.]
-+ Elem_3379 3379.2 : [[2. 0.]]
-+ Elem_3498
-+ Elem_3499 3499.2 : [[2. 0.]]
-Node_2026 [120.  54.]
-+ Elem_3499 3499.2 : [[2. 0.]]
-+ Elem_3618
-+ Elem_3619 3619.2 : [[2. 0.]]
-Node_2087 [120.  56.]
-+ Elem_3619 3619.2 : [[2. 0.]]
-+ Elem_3738
-+ Elem_3739 3739.2 : [[2. 0.]]
-Node_2148 [120.  58.]
-+ Elem_3739 3739.2 : [[2. 0.]]
-+ Elem_3858
-+ Elem_3859 3859.2 : [[2. 0.]]
-Node_2209 [120.  60.]
-+ Elem_3859 3859.2 : [[2. 0.]]
-+ Elem_3978
-+ Elem_3979 3979.2 : [[2. 0.]]
-Node_2270 [120.  62.]
-+ Elem_3979 3979.2 : [[2. 0.]]
-+ Elem_4098
-+ Elem_4099 4099.2 : [[2. 0.]]
-Node_2331 [120.  64.]
-+ Elem_4099 4099.2 : [[2. 0.]]
-+ Elem_4218
-+ Elem_4219 4219.2 : [[2.00000000e+00 2.84217094e-14]]
-Node_2392 [120.  66.]
-+ Elem_4219 4219.2 : [[2.00000000e+00 2.84217094e-14]]
-+ Elem_4338
-+ Elem_4339 4339.2 : [[ 2.00000000e+00 -2.84217094e-14]]
-Node_2453 [120.  68.]
-+ Elem_4339 4339.2 : [[ 2.00000000e+00 -2.84217094e-14]]
-+ Elem_4458
-+ Elem_4459 4459.2 : [[2. 0.]]
-Node_2514 [120.  70.]
-+ Elem_4459 4459.2 : [[2. 0.]]
-+ Elem_4578
-+ Elem_4579 4579.2 : [[2. 0.]]
-Node_2575 [120.  72.]
-+ Elem_4579 4579.2 : [[2. 0.]]
-+ Elem_4698
-+ Elem_4699 4699.2 : [[2. 0.]]
-Node_2636 [120.  74.]
-+ Elem_4699 4699.2 : [[2. 0.]]
-+ Elem_4818
-+ Elem_4819 4819.2 : [[2. 0.]]
-Node_2697 [120.  76.]
-+ Elem_4819 4819.2 : [[2. 0.]]
-+ Elem_4938
-+ Elem_4939 4939.2 : [[2. 0.]]
-Node_2758 [120.  78.]
-+ Elem_4939 4939.2 : [[2. 0.]]
-+ Elem_5058
-+ Elem_5059 5059.2 : [[2. 0.]]
-Node_2819 [120.  80.]
-+ Elem_5059 5059.2 : [[2. 0.]]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Node_60 [120.   0.]
++ Elem_118
++ Elem_119 119.2 : [[2. 0.]]
+Node_121 [120.   2.]
++ Elem_119 119.2 : [[2. 0.]]
++ Elem_238
++ Elem_239 239.2 : [[2.00000000e+00 1.42108547e-14]]
+Node_182 [120.   4.]
++ Elem_239 239.2 : [[2.00000000e+00 1.42108547e-14]]
++ Elem_358
++ Elem_359 359.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_243 [120.   6.]
++ Elem_359 359.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_478
++ Elem_479 479.2 : [[2. 0.]]
+Node_304 [120.   8.]
++ Elem_479 479.2 : [[2. 0.]]
++ Elem_598
++ Elem_599 599.2 : [[2. 0.]]
+Node_365 [120.  10.]
++ Elem_599 599.2 : [[2. 0.]]
++ Elem_718
++ Elem_719 719.2 : [[2. 0.]]
+Node_426 [120.  12.]
++ Elem_719 719.2 : [[2. 0.]]
++ Elem_838
++ Elem_839 839.2 : [[2. 0.]]
+Node_487 [120.  14.]
++ Elem_839 839.2 : [[2. 0.]]
++ Elem_958
++ Elem_959 959.2 : [[2. 0.]]
+Node_548 [120.  16.]
++ Elem_959 959.2 : [[2. 0.]]
++ Elem_1078
++ Elem_1079 1079.2 : [[2. 0.]]
+Node_609 [120.  18.]
++ Elem_1079 1079.2 : [[2. 0.]]
++ Elem_1198
++ Elem_1199 1199.2 : [[2. 0.]]
+Node_670 [120.  20.]
++ Elem_1199 1199.2 : [[2. 0.]]
++ Elem_1318
++ Elem_1319 1319.2 : [[2. 0.]]
+Node_731 [120.  22.]
++ Elem_1319 1319.2 : [[2. 0.]]
++ Elem_1438
++ Elem_1439 1439.2 : [[2. 0.]]
+Node_792 [120.  24.]
++ Elem_1439 1439.2 : [[2. 0.]]
++ Elem_1558
++ Elem_1559 1559.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_853 [120.  26.]
++ Elem_1559 1559.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_1678
++ Elem_1679 1679.2 : [[2.00000000e+00 2.84217094e-14]]
+Node_914 [120.  28.]
++ Elem_1679 1679.2 : [[2.00000000e+00 2.84217094e-14]]
++ Elem_1798
++ Elem_1799 1799.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_975 [120.  30.]
++ Elem_1799 1799.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_1918
++ Elem_1919 1919.2 : [[2.00000000e+00 1.42108547e-14]]
+Node_1036 [120.  32.]
++ Elem_1919 1919.2 : [[2.00000000e+00 1.42108547e-14]]
++ Elem_2038
++ Elem_2039 2039.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_1097 [120.  34.]
++ Elem_2039 2039.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_2158
++ Elem_2159 2159.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_1158 [120.  36.]
++ Elem_2159 2159.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_2278
++ Elem_2279 2279.2 : [[2.00000000e+00 2.84217094e-14]]
+Node_1219 [120.  38.]
++ Elem_2279 2279.2 : [[2.00000000e+00 2.84217094e-14]]
++ Elem_2398
++ Elem_2399 2399.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_1280 [120.  40.]
++ Elem_2399 2399.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_2518
++ Elem_2519 2519.2 : [[2.00000000e+00 1.42108547e-14]]
+Node_1341 [120.  42.]
++ Elem_2519 2519.2 : [[2.00000000e+00 1.42108547e-14]]
++ Elem_2638
++ Elem_2639 2639.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_1402 [120.  44.]
++ Elem_2639 2639.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_2758
++ Elem_2759 2759.2 : [[2. 0.]]
+Node_1463 [120.  46.]
++ Elem_2759 2759.2 : [[2. 0.]]
++ Elem_2878
++ Elem_2879 2879.2 : [[2. 0.]]
+Node_1524 [120.  48.]
++ Elem_2879 2879.2 : [[2. 0.]]
++ Elem_2998
++ Elem_2999 2999.2 : [[2. 0.]]
+Node_1585 [120.  50.]
++ Elem_2999 2999.2 : [[2. 0.]]
++ Elem_3118
++ Elem_3119 3119.2 : [[2. 0.]]
+Node_1646 [120.  52.]
++ Elem_3119 3119.2 : [[2. 0.]]
++ Elem_3238
++ Elem_3239 3239.2 : [[2. 0.]]
+Node_1707 [120.  54.]
++ Elem_3239 3239.2 : [[2. 0.]]
++ Elem_3358
++ Elem_3359 3359.2 : [[2. 0.]]
+Node_1768 [120.  56.]
++ Elem_3359 3359.2 : [[2. 0.]]
++ Elem_3478
++ Elem_3479 3479.2 : [[2. 0.]]
+Node_1829 [120.  58.]
++ Elem_3479 3479.2 : [[2. 0.]]
++ Elem_3598
++ Elem_3599 3599.2 : [[2. 0.]]
+Node_1890 [120.  60.]
++ Elem_3599 3599.2 : [[2. 0.]]
++ Elem_3718
++ Elem_3719 3719.2 : [[2. 0.]]
+Node_1951 [120.  62.]
++ Elem_3719 3719.2 : [[2. 0.]]
++ Elem_3838
++ Elem_3839 3839.2 : [[2. 0.]]
+Node_2012 [120.  64.]
++ Elem_3839 3839.2 : [[2. 0.]]
++ Elem_3958
++ Elem_3959 3959.2 : [[2.00000000e+00 2.84217094e-14]]
+Node_2073 [120.  66.]
++ Elem_3959 3959.2 : [[2.00000000e+00 2.84217094e-14]]
++ Elem_4078
++ Elem_4079 4079.2 : [[ 2.00000000e+00 -2.84217094e-14]]
+Node_2134 [120.  68.]
++ Elem_4079 4079.2 : [[ 2.00000000e+00 -2.84217094e-14]]
++ Elem_4198
++ Elem_4199 4199.2 : [[2. 0.]]
+Node_2195 [120.  70.]
++ Elem_4199 4199.2 : [[2. 0.]]
++ Elem_4318
++ Elem_4319 4319.2 : [[2. 0.]]
+Node_2256 [120.  72.]
++ Elem_4319 4319.2 : [[2. 0.]]
++ Elem_4438
++ Elem_4439 4439.2 : [[2. 0.]]
+Node_2317 [120.  74.]
++ Elem_4439 4439.2 : [[2. 0.]]
++ Elem_4558
++ Elem_4559 4559.2 : [[2. 0.]]
+Node_2378 [120.  76.]
++ Elem_4559 4559.2 : [[2. 0.]]
++ Elem_4678
++ Elem_4679 4679.2 : [[2. 0.]]
+Node_2439 [120.  78.]
++ Elem_4679 4679.2 : [[2. 0.]]
++ Elem_4798
++ Elem_4799 4799.2 : [[2. 0.]]
+Node_2500 [120.  80.]
++ Elem_4799 4799.2 : [[2. 0.]]
 norm of the out-of-balance force:   2.5140e+02
 norm of the out-of-balance force:   1.4968e-10
 +
-Sat Apr 15 12:25:33 2023    profile_data_full.txt
-
-         7725426 function calls (7180493 primitive calls) in 17.717 seconds
-
-   Ordered by: cumulative time
-   List reduced from 282 to 20 due to restriction &lt;20&gt;
-
-   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.000    0.000   17.736   17.736 {built-in method builtins.exec}
-        1    0.000    0.000   17.736   17.736 &lt;string&gt;:1(&lt;module&gt;)
-        1    0.015    0.015   17.736   17.736 Example.py:20(run)
-        1    0.007    0.007   17.720   17.720 plot_plate10.py:44(problem)
-        1    0.000    0.000   14.897   14.897 System.py:291(solve)
-        1    0.000    0.000   14.897   14.897 NewtonRaphsonSolver.py:13(solve)
-        4    0.000    0.000   13.593    3.398 NewtonRaphsonSolver.py:100(assemble)
-        4    2.626    0.656   13.593    3.398 Solver.py:127(assemble)
-    19200    0.117    0.000    8.086    0.000 Element.py:225(getForce)
-    19200    2.792    0.000    7.969    0.000 Triangle.py:80(updateState)
-        2    0.000    0.000    6.837    3.419 Solver.py:321(checkResiduum)
-602900/322289    0.738    0.000    4.382    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
-    38400    0.674    0.000    4.090    0.000 Triangle.py:155(computeSurfaceLoads)
-        1    0.042    0.042    2.725    2.725 PatchMesher.py:99(triangleMesh)
-   115200    0.862    0.000    2.104    0.000 Face2D.py:54(computeNodalForces)
-    19200    0.027    0.000    1.895    0.000 Element.py:234(getLoad)
-     4800    0.186    0.000    1.504    0.000 Triangle.py:10(__init__)
-   153600    0.148    0.000    1.467    0.000 &lt;__array_function__ internals&gt;:177(outer)
-    38400    0.127    0.000    1.302    0.000 Triangle.py:163(&lt;listcomp&gt;)
-        1    0.003    0.003    1.299    1.299 NewtonRaphsonSolver.py:58(solveSingleStep)
-
-
-Sat Apr 15 12:25:33 2023    profile_data_full.txt
-
-         7725426 function calls (7180493 primitive calls) in 17.717 seconds
-
-   Ordered by: internal time
-   List reduced from 282 to 20 due to restriction &lt;20&gt;
-
-   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-    19200    2.792    0.000    7.969    0.000 Triangle.py:80(updateState)
-        4    2.626    0.656   13.593    3.398 Solver.py:127(assemble)
-        1    1.280    1.280    1.280    1.280 linalg.py:320(solve)
-   153600    1.011    0.000    1.166    0.000 numeric.py:857(outer)
-   638623    0.916    0.000    0.916    0.000 {built-in method numpy.array}
-   115200    0.862    0.000    2.104    0.000 Face2D.py:54(computeNodalForces)
-602900/322289    0.738    0.000    4.382    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
-   230400    0.682    0.000    0.958    0.000 Node.py:360(getIdx4Element)
-    38400    0.674    0.000    4.090    0.000 Triangle.py:155(computeSurfaceLoads)
-    19201    0.659    0.000    0.829    0.000 PlaneStress.py:25(updateState)
-254400/4800    0.448    0.000    1.064    0.000 copy.py:128(deepcopy)
-    76800    0.418    0.000    0.830    0.000 Node.py:324(getDeformedPos)
-    76800    0.262    0.000    0.397    0.000 Node.py:255(getDisp)
-   115201    0.244    0.000    0.936    0.000 numeric.py:76(zeros_like)
-    14400    0.198    0.000    0.414    0.000 Face2D.py:16(initialize)
-     4800    0.186    0.000    1.504    0.000 Triangle.py:10(__init__)
-   153600    0.148    0.000    1.467    0.000 &lt;__array_function__ internals&gt;:177(outer)
-    19200    0.141    0.000    0.178    0.000 twodim_base.py:162(eye)
-   115201    0.139    0.000    0.342    0.000 &lt;__array_function__ internals&gt;:177(empty_like)
-   195328    0.136    0.000    0.136    0.000 {built-in method numpy.zeros}
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  17.795 seconds)</p>
+<p>Now it’s time to process the profiling data</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pstats</span>
+<span class="kn">from</span> <span class="nn">pstats</span> <span class="kn">import</span> <span class="n">SortKey</span>
+
+<span class="k">if</span> <span class="n">SPARSE</span><span class="p">:</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">pstats</span><span class="o">.</span><span class="n">Stats</span><span class="p">(</span><span class="s1">&#39;profile_data_sparse.txt&#39;</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">strip_dirs</span><span class="p">()</span> <span class="c1">#.sort_stats(-1).print_stats()</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span>
+    <span class="c1">#p.print_stats()</span>
+
+    <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">CUMULATIVE</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">TIME</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">pstats</span><span class="o">.</span><span class="n">Stats</span><span class="p">(</span><span class="s1">&#39;profile_data_full.txt&#39;</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">strip_dirs</span><span class="p">()</span> <span class="c1">#.sort_stats(-1).print_stats()</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span>
+    <span class="c1">#p.print_stats()</span>
+
+    <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">CUMULATIVE</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">TIME</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Sat Apr 15 13:20:37 2023    profile_data_full.txt
+
+         7715835 function calls (7170902 primitive calls) in 23.004 seconds
+
+   Ordered by: cumulative time
+   List reduced from 290 to 20 due to restriction &lt;20&gt;
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000   23.029   23.029 {built-in method builtins.exec}
+        1    0.000    0.000   23.029   23.029 &lt;string&gt;:1(&lt;module&gt;)
+        1    0.023    0.023   23.029   23.029 Example.py:20(run)
+        1    0.009    0.009   23.006   23.006 plot_plate10.py:47(problem)
+        1    0.000    0.000   19.557   19.557 System.py:291(solve)
+        1    0.000    0.000   19.557   19.557 NewtonRaphsonSolver.py:13(solve)
+        4    0.000    0.000   18.041    4.510 NewtonRaphsonSolver.py:100(assemble)
+        4    3.559    0.890   18.041    4.510 Solver.py:127(assemble)
+    19200    0.141    0.000   10.571    0.001 Element.py:225(getForce)
+    19200    3.685    0.000   10.430    0.001 Triangle.py:80(updateState)
+        2    0.000    0.000    8.906    4.453 Solver.py:321(checkResiduum)
+602900/322289    0.998    0.000    5.580    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+    38400    0.889    0.000    5.498    0.000 Triangle.py:155(computeSurfaceLoads)
+        1    0.045    0.045    3.316    3.316 PatchMesher.py:99(triangleMesh)
+   115200    1.167    0.000    2.820    0.000 Face2D.py:54(computeNodalForces)
+    19200    0.035    0.000    2.582    0.000 Element.py:234(getLoad)
+   153600    0.188    0.000    1.948    0.000 &lt;__array_function__ internals&gt;:177(outer)
+     4800    0.216    0.000    1.810    0.000 Triangle.py:10(__init__)
+    38400    0.159    0.000    1.776    0.000 Triangle.py:163(&lt;listcomp&gt;)
+   115201    0.146    0.000    1.617    0.000 &lt;__array_function__ internals&gt;:177(zeros_like)
+
+
+Sat Apr 15 13:20:37 2023    profile_data_full.txt
+
+         7715835 function calls (7170902 primitive calls) in 23.004 seconds
+
+   Ordered by: internal time
+   List reduced from 290 to 20 due to restriction &lt;20&gt;
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    19200    3.685    0.000   10.430    0.001 Triangle.py:80(updateState)
+        4    3.559    0.890   18.041    4.510 Solver.py:127(assemble)
+        1    1.488    1.488    1.488    1.488 linalg.py:320(solve)
+   153600    1.338    0.000    1.546    0.000 numeric.py:857(outer)
+   638623    1.238    0.000    1.238    0.000 {built-in method numpy.array}
+   115200    1.167    0.000    2.820    0.000 Face2D.py:54(computeNodalForces)
+602900/322289    0.998    0.000    5.580    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+   230400    0.913    0.000    1.291    0.000 Node.py:360(getIdx4Element)
+    38400    0.889    0.000    5.498    0.000 Triangle.py:155(computeSurfaceLoads)
+    19201    0.820    0.000    1.049    0.000 PlaneStress.py:25(updateState)
+254400/4800    0.585    0.000    1.258    0.000 copy.py:128(deepcopy)
+    76800    0.550    0.000    1.089    0.000 Node.py:324(getDeformedPos)
+   115201    0.342    0.000    1.303    0.000 numeric.py:76(zeros_like)
+    76800    0.337    0.000    0.517    0.000 Node.py:255(getDisp)
+    14400    0.306    0.000    0.566    0.000 Face2D.py:16(initialize)
+     4800    0.216    0.000    1.810    0.000 Triangle.py:10(__init__)
+   153600    0.188    0.000    1.948    0.000 &lt;__array_function__ internals&gt;:177(outer)
+   115201    0.188    0.000    0.473    0.000 &lt;__array_function__ internals&gt;:177(empty_like)
+   195328    0.181    0.000    0.181    0.000 {built-in method numpy.zeros}
+    19200    0.172    0.000    0.220    0.000 twodim_base.py:162(eye)
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  24.593 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate10-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/bb715000677ea1440bbfa252bf815246/plot_plate10.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate10.py</span></code></a></p>

@@ -6,6 +6,9 @@ Profiling the code
 Using PatchMesher to model a quarter of the plate
 
 """
+
+# sphinx_gallery_thumbnail_path = '_static/profiler.png'
+
 SPARSE = False
 
 import math
@@ -146,44 +149,48 @@ class ExamplePlate10(Example):
 # %%
 # Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 #
+# This time, we are running the example in the profiler, writing profiling data to file.
+#
 
+# sphinx_gallery_start_ignore
 if __name__ == "__main__":
+# sphinx_gallery_end_ignore
 
     import cProfile
+
+    ex = ExamplePlate10()
+
+    if SPARSE:
+        cProfile.run('ex.run()','profile_data_sparse.txt')
+    else:
+        cProfile.run('ex.run()','profile_data_full.txt')
+
+# %%
+# Now it's time to process the profiling data
+#
+
+# sphinx_gallery_start_ignore
+if __name__ == "__main__":
+# sphinx_gallery_end_ignore
+
     import pstats
     from pstats import SortKey
 
-
-    ex = ExamplePlate10()
     if SPARSE:
-        cProfile.run('ex.run()','profile_data_sparse.txt')
-
-        #
-        # processing the profiling data
-        #
-
         p = pstats.Stats('profile_data_sparse.txt')
         p.strip_dirs() #.sort_stats(-1).print_stats()
         p.sort_stats(SortKey.NAME)
         #p.print_stats()
 
         p.sort_stats(SortKey.CUMULATIVE).print_stats(20)
-
         p.sort_stats(SortKey.TIME).print_stats(20)
 
     else:
-        cProfile.run('ex.run()','profile_data_full.txt')
-
-        #
-        # processing the profiling data
-        #
-
         p = pstats.Stats('profile_data_full.txt')
         p.strip_dirs() #.sort_stats(-1).print_stats()
         p.sort_stats(SortKey.NAME)
         #p.print_stats()
 
         p.sort_stats(SortKey.CUMULATIVE).print_stats(20)
-
         p.sort_stats(SortKey.TIME).print_stats(20)
 
