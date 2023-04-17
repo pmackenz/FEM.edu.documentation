@@ -289,9 +289,17 @@ The solver will use that data to update it’s internal state.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.solver.Solver.Solver.setDisplacementControl">
+<span class="sig-name descname"><span class="pre">setDisplacementControl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.solver.Solver.Solver.setDisplacementControl" title="Permalink to this definition"></a></dt>
+<dd><p>activate displacement control for the next load step</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.solver.Solver.Solver.setLoadFactor">
 <span class="sig-name descname"><span class="pre">setLoadFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lam</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.solver.Solver.Solver.setLoadFactor" title="Permalink to this definition"></a></dt>
 <dd><p>Set the target load factor to <strong>lam</strong></p>
+<p>This enables load control and disables alternative control methods
+such as <em>displacement control</em> or <em>arc-length</em> control.</p>
 <p>The entered load pattern is considered a reference load,
 to be multiplied by a scalar load factor, <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
 <p>If no load factor is set explicitly, a factor of 1.0 is assumed, i.e., the
@@ -333,7 +341,7 @@ entire entered load is applied in full.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 15, 2023.
+      <span class="lastupdated">Last updated on Apr 17, 2023.
       </span></p>
   </div>
 

@@ -322,7 +322,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   3.9834e-02
-    norm of the out-of-balance force:   3.5516e-11
+    norm of the out-of-balance force:   3.5463e-11
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 2.1646162526563075
@@ -333,7 +333,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   8.9520e-02
-    norm of the out-of-balance force:   2.5469e-11
+    norm of the out-of-balance force:   2.5309e-11
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 1.897086480938334
@@ -344,7 +344,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   1.5323e-01
-    norm of the out-of-balance force:   2.8606e-11
+    norm of the out-of-balance force:   2.8686e-11
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 1.6295547207298116
@@ -355,7 +355,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   2.3787e-01
-    norm of the out-of-balance force:   4.7329e-11
+    norm of the out-of-balance force:   4.7776e-11
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 1.3620209694583907
@@ -366,7 +366,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   3.5578e-01
-    norm of the out-of-balance force:   4.9489e-11
+    norm of the out-of-balance force:   4.9634e-11
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 1.0944852246263654
@@ -377,7 +377,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   5.3137e-01
-    norm of the out-of-balance force:   2.1544e-11
+    norm of the out-of-balance force:   2.1510e-11
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 0.826947483518603
@@ -388,7 +388,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   8.2064e-01
-    norm of the out-of-balance force:   4.0233e-12
+    norm of the out-of-balance force:   2.2279e-12
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 0.5594077438868548
@@ -399,7 +399,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   1.3867e+00
-    norm of the out-of-balance force:   2.0472e-11
+    norm of the out-of-balance force:   2.7505e-11
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 0.2918660028917888
@@ -410,7 +410,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   2.9907e+00
-    norm of the out-of-balance force:   6.8934e-09
+    norm of the out-of-balance force:   6.8549e-09
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 0.024322257944867483
@@ -440,7 +440,7 @@ Run the example by creating an instance of the problem and executing it by calli
           u:    [-3.66409063e-03 -5.97734339e+01 -7.77608633e-01]
       Node_37:
           x:    [50.  0.]
-          u:    [-4.88545418e-03 -6.46967903e+01 -5.14461537e-13]
+          u:    [-4.88545418e-03 -6.46967903e+01 -5.03187629e-13]
       Node_38:
           x:    [62.5  0. ]
           u:    [-6.10681772e-03 -5.97734339e+01  7.77608633e-01]
@@ -490,7 +490,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.560 seconds)
+   **Total running time of the script:** ( 0 minutes  1.464 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame01.py:

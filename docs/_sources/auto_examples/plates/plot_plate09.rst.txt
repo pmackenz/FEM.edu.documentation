@@ -232,7 +232,7 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   7.6951e-10
     +
     norm of the out-of-balance force:   6.2225e+03
-    norm of the out-of-balance force:   8.1729e-10
+    norm of the out-of-balance force:   8.1735e-10
     +
 
     System Analysis Report
@@ -240,82 +240,82 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_3017:
+      Node_835:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    [0. 0.]
-      Node_3018:
+      Node_836:
           x:    [20.  0.]
-          u:    [ 1.00000000e-01 -2.49548854e-15]
-      Node_3019:
+          u:    [ 1.00000000e-01 -2.47751692e-15]
+      Node_837:
           x:    [50.  0.]
-          u:    [ 2.50000000e-01 -3.53070114e-15]
-      Node_3020:
+          u:    [ 2.50000000e-01 -3.49489281e-15]
+      Node_838:
           x:    [70.  0.]
-          u:    [ 3.50000000e-01 -7.14368627e-15]
-      Node_3021:
+          u:    [ 3.50000000e-01 -7.09305773e-15]
+      Node_839:
           x:    [100.   0.]
           fix:  ['uy']
           u:    [0.5 0. ]
-      Node_3022:
+      Node_840:
           x:    [ 0. 16.]
-          u:    [-3.38870849e-16 -2.00000000e-02]
-      Node_3023:
+          u:    [-2.77140442e-16 -2.00000000e-02]
+      Node_841:
           x:    [15. 24.]
           u:    [ 0.075 -0.03 ]
-      Node_3024:
+      Node_842:
           x:    [50. 16.]
           u:    [ 0.25 -0.02]
-      Node_3025:
+      Node_843:
           x:    [80. 24.]
           u:    [ 0.4  -0.03]
-      Node_3026:
+      Node_844:
           x:    [100.  16.]
           u:    [ 0.5  -0.02]
-      Node_3027:
+      Node_845:
           x:    [ 0. 48.]
-          u:    [ 4.8468844e-15 -6.0000000e-02]
-      Node_3028:
+          u:    [ 4.82755937e-15 -6.00000000e-02]
+      Node_846:
           x:    [20. 40.]
           u:    [ 0.1  -0.05]
-      Node_3029:
+      Node_847:
           x:    [70. 56.]
           u:    [ 0.35 -0.07]
-      Node_3030:
+      Node_848:
           x:    [90. 48.]
           u:    [ 0.45 -0.06]
-      Node_3031:
+      Node_849:
           x:    [100.  56.]
           u:    [ 0.5  -0.07]
-      Node_3032:
+      Node_850:
           x:    [ 0. 80.]
-          u:    [ 7.47882035e-15 -1.00000000e-01]
-      Node_3033:
+          u:    [ 7.45807055e-15 -1.00000000e-01]
+      Node_851:
           x:    [30. 80.]
           u:    [ 0.15 -0.1 ]
-      Node_3034:
+      Node_852:
           x:    [55. 80.]
           u:    [ 0.275 -0.1  ]
-      Node_3035:
+      Node_853:
           x:    [80. 80.]
           u:    [ 0.4 -0.1]
-      Node_3036:
+      Node_854:
           x:    [100.  80.]
           u:    [ 0.5 -0.1]
 
     Elements:
     ---------------------
-      Quad_5514: nodes ( Node_3017 Node_3018 Node_3023 Node_3022 )
+      Quad_974: nodes ( Node_835 Node_836 Node_841 Node_840 )
           material: list
-          strain (0): xx=5.000e-03 yy=-1.250e-03 xy=-1.131e-16 zz=-9.375e-04
-          stress (0): xx=1.000e+02 yy=2.366e-12 xy=-9.048e-13 zz=0.000e+00
-          strain (1): xx=5.000e-03 yy=-1.250e-03 xy=1.226e-17 zz=-9.375e-04
-          stress (1): xx=1.000e+02 yy=-1.183e-12 xy=9.811e-14 zz=0.000e+00
-          strain (2): xx=5.000e-03 yy=-1.250e-03 xy=-1.774e-16 zz=-9.375e-04
-          stress (2): xx=1.000e+02 yy=2.366e-12 xy=-1.419e-12 zz=0.000e+00
+          strain (0): xx=5.000e-03 yy=-1.250e-03 xy=-1.104e-16 zz=-9.375e-04
+          stress (0): xx=1.000e+02 yy=2.366e-12 xy=-8.833e-13 zz=0.000e+00
+          strain (1): xx=5.000e-03 yy=-1.250e-03 xy=1.272e-17 zz=-9.375e-04
+          stress (1): xx=1.000e+02 yy=-1.183e-12 xy=1.018e-13 zz=0.000e+00
+          strain (2): xx=5.000e-03 yy=-1.250e-03 xy=-1.749e-16 zz=-9.375e-04
+          stress (2): xx=1.000e+02 yy=2.366e-12 xy=-1.399e-12 zz=0.000e+00
           strain (3): xx=5.000e-03 yy=-1.250e-03 xy=1.008e-16 zz=-9.375e-04
-          stress (3): xx=1.000e+02 yy=0.000e+00 xy=8.062e-13 zz=0.000e+00
-      Quad_5515: nodes ( Node_3018 Node_3019 Node_3024 Node_3023 )
+          stress (3): xx=1.000e+02 yy=0.000e+00 xy=8.065e-13 zz=0.000e+00
+      Quad_975: nodes ( Node_836 Node_837 Node_842 Node_841 )
           material: list
           strain (0): xx=5.000e-03 yy=-1.250e-03 xy=7.529e-17 zz=-9.375e-04
           stress (0): xx=1.000e+02 yy=2.370e-12 xy=6.023e-13 zz=0.000e+00
@@ -325,7 +325,7 @@ Run the example by creating an instance of the problem and executing it by calli
           stress (2): xx=1.000e+02 yy=-3.553e-12 xy=1.901e-13 zz=0.000e+00
           strain (3): xx=5.000e-03 yy=-1.250e-03 xy=3.897e-17 zz=-9.375e-04
           stress (3): xx=1.000e+02 yy=1.187e-12 xy=3.118e-13 zz=0.000e+00
-      Quad_5516: nodes ( Node_3019 Node_3020 Node_3025 Node_3024 )
+      Quad_976: nodes ( Node_837 Node_838 Node_843 Node_842 )
           material: list
           strain (0): xx=5.000e-03 yy=-1.250e-03 xy=3.344e-16 zz=-9.375e-04
           stress (0): xx=1.000e+02 yy=0.000e+00 xy=2.675e-12 zz=0.000e+00
@@ -335,7 +335,7 @@ Run the example by creating an instance of the problem and executing it by calli
           stress (2): xx=1.000e+02 yy=-1.183e-12 xy=3.304e-12 zz=0.000e+00
           strain (3): xx=5.000e-03 yy=-1.250e-03 xy=-7.355e-17 zz=-9.375e-04
           stress (3): xx=1.000e+02 yy=3.553e-12 xy=-5.884e-13 zz=0.000e+00
-      Quad_5517: nodes ( Node_3020 Node_3021 Node_3026 Node_3025 )
+      Quad_977: nodes ( Node_838 Node_839 Node_844 Node_843 )
           material: list
           strain (0): xx=5.000e-03 yy=-1.250e-03 xy=-3.343e-16 zz=-9.375e-04
           stress (0): xx=1.000e+02 yy=-5.922e-12 xy=-2.674e-12 zz=0.000e+00
@@ -345,17 +345,17 @@ Run the example by creating an instance of the problem and executing it by calli
           stress (2): xx=1.000e+02 yy=0.000e+00 xy=7.859e-13 zz=0.000e+00
           strain (3): xx=5.000e-03 yy=-1.250e-03 xy=2.679e-16 zz=-9.375e-04
           stress (3): xx=1.000e+02 yy=2.366e-12 xy=2.143e-12 zz=0.000e+00
-      Quad_5518: nodes ( Node_3022 Node_3023 Node_3028 Node_3027 )
+      Quad_978: nodes ( Node_840 Node_841 Node_846 Node_845 )
           material: list
-          strain (0): xx=5.000e-03 yy=-1.250e-03 xy=6.210e-18 zz=-9.375e-04
-          stress (0): xx=1.000e+02 yy=2.366e-12 xy=4.968e-14 zz=0.000e+00
-          strain (1): xx=5.000e-03 yy=-1.250e-03 xy=-4.950e-17 zz=-9.375e-04
-          stress (1): xx=1.000e+02 yy=5.922e-12 xy=-3.960e-13 zz=0.000e+00
-          strain (2): xx=5.000e-03 yy=-1.250e-03 xy=-6.584e-18 zz=-9.375e-04
-          stress (2): xx=1.000e+02 yy=1.187e-12 xy=-5.267e-14 zz=0.000e+00
-          strain (3): xx=5.000e-03 yy=-1.250e-03 xy=-1.338e-16 zz=-9.375e-04
-          stress (3): xx=1.000e+02 yy=8.292e-12 xy=-1.071e-12 zz=0.000e+00
-      Quad_5519: nodes ( Node_3023 Node_3024 Node_3029 Node_3028 )
+          strain (0): xx=5.000e-03 yy=-1.250e-03 xy=5.662e-18 zz=-9.375e-04
+          stress (0): xx=1.000e+02 yy=2.366e-12 xy=4.530e-14 zz=0.000e+00
+          strain (1): xx=5.000e-03 yy=-1.250e-03 xy=-4.978e-17 zz=-9.375e-04
+          stress (1): xx=1.000e+02 yy=5.922e-12 xy=-3.983e-13 zz=0.000e+00
+          strain (2): xx=5.000e-03 yy=-1.250e-03 xy=-7.141e-18 zz=-9.375e-04
+          stress (2): xx=1.000e+02 yy=1.187e-12 xy=-5.713e-14 zz=0.000e+00
+          strain (3): xx=5.000e-03 yy=-1.250e-03 xy=-1.342e-16 zz=-9.375e-04
+          stress (3): xx=1.000e+02 yy=8.292e-12 xy=-1.074e-12 zz=0.000e+00
+      Quad_979: nodes ( Node_841 Node_842 Node_847 Node_846 )
           material: list
           strain (0): xx=5.000e-03 yy=-1.250e-03 xy=1.100e-16 zz=-9.375e-04
           stress (0): xx=1.000e+02 yy=2.366e-12 xy=8.800e-13 zz=0.000e+00
@@ -365,7 +365,7 @@ Run the example by creating an instance of the problem and executing it by calli
           stress (2): xx=1.000e+02 yy=-2.370e-12 xy=1.586e-12 zz=0.000e+00
           strain (3): xx=5.000e-03 yy=-1.250e-03 xy=-2.046e-16 zz=-9.375e-04
           stress (3): xx=1.000e+02 yy=3.553e-12 xy=-1.637e-12 zz=0.000e+00
-      Quad_5520: nodes ( Node_3024 Node_3025 Node_3030 Node_3029 )
+      Quad_980: nodes ( Node_842 Node_843 Node_848 Node_847 )
           material: list
           strain (0): xx=5.000e-03 yy=-1.250e-03 xy=8.123e-17 zz=-9.375e-04
           stress (0): xx=1.000e+02 yy=3.553e-12 xy=6.498e-13 zz=0.000e+00
@@ -375,7 +375,7 @@ Run the example by creating an instance of the problem and executing it by calli
           stress (2): xx=1.000e+02 yy=-2.370e-12 xy=-2.821e-12 zz=0.000e+00
           strain (3): xx=5.000e-03 yy=-1.250e-03 xy=1.849e-16 zz=-9.375e-04
           stress (3): xx=1.000e+02 yy=7.105e-12 xy=1.479e-12 zz=0.000e+00
-      Quad_5521: nodes ( Node_3025 Node_3026 Node_3031 Node_3030 )
+      Quad_981: nodes ( Node_843 Node_844 Node_849 Node_848 )
           material: list
           strain (0): xx=5.000e-03 yy=-1.250e-03 xy=-7.082e-17 zz=-9.375e-04
           stress (0): xx=1.000e+02 yy=-1.183e-12 xy=-5.666e-13 zz=0.000e+00
@@ -385,17 +385,17 @@ Run the example by creating an instance of the problem and executing it by calli
           stress (2): xx=1.000e+02 yy=-1.303e-11 xy=-7.607e-12 zz=0.000e+00
           strain (3): xx=5.000e-03 yy=-1.250e-03 xy=4.363e-16 zz=-9.375e-04
           stress (3): xx=1.000e+02 yy=-3.553e-12 xy=3.490e-12 zz=0.000e+00
-      Quad_5522: nodes ( Node_3027 Node_3028 Node_3033 Node_3032 )
+      Quad_982: nodes ( Node_845 Node_846 Node_851 Node_850 )
           material: list
-          strain (0): xx=5.000e-03 yy=-1.250e-03 xy=-8.868e-18 zz=-9.375e-04
-          stress (0): xx=1.000e+02 yy=5.922e-12 xy=-7.094e-14 zz=0.000e+00
-          strain (1): xx=5.000e-03 yy=-1.250e-03 xy=7.259e-17 zz=-9.375e-04
-          stress (1): xx=1.000e+02 yy=3.553e-12 xy=5.807e-13 zz=0.000e+00
-          strain (2): xx=5.000e-03 yy=-1.250e-03 xy=1.235e-16 zz=-9.375e-04
-          stress (2): xx=1.000e+02 yy=3.553e-12 xy=9.882e-13 zz=0.000e+00
-          strain (3): xx=5.000e-03 yy=-1.250e-03 xy=4.496e-17 zz=-9.375e-04
-          stress (3): xx=1.000e+02 yy=0.000e+00 xy=3.597e-13 zz=0.000e+00
-      Quad_5523: nodes ( Node_3028 Node_3029 Node_3034 Node_3033 )
+          strain (0): xx=5.000e-03 yy=-1.250e-03 xy=-9.357e-18 zz=-9.375e-04
+          stress (0): xx=1.000e+02 yy=5.922e-12 xy=-7.486e-14 zz=0.000e+00
+          strain (1): xx=5.000e-03 yy=-1.250e-03 xy=7.244e-17 zz=-9.375e-04
+          stress (1): xx=1.000e+02 yy=3.553e-12 xy=5.795e-13 zz=0.000e+00
+          strain (2): xx=5.000e-03 yy=-1.250e-03 xy=1.508e-16 zz=-9.375e-04
+          stress (2): xx=1.000e+02 yy=3.553e-12 xy=1.206e-12 zz=0.000e+00
+          strain (3): xx=5.000e-03 yy=-1.250e-03 xy=4.473e-17 zz=-9.375e-04
+          stress (3): xx=1.000e+02 yy=0.000e+00 xy=3.578e-13 zz=0.000e+00
+      Quad_983: nodes ( Node_846 Node_847 Node_852 Node_851 )
           material: list
           strain (0): xx=5.000e-03 yy=-1.250e-03 xy=1.955e-17 zz=-9.375e-04
           stress (0): xx=1.000e+02 yy=-4.736e-12 xy=1.564e-13 zz=0.000e+00
@@ -405,7 +405,7 @@ Run the example by creating an instance of the problem and executing it by calli
           stress (2): xx=1.000e+02 yy=3.553e-12 xy=-2.883e-12 zz=0.000e+00
           strain (3): xx=5.000e-03 yy=-1.250e-03 xy=-3.240e-16 zz=-9.375e-04
           stress (3): xx=1.000e+02 yy=-4.739e-12 xy=-2.592e-12 zz=0.000e+00
-      Quad_5524: nodes ( Node_3029 Node_3030 Node_3035 Node_3034 )
+      Quad_984: nodes ( Node_847 Node_848 Node_853 Node_852 )
           material: list
           strain (0): xx=5.000e-03 yy=-1.250e-03 xy=1.873e-16 zz=-9.375e-04
           stress (0): xx=1.000e+02 yy=-3.553e-12 xy=1.498e-12 zz=0.000e+00
@@ -415,7 +415,7 @@ Run the example by creating an instance of the problem and executing it by calli
           stress (2): xx=1.000e+02 yy=-2.366e-12 xy=1.627e-13 zz=0.000e+00
           strain (3): xx=5.000e-03 yy=-1.250e-03 xy=2.146e-16 zz=-9.375e-04
           stress (3): xx=1.000e+02 yy=9.472e-12 xy=1.717e-12 zz=0.000e+00
-      Quad_5525: nodes ( Node_3030 Node_3031 Node_3036 Node_3035 )
+      Quad_985: nodes ( Node_848 Node_849 Node_854 Node_853 )
           material: list
           strain (0): xx=5.000e-03 yy=-1.250e-03 xy=-1.364e-16 zz=-9.375e-04
           stress (0): xx=1.000e+02 yy=1.183e-12 xy=-1.091e-12 zz=0.000e+00
@@ -437,7 +437,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.660 seconds)
+   **Total running time of the script:** ( 0 minutes  0.740 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate09.py:

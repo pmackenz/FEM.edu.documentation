@@ -6,26 +6,26 @@
 
 Computation times
 =================
-**00:24.593** total execution time for **auto_examples_plates** files:
+**00:36.461** total execution time for **auto_examples_plates** files:
 
 +----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate10.py` (``plot_plate10.py``) | 00:24.593 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate10.py` (``plot_plate10.py``) | 00:18.452 | 0.0 MB |
 +----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate01.py` (``plot_plate01.py``) | 00:00.000 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate05.py` (``plot_plate05.py``) | 00:06.463 | 0.0 MB |
 +----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate02.py` (``plot_plate02.py``) | 00:00.000 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate06.py` (``plot_plate06.py``) | 00:04.859 | 0.0 MB |
 +----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate03.py` (``plot_plate03.py``) | 00:00.000 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate04.py` (``plot_plate04.py``) | 00:01.736 | 0.0 MB |
 +----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate04.py` (``plot_plate04.py``) | 00:00.000 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate08.py` (``plot_plate08.py``) | 00:01.526 | 0.0 MB |
 +----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate05.py` (``plot_plate05.py``) | 00:00.000 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate07.py` (``plot_plate07.py``) | 00:01.324 | 0.0 MB |
 +----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate06.py` (``plot_plate06.py``) | 00:00.000 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate03.py` (``plot_plate03.py``) | 00:00.764 | 0.0 MB |
 +----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate07.py` (``plot_plate07.py``) | 00:00.000 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate09.py` (``plot_plate09.py``) | 00:00.740 | 0.0 MB |
 +----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate08.py` (``plot_plate08.py``) | 00:00.000 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate02.py` (``plot_plate02.py``) | 00:00.310 | 0.0 MB |
 +----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate09.py` (``plot_plate09.py``) | 00:00.000 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate01.py` (``plot_plate01.py``) | 00:00.288 | 0.0 MB |
 +----------------------------------------------------------------------------+-----------+--------+

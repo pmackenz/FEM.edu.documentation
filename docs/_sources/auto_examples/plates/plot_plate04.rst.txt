@@ -308,7 +308,7 @@ Run the example by creating an instance of the problem and executing it by calli
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     norm of the out-of-balance force:   3.1269e+03
-    norm of the out-of-balance force:   1.6669e-09
+    norm of the out-of-balance force:   1.6662e-09
     +
 
 
@@ -317,7 +317,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.334 seconds)
+   **Total running time of the script:** ( 0 minutes  1.736 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate04.py:
