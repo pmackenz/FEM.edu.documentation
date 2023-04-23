@@ -28,9 +28,11 @@ We shall be using displacement control to trace the unstable portion of the stat
 
 Author: Peter Mackenzie-Helnwein
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-14
+.. GENERATED FROM PYTHON SOURCE LINES 12-16
 
 .. code-block:: default
+
+
 
     import numpy as np
 
@@ -41,11 +43,11 @@ Author: Peter Mackenzie-Helnwein
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-16
+.. GENERATED FROM PYTHON SOURCE LINES 20-21
 
 Setup
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-25
+.. GENERATED FROM PYTHON SOURCE LINES 21-30
 
 .. code-block:: default
 
@@ -65,11 +67,11 @@ Setup
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-27
+.. GENERATED FROM PYTHON SOURCE LINES 31-32
 
 Create the example by subclassing the :py:class:`Example`
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-125
+.. GENERATED FROM PYTHON SOURCE LINES 32-130
 
 .. code-block:: default
 
@@ -147,10 +149,10 @@ Create the example by subclassing the :py:class:`Example`
             data = np.array(data_list)
 
             plt.figure()
-            plt.plot(load, data)
+            plt.plot(data, load)
             plt.grid(True)
-            plt.xlabel('load factor $ \lambda $')
-            plt.ylabel('displacements $ u_i $')
+            plt.xlabel('displacements $ u_i $')
+            plt.ylabel('load factor $ \lambda $')
             plt.legend(['$ u_x $','$ u_x $'])
             plt.show()
 
@@ -178,12 +180,12 @@ Create the example by subclassing the :py:class:`Example`
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 140-142
+.. GENERATED FROM PYTHON SOURCE LINES 145-147
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 142-147
+.. GENERATED FROM PYTHON SOURCE LINES 147-152
 
 .. code-block:: default
 
@@ -523,7 +525,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.500 seconds)
+   **Total running time of the script:** ( 0 minutes  1.741 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss06.py:

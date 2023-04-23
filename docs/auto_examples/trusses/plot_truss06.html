@@ -23,7 +23,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Frame Examples" href="../frames/index.html" />
+    <link rel="next" title="Buckling of a truss column." href="plot_truss07.html" />
     <link rel="prev" title="Simple triangular truss." href="plot_truss05.html" /> 
 </head>
 
@@ -60,6 +60,8 @@
 <li class="toctree-l4"><a class="reference internal" href="plot_truss04.html">3d truss example demonstrating large deformation analysis.</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_truss05.html">Simple triangular truss.</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Simple triangular truss.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss07.html">Buckling of a truss column.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss08.html">Buckling of a truss column.</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
@@ -197,10 +199,10 @@ to download the full example code</p>
         <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data_list</span><span class="p">)</span>
 
         <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">load</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">load</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;load factor $ \lambda $&#39;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;displacements $ u_i $&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;displacements $ u_i $&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;load factor $ \lambda $&#39;</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;$ u_x $&#39;</span><span class="p">,</span><span class="s1">&#39;$ u_x $&#39;</span><span class="p">])</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
@@ -382,7 +384,7 @@ norm of the out-of-balance force:   2.5547e-07
 +
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.500 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.741 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-trusses-plot-truss06-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/fa66aff39ae1a4c4dbd27ebd8b1dd2c8/plot_truss06.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_truss06.py</span></code></a></p>
@@ -399,14 +401,14 @@ norm of the out-of-balance force:   2.5547e-07
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="plot_truss05.html" class="btn btn-neutral float-left" title="Simple triangular truss." accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../frames/index.html" class="btn btn-neutral float-right" title="Frame Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="plot_truss07.html" class="btn btn-neutral float-right" title="Buckling of a truss column." accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 19, 2023.
+      <span class="lastupdated">Last updated on Apr 22, 2023.
       </span></p>
   </div>
 

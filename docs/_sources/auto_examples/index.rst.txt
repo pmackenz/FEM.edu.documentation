@@ -197,6 +197,40 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="We shall be using load stepping to illustrate the limitation of this control technique.">
+
+.. only:: html
+
+  .. image:: /auto_examples/trusses/images/thumb/sphx_glr_plot_truss07_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_trusses_plot_truss07.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Buckling of a truss column.</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This is the same structure as in problem `sphx_glr_auto_examples_trusses_plot_truss07.py`_ but ...">
+
+.. only:: html
+
+  .. image:: /auto_examples/trusses/images/thumb/sphx_glr_plot_truss08_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_trusses_plot_truss08.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Buckling of a truss column.</div>
+    </div>
+
+
+.. raw:: html
+
     </div>
 
 
