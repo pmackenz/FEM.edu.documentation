@@ -26,24 +26,11 @@ We shall be using load stepping to illustrate the limitation of this control tec
 
 Author: Peter Mackenzie-Helnwein
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-12
-
-.. code-block:: default
-
-
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 16-17
+.. GENERATED FROM PYTHON SOURCE LINES 12-13
 
 Setup
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-26
+.. GENERATED FROM PYTHON SOURCE LINES 13-22
 
 .. code-block:: default
 
@@ -63,11 +50,11 @@ Setup
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-28
+.. GENERATED FROM PYTHON SOURCE LINES 23-24
 
 Create the example by subclassing the :py:class:`Example`
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-155
+.. GENERATED FROM PYTHON SOURCE LINES 24-151
 
 .. code-block:: default
 
@@ -205,12 +192,12 @@ Create the example by subclassing the :py:class:`Example`
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 168-170
+.. GENERATED FROM PYTHON SOURCE LINES 166-168
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 170-175
+.. GENERATED FROM PYTHON SOURCE LINES 168-173
 
 .. code-block:: default
 
@@ -864,7 +851,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.430 seconds)
+   **Total running time of the script:** ( 0 minutes  3.919 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss07.py:

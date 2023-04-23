@@ -139,7 +139,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This is the same structure as in problem `sphx_glr_auto_examples_trusses_plot_truss07.py`_ but ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This is the same structure as in problem sphx_glr_auto_examples_trusses_plot_truss07.py but usi...">
 
 .. only:: html
 
