@@ -199,10 +199,10 @@ Run the example by creating an instance of the problem and executing it by calli
 
  .. code-block:: none
 
-    Node_158:
+    Node_248:
         x:    [100.  80.]
         u:    None
-    + Quad_154: nodes ( Node_149 Node_150 Node_158 Node_157 )
+    + Quad_318: nodes ( Node_239 Node_240 Node_248 Node_247 )
         material: list
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -212,98 +212,98 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_189: nodes ( Node_184 Node_185 Node_186 )
+    + Triangle_353: nodes ( Node_274 Node_275 Node_276 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    Node_165:
+    Node_255:
         x:    [100.   0.]
         fix:  ['uy']
         u:    None
-    + Triangle_160: nodes ( Node_164 Node_165 Node_171 )
+    + Triangle_324: nodes ( Node_254 Node_255 Node_261 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    Node_171:
+    Node_261:
         x:    [100.          13.33333333]
         u:    None
-    + Triangle_160: nodes ( Node_164 Node_165 Node_171 )
+    + Triangle_324: nodes ( Node_254 Node_255 Node_261 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_169: nodes ( Node_170 Node_171 Node_176 )
+    + Triangle_333: nodes ( Node_260 Node_261 Node_266 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_170: nodes ( Node_171 Node_170 Node_164 )
+    + Triangle_334: nodes ( Node_261 Node_260 Node_254 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    Node_176:
+    Node_266:
         x:    [100.          26.66666667]
         u:    None
-    + Triangle_169: nodes ( Node_170 Node_171 Node_176 )
+    + Triangle_333: nodes ( Node_260 Node_261 Node_266 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_177: nodes ( Node_175 Node_176 Node_180 )
+    + Triangle_341: nodes ( Node_265 Node_266 Node_270 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_178: nodes ( Node_176 Node_175 Node_170 )
+    + Triangle_342: nodes ( Node_266 Node_265 Node_260 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    Node_180:
+    Node_270:
         x:    [100.  40.]
         u:    None
-    + Triangle_177: nodes ( Node_175 Node_176 Node_180 )
+    + Triangle_341: nodes ( Node_265 Node_266 Node_270 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_183: nodes ( Node_179 Node_180 Node_183 )
+    + Triangle_347: nodes ( Node_269 Node_270 Node_273 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_184: nodes ( Node_180 Node_179 Node_175 )
+    + Triangle_348: nodes ( Node_270 Node_269 Node_265 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    Node_183:
+    Node_273:
         x:    [100.          53.33333333]
         u:    None
-    + Triangle_183: nodes ( Node_179 Node_180 Node_183 )
+    + Triangle_347: nodes ( Node_269 Node_270 Node_273 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_187: nodes ( Node_182 Node_183 Node_185 )
+    + Triangle_351: nodes ( Node_272 Node_273 Node_275 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_188: nodes ( Node_183 Node_182 Node_179 )
+    + Triangle_352: nodes ( Node_273 Node_272 Node_269 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    Node_185:
+    Node_275:
         x:    [100.          66.66666667]
         u:    None
-    + Triangle_187: nodes ( Node_182 Node_183 Node_185 )
+    + Triangle_351: nodes ( Node_272 Node_273 Node_275 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_189: nodes ( Node_184 Node_185 Node_186 )
+    + Triangle_353: nodes ( Node_274 Node_275 Node_276 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_190: nodes ( Node_185 Node_184 Node_182 )
+    + Triangle_354: nodes ( Node_275 Node_274 Node_272 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    Node_186:
+    Node_276:
         x:    [100.  80.]
-        following Node_158
+        following Node_248
         u:    None
-    + Triangle_189: nodes ( Node_184 Node_185 Node_186 )
+    + Triangle_353: nodes ( Node_274 Node_275 Node_276 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -317,7 +317,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.736 seconds)
+   **Total running time of the script:** ( 0 minutes  1.767 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate04.py:
