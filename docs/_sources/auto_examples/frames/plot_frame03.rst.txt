@@ -287,13 +287,13 @@ Run the example by creating an instance of the problem and executing it by calli
  .. code-block:: none
 
     System object
-    Node_141(x=[0. 0.], u=None)
-    Node_142(x=[ 0. 50.], u=None)
-    Node_143(x=[80.  0.], u=None)
-    Node_144(x=[80. 50.], u=None)
-    Frame2D(Node_141, Node_142, ElasticSection(Material)({'E': 29000.0, 'A': 20.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_143, Node_144, ElasticSection(Material)({'E': 29000.0, 'A': 20.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_142, Node_144, ElasticSection(Material)({'E': 29000.0, 'A': 20.0, 'I': 80.0, 'nu': 0.0, 'fy': 1e+30}))
+    Node_183(x=[0. 0.], u=None)
+    Node_184(x=[ 0. 50.], u=None)
+    Node_185(x=[80.  0.], u=None)
+    Node_186(x=[80. 50.], u=None)
+    Frame2D(Node_183, Node_184, ElasticSection(Material)({'E': 29000.0, 'A': 20.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_185, Node_186, ElasticSection(Material)({'E': 29000.0, 'A': 20.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_184, Node_186, ElasticSection(Material)({'E': 29000.0, 'A': 20.0, 'I': 80.0, 'nu': 0.0, 'fy': 1e+30}))
 
     ==== perform the analysis ===
 
@@ -442,30 +442,30 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_141:
+      Node_183:
           x:    [0. 0.]
           fix:  ['ux', 'uy', 'rz']
           u:    [0. 0. 0.]
-      Node_142:
+      Node_184:
           x:    [ 0. 50.]
           u:    [ 0.00807668 -0.09310345 -0.20194602]
-      Node_143:
+      Node_185:
           x:    [80.  0.]
           fix:  ['ux', 'uy', 'rz']
           u:    [0. 0. 0.]
-      Node_144:
+      Node_186:
           x:    [80. 50.]
           u:    [-0.00807668 -0.09310345  0.20194602]
 
     Elements:
     ---------------------
-      Frame2D_218: nodes ( Node_141 Node_142 )
+      Frame2D_298: nodes ( Node_183 Node_184 )
           material: ElasticSection
           internal forces: f0=-1080.00 V0=-117.11 M0=2842.69 fl=-1080.00 Vl=-117.11 Ml=-3004.18 Pw=0.00 Mw=0.00
-      Frame2D_219: nodes ( Node_143 Node_144 )
+      Frame2D_299: nodes ( Node_185 Node_186 )
           material: ElasticSection
           internal forces: f0=-1080.00 V0=117.11 M0=-2842.69 fl=-1080.00 Vl=117.11 Ml=3004.18 Pw=0.00 Mw=0.00
-      Frame2D_220: nodes ( Node_142 Node_144 )
+      Frame2D_300: nodes ( Node_184 Node_186 )
           material: ElasticSection
           internal forces: f0=-117.11 V0=0.00 M0=11395.82 fl=-117.11 Vl=0.00 Ml=11395.82 Pw=-1080.00 Mw=-14400.00
 
@@ -476,7 +476,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.045 seconds)
+   **Total running time of the script:** ( 0 minutes  0.763 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame03.py:

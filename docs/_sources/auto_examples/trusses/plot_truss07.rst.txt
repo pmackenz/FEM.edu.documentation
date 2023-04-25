@@ -18,9 +18,9 @@
 .. _sphx_glr_auto_examples_trusses_plot_truss07.py:
 
 
-================================
-Buckling of a truss column.
-================================
+================================================================
+Post-buckling of a truss column using load Control.
+================================================================
 
 We shall be using load stepping to illustrate the limitation of this control technique.
 
@@ -851,7 +851,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.331 seconds)
+   **Total running time of the script:** ( 0 minutes  3.464 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss07.py:

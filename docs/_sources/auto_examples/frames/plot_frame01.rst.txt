@@ -291,23 +291,23 @@ Run the example by creating an instance of the problem and executing it by calli
  .. code-block:: none
 
     System object
-    Node_123(x=[0. 0.], u=None)
-    Node_124(x=[12.5  0. ], u=None)
-    Node_125(x=[25.  0.], u=None)
-    Node_126(x=[37.5  0. ], u=None)
-    Node_127(x=[50.  0.], u=None)
-    Node_128(x=[62.5  0. ], u=None)
-    Node_129(x=[75.  0.], u=None)
-    Node_130(x=[87.5  0. ], u=None)
-    Node_131(x=[100.   0.], u=None)
-    Frame2D(Node_123, Node_124, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_124, Node_125, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_125, Node_126, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_126, Node_127, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_127, Node_128, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_128, Node_129, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_129, Node_130, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_130, Node_131, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
+    Node_165(x=[0. 0.], u=None)
+    Node_166(x=[12.5  0. ], u=None)
+    Node_167(x=[25.  0.], u=None)
+    Node_168(x=[37.5  0. ], u=None)
+    Node_169(x=[50.  0.], u=None)
+    Node_170(x=[62.5  0. ], u=None)
+    Node_171(x=[75.  0.], u=None)
+    Node_172(x=[87.5  0. ], u=None)
+    Node_173(x=[100.   0.], u=None)
+    Frame2D(Node_165, Node_166, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_166, Node_167, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_167, Node_168, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_168, Node_169, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_169, Node_170, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_170, Node_171, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_171, Node_172, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_172, Node_173, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
 
     ==== perform the analysis ===
 
@@ -425,32 +425,32 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_123:
+      Node_165:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    [ 0.          0.         -2.03292855]
-      Node_124:
+      Node_166:
           x:    [12.5  0. ]
           u:    [-1.22136354e-03 -2.47624315e+01 -1.87795981e+00]
-      Node_125:
+      Node_167:
           x:    [25.  0.]
           u:    [-2.44272709e-03 -4.57514676e+01 -1.43704758e+00]
-      Node_126:
+      Node_168:
           x:    [37.5  0. ]
           u:    [-3.66409063e-03 -5.97734339e+01 -7.77608633e-01]
-      Node_127:
+      Node_169:
           x:    [50.  0.]
           u:    [-4.88545418e-03 -6.46967903e+01 -5.03187629e-13]
-      Node_128:
+      Node_170:
           x:    [62.5  0. ]
           u:    [-6.10681772e-03 -5.97734339e+01  7.77608633e-01]
-      Node_129:
+      Node_171:
           x:    [75.  0.]
           u:    [-7.32818127e-03 -4.57514676e+01  1.43704758e+00]
-      Node_130:
+      Node_172:
           x:    [87.5  0. ]
           u:    [-8.54954481e-03 -2.47624315e+01  1.87795981e+00]
-      Node_131:
+      Node_173:
           x:    [100.   0.]
           fix:  ['uy']
           P:    [-1.97392088  0.          0.        ]
@@ -458,28 +458,28 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Elements:
     ---------------------
-      Frame2D_202: nodes ( Node_123 Node_124 )
+      Frame2D_282: nodes ( Node_165 Node_166 )
           material: ElasticSection
           internal forces: f0=-195.42 V0=4.33 M0=1.29 fl=-195.42 Vl=4.33 Ml=4894.46 Pw=-0.62 Mw=-1.29
-      Frame2D_203: nodes ( Node_124 Node_125 )
+      Frame2D_283: nodes ( Node_166 Node_167 )
           material: ElasticSection
           internal forces: f0=-195.42 V0=3.09 M0=4894.46 fl=-195.42 Vl=3.09 Ml=9034.77 Pw=-0.62 Mw=-1.29
-      Frame2D_204: nodes ( Node_125 Node_126 )
+      Frame2D_284: nodes ( Node_167 Node_168 )
           material: ElasticSection
           internal forces: f0=-195.42 V0=1.86 M0=9034.77 fl=-195.42 Vl=1.86 Ml=11798.12 Pw=-0.62 Mw=-1.29
-      Frame2D_205: nodes ( Node_126 Node_127 )
+      Frame2D_285: nodes ( Node_168 Node_169 )
           material: ElasticSection
           internal forces: f0=-195.42 V0=0.62 M0=11798.12 fl=-195.42 Vl=0.62 Ml=12767.97 Pw=-0.62 Mw=-1.29
-      Frame2D_206: nodes ( Node_127 Node_128 )
+      Frame2D_286: nodes ( Node_169 Node_170 )
           material: ElasticSection
           internal forces: f0=-195.42 V0=-0.62 M0=12767.97 fl=-195.42 Vl=-0.62 Ml=11798.12 Pw=-0.62 Mw=-1.29
-      Frame2D_207: nodes ( Node_128 Node_129 )
+      Frame2D_287: nodes ( Node_170 Node_171 )
           material: ElasticSection
           internal forces: f0=-195.42 V0=-1.86 M0=11798.12 fl=-195.42 Vl=-1.86 Ml=9034.77 Pw=-0.62 Mw=-1.29
-      Frame2D_208: nodes ( Node_129 Node_130 )
+      Frame2D_288: nodes ( Node_171 Node_172 )
           material: ElasticSection
           internal forces: f0=-195.42 V0=-3.09 M0=9034.77 fl=-195.42 Vl=-3.09 Ml=4894.46 Pw=-0.62 Mw=-1.29
-      Frame2D_209: nodes ( Node_130 Node_131 )
+      Frame2D_289: nodes ( Node_172 Node_173 )
           material: ElasticSection
           internal forces: f0=-195.42 V0=-4.33 M0=4894.46 fl=-195.42 Vl=-4.33 Ml=1.29 Pw=-0.62 Mw=-1.29
 
@@ -490,7 +490,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.509 seconds)
+   **Total running time of the script:** ( 0 minutes  1.103 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame01.py:

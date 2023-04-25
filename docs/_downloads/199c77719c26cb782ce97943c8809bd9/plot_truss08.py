@@ -1,7 +1,7 @@
 """
-================================
-Buckling of a truss column.
-================================
+================================================================
+Post-buckling of a truss column using displacement Control.
+================================================================
 
 This is the same structure as in problem :ref:`sphx_glr_auto_examples_trusses_plot_truss07.py` but
 using a mix of load control and displacement control.

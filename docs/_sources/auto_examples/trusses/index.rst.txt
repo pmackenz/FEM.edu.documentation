@@ -133,7 +133,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Buckling of a truss column.</div>
+      <div class="sphx-glr-thumbnail-title">Post-buckling of a truss column using load Control.</div>
     </div>
 
 
@@ -150,7 +150,24 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Buckling of a truss column.</div>
+      <div class="sphx-glr-thumbnail-title">Post-buckling of a truss column using displacement Control.</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This is the same structure as in problem sphx_glr_auto_examples_trusses_plot_truss07.py but it ...">
+
+.. only:: html
+
+  .. image:: /auto_examples/trusses/images/thumb/sphx_glr_plot_truss09_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_trusses_plot_truss09.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Post-buckling of a truss column using Arc-Length Control.</div>
     </div>
 
 
@@ -170,4 +187,5 @@ see the :ref:`Tutorials <tutorials>`.
    /auto_examples/trusses/plot_truss06
    /auto_examples/trusses/plot_truss07
    /auto_examples/trusses/plot_truss08
+   /auto_examples/trusses/plot_truss09
 

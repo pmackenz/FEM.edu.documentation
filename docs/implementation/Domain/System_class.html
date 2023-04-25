@@ -24,8 +24,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Transformation class" href="Transformation_class.html" />
-    <link rel="prev" title="Newton-Raphson Solver class" href="../Solvers/NewtonRaphsonSolver_class.html" /> 
+    <link rel="next" title="Element classes" href="../Elements/Element_class.html" />
+    <link rel="prev" title="Implementation" href="../implementation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,19 +49,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Example Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">Tutorials Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../implementation.html">Implementation</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../implementation.html#fem-component-classes">FEM Component Classes</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../Elements/Element_class.html">Element classes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Materials/Material_class.html">Material class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Mesher/Mesher_class.html">Mesher classes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Node_class.html">Node class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Solvers/Solver_class.html">Solver class</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../implementation.html#model-builder-and-model-controls">Model Builder and Model Controls</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">System class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Transformation_class.html">Transformation class</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../implementation.html#fem-component-classes">FEM Component Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../implementation.html#utility-classes">Utility Classes</a></li>
 </ul>
 </li>
@@ -201,6 +196,27 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>varY</strong> (<em>str</em>) – a variable code previously set by <a class="reference internal" href="#femedu.domain.System.System.initRecorder" title="femedu.domain.System.System.initRecorder"><code class="xref py py-meth docutils literal notranslate"><span class="pre">initRecorder()</span></code></a></p></li>
 <li><p><strong>filename</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.initArcLength">
+<span class="sig-name descname"><span class="pre">initArcLength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_increment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.initArcLength" title="Permalink to this definition"></a></dt>
+<dd><p>Initializes parameters for the arc-length constraint.</p>
+<div class="math notranslate nohighlight">
+\[g({\bf u}, \lambda)) := \alpha ||\bar {\bf P}|| (\lambda-\lambda_n)^2 + ({\bf u} - {\bf u}_n)({\bf u} - {\bf u}_n) - \Delta s^2 = 0\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This feature requires a nonlinear solver. Review the <a class="reference internal" href="#femedu.domain.System.System.setSolver" title="femedu.domain.System.System.setSolver"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setSolver()</span></code></a> function.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>load_increment</strong> – load increment used to calibrate the constraint</p></li>
+<li><p><strong>alpha</strong> – load contribution factor</p></li>
+<li><p><strong>tolerance</strong> – convergence tolerance</p></li>
 </ul>
 </dd>
 </dl>
@@ -397,6 +413,22 @@ pushed to the new solver.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.stepArcLength">
+<span class="sig-name descname"><span class="pre">stepArcLength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.stepArcLength" title="Permalink to this definition"></a></dt>
+<dd><p>Progresses the model state by one arc-length.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to initialize arc-length control by one call to
+<a class="reference internal" href="#femedu.domain.System.System.initArcLength" title="femedu.domain.System.System.initArcLength"><code class="xref py py-meth docutils literal notranslate"><span class="pre">initArcLength()</span></code></a> at least once to set all necessary parameters.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return normR</dt>
+<dd class="field-odd"><p>the norm of the generalized residuum from the last iteration step</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.System.System.stopRecorder">
 <span class="sig-name descname"><span class="pre">stopRecorder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.stopRecorder" title="Permalink to this definition"></a></dt>
 <dd><p>stops the recorder</p>
@@ -429,15 +461,15 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../Solvers/NewtonRaphsonSolver_class.html" class="btn btn-neutral float-left" title="Newton-Raphson Solver class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Transformation_class.html" class="btn btn-neutral float-right" title="Transformation class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../implementation.html" class="btn btn-neutral float-left" title="Implementation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Elements/Element_class.html" class="btn btn-neutral float-right" title="Element classes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 23, 2023.
+      <span class="lastupdated">Last updated on Apr 25, 2023.
       </span></p>
   </div>
 

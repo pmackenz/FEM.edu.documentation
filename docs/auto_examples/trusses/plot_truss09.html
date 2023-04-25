@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post-buckling of a truss column using Arc-Length Control. &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Frame Examples" href="../frames/index.html" />
+    <link rel="prev" title="Post-buckling of a truss column using displacement Control." href="plot_truss08.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#mixed-structures-examples">Mixed Structures Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Truss Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot_truss01.html">Simple triangular truss.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss02.html">Statically determinate truss bridge.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss03.html">Simple triangular truss.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss04.html">3d truss example demonstrating large deformation analysis.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss05.html">Simple triangular truss.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss06.html">Simple triangular truss.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss07.html">Post-buckling of a truss column using load Control.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss08.html">Post-buckling of a truss column using displacement Control.</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Post-buckling of a truss column using Arc-Length Control.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plates/index.html">Plate Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">Tutorials Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Example Gallery</a> &raquo;</li>
+          <li><a href="index.html">Truss Examples</a> &raquo;</li>
+      <li>Post-buckling of a truss column using Arc-Length Control.</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/auto_examples/trusses/plot_truss09.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-trusses-plot-truss09-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code</p>
+</div>
+<section class="sphx-glr-example-title" id="post-buckling-of-a-truss-column-using-arc-length-control">
+<span id="sphx-glr-auto-examples-trusses-plot-truss09-py"></span><h1>Post-buckling of a truss column using Arc-Length Control.<a class="headerlink" href="#post-buckling-of-a-truss-column-using-arc-length-control" title="Permalink to this heading"></a></h1>
+<p>This is the same structure as in problem <a class="reference internal" href="plot_truss07.html#sphx-glr-auto-examples-trusses-plot-truss07-py"><span class="std std-ref">Post-buckling of a truss column using load Control.</span></a> but
+it will be solved using arc-length-control.</p>
+<p>Author: Peter Mackenzie-Helnwein</p>
+<p>Setup</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples.Example</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">femedu.domain.System</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.domain.Node</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.finite.Truss</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.materials.FiberMaterial</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.solver.NewtonRaphsonSolver</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>Create the example by subclassing the <code class="xref py py-class docutils literal notranslate"><span class="pre">Example</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ExampleTruss09</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># units</span>
+        <span class="n">mm</span> <span class="o">=</span> <span class="mf">1.</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="mf">1000.</span> <span class="o">*</span> <span class="n">mm</span>
+        <span class="n">N</span>  <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">kN</span> <span class="o">=</span> <span class="mf">1000.</span> <span class="o">*</span> <span class="n">N</span>
+        <span class="n">MN</span> <span class="o">=</span> <span class="mf">1000.</span> <span class="o">*</span> <span class="n">kN</span>
+        <span class="n">Pa</span> <span class="o">=</span> <span class="n">N</span> <span class="o">/</span> <span class="n">m</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">MPa</span> <span class="o">=</span> <span class="mf">1.e6</span> <span class="o">*</span> <span class="n">Pa</span>
+        <span class="n">GPa</span> <span class="o">=</span> <span class="mf">1000.</span> <span class="o">*</span> <span class="n">MPa</span>
+
+        <span class="c1"># mesh parameters</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="mf">5.00</span> <span class="o">*</span> <span class="n">m</span>
+        <span class="n">W</span> <span class="o">=</span> <span class="n">H</span> <span class="o">/</span> <span class="mi">20</span>
+
+        <span class="n">Px</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="o">*</span> <span class="n">kN</span>
+
+        <span class="c1">#Ny = 11</span>
+        <span class="n">Ny</span> <span class="o">=</span> <span class="mi">20</span>
+
+        <span class="n">params_vert</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">E</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">GPa</span><span class="p">,</span>
+            <span class="n">A</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">mm</span><span class="o">**</span><span class="mi">2</span>
+        <span class="p">)</span>
+
+        <span class="n">params_diag</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">E</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">GPa</span><span class="p">,</span>
+            <span class="n">A</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">mm</span><span class="o">**</span><span class="mi">2</span>
+        <span class="p">)</span>
+
+        <span class="n">params_brace</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">E</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">GPa</span><span class="p">,</span>
+            <span class="n">A</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">mm</span><span class="o">**</span><span class="mi">2</span>
+        <span class="p">)</span>
+
+        <span class="n">EI</span> <span class="o">=</span> <span class="n">params_vert</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">params_vert</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">W</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="n">Py</span> <span class="o">=</span> <span class="n">EI</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">H</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+        <span class="c1"># initialize a system model</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">setSolver</span><span class="p">(</span><span class="n">NewtonRaphsonSolver</span><span class="p">())</span>
+
+        <span class="c1"># create floor nodes</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">nd0</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+        <span class="n">nd1</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>  <span class="n">W</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+
+        <span class="n">nd_00</span> <span class="o">=</span> <span class="n">nd0</span>
+        <span class="n">nd_01</span> <span class="o">=</span> <span class="n">nd1</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">nd0</span><span class="p">,</span> <span class="n">nd1</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Ny</span><span class="p">):</span>
+            <span class="n">h</span> <span class="o">+=</span> <span class="n">H</span> <span class="o">/</span> <span class="n">Ny</span>
+            <span class="n">nd_10</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+            <span class="n">nd_11</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>  <span class="n">W</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+
+            <span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">nd_10</span><span class="p">,</span> <span class="n">nd_11</span><span class="p">)</span>
+
+            <span class="c1"># create elements</span>
+            <span class="n">model</span> <span class="o">+=</span> <span class="n">Truss</span><span class="p">(</span><span class="n">nd_00</span><span class="p">,</span> <span class="n">nd_10</span><span class="p">,</span> <span class="n">FiberMaterial</span><span class="p">(</span><span class="n">params_vert</span><span class="p">))</span>
+            <span class="n">model</span> <span class="o">+=</span> <span class="n">Truss</span><span class="p">(</span><span class="n">nd_01</span><span class="p">,</span> <span class="n">nd_11</span><span class="p">,</span> <span class="n">FiberMaterial</span><span class="p">(</span><span class="n">params_vert</span><span class="p">))</span>
+            <span class="n">model</span> <span class="o">+=</span> <span class="n">Truss</span><span class="p">(</span><span class="n">nd_00</span><span class="p">,</span> <span class="n">nd_11</span><span class="p">,</span> <span class="n">FiberMaterial</span><span class="p">(</span><span class="n">params_diag</span><span class="p">))</span>
+            <span class="n">model</span> <span class="o">+=</span> <span class="n">Truss</span><span class="p">(</span><span class="n">nd_10</span><span class="p">,</span> <span class="n">nd_11</span><span class="p">,</span> <span class="n">FiberMaterial</span><span class="p">(</span><span class="n">params_brace</span><span class="p">))</span>
+
+            <span class="c1"># prep for the next level</span>
+            <span class="n">nd_00</span> <span class="o">=</span> <span class="n">nd_10</span>
+            <span class="n">nd_01</span> <span class="o">=</span> <span class="n">nd_11</span>
+
+        <span class="c1"># apply boundary conditions</span>
+        <span class="n">nd0</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">([</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span><span class="s1">&#39;uy&#39;</span><span class="p">])</span>
+        <span class="n">nd1</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">([</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span><span class="s1">&#39;uy&#39;</span><span class="p">])</span>
+
+        <span class="c1"># build reference load</span>
+        <span class="n">nd_10</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Py</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">])</span>
+        <span class="n">nd_11</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Py</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">])</span>
+        <span class="n">nd_10</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span> <span class="n">Px</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="s1">&#39;ux&#39;</span><span class="p">])</span>
+        <span class="n">nd_11</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span> <span class="n">Px</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="s1">&#39;ux&#39;</span><span class="p">])</span>
+
+        <span class="c1"># write out report</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+
+        <span class="c1"># create plots</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>    <span class="c1"># needed to show the reference load</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;truss08_undeformed.png&quot;</span><span class="p">,</span> <span class="n">show_loads</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Undeformed System&quot;</span><span class="p">)</span>
+
+        <span class="c1">#</span>
+        <span class="c1"># performing the analysis</span>
+        <span class="c1">#</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">resetDisp</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+        <span class="c1"># set up data collection</span>
+        <span class="n">load_list</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">0.0</span> <span class="p">]</span>
+        <span class="n">data_list</span> <span class="o">=</span> <span class="p">[</span> <span class="n">nd_11</span><span class="o">.</span><span class="n">getDisp</span><span class="p">()</span> <span class="p">]</span>
+
+        <span class="c1"># initialize the arc-length parameters</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">initArcLength</span><span class="p">(</span><span class="n">load_increment</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">1.0e-7</span><span class="p">)</span>
+
+        <span class="c1"># increments until the load level exceeds 2.0</span>
+        <span class="c1">#</span>
+        <span class="c1"># use a counter to prevent run-away analysis</span>
+        <span class="n">maxSteps</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">nSteps</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># an endless loop</span>
+
+            <span class="c1"># mode by one reference arc-length</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">stepArcLength</span><span class="p">()</span>
+
+            <span class="c1"># collect data</span>
+            <span class="n">load_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">loadfactor</span><span class="p">)</span>
+            <span class="n">data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nd_11</span><span class="o">.</span><span class="n">getDisp</span><span class="p">())</span>
+
+            <span class="c1"># emergency exit for run-away jobs</span>
+            <span class="n">nSteps</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">nSteps</span> <span class="o">&gt;</span> <span class="n">maxSteps</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maximum number of load steps exceeded&quot;</span><span class="p">)</span>
+                <span class="k">break</span>
+
+        <span class="c1"># plot the deformed shape</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                   <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Deformed Sytem at Transition to Displacement Control&quot;</span><span class="p">,</span>
+                   <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;truss09_deformed_end_load_control.png&quot;</span><span class="p">,</span>
+                   <span class="n">show_loads</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_reactions</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1">#</span>
+        <span class="c1"># create a nice summary plot</span>
+        <span class="c1">#</span>
+
+        <span class="n">levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">load_list</span><span class="p">)</span>
+        <span class="n">data</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data_list</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">levels</span><span class="p">,</span> <span class="s1">&#39;--o&#39;</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;displacements $ u_i $&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;load factor $ \lambda $&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;$ u_x $&#39;</span><span class="p">,</span><span class="s1">&#39;$ u_y $&#39;</span><span class="p">])</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;truss09_deformation_history.png&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ex</span> <span class="o">=</span> <span class="n">ExampleTruss09</span><span class="p">()</span>
+    <span class="n">ex</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_truss09_001.png" srcset="../../_images/sphx_glr_plot_truss09_001.png" alt="Undeformed System" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_truss09_002.png" srcset="../../_images/sphx_glr_plot_truss09_002.png" alt="Deformed Sytem at Transition to Displacement Control" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_truss09_003.png" srcset="../../_images/sphx_glr_plot_truss09_003.png" alt="plot truss09" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System Analysis Report
+=======================
+
+Nodes:
+---------------------
+  Node_123:
+      x:    [0. 0.]
+      fix:  [&#39;ux&#39;, &#39;uy&#39;]
+      u:    None
+  Node_124:
+      x:    [250.   0.]
+      fix:  [&#39;ux&#39;, &#39;uy&#39;]
+      u:    None
+  Node_125:
+      x:    [  0. 250.]
+      u:    None
+  Node_126:
+      x:    [250. 250.]
+      u:    None
+  Node_127:
+      x:    [  0. 500.]
+      u:    None
+  Node_128:
+      x:    [250. 500.]
+      u:    None
+  Node_129:
+      x:    [  0. 750.]
+      u:    None
+  Node_130:
+      x:    [250. 750.]
+      u:    None
+  Node_131:
+      x:    [   0. 1000.]
+      u:    None
+  Node_132:
+      x:    [ 250. 1000.]
+      u:    None
+  Node_133:
+      x:    [   0. 1250.]
+      u:    None
+  Node_134:
+      x:    [ 250. 1250.]
+      u:    None
+  Node_135:
+      x:    [   0. 1500.]
+      u:    None
+  Node_136:
+      x:    [ 250. 1500.]
+      u:    None
+  Node_137:
+      x:    [   0. 1750.]
+      u:    None
+  Node_138:
+      x:    [ 250. 1750.]
+      u:    None
+  Node_139:
+      x:    [   0. 2000.]
+      u:    None
+  Node_140:
+      x:    [ 250. 2000.]
+      u:    None
+  Node_141:
+      x:    [   0. 2250.]
+      u:    None
+  Node_142:
+      x:    [ 250. 2250.]
+      u:    None
+  Node_143:
+      x:    [   0. 2500.]
+      u:    None
+  Node_144:
+      x:    [ 250. 2500.]
+      u:    None
+  Node_145:
+      x:    [   0. 2750.]
+      u:    None
+  Node_146:
+      x:    [ 250. 2750.]
+      u:    None
+  Node_147:
+      x:    [   0. 3000.]
+      u:    None
+  Node_148:
+      x:    [ 250. 3000.]
+      u:    None
+  Node_149:
+      x:    [   0. 3250.]
+      u:    None
+  Node_150:
+      x:    [ 250. 3250.]
+      u:    None
+  Node_151:
+      x:    [   0. 3500.]
+      u:    None
+  Node_152:
+      x:    [ 250. 3500.]
+      u:    None
+  Node_153:
+      x:    [   0. 3750.]
+      u:    None
+  Node_154:
+      x:    [ 250. 3750.]
+      u:    None
+  Node_155:
+      x:    [   0. 4000.]
+      u:    None
+  Node_156:
+      x:    [ 250. 4000.]
+      u:    None
+  Node_157:
+      x:    [   0. 4250.]
+      u:    None
+  Node_158:
+      x:    [ 250. 4250.]
+      u:    None
+  Node_159:
+      x:    [   0. 4500.]
+      u:    None
+  Node_160:
+      x:    [ 250. 4500.]
+      u:    None
+  Node_161:
+      x:    [   0. 4750.]
+      u:    None
+  Node_162:
+      x:    [ 250. 4750.]
+      u:    None
+  Node_163:
+      x:    [   0. 5000.]
+      P:    [   25.         -3084.25137534]
+      u:    None
+  Node_164:
+      x:    [ 250. 5000.]
+      P:    [   25.         -3084.25137534]
+      u:    None
+
+Elements:
+---------------------
+  Truss: Node_123 to Node_125:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_124 to Node_126:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_123 to Node_126:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_125 to Node_126:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_125 to Node_127:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_126 to Node_128:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_125 to Node_128:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_127 to Node_128:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_127 to Node_129:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_128 to Node_130:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_127 to Node_130:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_129 to Node_130:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_129 to Node_131:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_130 to Node_132:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_129 to Node_132:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_131 to Node_132:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_131 to Node_133:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_132 to Node_134:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_131 to Node_134:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_133 to Node_134:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_133 to Node_135:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_134 to Node_136:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_133 to Node_136:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_135 to Node_136:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_135 to Node_137:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_136 to Node_138:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_135 to Node_138:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_137 to Node_138:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_137 to Node_139:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_138 to Node_140:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_137 to Node_140:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_139 to Node_140:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_139 to Node_141:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_140 to Node_142:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_139 to Node_142:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_141 to Node_142:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_141 to Node_143:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_142 to Node_144:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_141 to Node_144:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_143 to Node_144:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_143 to Node_145:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_144 to Node_146:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_143 to Node_146:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_145 to Node_146:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_145 to Node_147:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_146 to Node_148:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_145 to Node_148:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_147 to Node_148:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_147 to Node_149:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_148 to Node_150:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_147 to Node_150:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_149 to Node_150:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_149 to Node_151:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_150 to Node_152:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_149 to Node_152:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_151 to Node_152:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_151 to Node_153:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_152 to Node_154:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_151 to Node_154:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_153 to Node_154:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_153 to Node_155:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_154 to Node_156:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_153 to Node_156:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_155 to Node_156:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_155 to Node_157:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_156 to Node_158:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_155 to Node_158:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_157 to Node_158:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_157 to Node_159:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_158 to Node_160:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_157 to Node_160:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_159 to Node_160:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_159 to Node_161:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_160 to Node_162:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_159 to Node_162:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_161 to Node_162:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_161 to Node_163:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_162 to Node_164:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_161 to Node_164:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_163 to Node_164:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+
+norm of the out-of-balance force:   0.0000e+00
++
+norm of the out-of-balance force:   0.0000e+00
++
+norm of the out-of-balance force:   1.0905e+03
+norm of the out-of-balance force:   2.8073e+02
+norm of the out-of-balance force:   3.6444e+01
+norm of the out-of-balance force:   1.2940e-02
+norm of the out-of-balance force:   8.9820e-08
++
+Constraint violation:   0.0000e+00
+norm of the out-of-balance force:   8.9820e-08
++
+Maximum number of load steps exceeded
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.721 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-trusses-plot-truss09-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/fd30129719e62f5ca72bea0753f8ea6b/plot_truss09.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_truss09.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/8374c9d9ae4784e043e0ea6a4e998dff/plot_truss09.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_truss09.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="plot_truss08.html" class="btn btn-neutral float-left" title="Post-buckling of a truss column using displacement Control." accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../frames/index.html" class="btn btn-neutral float-right" title="Frame Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on Apr 25, 2023.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

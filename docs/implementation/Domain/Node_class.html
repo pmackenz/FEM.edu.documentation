@@ -49,16 +49,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Example Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">Tutorials Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../implementation.html">Implementation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../implementation.html#model-builder-and-model-controls">Model Builder and Model Controls</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../implementation.html#fem-component-classes">FEM Component Classes</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../Elements/Element_class.html">Element classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Materials/Material_class.html">Material class</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Mesher/Mesher_class.html">Mesher classes</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Node class</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Solvers/Solver_class.html">Solver class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="System_class.html">System class</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Transformation_class.html">Transformation class</a></li>
 </ul>
 </li>
@@ -276,6 +276,12 @@ Do not forget the <code class="code docutils literal notranslate"><span class="p
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.on_converged">
+<span class="sig-name descname"><span class="pre">on_converged</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.on_converged" title="Permalink to this definition"></a></dt>
+<dd><p>This method is called every time a solver signals a converged solution.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.popU">
 <span class="sig-name descname"><span class="pre">popU</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.popU" title="Permalink to this definition"></a></dt>
 <dd><p>Restore a previously pushed displacement vector (using <code class="code docutils literal notranslate"><span class="pre">pushU()</span></code>).</p>
@@ -397,6 +403,17 @@ to be multiplied by a scalar load factor, <span class="math notranslate nohighli
 entire entered load is applied in full.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.setTrialState">
+<span class="sig-name descname"><span class="pre">setTrialState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.setTrialState" title="Permalink to this definition"></a></dt>
+<dd><p>This will set a suitable trial position for the
+arc-length method to</p>
+<div class="math notranslate nohighlight">
+\[{\bf u}^{(0)}_{n+1} = 2{\bf u}^{(\infty)}_{n} - {\bf u}^{(\infty)}_{n-1}\]</div>
+<p>This should be used by a solution algorithm but not by regular
+user input.</p>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -413,7 +430,7 @@ entire entered load is applied in full.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 23, 2023.
+      <span class="lastupdated">Last updated on Apr 25, 2023.
       </span></p>
   </div>
 
