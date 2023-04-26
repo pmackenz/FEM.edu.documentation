@@ -618,231 +618,35 @@ Run the example by creating an instance of the problem and executing it by calli
           material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 0.0
 
-    norm of the out-of-balance force:   0.0000e+00
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   2.1362e+01
-    norm of the out-of-balance force:   1.4169e-01
-    norm of the out-of-balance force:   1.8576e-07
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   2.9155e+01
-    norm of the out-of-balance force:   2.1994e-01
-    norm of the out-of-balance force:   6.4994e-07
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   4.0616e+01
-    norm of the out-of-balance force:   3.5322e-01
-    norm of the out-of-balance force:   2.3061e-06
-    norm of the out-of-balance force:   3.6084e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   5.7963e+01
-    norm of the out-of-balance force:   5.9016e-01
-    norm of the out-of-balance force:   9.4318e-06
-    norm of the out-of-balance force:   6.4562e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   8.5129e+01
-    norm of the out-of-balance force:   1.0328e+00
-    norm of the out-of-balance force:   4.3077e-05
-    norm of the out-of-balance force:   5.1380e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   1.2945e+02
-    norm of the out-of-balance force:   1.9088e+00
-    norm of the out-of-balance force:   2.2793e-04
-    norm of the out-of-balance force:   6.1729e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   2.0543e+02
-    norm of the out-of-balance force:   3.7606e+00
-    norm of the out-of-balance force:   1.4407e-03
-    norm of the out-of-balance force:   4.5319e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   3.4407e+02
-    norm of the out-of-balance force:   7.9700e+00
-    norm of the out-of-balance force:   1.1303e-02
-    norm of the out-of-balance force:   5.5521e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   6.1786e+02
-    norm of the out-of-balance force:   1.8201e+01
-    norm of the out-of-balance force:   1.1505e-01
-    norm of the out-of-balance force:   6.3494e-07
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   1.2182e+03
-    norm of the out-of-balance force:   4.3434e+01
-    norm of the out-of-balance force:   1.5682e+00
-    norm of the out-of-balance force:   7.1958e-05
-    norm of the out-of-balance force:   5.2458e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   2.7395e+03
-    norm of the out-of-balance force:   9.3909e+01
-    norm of the out-of-balance force:   2.7419e+01
-    norm of the out-of-balance force:   9.5253e-03
-    norm of the out-of-balance force:   3.0460e-07
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   7.5051e+03
-    norm of the out-of-balance force:   1.2393e+02
-    norm of the out-of-balance force:   5.0725e+02
-    norm of the out-of-balance force:   4.4808e-01
-    norm of the out-of-balance force:   8.8984e-03
-    norm of the out-of-balance force:   5.6731e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   2.8500e+04
-    norm of the out-of-balance force:   6.4965e+01
-    norm of the out-of-balance force:   9.5411e+03
-    norm of the out-of-balance force:   6.7079e-01
-    norm of the out-of-balance force:   2.4266e+00
-    norm of the out-of-balance force:   2.1044e-07
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   2.0035e+05
-    norm of the out-of-balance force:   2.4585e+02
-    norm of the out-of-balance force:   6.1172e+05
-    norm of the out-of-balance force:   2.2242e+03
-    norm of the out-of-balance force:   2.4148e+05
-    norm of the out-of-balance force:   3.7044e+02
-    norm of the out-of-balance force:   5.3577e+05
-    norm of the out-of-balance force:   1.7076e+03
-    norm of the out-of-balance force:   3.0246e+02
     +
-    norm of the out-of-balance force:   4.6086e+02
-    norm of the out-of-balance force:   2.1144e+06
-    norm of the out-of-balance force:   2.6747e+04
-    norm of the out-of-balance force:   3.8989e+03
-    norm of the out-of-balance force:   9.7560e+04
-    norm of the out-of-balance force:   1.8980e+02
-    norm of the out-of-balance force:   3.7861e+05
-    norm of the out-of-balance force:   8.4872e+02
-    norm of the out-of-balance force:   1.4979e+04
-    norm of the out-of-balance force:   2.7308e+01
     +
-    norm of the out-of-balance force:   9.7212e+02
-    norm of the out-of-balance force:   2.2981e+06
-    norm of the out-of-balance force:   3.1395e+04
-    norm of the out-of-balance force:   1.8547e+03
-    norm of the out-of-balance force:   4.6157e+04
-    norm of the out-of-balance force:   5.7863e+01
-    norm of the out-of-balance force:   4.2158e+03
-    norm of the out-of-balance force:   1.9117e-01
-    norm of the out-of-balance force:   6.4617e-02
-    norm of the out-of-balance force:   5.0856e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   2.1361e+06
-    norm of the out-of-balance force:   2.6914e+04
-    norm of the out-of-balance force:   4.1697e+03
-    norm of the out-of-balance force:   2.0017e+04
-    norm of the out-of-balance force:   4.9750e+02
-    norm of the out-of-balance force:   3.0756e+03
-    norm of the out-of-balance force:   9.2341e+00
-    norm of the out-of-balance force:   1.5933e+00
-    norm of the out-of-balance force:   3.4973e-06
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   1.2858e+06
-    norm of the out-of-balance force:   9.6091e+03
-    norm of the out-of-balance force:   2.0529e+06
-    norm of the out-of-balance force:   2.5310e+04
-    norm of the out-of-balance force:   2.9179e+05
-    norm of the out-of-balance force:   2.4740e+03
-    norm of the out-of-balance force:   4.6522e+06
-    norm of the out-of-balance force:   1.3106e+05
-    norm of the out-of-balance force:   2.1293e+03
     +
-    norm of the out-of-balance force:   8.0690e+04
-    norm of the out-of-balance force:   1.0368e+04
-    norm of the out-of-balance force:   1.5739e+05
-    norm of the out-of-balance force:   6.1250e+02
-    norm of the out-of-balance force:   8.3035e+04
-    norm of the out-of-balance force:   4.0400e+01
-    norm of the out-of-balance force:   1.4384e+01
-    norm of the out-of-balance force:   1.0111e-04
-    norm of the out-of-balance force:   7.6575e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   6.1688e+05
-    norm of the out-of-balance force:   2.1628e+03
-    norm of the out-of-balance force:   3.4973e+03
-    norm of the out-of-balance force:   4.4105e+01
-    norm of the out-of-balance force:   2.5086e+00
-    norm of the out-of-balance force:   1.9868e-05
-    norm of the out-of-balance force:   9.1553e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   4.6247e+05
-    norm of the out-of-balance force:   1.2044e+03
-    norm of the out-of-balance force:   1.7405e+03
-    norm of the out-of-balance force:   6.1774e+00
-    norm of the out-of-balance force:   6.5323e-02
-    norm of the out-of-balance force:   7.0548e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   3.5838e+05
-    norm of the out-of-balance force:   7.1773e+02
-    norm of the out-of-balance force:   1.0094e+03
-    norm of the out-of-balance force:   1.0298e+00
-    norm of the out-of-balance force:   2.8523e-03
-    norm of the out-of-balance force:   4.7226e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   2.8482e+05
-    norm of the out-of-balance force:   4.5083e+02
-    norm of the out-of-balance force:   6.3165e+02
-    norm of the out-of-balance force:   1.9842e-01
-    norm of the out-of-balance force:   1.7244e-04
-    norm of the out-of-balance force:   5.5059e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   2.3094e+05
-    norm of the out-of-balance force:   2.9569e+02
-    norm of the out-of-balance force:   4.1323e+02
-    norm of the out-of-balance force:   4.2712e-02
-    norm of the out-of-balance force:   1.2932e-05
-    norm of the out-of-balance force:   4.4589e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   1.9035e+05
-    norm of the out-of-balance force:   2.0128e+02
-    norm of the out-of-balance force:   2.7809e+02
-    norm of the out-of-balance force:   9.9986e-03
-    norm of the out-of-balance force:   1.1218e-06
-    norm of the out-of-balance force:   6.0590e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   1.5905e+05
-    norm of the out-of-balance force:   1.4166e+02
-    norm of the out-of-balance force:   1.9070e+02
-    norm of the out-of-balance force:   2.4951e-03
-    norm of the out-of-balance force:   1.3591e-07
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   1.3446e+05
-    norm of the out-of-balance force:   1.0283e+02
-    norm of the out-of-balance force:   1.3245e+02
-    norm of the out-of-balance force:   6.5571e-04
-    norm of the out-of-balance force:   8.2743e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   1.1481e+05
-    norm of the out-of-balance force:   7.6847e+01
-    norm of the out-of-balance force:   9.2801e+01
-    norm of the out-of-balance force:   1.8123e-04
-    norm of the out-of-balance force:   5.5453e-08
     +
-    norm of the out-of-balance force:   3.0082e+02
-    norm of the out-of-balance force:   9.8912e+04
-    norm of the out-of-balance force:   5.9045e+01
-    norm of the out-of-balance force:   6.5408e+01
-    norm of the out-of-balance force:   5.3567e-05
-    norm of the out-of-balance force:   4.7503e-08
     +
 
 
@@ -851,7 +655,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.464 seconds)
+   **Total running time of the script:** ( 0 minutes  3.702 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss07.py:

@@ -253,10 +253,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
  .. code-block:: none
 
-    norm of the out-of-balance force:   1.0304e-14
     +
-    norm of the out-of-balance force:   7.0711e+00
-    norm of the out-of-balance force:   3.3496e-14
     +
 
 
@@ -265,7 +262,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.024 seconds)
+   **Total running time of the script:** ( 0 minutes  1.173 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate08.py:

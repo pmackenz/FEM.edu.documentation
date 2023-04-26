@@ -166,6 +166,16 @@ element’s request() call. (called during initialization.)</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getDeltaU">
+<span class="sig-name descname"><span class="pre">getDeltaU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">previous_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getDeltaU" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>delta u = (current u) -  (last converged u)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.getDisp">
 <span class="sig-name descname"><span class="pre">getDisp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getDisp" title="Permalink to this definition"></a></dt>
 <dd><p>return a vector (nd.array) of (generalized) displacements.</p>
@@ -227,6 +237,19 @@ Do not forget the <code class="code docutils literal notranslate"><span class="p
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>nodal load vector (ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getNormDeltaU2">
+<span class="sig-name descname"><span class="pre">getNormDeltaU2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">previous_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getNormDeltaU2" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>norm of delta u = (current u) -  (last converged u)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0.0 if node is a “follower”</p>
 </dd>
 </dl>
 </dd></dl>
@@ -430,7 +453,7 @@ user input.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 25, 2023.
+      <span class="lastupdated">Last updated on Apr 26, 2023.
       </span></p>
   </div>
 
