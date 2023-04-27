@@ -338,6 +338,25 @@ see the :ref:`Tutorials <tutorials>`.
     </div>
 
 
+Diffusion Examples
+-----------------------
+
+For more in-depth information about the colormaps available in matplotlib
+as well as a description of their properties,
+see the :ref:`Tutorials <tutorials>`.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    </div>
+
+
 Plate Examples
 ------------------
 
@@ -571,6 +590,7 @@ see the :ref:`Tutorials <tutorials>`.
    /auto_examples/beams/index.rst
    /auto_examples/trusses/index.rst
    /auto_examples/frames/index.rst
+   /auto_examples/diffusion/index.rst
    /auto_examples/plates/index.rst
    /auto_examples/mixed/index.rst
 
