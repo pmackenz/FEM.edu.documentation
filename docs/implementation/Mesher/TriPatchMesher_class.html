@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TriPatchMesher class &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SolidMesher class" href="SolidMesher_class.html" />
+    <link rel="prev" title="PatchMesher class" href="PatchMesher_class.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Example Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">Tutorials Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../implementation.html">Implementation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../implementation.html#model-builder-and-model-controls">Model Builder and Model Controls</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../implementation.html#fem-component-classes">FEM Component Classes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Elements/Element_class.html">Element classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Materials/Material_class.html">Material class</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="Mesher_class.html">Mesher classes</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="Mesher_class.html#derived-classes">Derived Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Domain/Node_class.html">Node class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Solvers/Solver_class.html">Solver class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Domain/Transformation_class.html">Transformation class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../implementation.html#utility-classes">Utility Classes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../implementation.html">Implementation</a> &raquo;</li>
+          <li><a href="Mesher_class.html">Mesher classes</a> &raquo;</li>
+      <li>TriPatchMesher class</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/implementation/Mesher/TriPatchMesher_class.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tripatchmesher-class">
+<h1>TriPatchMesher class<a class="headerlink" href="#tripatchmesher-class" title="Permalink to this heading"></a></h1>
+<p>For plate and shell elements, including in-plane and out-of plane loaded plates.</p>
+<figure class="align-center" id="id1">
+<img alt="../../design/images/tri-patch.png" src="../../_images/tri-patch.png" />
+<figcaption>
+<p><span class="caption-text">Meshing a triangular patch with quadrilaterals or triangles.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Meshers are currently under development but not yet available with the distribution.
+Stay tuned for updates.</p>
+</div>
+<section id="parent-class">
+<h2>Parent class<a class="headerlink" href="#parent-class" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="Mesher_class.html"><span class="doc">Mesher classes</span></a></p></li>
+</ul>
+</section>
+<section id="module-femedu.mesher.TriPatchMesher">
+<span id="class-doc"></span><h2>Class doc<a class="headerlink" href="#module-femedu.mesher.TriPatchMesher" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="femedu.mesher.TriPatchMesher.TriPatchMesher">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.mesher.TriPatchMesher.</span></span><span class="sig-name descname"><span class="pre">TriPatchMesher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">pts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.TriPatchMesher.TriPatchMesher" title="Permalink to this definition"></a></dt>
+<dd><p>Mesher for plate and shell elements on a triangular domain,
+including in-plane and out-of plane loaded plates.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.mesher.TriPatchMesher.TriPatchMesher.map">
+<span class="sig-name descname"><span class="pre">map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.TriPatchMesher.TriPatchMesher.map" title="Permalink to this definition"></a></dt>
+<dd><p>maps the local coordinates (s,t) from a bi-unit-square
+to the actual position (x,y) in the global model space</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.mesher.TriPatchMesher.TriPatchMesher.quadMesh">
+<span class="sig-name descname"><span class="pre">quadMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Ne</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.TriPatchMesher.TriPatchMesher.quadMesh" title="Permalink to this definition"></a></dt>
+<dd><p>2D mesher using quadrilateral elements</p>
+<p>This is an abstract class - requires implementation in subclass</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Ne</strong> (<em>int</em>) – number of elements along each side</p></li>
+<li><p><strong>element_type</strong> – compatible element type</p></li>
+<li><p><strong>material</strong> – a material object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns (nodes, elements)</dt>
+<dd class="field-even"><p></p></dd>
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodes</strong> – list of created <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> objects</p></li>
+<li><p><strong>elements</strong> – list of created (subclass of) <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> objects</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.mesher.TriPatchMesher.TriPatchMesher.triangleMesh">
+<span class="sig-name descname"><span class="pre">triangleMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Ne</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.TriPatchMesher.TriPatchMesher.triangleMesh" title="Permalink to this definition"></a></dt>
+<dd><p>2D mesher using triangular elements</p>
+<p>This is an abstract class - requires implementation in subclass</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Ne</strong> (<em>int</em>) – number of elements along each side</p></li>
+<li><p><strong>element_type</strong> – compatible element type</p></li>
+<li><p><strong>material</strong> – a material object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns (nodes, elements)</dt>
+<dd class="field-even"><p></p></dd>
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodes</strong> – list of created <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> objects</p></li>
+<li><p><strong>elements</strong> – list of created (subclass of) <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> objects</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="PatchMesher_class.html" class="btn btn-neutral float-left" title="PatchMesher class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SolidMesher_class.html" class="btn btn-neutral float-right" title="SolidMesher class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on May 10, 2023.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

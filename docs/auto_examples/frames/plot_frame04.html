@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buckling of a building frame &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Diffusion Examples" href="../diffusion/index.html" />
+    <link rel="prev" title="Buckling of a building frame" href="plot_frame03.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#diffusion-examples">Diffusion Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#mixed-structures-examples">Mixed Structures Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Frame Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot_frame01.html">Buckling of a beam with pin-pin support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_frame02.html">Buckling of a vertical beam with pin-pin support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_frame03.html">Buckling of a building frame</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Buckling of a building frame</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../diffusion/index.html">Diffusion Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plates/index.html">Plate Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">Tutorials Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Example Gallery</a> &raquo;</li>
+          <li><a href="index.html">Frame Examples</a> &raquo;</li>
+      <li>Buckling of a building frame</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/auto_examples/frames/plot_frame04.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-frames-plot-frame04-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code</p>
+</div>
+<section class="sphx-glr-example-title" id="buckling-of-a-building-frame">
+<span id="sphx-glr-auto-examples-frames-plot-frame04-py"></span><h1>Buckling of a building frame<a class="headerlink" href="#buckling-of-a-building-frame" title="Permalink to this heading"></a></h1>
+<p>modeled using a 2D frame element</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">setting given parameters</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>N  = 2</p></td>
+<td><p>number of elements</p></td>
+</tr>
+<tr class="row-even"><td><p>L  = 100.0</p></td>
+<td><p>column length</p></td>
+</tr>
+<tr class="row-odd"><td><p>EA = 2000000.0</p></td>
+<td><p>axial stiffness</p></td>
+</tr>
+<tr class="row-even"><td><p>EI = 21000.0</p></td>
+<td><p>flexural stiffness</p></td>
+</tr>
+<tr class="row-odd"><td><p>w  = 0.1</p></td>
+<td><p>applied lateral load</p></td>
+</tr>
+</tbody>
+</table>
+<p>Author: Peter Mackenzie-Helnwein</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples.Example</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.solver.NewtonRaphsonSolver</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.finite.Frame2D</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.materials.ElasticSection</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="k">class</span> <span class="nc">ExampleFrame04</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># initialize a system model</span>
+
+        <span class="n">N</span>  <span class="o">=</span> <span class="mi">8</span>     <span class="c1"># number of elements</span>
+
+        <span class="n">B</span> <span class="o">=</span> <span class="mf">720.</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="mf">720.</span>
+
+        <span class="n">E</span>  <span class="o">=</span> <span class="mf">29000.0</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="mf">150.0</span>
+        <span class="n">I</span> <span class="o">=</span> <span class="mf">250.0</span>
+
+        <span class="n">w</span> <span class="o">=</span> <span class="mf">0.10</span>
+        <span class="n">load_at_nodes_only</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># set to True to apply equivalent nodal forces and moments</span>
+
+        <span class="n">Ph</span> <span class="o">=</span> <span class="mf">0.01</span>      <span class="c1"># additional horizontal load per floor</span>
+        <span class="n">Ph</span> <span class="o">=</span> <span class="mf">0.10</span>      <span class="c1"># additional horizontal load per floor</span>
+        <span class="n">Ph</span> <span class="o">=</span> <span class="mf">1.00</span>      <span class="c1"># additional horizontal load per floor</span>
+        <span class="n">Ph</span> <span class="o">=</span> <span class="mf">0.00</span>      <span class="c1"># additional horizontal load per floor</span>
+
+        <span class="c1"># ========== setting global parameters ==============</span>
+
+        <span class="n">target_load_level</span> <span class="o">=</span> <span class="mf">33.</span>
+        <span class="n">max_steps</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">load_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">target_load_level</span><span class="p">,</span> <span class="n">max_steps</span><span class="p">)</span>
+
+        <span class="c1"># ========= build your structural model =============</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">setSolver</span><span class="p">(</span><span class="n">NewtonRaphsonSolver</span><span class="p">())</span>
+
+        <span class="n">x0</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">B</span> <span class="o">/</span> <span class="mi">3</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">B</span> <span class="o">/</span> <span class="mi">3</span>
+        <span class="n">x3</span> <span class="o">=</span> <span class="n">B</span>
+
+        <span class="n">y0</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">H</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="n">y2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">H</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="n">y3</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">H</span> <span class="o">/</span> <span class="mi">4</span>
+        <span class="n">y4</span> <span class="o">=</span> <span class="n">H</span>
+
+        <span class="n">X10</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>
+        <span class="n">X11</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+        <span class="n">X12</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+        <span class="n">X13</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y3</span><span class="p">)</span>
+        <span class="n">X14</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y4</span><span class="p">)</span>
+
+        <span class="n">X20</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>
+        <span class="n">X21</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+        <span class="n">X22</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+        <span class="n">X23</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y3</span><span class="p">)</span>
+        <span class="n">X24</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y4</span><span class="p">)</span>
+
+        <span class="n">X30</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>
+        <span class="n">X31</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+        <span class="n">X32</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+        <span class="n">X33</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y3</span><span class="p">)</span>
+        <span class="n">X34</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y4</span><span class="p">)</span>
+
+        <span class="n">X40</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>
+        <span class="n">X41</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+        <span class="n">X42</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+        <span class="n">X43</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">)</span>
+        <span class="n">X44</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">y4</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">X10</span><span class="p">,</span><span class="n">X11</span><span class="p">,</span><span class="n">X12</span><span class="p">,</span><span class="n">X13</span><span class="p">,</span><span class="n">X14</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">X20</span><span class="p">,</span><span class="n">X21</span><span class="p">,</span><span class="n">X22</span><span class="p">,</span><span class="n">X23</span><span class="p">,</span><span class="n">X24</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">X30</span><span class="p">,</span><span class="n">X31</span><span class="p">,</span><span class="n">X32</span><span class="p">,</span><span class="n">X33</span><span class="p">,</span><span class="n">X34</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">X40</span><span class="p">,</span><span class="n">X41</span><span class="p">,</span><span class="n">X42</span><span class="p">,</span><span class="n">X43</span><span class="p">,</span><span class="n">X44</span><span class="p">)</span>
+
+        <span class="c1"># columns</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="n">E</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="n">A</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="n">I</span><span class="p">}</span>
+
+        <span class="n">C11</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X10</span><span class="p">,</span> <span class="n">X11</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">C12</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X11</span><span class="p">,</span> <span class="n">X12</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">C13</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X12</span><span class="p">,</span> <span class="n">X13</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">C14</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X13</span><span class="p">,</span> <span class="n">X14</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">C11</span><span class="p">,</span><span class="n">C12</span><span class="p">,</span><span class="n">C13</span><span class="p">,</span><span class="n">C14</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="n">E</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">I</span><span class="p">}</span>
+
+        <span class="n">C21</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X20</span><span class="p">,</span> <span class="n">X21</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">C22</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X21</span><span class="p">,</span> <span class="n">X22</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">C23</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X22</span><span class="p">,</span> <span class="n">X23</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">C24</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X23</span><span class="p">,</span> <span class="n">X24</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">C21</span><span class="p">,</span><span class="n">C22</span><span class="p">,</span><span class="n">C23</span><span class="p">,</span><span class="n">C24</span><span class="p">)</span>
+
+        <span class="n">C31</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X30</span><span class="p">,</span> <span class="n">X31</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">C32</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X31</span><span class="p">,</span> <span class="n">X32</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">C33</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X32</span><span class="p">,</span> <span class="n">X33</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">C34</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X33</span><span class="p">,</span> <span class="n">X34</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">C31</span><span class="p">,</span><span class="n">C32</span><span class="p">,</span><span class="n">C33</span><span class="p">,</span><span class="n">C34</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="n">E</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="n">A</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="n">I</span><span class="p">}</span>
+
+        <span class="n">C41</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X40</span><span class="p">,</span> <span class="n">X41</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">C42</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X41</span><span class="p">,</span> <span class="n">X42</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">C43</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X42</span><span class="p">,</span> <span class="n">X43</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">C44</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X43</span><span class="p">,</span> <span class="n">X44</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">C41</span><span class="p">,</span><span class="n">C42</span><span class="p">,</span><span class="n">C43</span><span class="p">,</span><span class="n">C44</span><span class="p">)</span>
+
+        <span class="c1"># floors</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="n">E</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="n">A</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="o">*</span><span class="n">I</span><span class="p">}</span>
+
+        <span class="n">F11</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X11</span><span class="p">,</span> <span class="n">X21</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">F12</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X21</span><span class="p">,</span> <span class="n">X31</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">F13</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X31</span><span class="p">,</span> <span class="n">X41</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">F11</span><span class="p">,</span><span class="n">F12</span><span class="p">,</span><span class="n">F13</span><span class="p">)</span>
+
+        <span class="n">F21</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X12</span><span class="p">,</span> <span class="n">X22</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">F22</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X22</span><span class="p">,</span> <span class="n">X32</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">F23</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X32</span><span class="p">,</span> <span class="n">X42</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">F21</span><span class="p">,</span><span class="n">F22</span><span class="p">,</span><span class="n">F23</span><span class="p">)</span>
+
+        <span class="n">F31</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X13</span><span class="p">,</span> <span class="n">X23</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">F32</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X23</span><span class="p">,</span> <span class="n">X33</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">F33</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X33</span><span class="p">,</span> <span class="n">X43</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">F31</span><span class="p">,</span><span class="n">F32</span><span class="p">,</span><span class="n">F33</span><span class="p">)</span>
+
+        <span class="n">F41</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X14</span><span class="p">,</span> <span class="n">X24</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">F42</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X24</span><span class="p">,</span> <span class="n">X34</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">F43</span> <span class="o">=</span> <span class="n">Frame2D</span><span class="p">(</span><span class="n">X34</span><span class="p">,</span> <span class="n">X44</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">F41</span><span class="p">,</span><span class="n">F42</span><span class="p">,</span><span class="n">F43</span><span class="p">)</span>
+
+        <span class="c1"># fixities</span>
+        <span class="n">X10</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">)</span>   <span class="c1"># fixed</span>
+        <span class="n">X20</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">)</span>   <span class="c1"># fixed</span>
+        <span class="n">X30</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">)</span>   <span class="c1"># fixed</span>
+        <span class="n">X40</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">)</span>   <span class="c1"># fixed</span>
+
+        <span class="c1"># reference load</span>
+        <span class="c1">#Pcr = np.pi**2 * EI / L**2</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">resetLoad</span><span class="p">()</span>            <span class="c1"># size load vector and initialize</span>
+        <span class="c1">#model.addLoad(Xn, -Pcr, dof=0) # add a horizontal force (first dof only) ; remember C-style indexing: 0,1,...,(n-1)</span>
+
+        <span class="k">if</span> <span class="n">load_at_nodes_only</span><span class="p">:</span>
+
+            <span class="c1"># floor loading as nodal loads ...</span>
+
+            <span class="n">Pe</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="n">B</span><span class="o">/</span><span class="mi">3</span>
+            <span class="n">Mi</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="p">(</span><span class="n">B</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span><span class="mi">12</span>
+
+            <span class="n">X11</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="o">-</span><span class="n">Mi</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+            <span class="n">X21</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+            <span class="n">X31</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+            <span class="n">X41</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span>  <span class="n">Mi</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+
+            <span class="n">X12</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="o">-</span><span class="n">Mi</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+            <span class="n">X22</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+            <span class="n">X32</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+            <span class="n">X42</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span>  <span class="n">Mi</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+
+            <span class="n">X13</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="o">-</span><span class="n">Mi</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+            <span class="n">X23</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+            <span class="n">X33</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+            <span class="n">X43</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span>  <span class="n">Mi</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+
+            <span class="n">X14</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span> <span class="o">-</span><span class="n">Mi</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+            <span class="n">X24</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+            <span class="n">X34</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+            <span class="n">X44</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Pe</span><span class="o">/</span><span class="mf">2.</span><span class="p">,</span>  <span class="n">Mi</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="c1"># floor loading as distributed loads ...</span>
+
+            <span class="n">F11</span><span class="o">.</span><span class="n">setDistLoad</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">)</span>
+            <span class="n">F12</span><span class="o">.</span><span class="n">setDistLoad</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">)</span>
+            <span class="n">F13</span><span class="o">.</span><span class="n">setDistLoad</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">)</span>
+
+            <span class="n">F21</span><span class="o">.</span><span class="n">setDistLoad</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">)</span>
+            <span class="n">F22</span><span class="o">.</span><span class="n">setDistLoad</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">)</span>
+            <span class="n">F23</span><span class="o">.</span><span class="n">setDistLoad</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">)</span>
+
+            <span class="n">F31</span><span class="o">.</span><span class="n">setDistLoad</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">)</span>
+            <span class="n">F32</span><span class="o">.</span><span class="n">setDistLoad</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">)</span>
+            <span class="n">F33</span><span class="o">.</span><span class="n">setDistLoad</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">)</span>
+
+            <span class="n">F41</span><span class="o">.</span><span class="n">setDistLoad</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">)</span>
+            <span class="n">F42</span><span class="o">.</span><span class="n">setDistLoad</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">)</span>
+            <span class="n">F43</span><span class="o">.</span><span class="n">setDistLoad</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">)</span>
+
+
+        <span class="c1"># wind load ...</span>
+
+        <span class="n">X11</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="n">Ph</span><span class="p">],[</span><span class="s1">&#39;ux&#39;</span><span class="p">])</span>   <span class="c1"># horizontal load</span>
+        <span class="n">X12</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="n">Ph</span><span class="p">],[</span><span class="s1">&#39;ux&#39;</span><span class="p">])</span>   <span class="c1"># horizontal load</span>
+        <span class="n">X13</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="n">Ph</span><span class="p">],[</span><span class="s1">&#39;ux&#39;</span><span class="p">])</span>   <span class="c1"># horizontal load</span>
+        <span class="n">X14</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="n">Ph</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="s1">&#39;ux&#39;</span><span class="p">])</span> <span class="c1"># horizontal load</span>
+
+
+        <span class="c1"># show model information</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">==== perform the analysis ===</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># * apply the load in multiple smaller load steps</span>
+
+        <span class="c1"># set up data recorder</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">initRecorder</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">trackStability</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># initialize the analysis:</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">resetDisplacements</span><span class="p">()</span>   <span class="c1"># set U to all zeros</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>     <span class="c1"># define a known equilibrium solution</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">startRecorder</span><span class="p">()</span>
+
+        <span class="n">detKt</span>   <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">lambdas</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># solve for all load_levels</span>
+        <span class="k">for</span> <span class="n">loadfactor</span> <span class="ow">in</span> <span class="n">load_levels</span><span class="p">:</span>
+
+            <span class="c1"># define node X2 as the controled node; downward direction is prescribed:</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="n">loadfactor</span><span class="p">)</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="c1"># stability check</span>
+            <span class="n">lambdas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">loadfactor</span><span class="p">)</span>
+            <span class="n">detKt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">checkStability</span><span class="p">())</span>
+
+            <span class="c1"># report results</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
+            <span class="c1">#model.report()</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== next load level ===</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+        <span class="c1">#</span>
+        <span class="c1"># ==== create some nice plots ===</span>
+        <span class="c1">#</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame4_deformed.png&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span><span class="n">detKt</span><span class="p">,</span><span class="s1">&#39;--*r&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Load factor, $ \lambda $&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Stability index, $ </span><span class="si">{det}</span><span class="s2">\: {</span><span class="se">\\</span><span class="s2">bf K}_t $&quot;</span><span class="p">)</span>
+
+        <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;frame4_stability.png&quot;</span><span class="p">)</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame4_force.png&quot;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s2">&quot;V&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame4_shear.png&quot;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame4_moment.png&quot;</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">plotBucklingMode</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">100.</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame4_buckling_mode0.png&quot;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">plotBucklingMode</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">100.</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame4_buckling_mode1.png&quot;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">plotBucklingMode</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">100.</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame4_buckling_mode2.png&quot;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">plotBucklingMode</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">100.</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;frame4_buckling_mode3.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ex</span> <span class="o">=</span> <span class="n">ExampleFrame04</span><span class="p">()</span>
+    <span class="n">ex</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_frame04_001.png" srcset="../../_images/sphx_glr_plot_frame04_001.png" alt="Deformed System (magnification=10.00)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_002.png" srcset="../../_images/sphx_glr_plot_frame04_002.png" alt="plot frame04" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_003.png" srcset="../../_images/sphx_glr_plot_frame04_003.png" alt="Axial Forces" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_004.png" srcset="../../_images/sphx_glr_plot_frame04_004.png" alt="Shear Forces" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_005.png" srcset="../../_images/sphx_glr_plot_frame04_005.png" alt="Bending Moment" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_006.png" srcset="../../_images/sphx_glr_plot_frame04_006.png" alt="Mode Shape for $ \lambda = -0.05 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_007.png" srcset="../../_images/sphx_glr_plot_frame04_007.png" alt="Mode Shape for $ \lambda = 3.53 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_008.png" srcset="../../_images/sphx_glr_plot_frame04_008.png" alt="Mode Shape for $ \lambda = 13.51 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_frame04_009.png" srcset="../../_images/sphx_glr_plot_frame04_009.png" alt="Mode Shape for $ \lambda = 34.10 $" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System object
+Node_187(x=[0. 0.], u=None)
+Node_188(x=[  0. 180.], u=None)
+Node_189(x=[  0. 360.], u=None)
+Node_190(x=[  0. 540.], u=None)
+Node_191(x=[  0. 720.], u=None)
+Node_192(x=[240.   0.], u=None)
+Node_193(x=[240. 180.], u=None)
+Node_194(x=[240. 360.], u=None)
+Node_195(x=[240. 540.], u=None)
+Node_196(x=[240. 720.], u=None)
+Node_197(x=[480.   0.], u=None)
+Node_198(x=[480. 180.], u=None)
+Node_199(x=[480. 360.], u=None)
+Node_200(x=[480. 540.], u=None)
+Node_201(x=[480. 720.], u=None)
+Node_202(x=[720.   0.], u=None)
+Node_203(x=[720. 180.], u=None)
+Node_204(x=[720. 360.], u=None)
+Node_205(x=[720. 540.], u=None)
+Node_206(x=[720. 720.], u=None)
+Frame2D(Node_187, Node_188, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_188, Node_189, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_189, Node_190, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_190, Node_191, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_192, Node_193, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_193, Node_194, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_194, Node_195, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_195, Node_196, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_197, Node_198, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_198, Node_199, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_199, Node_200, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_200, Node_201, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 300.0, &#39;I&#39;: 375.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_202, Node_203, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_203, Node_204, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_204, Node_205, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_205, Node_206, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 250.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_188, Node_193, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_193, Node_198, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_198, Node_203, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_189, Node_194, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_194, Node_199, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_199, Node_204, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_190, Node_195, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_195, Node_200, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_200, Node_205, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_191, Node_196, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_196, Node_201, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_201, Node_206, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 150.0, &#39;I&#39;: 750.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+
+==== perform the analysis ===
+
+norm of the out-of-balance force:   0.0000e+00
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 1.4498657937111088
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   4.9858e+03
+norm of the out-of-balance force:   2.5683e+01
+norm of the out-of-balance force:   6.8711e-03
+norm of the out-of-balance force:   2.4169e-06
+norm of the out-of-balance force:   9.9689e-08
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 1.3039606866588005
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   4.9858e+03
+norm of the out-of-balance force:   5.2545e+01
+norm of the out-of-balance force:   2.8485e-02
+norm of the out-of-balance force:   2.0791e-05
+norm of the out-of-balance force:   3.3372e-08
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 1.1558244387593575
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   4.9858e+03
+norm of the out-of-balance force:   8.0699e+01
+norm of the out-of-balance force:   6.6491e-02
+norm of the out-of-balance force:   7.4329e-05
+norm of the out-of-balance force:   7.9083e-08
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 1.0049715576880547
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   4.9858e+03
+norm of the out-of-balance force:   1.1028e+02
+norm of the out-of-balance force:   1.2275e-01
+norm of the out-of-balance force:   1.8726e-04
+norm of the out-of-balance force:   2.4643e-07
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 0.850725023556207
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   4.9858e+03
+norm of the out-of-balance force:   1.4143e+02
+norm of the out-of-balance force:   1.9938e-01
+norm of the out-of-balance force:   3.8919e-04
+norm of the out-of-balance force:   6.5055e-07
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 0.6920949784337074
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   4.9858e+03
+norm of the out-of-balance force:   1.7435e+02
+norm of the out-of-balance force:   2.9877e-01
+norm of the out-of-balance force:   7.1688e-04
+norm of the out-of-balance force:   1.5063e-06
+norm of the out-of-balance force:   1.4952e-08
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 0.5275391347884245
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   4.9858e+03
+norm of the out-of-balance force:   2.0925e+02
+norm of the out-of-balance force:   4.2361e-01
+norm of the out-of-balance force:   1.2154e-03
+norm of the out-of-balance force:   3.0790e-06
+norm of the out-of-balance force:   2.2904e-08
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 0.35442857213693185
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   4.9858e+03
+norm of the out-of-balance force:   2.4638e+02
+norm of the out-of-balance force:   5.7696e-01
+norm of the out-of-balance force:   1.9401e-03
+norm of the out-of-balance force:   5.8275e-06
+norm of the out-of-balance force:   2.0822e-08
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = 0.16763438924630286
+
++
+
+=== next load level ===
+
+norm of the out-of-balance force:   4.9858e+03
+norm of the out-of-balance force:   2.8607e+02
+norm of the out-of-balance force:   7.6225e-01
+norm of the out-of-balance force:   2.9585e-03
+norm of the out-of-balance force:   1.0391e-05
+norm of the out-of-balance force:   3.1113e-08
++
+
+ ** Stability check: (smallest eigenvalue of Kt) = -0.04529626510335041
+
++
+
+=== next load level ===
+
+
+System Analysis Report
+=======================
+
+Nodes:
+---------------------
+  Node_187:
+      x:    [0. 0.]
+      fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
+      u:    [0. 0. 0.]
+  Node_188:
+      x:    [  0. 180.]
+      u:    [-0.00195269 -0.05845162 -0.02403623]
+  Node_189:
+      x:    [  0. 360.]
+      u:    [ 0.00035802 -0.10234068 -0.01990617]
+  Node_190:
+      x:    [  0. 540.]
+      u:    [-0.00103192 -0.13142317 -0.01829479]
+  Node_191:
+      x:    [  0. 720.]
+      u:    [ 0.00479755 -0.14562156 -0.0304816 ]
+  Node_192:
+      x:    [240.   0.]
+      fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
+      u:    [0. 0. 0.]
+  Node_193:
+      x:    [240. 180.]
+      u:    [-0.00054966 -0.06909143  0.00451655]
+  Node_194:
+      x:    [240. 360.]
+      u:    [ 4.92703197e-05 -1.20884831e-01  2.89826296e-03]
+  Node_195:
+      x:    [240. 540.]
+      u:    [-0.00019519 -0.15550221  0.00208175]
+  Node_196:
+      x:    [240. 720.]
+      u:    [ 0.00128191 -0.17298232  0.00685415]
+  Node_197:
+      x:    [480.   0.]
+      fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
+      u:    [0. 0. 0.]
+  Node_198:
+      x:    [480. 180.]
+      u:    [ 0.00054966 -0.06909143 -0.00451655]
+  Node_199:
+      x:    [480. 360.]
+      u:    [-4.92702630e-05 -1.20884831e-01 -2.89826296e-03]
+  Node_200:
+      x:    [480. 540.]
+      u:    [ 0.00019519 -0.15550221 -0.00208175]
+  Node_201:
+      x:    [480. 720.]
+      u:    [-0.00128191 -0.17298232 -0.00685415]
+  Node_202:
+      x:    [720.   0.]
+      fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
+      u:    [0. 0. 0.]
+  Node_203:
+      x:    [720. 180.]
+      u:    [ 0.00195269 -0.05845162  0.02403623]
+  Node_204:
+      x:    [720. 360.]
+      u:    [-0.00035802 -0.10234068  0.01990617]
+  Node_205:
+      x:    [720. 540.]
+      u:    [ 0.00103192 -0.13142317  0.01829479]
+  Node_206:
+      x:    [720. 720.]
+      u:    [-0.00479755 -0.14562156  0.0304816 ]
+
+Elements:
+---------------------
+  Frame2D_301: nodes ( Node_187 Node_188 )
+      material: ElasticSection
+      internal forces: f0=-1412.58 V0=-28.72 M0=2190.63 fl=-1412.58 Vl=-28.72 Ml=-2981.99 Pw=0.00 Mw=0.00
+  Frame2D_302: nodes ( Node_188 Node_189 )
+      material: ElasticSection
+      internal forces: f0=-1060.65 V0=-54.15 M0=4967.18 fl=-1060.65 Vl=-54.15 Ml=-4777.61 Pw=0.00 Mw=0.00
+  Frame2D_303: nodes ( Node_189 Node_190 )
+      material: ElasticSection
+      internal forces: f0=-702.83 V0=-48.56 M0=4417.41 fl=-702.83 Vl=-48.56 Ml=-4323.51 Pw=0.00 Mw=0.00
+  Frame2D_304: nodes ( Node_190 Node_191 )
+      material: ElasticSection
+      internal forces: f0=-343.13 V0=-63.72 M0=5307.41 fl=-343.13 Vl=-63.72 Ml=-6160.35 Pw=0.00 Mw=0.00
+  Frame2D_305: nodes ( Node_192 Node_193 )
+      material: ElasticSection
+      internal forces: f0=-3339.42 V0=7.47 M0=-673.83 fl=-3339.42 Vl=7.47 Ml=668.39 Pw=0.00 Mw=0.00
+  Frame2D_306: nodes ( Node_193 Node_194 )
+      material: ElasticSection
+      internal forces: f0=-2503.35 V0=12.97 M0=-1196.02 fl=-2503.35 Vl=12.97 Ml=1140.41 Pw=0.00 Mw=0.00
+  Frame2D_307: nodes ( Node_194 Node_195 )
+      material: ElasticSection
+      internal forces: f0=-1673.17 V0=9.16 M0=-851.26 fl=-1673.17 Vl=9.16 Ml=797.45 Pw=0.00 Mw=0.00
+  Frame2D_308: nodes ( Node_195 Node_196 )
+      material: ElasticSection
+      internal forces: f0=-844.87 V0=17.25 M0=-1328.12 fl=-844.87 Vl=17.25 Ml=1778.43 Pw=0.00 Mw=0.00
+  Frame2D_309: nodes ( Node_197 Node_198 )
+      material: ElasticSection
+      internal forces: f0=-3339.42 V0=-7.47 M0=673.83 fl=-3339.42 Vl=-7.47 Ml=-668.39 Pw=0.00 Mw=0.00
+  Frame2D_310: nodes ( Node_198 Node_199 )
+      material: ElasticSection
+      internal forces: f0=-2503.35 V0=-12.97 M0=1196.02 fl=-2503.35 Vl=-12.97 Ml=-1140.41 Pw=0.00 Mw=0.00
+  Frame2D_311: nodes ( Node_199 Node_200 )
+      material: ElasticSection
+      internal forces: f0=-1673.17 V0=-9.16 M0=851.26 fl=-1673.17 Vl=-9.16 Ml=-797.45 Pw=0.00 Mw=0.00
+  Frame2D_312: nodes ( Node_200 Node_201 )
+      material: ElasticSection
+      internal forces: f0=-844.87 V0=-17.25 M0=1328.12 fl=-844.87 Vl=-17.25 Ml=-1778.43 Pw=0.00 Mw=0.00
+  Frame2D_313: nodes ( Node_202 Node_203 )
+      material: ElasticSection
+      internal forces: f0=-1412.58 V0=28.72 M0=-2190.63 fl=-1412.58 Vl=28.72 Ml=2981.99 Pw=0.00 Mw=0.00
+  Frame2D_314: nodes ( Node_203 Node_204 )
+      material: ElasticSection
+      internal forces: f0=-1060.65 V0=54.15 M0=-4967.18 fl=-1060.65 Vl=54.15 Ml=4777.61 Pw=0.00 Mw=0.00
+  Frame2D_315: nodes ( Node_204 Node_205 )
+      material: ElasticSection
+      internal forces: f0=-702.83 V0=48.56 M0=-4417.41 fl=-702.83 Vl=48.56 Ml=4323.51 Pw=0.00 Mw=0.00
+  Frame2D_316: nodes ( Node_205 Node_206 )
+      material: ElasticSection
+      internal forces: f0=-343.13 V0=63.72 M0=-5307.41 fl=-343.13 Vl=63.72 Ml=6160.35 Pw=0.00 Mw=0.00
+  Frame2D_317: nodes ( Node_188 Node_193 )
+      material: ElasticSection
+      internal forces: f0=25.43 V0=-44.07 M0=7890.83 fl=25.43 Vl=-44.07 Ml=-2686.63 Pw=-396.00 Mw=-15840.00
+  Frame2D_318: nodes ( Node_193 Node_198 )
+      material: ElasticSection
+      internal forces: f0=19.93 V0=-0.00 M0=-822.22 fl=19.93 Vl=-0.00 Ml=-822.22 Pw=-396.00 Mw=-15840.00
+  Frame2D_319: nodes ( Node_198 Node_203 )
+      material: ElasticSection
+      internal forces: f0=25.43 V0=44.07 M0=-2686.63 fl=25.43 Vl=44.07 Ml=7890.83 Pw=-396.00 Mw=-15840.00
+  Frame2D_320: nodes ( Node_189 Node_194 )
+      material: ElasticSection
+      internal forces: f0=-5.60 V0=-38.17 M0=6644.98 fl=-5.60 Vl=-38.17 Ml=-2516.78 Pw=-396.00 Mw=-15840.00
+  Frame2D_321: nodes ( Node_194 Node_199 )
+      material: ElasticSection
+      internal forces: f0=-1.79 V0=-0.00 M0=-525.10 fl=-1.79 Vl=-0.00 Ml=-525.10 Pw=-396.00 Mw=-15840.00
+  Frame2D_322: nodes ( Node_199 Node_204 )
+      material: ElasticSection
+      internal forces: f0=-5.60 V0=38.17 M0=-2516.78 fl=-5.60 Vl=38.17 Ml=6644.98 Pw=-396.00 Mw=-15840.00
+  Frame2D_323: nodes ( Node_190 Node_195 )
+      material: ElasticSection
+      internal forces: f0=15.17 V0=-36.30 M0=6209.08 fl=15.17 Vl=-36.30 Ml=-2503.48 Pw=-396.00 Mw=-15840.00
+  Frame2D_324: nodes ( Node_195 Node_200 )
+      material: ElasticSection
+      internal forces: f0=7.08 V0=0.00 M0=-377.91 fl=7.08 Vl=0.00 Ml=-377.91 Pw=-396.00 Mw=-15840.00
+  Frame2D_325: nodes ( Node_200 Node_205 )
+      material: ElasticSection
+      internal forces: f0=15.17 V0=36.30 M0=-2503.48 fl=15.17 Vl=36.30 Ml=6209.08 Pw=-396.00 Mw=-15840.00
+  Frame2D_326: nodes ( Node_191 Node_196 )
+      material: ElasticSection
+      internal forces: f0=-63.72 V0=-52.87 M0=9679.65 fl=-63.72 Vl=-52.87 Ml=-3007.97 Pw=-396.00 Mw=-15840.00
+  Frame2D_327: nodes ( Node_196 Node_201 )
+      material: ElasticSection
+      internal forces: f0=-46.47 V0=0.00 M0=-1229.55 fl=-46.47 Vl=0.00 Ml=-1229.55 Pw=-396.00 Mw=-15840.00
+  Frame2D_328: nodes ( Node_201 Node_206 )
+      material: ElasticSection
+      internal forces: f0=-63.72 V0=52.87 M0=-3007.97 fl=-63.72 Vl=52.87 Ml=9679.65 Pw=-396.00 Mw=-15840.00
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.993 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-frames-plot-frame04-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/40d880429670bf5ce54912b139b4e5d9/plot_frame04.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_frame04.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/5c7bb42081b778e79fe693a6147f6519/plot_frame04.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_frame04.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="plot_frame03.html" class="btn btn-neutral float-left" title="Buckling of a building frame" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../diffusion/index.html" class="btn btn-neutral float-right" title="Diffusion Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on May 10, 2023.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

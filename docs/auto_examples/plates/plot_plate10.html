@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profiling the code &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mixed Structures Examples" href="../mixed/index.html" />
+    <link rel="prev" title="Patch test for quadrilateral plate elements under in-plane loading" href="plot_plate09.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#diffusion-examples">Diffusion Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#mixed-structures-examples">Mixed Structures Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../diffusion/index.html">Diffusion Examples</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Plate Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot_plate01.html">A square patch made of two triangular plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate02.html">A square patch made of two triangular plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate03.html">Patch test for triangular plate under in-plane loading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate04.html">Patch test for triangular plate under in-plane loading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate05.html">Pulling a plate with a circular hole</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate06.html">Pulling a plate with a circular hole</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate07.html">A square patch made of one quadrilateral plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate08.html">A square patch made of one quadrilateral plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate09.html">Patch test for quadrilateral plate elements under in-plane loading</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Profiling the code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">Tutorials Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Example Gallery</a> &raquo;</li>
+          <li><a href="index.html">Plate Examples</a> &raquo;</li>
+      <li>Profiling the code</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/auto_examples/plates/plot_plate10.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-plates-plot-plate10-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code</p>
+</div>
+<section class="sphx-glr-example-title" id="profiling-the-code">
+<span id="sphx-glr-auto-examples-plates-plot-plate10-py"></span><h1>Profiling the code<a class="headerlink" href="#profiling-the-code" title="Permalink to this heading"></a></h1>
+<p>Using PatchMesher to model a quarter of the plate</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_path = &#39;_static/profiler.png&#39;</span>
+
+<span class="n">SPARSE</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">femedu.examples.Example</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.solver.NewtonRaphsonSolver</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.solver.SparseSolver</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear.Triangle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.materials.PlaneStress</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.mesher</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="k">class</span> <span class="nc">ExamplePlate10</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># ========== setting mesh parameters ==============</span>
+
+        <span class="n">Nx</span> <span class="o">=</span> <span class="mi">60</span>        <span class="c1"># number of elements in the mesh</span>
+        <span class="n">Ny</span> <span class="o">=</span> <span class="mi">40</span>        <span class="c1"># number of elements in the mesh</span>
+
+        <span class="n">Lx</span> <span class="o">=</span> <span class="mf">120.0</span>    <span class="c1"># length of plate in the x-direction</span>
+        <span class="n">Ly</span> <span class="o">=</span>  <span class="mf">80.0</span>    <span class="c1"># length of plate in the y-direction</span>
+        <span class="n">R</span>  <span class="o">=</span> <span class="n">Ly</span> <span class="o">/</span> <span class="mf">2.</span>
+
+        <span class="c1"># ========== setting material parameters ==============</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">E</span>  <span class="o">=</span> <span class="mf">200.</span><span class="p">,</span>      <span class="c1"># Young&#39;s modulus</span>
+            <span class="n">nu</span> <span class="o">=</span> <span class="mf">0.450</span><span class="p">,</span>     <span class="c1"># Poisson&#39;s ratio</span>
+            <span class="n">t</span>  <span class="o">=</span> <span class="mf">1.00</span>       <span class="c1"># thickness of the plate</span>
+        <span class="p">)</span>
+
+        <span class="c1"># ========== setting load parameters ==============</span>
+
+        <span class="n">px</span>  <span class="o">=</span> <span class="mf">20.0</span>         <span class="c1"># uniform load normal to x=const</span>
+        <span class="n">py</span>  <span class="o">=</span>  <span class="mf">0.0</span>         <span class="c1"># uniform load normal to y=const</span>
+        <span class="n">pxy</span> <span class="o">=</span>  <span class="mf">0.0</span>         <span class="c1"># uniform shear load on x=const and y=const</span>
+
+        <span class="c1"># ========== setting analysis parameters ==============</span>
+
+        <span class="n">target_load_level</span> <span class="o">=</span> <span class="mf">1.00</span>     <span class="c1"># reference load</span>
+        <span class="n">max_steps</span> <span class="o">=</span> <span class="mi">2</span>                <span class="c1"># number of load steps: 2 -&gt; [0.0, 1.0]</span>
+
+        <span class="c1"># define a list of target load levels</span>
+        <span class="n">load_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">target_load_level</span><span class="p">,</span> <span class="n">max_steps</span><span class="p">)</span>
+
+        <span class="c1">#</span>
+        <span class="c1"># ==== Build the system model ====</span>
+        <span class="c1">#</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">SPARSE</span><span class="p">:</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">setSolver</span><span class="p">(</span><span class="n">SparseSolver</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">setSolver</span><span class="p">(</span><span class="n">NewtonRaphsonSolver</span><span class="p">())</span>
+
+        <span class="c1"># create nodes</span>
+
+        <span class="c1">#  3---------2</span>
+        <span class="c1">#  |         |</span>
+        <span class="c1">#  |         |</span>
+        <span class="c1">#  |         |</span>
+        <span class="c1">#  1---------1</span>
+
+        <span class="n">pts</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">Lx</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">Lx</span><span class="p">,</span> <span class="n">Ly</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Ly</span><span class="p">),</span>
+        <span class="p">)</span>
+
+        <span class="n">mesher</span> <span class="o">=</span> <span class="n">PatchMesher</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">nodes</span><span class="p">,</span> <span class="n">elements</span> <span class="o">=</span> <span class="n">mesher</span><span class="o">.</span><span class="n">triangleMesh</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Ny</span><span class="p">,</span> <span class="n">Triangle</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="c1"># define support(s)</span>
+
+        <span class="c1">## find nodes at y==0 and x==0</span>
+
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mf">0.0</span><span class="p">):</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">)</span>    <span class="c1"># horizontal support left side</span>
+            <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mf">0.0</span><span class="p">):</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;uy&#39;</span><span class="p">)</span>    <span class="c1"># vertical support at y==0</span>
+
+        <span class="c1"># ==== build the reference load ====</span>
+
+        <span class="c1"># nodal loads</span>
+        <span class="nb">dir</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">])</span>    <span class="c1"># normal to surface</span>
+        <span class="n">x0</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">Lx</span><span class="p">,</span><span class="mf">0.0</span><span class="p">])</span>   <span class="c1"># reference point on the surface</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">Lx</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">getID</span><span class="p">(),</span> <span class="n">node</span><span class="o">.</span><span class="n">getPos</span><span class="p">())</span>
+                <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">elements</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">elem</span><span class="o">.</span><span class="n">getID</span><span class="p">(),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">elem</span><span class="o">.</span><span class="n">faces</span><span class="p">:</span>
+                        <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span> <span class="p">[</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span> <span class="o">@</span> <span class="nb">dir</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">face</span><span class="o">.</span><span class="n">pos</span> <span class="p">],</span> <span class="mf">0.0</span> <span class="p">)</span> \
+                            <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span> <span class="p">[</span> <span class="n">t</span> <span class="o">@</span> <span class="nb">dir</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">face</span><span class="o">.</span><span class="n">tangent</span> <span class="p">],</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">dist</span><span class="p">:</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="n">face</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">area</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+                            <span class="n">face_idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">face</span><span class="o">.</span><span class="n">id</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+                            <span class="n">elem</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="n">face_idx</span><span class="p">,</span> <span class="n">px</span><span class="p">,</span> <span class="n">pxy</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">()</span>
+
+        <span class="c1">#model.plot(factor=0, title=&quot;undeformed system&quot;, filename=&quot;plate06_undeformed.png&quot;, show_bc=1, show_loads=1)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+        <span class="c1">#model.plot(factor=1., filename=&quot;plate06_deformed.png&quot;)</span>
+
+        <span class="c1">#model.solver.showKt(filename=&quot;plate06_spy_Kt.png&quot;)</span>
+        <span class="c1">#np.save(&quot;plate6_Kt.npy&quot;,model.solver.Kt)</span>
+</pre></div>
+</div>
+<p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
+<p>This time, we are running the example in the profiler, writing profiling data to file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cProfile</span>
+
+<span class="n">ex</span> <span class="o">=</span> <span class="n">ExamplePlate10</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">SPARSE</span><span class="p">:</span>
+    <span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;ex.run()&#39;</span><span class="p">,</span><span class="s1">&#39;profile_data_sparse.txt&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;ex.run()&#39;</span><span class="p">,</span><span class="s1">&#39;profile_data_full.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Node_1059 [120.   0.]
++ Elem_1354
++ Elem_1355 1355.2 : [[2. 0.]]
+Node_1120 [120.   2.]
++ Elem_1355 1355.2 : [[2. 0.]]
++ Elem_1474
++ Elem_1475 1475.2 : [[2.00000000e+00 1.42108547e-14]]
+Node_1181 [120.   4.]
++ Elem_1475 1475.2 : [[2.00000000e+00 1.42108547e-14]]
++ Elem_1594
++ Elem_1595 1595.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_1242 [120.   6.]
++ Elem_1595 1595.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_1714
++ Elem_1715 1715.2 : [[2. 0.]]
+Node_1303 [120.   8.]
++ Elem_1715 1715.2 : [[2. 0.]]
++ Elem_1834
++ Elem_1835 1835.2 : [[2. 0.]]
+Node_1364 [120.  10.]
++ Elem_1835 1835.2 : [[2. 0.]]
++ Elem_1954
++ Elem_1955 1955.2 : [[2. 0.]]
+Node_1425 [120.  12.]
++ Elem_1955 1955.2 : [[2. 0.]]
++ Elem_2074
++ Elem_2075 2075.2 : [[2. 0.]]
+Node_1486 [120.  14.]
++ Elem_2075 2075.2 : [[2. 0.]]
++ Elem_2194
++ Elem_2195 2195.2 : [[2. 0.]]
+Node_1547 [120.  16.]
++ Elem_2195 2195.2 : [[2. 0.]]
++ Elem_2314
++ Elem_2315 2315.2 : [[2. 0.]]
+Node_1608 [120.  18.]
++ Elem_2315 2315.2 : [[2. 0.]]
++ Elem_2434
++ Elem_2435 2435.2 : [[2. 0.]]
+Node_1669 [120.  20.]
++ Elem_2435 2435.2 : [[2. 0.]]
++ Elem_2554
++ Elem_2555 2555.2 : [[2. 0.]]
+Node_1730 [120.  22.]
++ Elem_2555 2555.2 : [[2. 0.]]
++ Elem_2674
++ Elem_2675 2675.2 : [[2. 0.]]
+Node_1791 [120.  24.]
++ Elem_2675 2675.2 : [[2. 0.]]
++ Elem_2794
++ Elem_2795 2795.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_1852 [120.  26.]
++ Elem_2795 2795.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_2914
++ Elem_2915 2915.2 : [[2.00000000e+00 2.84217094e-14]]
+Node_1913 [120.  28.]
++ Elem_2915 2915.2 : [[2.00000000e+00 2.84217094e-14]]
++ Elem_3034
++ Elem_3035 3035.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_1974 [120.  30.]
++ Elem_3035 3035.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_3154
++ Elem_3155 3155.2 : [[2.00000000e+00 1.42108547e-14]]
+Node_2035 [120.  32.]
++ Elem_3155 3155.2 : [[2.00000000e+00 1.42108547e-14]]
++ Elem_3274
++ Elem_3275 3275.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_2096 [120.  34.]
++ Elem_3275 3275.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_3394
++ Elem_3395 3395.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_2157 [120.  36.]
++ Elem_3395 3395.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_3514
++ Elem_3515 3515.2 : [[2.00000000e+00 2.84217094e-14]]
+Node_2218 [120.  38.]
++ Elem_3515 3515.2 : [[2.00000000e+00 2.84217094e-14]]
++ Elem_3634
++ Elem_3635 3635.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_2279 [120.  40.]
++ Elem_3635 3635.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_3754
++ Elem_3755 3755.2 : [[2.00000000e+00 1.42108547e-14]]
+Node_2340 [120.  42.]
++ Elem_3755 3755.2 : [[2.00000000e+00 1.42108547e-14]]
++ Elem_3874
++ Elem_3875 3875.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_2401 [120.  44.]
++ Elem_3875 3875.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_3994
++ Elem_3995 3995.2 : [[2. 0.]]
+Node_2462 [120.  46.]
++ Elem_3995 3995.2 : [[2. 0.]]
++ Elem_4114
++ Elem_4115 4115.2 : [[2. 0.]]
+Node_2523 [120.  48.]
++ Elem_4115 4115.2 : [[2. 0.]]
++ Elem_4234
++ Elem_4235 4235.2 : [[2. 0.]]
+Node_2584 [120.  50.]
++ Elem_4235 4235.2 : [[2. 0.]]
++ Elem_4354
++ Elem_4355 4355.2 : [[2. 0.]]
+Node_2645 [120.  52.]
++ Elem_4355 4355.2 : [[2. 0.]]
++ Elem_4474
++ Elem_4475 4475.2 : [[2. 0.]]
+Node_2706 [120.  54.]
++ Elem_4475 4475.2 : [[2. 0.]]
++ Elem_4594
++ Elem_4595 4595.2 : [[2. 0.]]
+Node_2767 [120.  56.]
++ Elem_4595 4595.2 : [[2. 0.]]
++ Elem_4714
++ Elem_4715 4715.2 : [[2. 0.]]
+Node_2828 [120.  58.]
++ Elem_4715 4715.2 : [[2. 0.]]
++ Elem_4834
++ Elem_4835 4835.2 : [[2. 0.]]
+Node_2889 [120.  60.]
++ Elem_4835 4835.2 : [[2. 0.]]
++ Elem_4954
++ Elem_4955 4955.2 : [[2. 0.]]
+Node_2950 [120.  62.]
++ Elem_4955 4955.2 : [[2. 0.]]
++ Elem_5074
++ Elem_5075 5075.2 : [[2. 0.]]
+Node_3011 [120.  64.]
++ Elem_5075 5075.2 : [[2. 0.]]
++ Elem_5194
++ Elem_5195 5195.2 : [[2.00000000e+00 2.84217094e-14]]
+Node_3072 [120.  66.]
++ Elem_5195 5195.2 : [[2.00000000e+00 2.84217094e-14]]
++ Elem_5314
++ Elem_5315 5315.2 : [[ 2.00000000e+00 -2.84217094e-14]]
+Node_3133 [120.  68.]
++ Elem_5315 5315.2 : [[ 2.00000000e+00 -2.84217094e-14]]
++ Elem_5434
++ Elem_5435 5435.2 : [[2. 0.]]
+Node_3194 [120.  70.]
++ Elem_5435 5435.2 : [[2. 0.]]
++ Elem_5554
++ Elem_5555 5555.2 : [[2. 0.]]
+Node_3255 [120.  72.]
++ Elem_5555 5555.2 : [[2. 0.]]
++ Elem_5674
++ Elem_5675 5675.2 : [[2. 0.]]
+Node_3316 [120.  74.]
++ Elem_5675 5675.2 : [[2. 0.]]
++ Elem_5794
++ Elem_5795 5795.2 : [[2. 0.]]
+Node_3377 [120.  76.]
++ Elem_5795 5795.2 : [[2. 0.]]
++ Elem_5914
++ Elem_5915 5915.2 : [[2. 0.]]
+Node_3438 [120.  78.]
++ Elem_5915 5915.2 : [[2. 0.]]
++ Elem_6034
++ Elem_6035 6035.2 : [[2. 0.]]
+Node_3499 [120.  80.]
++ Elem_6035 6035.2 : [[2. 0.]]
++
+</pre></div>
+</div>
+<p>Now it’s time to process the profiling data</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pstats</span>
+<span class="kn">from</span> <span class="nn">pstats</span> <span class="kn">import</span> <span class="n">SortKey</span>
+
+<span class="k">if</span> <span class="n">SPARSE</span><span class="p">:</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">pstats</span><span class="o">.</span><span class="n">Stats</span><span class="p">(</span><span class="s1">&#39;profile_data_sparse.txt&#39;</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">strip_dirs</span><span class="p">()</span> <span class="c1">#.sort_stats(-1).print_stats()</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span>
+    <span class="c1">#p.print_stats()</span>
+
+    <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">CUMULATIVE</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">TIME</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">pstats</span><span class="o">.</span><span class="n">Stats</span><span class="p">(</span><span class="s1">&#39;profile_data_full.txt&#39;</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">strip_dirs</span><span class="p">()</span> <span class="c1">#.sort_stats(-1).print_stats()</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span>
+    <span class="c1">#p.print_stats()</span>
+
+    <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">CUMULATIVE</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">TIME</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Wed May 10 00:46:33 2023    profile_data_full.txt
+
+         7755938 function calls (7211005 primitive calls) in 11.540 seconds
+
+   Ordered by: cumulative time
+   List reduced from 283 to 20 due to restriction &lt;20&gt;
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000   11.553   11.553 {built-in method builtins.exec}
+        1    0.000    0.000   11.553   11.553 &lt;string&gt;:1(&lt;module&gt;)
+        1    0.015    0.015   11.553   11.553 Example.py:20(run)
+        1    0.006    0.006   11.539   11.539 plot_plate10.py:47(problem)
+        1    0.000    0.000    9.681    9.681 System.py:283(solve)
+        1    0.000    0.000    9.681    9.681 NewtonRaphsonSolver.py:13(solve)
+        4    0.000    0.000    8.762    2.190 NewtonRaphsonSolver.py:105(assemble)
+        4    1.642    0.411    8.761    2.190 Solver.py:152(assemble)
+    19200    0.072    0.000    5.187    0.000 Element.py:225(getForce)
+    19200    1.797    0.000    5.114    0.000 Triangle.py:80(updateState)
+        2    0.000    0.000    4.419    2.210 Solver.py:371(checkResiduum)
+602900/322289    0.487    0.000    2.924    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+    38400    0.430    0.000    2.694    0.000 Triangle.py:155(computeSurfaceLoads)
+        1    0.024    0.024    1.780    1.780 PatchMesher.py:99(triangleMesh)
+   115200    0.576    0.000    1.387    0.000 Face2D.py:54(computeNodalForces)
+    19200    0.026    0.000    1.288    0.000 Element.py:234(getLoad)
+   153600    0.094    0.000    0.958    0.000 &lt;__array_function__ internals&gt;:177(outer)
+     4800    0.112    0.000    0.946    0.000 Triangle.py:10(__init__)
+        1    0.003    0.003    0.908    0.908 NewtonRaphsonSolver.py:58(solveSingleStep)
+        1    0.000    0.000    0.894    0.894 &lt;__array_function__ internals&gt;:177(solve)
+
+
+Wed May 10 00:46:33 2023    profile_data_full.txt
+
+         7755938 function calls (7211005 primitive calls) in 11.540 seconds
+
+   Ordered by: internal time
+   List reduced from 283 to 20 due to restriction &lt;20&gt;
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    19200    1.797    0.000    5.114    0.000 Triangle.py:80(updateState)
+        4    1.642    0.411    8.761    2.190 Solver.py:152(assemble)
+        1    0.894    0.894    0.894    0.894 linalg.py:320(solve)
+   153600    0.657    0.000    0.762    0.000 numeric.py:857(outer)
+   639031    0.594    0.000    0.594    0.000 {built-in method numpy.array}
+   115200    0.576    0.000    1.387    0.000 Face2D.py:54(computeNodalForces)
+602900/322289    0.487    0.000    2.924    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+   230400    0.446    0.000    0.622    0.000 Node.py:398(getIdx4Element)
+    38400    0.430    0.000    2.694    0.000 Triangle.py:155(computeSurfaceLoads)
+    19201    0.412    0.000    0.525    0.000 PlaneStress.py:25(updateState)
+254400/4800    0.313    0.000    0.721    0.000 copy.py:128(deepcopy)
+    76800    0.281    0.000    0.552    0.000 Node.py:360(getDeformedPos)
+    76800    0.172    0.000    0.259    0.000 Node.py:267(getDisp)
+   115201    0.163    0.000    0.632    0.000 numeric.py:76(zeros_like)
+    14400    0.122    0.000    0.257    0.000 Face2D.py:16(initialize)
+     4800    0.112    0.000    0.946    0.000 Triangle.py:10(__init__)
+   153600    0.094    0.000    0.958    0.000 &lt;__array_function__ internals&gt;:177(outer)
+   115201    0.093    0.000    0.227    0.000 &lt;__array_function__ internals&gt;:177(empty_like)
+    14400    0.088    0.000    0.391    0.000 Face2D.py:13(__init__)
+   200334    0.087    0.000    0.087    0.000 {built-in method numpy.zeros}
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  11.603 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate10-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/bb715000677ea1440bbfa252bf815246/plot_plate10.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate10.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/ae33efdebb28467e9b52973845e57766/plot_plate10.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate10.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="plot_plate09.html" class="btn btn-neutral float-left" title="Patch test for quadrilateral plate elements under in-plane loading" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../mixed/index.html" class="btn btn-neutral float-right" title="Mixed Structures Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on May 10, 2023.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

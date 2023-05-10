@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post-buckling of a truss column using Arc-Length Control. &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Frame Examples" href="../frames/index.html" />
+    <link rel="prev" title="Post-buckling of a truss column using displacement Control." href="plot_truss08.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#diffusion-examples">Diffusion Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#mixed-structures-examples">Mixed Structures Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Truss Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot_truss01.html">Simple triangular truss.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss02.html">Statically determinate truss bridge.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss03.html">Simple triangular truss.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss04.html">3d truss example demonstrating large deformation analysis.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss05.html">Simple triangular truss.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss06.html">Simple triangular truss.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss07.html">Post-buckling of a truss column using load Control.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_truss08.html">Post-buckling of a truss column using displacement Control.</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Post-buckling of a truss column using Arc-Length Control.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../diffusion/index.html">Diffusion Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plates/index.html">Plate Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">Tutorials Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Example Gallery</a> &raquo;</li>
+          <li><a href="index.html">Truss Examples</a> &raquo;</li>
+      <li>Post-buckling of a truss column using Arc-Length Control.</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/auto_examples/trusses/plot_truss09.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-trusses-plot-truss09-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code</p>
+</div>
+<section class="sphx-glr-example-title" id="post-buckling-of-a-truss-column-using-arc-length-control">
+<span id="sphx-glr-auto-examples-trusses-plot-truss09-py"></span><h1>Post-buckling of a truss column using Arc-Length Control.<a class="headerlink" href="#post-buckling-of-a-truss-column-using-arc-length-control" title="Permalink to this heading"></a></h1>
+<p>This is the same structure as in problem <a class="reference internal" href="plot_truss07.html#sphx-glr-auto-examples-trusses-plot-truss07-py"><span class="std std-ref">Post-buckling of a truss column using load Control.</span></a> but
+it will be solved using arc-length-control.</p>
+<p>Author: Peter Mackenzie-Helnwein</p>
+<p>Setup</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples.Example</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">femedu.domain.System</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.domain.Node</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.finite.Truss</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.materials.FiberMaterial</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.solver.NewtonRaphsonSolver</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>Create the example by subclassing the <code class="xref py py-class docutils literal notranslate"><span class="pre">Example</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ExampleTruss09</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># units</span>
+        <span class="n">mm</span> <span class="o">=</span> <span class="mf">1.</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="mf">1000.</span> <span class="o">*</span> <span class="n">mm</span>
+        <span class="n">N</span>  <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">kN</span> <span class="o">=</span> <span class="mf">1000.</span> <span class="o">*</span> <span class="n">N</span>
+        <span class="n">MN</span> <span class="o">=</span> <span class="mf">1000.</span> <span class="o">*</span> <span class="n">kN</span>
+        <span class="n">Pa</span> <span class="o">=</span> <span class="n">N</span> <span class="o">/</span> <span class="n">m</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">MPa</span> <span class="o">=</span> <span class="mf">1.e6</span> <span class="o">*</span> <span class="n">Pa</span>
+        <span class="n">GPa</span> <span class="o">=</span> <span class="mf">1000.</span> <span class="o">*</span> <span class="n">MPa</span>
+
+        <span class="c1"># mesh parameters</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="mf">5.00</span> <span class="o">*</span> <span class="n">m</span>
+        <span class="n">W</span> <span class="o">=</span> <span class="n">H</span> <span class="o">/</span> <span class="mi">20</span>
+
+        <span class="n">Px</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="o">*</span> <span class="n">kN</span>
+
+        <span class="c1">#Ny = 11</span>
+        <span class="n">Ny</span> <span class="o">=</span> <span class="mi">20</span>
+
+        <span class="n">params_vert</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">E</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">GPa</span><span class="p">,</span>
+            <span class="n">A</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">mm</span><span class="o">**</span><span class="mi">2</span>
+        <span class="p">)</span>
+
+        <span class="n">params_diag</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">E</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">GPa</span><span class="p">,</span>
+            <span class="n">A</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">mm</span><span class="o">**</span><span class="mi">2</span>
+        <span class="p">)</span>
+
+        <span class="n">params_brace</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">E</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">GPa</span><span class="p">,</span>
+            <span class="n">A</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">mm</span><span class="o">**</span><span class="mi">2</span>
+        <span class="p">)</span>
+
+        <span class="n">EI</span> <span class="o">=</span> <span class="n">params_vert</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">params_vert</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">W</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="n">Py</span> <span class="o">=</span> <span class="n">EI</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">H</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+        <span class="c1"># initialize a system model</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">setSolver</span><span class="p">(</span><span class="n">NewtonRaphsonSolver</span><span class="p">())</span>
+
+        <span class="c1"># create floor nodes</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">nd0</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+        <span class="n">nd1</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>  <span class="n">W</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+
+        <span class="n">nd_00</span> <span class="o">=</span> <span class="n">nd0</span>
+        <span class="n">nd_01</span> <span class="o">=</span> <span class="n">nd1</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">nd0</span><span class="p">,</span> <span class="n">nd1</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Ny</span><span class="p">):</span>
+            <span class="n">h</span> <span class="o">+=</span> <span class="n">H</span> <span class="o">/</span> <span class="n">Ny</span>
+            <span class="n">nd_10</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+            <span class="n">nd_11</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>  <span class="n">W</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+
+            <span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">nd_10</span><span class="p">,</span> <span class="n">nd_11</span><span class="p">)</span>
+
+            <span class="c1"># create elements</span>
+            <span class="n">model</span> <span class="o">+=</span> <span class="n">Truss</span><span class="p">(</span><span class="n">nd_00</span><span class="p">,</span> <span class="n">nd_10</span><span class="p">,</span> <span class="n">FiberMaterial</span><span class="p">(</span><span class="n">params_vert</span><span class="p">))</span>
+            <span class="n">model</span> <span class="o">+=</span> <span class="n">Truss</span><span class="p">(</span><span class="n">nd_01</span><span class="p">,</span> <span class="n">nd_11</span><span class="p">,</span> <span class="n">FiberMaterial</span><span class="p">(</span><span class="n">params_vert</span><span class="p">))</span>
+            <span class="n">model</span> <span class="o">+=</span> <span class="n">Truss</span><span class="p">(</span><span class="n">nd_00</span><span class="p">,</span> <span class="n">nd_11</span><span class="p">,</span> <span class="n">FiberMaterial</span><span class="p">(</span><span class="n">params_diag</span><span class="p">))</span>
+            <span class="n">model</span> <span class="o">+=</span> <span class="n">Truss</span><span class="p">(</span><span class="n">nd_10</span><span class="p">,</span> <span class="n">nd_11</span><span class="p">,</span> <span class="n">FiberMaterial</span><span class="p">(</span><span class="n">params_brace</span><span class="p">))</span>
+
+            <span class="c1"># prep for the next level</span>
+            <span class="n">nd_00</span> <span class="o">=</span> <span class="n">nd_10</span>
+            <span class="n">nd_01</span> <span class="o">=</span> <span class="n">nd_11</span>
+
+        <span class="c1"># apply boundary conditions</span>
+        <span class="n">nd0</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">([</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span><span class="s1">&#39;uy&#39;</span><span class="p">])</span>
+        <span class="n">nd1</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">([</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span><span class="s1">&#39;uy&#39;</span><span class="p">])</span>
+
+        <span class="c1"># build reference load</span>
+        <span class="n">nd_10</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Py</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">])</span>
+        <span class="n">nd_11</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">Py</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">])</span>
+        <span class="n">nd_10</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span> <span class="n">Px</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="s1">&#39;ux&#39;</span><span class="p">])</span>
+        <span class="n">nd_11</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span> <span class="n">Px</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="s1">&#39;ux&#39;</span><span class="p">])</span>
+
+        <span class="c1"># write out report</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+
+        <span class="c1"># create plots</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>    <span class="c1"># needed to show the reference load</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;truss08_undeformed.png&quot;</span><span class="p">,</span> <span class="n">show_loads</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Undeformed System&quot;</span><span class="p">)</span>
+
+        <span class="c1">#</span>
+        <span class="c1"># performing the analysis</span>
+        <span class="c1">#</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">resetDisp</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+        <span class="c1"># set up data collection</span>
+        <span class="n">load_list</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">0.0</span> <span class="p">]</span>
+        <span class="n">data_list</span> <span class="o">=</span> <span class="p">[</span> <span class="n">nd_11</span><span class="o">.</span><span class="n">getDisp</span><span class="p">()</span> <span class="p">]</span>
+
+        <span class="c1"># initialize the arc-length parameters</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">initArcLength</span><span class="p">(</span><span class="n">load_increment</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.04</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">1.0e-4</span><span class="p">)</span>
+
+        <span class="c1"># increments until the load level exceeds 2.0</span>
+        <span class="c1">#</span>
+        <span class="c1"># use a counter to prevent run-away analysis</span>
+        <span class="n">maxSteps</span> <span class="o">=</span> <span class="mi">100</span>
+        <span class="n">nSteps</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># an endless loop</span>
+
+            <span class="c1"># mode by one reference arc-length</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">stepArcLength</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="c1"># collect data</span>
+            <span class="n">load_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">loadfactor</span><span class="p">)</span>
+            <span class="n">data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nd_11</span><span class="o">.</span><span class="n">getDisp</span><span class="p">())</span>
+
+            <span class="c1"># emergency exit for run-away jobs</span>
+            <span class="n">nSteps</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">nSteps</span> <span class="o">&gt;</span> <span class="n">maxSteps</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maximum number of load steps exceeded&quot;</span><span class="p">)</span>
+                <span class="k">break</span>
+
+            <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">loadfactor</span> <span class="o">&gt;</span> <span class="mf">2.0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Reached the target load level after </span><span class="si">{</span><span class="n">nSteps</span><span class="si">}</span><span class="s2"> steps&quot;</span><span class="p">)</span>
+                <span class="k">break</span>
+
+        <span class="c1"># plot the deformed shape</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                   <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Deformed Sytem at Transition to Displacement Control&quot;</span><span class="p">,</span>
+                   <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;truss09_deformed_end_load_control.png&quot;</span><span class="p">,</span>
+                   <span class="n">show_loads</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_reactions</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1">#</span>
+        <span class="c1"># create a nice summary plot</span>
+        <span class="c1">#</span>
+
+        <span class="n">levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">load_list</span><span class="p">)</span>
+        <span class="n">data</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data_list</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">levels</span><span class="p">,</span> <span class="s1">&#39;--o&#39;</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;displacements $ u_i $&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;load factor $ \lambda $&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;$ u_x $&#39;</span><span class="p">,</span><span class="s1">&#39;$ u_y $&#39;</span><span class="p">])</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;truss09_deformation_history.png&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ex</span> <span class="o">=</span> <span class="n">ExampleTruss09</span><span class="p">()</span>
+    <span class="n">ex</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_truss09_001.png" srcset="../../_images/sphx_glr_plot_truss09_001.png" alt="Undeformed System" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_truss09_002.png" srcset="../../_images/sphx_glr_plot_truss09_002.png" alt="Deformed Sytem at Transition to Displacement Control" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_truss09_003.png" srcset="../../_images/sphx_glr_plot_truss09_003.png" alt="plot truss09" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System Analysis Report
+=======================
+
+Nodes:
+---------------------
+  Node_123:
+      x:    [0. 0.]
+      fix:  [&#39;ux&#39;, &#39;uy&#39;]
+      u:    None
+  Node_124:
+      x:    [250.   0.]
+      fix:  [&#39;ux&#39;, &#39;uy&#39;]
+      u:    None
+  Node_125:
+      x:    [  0. 250.]
+      u:    None
+  Node_126:
+      x:    [250. 250.]
+      u:    None
+  Node_127:
+      x:    [  0. 500.]
+      u:    None
+  Node_128:
+      x:    [250. 500.]
+      u:    None
+  Node_129:
+      x:    [  0. 750.]
+      u:    None
+  Node_130:
+      x:    [250. 750.]
+      u:    None
+  Node_131:
+      x:    [   0. 1000.]
+      u:    None
+  Node_132:
+      x:    [ 250. 1000.]
+      u:    None
+  Node_133:
+      x:    [   0. 1250.]
+      u:    None
+  Node_134:
+      x:    [ 250. 1250.]
+      u:    None
+  Node_135:
+      x:    [   0. 1500.]
+      u:    None
+  Node_136:
+      x:    [ 250. 1500.]
+      u:    None
+  Node_137:
+      x:    [   0. 1750.]
+      u:    None
+  Node_138:
+      x:    [ 250. 1750.]
+      u:    None
+  Node_139:
+      x:    [   0. 2000.]
+      u:    None
+  Node_140:
+      x:    [ 250. 2000.]
+      u:    None
+  Node_141:
+      x:    [   0. 2250.]
+      u:    None
+  Node_142:
+      x:    [ 250. 2250.]
+      u:    None
+  Node_143:
+      x:    [   0. 2500.]
+      u:    None
+  Node_144:
+      x:    [ 250. 2500.]
+      u:    None
+  Node_145:
+      x:    [   0. 2750.]
+      u:    None
+  Node_146:
+      x:    [ 250. 2750.]
+      u:    None
+  Node_147:
+      x:    [   0. 3000.]
+      u:    None
+  Node_148:
+      x:    [ 250. 3000.]
+      u:    None
+  Node_149:
+      x:    [   0. 3250.]
+      u:    None
+  Node_150:
+      x:    [ 250. 3250.]
+      u:    None
+  Node_151:
+      x:    [   0. 3500.]
+      u:    None
+  Node_152:
+      x:    [ 250. 3500.]
+      u:    None
+  Node_153:
+      x:    [   0. 3750.]
+      u:    None
+  Node_154:
+      x:    [ 250. 3750.]
+      u:    None
+  Node_155:
+      x:    [   0. 4000.]
+      u:    None
+  Node_156:
+      x:    [ 250. 4000.]
+      u:    None
+  Node_157:
+      x:    [   0. 4250.]
+      u:    None
+  Node_158:
+      x:    [ 250. 4250.]
+      u:    None
+  Node_159:
+      x:    [   0. 4500.]
+      u:    None
+  Node_160:
+      x:    [ 250. 4500.]
+      u:    None
+  Node_161:
+      x:    [   0. 4750.]
+      u:    None
+  Node_162:
+      x:    [ 250. 4750.]
+      u:    None
+  Node_163:
+      x:    [   0. 5000.]
+      P:    [   25.         -3084.25137534]
+      u:    None
+  Node_164:
+      x:    [ 250. 5000.]
+      P:    [   25.         -3084.25137534]
+      u:    None
+
+Elements:
+---------------------
+  Truss: Node_123 to Node_125:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_124 to Node_126:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_123 to Node_126:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_125 to Node_126:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_125 to Node_127:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_126 to Node_128:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_125 to Node_128:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_127 to Node_128:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_127 to Node_129:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_128 to Node_130:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_127 to Node_130:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_129 to Node_130:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_129 to Node_131:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_130 to Node_132:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_129 to Node_132:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_131 to Node_132:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_131 to Node_133:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_132 to Node_134:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_131 to Node_134:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_133 to Node_134:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_133 to Node_135:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_134 to Node_136:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_133 to Node_136:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_135 to Node_136:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_135 to Node_137:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_136 to Node_138:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_135 to Node_138:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_137 to Node_138:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_137 to Node_139:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_138 to Node_140:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_137 to Node_140:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_139 to Node_140:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_139 to Node_141:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_140 to Node_142:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_139 to Node_142:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_141 to Node_142:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_141 to Node_143:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_142 to Node_144:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_141 to Node_144:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_143 to Node_144:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_143 to Node_145:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_144 to Node_146:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_143 to Node_146:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_145 to Node_146:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_145 to Node_147:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_146 to Node_148:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_145 to Node_148:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_147 to Node_148:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_147 to Node_149:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_148 to Node_150:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_147 to Node_150:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_149 to Node_150:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_149 to Node_151:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_150 to Node_152:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_149 to Node_152:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_151 to Node_152:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_151 to Node_153:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_152 to Node_154:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_151 to Node_154:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_153 to Node_154:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_153 to Node_155:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_154 to Node_156:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_153 to Node_156:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_155 to Node_156:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_155 to Node_157:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_156 to Node_158:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_155 to Node_158:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_157 to Node_158:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_157 to Node_159:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_158 to Node_160:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_157 to Node_160:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_159 to Node_160:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_159 to Node_161:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_160 to Node_162:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_159 to Node_162:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_161 to Node_162:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_161 to Node_163:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_162 to Node_164:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_161 to Node_164:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+  Truss: Node_163 to Node_164:
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 200000.0, &#39;A&#39;: 50.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.0
+
++
++
++
+Last converged state stored at lam=0.33
+norm of the out-of-balance force:   8.2920e+04 with g=  8.2879e+04
+norm of the out-of-balance force:   1.6569e+06 with g= -1.6521e+06
+norm of the out-of-balance force:   5.1266e+05 with g= -5.1266e+05
+norm of the out-of-balance force:   1.4611e+05 with g= -1.3796e+05
+norm of the out-of-balance force:   2.5723e+04 with g= -2.5721e+04
+norm of the out-of-balance force:   9.5233e+03 with g= -9.0877e+03
+norm of the out-of-balance force:   3.2146e+02 with g= -3.0907e+02
+norm of the out-of-balance force:   1.6638e+01 with g= -1.5828e+01
+norm of the out-of-balance force:   3.5671e-03 with g= -3.3529e-03
+norm of the out-of-balance force:   5.4267e-08 with g= -9.1723e-10
++
+Last converged state stored at lam=0.6227422697123588
+norm of the out-of-balance force:   6.6676e+04 with g=  6.5221e+04
+norm of the out-of-balance force:   2.0449e+05 with g= -2.0391e+05
+norm of the out-of-balance force:   5.5408e+04 with g= -5.5408e+04
+norm of the out-of-balance force:   6.1144e+03 with g= -5.7866e+03
+norm of the out-of-balance force:   9.2764e+01 with g= -9.0033e+01
+norm of the out-of-balance force:   1.1474e+00 with g= -1.1337e+00
+norm of the out-of-balance force:   1.0115e-05 with g= -9.6345e-06
++
+Last converged state stored at lam=0.7876478588316225
+norm of the out-of-balance force:   4.9724e+04 with g=  2.0696e+04
+norm of the out-of-balance force:   2.1897e+04 with g= -2.1891e+04
+norm of the out-of-balance force:   6.3454e+03 with g= -6.3454e+03
+norm of the out-of-balance force:   1.1488e+02 with g= -1.0849e+02
+norm of the out-of-balance force:   3.5700e-02 with g= -3.3758e-02
+norm of the out-of-balance force:   1.2451e-07 with g= -1.0868e-07
++
+Last converged state stored at lam=0.8582211678855406
+norm of the out-of-balance force:   5.8126e+04 with g=  3.7905e+03
+norm of the out-of-balance force:   2.1377e+03 with g= -2.1375e+03
+norm of the out-of-balance force:   1.8609e+02 with g= -1.8609e+02
+norm of the out-of-balance force:   1.0489e-01 with g= -9.8989e-02
+norm of the out-of-balance force:   5.5873e-08 with g= -2.8076e-08
++
+Last converged state stored at lam=0.894744463635534
+norm of the out-of-balance force:   6.0363e+04 with g=  1.0152e+03
+norm of the out-of-balance force:   5.6786e+02 with g= -5.6741e+02
+norm of the out-of-balance force:   1.2622e+01 with g= -1.2621e+01
+norm of the out-of-balance force:   4.8446e-04 with g= -4.5715e-04
+norm of the out-of-balance force:   3.5990e-08 with g= -1.0914e-11
++
+Last converged state stored at lam=0.9171595588454392
+norm of the out-of-balance force:   6.0976e+04 with g=  3.8238e+02
+norm of the out-of-balance force:   2.5692e+02 with g= -2.5596e+02
+norm of the out-of-balance force:   2.0406e+00 with g= -2.0405e+00
+norm of the out-of-balance force:   1.2704e-05 with g= -1.1993e-05
++
+Last converged state stored at lam=0.9325833500342592
+norm of the out-of-balance force:   6.1208e+04 with g=  1.8105e+02
+norm of the out-of-balance force:   1.5454e+02 with g= -1.5294e+02
+norm of the out-of-balance force:   6.0771e-01 with g= -6.0763e-01
+norm of the out-of-balance force:   1.1317e-06 with g= -1.0686e-06
++
+Last converged state stored at lam=0.9441053338225353
+norm of the out-of-balance force:   6.1318e+04 with g=  1.0104e+02
+norm of the out-of-balance force:   1.1112e+02 with g= -1.0887e+02
+norm of the out-of-balance force:   2.7131e-01 with g= -2.7126e-01
+norm of the out-of-balance force:   2.3420e-07 with g= -2.1400e-07
++
+Last converged state stored at lam=0.9532736531530897
+norm of the out-of-balance force:   6.1380e+04 with g=  6.3973e+01
+norm of the out-of-balance force:   8.9769e+01 with g= -8.6957e+01
+norm of the out-of-balance force:   1.5665e-01 with g= -1.5661e-01
+norm of the out-of-balance force:   8.4442e-08 with g= -7.1654e-08
++
+Last converged state stored at lam=0.9609482768676206
+norm of the out-of-balance force:   6.1419e+04 with g=  4.4826e+01
+norm of the out-of-balance force:   7.8195e+01 with g= -7.4943e+01
+norm of the out-of-balance force:   1.0626e-01 with g= -1.0622e-01
+norm of the out-of-balance force:   6.3776e-08 with g= -3.3053e-08
++
+Last converged state stored at lam=0.9676450747420472
+norm of the out-of-balance force:   6.1446e+04 with g=  3.4131e+01
+norm of the out-of-balance force:   7.1504e+01 with g= -6.7928e+01
+norm of the out-of-balance force:   7.9850e-02 with g= -7.9819e-02
+norm of the out-of-balance force:   6.4528e-08 with g= -1.8732e-08
++
+Last converged state stored at lam=0.9736925116512792
+norm of the out-of-balance force:   6.1467e+04 with g=  2.7833e+01
+norm of the out-of-balance force:   6.7488e+01 with g= -6.3683e+01
+norm of the out-of-balance force:   6.4196e-02 with g= -6.4164e-02
+norm of the out-of-balance force:   4.7000e-08 with g= -1.2133e-08
++
+Last converged state stored at lam=0.9793099729067152
+norm of the out-of-balance force:   6.1484e+04 with g=  2.4016e+01
+norm of the out-of-balance force:   6.5055e+01 with g= -6.1097e+01
+norm of the out-of-balance force:   5.4067e-02 with g= -5.4034e-02
+norm of the out-of-balance force:   5.3286e-08 with g= -8.6911e-09
++
+Last converged state stored at lam=0.9846498954569786
+norm of the out-of-balance force:   6.1498e+04 with g=  2.1701e+01
+norm of the out-of-balance force:   6.3628e+01 with g= -5.9573e+01
+norm of the out-of-balance force:   4.7092e-02 with g= -4.7057e-02
+norm of the out-of-balance force:   3.3776e-08 with g= -6.5702e-09
++
+Last converged state stored at lam=0.989821812458485
+norm of the out-of-balance force:   6.1511e+04 with g=  2.0357e+01
+norm of the out-of-balance force:   6.2879e+01 with g= -5.8772e+01
+norm of the out-of-balance force:   4.2071e-02 with g= -4.2033e-02
+norm of the out-of-balance force:   4.4141e-08 with g= -5.2733e-09
++
+Last converged state stored at lam=0.9949067620146367
+norm of the out-of-balance force:   6.1523e+04 with g=  1.9678e+01
+norm of the out-of-balance force:   6.2617e+01 with g= -5.8492e+01
+norm of the out-of-balance force:   3.8345e-02 with g= -3.8302e-02
+norm of the out-of-balance force:   5.1515e-08 with g= -4.4092e-09
++
+Last converged state stored at lam=0.9999662825781815
+norm of the out-of-balance force:   6.1534e+04 with g=  1.9482e+01
+norm of the out-of-balance force:   6.2725e+01 with g= -5.8608e+01
+norm of the out-of-balance force:   3.5524e-02 with g= -3.5475e-02
+norm of the out-of-balance force:   5.2932e-08 with g= -3.8672e-09
++
+Last converged state stored at lam=1.0050482281891246
+norm of the out-of-balance force:   6.1545e+04 with g=  1.9655e+01
+norm of the out-of-balance force:   6.3129e+01 with g= -5.9040e+01
+norm of the out-of-balance force:   3.3366e-02 with g= -3.3310e-02
+norm of the out-of-balance force:   3.6135e-08 with g= -3.3924e-09
++
+Last converged state stored at lam=1.0101906427952159
+norm of the out-of-balance force:   6.1556e+04 with g=  2.0126e+01
+norm of the out-of-balance force:   6.3781e+01 with g= -5.9738e+01
+norm of the out-of-balance force:   3.1715e-02 with g= -3.1650e-02
+norm of the out-of-balance force:   4.2916e-08 with g= -3.1014e-09
++
+Last converged state stored at lam=1.0154244102899632
+norm of the out-of-balance force:   6.1566e+04 with g=  2.0847e+01
+norm of the out-of-balance force:   6.4651e+01 with g= -6.0668e+01
+norm of the out-of-balance force:   3.0466e-02 with g= -3.0389e-02
+norm of the out-of-balance force:   3.9090e-08 with g= -2.9686e-09
++
+Last converged state stored at lam=1.0207751097708824
+norm of the out-of-balance force:   6.1577e+04 with g=  2.1789e+01
+norm of the out-of-balance force:   6.5720e+01 with g= -6.1807e+01
+norm of the out-of-balance force:   2.9545e-02 with g= -2.9455e-02
+norm of the out-of-balance force:   6.1422e-08 with g= -2.6776e-09
++
+Last converged state stored at lam=1.0262643416213038
+norm of the out-of-balance force:   6.1587e+04 with g=  2.2932e+01
+norm of the out-of-balance force:   6.6975e+01 with g= -6.3142e+01
+norm of the out-of-balance force:   2.8903e-02 with g= -2.8796e-02
+norm of the out-of-balance force:   5.0625e-08 with g= -2.6048e-09
++
+Last converged state stored at lam=1.0319106932715572
+norm of the out-of-balance force:   6.1597e+04 with g=  2.4264e+01
+norm of the out-of-balance force:   6.8411e+01 with g= -6.4665e+01
+norm of the out-of-balance force:   2.8504e-02 with g= -2.8376e-02
+norm of the out-of-balance force:   5.7709e-08 with g= -2.4884e-09
++
+Last converged state stored at lam=1.0377304546652368
+norm of the out-of-balance force:   6.1606e+04 with g=  2.5777e+01
+norm of the out-of-balance force:   7.0023e+01 with g= -6.6371e+01
+norm of the out-of-balance force:   2.8325e-02 with g= -2.8171e-02
+norm of the out-of-balance force:   5.1803e-08 with g= -2.5084e-09
++
+Last converged state stored at lam=1.0437381567232122
+norm of the out-of-balance force:   6.1615e+04 with g=  2.7468e+01
+norm of the out-of-balance force:   7.1813e+01 with g= -6.8259e+01
+norm of the out-of-balance force:   2.8350e-02 with g= -2.8165e-02
+norm of the out-of-balance force:   4.0309e-08 with g= -2.5739e-09
++
+Last converged state stored at lam=1.0499469826103456
+norm of the out-of-balance force:   6.1624e+04 with g=  2.9338e+01
+norm of the out-of-balance force:   7.3783e+01 with g= -7.0332e+01
+norm of the out-of-balance force:   2.8568e-02 with g= -2.8346e-02
+norm of the out-of-balance force:   4.3498e-08 with g= -2.5066e-09
++
+Last converged state stored at lam=1.0563690862662602
+norm of the out-of-balance force:   6.1633e+04 with g=  3.1389e+01
+norm of the out-of-balance force:   7.5938e+01 with g= -7.2592e+01
+norm of the out-of-balance force:   2.8975e-02 with g= -2.8709e-02
+norm of the out-of-balance force:   5.5894e-08 with g= -2.5793e-09
++
+Last converged state stored at lam=1.0630158424409784
+norm of the out-of-balance force:   6.1641e+04 with g=  3.3623e+01
+norm of the out-of-balance force:   7.8283e+01 with g= -7.5045e+01
+norm of the out-of-balance force:   2.9572e-02 with g= -2.9252e-02
+norm of the out-of-balance force:   4.9535e-08 with g= -2.6303e-09
++
+Last converged state stored at lam=1.0698980455464868
+norm of the out-of-balance force:   6.1649e+04 with g=  3.6047e+01
+norm of the out-of-balance force:   8.0826e+01 with g= -7.7698e+01
+norm of the out-of-balance force:   3.0362e-02 with g= -2.9979e-02
+norm of the out-of-balance force:   6.1275e-08 with g= -2.8012e-09
++
+Last converged state stored at lam=1.0770260698602345
+norm of the out-of-balance force:   6.1655e+04 with g=  3.8668e+01
+norm of the out-of-balance force:   8.3575e+01 with g= -8.0558e+01
+norm of the out-of-balance force:   3.1352e-02 with g= -3.0895e-02
+norm of the out-of-balance force:   5.3222e-08 with g= -3.0177e-09
++
+Last converged state stored at lam=1.0844100002764896
+norm of the out-of-balance force:   6.1661e+04 with g=  4.1495e+01
+norm of the out-of-balance force:   8.6542e+01 with g= -8.3636e+01
+norm of the out-of-balance force:   3.2554e-02 with g= -3.2008e-02
+norm of the out-of-balance force:   5.9194e-08 with g= -3.1378e-09
++
+Last converged state stored at lam=1.0920597404332937
+norm of the out-of-balance force:   6.1667e+04 with g=  4.4536e+01
+norm of the out-of-balance force:   8.9737e+01 with g= -8.6942e+01
+norm of the out-of-balance force:   3.3980e-02 with g= -3.3332e-02
+norm of the out-of-balance force:   7.3064e-08 with g= -3.4161e-09
++
+Last converged state stored at lam=1.0999851033420838
+norm of the out-of-balance force:   6.1671e+04 with g=  4.7803e+01
+norm of the out-of-balance force:   9.3173e+01 with g= -9.0489e+01
+norm of the out-of-balance force:   3.5648e-02 with g= -3.4880e-02
+norm of the out-of-balance force:   4.3913e-08 with g= -3.7853e-09
++
+Last converged state stored at lam=1.1081958884114467
+norm of the out-of-balance force:   6.1674e+04 with g=  5.1308e+01
+norm of the out-of-balance force:   9.6864e+01 with g= -9.4290e+01
+norm of the out-of-balance force:   3.7580e-02 with g= -3.6673e-02
+norm of the out-of-balance force:   6.1861e-08 with g= -4.1164e-09
++
+Last converged state stored at lam=1.1167019478489046
+norm of the out-of-balance force:   6.1676e+04 with g=  5.5065e+01
+norm of the out-of-balance force:   1.0082e+02 with g= -9.8359e+01
+norm of the out-of-balance force:   3.9799e-02 with g= -3.8732e-02
+norm of the out-of-balance force:   6.6273e-08 with g= -4.6166e-09
++
+Last converged state stored at lam=1.1255132447515361
+norm of the out-of-balance force:   6.1676e+04 with g=  5.9088e+01
+norm of the out-of-balance force:   1.0507e+02 with g= -1.0271e+02
+norm of the out-of-balance force:   4.2335e-02 with g= -4.1084e-02
+norm of the out-of-balance force:   5.6443e-08 with g= -5.3187e-09
++
+Last converged state stored at lam=1.134639904691934
+norm of the out-of-balance force:   6.1675e+04 with g=  6.3393e+01
+norm of the out-of-balance force:   1.0962e+02 with g= -1.0737e+02
+norm of the out-of-balance force:   4.5221e-02 with g= -4.3758e-02
+norm of the out-of-balance force:   6.0871e-08 with g= -5.8390e-09
++
+Last converged state stored at lam=1.1440922622254608
+norm of the out-of-balance force:   6.1672e+04 with g=  6.7998e+01
+norm of the out-of-balance force:   1.1450e+02 with g= -1.1235e+02
+norm of the out-of-balance force:   4.8497e-02 with g= -4.6791e-02
+norm of the out-of-balance force:   4.3899e-08 with g= -6.7212e-09
++
+Last converged state stored at lam=1.1538809034548003
+norm of the out-of-balance force:   6.1668e+04 with g=  7.2923e+01
+norm of the out-of-balance force:   1.1972e+02 with g= -1.1767e+02
+norm of the out-of-balance force:   5.2205e-02 with g= -5.0224e-02
+norm of the out-of-balance force:   8.3037e-08 with g= -7.7507e-09
++
+Last converged state stored at lam=1.1640167055656196
+norm of the out-of-balance force:   6.1661e+04 with g=  7.8187e+01
+norm of the out-of-balance force:   1.2531e+02 with g= -1.2336e+02
+norm of the out-of-balance force:   5.6397e-02 with g= -5.4102e-02
+norm of the out-of-balance force:   9.5704e-08 with g= -8.8003e-09
++
+Last converged state stored at lam=1.1745108740755619
+norm of the out-of-balance force:   6.1652e+04 with g=  8.3814e+01
+norm of the out-of-balance force:   1.3129e+02 with g= -1.2944e+02
+norm of the out-of-balance force:   6.1130e-02 with g= -5.8479e-02
+norm of the out-of-balance force:   7.1675e-08 with g= -1.0174e-08
++
+Last converged state stored at lam=1.1853749784055956
+norm of the out-of-balance force:   6.1641e+04 with g=  8.9827e+01
+norm of the out-of-balance force:   1.3769e+02 with g= -1.3593e+02
+norm of the out-of-balance force:   6.6472e-02 with g= -6.3418e-02
+norm of the out-of-balance force:   5.7084e-08 with g= -1.2074e-08
++
+Last converged state stored at lam=1.1966209862786747
+norm of the out-of-balance force:   6.1627e+04 with g=  9.6253e+01
+norm of the out-of-balance force:   1.4454e+02 with g= -1.4287e+02
+norm of the out-of-balance force:   7.2497e-02 with g= -6.8988e-02
+norm of the out-of-balance force:   7.4154e-08 with g= -1.4275e-08
++
+Last converged state stored at lam=1.2082612973691225
+norm of the out-of-balance force:   6.1611e+04 with g=  1.0312e+02
+norm of the out-of-balance force:   1.5187e+02 with g= -1.5029e+02
+norm of the out-of-balance force:   7.9293e-02 with g= -7.5270e-02
+norm of the out-of-balance force:   7.1857e-08 with g= -1.6822e-08
++
+Last converged state stored at lam=1.220308776561807
+norm of the out-of-balance force:   6.1591e+04 with g=  1.1046e+02
+norm of the out-of-balance force:   1.5972e+02 with g= -1.5822e+02
+norm of the out-of-balance force:   8.6958e-02 with g= -8.2356e-02
+norm of the out-of-balance force:   9.1316e-08 with g= -2.0163e-08
++
+Last converged state stored at lam=1.2327767871294764
+norm of the out-of-balance force:   6.1569e+04 with g=  1.1831e+02
+norm of the out-of-balance force:   1.6812e+02 with g= -1.6670e+02
+norm of the out-of-balance force:   9.5605e-02 with g= -9.0351e-02
+norm of the out-of-balance force:   4.9273e-08 with g= -2.4100e-08
++
+Last converged state stored at lam=1.2456792240963193
+norm of the out-of-balance force:   6.1543e+04 with g=  1.2670e+02
+norm of the out-of-balance force:   1.7710e+02 with g= -1.7577e+02
+norm of the out-of-balance force:   1.0536e-01 with g= -9.9378e-02
+norm of the out-of-balance force:   7.7457e-08 with g= -2.9169e-08
++
+Last converged state stored at lam=1.2590305480238815
+norm of the out-of-balance force:   6.1513e+04 with g=  1.3566e+02
+norm of the out-of-balance force:   1.8672e+02 with g= -1.8546e+02
+norm of the out-of-balance force:   1.1638e-01 with g= -1.0957e-01
+norm of the out-of-balance force:   8.0309e-08 with g= -3.5339e-08
++
+Last converged state stored at lam=1.2728458194301189
+norm of the out-of-balance force:   6.1479e+04 with g=  1.4526e+02
+norm of the out-of-balance force:   1.9703e+02 with g= -1.9584e+02
+norm of the out-of-balance force:   1.2883e-01 with g= -1.2110e-01
+norm of the out-of-balance force:   8.8923e-08 with g= -4.3072e-08
++
+Last converged state stored at lam=1.2871407340321557
+norm of the out-of-balance force:   6.1442e+04 with g=  1.5552e+02
+norm of the out-of-balance force:   2.0806e+02 with g= -2.0694e+02
+norm of the out-of-balance force:   1.4290e-01 with g= -1.3414e-01
+norm of the out-of-balance force:   8.2883e-08 with g= -5.2656e-08
++
+Last converged state stored at lam=1.3019316589872116
+norm of the out-of-balance force:   6.1400e+04 with g=  1.6650e+02
+norm of the out-of-balance force:   2.1989e+02 with g= -2.1883e+02
+norm of the out-of-balance force:   1.5882e-01 with g= -1.4889e-01
+norm of the out-of-balance force:   9.2326e-08 with g= -6.4625e-08
++
+Last converged state stored at lam=1.3172356702934478
+norm of the out-of-balance force:   6.1353e+04 with g=  1.7825e+02
+norm of the out-of-balance force:   2.3255e+02 with g= -2.3157e+02
+norm of the out-of-balance force:   1.7683e-01 with g= -1.6562e-01
+norm of the out-of-balance force:   1.1387e-07 with g= -7.9965e-08
++
+Last converged state stored at lam=1.3330705915021714
+norm of the out-of-balance force:   6.1302e+04 with g=  1.9083e+02
+norm of the out-of-balance force:   2.4614e+02 with g= -2.4521e+02
+norm of the out-of-balance force:   1.9725e-01 with g= -1.8458e-01
+norm of the out-of-balance force:   1.2813e-07 with g= -9.9109e-08
++
+Last converged state stored at lam=1.3494550338847429
+norm of the out-of-balance force:   6.1245e+04 with g=  2.0431e+02
+norm of the out-of-balance force:   2.6070e+02 with g= -2.5983e+02
+norm of the out-of-balance force:   2.2040e-01 with g= -2.0610e-01
+norm of the out-of-balance force:   1.4224e-07 with g= -1.2315e-07
++
+Last converged state stored at lam=1.3664084381908321
+norm of the out-of-balance force:   6.1183e+04 with g=  2.1874e+02
+norm of the out-of-balance force:   2.7632e+02 with g= -2.7551e+02
+norm of the out-of-balance force:   2.4668e-01 with g= -2.3056e-01
+norm of the out-of-balance force:   1.7935e-07 with g= -1.5396e-07
++
+Last converged state stored at lam=1.383951118129262
+norm of the out-of-balance force:   6.1115e+04 with g=  2.3421e+02
+norm of the out-of-balance force:   2.9309e+02 with g= -2.9233e+02
+norm of the out-of-balance force:   2.7654e-01 with g= -2.5838e-01
+norm of the out-of-balance force:   2.0838e-07 with g= -1.9299e-07
++
+Last converged state stored at lam=1.4021043056979414
+norm of the out-of-balance force:   6.1041e+04 with g=  2.5080e+02
+norm of the out-of-balance force:   3.1108e+02 with g= -3.1038e+02
+norm of the out-of-balance force:   3.1049e-01 with g= -2.9004e-01
+norm of the out-of-balance force:   2.6216e-07 with g= -2.4299e-07
++
+Last converged state stored at lam=1.420890198485382
+norm of the out-of-balance force:   6.0960e+04 with g=  2.6858e+02
+norm of the out-of-balance force:   3.3041e+02 with g= -3.2975e+02
+norm of the out-of-balance force:   3.4914e-01 with g= -3.2613e-01
+norm of the out-of-balance force:   3.3046e-07 with g= -3.0689e-07
++
+Last converged state stored at lam=1.4403320090621898
+norm of the out-of-balance force:   6.0873e+04 with g=  2.8767e+02
+norm of the out-of-balance force:   3.5118e+02 with g= -3.5056e+02
+norm of the out-of-balance force:   3.9318e-01 with g= -3.6730e-01
+norm of the out-of-balance force:   4.0910e-07 with g= -3.8886e-07
++
+Last converged state stored at lam=1.4604540165771263
+norm of the out-of-balance force:   6.0779e+04 with g=  3.0815e+02
+norm of the out-of-balance force:   3.7350e+02 with g= -3.7293e+02
+norm of the out-of-balance force:   4.4341e-01 with g= -4.1432e-01
+norm of the out-of-balance force:   5.1886e-07 with g= -4.9434e-07
++
+Last converged state stored at lam=1.4812816206678638
+norm of the out-of-balance force:   6.0677e+04 with g=  3.3014e+02
+norm of the out-of-balance force:   3.9750e+02 with g= -3.9697e+02
+norm of the out-of-balance force:   5.0077e-01 with g= -4.6808e-01
+norm of the out-of-balance force:   6.6100e-07 with g= -6.3058e-07
++
+Last converged state stored at lam=1.5028413977917265
+norm of the out-of-balance force:   6.0568e+04 with g=  3.5376e+02
+norm of the out-of-balance force:   4.2333e+02 with g= -4.2283e+02
+norm of the out-of-balance force:   5.6633e-01 with g= -5.2960e-01
+norm of the out-of-balance force:   8.4809e-07 with g= -8.0673e-07
++
+Last converged state stored at lam=1.5251611600759198
+norm of the out-of-balance force:   6.0450e+04 with g=  3.7914e+02
+norm of the out-of-balance force:   4.5112e+02 with g= -4.5066e+02
+norm of the out-of-balance force:   6.4134e-01 with g= -6.0009e-01
+norm of the out-of-balance force:   1.0867e-06 with g= -1.0351e-06
++
+Last converged state stored at lam=1.5482700167796348
+norm of the out-of-balance force:   6.0324e+04 with g=  4.0642e+02
+norm of the out-of-balance force:   4.8105e+02 with g= -4.8063e+02
+norm of the out-of-balance force:   7.2728e-01 with g= -6.8094e-01
+norm of the out-of-balance force:   1.3887e-06 with g= -1.3321e-06
++
+Last converged state stored at lam=1.5721984384519285
+norm of the out-of-balance force:   6.0189e+04 with g=  4.3576e+02
+norm of the out-of-balance force:   5.1330e+02 with g= -5.1290e+02
+norm of the out-of-balance force:   8.2583e-01 with g= -7.7379e-01
+norm of the out-of-balance force:   1.8063e-06 with g= -1.7196e-06
++
+Last converged state stored at lam=1.5969783238588102
+norm of the out-of-balance force:   6.0045e+04 with g=  4.6732e+02
+norm of the out-of-balance force:   5.4806e+02 with g= -5.4769e+02
+norm of the out-of-balance force:   9.3897e-01 with g= -8.8051e-01
+norm of the out-of-balance force:   2.3334e-06 with g= -2.2257e-06
++
+Last converged state stored at lam=1.6226430697401069
+norm of the out-of-balance force:   5.9891e+04 with g=  5.0129e+02
+norm of the out-of-balance force:   5.8554e+02 with g= -5.8521e+02
+norm of the out-of-balance force:   1.0690e+00 with g= -1.0033e+00
+norm of the out-of-balance force:   3.0364e-06 with g= -2.8890e-06
++
+Last converged state stored at lam=1.6492276434411457
+norm of the out-of-balance force:   5.9727e+04 with g=  5.3787e+02
+norm of the out-of-balance force:   6.2599e+02 with g= -6.2568e+02
+norm of the out-of-balance force:   1.2186e+00 with g= -1.1449e+00
+norm of the out-of-balance force:   3.9465e-06 with g= -3.7603e-06
++
+Last converged state stored at lam=1.676768658445449
+norm of the out-of-balance force:   5.9553e+04 with g=  5.7727e+02
+norm of the out-of-balance force:   6.6966e+02 with g= -6.6937e+02
+norm of the out-of-balance force:   1.3910e+00 with g= -1.3081e+00
+norm of the out-of-balance force:   5.1580e-06 with g= -4.9079e-06
++
+Last converged state stored at lam=1.7053044528118269
+norm of the out-of-balance force:   5.9368e+04 with g=  6.1972e+02
+norm of the out-of-balance force:   7.1682e+02 with g= -7.1656e+02
+norm of the out-of-balance force:   1.5897e+00 with g= -1.4966e+00
+norm of the out-of-balance force:   6.7481e-06 with g= -6.4226e-06
++
+Last converged state stored at lam=1.734875170492125
+norm of the out-of-balance force:   5.9171e+04 with g=  6.6549e+02
+norm of the out-of-balance force:   7.6779e+02 with g= -7.6755e+02
+norm of the out-of-balance force:   1.8192e+00 with g= -1.7144e+00
+norm of the out-of-balance force:   8.8510e-06 with g= -8.4271e-06
++
+Last converged state stored at lam=1.7655228454734049
+norm of the out-of-balance force:   5.8964e+04 with g=  7.1485e+02
+norm of the out-of-balance force:   8.2290e+02 with g= -8.2268e+02
+norm of the out-of-balance force:   2.0844e+00 with g= -1.9666e+00
+norm of the out-of-balance force:   1.1654e-05 with g= -1.1086e-05
++
+Last converged state stored at lam=1.7972914886498819
+norm of the out-of-balance force:   5.8744e+04 with g=  7.6810e+02
+norm of the out-of-balance force:   8.8253e+02 with g= -8.8233e+02
+norm of the out-of-balance force:   2.3913e+00 with g= -2.2587e+00
+norm of the out-of-balance force:   1.5374e-05 with g= -1.4623e-05
++
+Last converged state stored at lam=1.8302271772847183
+norm of the out-of-balance force:   5.8512e+04 with g=  8.2557e+02
+norm of the out-of-balance force:   9.4707e+02 with g= -9.4688e+02
+norm of the out-of-balance force:   2.7469e+00 with g= -2.5976e+00
+norm of the out-of-balance force:   2.0324e-05 with g= -1.9337e-05
++
+Last converged state stored at lam=1.8643781468686185
+norm of the out-of-balance force:   5.8267e+04 with g=  8.8761e+02
+norm of the out-of-balance force:   1.0170e+03 with g= -1.0168e+03
+norm of the out-of-balance force:   3.1592e+00 with g= -2.9911e+00
+norm of the out-of-balance force:   2.6938e-05 with g= -2.5637e-05
++
+Last converged state stored at lam=1.8997948851201094
+norm of the out-of-balance force:   5.8009e+04 with g=  9.5463e+02
+norm of the out-of-balance force:   1.0927e+03 with g= -1.0926e+03
+norm of the out-of-balance force:   3.6379e+00 with g= -3.4485e+00
+norm of the out-of-balance force:   3.5806e-05 with g= -3.4074e-05
++
+Last converged state stored at lam=1.9365302278005072
+norm of the out-of-balance force:   5.7738e+04 with g=  1.0270e+03
+norm of the out-of-balance force:   1.1748e+03 with g= -1.1747e+03
+norm of the out-of-balance force:   4.1944e+00 with g= -3.9807e+00
+norm of the out-of-balance force:   4.7685e-05 with g= -4.5400e-05
++
+Last converged state stored at lam=1.9746394559331886
+norm of the out-of-balance force:   5.7453e+04 with g=  1.1053e+03
+norm of the out-of-balance force:   1.2639e+03 with g= -1.2638e+03
+norm of the out-of-balance force:   4.8419e+00 with g= -4.6008e+00
+norm of the out-of-balance force:   6.3705e-05 with g= -6.0642e-05
++
+Reached the target load level after 78 steps
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.030 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-trusses-plot-truss09-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/fd30129719e62f5ca72bea0753f8ea6b/plot_truss09.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_truss09.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/8374c9d9ae4784e043e0ea6a4e998dff/plot_truss09.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_truss09.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="plot_truss08.html" class="btn btn-neutral float-left" title="Post-buckling of a truss column using displacement Control." accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../frames/index.html" class="btn btn-neutral float-right" title="Frame Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on May 10, 2023.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

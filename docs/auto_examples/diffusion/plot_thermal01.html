@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heat transfer at the corner of a building &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Plate Examples" href="../plates/index.html" />
+    <link rel="prev" title="Diffusion Examples" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#diffusion-examples">Diffusion Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#mixed-structures-examples">Mixed Structures Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Diffusion Examples</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Heat transfer at the corner of a building</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../plates/index.html">Plate Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">Tutorials Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Example Gallery</a> &raquo;</li>
+          <li><a href="index.html">Diffusion Examples</a> &raquo;</li>
+      <li>Heat transfer at the corner of a building</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/auto_examples/diffusion/plot_thermal01.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-diffusion-plot-thermal01-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code</p>
+</div>
+<section class="sphx-glr-example-title" id="heat-transfer-at-the-corner-of-a-building">
+<span id="sphx-glr-auto-examples-diffusion-plot-thermal01-py"></span><h1>Heat transfer at the corner of a building<a class="headerlink" href="#heat-transfer-at-the-corner-of-a-building" title="Permalink to this heading"></a></h1>
+<p>Using</p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">mesher.PatchMesher</span></code> (see <span class="xref std std-ref">PatchMesher class</span>)</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">diffusion.Triangle</span></code> (see <span class="xref std std-ref">Triangle class</span>)</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">materials.Thermal</span></code> (see <span class="xref std std-ref">Diffusion Material classes</span>)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">femedu.examples.Example</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.mesher</span> <span class="kn">import</span> <span class="n">PatchMesher</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.diffusion.Triangle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.materials.Thermal</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="k">class</span> <span class="nc">ExampleThermal01</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># ========== setting mesh parameters ==============</span>
+
+        <span class="n">Nx</span> <span class="o">=</span> <span class="mi">10</span>       <span class="c1"># number of elements through the wall</span>
+        <span class="n">Ny</span> <span class="o">=</span> <span class="mi">8</span>        <span class="c1"># number of elements parallel to the wall</span>
+        <span class="n">Nx</span> <span class="o">=</span> <span class="mi">1</span>       <span class="c1"># number of elements through the wall</span>
+        <span class="n">Ny</span> <span class="o">=</span> <span class="mi">1</span>        <span class="c1"># number of elements parallel to the wall</span>
+        <span class="n">L</span>  <span class="o">=</span> <span class="mf">0.30</span>     <span class="c1"># wall thickness in m</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span>   <span class="c1"># refinement parameter for placing nodes 8-11</span>
+
+        <span class="c1"># ========== setting material parameters ==============</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">E</span>  <span class="o">=</span> <span class="mf">20000.</span><span class="p">,</span>    <span class="c1"># Young&#39;s modulus</span>
+            <span class="n">nu</span> <span class="o">=</span> <span class="mf">0.250</span><span class="p">,</span>     <span class="c1"># Poisson&#39;s ratio</span>
+            <span class="n">t</span>  <span class="o">=</span> <span class="mf">1.00</span>       <span class="c1"># thickness of the plate</span>
+        <span class="p">)</span>
+
+        <span class="c1"># ========== setting load parameters ==============</span>
+
+        <span class="n">qn</span>  <span class="o">=</span> <span class="mf">10.0</span>         <span class="c1"># uniform flux normal to x=const</span>
+
+        <span class="c1"># ========== setting analysis parameters ==============</span>
+
+        <span class="n">target_load_level</span> <span class="o">=</span> <span class="mf">1.00</span>     <span class="c1"># reference load</span>
+        <span class="n">max_steps</span> <span class="o">=</span> <span class="mi">2</span>                <span class="c1"># number of load steps: 2 -&gt; [0.0, 1.0]</span>
+
+        <span class="c1"># define a list of target load levels</span>
+        <span class="n">load_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">target_load_level</span><span class="p">,</span> <span class="n">max_steps</span><span class="p">)</span>
+
+        <span class="c1">#</span>
+        <span class="c1"># ==== Build the system model ====</span>
+        <span class="c1">#</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+
+        <span class="c1"># create nodes</span>
+
+        <span class="c1">#  5 -------- 6 -------- 7</span>
+        <span class="c1">#  |          |          |</span>
+        <span class="c1">#  |         11          |</span>
+        <span class="c1">#  |          |          |</span>
+        <span class="c1">#  2----9---- 3 ---10--- 4</span>
+        <span class="c1">#             |          |</span>
+        <span class="c1">#             8          |</span>
+        <span class="c1">#             |          |</span>
+        <span class="c1">#             0 -------- 1</span>
+
+        <span class="n">pts</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">L</span><span class="p">),</span>   <span class="c1"># 0</span>
+            <span class="p">(</span> <span class="n">L</span><span class="p">,</span> <span class="o">-</span><span class="n">L</span><span class="p">),</span>   <span class="c1"># 1</span>
+            <span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span>  <span class="mi">0</span><span class="p">),</span>   <span class="c1"># 2</span>
+            <span class="p">(</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">),</span>   <span class="c1"># 3</span>
+            <span class="p">(</span> <span class="n">L</span><span class="p">,</span>  <span class="mi">0</span><span class="p">),</span>   <span class="c1"># 4</span>
+            <span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span>  <span class="n">L</span><span class="p">),</span>   <span class="c1"># 5</span>
+            <span class="p">(</span> <span class="mi">0</span><span class="p">,</span>  <span class="n">L</span><span class="p">),</span>   <span class="c1"># 6</span>
+            <span class="p">(</span> <span class="n">L</span><span class="p">,</span>  <span class="n">L</span><span class="p">),</span>   <span class="c1"># 7</span>
+            <span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="n">L</span><span class="p">),</span>   <span class="c1"># 8</span>
+            <span class="p">(</span> <span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>   <span class="c1"># 9</span>
+            <span class="p">(</span>  <span class="n">alpha</span><span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>   <span class="c1"># 10</span>
+            <span class="p">(</span> <span class="mi">0</span><span class="p">,</span>  <span class="n">alpha</span><span class="o">*</span><span class="n">L</span><span class="p">),</span>   <span class="c1"># 11</span>
+        <span class="p">)</span>
+
+        <span class="n">mesher1</span> <span class="o">=</span> <span class="n">PatchMesher</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="mi">11</span><span class="p">])</span>
+        <span class="n">nodes1</span><span class="p">,</span> <span class="n">elements1</span> <span class="o">=</span> <span class="n">mesher1</span><span class="o">.</span><span class="n">triangleMesh</span><span class="p">(</span><span class="n">Ny</span><span class="p">,</span> <span class="n">Nx</span><span class="p">,</span> <span class="n">Triangle</span><span class="p">,</span> <span class="n">Thermal</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="n">mesher2</span> <span class="o">=</span> <span class="n">PatchMesher</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="mi">9</span><span class="p">])</span>                                               <span class="c1"># center node</span>
+        <span class="n">nodes2</span><span class="p">,</span> <span class="n">elements2</span> <span class="o">=</span> <span class="n">mesher2</span><span class="o">.</span><span class="n">triangleMesh</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Nx</span><span class="p">,</span> <span class="n">Triangle</span><span class="p">,</span> <span class="n">Thermal</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="n">mesher3</span> <span class="o">=</span> <span class="n">PatchMesher</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="mi">8</span><span class="p">])</span>
+        <span class="n">nodes3</span><span class="p">,</span> <span class="n">elements3</span> <span class="o">=</span> <span class="n">mesher3</span><span class="o">.</span><span class="n">triangleMesh</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Ny</span><span class="p">,</span> <span class="n">Triangle</span><span class="p">,</span> <span class="n">Thermal</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="n">mesher1</span><span class="o">.</span><span class="n">tie</span><span class="p">(</span><span class="n">mesher2</span><span class="p">)</span>
+        <span class="n">mesher2</span><span class="o">.</span><span class="n">tie</span><span class="p">(</span><span class="n">mesher3</span><span class="p">)</span>
+
+        <span class="n">nodes</span>    <span class="o">=</span> <span class="n">nodes1</span>    <span class="o">+</span> <span class="n">nodes2</span>    <span class="o">+</span> <span class="n">nodes3</span>
+        <span class="n">elements</span> <span class="o">=</span> <span class="n">elements1</span> <span class="o">+</span> <span class="n">elements2</span> <span class="o">+</span> <span class="n">elements3</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                   <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Meshing the corner ina wall&#39;</span><span class="p">,</span>
+                   <span class="n">show_reactions</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">show_loads</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+
+        <span class="c1"># define support(s)</span>
+
+        <span class="c1">## find nodes at y==0 and x==0</span>
+
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mf">0.0</span><span class="p">)</span> <span class="ow">and</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">:</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>    <span class="c1"># horizontal support left side</span>
+            <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mf">0.0</span><span class="p">)</span> <span class="ow">and</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">:</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>    <span class="c1"># vertical support at y==0</span>
+
+        <span class="c1"># ==== complete the reference load ====</span>
+
+        <span class="n">Xo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">L</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+        <span class="n">No</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">L</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">elements</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">elem</span><span class="o">.</span><span class="n">faces</span><span class="p">:</span>
+                        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">area</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">face</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">area</span><span class="p">):</span>
+                            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">Xo</span><span class="p">)</span> <span class="o">@</span> <span class="n">No</span> <span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1.0e-2</span> <span class="ow">and</span>  <span class="n">No</span> <span class="o">@</span> <span class="n">area</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">area</span><span class="p">):</span>
+                                <span class="n">face</span><span class="o">.</span><span class="n">setLoad</span><span class="p">(</span><span class="n">qn</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;undeformed system&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;thermal01_undeformed.png&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_loads</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">10.0</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;thermal01_deformed.png&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_loads</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_reactions</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ex</span> <span class="o">=</span> <span class="n">ExampleThermal01</span><span class="p">()</span>
+    <span class="n">ex</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;/Users/pmackenz/Development/Educational/FEM.edu/galleries/examples/diffusion/plot_thermal01.py&quot;</span>, line <span class="m">171</span>, in <span class="n">&lt;module&gt;</span>
+    <span class="n">ex</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+  File <span class="nb">&quot;/Users/pmackenz/Development/Educational/FEM.edu/src/femedu/examples/Example.py&quot;</span>, line <span class="m">21</span>, in <span class="n">run</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">problem</span><span class="p">()</span>
+  File <span class="nb">&quot;/Users/pmackenz/Development/Educational/FEM.edu/galleries/examples/diffusion/plot_thermal01.py&quot;</span>, line <span class="m">155</span>, in <span class="n">problem</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;undeformed system&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;thermal01_undeformed.png&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_loads</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+  File <span class="nb">&quot;/Users/pmackenz/Development/Educational/FEM.edu/src/femedu/domain/System.py&quot;</span>, line <span class="m">340</span>, in <span class="n">plot</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">getNodalLoads</span><span class="p">(</span><span class="n">cut_off</span><span class="o">=</span><span class="n">force_limit</span><span class="p">)</span>
+  File <span class="nb">&quot;/Users/pmackenz/Development/Educational/FEM.edu/src/femedu/solver/Solver.py&quot;</span>, line <span class="m">464</span>, in <span class="n">getNodalLoads</span>
+    <span class="n">Pe</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">getLoad</span><span class="p">()</span>      <span class="c1"># Element State Update occurs here</span>
+  File <span class="nb">&quot;/Users/pmackenz/Development/Educational/FEM.edu/src/femedu/elements/Element.py&quot;</span>, line <span class="m">249</span>, in <span class="n">getLoad</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">computeSurfaceLoads</span><span class="p">()</span>
+  File <span class="nb">&quot;/Users/pmackenz/Development/Educational/FEM.edu/src/femedu/elements/diffusion/Triangle.py&quot;</span>, line <span class="m">149</span>, in <span class="n">computeSurfaceLoads</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Loads</span><span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="o">+=</span> <span class="n">loads</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gr">ValueError</span>: <span class="n">non-broadcastable output operand with shape (1,) doesn&#39;t match the broadcast shape (2,)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.814 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-diffusion-plot-thermal01-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/2b7595d3ceb13327588f623a96fd7628/plot_thermal01.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_thermal01.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/519ee774ecf066f507036d0694b8eddd/plot_thermal01.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_thermal01.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Diffusion Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../plates/index.html" class="btn btn-neutral float-right" title="Plate Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on May 10, 2023.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

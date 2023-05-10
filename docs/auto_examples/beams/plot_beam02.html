@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Three-span continuous beam under uniform load. &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Truss Examples" href="../trusses/index.html" />
+    <link rel="prev" title="Single span beam under uniform load." href="plot_beam01.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#diffusion-examples">Diffusion Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#mixed-structures-examples">Mixed Structures Examples</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Beam Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot_beam01.html">Single span beam under uniform load.</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Three-span continuous beam under uniform load.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../diffusion/index.html">Diffusion Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plates/index.html">Plate Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">Tutorials Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Example Gallery</a> &raquo;</li>
+          <li><a href="index.html">Beam Examples</a> &raquo;</li>
+      <li>Three-span continuous beam under uniform load.</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/auto_examples/beams/plot_beam02.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-beams-plot-beam02-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code</p>
+</div>
+<section class="sphx-glr-example-title" id="three-span-continuous-beam-under-uniform-load">
+<span id="sphx-glr-auto-examples-beams-plot-beam02-py"></span><h1>Three-span continuous beam under uniform load.<a class="headerlink" href="#three-span-continuous-beam-under-uniform-load" title="Permalink to this heading"></a></h1>
+<p>The system is statically indeterminate but simple enough to validate
+deformation, reactions and internal forces.</p>
+<p>Author: Peter Mackenzie-Helnwein</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples.Example</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">femedu.domain.System</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.domain.Node</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear.Beam2D</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.materials.ElasticSection</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">ExampleBeam02</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># initialize a system model</span>
+        <span class="n">SpanLengths</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">8.0</span> <span class="o">*</span> <span class="mi">12</span><span class="p">,</span> <span class="mf">10.0</span> <span class="o">*</span> <span class="mi">12</span><span class="p">,</span> <span class="mf">8.0</span> <span class="o">*</span> <span class="mi">12</span> <span class="p">]</span>
+        <span class="n">Nelems</span> <span class="o">=</span> <span class="mi">2</span>     <span class="c1"># number of elements</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="mf">29000.</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">:</span><span class="mi">50</span><span class="p">}</span>
+
+        <span class="c1"># define load</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.00</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+
+        <span class="c1"># meshing parameters</span>
+        <span class="n">Xnode</span>  <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">Ynode</span>  <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">Offset</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="c1"># create left node</span>
+        <span class="n">nd0</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">Xnode</span><span class="p">,</span> <span class="n">Ynode</span><span class="p">)</span>
+        <span class="n">nd0</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span> <span class="s1">&#39;uy&#39;</span><span class="p">)</span>     <span class="c1"># pin support left end</span>
+        <span class="n">model</span> <span class="o">+=</span> <span class="n">nd0</span>
+
+        <span class="c1"># initialization for node and element creation</span>
+        <span class="n">ndi</span> <span class="o">=</span> <span class="n">nd0</span>
+
+        <span class="k">for</span> <span class="n">SpanLength</span> <span class="ow">in</span> <span class="n">SpanLengths</span><span class="p">:</span>
+
+            <span class="n">Le</span> <span class="o">=</span> <span class="n">SpanLength</span> <span class="o">/</span> <span class="n">Nelems</span>
+
+            <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nelems</span><span class="p">):</span>
+                <span class="c1"># create next node</span>
+                <span class="n">Xnode</span> <span class="o">+=</span> <span class="n">Le</span>
+                <span class="n">ndj</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">Xnode</span><span class="p">,</span> <span class="n">Ynode</span><span class="p">)</span>
+                <span class="n">model</span> <span class="o">+=</span> <span class="n">ndj</span>
+
+                <span class="c1"># create elements</span>
+                <span class="n">elem</span> <span class="o">=</span> <span class="n">Beam2D</span><span class="p">(</span><span class="n">ndi</span><span class="p">,</span> <span class="n">ndj</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+                <span class="n">model</span> <span class="o">+=</span> <span class="n">elem</span>
+
+                <span class="c1"># load the element with a uniform load</span>
+                <span class="n">elem</span><span class="o">.</span><span class="n">setDistLoad</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+
+                <span class="c1"># shift one node to the right</span>
+                <span class="n">ndi</span> <span class="o">=</span> <span class="n">ndj</span>
+
+            <span class="c1"># define support(s)</span>
+            <span class="n">ndj</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;uy&#39;</span><span class="p">)</span>           <span class="c1"># roller support right end</span>
+
+            <span class="c1"># move on to the next span</span>
+            <span class="n">Offset</span> <span class="o">=</span> <span class="n">Xnode</span>
+
+        <span class="c1"># done building the model</span>
+
+        <span class="c1"># analyze the model</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+        <span class="c1"># write out report</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+
+        <span class="c1"># create plots</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">100.</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;beam02_deformed.png&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_reactions</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;beam02_shear.png&quot;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;beam02_moment.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ex</span> <span class="o">=</span> <span class="n">ExampleBeam02</span><span class="p">()</span>
+    <span class="n">ex</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_beam02_001.png" srcset="../../_images/sphx_glr_plot_beam02_001.png" alt="Deformed System (magnification=100.00)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_beam02_002.png" srcset="../../_images/sphx_glr_plot_beam02_002.png" alt="Shear Forces" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_beam02_003.png" srcset="../../_images/sphx_glr_plot_beam02_003.png" alt="Bending Moment" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System Analysis Report
+=======================
+
+Nodes:
+---------------------
+  Node_5:
+      x:    [0. 0.]
+      fix:  [&#39;ux&#39;, &#39;uy&#39;]
+      u:    [ 0.        -0.0123663]
+  Node_6:
+      x:    [48.  0.]
+      u:    [-0.292646    0.00326429]
+  Node_7:
+      x:    [96.  0.]
+      fix:  [&#39;uy&#39;]
+      u:    [ 0.         -0.00069085]
+  Node_8:
+      x:    [156.   0.]
+      u:    [-3.93139430e-01 -4.24063967e-19]
+  Node_9:
+      x:    [216.   0.]
+      fix:  [&#39;uy&#39;]
+      u:    [0.         0.00069085]
+  Node_10:
+      x:    [264.   0.]
+      u:    [-0.292646   -0.00326429]
+  Node_11:
+      x:    [312.   0.]
+      fix:  [&#39;uy&#39;]
+      u:    [0.        0.0123663]
+
+Elements:
+---------------------
+  Beam2D: Node_5 to Node_6:
+     material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
+     nodal forces: Vi:11.673913043478258 Mi:-191.99999999999994 Vj:-11.673913043478258 Mj:752.3478260869563
+  Beam2D: Node_6 to Node_7:
+     material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
+     nodal forces: Vi:-36.32608695652172 Mi:-752.347826086956 Vj:36.32608695652172 Mj:-991.3043478260865
+  Beam2D: Node_7 to Node_8:
+     material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
+     nodal forces: Vi:29.999999999999993 Mi:883.3043478260867 Vj:-29.999999999999993 Mj:916.6956521739128
+  Beam2D: Node_8 to Node_9:
+     material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
+     nodal forces: Vi:-29.99999999999999 Mi:-916.6956521739127 Vj:29.99999999999999 Mj:-883.3043478260865
+  Beam2D: Node_9 to Node_10:
+     material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
+     nodal forces: Vi:36.32608695652173 Mi:991.3043478260865 Vj:-36.32608695652173 Mj:752.347826086956
+  Beam2D: Node_10 to Node_11:
+     material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
+     nodal forces: Vi:-11.673913043478258 Mi:-752.347826086956 Vj:11.673913043478258 Mj:192.0
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.276 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-beams-plot-beam02-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/afc506c2ca5f3fc81e20ac6ff43b557e/plot_beam02.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_beam02.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/117e65f0ef5f45932d2affe0d74efb0a/plot_beam02.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_beam02.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="plot_beam01.html" class="btn btn-neutral float-left" title="Single span beam under uniform load." accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../trusses/index.html" class="btn btn-neutral float-right" title="Truss Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on May 10, 2023.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
