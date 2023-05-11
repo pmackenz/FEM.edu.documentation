@@ -6,10 +6,10 @@
 
 Computation times
 =================
-**00:00.131** total execution time for **auto_tutorials_model_creation** files:
+**00:00.160** total execution time for **auto_tutorials_model_creation** files:
 
 +-------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_tutorials_model_creation_plot_01_setup.py` (``plot_01_setup.py``)     | 00:00.131 | 0.0 MB |
+| :ref:`sphx_glr_auto_tutorials_model_creation_plot_01_setup.py` (``plot_01_setup.py``)     | 00:00.160 | 0.0 MB |
 +-------------------------------------------------------------------------------------------+-----------+--------+
 | :ref:`sphx_glr_auto_tutorials_model_creation_plot_02_loading.py` (``plot_02_loading.py``) | 00:00.000 | 0.0 MB |
 +-------------------------------------------------------------------------------------------+-----------+--------+

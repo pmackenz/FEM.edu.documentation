@@ -350,28 +350,28 @@ report about the current state of the model as follows.
 
     Nodes:
     ---------------------
-      Node_3504:
+      Node_3314:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    None
-      Node_3505:
+      Node_3315:
           x:    [8. 6.]
           P:    [ 0. -1.]
           u:    None
-      Node_3506:
+      Node_3316:
           x:    [16.  0.]
           fix:  ['uy']
           u:    None
 
     Elements:
     ---------------------
-      Truss: Node_3504 to Node_3505:
+      Truss: Node_3314 to Node_3315:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': 0.0, 'flexure': 0.0}   stress:{'axial': 0.0, 'flexure': 0.0}  
           internal force: 0.0
-      Truss: Node_3505 to Node_3506:
+      Truss: Node_3315 to Node_3316:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': 0.0, 'flexure': 0.0}   stress:{'axial': 0.0, 'flexure': 0.0}  
           internal force: 0.0
-      Truss: Node_3504 to Node_3506:
+      Truss: Node_3314 to Node_3316:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': 0.0, 'flexure': 0.0}   stress:{'axial': 0.0, 'flexure': 0.0}  
           internal force: 0.0
 
@@ -495,28 +495,28 @@ At this point, we may just plot the deformed system
 
     Nodes:
     ---------------------
-      Node_3504:
+      Node_3314:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    [0. 0.]
-      Node_3505:
+      Node_3315:
           x:    [8. 6.]
           P:    [ 0. -1.]
           u:    [ 0.00533333 -0.021     ]
-      Node_3506:
+      Node_3316:
           x:    [16.  0.]
           fix:  ['uy']
           u:    [0.01066667 0.        ]
 
     Elements:
     ---------------------
-      Truss: Node_3504 to Node_3505:
+      Truss: Node_3314 to Node_3315:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': -0.0008333333333333333}   stress:{'axial': -0.8333333333333333, 'flexure': 0.0}  
           internal force: -0.8333333333333333
-      Truss: Node_3505 to Node_3506:
+      Truss: Node_3315 to Node_3316:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': -0.0008333333333333333}   stress:{'axial': -0.8333333333333333, 'flexure': 0.0}  
           internal force: -0.8333333333333333
-      Truss: Node_3504 to Node_3506:
+      Truss: Node_3314 to Node_3316:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': 0.0006666666666666664}   stress:{'axial': 0.6666666666666664, 'flexure': 0.0}  
           internal force: 0.6666666666666664
 
@@ -527,7 +527,7 @@ At this point, we may just plot the deformed system
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.131 seconds)
+   **Total running time of the script:** ( 0 minutes  0.160 seconds)
 
 
 .. _sphx_glr_download_auto_tutorials_model_creation_plot_01_setup.py:

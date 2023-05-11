@@ -28,13 +28,14 @@ We shall be using displacement control to trace the unstable portion of the stat
 
 Author: Peter Mackenzie-Helnwein
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-16
+.. GENERATED FROM PYTHON SOURCE LINES 12-17
 
 .. code-block:: default
 
 
 
     import numpy as np
+    import matplotlib.pyplot as plt
 
 
 
@@ -43,22 +44,21 @@ Author: Peter Mackenzie-Helnwein
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-21
+.. GENERATED FROM PYTHON SOURCE LINES 21-22
 
 Setup
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-30
+.. GENERATED FROM PYTHON SOURCE LINES 22-30
 
 .. code-block:: default
 
 
-    from femedu.examples.Example import *
+    from femedu.examples import Example
 
-    from femedu.domain.System import *
-    from femedu.domain.Node import *
-    from femedu.elements.finite.Truss import *
-    from femedu.materials.FiberMaterial import *
-    from femedu.solver.NewtonRaphsonSolver import *
+    from femedu.domain import System, Node
+    from femedu.elements.finite import Truss
+    from femedu.materials import FiberMaterial
+    from femedu.solver import NewtonRaphsonSolver
 
 
 
@@ -400,25 +400,25 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_36:
+      Node_0:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    None
-      Node_37:
+      Node_1:
           x:    [5.5 0.5]
           P:    [ 0. -1.]
           u:    None
-      Node_38:
+      Node_2:
           x:    [9.5 0. ]
           fix:  ['ux', 'uy']
           u:    None
 
     Elements:
     ---------------------
-      Truss: Node_36 to Node_37:
+      Truss: Node_0 to Node_1:
           material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 0.0
-      Truss: Node_38 to Node_37:
+      Truss: Node_2 to Node_1:
           material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 0.0
 
@@ -455,7 +455,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.400 seconds)
+   **Total running time of the script:** ( 0 minutes  2.469 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss06.py:

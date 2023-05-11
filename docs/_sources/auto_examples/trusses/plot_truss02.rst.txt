@@ -27,17 +27,16 @@ calculated deformation, reactions and internal forces.
 
 Author: Peter Mackenzie-Helnwein
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-93
+.. GENERATED FROM PYTHON SOURCE LINES 11-92
 
 .. code-block:: default
 
-    from femedu.examples.Example import *
+    from femedu.examples import Example
 
-    from femedu.domain.System import *
-    from femedu.solver.NewtonRaphsonSolver import NewtonRaphsonSolver
-    from femedu.domain.Node import *
-    from femedu.elements.linear.Truss import *
-    from femedu.materials.FiberMaterial import *
+    from femedu.domain import System, Node
+    from femedu.solver import NewtonRaphsonSolver
+    from femedu.elements.linear import Truss
+    from femedu.materials import FiberMaterial
 
 
     class ExampleTruss02(Example):
@@ -120,12 +119,12 @@ Author: Peter Mackenzie-Helnwein
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-109
+.. GENERATED FROM PYTHON SOURCE LINES 106-108
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-114
+.. GENERATED FROM PYTHON SOURCE LINES 108-113
 
 .. code-block:: default
 
@@ -177,85 +176,85 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_15:
+      Node_0:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    [0. 0.]
-      Node_16:
+      Node_1:
           x:    [72.  0.]
           u:    [ 0.018      -0.18444605]
-      Node_17:
+      Node_2:
           x:    [144.   0.]
           u:    [ 0.054      -0.25042807]
-      Node_18:
+      Node_3:
           x:    [216.   0.]
           u:    [ 0.09       -0.18444605]
-      Node_19:
+      Node_4:
           x:    [288.   0.]
           fix:  ['uy']
           u:    [0.108 0.   ]
-      Node_20:
+      Node_5:
           x:    [36. 96.]
           P:    [  0. -10.]
           u:    [ 0.099      -0.11508903]
-      Node_21:
+      Node_6:
           x:    [108.  96.]
           P:    [  0. -10.]
           u:    [ 0.072      -0.24367807]
-      Node_22:
+      Node_7:
           x:    [180.  96.]
           P:    [  0. -10.]
           u:    [ 0.036      -0.24367807]
-      Node_23:
+      Node_8:
           x:    [252.  96.]
           P:    [  0. -10.]
           u:    [ 0.009      -0.11508903]
 
     Elements:
     ---------------------
-      Truss: Node_15 to Node_16:
+      Truss: Node_0 to Node_1:
           material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.00025000000000000017   stress:{'xx': 2.5000000000000018, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 7.500000000000005
-      Truss: Node_16 to Node_17:
+      Truss: Node_1 to Node_2:
           material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0005   stress:{'xx': 5.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 15.0
-      Truss: Node_17 to Node_18:
+      Truss: Node_2 to Node_3:
           material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0005000000000000002   stress:{'xx': 5.000000000000003, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 15.000000000000007
-      Truss: Node_18 to Node_19:
+      Truss: Node_3 to Node_4:
           material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.00025   stress:{'xx': 2.5, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 7.5
-      Truss: Node_20 to Node_21:
+      Truss: Node_5 to Node_6:
           material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.00037499999999999974   stress:{'xx': -3.7499999999999973, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -11.249999999999993
-      Truss: Node_21 to Node_22:
+      Truss: Node_6 to Node_7:
           material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.0005   stress:{'xx': -5.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -15.0
-      Truss: Node_22 to Node_23:
+      Truss: Node_7 to Node_8:
           material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.0003750000000000001   stress:{'xx': -3.7500000000000013, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -11.250000000000004
-      Truss: Node_15 to Node_20:
+      Truss: Node_0 to Node_5:
           material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.0007120003121097942   stress:{'xx': -7.120003121097942, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -21.360009363293827
-      Truss: Node_16 to Node_21:
+      Truss: Node_1 to Node_6:
           material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.00035600015605489685   stress:{'xx': -3.5600015605489683, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -10.680004681646905
-      Truss: Node_17 to Node_22:
+      Truss: Node_2 to Node_7:
           material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-1.7765477248433666e-19   stress:{'xx': -1.7765477248433666e-15, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -5.3296431745301e-15
-      Truss: Node_18 to Node_23:
+      Truss: Node_3 to Node_8:
           material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.00035600015605489685   stress:{'xx': 3.5600015605489683, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 10.680004681646905
-      Truss: Node_16 to Node_20:
+      Truss: Node_1 to Node_5:
           material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0003560001560548972   stress:{'xx': 3.560001560548972, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 10.680004681646915
-      Truss: Node_17 to Node_21:
+      Truss: Node_2 to Node_6:
           material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-2.0303402569638477e-19   stress:{'xx': -2.0303402569638477e-15, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -6.091020770891543e-15
-      Truss: Node_18 to Node_22:
+      Truss: Node_3 to Node_7:
           material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.00035600015605489707   stress:{'xx': -3.5600015605489705, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -10.680004681646912
-      Truss: Node_19 to Node_23:
+      Truss: Node_4 to Node_8:
           material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.0007120003121097942   stress:{'xx': -7.120003121097942, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -21.360009363293827
 
@@ -266,7 +265,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.360 seconds)
+   **Total running time of the script:** ( 0 minutes  1.013 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss02.py:
