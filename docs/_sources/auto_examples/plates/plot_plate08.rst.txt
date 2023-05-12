@@ -58,12 +58,12 @@ Author: Peter Mackenzie-Helnwein
 
     import numpy as np
 
-    from femedu.examples.Example import *
+    from femedu.examples import Example
 
-    from femedu.domain.System import *
-    from femedu.solver.NewtonRaphsonSolver import *
-    from femedu.elements.linear.Quad import *
-    from femedu.materials.PlaneStress import *
+    from femedu.domain import System, Node
+    from femedu.solver import NewtonRaphsonSolver
+    from femedu.elements.linear import Quad
+    from femedu.materials import PlaneStress
 
 
     class ExamplePlate08(Example):
@@ -262,7 +262,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.212 seconds)
+   **Total running time of the script:** ( 0 minutes  1.684 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate08.py:

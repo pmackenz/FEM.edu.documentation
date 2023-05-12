@@ -116,12 +116,14 @@ to download the full example code</p>
 <p>Study of snap-through behavior using finite deformation truss elements.</p>
 <p>We shall be using displacement control to trace the unstable portion of the static equilibrium path.</p>
 <p>Author: Peter Mackenzie-Helnwein</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>Setup</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples</span> <span class="kn">import</span> <span class="n">Example</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">femedu.examples</span> <span class="kn">import</span> <span class="n">Example</span>
 
 <span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
 <span class="kn">from</span> <span class="nn">femedu.elements.finite</span> <span class="kn">import</span> <span class="n">Truss</span>
@@ -268,25 +270,25 @@ to download the full example code</p>
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_15:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    None
-  Node_1:
+  Node_16:
       x:    [5.5 0.5]
       P:    [ 0. -1.]
       u:    None
-  Node_2:
+  Node_17:
       x:    [9.5 0. ]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    None
 
 Elements:
 ---------------------
-  Truss: Node_0 to Node_1:
+  Truss: Node_15 to Node_16:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 0.0
-  Truss: Node_2 to Node_1:
+  Truss: Node_17 to Node_16:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 2100.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 0.0
 
@@ -318,7 +320,7 @@ Elements:
 +
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.469 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.462 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-trusses-plot-truss06-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/fa66aff39ae1a4c4dbd27ebd8b1dd2c8/plot_truss06.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_truss06.py</span></code></a></p>

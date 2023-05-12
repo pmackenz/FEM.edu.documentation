@@ -28,14 +28,12 @@ We shall be using displacement control to trace the unstable portion of the stat
 
 Author: Peter Mackenzie-Helnwein
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-17
+.. GENERATED FROM PYTHON SOURCE LINES 12-14
 
 .. code-block:: default
 
 
 
-    import numpy as np
-    import matplotlib.pyplot as plt
 
 
 
@@ -43,15 +41,16 @@ Author: Peter Mackenzie-Helnwein
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 21-22
+.. GENERATED FROM PYTHON SOURCE LINES 18-19
 
 Setup
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-30
+.. GENERATED FROM PYTHON SOURCE LINES 19-29
 
 .. code-block:: default
 
+    import numpy as np
+    import matplotlib.pyplot as plt
 
     from femedu.examples import Example
 
@@ -67,11 +66,11 @@ Setup
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-32
+.. GENERATED FROM PYTHON SOURCE LINES 30-31
 
 Create the example by subclassing the :py:class:`Example`
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-130
+.. GENERATED FROM PYTHON SOURCE LINES 31-129
 
 .. code-block:: default
 
@@ -180,12 +179,12 @@ Create the example by subclassing the :py:class:`Example`
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-147
+.. GENERATED FROM PYTHON SOURCE LINES 144-146
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 147-152
+.. GENERATED FROM PYTHON SOURCE LINES 146-151
 
 .. code-block:: default
 
@@ -400,25 +399,25 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_0:
+      Node_15:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    None
-      Node_1:
+      Node_16:
           x:    [5.5 0.5]
           P:    [ 0. -1.]
           u:    None
-      Node_2:
+      Node_17:
           x:    [9.5 0. ]
           fix:  ['ux', 'uy']
           u:    None
 
     Elements:
     ---------------------
-      Truss: Node_0 to Node_1:
+      Truss: Node_15 to Node_16:
           material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 0.0
-      Truss: Node_2 to Node_1:
+      Truss: Node_17 to Node_16:
           material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 0.0
 
@@ -455,7 +454,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.469 seconds)
+   **Total running time of the script:** ( 0 minutes  2.462 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss06.py:

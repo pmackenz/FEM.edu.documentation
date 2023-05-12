@@ -117,12 +117,11 @@ to download the full example code</p>
 calculated deformation, reactions and internal forces.</p>
 <p>Author: Peter Mackenzie-Helnwein</p>
 <p>Setup</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples.Example</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples</span> <span class="kn">import</span> <span class="n">Example</span>
 
-<span class="kn">from</span> <span class="nn">femedu.domain.System</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.domain.Node</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear.Truss</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.materials.FiberMaterial</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Truss</span>
+<span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">FiberMaterial</span>
 </pre></div>
 </div>
 <p>Create the example by subclassing the <code class="xref py py-class docutils literal notranslate"><span class="pre">Example</span></code></p>
@@ -182,33 +181,33 @@ calculated deformation, reactions and internal forces.</p>
 
 Nodes:
 ---------------------
-  Node_12:
+  Node_0:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0. 0.]
-  Node_13:
+  Node_1:
       x:    [72.  0.]
       fix:  [&#39;uy&#39;]
       u:    [3.6 0. ]
-  Node_14:
+  Node_2:
       x:    [36. 36.]
       P:    [ 0. -1.]
       u:    [ 1.8        -6.89116882]
 
 Elements:
 ---------------------
-  Truss: Node_12 to Node_13:
+  Truss: Node_0 to Node_1:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.04999999999999999   stress:{&#39;xx&#39;: 0.4999999999999999, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 0.4999999999999999
-  Truss: Node_12 to Node_14:
+  Truss: Node_0 to Node_2:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.07071067811865474   stress:{&#39;xx&#39;: -0.7071067811865474, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -0.7071067811865474
-  Truss: Node_13 to Node_14:
+  Truss: Node_1 to Node_2:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.07071067811865472   stress:{&#39;xx&#39;: -0.7071067811865472, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -0.7071067811865472
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.227 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.176 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-trusses-plot-truss01-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/d504150fd4614e8c013fc162a98eb592/plot_truss01.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_truss01.py</span></code></a></p>

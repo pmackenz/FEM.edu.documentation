@@ -24,7 +24,7 @@ Profiling the code
 
 Using PatchMesher to model a quarter of the plate
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-132
+.. GENERATED FROM PYTHON SOURCE LINES 9-131
 
 .. code-block:: default
 
@@ -37,13 +37,12 @@ Using PatchMesher to model a quarter of the plate
     import sys
     import numpy as np
 
-    from femedu.examples.Example import *
+    from femedu.examples import Example
 
-    from femedu.domain import *
-    from femedu.solver.NewtonRaphsonSolver import *
-    from femedu.solver.SparseSolver import *
-    from femedu.elements.linear.Triangle import *
-    from femedu.materials.PlaneStress import *
+    from femedu.domain import System, Node
+    from femedu.solver import NewtonRaphsonSolver, SparseSolver
+    from femedu.elements.linear import Triangle
+    from femedu.materials import PlaneStress
     from femedu.mesher import *
 
 
@@ -158,14 +157,14 @@ Using PatchMesher to model a quarter of the plate
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-154
+.. GENERATED FROM PYTHON SOURCE LINES 149-153
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 This time, we are running the example in the profiler, writing profiling data to file.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 154-165
+.. GENERATED FROM PYTHON SOURCE LINES 153-164
 
 .. code-block:: default
 
@@ -188,178 +187,178 @@ This time, we are running the example in the profiler, writing profiling data to
 
  .. code-block:: none
 
-    Node_873 [120.   0.]
-    + Elem_1057 
-    + Elem_1058 1058.2 : [[2. 0.]] 
-    Node_934 [120.   2.]
-    + Elem_1058 1058.2 : [[2. 0.]] 
-    + Elem_1177 
-    + Elem_1178 1178.2 : [[2.00000000e+00 1.42108547e-14]] 
-    Node_995 [120.   4.]
-    + Elem_1178 1178.2 : [[2.00000000e+00 1.42108547e-14]] 
-    + Elem_1297 
-    + Elem_1298 1298.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
-    Node_1056 [120.   6.]
-    + Elem_1298 1298.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
-    + Elem_1417 
-    + Elem_1418 1418.2 : [[2. 0.]] 
-    Node_1117 [120.   8.]
-    + Elem_1418 1418.2 : [[2. 0.]] 
-    + Elem_1537 
-    + Elem_1538 1538.2 : [[2. 0.]] 
-    Node_1178 [120.  10.]
-    + Elem_1538 1538.2 : [[2. 0.]] 
-    + Elem_1657 
-    + Elem_1658 1658.2 : [[2. 0.]] 
-    Node_1239 [120.  12.]
-    + Elem_1658 1658.2 : [[2. 0.]] 
-    + Elem_1777 
-    + Elem_1778 1778.2 : [[2. 0.]] 
-    Node_1300 [120.  14.]
-    + Elem_1778 1778.2 : [[2. 0.]] 
-    + Elem_1897 
-    + Elem_1898 1898.2 : [[2. 0.]] 
-    Node_1361 [120.  16.]
-    + Elem_1898 1898.2 : [[2. 0.]] 
-    + Elem_2017 
-    + Elem_2018 2018.2 : [[2. 0.]] 
-    Node_1422 [120.  18.]
-    + Elem_2018 2018.2 : [[2. 0.]] 
-    + Elem_2137 
-    + Elem_2138 2138.2 : [[2. 0.]] 
-    Node_1483 [120.  20.]
-    + Elem_2138 2138.2 : [[2. 0.]] 
-    + Elem_2257 
-    + Elem_2258 2258.2 : [[2. 0.]] 
-    Node_1544 [120.  22.]
-    + Elem_2258 2258.2 : [[2. 0.]] 
-    + Elem_2377 
-    + Elem_2378 2378.2 : [[2. 0.]] 
-    Node_1605 [120.  24.]
-    + Elem_2378 2378.2 : [[2. 0.]] 
-    + Elem_2497 
-    + Elem_2498 2498.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
-    Node_1666 [120.  26.]
-    + Elem_2498 2498.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
-    + Elem_2617 
-    + Elem_2618 2618.2 : [[2.00000000e+00 2.84217094e-14]] 
-    Node_1727 [120.  28.]
-    + Elem_2618 2618.2 : [[2.00000000e+00 2.84217094e-14]] 
-    + Elem_2737 
-    + Elem_2738 2738.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
-    Node_1788 [120.  30.]
-    + Elem_2738 2738.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
-    + Elem_2857 
-    + Elem_2858 2858.2 : [[2.00000000e+00 1.42108547e-14]] 
-    Node_1849 [120.  32.]
-    + Elem_2858 2858.2 : [[2.00000000e+00 1.42108547e-14]] 
-    + Elem_2977 
-    + Elem_2978 2978.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
-    Node_1910 [120.  34.]
-    + Elem_2978 2978.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
-    + Elem_3097 
-    + Elem_3098 3098.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
-    Node_1971 [120.  36.]
-    + Elem_3098 3098.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
-    + Elem_3217 
-    + Elem_3218 3218.2 : [[2.00000000e+00 2.84217094e-14]] 
-    Node_2032 [120.  38.]
-    + Elem_3218 3218.2 : [[2.00000000e+00 2.84217094e-14]] 
-    + Elem_3337 
-    + Elem_3338 3338.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
-    Node_2093 [120.  40.]
-    + Elem_3338 3338.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
-    + Elem_3457 
-    + Elem_3458 3458.2 : [[2.00000000e+00 1.42108547e-14]] 
-    Node_2154 [120.  42.]
-    + Elem_3458 3458.2 : [[2.00000000e+00 1.42108547e-14]] 
-    + Elem_3577 
-    + Elem_3578 3578.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
-    Node_2215 [120.  44.]
-    + Elem_3578 3578.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
-    + Elem_3697 
-    + Elem_3698 3698.2 : [[2. 0.]] 
-    Node_2276 [120.  46.]
-    + Elem_3698 3698.2 : [[2. 0.]] 
-    + Elem_3817 
-    + Elem_3818 3818.2 : [[2. 0.]] 
-    Node_2337 [120.  48.]
-    + Elem_3818 3818.2 : [[2. 0.]] 
-    + Elem_3937 
-    + Elem_3938 3938.2 : [[2. 0.]] 
-    Node_2398 [120.  50.]
-    + Elem_3938 3938.2 : [[2. 0.]] 
-    + Elem_4057 
-    + Elem_4058 4058.2 : [[2. 0.]] 
-    Node_2459 [120.  52.]
-    + Elem_4058 4058.2 : [[2. 0.]] 
-    + Elem_4177 
-    + Elem_4178 4178.2 : [[2. 0.]] 
-    Node_2520 [120.  54.]
-    + Elem_4178 4178.2 : [[2. 0.]] 
-    + Elem_4297 
-    + Elem_4298 4298.2 : [[2. 0.]] 
-    Node_2581 [120.  56.]
-    + Elem_4298 4298.2 : [[2. 0.]] 
-    + Elem_4417 
-    + Elem_4418 4418.2 : [[2. 0.]] 
-    Node_2642 [120.  58.]
-    + Elem_4418 4418.2 : [[2. 0.]] 
-    + Elem_4537 
-    + Elem_4538 4538.2 : [[2. 0.]] 
-    Node_2703 [120.  60.]
-    + Elem_4538 4538.2 : [[2. 0.]] 
-    + Elem_4657 
-    + Elem_4658 4658.2 : [[2. 0.]] 
-    Node_2764 [120.  62.]
-    + Elem_4658 4658.2 : [[2. 0.]] 
-    + Elem_4777 
-    + Elem_4778 4778.2 : [[2. 0.]] 
-    Node_2825 [120.  64.]
-    + Elem_4778 4778.2 : [[2. 0.]] 
-    + Elem_4897 
-    + Elem_4898 4898.2 : [[2.00000000e+00 2.84217094e-14]] 
-    Node_2886 [120.  66.]
-    + Elem_4898 4898.2 : [[2.00000000e+00 2.84217094e-14]] 
-    + Elem_5017 
-    + Elem_5018 5018.2 : [[ 2.00000000e+00 -2.84217094e-14]] 
-    Node_2947 [120.  68.]
-    + Elem_5018 5018.2 : [[ 2.00000000e+00 -2.84217094e-14]] 
-    + Elem_5137 
-    + Elem_5138 5138.2 : [[2. 0.]] 
-    Node_3008 [120.  70.]
-    + Elem_5138 5138.2 : [[2. 0.]] 
-    + Elem_5257 
-    + Elem_5258 5258.2 : [[2. 0.]] 
-    Node_3069 [120.  72.]
-    + Elem_5258 5258.2 : [[2. 0.]] 
-    + Elem_5377 
-    + Elem_5378 5378.2 : [[2. 0.]] 
-    Node_3130 [120.  74.]
-    + Elem_5378 5378.2 : [[2. 0.]] 
-    + Elem_5497 
-    + Elem_5498 5498.2 : [[2. 0.]] 
-    Node_3191 [120.  76.]
-    + Elem_5498 5498.2 : [[2. 0.]] 
-    + Elem_5617 
-    + Elem_5618 5618.2 : [[2. 0.]] 
-    Node_3252 [120.  78.]
-    + Elem_5618 5618.2 : [[2. 0.]] 
-    + Elem_5737 
-    + Elem_5738 5738.2 : [[2. 0.]] 
-    Node_3313 [120.  80.]
-    + Elem_5738 5738.2 : [[2. 0.]] 
+    Node_734 [120.   0.]
+    + Elem_922 
+    + Elem_923 923.2 : [[2. 0.]] 
+    Node_795 [120.   2.]
+    + Elem_923 923.2 : [[2. 0.]] 
+    + Elem_1042 
+    + Elem_1043 1043.2 : [[2.00000000e+00 1.42108547e-14]] 
+    Node_856 [120.   4.]
+    + Elem_1043 1043.2 : [[2.00000000e+00 1.42108547e-14]] 
+    + Elem_1162 
+    + Elem_1163 1163.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
+    Node_917 [120.   6.]
+    + Elem_1163 1163.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
+    + Elem_1282 
+    + Elem_1283 1283.2 : [[2. 0.]] 
+    Node_978 [120.   8.]
+    + Elem_1283 1283.2 : [[2. 0.]] 
+    + Elem_1402 
+    + Elem_1403 1403.2 : [[2. 0.]] 
+    Node_1039 [120.  10.]
+    + Elem_1403 1403.2 : [[2. 0.]] 
+    + Elem_1522 
+    + Elem_1523 1523.2 : [[2. 0.]] 
+    Node_1100 [120.  12.]
+    + Elem_1523 1523.2 : [[2. 0.]] 
+    + Elem_1642 
+    + Elem_1643 1643.2 : [[2. 0.]] 
+    Node_1161 [120.  14.]
+    + Elem_1643 1643.2 : [[2. 0.]] 
+    + Elem_1762 
+    + Elem_1763 1763.2 : [[2. 0.]] 
+    Node_1222 [120.  16.]
+    + Elem_1763 1763.2 : [[2. 0.]] 
+    + Elem_1882 
+    + Elem_1883 1883.2 : [[2. 0.]] 
+    Node_1283 [120.  18.]
+    + Elem_1883 1883.2 : [[2. 0.]] 
+    + Elem_2002 
+    + Elem_2003 2003.2 : [[2. 0.]] 
+    Node_1344 [120.  20.]
+    + Elem_2003 2003.2 : [[2. 0.]] 
+    + Elem_2122 
+    + Elem_2123 2123.2 : [[2. 0.]] 
+    Node_1405 [120.  22.]
+    + Elem_2123 2123.2 : [[2. 0.]] 
+    + Elem_2242 
+    + Elem_2243 2243.2 : [[2. 0.]] 
+    Node_1466 [120.  24.]
+    + Elem_2243 2243.2 : [[2. 0.]] 
+    + Elem_2362 
+    + Elem_2363 2363.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
+    Node_1527 [120.  26.]
+    + Elem_2363 2363.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
+    + Elem_2482 
+    + Elem_2483 2483.2 : [[2.00000000e+00 2.84217094e-14]] 
+    Node_1588 [120.  28.]
+    + Elem_2483 2483.2 : [[2.00000000e+00 2.84217094e-14]] 
+    + Elem_2602 
+    + Elem_2603 2603.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
+    Node_1649 [120.  30.]
+    + Elem_2603 2603.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
+    + Elem_2722 
+    + Elem_2723 2723.2 : [[2.00000000e+00 1.42108547e-14]] 
+    Node_1710 [120.  32.]
+    + Elem_2723 2723.2 : [[2.00000000e+00 1.42108547e-14]] 
+    + Elem_2842 
+    + Elem_2843 2843.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
+    Node_1771 [120.  34.]
+    + Elem_2843 2843.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
+    + Elem_2962 
+    + Elem_2963 2963.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
+    Node_1832 [120.  36.]
+    + Elem_2963 2963.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
+    + Elem_3082 
+    + Elem_3083 3083.2 : [[2.00000000e+00 2.84217094e-14]] 
+    Node_1893 [120.  38.]
+    + Elem_3083 3083.2 : [[2.00000000e+00 2.84217094e-14]] 
+    + Elem_3202 
+    + Elem_3203 3203.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
+    Node_1954 [120.  40.]
+    + Elem_3203 3203.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
+    + Elem_3322 
+    + Elem_3323 3323.2 : [[2.00000000e+00 1.42108547e-14]] 
+    Node_2015 [120.  42.]
+    + Elem_3323 3323.2 : [[2.00000000e+00 1.42108547e-14]] 
+    + Elem_3442 
+    + Elem_3443 3443.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
+    Node_2076 [120.  44.]
+    + Elem_3443 3443.2 : [[ 2.00000000e+00 -1.42108547e-14]] 
+    + Elem_3562 
+    + Elem_3563 3563.2 : [[2. 0.]] 
+    Node_2137 [120.  46.]
+    + Elem_3563 3563.2 : [[2. 0.]] 
+    + Elem_3682 
+    + Elem_3683 3683.2 : [[2. 0.]] 
+    Node_2198 [120.  48.]
+    + Elem_3683 3683.2 : [[2. 0.]] 
+    + Elem_3802 
+    + Elem_3803 3803.2 : [[2. 0.]] 
+    Node_2259 [120.  50.]
+    + Elem_3803 3803.2 : [[2. 0.]] 
+    + Elem_3922 
+    + Elem_3923 3923.2 : [[2. 0.]] 
+    Node_2320 [120.  52.]
+    + Elem_3923 3923.2 : [[2. 0.]] 
+    + Elem_4042 
+    + Elem_4043 4043.2 : [[2. 0.]] 
+    Node_2381 [120.  54.]
+    + Elem_4043 4043.2 : [[2. 0.]] 
+    + Elem_4162 
+    + Elem_4163 4163.2 : [[2. 0.]] 
+    Node_2442 [120.  56.]
+    + Elem_4163 4163.2 : [[2. 0.]] 
+    + Elem_4282 
+    + Elem_4283 4283.2 : [[2. 0.]] 
+    Node_2503 [120.  58.]
+    + Elem_4283 4283.2 : [[2. 0.]] 
+    + Elem_4402 
+    + Elem_4403 4403.2 : [[2. 0.]] 
+    Node_2564 [120.  60.]
+    + Elem_4403 4403.2 : [[2. 0.]] 
+    + Elem_4522 
+    + Elem_4523 4523.2 : [[2. 0.]] 
+    Node_2625 [120.  62.]
+    + Elem_4523 4523.2 : [[2. 0.]] 
+    + Elem_4642 
+    + Elem_4643 4643.2 : [[2. 0.]] 
+    Node_2686 [120.  64.]
+    + Elem_4643 4643.2 : [[2. 0.]] 
+    + Elem_4762 
+    + Elem_4763 4763.2 : [[2.00000000e+00 2.84217094e-14]] 
+    Node_2747 [120.  66.]
+    + Elem_4763 4763.2 : [[2.00000000e+00 2.84217094e-14]] 
+    + Elem_4882 
+    + Elem_4883 4883.2 : [[ 2.00000000e+00 -2.84217094e-14]] 
+    Node_2808 [120.  68.]
+    + Elem_4883 4883.2 : [[ 2.00000000e+00 -2.84217094e-14]] 
+    + Elem_5002 
+    + Elem_5003 5003.2 : [[2. 0.]] 
+    Node_2869 [120.  70.]
+    + Elem_5003 5003.2 : [[2. 0.]] 
+    + Elem_5122 
+    + Elem_5123 5123.2 : [[2. 0.]] 
+    Node_2930 [120.  72.]
+    + Elem_5123 5123.2 : [[2. 0.]] 
+    + Elem_5242 
+    + Elem_5243 5243.2 : [[2. 0.]] 
+    Node_2991 [120.  74.]
+    + Elem_5243 5243.2 : [[2. 0.]] 
+    + Elem_5362 
+    + Elem_5363 5363.2 : [[2. 0.]] 
+    Node_3052 [120.  76.]
+    + Elem_5363 5363.2 : [[2. 0.]] 
+    + Elem_5482 
+    + Elem_5483 5483.2 : [[2. 0.]] 
+    Node_3113 [120.  78.]
+    + Elem_5483 5483.2 : [[2. 0.]] 
+    + Elem_5602 
+    + Elem_5603 5603.2 : [[2. 0.]] 
+    Node_3174 [120.  80.]
+    + Elem_5603 5603.2 : [[2. 0.]] 
     +
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 169-171
+.. GENERATED FROM PYTHON SOURCE LINES 168-170
 
 Now it's time to process the profiling data
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 171-194
+.. GENERATED FROM PYTHON SOURCE LINES 170-193
 
 .. code-block:: default
 
@@ -394,64 +393,64 @@ Now it's time to process the profiling data
 
  .. code-block:: none
 
-    Thu May 11 14:38:02 2023    profile_data_full.txt
+    Thu May 11 21:31:43 2023    profile_data_full.txt
 
-             7755938 function calls (7211005 primitive calls) in 13.764 seconds
+             7765538 function calls (7220605 primitive calls) in 20.353 seconds
 
        Ordered by: cumulative time
        List reduced from 283 to 20 due to restriction <20>
 
        ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-            1    0.000    0.000   13.780   13.780 {built-in method builtins.exec}
-            1    0.000    0.000   13.780   13.780 <string>:1(<module>)
-            1    0.018    0.018   13.780   13.780 Example.py:20(run)
-            1    0.007    0.007   13.763   13.763 plot_plate10.py:47(problem)
-            1    0.000    0.000   10.569   10.569 System.py:283(solve)
-            1    0.000    0.000   10.569   10.569 NewtonRaphsonSolver.py:13(solve)
-            4    0.000    0.000    9.557    2.389 NewtonRaphsonSolver.py:105(assemble)
-            4    1.840    0.460    9.557    2.389 Solver.py:152(assemble)
-        19200    0.080    0.000    5.662    0.000 Element.py:225(getForce)
-        19200    1.988    0.000    5.582    0.000 Triangle.py:80(updateState)
-            2    0.000    0.000    4.724    2.362 Solver.py:371(checkResiduum)
-    602900/322289    0.549    0.000    3.391    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
-            1    0.054    0.054    3.109    3.109 PatchMesher.py:99(triangleMesh)
-        38400    0.464    0.000    2.858    0.000 Triangle.py:155(computeSurfaceLoads)
-         4800    0.239    0.000    1.829    0.000 Triangle.py:10(__init__)
-       115200    0.615    0.000    1.467    0.000 Face2D.py:54(computeNodalForces)
-        19200    0.028    0.000    1.348    0.000 Element.py:234(getLoad)
-    254400/4800    0.415    0.000    1.116    0.000 copy.py:128(deepcopy)
-         4800    0.184    0.000    1.034    0.000 copy.py:259(_reconstruct)
-       153600    0.098    0.000    1.005    0.000 <__array_function__ internals>:177(outer)
+            1    0.000    0.000   20.373   20.373 {built-in method builtins.exec}
+            1    0.000    0.000   20.373   20.373 <string>:1(<module>)
+            1    0.019    0.019   20.373   20.373 Example.py:20(run)
+            1    0.008    0.008   20.354   20.354 plot_plate10.py:46(problem)
+            1    0.000    0.000   16.801   16.801 System.py:283(solve)
+            1    0.000    0.000   16.801   16.801 NewtonRaphsonSolver.py:13(solve)
+            4    0.000    0.000   14.385    3.596 NewtonRaphsonSolver.py:105(assemble)
+            4    2.791    0.698   14.385    3.596 Solver.py:152(assemble)
+        19200    0.126    0.000    8.534    0.000 Element.py:225(getForce)
+        19200    2.956    0.000    8.408    0.000 Triangle.py:80(updateState)
+            2    0.000    0.000    7.235    3.618 Solver.py:371(checkResiduum)
+    602900/322289    0.786    0.000    6.090    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+        38400    0.696    0.000    4.279    0.000 Triangle.py:155(computeSurfaceLoads)
+            1    0.051    0.051    3.444    3.444 PatchMesher.py:99(triangleMesh)
+            1    0.003    0.003    2.399    2.399 NewtonRaphsonSolver.py:58(solveSingleStep)
+            1    0.000    0.000    2.379    2.379 <__array_function__ internals>:177(solve)
+            1    2.379    2.379    2.379    2.379 linalg.py:320(solve)
+       115200    0.911    0.000    2.205    0.000 Face2D.py:54(computeNodalForces)
+         4800    0.225    0.000    2.114    0.000 Triangle.py:10(__init__)
+        19200    0.043    0.000    2.002    0.000 Element.py:234(getLoad)
 
 
-    Thu May 11 14:38:02 2023    profile_data_full.txt
+    Thu May 11 21:31:43 2023    profile_data_full.txt
 
-             7755938 function calls (7211005 primitive calls) in 13.764 seconds
+             7765538 function calls (7220605 primitive calls) in 20.353 seconds
 
        Ordered by: internal time
        List reduced from 283 to 20 due to restriction <20>
 
        ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        19200    1.988    0.000    5.582    0.000 Triangle.py:80(updateState)
-            4    1.840    0.460    9.557    2.389 Solver.py:152(assemble)
-            1    0.986    0.986    0.986    0.986 linalg.py:320(solve)
-       639031    0.689    0.000    0.689    0.000 {built-in method numpy.array}
-       153600    0.688    0.000    0.800    0.000 numeric.py:857(outer)
-       115200    0.615    0.000    1.467    0.000 Face2D.py:54(computeNodalForces)
-    602900/322289    0.549    0.000    3.391    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
-       230400    0.488    0.000    0.681    0.000 Node.py:398(getIdx4Element)
-        38400    0.464    0.000    2.858    0.000 Triangle.py:155(computeSurfaceLoads)
-        19201    0.450    0.000    0.569    0.000 PlaneStress.py:25(updateState)
-    254400/4800    0.415    0.000    1.116    0.000 copy.py:128(deepcopy)
-        76800    0.307    0.000    0.592    0.000 Node.py:360(getDeformedPos)
-         4800    0.239    0.000    1.829    0.000 Triangle.py:10(__init__)
-        14400    0.229    0.000    0.479    0.000 Face2D.py:16(initialize)
-         4800    0.184    0.000    1.034    0.000 copy.py:259(_reconstruct)
-        76800    0.180    0.000    0.272    0.000 Node.py:267(getDisp)
-       115201    0.173    0.000    0.671    0.000 numeric.py:76(zeros_like)
-         4800    0.158    0.000    0.234    0.000 linalg.py:483(inv)
-    19200/4800    0.139    0.000    0.792    0.000 copy.py:227(_deepcopy_dict)
-        14400    0.136    0.000    0.705    0.000 Face2D.py:13(__init__)
+        19200    2.956    0.000    8.408    0.000 Triangle.py:80(updateState)
+            4    2.791    0.698   14.385    3.596 Solver.py:152(assemble)
+            1    2.379    2.379    2.379    2.379 linalg.py:320(solve)
+       153600    1.054    0.000    1.220    0.000 numeric.py:857(outer)
+       639031    0.981    0.000    0.981    0.000 {built-in method numpy.array}
+       115200    0.911    0.000    2.205    0.000 Face2D.py:54(computeNodalForces)
+    602900/322289    0.786    0.000    6.090    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+       230400    0.725    0.000    1.017    0.000 Node.py:398(getIdx4Element)
+        38400    0.696    0.000    4.279    0.000 Triangle.py:155(computeSurfaceLoads)
+        19201    0.688    0.000    0.867    0.000 PlaneStress.py:25(updateState)
+    254400/4800    0.511    0.000    1.144    0.000 copy.py:128(deepcopy)
+        76800    0.455    0.000    0.884    0.000 Node.py:360(getDeformedPos)
+         4800    0.394    0.000    0.465    0.000 linalg.py:483(inv)
+        76800    0.274    0.000    0.410    0.000 Node.py:267(getDisp)
+       115201    0.262    0.000    0.990    0.000 numeric.py:76(zeros_like)
+        24000    0.239    0.000    0.266    0.000 shape_base.py:81(atleast_2d)
+        14400    0.225    0.000    0.473    0.000 Face2D.py:16(initialize)
+         4800    0.225    0.000    2.114    0.000 Triangle.py:10(__init__)
+        14400    0.155    0.000    0.635    0.000 Faces.py:10(__init__)
+       200334    0.151    0.000    0.151    0.000 {built-in method numpy.zeros}
 
 
 
@@ -461,7 +460,7 @@ Now it's time to process the profiling data
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.828 seconds)
+   **Total running time of the script:** ( 0 minutes  20.438 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate10.py:

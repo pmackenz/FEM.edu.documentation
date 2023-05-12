@@ -32,31 +32,32 @@ Author: Peter Mackenzie-Helnwein
 
 Setup
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-24
+.. GENERATED FROM PYTHON SOURCE LINES 15-25
 
 .. code-block:: default
 
+    import numpy as np
+    import matplotlib.pyplot as plt
 
-    from femedu.examples.Example import *
+    from femedu.examples import Example
 
-    from femedu.domain.System import *
-    from femedu.domain.Node import *
-    from femedu.elements.finite.Truss import *
-    from femedu.materials.FiberMaterial import *
-    from femedu.solver.NewtonRaphsonSolver import *
-
-
-
+    from femedu.domain import System, Node
+    from femedu.elements.finite import Truss
+    from femedu.materials import FiberMaterial
+    from femedu.solver import NewtonRaphsonSolver
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-26
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 26-27
 
 Create the example by subclassing the :py:class:`Example`
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-137
+.. GENERATED FROM PYTHON SOURCE LINES 27-138
 
 .. code-block:: default
 
@@ -178,12 +179,12 @@ Create the example by subclassing the :py:class:`Example`
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 152-154
+.. GENERATED FROM PYTHON SOURCE LINES 153-155
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 154-159
+.. GENERATED FROM PYTHON SOURCE LINES 155-160
 
 .. code-block:: default
 
@@ -300,7 +301,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.728 seconds)
+   **Total running time of the script:** ( 0 minutes  1.495 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss05.py:

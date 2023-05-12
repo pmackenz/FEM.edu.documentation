@@ -145,12 +145,12 @@ to download the full example code</p>
 <p>Author: Peter Mackenzie-Helnwein</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">femedu.examples.Example</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.examples</span> <span class="kn">import</span> <span class="n">Example</span>
 
-<span class="kn">from</span> <span class="nn">femedu.domain.System</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.solver.NewtonRaphsonSolver</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear.Quad</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.materials.PlaneStress</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">femedu.solver</span> <span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Quad</span>
+<span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">PlaneStress</span>
 
 
 <span class="k">class</span> <span class="nc">ExamplePlate07</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
@@ -258,25 +258,25 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_783:
+  Node_664:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0. 0.]
-  Node_784:
+  Node_665:
       x:    [10.  0.]
       fix:  [&#39;uy&#39;]
       u:    [1. 0.]
-  Node_785:
+  Node_666:
       x:    [10. 10.]
       u:    [ 1.  -0.3]
-  Node_786:
+  Node_667:
       x:    [ 0. 10.]
       fix:  [&#39;ux&#39;]
       u:    [ 0.  -0.3]
 
 Elements:
 ---------------------
-  Quad_924: nodes ( Node_783 Node_784 Node_785 Node_786 )
+  Quad_801: nodes ( Node_664 Node_665 Node_666 Node_667 )
       material: list
       strain (0): xx=1.000e-01 yy=-3.000e-02 xy=-4.760e-18 zz=-2.100e-02
       stress (0): xx=1.000e+00 yy=0.000e+00 xy=-1.831e-17 zz=0.000e+00
@@ -288,7 +288,7 @@ Elements:
       stress (3): xx=1.000e+00 yy=0.000e+00 xy=7.142e-17 zz=0.000e+00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.244 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.746 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate07-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/8484d34548d21fbaef0a49006b675c4a/plot_plate07.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate07.py</span></code></a></p>

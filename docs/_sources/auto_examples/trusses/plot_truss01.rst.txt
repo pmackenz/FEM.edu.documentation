@@ -31,18 +31,16 @@ Author: Peter Mackenzie-Helnwein
 
 Setup
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-23
+.. GENERATED FROM PYTHON SOURCE LINES 15-22
 
 .. code-block:: default
 
 
-    from femedu.examples.Example import *
+    from femedu.examples import Example
 
-    from femedu.domain.System import *
-    from femedu.domain.Node import *
-    from femedu.elements.linear.Truss import *
-    from femedu.materials.FiberMaterial import *
-
+    from femedu.domain import System, Node
+    from femedu.elements.linear import Truss
+    from femedu.materials import FiberMaterial
 
 
 
@@ -50,11 +48,12 @@ Setup
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-25
+
+.. GENERATED FROM PYTHON SOURCE LINES 23-24
 
 Create the example by subclassing the :py:class:`Example`
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-66
+.. GENERATED FROM PYTHON SOURCE LINES 24-65
 
 .. code-block:: default
 
@@ -106,12 +105,12 @@ Create the example by subclassing the :py:class:`Example`
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-82
+.. GENERATED FROM PYTHON SOURCE LINES 79-81
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-87
+.. GENERATED FROM PYTHON SOURCE LINES 81-86
 
 .. code-block:: default
 
@@ -151,28 +150,28 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_12:
+      Node_0:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    [0. 0.]
-      Node_13:
+      Node_1:
           x:    [72.  0.]
           fix:  ['uy']
           u:    [3.6 0. ]
-      Node_14:
+      Node_2:
           x:    [36. 36.]
           P:    [ 0. -1.]
           u:    [ 1.8        -6.89116882]
 
     Elements:
     ---------------------
-      Truss: Node_12 to Node_13:
+      Truss: Node_0 to Node_1:
           material properties: FiberMaterial(Material)({'E': 10.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.04999999999999999   stress:{'xx': 0.4999999999999999, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 0.4999999999999999
-      Truss: Node_12 to Node_14:
+      Truss: Node_0 to Node_2:
           material properties: FiberMaterial(Material)({'E': 10.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.07071067811865474   stress:{'xx': -0.7071067811865474, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -0.7071067811865474
-      Truss: Node_13 to Node_14:
+      Truss: Node_1 to Node_2:
           material properties: FiberMaterial(Material)({'E': 10.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.07071067811865472   stress:{'xx': -0.7071067811865472, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -0.7071067811865472
 
@@ -183,7 +182,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.227 seconds)
+   **Total running time of the script:** ( 0 minutes  1.176 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss01.py:
