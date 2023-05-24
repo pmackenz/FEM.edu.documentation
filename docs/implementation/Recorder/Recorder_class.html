@@ -222,13 +222,22 @@ Recognized file types are</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.recorder.Recorder.Recorder.fetchRecord">
-<span class="sig-name descname"><span class="pre">fetchRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.fetchRecord" title="Permalink to this definition"></a></dt>
-<dd><p>Request recorded time history data for the listed keys.
-If a single key is given as a string, a single <cite>np.array()</cite> is returned.
-If a list of keys is given, a <cite>list of np.array()</cite> is returned.</p>
+<span class="sig-name descname"><span class="pre">fetchRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.fetchRecord" title="Permalink to this definition"></a></dt>
+<dd><p>Request recorded time history data for the listed keys.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>time history data for the listed keys.</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keys</strong> – If a single key is given as a string, a single <cite>np.array()</cite> is returned.
+If a list of keys is given, a <cite>list of np.array()</cite> is returned.</p></li>
+<li><p><strong>source</strong> – If a single <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> is given, pick record from that node.
+If a list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> objects is given, match keys and nodes
+based on order in lists.  <strong>source</strong> and <strong>keys</strong> list must match in shape.
+If a value should be picked from the model domain instead of a node, enter <strong>None</strong>
+in the respective slot.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>time history data for the listed keys.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -264,7 +273,7 @@ If a list of keys is given, a <cite>list of np.array()</cite> is returned.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on May 11, 2023.
+      <span class="lastupdated">Last updated on May 23, 2023.
       </span></p>
   </div>
 

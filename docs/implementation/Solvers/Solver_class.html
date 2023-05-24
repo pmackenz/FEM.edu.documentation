@@ -157,28 +157,31 @@ closest to the current load level.</p></li>
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>nodes</strong></p></td>
+<tr class="row-odd"><td><p><strong>model</strong></p></td>
+<td><p>pointer to the linked model (required)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>nodes</strong></p></td>
 <td><p>list of node pointers (required)</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>elements</strong></p></td>
+<tr class="row-odd"><td><p><strong>elements</strong></p></td>
 <td><p>list of element pointers (required)</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>P0</strong></p></td>
+<tr class="row-even"><td><p><strong>P0</strong></p></td>
 <td><p>system vector of initial forces</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Pref</strong></p></td>
+<tr class="row-odd"><td><p><strong>Pref</strong></p></td>
 <td><p>system vector of reference forces</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>u1</strong></p></td>
+<tr class="row-even"><td><p><strong>u1</strong></p></td>
 <td><p>system vector of current (converged) displacements</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>un</strong></p></td>
+<tr class="row-odd"><td><p><strong>un</strong></p></td>
 <td><p>system vector of previous (converged) displacements</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>lam1</strong></p></td>
+<tr class="row-even"><td><p><strong>lam1</strong></p></td>
 <td><p>load level of current (converged) displacements</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>lamn</strong></p></td>
+<tr class="row-odd"><td><p><strong>lamn</strong></p></td>
 <td><p>load level of previous (converged) displacements</p></td>
 </tr>
 </tbody>
@@ -238,28 +241,31 @@ The solver will use that data to update it’s internal state.</p>
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>nodes</strong></p></td>
+<tr class="row-odd"><td><p><strong>model</strong></p></td>
+<td><p>pointer to the linked model (required)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>nodes</strong></p></td>
 <td><p>list of node pointers (required)</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>elements</strong></p></td>
+<tr class="row-odd"><td><p><strong>elements</strong></p></td>
 <td><p>list of element pointers (required)</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>P0</strong></p></td>
+<tr class="row-even"><td><p><strong>P0</strong></p></td>
 <td><p>system vector of initial forces</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Pref</strong></p></td>
+<tr class="row-odd"><td><p><strong>Pref</strong></p></td>
 <td><p>system vector of reference forces</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>u1</strong></p></td>
+<tr class="row-even"><td><p><strong>u1</strong></p></td>
 <td><p>system vector of current (converged) displacements</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>un</strong></p></td>
+<tr class="row-odd"><td><p><strong>un</strong></p></td>
 <td><p>system vector of previous (converged) displacements</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>lam1</strong></p></td>
+<tr class="row-even"><td><p><strong>lam1</strong></p></td>
 <td><p>load level of current (converged) displacements</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>lamn</strong></p></td>
+<tr class="row-odd"><td><p><strong>lamn</strong></p></td>
 <td><p>load level of previous (converged) displacements</p></td>
 </tr>
 </tbody>
@@ -269,6 +275,20 @@ The solver will use that data to update it’s internal state.</p>
 <dd class="field-odd"><p><strong>state</strong> – state of the solver</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.solver.Solver.Solver.recordThisStep">
+<span class="sig-name descname"><span class="pre">recordThisStep</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.solver.Solver.Solver.recordThisStep" title="Permalink to this definition"></a></dt>
+<dd><p>initiate writing of the current state to all existing recorders.
+(system, nodes, elements, materials - as supported by those objects)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is automatically initiated by the solver
+for every converged solution.  No data will be recorded if a
+load step fails to converge to the target tolerance.</p>
+<p>Additional states can be recorded from the <code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code> object.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -349,7 +369,7 @@ entire entered load is applied in full.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on May 11, 2023.
+      <span class="lastupdated">Last updated on May 23, 2023.
       </span></p>
   </div>
 
