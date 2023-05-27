@@ -19,7 +19,7 @@
 
 
 ==========================================================
-Pulling a plate with a circular hole
+Pulling a plate with a circular hole : using triangles
 ==========================================================
 
 Using PatchMesher to model a quarter of the plate
@@ -6586,7 +6586,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.052 seconds)
+   **Total running time of the script:** ( 0 minutes  9.120 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate05.py:

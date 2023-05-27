@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pulling a plate with a circular hole &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+  <title>Pulling a plate with a circular hole : using triangles &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
@@ -23,7 +23,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Pulling a plate with a circular hole" href="plot_plate06.html" />
+    <link rel="next" title="Pulling a plate with a circular hole : using quads" href="plot_plate06.html" />
     <link rel="prev" title="Patch test for triangular plate under in-plane loading" href="plot_plate04.html" /> 
 </head>
 
@@ -62,12 +62,13 @@
 <li class="toctree-l4"><a class="reference internal" href="plot_plate02.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate03.html">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate04.html">Patch test for triangular plate under in-plane loading</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Pulling a plate with a circular hole</a></li>
-<li class="toctree-l4"><a class="reference internal" href="plot_plate06.html">Pulling a plate with a circular hole</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Pulling a plate with a circular hole : using triangles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate06.html">Pulling a plate with a circular hole : using quads</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate07.html">A square patch made of one quadrilateral plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate08.html">A square patch made of one quadrilateral plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate09.html">Patch test for quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate10.html">Profiling the code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate11.html">Bending a cantilever beam</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
@@ -97,7 +98,7 @@
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Example Gallery</a> &raquo;</li>
           <li><a href="index.html">Plate Examples</a> &raquo;</li>
-      <li>Pulling a plate with a circular hole</li>
+      <li>Pulling a plate with a circular hole : using triangles</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/auto_examples/plates/plot_plate05.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -112,8 +113,8 @@
 <p><a class="reference internal" href="#sphx-glr-download-auto-examples-plates-plot-plate05-py"><span class="std std-ref">Go to the end</span></a>
 to download the full example code</p>
 </div>
-<section class="sphx-glr-example-title" id="pulling-a-plate-with-a-circular-hole">
-<span id="sphx-glr-auto-examples-plates-plot-plate05-py"></span><h1>Pulling a plate with a circular hole<a class="headerlink" href="#pulling-a-plate-with-a-circular-hole" title="Permalink to this heading"></a></h1>
+<section class="sphx-glr-example-title" id="pulling-a-plate-with-a-circular-hole-using-triangles">
+<span id="sphx-glr-auto-examples-plates-plot-plate05-py"></span><h1>Pulling a plate with a circular hole : using triangles<a class="headerlink" href="#pulling-a-plate-with-a-circular-hole-using-triangles" title="Permalink to this heading"></a></h1>
 <p>Using PatchMesher to model a quarter of the plate</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -6612,7 +6613,7 @@ Elements:
       stress: xx=9.996e+01 yy=-7.117e-02 xy=5.338e-02 zz=0.000e+00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  9.052 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  9.120 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate05-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/b688d60488603b015311c11693cca8b3/plot_plate05.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate05.py</span></code></a></p>
@@ -6629,14 +6630,14 @@ Elements:
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="plot_plate04.html" class="btn btn-neutral float-left" title="Patch test for triangular plate under in-plane loading" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="plot_plate06.html" class="btn btn-neutral float-right" title="Pulling a plate with a circular hole" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="plot_plate06.html" class="btn btn-neutral float-right" title="Pulling a plate with a circular hole : using quads" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on May 23, 2023.
+      <span class="lastupdated">Last updated on May 26, 2023.
       </span></p>
   </div>
 
