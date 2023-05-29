@@ -186,7 +186,7 @@ If a list of keys is given, a <cite>list of np.array()</cite> is returned.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.System.System.historyPlot">
-<span class="sig-name descname"><span class="pre">historyPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">varY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.historyPlot" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">historyPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">varX</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varY</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.historyPlot" title="Permalink to this definition"></a></dt>
 <dd><p>Create a generic X-Y plot using recorder data for load-level (horizontal)
 and varY (vertical).</p>
 <p>If <strong>filename</strong> is given, store the plot to that file.
@@ -194,8 +194,20 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>varY</strong> (<em>str</em>) – a variable code previously set by <a class="reference internal" href="#femedu.domain.System.System.initRecorder" title="femedu.domain.System.System.initRecorder"><code class="xref py py-meth docutils literal notranslate"><span class="pre">initRecorder()</span></code></a></p></li>
+<li><p><strong>varX</strong> – <p>X-axis parameter;
+This must be a variable code previously set by <a class="reference internal" href="#femedu.domain.System.System.initRecorder" title="femedu.domain.System.System.initRecorder"><code class="xref py py-meth docutils literal notranslate"><span class="pre">initRecorder()</span></code></a>.</p>
+<p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">varX</span></code> is a <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, it is assumed to be a global parameter/variable, e.g.,
+load factor <strong>lam</strong>, or pseudo time <strong>time</strong> (time not yet supported)</p>
+<p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">varX</span></code> is a <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code> containing a variable code and a <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> pointer,
+the respective nodal DOF defined by the parameter will be used.</p>
+<p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">varX</span></code> is a <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code> containing a variable code and a <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> pointer,
+the respective element DOF defined by the parameter will be used. The parameter must identify a scalar parameter.
+Hence, you may use <code class="xref py py-data docutils literal notranslate"><span class="pre">'sig:xx'</span></code> but <strong>not</strong> <code class="xref py py-data docutils literal notranslate"><span class="pre">'stress'</span></code>.</p>
+</p></li>
+<li><p><strong>varY</strong> – a variable code previously set by <a class="reference internal" href="#femedu.domain.System.System.initRecorder" title="femedu.domain.System.System.initRecorder"><code class="xref py py-meth docutils literal notranslate"><span class="pre">initRecorder()</span></code></a></p></li>
 <li><p><strong>filename</strong> (<em>str</em>) – </p></li>
+<li><p><strong>node</strong> – (optional)</p></li>
+<li><p><strong>nodes</strong> – (optional)</p></li>
 </ul>
 </dd>
 </dl>
@@ -469,7 +481,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on May 26, 2023.
+      <span class="lastupdated">Last updated on May 28, 2023.
       </span></p>
   </div>
 

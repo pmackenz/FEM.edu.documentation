@@ -58,6 +58,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../diffusion/index.html">Diffusion Examples</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Plate Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot_benchmark01.html">Benchmark problem: Wedged Plate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate01.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate02.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate03.html">Patch test for triangular plate under in-plane loading</a></li>
@@ -152,12 +153,15 @@ to download the full example code</p>
 
         <span class="n">px</span>  <span class="o">=</span>  <span class="mf">0.0</span>         <span class="c1"># uniform load normal to x=Lx</span>
         <span class="n">py</span>  <span class="o">=</span>  <span class="mf">0.0</span>         <span class="c1"># uniform load normal to y=Ly</span>
-        <span class="n">pxy</span> <span class="o">=</span>  <span class="mf">1.0</span>         <span class="c1"># uniform shear load on x=L</span>
+        <span class="n">pxy</span> <span class="o">=</span>  <span class="mf">1.5</span>         <span class="c1"># uniform shear load on x=L</span>
 
         <span class="c1"># ========== setting analysis parameters ==============</span>
 
-        <span class="n">target_load_level</span> <span class="o">=</span> <span class="mf">1.00</span>     <span class="c1"># reference load</span>
-        <span class="n">max_steps</span> <span class="o">=</span> <span class="mi">2</span>                <span class="c1"># number of load steps: 2 -&gt; [0.0, 1.0]</span>
+        <span class="n">target_load_level</span> <span class="o">=</span> <span class="mf">100.00</span>    <span class="c1"># reference load</span>
+        <span class="n">max_steps</span> <span class="o">=</span> <span class="mi">21</span>                <span class="c1"># number of load steps: 2 -&gt; [0.0, 1.0]</span>
+
+        <span class="c1"># target_load_level = 10.00    # reference load</span>
+        <span class="c1"># max_steps = 3                # number of load steps: 2 -&gt; [0.0, 1.0]</span>
 
         <span class="c1"># define a list of target load levels</span>
         <span class="n">load_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">target_load_level</span><span class="p">,</span> <span class="n">max_steps</span><span class="p">)</span>
@@ -221,8 +225,7 @@ to download the full example code</p>
 
         <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;undeformed system&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate11_undeformed.png&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_loads</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-        <span class="k">for</span> <span class="n">lf</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mi">21</span><span class="p">):</span>
-        <span class="c1">#for lf in np.linspace(0.0, 10.0, 3):</span>
+        <span class="k">for</span> <span class="n">lf</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">target_load_level</span><span class="p">,</span> <span class="n">max_steps</span><span class="p">):</span>
 
             <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="n">lf</span><span class="p">)</span>
             <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -237,8 +240,8 @@ to download the full example code</p>
 
         <span class="c1"># create a history plot for the end node</span>
 
-        <span class="n">model</span><span class="o">.</span><span class="n">historyPlot</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="n">end_node</span><span class="p">)</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">historyPlot</span><span class="p">(</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="n">end_node</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">historyPlot</span><span class="p">(</span><span class="s1">&#39;lam&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span><span class="s1">&#39;uy&#39;</span><span class="p">],</span> <span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="n">end_node</span><span class="p">,</span><span class="n">end_node</span><span class="p">])</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">historyPlot</span><span class="p">((</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span><span class="n">end_node</span><span class="p">),</span> <span class="s1">&#39;uy&#39;</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="n">end_node</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
@@ -258,149 +261,153 @@ to download the full example code</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>norm of the out-of-balance force:   1.2214e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   8.6391e+02
-norm of the out-of-balance force:   1.5808e+00
-norm of the out-of-balance force:   9.2108e-06
-norm of the out-of-balance force:   2.4762e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   1.9467e+03
+norm of the out-of-balance force:   7.9605e+00
+norm of the out-of-balance force:   2.3934e-04
+norm of the out-of-balance force:   3.0140e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   8.5900e+02
-norm of the out-of-balance force:   1.5680e+00
-norm of the out-of-balance force:   8.5493e-04
-norm of the out-of-balance force:   2.6796e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   1.9219e+03
+norm of the out-of-balance force:   7.7868e+00
+norm of the out-of-balance force:   2.3191e-02
+norm of the out-of-balance force:   4.4781e-07
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   8.4453e+02
-norm of the out-of-balance force:   1.5300e+00
-norm of the out-of-balance force:   2.9645e-03
-norm of the out-of-balance force:   3.4270e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   1.8506e+03
+norm of the out-of-balance force:   7.2971e+00
+norm of the out-of-balance force:   7.4489e-02
+norm of the out-of-balance force:   1.2426e-06
+norm of the out-of-balance force:   2.5485e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   8.2132e+02
-norm of the out-of-balance force:   1.4695e+00
-norm of the out-of-balance force:   5.7584e-03
-norm of the out-of-balance force:   4.6990e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   1.7413e+03
+norm of the out-of-balance force:   6.5823e+00
+norm of the out-of-balance force:   1.2884e-01
+norm of the out-of-balance force:   1.7002e-06
+norm of the out-of-balance force:   2.8543e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   7.9059e+02
-norm of the out-of-balance force:   1.3910e+00
-norm of the out-of-balance force:   8.5518e-03
-norm of the out-of-balance force:   5.9901e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   1.6056e+03
+norm of the out-of-balance force:   5.7552e+00
+norm of the out-of-balance force:   1.6477e-01
+norm of the out-of-balance force:   1.6049e-06
+norm of the out-of-balance force:   3.0527e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   7.5385e+02
-norm of the out-of-balance force:   1.2994e+00
-norm of the out-of-balance force:   1.0767e-02
-norm of the out-of-balance force:   6.2440e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   1.4556e+03
+norm of the out-of-balance force:   4.9154e+00
+norm of the out-of-balance force:   1.7389e-01
+norm of the out-of-balance force:   1.1863e-06
+norm of the out-of-balance force:   3.0253e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   7.1271e+02
-norm of the out-of-balance force:   1.1997e+00
-norm of the out-of-balance force:   1.2066e-02
-norm of the out-of-balance force:   6.0261e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   1.3020e+03
+norm of the out-of-balance force:   4.1306e+00
+norm of the out-of-balance force:   1.6004e-01
+norm of the out-of-balance force:   7.3543e-07
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   6.6877e+02
-norm of the out-of-balance force:   1.0965e+00
-norm of the out-of-balance force:   1.2379e-02
-norm of the out-of-balance force:   5.1933e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   1.1528e+03
+norm of the out-of-balance force:   3.4348e+00
+norm of the out-of-balance force:   1.3294e-01
+norm of the out-of-balance force:   4.0033e-07
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   6.2348e+02
-norm of the out-of-balance force:   9.9343e-01
-norm of the out-of-balance force:   1.1843e-02
-norm of the out-of-balance force:   4.5148e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   1.0133e+03
+norm of the out-of-balance force:   2.8379e+00
+norm of the out-of-balance force:   1.0211e-01
+norm of the out-of-balance force:   1.9726e-07
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   5.7809e+02
-norm of the out-of-balance force:   8.9331e-01
-norm of the out-of-balance force:   1.0706e-02
-norm of the out-of-balance force:   3.6370e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   8.8641e+02
+norm of the out-of-balance force:   2.3355e+00
+norm of the out-of-balance force:   7.3852e-02
+norm of the out-of-balance force:   9.0733e-08
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   5.3358e+02
-norm of the out-of-balance force:   7.9813e-01
-norm of the out-of-balance force:   9.2403e-03
-norm of the out-of-balance force:   3.2042e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   7.7324e+02
+norm of the out-of-balance force:   1.9174e+00
+norm of the out-of-balance force:   5.1028e-02
+norm of the out-of-balance force:   3.9545e-08
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   4.9071e+02
-norm of the out-of-balance force:   7.0919e-01
-norm of the out-of-balance force:   7.6764e-03
-norm of the out-of-balance force:   3.2755e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   6.7371e+02
+norm of the out-of-balance force:   1.5719e+00
+norm of the out-of-balance force:   3.4075e-02
+norm of the out-of-balance force:   1.6925e-08
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   4.5001e+02
-norm of the out-of-balance force:   6.2724e-01
-norm of the out-of-balance force:   6.1802e-03
-norm of the out-of-balance force:   3.6676e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   5.8699e+02
+norm of the out-of-balance force:   1.2876e+00
+norm of the out-of-balance force:   2.2197e-02
+norm of the out-of-balance force:   7.5164e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   4.1180e+02
-norm of the out-of-balance force:   5.5259e-01
-norm of the out-of-balance force:   4.8493e-03
-norm of the out-of-balance force:   3.9222e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   5.1193e+02
+norm of the out-of-balance force:   1.0547e+00
+norm of the out-of-balance force:   1.4212e-02
+norm of the out-of-balance force:   4.4972e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   3.7627e+02
-norm of the out-of-balance force:   4.8527e-01
-norm of the out-of-balance force:   3.7263e-03
-norm of the out-of-balance force:   3.0984e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   4.4719e+02
+norm of the out-of-balance force:   8.6434e-01
+norm of the out-of-balance force:   8.9976e-03
+norm of the out-of-balance force:   4.3767e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   3.4346e+02
-norm of the out-of-balance force:   4.2504e-01
-norm of the out-of-balance force:   2.8157e-03
-norm of the out-of-balance force:   3.8503e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   3.9148e+02
+norm of the out-of-balance force:   7.0914e-01
+norm of the out-of-balance force:   5.6599e-03
+norm of the out-of-balance force:   3.7459e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   3.1335e+02
-norm of the out-of-balance force:   3.7154e-01
-norm of the out-of-balance force:   2.0995e-03
-norm of the out-of-balance force:   3.4159e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   3.4356e+02
+norm of the out-of-balance force:   5.8278e-01
+norm of the out-of-balance force:   3.5509e-03
+norm of the out-of-balance force:   3.9089e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   2.8583e+02
-norm of the out-of-balance force:   3.2429e-01
-norm of the out-of-balance force:   1.5493e-03
-norm of the out-of-balance force:   3.4857e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   3.0233e+02
+norm of the out-of-balance force:   4.7996e-01
+norm of the out-of-balance force:   2.2284e-03
+norm of the out-of-balance force:   3.5516e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   2.6077e+02
-norm of the out-of-balance force:   2.8277e-01
-norm of the out-of-balance force:   1.1344e-03
-norm of the out-of-balance force:   3.8875e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   2.6682e+02
+norm of the out-of-balance force:   3.9630e-01
+norm of the out-of-balance force:   1.4021e-03
+norm of the out-of-balance force:   3.7406e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   3.4233e+01
-norm of the out-of-balance force:   2.3801e+02
-norm of the out-of-balance force:   2.4643e-01
-norm of the out-of-balance force:   8.2582e-04
-norm of the out-of-balance force:   4.1410e-09
+norm of the out-of-balance force:   5.1349e+01
+norm of the out-of-balance force:   2.3618e+02
+norm of the out-of-balance force:   3.2818e-01
+norm of the out-of-balance force:   8.8593e-04
+norm of the out-of-balance force:   4.0110e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  9.043 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  48.526 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate11-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/c66f1db85ad6cd2084474f1c7ee99fb5/plot_plate11.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate11.py</span></code></a></p>
@@ -424,7 +431,7 @@ Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on May 26, 2023.
+      <span class="lastupdated">Last updated on May 28, 2023.
       </span></p>
   </div>
 
