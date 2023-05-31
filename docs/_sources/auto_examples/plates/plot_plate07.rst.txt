@@ -256,25 +256,25 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_664:
+      Node_1051:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    [0. 0.]
-      Node_665:
+      Node_1052:
           x:    [10.  0.]
           fix:  ['uy']
           u:    [1. 0.]
-      Node_666:
+      Node_1053:
           x:    [10. 10.]
           u:    [ 1.  -0.3]
-      Node_667:
+      Node_1054:
           x:    [ 0. 10.]
           fix:  ['ux']
           u:    [ 0.  -0.3]
 
     Elements:
     ---------------------
-      Quad_801: nodes ( Node_664 Node_665 Node_666 Node_667 )
+      Quad_1315: nodes ( Node_1051 Node_1052 Node_1053 Node_1054 )
           material: list
           strain (0): xx=1.000e-01 yy=-3.000e-02 xy=-4.760e-18 zz=-2.100e-02
           stress (0): xx=1.000e+00 yy=0.000e+00 xy=-1.831e-17 zz=0.000e+00
@@ -292,7 +292,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.746 seconds)
+   **Total running time of the script:** ( 0 minutes  1.194 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate07.py:

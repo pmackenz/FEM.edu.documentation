@@ -287,17 +287,21 @@ Run the example by creating an instance of the problem and executing it by calli
  .. code-block:: none
 
     System object
-    Node_150(x=[0. 0.], u=None)
-    Node_151(x=[ 0. 50.], u=None)
-    Node_152(x=[80.  0.], u=None)
-    Node_153(x=[80. 50.], u=None)
-    Frame2D(Node_150, Node_151, ElasticSection(Material)({'E': 29000.0, 'A': 20.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_152, Node_153, ElasticSection(Material)({'E': 29000.0, 'A': 20.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_151, Node_153, ElasticSection(Material)({'E': 29000.0, 'A': 20.0, 'I': 80.0, 'nu': 0.0, 'fy': 1e+30}))
+    Node_187(x=[0. 0.], u=None)
+    Node_188(x=[ 0. 50.], u=None)
+    Node_189(x=[80.  0.], u=None)
+    Node_190(x=[80. 50.], u=None)
+    Frame2D(Node_187, Node_188, ElasticSection(Material)({'E': 29000.0, 'A': 20.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_189, Node_190, ElasticSection(Material)({'E': 29000.0, 'A': 20.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_188, Node_190, ElasticSection(Material)({'E': 29000.0, 'A': 20.0, 'I': 80.0, 'nu': 0.0, 'fy': 1e+30}))
 
     ==== perform the analysis ===
 
     norm of the out-of-balance force:   0.0000e+00
+
+     ** Stability check: (smallest 1 eigenvalues of Kt)
+                            mode 0:       25.36
+
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 25.362866066892394
@@ -311,6 +315,10 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   2.5832e-02
     norm of the out-of-balance force:   5.8606e-05
     norm of the out-of-balance force:   1.3304e-07
+
+     ** Stability check: (smallest 1 eigenvalues of Kt)
+                            mode 0:       22.55
+
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 22.553344322698855
@@ -325,6 +333,10 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   4.9127e-04
     norm of the out-of-balance force:   2.2490e-06
     norm of the out-of-balance force:   1.0102e-08
+
+     ** Stability check: (smallest 1 eigenvalues of Kt)
+                            mode 0:       19.74
+
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 19.736675218770774
@@ -339,6 +351,10 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   1.7372e-03
     norm of the out-of-balance force:   1.2036e-05
     norm of the out-of-balance force:   8.3344e-08
+
+     ** Stability check: (smallest 1 eigenvalues of Kt)
+                            mode 0:       16.91
+
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 16.91257943489863
@@ -353,6 +369,10 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   4.3136e-03
     norm of the out-of-balance force:   4.0225e-05
     norm of the out-of-balance force:   3.7531e-07
+
+     ** Stability check: (smallest 1 eigenvalues of Kt)
+                            mode 0:       14.08
+
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 14.080761870683443
@@ -368,6 +388,10 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   1.0385e-04
     norm of the out-of-balance force:   1.2225e-06
     norm of the out-of-balance force:   1.4385e-08
+
+     ** Stability check: (smallest 1 eigenvalues of Kt)
+                            mode 0:       11.24
+
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 11.240910493712873
@@ -383,6 +407,10 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   2.2773e-04
     norm of the out-of-balance force:   3.2491e-06
     norm of the out-of-balance force:   4.6476e-08
+
+     ** Stability check: (smallest 1 eigenvalues of Kt)
+                            mode 0:        8.39
+
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 8.392695084555516
@@ -398,6 +426,10 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   4.4606e-04
     norm of the out-of-balance force:   7.5050e-06
     norm of the out-of-balance force:   1.2627e-07
+
+     ** Stability check: (smallest 1 eigenvalues of Kt)
+                            mode 0:        5.54
+
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 5.535765867200808
@@ -413,6 +445,10 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   8.0422e-04
     norm of the out-of-balance force:   1.5639e-05
     norm of the out-of-balance force:   3.0400e-07
+
+     ** Stability check: (smallest 1 eigenvalues of Kt)
+                            mode 0:        2.67
+
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = 2.669752012635755
@@ -428,6 +464,10 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   1.3605e-03
     norm of the out-of-balance force:   3.0118e-05
     norm of the out-of-balance force:   6.6657e-07
+
+     ** Stability check: (smallest 1 eigenvalues of Kt)
+                            mode 0:       -0.21
+
     +
 
      ** Stability check: (smallest eigenvalue of Kt) = -0.20573999904608956
@@ -442,30 +482,30 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_150:
+      Node_187:
           x:    [0. 0.]
           fix:  ['ux', 'uy', 'rz']
           u:    [0. 0. 0.]
-      Node_151:
+      Node_188:
           x:    [ 0. 50.]
           u:    [ 0.00807668 -0.09310345 -0.20194602]
-      Node_152:
+      Node_189:
           x:    [80.  0.]
           fix:  ['ux', 'uy', 'rz']
           u:    [0. 0. 0.]
-      Node_153:
+      Node_190:
           x:    [80. 50.]
           u:    [-0.00807668 -0.09310345  0.20194602]
 
     Elements:
     ---------------------
-      Frame2D_260: nodes ( Node_150 Node_151 )
+      Frame2D_302: nodes ( Node_187 Node_188 )
           material: ElasticSection
           internal forces: f0=-1080.00 V0=-117.11 M0=2842.69 fl=-1080.00 Vl=-117.11 Ml=-3004.18 Pw=0.00 Mw=0.00
-      Frame2D_261: nodes ( Node_152 Node_153 )
+      Frame2D_303: nodes ( Node_189 Node_190 )
           material: ElasticSection
           internal forces: f0=-1080.00 V0=117.11 M0=-2842.69 fl=-1080.00 Vl=117.11 Ml=3004.18 Pw=0.00 Mw=0.00
-      Frame2D_262: nodes ( Node_151 Node_153 )
+      Frame2D_304: nodes ( Node_188 Node_190 )
           material: ElasticSection
           internal forces: f0=-117.11 V0=0.00 M0=11395.82 fl=-117.11 Vl=0.00 Ml=11395.82 Pw=-1080.00 Mw=-14400.00
 
@@ -476,7 +516,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.735 seconds)
+   **Total running time of the script:** ( 0 minutes  1.014 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame03.py:

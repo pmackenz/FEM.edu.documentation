@@ -47,12 +47,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#spring-examples">Spring Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#diffusion-examples">Diffusion Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#mixed-structures-examples">Mixed Structures Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../springs/index.html">Spring Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
@@ -251,10 +253,10 @@ to download the full example code</p>
 <li><img src="../../_images/sphx_glr_plot_plate04_001.png" srcset="../../_images/sphx_glr_plot_plate04_001.png" alt="undeformed system" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate04_002.png" srcset="../../_images/sphx_glr_plot_plate04_002.png" alt="Deformed System (magnification=10.00)" class = "sphx-glr-multi-img"/></li>
 </ul>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Node_78:
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Node_384:
     x:    [100.  80.]
     u:    None
-+ Quad_67: nodes ( Node_69 Node_70 Node_78 Node_77 )
++ Quad_498: nodes ( Node_375 Node_376 Node_384 Node_383 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -264,105 +266,105 @@ to download the full example code</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_102: nodes ( Node_104 Node_105 Node_106 )
++ Triangle_533: nodes ( Node_410 Node_411 Node_412 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Node_85:
+Node_391:
     x:    [100.   0.]
     fix:  [&#39;uy&#39;]
     u:    None
-+ Triangle_73: nodes ( Node_84 Node_85 Node_91 )
++ Triangle_504: nodes ( Node_390 Node_391 Node_397 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Node_91:
+Node_397:
     x:    [100.          13.33333333]
     u:    None
-+ Triangle_73: nodes ( Node_84 Node_85 Node_91 )
++ Triangle_504: nodes ( Node_390 Node_391 Node_397 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_82: nodes ( Node_90 Node_91 Node_96 )
++ Triangle_513: nodes ( Node_396 Node_397 Node_402 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_83: nodes ( Node_91 Node_90 Node_84 )
++ Triangle_514: nodes ( Node_397 Node_396 Node_390 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Node_96:
+Node_402:
     x:    [100.          26.66666667]
     u:    None
-+ Triangle_82: nodes ( Node_90 Node_91 Node_96 )
++ Triangle_513: nodes ( Node_396 Node_397 Node_402 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_90: nodes ( Node_95 Node_96 Node_100 )
++ Triangle_521: nodes ( Node_401 Node_402 Node_406 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_91: nodes ( Node_96 Node_95 Node_90 )
++ Triangle_522: nodes ( Node_402 Node_401 Node_396 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Node_100:
+Node_406:
     x:    [100.  40.]
     u:    None
-+ Triangle_90: nodes ( Node_95 Node_96 Node_100 )
++ Triangle_521: nodes ( Node_401 Node_402 Node_406 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_96: nodes ( Node_99 Node_100 Node_103 )
++ Triangle_527: nodes ( Node_405 Node_406 Node_409 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_97: nodes ( Node_100 Node_99 Node_95 )
++ Triangle_528: nodes ( Node_406 Node_405 Node_401 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Node_103:
+Node_409:
     x:    [100.          53.33333333]
     u:    None
-+ Triangle_96: nodes ( Node_99 Node_100 Node_103 )
++ Triangle_527: nodes ( Node_405 Node_406 Node_409 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_100: nodes ( Node_102 Node_103 Node_105 )
++ Triangle_531: nodes ( Node_408 Node_409 Node_411 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_101: nodes ( Node_103 Node_102 Node_99 )
++ Triangle_532: nodes ( Node_409 Node_408 Node_405 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Node_105:
+Node_411:
     x:    [100.          66.66666667]
     u:    None
-+ Triangle_100: nodes ( Node_102 Node_103 Node_105 )
++ Triangle_531: nodes ( Node_408 Node_409 Node_411 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_102: nodes ( Node_104 Node_105 Node_106 )
++ Triangle_533: nodes ( Node_410 Node_411 Node_412 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_103: nodes ( Node_105 Node_104 Node_102 )
++ Triangle_534: nodes ( Node_411 Node_410 Node_408 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-Node_106:
+Node_412:
     x:    [100.  80.]
-    following Node_78
+    following Node_384
     u:    None
-+ Triangle_102: nodes ( Node_104 Node_105 Node_106 )
++ Triangle_533: nodes ( Node_410 Node_411 Node_412 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
 +
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.569 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.235 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate04-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/2a73f877369e6545e02a3ffd5afc818e/plot_plate04.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate04.py</span></code></a></p>
@@ -386,7 +388,7 @@ Node_106:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on May 28, 2023.
+      <span class="lastupdated">Last updated on May 30, 2023.
       </span></p>
   </div>
 

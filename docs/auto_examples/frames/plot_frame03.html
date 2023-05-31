@@ -47,12 +47,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#spring-examples">Spring Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#diffusion-examples">Diffusion Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#mixed-structures-examples">Mixed Structures Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../springs/index.html">Spring Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Frame Examples</a><ul class="current">
@@ -316,17 +318,21 @@ to download the full example code</p>
 <li><img src="../../_images/sphx_glr_plot_frame03_006.png" srcset="../../_images/sphx_glr_plot_frame03_006.png" alt="Mode Shape for $ \lambda = -0.21 $" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System object
-Node_150(x=[0. 0.], u=None)
-Node_151(x=[ 0. 50.], u=None)
-Node_152(x=[80.  0.], u=None)
-Node_153(x=[80. 50.], u=None)
-Frame2D(Node_150, Node_151, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_152, Node_153, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
-Frame2D(Node_151, Node_153, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 80.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Node_187(x=[0. 0.], u=None)
+Node_188(x=[ 0. 50.], u=None)
+Node_189(x=[80.  0.], u=None)
+Node_190(x=[80. 50.], u=None)
+Frame2D(Node_187, Node_188, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_189, Node_190, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 10.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
+Frame2D(Node_188, Node_190, ElasticSection(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 20.0, &#39;I&#39;: 80.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
 
 ==== perform the analysis ===
 
 norm of the out-of-balance force:   0.0000e+00
+
+ ** Stability check: (smallest 1 eigenvalues of Kt)
+                        mode 0:       25.36
+
 +
 
  ** Stability check: (smallest eigenvalue of Kt) = 25.362866066892394
@@ -340,6 +346,10 @@ norm of the out-of-balance force:   2.7690e+01
 norm of the out-of-balance force:   2.5832e-02
 norm of the out-of-balance force:   5.8606e-05
 norm of the out-of-balance force:   1.3304e-07
+
+ ** Stability check: (smallest 1 eigenvalues of Kt)
+                        mode 0:       22.55
+
 +
 
  ** Stability check: (smallest eigenvalue of Kt) = 22.553344322698855
@@ -354,6 +364,10 @@ norm of the out-of-balance force:   1.0732e-01
 norm of the out-of-balance force:   4.9127e-04
 norm of the out-of-balance force:   2.2490e-06
 norm of the out-of-balance force:   1.0102e-08
+
+ ** Stability check: (smallest 1 eigenvalues of Kt)
+                        mode 0:       19.74
+
 +
 
  ** Stability check: (smallest eigenvalue of Kt) = 19.736675218770774
@@ -368,6 +382,10 @@ norm of the out-of-balance force:   2.5073e-01
 norm of the out-of-balance force:   1.7372e-03
 norm of the out-of-balance force:   1.2036e-05
 norm of the out-of-balance force:   8.3344e-08
+
+ ** Stability check: (smallest 1 eigenvalues of Kt)
+                        mode 0:       16.91
+
 +
 
  ** Stability check: (smallest eigenvalue of Kt) = 16.91257943489863
@@ -382,6 +400,10 @@ norm of the out-of-balance force:   4.6258e-01
 norm of the out-of-balance force:   4.3136e-03
 norm of the out-of-balance force:   4.0225e-05
 norm of the out-of-balance force:   3.7531e-07
+
+ ** Stability check: (smallest 1 eigenvalues of Kt)
+                        mode 0:       14.08
+
 +
 
  ** Stability check: (smallest eigenvalue of Kt) = 14.080761870683443
@@ -397,6 +419,10 @@ norm of the out-of-balance force:   8.8231e-03
 norm of the out-of-balance force:   1.0385e-04
 norm of the out-of-balance force:   1.2225e-06
 norm of the out-of-balance force:   1.4385e-08
+
+ ** Stability check: (smallest 1 eigenvalues of Kt)
+                        mode 0:       11.24
+
 +
 
  ** Stability check: (smallest eigenvalue of Kt) = 11.240910493712873
@@ -412,6 +438,10 @@ norm of the out-of-balance force:   1.5960e-02
 norm of the out-of-balance force:   2.2773e-04
 norm of the out-of-balance force:   3.2491e-06
 norm of the out-of-balance force:   4.6476e-08
+
+ ** Stability check: (smallest 1 eigenvalues of Kt)
+                        mode 0:        8.39
+
 +
 
  ** Stability check: (smallest eigenvalue of Kt) = 8.392695084555516
@@ -427,6 +457,10 @@ norm of the out-of-balance force:   2.6511e-02
 norm of the out-of-balance force:   4.4606e-04
 norm of the out-of-balance force:   7.5050e-06
 norm of the out-of-balance force:   1.2627e-07
+
+ ** Stability check: (smallest 1 eigenvalues of Kt)
+                        mode 0:        5.54
+
 +
 
  ** Stability check: (smallest eigenvalue of Kt) = 5.535765867200808
@@ -442,6 +476,10 @@ norm of the out-of-balance force:   4.1357e-02
 norm of the out-of-balance force:   8.0422e-04
 norm of the out-of-balance force:   1.5639e-05
 norm of the out-of-balance force:   3.0400e-07
+
+ ** Stability check: (smallest 1 eigenvalues of Kt)
+                        mode 0:        2.67
+
 +
 
  ** Stability check: (smallest eigenvalue of Kt) = 2.669752012635755
@@ -457,6 +495,10 @@ norm of the out-of-balance force:   6.1460e-02
 norm of the out-of-balance force:   1.3605e-03
 norm of the out-of-balance force:   3.0118e-05
 norm of the out-of-balance force:   6.6657e-07
+
+ ** Stability check: (smallest 1 eigenvalues of Kt)
+                        mode 0:       -0.21
+
 +
 
  ** Stability check: (smallest eigenvalue of Kt) = -0.20573999904608956
@@ -471,35 +513,35 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_150:
+  Node_187:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_151:
+  Node_188:
       x:    [ 0. 50.]
       u:    [ 0.00807668 -0.09310345 -0.20194602]
-  Node_152:
+  Node_189:
       x:    [80.  0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_153:
+  Node_190:
       x:    [80. 50.]
       u:    [-0.00807668 -0.09310345  0.20194602]
 
 Elements:
 ---------------------
-  Frame2D_260: nodes ( Node_150 Node_151 )
+  Frame2D_302: nodes ( Node_187 Node_188 )
       material: ElasticSection
       internal forces: f0=-1080.00 V0=-117.11 M0=2842.69 fl=-1080.00 Vl=-117.11 Ml=-3004.18 Pw=0.00 Mw=0.00
-  Frame2D_261: nodes ( Node_152 Node_153 )
+  Frame2D_303: nodes ( Node_189 Node_190 )
       material: ElasticSection
       internal forces: f0=-1080.00 V0=117.11 M0=-2842.69 fl=-1080.00 Vl=117.11 Ml=3004.18 Pw=0.00 Mw=0.00
-  Frame2D_262: nodes ( Node_151 Node_153 )
+  Frame2D_304: nodes ( Node_188 Node_190 )
       material: ElasticSection
       internal forces: f0=-117.11 V0=0.00 M0=11395.82 fl=-117.11 Vl=0.00 Ml=11395.82 Pw=-1080.00 Mw=-14400.00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.735 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.014 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-frames-plot-frame03-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/32fd880e109e940272d694bbf6555869/plot_frame03.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_frame03.py</span></code></a></p>
@@ -523,7 +565,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on May 28, 2023.
+      <span class="lastupdated">Last updated on May 30, 2023.
       </span></p>
   </div>
 

@@ -150,28 +150,28 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_0:
+      Node_16:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    [0. 0.]
-      Node_1:
+      Node_17:
           x:    [72.  0.]
           fix:  ['uy']
           u:    [3.6 0. ]
-      Node_2:
+      Node_18:
           x:    [36. 36.]
           P:    [ 0. -1.]
           u:    [ 1.8        -6.89116882]
 
     Elements:
     ---------------------
-      Truss: Node_0 to Node_1:
+      Truss: Node_16 to Node_17:
           material properties: FiberMaterial(Material)({'E': 10.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.04999999999999999   stress:{'xx': 0.4999999999999999, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 0.4999999999999999
-      Truss: Node_0 to Node_2:
+      Truss: Node_16 to Node_18:
           material properties: FiberMaterial(Material)({'E': 10.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.07071067811865474   stress:{'xx': -0.7071067811865474, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -0.7071067811865474
-      Truss: Node_1 to Node_2:
+      Truss: Node_17 to Node_18:
           material properties: FiberMaterial(Material)({'E': 10.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.07071067811865472   stress:{'xx': -0.7071067811865472, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -0.7071067811865472
 
@@ -182,7 +182,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.176 seconds)
+   **Total running time of the script:** ( 0 minutes  0.303 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss01.py:

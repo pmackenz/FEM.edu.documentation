@@ -47,12 +47,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#spring-examples">Spring Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#diffusion-examples">Diffusion Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#mixed-structures-examples">Mixed Structures Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../springs/index.html">Spring Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
@@ -248,34 +250,34 @@ to download the full example code</p>
 
 Nodes:
 ---------------------
-  Node_174:
+  Node_3807:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    None
-  Node_175:
+  Node_3808:
       x:    [ 0. 50.]
       P:    [20.  0.  0.]
       u:    None
-  Node_176:
+  Node_3809:
       x:    [80.  0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    None
-  Node_177:
+  Node_3810:
       x:    [80. 50.]
       u:    None
 
 Elements:
 ---------------------
-  Frame2D_291: nodes ( Node_174 Node_175 )
+  Frame2D_6322: nodes ( Node_3807 Node_3808 )
       material: ElasticSection
       internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-  Frame2D_292: nodes ( Node_176 Node_177 )
+  Frame2D_6323: nodes ( Node_3809 Node_3810 )
       material: ElasticSection
       internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-  Frame2D_293: nodes ( Node_175 Node_177 )
+  Frame2D_6324: nodes ( Node_3808 Node_3810 )
       material: ElasticSection
       internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-  Truss: Node_174 to Node_177:
+  Truss: Node_3807 to Node_3810:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 0.0
 
@@ -383,39 +385,39 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_174:
+  Node_3807:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_175:
+  Node_3808:
       x:    [ 0. 50.]
       P:    [20.  0.  0.]
       u:    [ 0.81143807 -0.01625057 -0.03775122]
-  Node_176:
+  Node_3809:
       x:    [80.  0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    [0. 0. 0.]
-  Node_177:
+  Node_3810:
       x:    [80. 50.]
       u:    [ 0.78293564 -0.02726958  0.03215376]
 
 Elements:
 ---------------------
-  Frame2D_291: nodes ( Node_174 Node_175 )
+  Frame2D_6322: nodes ( Node_3807 Node_3808 )
       material: ElasticSection
       internal forces: f0=-188.51 V0=-6.64 M0=-98.88 fl=-188.51 Vl=-6.64 Ml=-278.06 Pw=0.00 Mw=0.00
-  Frame2D_292: nodes ( Node_176 Node_177 )
+  Frame2D_6323: nodes ( Node_3809 Node_3810 )
       material: ElasticSection
       internal forces: f0=-316.33 V0=37.17 M0=-911.14 fl=-316.33 Vl=37.17 Ml=1195.25 Pw=0.00 Mw=0.00
-  Frame2D_293: nodes ( Node_175 Node_177 )
+  Frame2D_6324: nodes ( Node_3808 Node_3810 )
       material: ElasticSection
       internal forces: f0=-206.64 V0=-11.49 M0=2388.61 fl=-206.64 Vl=-11.49 Ml=1471.42 Pw=-200.00 Mw=-2666.67
-  Truss: Node_174 to Node_177:
+  Truss: Node_3807 to Node_3810:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.006871468961325107   stress:{&#39;xx&#39;: 199.27259987842808, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 199.27259987842808
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.625 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.891 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-mixed-plot-mixed01-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/01088434f2f8ec92eeb08fc4c886169f/plot_mixed01.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_mixed01.py</span></code></a></p>
@@ -439,7 +441,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on May 28, 2023.
+      <span class="lastupdated">Last updated on May 30, 2023.
       </span></p>
   </div>
 

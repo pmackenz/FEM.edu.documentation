@@ -92,9 +92,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-femedu.domain.Node">
-<span id="node-class"></span><h1>Node class<a class="headerlink" href="#module-femedu.domain.Node" title="Permalink to this heading"></a></h1>
-<dl class="py class">
+  <section id="node-class">
+<span id="id1"></span><h1>Node class<a class="headerlink" href="#node-class" title="Permalink to this heading"></a></h1>
+<span class="target" id="module-femedu.domain.Node"></span><dl class="py class">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.domain.Node.</span></span><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node" title="Permalink to this definition"></a></dt>
 <dd><p>class: representing a single Node</p>
@@ -217,6 +217,26 @@ Do not forget the <code class="code docutils literal notranslate"><span class="p
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>the node ID (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getIdx4DOFs">
+<span class="sig-name descname"><span class="pre">getIdx4DOFs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getIdx4DOFs" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an index list to this node’s dofs in the global list of dofs</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getIdx4Element">
+<span class="sig-name descname"><span class="pre">getIdx4Element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getIdx4Element" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an index list to nodal dofs associated with the attached <strong>elem</strong> within the global dof list</p>
 </dd>
 </dl>
 </dd></dl>
@@ -404,8 +424,8 @@ Do not forget the <code class="code docutils literal notranslate"><span class="p
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>loads</strong> – </p></li>
-<li><p><strong>dofs</strong> – </p></li>
+<li><p><strong>loads</strong> – list of force components</p></li>
+<li><p><strong>dofs</strong> – associated list of DOFs to which respective loads are to be applied</p></li>
 </ul>
 </dd>
 </dl>
@@ -453,7 +473,7 @@ user input.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on May 28, 2023.
+      <span class="lastupdated">Last updated on May 30, 2023.
       </span></p>
   </div>
 

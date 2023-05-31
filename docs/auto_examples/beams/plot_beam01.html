@@ -47,12 +47,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#spring-examples">Spring Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#diffusion-examples">Diffusion Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#mixed-structures-examples">Mixed Structures Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../springs/index.html">Spring Examples</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Beam Examples</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Single span beam under uniform load.</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_beam02.html">Three-span continuous beam under uniform load.</a></li>
@@ -202,42 +204,42 @@ calculated deformation, reactions and internal forces.</p>
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_4:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [ 0.         -0.03615668]
-  Node_1:
+  Node_5:
       x:    [30.  0.]
       u:    [-0.97547707 -0.02561098]
-  Node_2:
+  Node_6:
       x:    [60.  0.]
       P:    [-40.   0.]
       u:    [-1.38600603e+00 -1.37017950e-17]
-  Node_3:
+  Node_7:
       x:    [90.  0.]
       u:    [-0.97547707  0.02561098]
-  Node_4:
+  Node_8:
       x:    [120.   0.]
       fix:  [&#39;uy&#39;]
       u:    [0.         0.03615668]
 
 Elements:
 ---------------------
-  Beam2D: Node_0 to Node_1:
+  Beam2D: Node_4 to Node_5:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
      nodal forces: Vi:65.0 Mi:-74.99999999999909 Vj:-65.0 Mj:2024.999999999989
-  Beam2D: Node_1 to Node_2:
+  Beam2D: Node_5 to Node_6:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
      nodal forces: Vi:34.999999999999886 Mi:-2024.9999999999864 Vj:-34.999999999999886 Mj:3074.999999999981
-  Beam2D: Node_2 to Node_3:
+  Beam2D: Node_6 to Node_7:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
      nodal forces: Vi:-34.999999999999716 Mi:-3074.99999999998 Vj:34.999999999999716 Mj:2024.9999999999936
-  Beam2D: Node_3 to Node_4:
+  Beam2D: Node_7 to Node_8:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
      nodal forces: Vi:-65.00000000000023 Mi:-2024.9999999999936 Vj:65.00000000000023 Mj:74.99999999999818
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.647 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.352 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-beams-plot-beam01-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/307073f7a96c279b06430f73afb4cc59/plot_beam01.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_beam01.py</span></code></a></p>
@@ -261,7 +263,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on May 28, 2023.
+      <span class="lastupdated">Last updated on May 30, 2023.
       </span></p>
   </div>
 

@@ -47,12 +47,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#spring-examples">Spring Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#diffusion-examples">Diffusion Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#mixed-structures-examples">Mixed Structures Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../springs/index.html">Spring Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Truss Examples</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="plot_truss01.html">Simple triangular truss.</a></li>
@@ -219,90 +221,90 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_19:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0. 0.]
-  Node_1:
+  Node_20:
       x:    [72.  0.]
       u:    [ 0.018      -0.18444605]
-  Node_2:
+  Node_21:
       x:    [144.   0.]
       u:    [ 0.054      -0.25042807]
-  Node_3:
+  Node_22:
       x:    [216.   0.]
       u:    [ 0.09       -0.18444605]
-  Node_4:
+  Node_23:
       x:    [288.   0.]
       fix:  [&#39;uy&#39;]
       u:    [0.108 0.   ]
-  Node_5:
+  Node_24:
       x:    [36. 96.]
       P:    [  0. -10.]
       u:    [ 0.099      -0.11508903]
-  Node_6:
+  Node_25:
       x:    [108.  96.]
       P:    [  0. -10.]
       u:    [ 0.072      -0.24367807]
-  Node_7:
+  Node_26:
       x:    [180.  96.]
       P:    [  0. -10.]
       u:    [ 0.036      -0.24367807]
-  Node_8:
+  Node_27:
       x:    [252.  96.]
       P:    [  0. -10.]
       u:    [ 0.009      -0.11508903]
 
 Elements:
 ---------------------
-  Truss: Node_0 to Node_1:
+  Truss: Node_19 to Node_20:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.00025000000000000017   stress:{&#39;xx&#39;: 2.5000000000000018, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 7.500000000000005
-  Truss: Node_1 to Node_2:
+  Truss: Node_20 to Node_21:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0005   stress:{&#39;xx&#39;: 5.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 15.0
-  Truss: Node_2 to Node_3:
+  Truss: Node_21 to Node_22:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0005000000000000002   stress:{&#39;xx&#39;: 5.000000000000003, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 15.000000000000007
-  Truss: Node_3 to Node_4:
+  Truss: Node_22 to Node_23:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.00025   stress:{&#39;xx&#39;: 2.5, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 7.5
-  Truss: Node_5 to Node_6:
+  Truss: Node_24 to Node_25:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.00037499999999999974   stress:{&#39;xx&#39;: -3.7499999999999973, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -11.249999999999993
-  Truss: Node_6 to Node_7:
+  Truss: Node_25 to Node_26:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.0005   stress:{&#39;xx&#39;: -5.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -15.0
-  Truss: Node_7 to Node_8:
+  Truss: Node_26 to Node_27:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.0003750000000000001   stress:{&#39;xx&#39;: -3.7500000000000013, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -11.250000000000004
-  Truss: Node_0 to Node_5:
+  Truss: Node_19 to Node_24:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.0007120003121097942   stress:{&#39;xx&#39;: -7.120003121097942, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -21.360009363293827
-  Truss: Node_1 to Node_6:
+  Truss: Node_20 to Node_25:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.00035600015605489685   stress:{&#39;xx&#39;: -3.5600015605489683, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -10.680004681646905
-  Truss: Node_2 to Node_7:
+  Truss: Node_21 to Node_26:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-1.7765477248433666e-19   stress:{&#39;xx&#39;: -1.7765477248433666e-15, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -5.3296431745301e-15
-  Truss: Node_3 to Node_8:
+  Truss: Node_22 to Node_27:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.00035600015605489685   stress:{&#39;xx&#39;: 3.5600015605489683, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 10.680004681646905
-  Truss: Node_1 to Node_5:
+  Truss: Node_20 to Node_24:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0003560001560548972   stress:{&#39;xx&#39;: 3.560001560548972, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 10.680004681646915
-  Truss: Node_2 to Node_6:
+  Truss: Node_21 to Node_25:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-2.0303402569638477e-19   stress:{&#39;xx&#39;: -2.0303402569638477e-15, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -6.091020770891543e-15
-  Truss: Node_3 to Node_7:
+  Truss: Node_22 to Node_26:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.00035600015605489707   stress:{&#39;xx&#39;: -3.5600015605489705, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -10.680004681646912
-  Truss: Node_4 to Node_8:
+  Truss: Node_23 to Node_27:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.0007120003121097942   stress:{&#39;xx&#39;: -7.120003121097942, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -21.360009363293827
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.013 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.494 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-trusses-plot-truss02-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/82dfc7b00ab2727b53c95b27d070083c/plot_truss02.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_truss02.py</span></code></a></p>
@@ -326,7 +328,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on May 28, 2023.
+      <span class="lastupdated">Last updated on May 30, 2023.
       </span></p>
   </div>
 
