@@ -245,187 +245,139 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_43:
+      Node_51:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    None
-      Node_44:
+      Node_52:
           x:    [250.   0.]
           fix:  ['ux', 'uy']
           u:    None
-      Node_45:
+      Node_53:
           x:    [  0. 250.]
           u:    None
-      Node_46:
+      Node_54:
           x:    [250. 250.]
           u:    None
-      Node_47:
+      Node_55:
           x:    [  0. 500.]
           u:    None
-      Node_48:
+      Node_56:
           x:    [250. 500.]
           u:    None
-      Node_49:
+      Node_57:
           x:    [  0. 750.]
           u:    None
-      Node_50:
+      Node_58:
           x:    [250. 750.]
           u:    None
-      Node_51:
+      Node_59:
           x:    [   0. 1000.]
           u:    None
-      Node_52:
+      Node_60:
           x:    [ 250. 1000.]
           u:    None
-      Node_53:
+      Node_61:
           x:    [   0. 1250.]
           u:    None
-      Node_54:
+      Node_62:
           x:    [ 250. 1250.]
           u:    None
-      Node_55:
+      Node_63:
           x:    [   0. 1500.]
           u:    None
-      Node_56:
+      Node_64:
           x:    [ 250. 1500.]
           u:    None
-      Node_57:
+      Node_65:
           x:    [   0. 1750.]
           u:    None
-      Node_58:
+      Node_66:
           x:    [ 250. 1750.]
           u:    None
-      Node_59:
+      Node_67:
           x:    [   0. 2000.]
           u:    None
-      Node_60:
+      Node_68:
           x:    [ 250. 2000.]
           u:    None
-      Node_61:
+      Node_69:
           x:    [   0. 2250.]
           u:    None
-      Node_62:
+      Node_70:
           x:    [ 250. 2250.]
           u:    None
-      Node_63:
+      Node_71:
           x:    [   0. 2500.]
           u:    None
-      Node_64:
+      Node_72:
           x:    [ 250. 2500.]
           u:    None
-      Node_65:
+      Node_73:
           x:    [   0. 2750.]
           u:    None
-      Node_66:
+      Node_74:
           x:    [ 250. 2750.]
           u:    None
-      Node_67:
+      Node_75:
           x:    [   0. 3000.]
           u:    None
-      Node_68:
+      Node_76:
           x:    [ 250. 3000.]
           u:    None
-      Node_69:
+      Node_77:
           x:    [   0. 3250.]
           u:    None
-      Node_70:
+      Node_78:
           x:    [ 250. 3250.]
           u:    None
-      Node_71:
+      Node_79:
           x:    [   0. 3500.]
           u:    None
-      Node_72:
+      Node_80:
           x:    [ 250. 3500.]
           u:    None
-      Node_73:
+      Node_81:
           x:    [   0. 3750.]
           u:    None
-      Node_74:
+      Node_82:
           x:    [ 250. 3750.]
           u:    None
-      Node_75:
+      Node_83:
           x:    [   0. 4000.]
           u:    None
-      Node_76:
+      Node_84:
           x:    [ 250. 4000.]
           u:    None
-      Node_77:
+      Node_85:
           x:    [   0. 4250.]
           u:    None
-      Node_78:
+      Node_86:
           x:    [ 250. 4250.]
           u:    None
-      Node_79:
+      Node_87:
           x:    [   0. 4500.]
           u:    None
-      Node_80:
+      Node_88:
           x:    [ 250. 4500.]
           u:    None
-      Node_81:
+      Node_89:
           x:    [   0. 4750.]
           u:    None
-      Node_82:
+      Node_90:
           x:    [ 250. 4750.]
           u:    None
-      Node_83:
+      Node_91:
           x:    [   0. 5000.]
           P:    [   25.         -3084.25137534]
           u:    None
-      Node_84:
+      Node_92:
           x:    [ 250. 5000.]
           P:    [   25.         -3084.25137534]
           u:    None
 
     Elements:
     ---------------------
-      Truss: Node_43 to Node_45:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
-      Truss: Node_44 to Node_46:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
-      Truss: Node_43 to Node_46:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
-      Truss: Node_45 to Node_46:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
-      Truss: Node_45 to Node_47:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
-      Truss: Node_46 to Node_48:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
-      Truss: Node_45 to Node_48:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
-      Truss: Node_47 to Node_48:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
-      Truss: Node_47 to Node_49:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
-      Truss: Node_48 to Node_50:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
-      Truss: Node_47 to Node_50:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
-      Truss: Node_49 to Node_50:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
-      Truss: Node_49 to Node_51:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
-      Truss: Node_50 to Node_52:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
-      Truss: Node_49 to Node_52:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
-      Truss: Node_51 to Node_52:
-          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.0
       Truss: Node_51 to Node_53:
           material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 0.0
@@ -618,6 +570,54 @@ Run the example by creating an instance of the problem and executing it by calli
       Truss: Node_83 to Node_84:
           material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 0.0
+      Truss: Node_83 to Node_85:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
+      Truss: Node_84 to Node_86:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
+      Truss: Node_83 to Node_86:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
+      Truss: Node_85 to Node_86:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
+      Truss: Node_85 to Node_87:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
+      Truss: Node_86 to Node_88:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
+      Truss: Node_85 to Node_88:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
+      Truss: Node_87 to Node_88:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
+      Truss: Node_87 to Node_89:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
+      Truss: Node_88 to Node_90:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
+      Truss: Node_87 to Node_90:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
+      Truss: Node_89 to Node_90:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
+      Truss: Node_89 to Node_91:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
+      Truss: Node_90 to Node_92:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 10.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
+      Truss: Node_89 to Node_92:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
+      Truss: Node_91 to Node_92:
+          material properties: FiberMaterial(Material)({'E': 200000.0, 'A': 50.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.0
 
     +
     +
@@ -656,7 +656,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.694 seconds)
+   **Total running time of the script:** ( 0 minutes  3.588 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss07.py:

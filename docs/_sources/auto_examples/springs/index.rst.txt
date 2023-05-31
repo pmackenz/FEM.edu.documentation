@@ -40,6 +40,23 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="                o---/\/\/\---o---/\/\/\---o    x---/\/\/\---o                         o---&gt;    ...">
+
+.. only:: html
+
+  .. image:: /auto_examples/springs/images/thumb/sphx_glr_plot_spring_system02_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_springs_plot_spring_system02.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">A first 1D spring system</div>
+    </div>
+
+
+.. raw:: html
+
     </div>
 
 
@@ -47,4 +64,5 @@ see the :ref:`Tutorials <tutorials>`.
    :hidden:
 
    /auto_examples/springs/plot_spring_system01
+   /auto_examples/springs/plot_spring_system02
 

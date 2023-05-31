@@ -6,30 +6,30 @@
 
 Computation times
 =================
-**02:20.712** total execution time for **auto_examples_plates** files:
+**01:53.993** total execution time for **auto_examples_plates** files:
 
 +------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate11.py` (``plot_plate11.py``)         | 01:16.228 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate11.py` (``plot_plate11.py``)         | 01:00.718 | 0.0 MB |
 +------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_benchmark01.py` (``plot_benchmark01.py``) | 00:26.550 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_benchmark01.py` (``plot_benchmark01.py``) | 00:17.533 | 0.0 MB |
 +------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate10.py` (``plot_plate10.py``)         | 00:20.285 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate10.py` (``plot_plate10.py``)         | 00:15.906 | 0.0 MB |
 +------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate05.py` (``plot_plate05.py``)         | 00:06.892 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate05.py` (``plot_plate05.py``)         | 00:09.751 | 0.0 MB |
 +------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate06.py` (``plot_plate06.py``)         | 00:05.087 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate06.py` (``plot_plate06.py``)         | 00:04.549 | 0.0 MB |
 +------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate08.py` (``plot_plate08.py``)         | 00:01.354 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate08.py` (``plot_plate08.py``)         | 00:01.440 | 0.0 MB |
 +------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate04.py` (``plot_plate04.py``)         | 00:01.235 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate04.py` (``plot_plate04.py``)         | 00:01.072 | 0.0 MB |
 +------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate07.py` (``plot_plate07.py``)         | 00:01.194 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate07.py` (``plot_plate07.py``)         | 00:01.065 | 0.0 MB |
 +------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate03.py` (``plot_plate03.py``)         | 00:00.749 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate09.py` (``plot_plate09.py``)         | 00:00.916 | 0.0 MB |
 +------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate09.py` (``plot_plate09.py``)         | 00:00.652 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate03.py` (``plot_plate03.py``)         | 00:00.610 | 0.0 MB |
 +------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate02.py` (``plot_plate02.py``)         | 00:00.251 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate02.py` (``plot_plate02.py``)         | 00:00.218 | 0.0 MB |
 +------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plates_plot_plate01.py` (``plot_plate01.py``)         | 00:00.233 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plates_plot_plate01.py` (``plot_plate01.py``)         | 00:00.215 | 0.0 MB |
 +------------------------------------------------------------------------------------+-----------+--------+

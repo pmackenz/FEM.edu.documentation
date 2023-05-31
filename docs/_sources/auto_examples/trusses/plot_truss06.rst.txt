@@ -399,25 +399,25 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_40:
+      Node_48:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    None
-      Node_41:
+      Node_49:
           x:    [5.5 0.5]
           P:    [ 0. -1.]
           u:    None
-      Node_42:
+      Node_50:
           x:    [9.5 0. ]
           fix:  ['ux', 'uy']
           u:    None
 
     Elements:
     ---------------------
-      Truss: Node_40 to Node_41:
+      Truss: Node_48 to Node_49:
           material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 0.0
-      Truss: Node_42 to Node_41:
+      Truss: Node_50 to Node_49:
           material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 0.0
 
@@ -454,7 +454,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.930 seconds)
+   **Total running time of the script:** ( 0 minutes  1.640 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss06.py:
