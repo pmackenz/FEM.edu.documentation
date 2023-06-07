@@ -19,7 +19,7 @@
 
 
 ==========================================================
-A first 1D spring system
+A first 1D spring system with nicer plots
 ==========================================================
 
 .. code::
@@ -31,7 +31,7 @@ A first 1D spring system
    x ... fixed node
    o ... free node (moving in x-direction)
 
-This problem is mechanically identical to :ref:`sphx_glr_auto_examples_springs_plot_spring_system01.py`_
+This problem is mechanically identical to :ref:`sphx_glr_auto_examples_springs_plot_spring_system01.py`
 but demonstrates the use of the *leader-follower* concept built into the :py:class:`Node` class.
 We are using the concept to move springs apart in plots while maintaining the 1d kinematics.
 
@@ -195,33 +195,33 @@ You may check your model any time by executing
 
     Nodes:
     ---------------------
-      Node_0:
+      Node_4:
           x:    [0. 0.]
           fix:  ['ux']
           u:    None
-      Node_1:
+      Node_5:
           x:    [2. 0.]
           u:    None
-      Node_4:
+      Node_8:
           x:    [4. 1.]
           u:    None
-      Node_5:
+      Node_9:
           x:    [6. 0.]
           P:    [2.]
           u:    None
 
     Elements:
     ---------------------
-      Spring Elem_0: Node_0 to Node_1 with c=15
+      Spring Elem_4: Node_4 to Node_5 with c=15
           length change:  delta = 0.0 
           internal force: force = 0.0
-      Spring Elem_1: Node_2 to Node_4 with c=10
+      Spring Elem_5: Node_6 to Node_8 with c=10
           length change:  delta = 0.0 
           internal force: force = 0.0
-      Spring Elem_2: Node_4 to Node_6 with c=10
+      Spring Elem_6: Node_8 to Node_10 with c=10
           length change:  delta = 0.0 
           internal force: force = 0.0
-      Spring Elem_3: Node_3 to Node_7 with c=10
+      Spring Elem_7: Node_7 to Node_11 with c=10
           length change:  delta = 0.0 
           internal force: force = 0.0
 
@@ -272,33 +272,33 @@ Performing the analysis
 
     Nodes:
     ---------------------
-      Node_0:
+      Node_4:
           x:    [0. 0.]
           fix:  ['ux']
           u:    [0.]
-      Node_1:
+      Node_5:
           x:    [2. 0.]
           u:    [0.13333333]
-      Node_4:
+      Node_8:
           x:    [4. 1.]
           u:    [0.2]
-      Node_5:
+      Node_9:
           x:    [6. 0.]
           P:    [2.]
           u:    [0.26666667]
 
     Elements:
     ---------------------
-      Spring Elem_0: Node_0 to Node_1 with c=15
+      Spring Elem_4: Node_4 to Node_5 with c=15
           length change:  delta = 0.1333333333333333 
           internal force: force = 1.9999999999999996
-      Spring Elem_1: Node_2 to Node_4 with c=10
+      Spring Elem_5: Node_6 to Node_8 with c=10
           length change:  delta = 0.06666666666666671 
           internal force: force = 0.6666666666666671
-      Spring Elem_2: Node_4 to Node_6 with c=10
+      Spring Elem_6: Node_8 to Node_10 with c=10
           length change:  delta = 0.06666666666666665 
           internal force: force = 0.6666666666666665
-      Spring Elem_3: Node_3 to Node_7 with c=10
+      Spring Elem_7: Node_7 to Node_11 with c=10
           length change:  delta = 0.13333333333333336 
           internal force: force = 1.3333333333333335
 
@@ -344,7 +344,7 @@ We can also create a force plot, though it doesn't look all that nice in 1D
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.552 seconds)
+   **Total running time of the script:** ( 0 minutes  0.161 seconds)
 
 
 .. _sphx_glr_download_auto_examples_springs_plot_spring_system02.py:

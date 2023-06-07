@@ -73,7 +73,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">A first 1D spring system</div>
+      <div class="sphx-glr-thumbnail-title">A first 1D spring system with nicer plots</div>
     </div>
 
 

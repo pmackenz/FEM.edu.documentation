@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A first 1D spring system &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+  <title>A first 1D spring system with nicer plots &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
@@ -56,7 +56,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#mixed-structures-examples">Mixed Structures Examples</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Spring Examples</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="plot_spring_system01.html">A first 1D spring system</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">A first 1D spring system</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">A first 1D spring system with nicer plots</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
@@ -91,7 +91,7 @@
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Example Gallery</a> &raquo;</li>
           <li><a href="index.html">Spring Examples</a> &raquo;</li>
-      <li>A first 1D spring system</li>
+      <li>A first 1D spring system with nicer plots</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/auto_examples/springs/plot_spring_system02.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -106,8 +106,8 @@
 <p><a class="reference internal" href="#sphx-glr-download-auto-examples-springs-plot-spring-system02-py"><span class="std std-ref">Go to the end</span></a>
 to download the full example code</p>
 </div>
-<section class="sphx-glr-example-title" id="a-first-1d-spring-system">
-<span id="sphx-glr-auto-examples-springs-plot-spring-system02-py"></span><h1>A first 1D spring system<a class="headerlink" href="#a-first-1d-spring-system" title="Permalink to this heading"></a></h1>
+<section class="sphx-glr-example-title" id="a-first-1d-spring-system-with-nicer-plots">
+<span id="sphx-glr-auto-examples-springs-plot-spring-system02-py"></span><h1>A first 1D spring system with nicer plots<a class="headerlink" href="#a-first-1d-spring-system-with-nicer-plots" title="Permalink to this heading"></a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>             <span class="n">o</span><span class="o">---/</span>\<span class="o">/</span>\<span class="o">/</span>\<span class="o">---</span><span class="n">o</span><span class="o">---/</span>\<span class="o">/</span>\<span class="o">/</span>\<span class="o">---</span><span class="n">o</span>
 <span class="n">x</span><span class="o">---/</span>\<span class="o">/</span>\<span class="o">/</span>\<span class="o">---</span><span class="n">o</span>                         <span class="n">o</span><span class="o">---&gt;</span>
              <span class="n">o</span><span class="o">-------/</span>\<span class="o">/</span>\<span class="o">/</span>\<span class="o">/</span>\<span class="o">/</span>\<span class="o">--------</span><span class="n">o</span>
@@ -116,7 +116,7 @@ to download the full example code</p>
 <span class="n">o</span> <span class="o">...</span> <span class="n">free</span> <span class="n">node</span> <span class="p">(</span><span class="n">moving</span> <span class="ow">in</span> <span class="n">x</span><span class="o">-</span><span class="n">direction</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This problem is mechanically identical to <a href="#id1"><span class="problematic" id="id2">:ref:`sphx_glr_auto_examples_springs_plot_spring_system01.py`_</span></a>
+<p>This problem is mechanically identical to <a class="reference internal" href="plot_spring_system01.html#sphx-glr-auto-examples-springs-plot-spring-system01-py"><span class="std std-ref">A first 1D spring system</span></a>
 but demonstrates the use of the <em>leader-follower</em> concept built into the <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> class.
 We are using the concept to move springs apart in plots while maintaining the 1d kinematics.</p>
 <div class="admonition note">
@@ -195,33 +195,33 @@ We are using the concept to move springs apart in plots while maintaining the 1d
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_4:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;]
       u:    None
-  Node_1:
+  Node_5:
       x:    [2. 0.]
       u:    None
-  Node_4:
+  Node_8:
       x:    [4. 1.]
       u:    None
-  Node_5:
+  Node_9:
       x:    [6. 0.]
       P:    [2.]
       u:    None
 
 Elements:
 ---------------------
-  Spring Elem_0: Node_0 to Node_1 with c=15
+  Spring Elem_4: Node_4 to Node_5 with c=15
       length change:  delta = 0.0
       internal force: force = 0.0
-  Spring Elem_1: Node_2 to Node_4 with c=10
+  Spring Elem_5: Node_6 to Node_8 with c=10
       length change:  delta = 0.0
       internal force: force = 0.0
-  Spring Elem_2: Node_4 to Node_6 with c=10
+  Spring Elem_6: Node_8 to Node_10 with c=10
       length change:  delta = 0.0
       internal force: force = 0.0
-  Spring Elem_3: Node_3 to Node_7 with c=10
+  Spring Elem_7: Node_7 to Node_11 with c=10
       length change:  delta = 0.0
       internal force: force = 0.0
 </pre></div>
@@ -246,33 +246,33 @@ Elements:
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_4:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;]
       u:    [0.]
-  Node_1:
+  Node_5:
       x:    [2. 0.]
       u:    [0.13333333]
-  Node_4:
+  Node_8:
       x:    [4. 1.]
       u:    [0.2]
-  Node_5:
+  Node_9:
       x:    [6. 0.]
       P:    [2.]
       u:    [0.26666667]
 
 Elements:
 ---------------------
-  Spring Elem_0: Node_0 to Node_1 with c=15
+  Spring Elem_4: Node_4 to Node_5 with c=15
       length change:  delta = 0.1333333333333333
       internal force: force = 1.9999999999999996
-  Spring Elem_1: Node_2 to Node_4 with c=10
+  Spring Elem_5: Node_6 to Node_8 with c=10
       length change:  delta = 0.06666666666666671
       internal force: force = 0.6666666666666671
-  Spring Elem_2: Node_4 to Node_6 with c=10
+  Spring Elem_6: Node_8 to Node_10 with c=10
       length change:  delta = 0.06666666666666665
       internal force: force = 0.6666666666666665
-  Spring Elem_3: Node_3 to Node_7 with c=10
+  Spring Elem_7: Node_7 to Node_11 with c=10
       length change:  delta = 0.13333333333333336
       internal force: force = 1.3333333333333335
 </pre></div>
@@ -286,7 +286,7 @@ Elements:
 <li><img src="../../_images/sphx_glr_plot_spring_system02_001.png" srcset="../../_images/sphx_glr_plot_spring_system02_001.png" alt="Axial Forces" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_spring_system02_002.png" srcset="../../_images/sphx_glr_plot_spring_system02_002.png" alt="Deformed System (magnification=10.00)" class = "sphx-glr-multi-img"/></li>
 </ul>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.552 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.161 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-springs-plot-spring-system02-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/42e9d85c61e5fdaf1c61d6cdf0e22416/plot_spring_system02.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_spring_system02.py</span></code></a></p>
@@ -311,7 +311,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on May 31, 2023.
+      <span class="lastupdated">Last updated on Jun 06, 2023.
       </span></p>
   </div>
 
