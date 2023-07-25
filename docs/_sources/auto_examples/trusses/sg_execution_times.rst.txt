@@ -6,24 +6,24 @@
 
 Computation times
 =================
-**00:21.333** total execution time for **auto_examples_trusses** files:
+**00:14.810** total execution time for **auto_examples_trusses** files:
 
 +-----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_trusses_plot_truss09.py` (``plot_truss09.py``) | 00:07.508 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_trusses_plot_truss09.py` (``plot_truss09.py``) | 00:05.090 | 0.0 MB |
 +-----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_trusses_plot_truss08.py` (``plot_truss08.py``) | 00:05.304 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_trusses_plot_truss08.py` (``plot_truss08.py``) | 00:03.689 | 0.0 MB |
 +-----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_trusses_plot_truss07.py` (``plot_truss07.py``) | 00:04.588 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_trusses_plot_truss07.py` (``plot_truss07.py``) | 00:03.079 | 0.0 MB |
 +-----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_trusses_plot_truss06.py` (``plot_truss06.py``) | 00:01.930 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_trusses_plot_truss06.py` (``plot_truss06.py``) | 00:01.394 | 0.0 MB |
 +-----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_trusses_plot_truss05.py` (``plot_truss05.py``) | 00:00.914 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_trusses_plot_truss05.py` (``plot_truss05.py``) | 00:00.674 | 0.0 MB |
 +-----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_trusses_plot_truss02.py` (``plot_truss02.py``) | 00:00.500 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_trusses_plot_truss02.py` (``plot_truss02.py``) | 00:00.358 | 0.0 MB |
 +-----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_trusses_plot_truss01.py` (``plot_truss01.py``) | 00:00.246 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_trusses_plot_truss01.py` (``plot_truss01.py``) | 00:00.202 | 0.0 MB |
 +-----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_trusses_plot_truss03.py` (``plot_truss03.py``) | 00:00.238 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_trusses_plot_truss03.py` (``plot_truss03.py``) | 00:00.175 | 0.0 MB |
 +-----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_trusses_plot_truss04.py` (``plot_truss04.py``) | 00:00.105 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_trusses_plot_truss04.py` (``plot_truss04.py``) | 00:00.149 | 0.0 MB |
 +-----------------------------------------------------------------------------+-----------+--------+
