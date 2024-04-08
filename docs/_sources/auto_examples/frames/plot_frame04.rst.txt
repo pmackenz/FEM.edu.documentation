@@ -41,7 +41,7 @@ Author: Peter Mackenzie-Helnwein
 
 .. GENERATED FROM PYTHON SOURCE LINES 23-301
 
-.. code-block:: default
+.. code-block:: Python
 
     from femedu.examples.Example import *
 
@@ -335,7 +335,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. GENERATED FROM PYTHON SOURCE LINES 319-325
 
-.. code-block:: default
+.. code-block:: Python
 
 
     if __name__ == "__main__":
@@ -804,7 +804,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.888 seconds)
+   **Total running time of the script:** (0 minutes 3.007 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame04.py:
@@ -813,16 +813,13 @@ Run the example by creating an instance of the problem and executing it by calli
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: plot_frame04.ipynb <plot_frame04.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_frame04.py <plot_frame04.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: plot_frame04.ipynb <plot_frame04.ipynb>`
 
 
 .. only:: html

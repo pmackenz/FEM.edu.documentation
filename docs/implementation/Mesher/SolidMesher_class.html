@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SolidMesher class &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,11 +34,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> FEM.edu
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            FEM.edu
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -56,6 +62,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../Elements/Element_class.html">Element classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Materials/Material_class.html">Material class</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="Mesher_class.html">Mesher classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Mesher_class.html#femedu.mesher.Mesher.Mesher"><code class="docutils literal notranslate"><span class="pre">Mesher</span></code></a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="Mesher_class.html#derived-classes">Derived Classes</a></li>
 </ul>
 </li>
@@ -82,10 +89,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../implementation.html">Implementation</a> &raquo;</li>
-          <li><a href="Mesher_class.html">Mesher classes</a> &raquo;</li>
-      <li>SolidMesher class</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../implementation.html">Implementation</a></li>
+          <li class="breadcrumb-item"><a href="Mesher_class.html">Mesher classes</a></li>
+      <li class="breadcrumb-item active">SolidMesher class</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/implementation/Mesher/SolidMesher_class.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -96,12 +103,12 @@
            <div itemprop="articleBody">
              
   <section id="solidmesher-class">
-<h1>SolidMesher class<a class="headerlink" href="#solidmesher-class" title="Permalink to this heading"></a></h1>
+<h1>SolidMesher class<a class="headerlink" href="#solidmesher-class" title="Link to this heading"></a></h1>
 <p>For 8-node, 20-node, and 27-node brick elements.</p>
 <figure class="align-center" id="id1">
 <img alt="../../design/images/solid.png" src="../../_images/solid.png" />
 <figcaption>
-<p><span class="caption-text">Meshing a solid domain with brick elements.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Meshing a solid domain with brick elements.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -110,16 +117,16 @@
 Stay tuned for updates.</p>
 </div>
 <section id="parent-class">
-<h2>Parent class<a class="headerlink" href="#parent-class" title="Permalink to this heading"></a></h2>
+<h2>Parent class<a class="headerlink" href="#parent-class" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="Mesher_class.html"><span class="doc">Mesher classes</span></a></p></li>
 </ul>
 </section>
 <section id="module-femedu.mesher.SolidMesher">
-<span id="class-doc"></span><h2>Class doc<a class="headerlink" href="#module-femedu.mesher.SolidMesher" title="Permalink to this heading"></a></h2>
+<span id="class-doc"></span><h2>Class doc<a class="headerlink" href="#module-femedu.mesher.SolidMesher" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="femedu.mesher.SolidMesher.SolidMesher">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.mesher.SolidMesher.</span></span><span class="sig-name descname"><span class="pre">SolidMesher</span></span><a class="headerlink" href="#femedu.mesher.SolidMesher.SolidMesher" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.mesher.SolidMesher.</span></span><span class="sig-name descname"><span class="pre">SolidMesher</span></span><a class="headerlink" href="#femedu.mesher.SolidMesher.SolidMesher" title="Link to this definition"></a></dt>
 <dd><p>Mesher for 8-node, 20-node, and 27-node brick elements.</p>
 </dd></dl>
 
@@ -138,7 +145,7 @@ Stay tuned for updates.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jul 25, 2023.
+      <span class="lastupdated">Last updated on Apr 07, 2024.
       </span></p>
   </div>
 

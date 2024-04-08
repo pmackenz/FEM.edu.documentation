@@ -26,7 +26,7 @@ PatchMesher test for the LinearTriangle (Constant Strain Triangle)
 
 .. GENERATED FROM PYTHON SOURCE LINES 9-133
 
-.. code-block:: default
+.. code-block:: Python
 
     import math
     import numpy as np
@@ -166,7 +166,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. GENERATED FROM PYTHON SOURCE LINES 154-160
 
-.. code-block:: default
+.. code-block:: Python
 
 
     if __name__ == "__main__":
@@ -315,7 +315,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.862 seconds)
+   **Total running time of the script:** (0 minutes 0.865 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate04.py:
@@ -324,16 +324,13 @@ Run the example by creating an instance of the problem and executing it by calli
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: plot_plate04.ipynb <plot_plate04.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_plate04.py <plot_plate04.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: plot_plate04.ipynb <plot_plate04.ipynb>`
 
 
 .. only:: html

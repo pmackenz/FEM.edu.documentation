@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A first 1D spring system with nicer plots &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,11 +34,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> FEM.edu
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            FEM.edu
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -88,10 +94,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">Example Gallery</a> &raquo;</li>
-          <li><a href="index.html">Spring Examples</a> &raquo;</li>
-      <li>A first 1D spring system with nicer plots</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Example Gallery</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Spring Examples</a></li>
+      <li class="breadcrumb-item active">A first 1D spring system with nicer plots</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/auto_examples/springs/plot_spring_system02.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -107,7 +113,7 @@
 to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="a-first-1d-spring-system-with-nicer-plots">
-<span id="sphx-glr-auto-examples-springs-plot-spring-system02-py"></span><h1>A first 1D spring system with nicer plots<a class="headerlink" href="#a-first-1d-spring-system-with-nicer-plots" title="Permalink to this heading"></a></h1>
+<span id="sphx-glr-auto-examples-springs-plot-spring-system02-py"></span><h1>A first 1D spring system with nicer plots<a class="headerlink" href="#a-first-1d-spring-system-with-nicer-plots" title="Link to this heading"></a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>             <span class="n">o</span><span class="o">---/</span>\<span class="o">/</span>\<span class="o">/</span>\<span class="o">---</span><span class="n">o</span><span class="o">---/</span>\<span class="o">/</span>\<span class="o">/</span>\<span class="o">---</span><span class="n">o</span>
 <span class="n">x</span><span class="o">---/</span>\<span class="o">/</span>\<span class="o">/</span>\<span class="o">---</span><span class="n">o</span>                         <span class="n">o</span><span class="o">---&gt;</span>
              <span class="n">o</span><span class="o">-------/</span>\<span class="o">/</span>\<span class="o">/</span>\<span class="o">/</span>\<span class="o">/</span>\<span class="o">--------</span><span class="n">o</span>
@@ -129,24 +135,24 @@ We are using the concept to move springs apart in plots while maintaining the 1d
 </ul>
 </div>
 <section id="initialization">
-<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this heading"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="o">*</span>
+<h2>Initialization<a class="headerlink" href="#initialization" title="Link to this heading"></a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Spring</span>
 </pre></div>
 </div>
 </section>
 <section id="building-the-model">
-<h2>Building the model<a class="headerlink" href="#building-the-model" title="Permalink to this heading"></a></h2>
+<h2>Building the model<a class="headerlink" href="#building-the-model" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Initializing a model</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Defining nodes</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nd1</span>  <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">nd1</span>  <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
 <span class="n">nd2</span>  <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
 <span class="n">nd2a</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 <span class="n">nd2b</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span>
@@ -166,7 +172,7 @@ We are using the concept to move springs apart in plots while maintaining the 1d
 <ol class="arabic simple" start="3">
 <li><p>Creating the springs</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">springA</span> <span class="o">=</span> <span class="n">Spring</span><span class="p">(</span><span class="n">nd1</span><span class="p">,</span> <span class="n">nd2</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">springA</span> <span class="o">=</span> <span class="n">Spring</span><span class="p">(</span><span class="n">nd1</span><span class="p">,</span> <span class="n">nd2</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
 <span class="n">springB</span> <span class="o">=</span> <span class="n">Spring</span><span class="p">(</span><span class="n">nd2a</span><span class="p">,</span> <span class="n">nd3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">springC</span> <span class="o">=</span> <span class="n">Spring</span><span class="p">(</span><span class="n">nd3</span><span class="p">,</span> <span class="n">nd4a</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">springD</span> <span class="o">=</span> <span class="n">Spring</span><span class="p">(</span><span class="n">nd2b</span><span class="p">,</span> <span class="n">nd4b</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -177,17 +183,17 @@ We are using the concept to move springs apart in plots while maintaining the 1d
 <ol class="arabic simple" start="4">
 <li><p>Applying the essential boundary conditions</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nd1</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">nd1</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
 <li><p>Applying loads</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nd4</span><span class="o">.</span><span class="n">setLoad</span><span class="p">([</span><span class="mf">2.0</span><span class="p">],[</span><span class="s1">&#39;ux&#39;</span><span class="p">])</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">nd4</span><span class="o">.</span><span class="n">setLoad</span><span class="p">([</span><span class="mf">2.0</span><span class="p">],[</span><span class="s1">&#39;ux&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>You may check your model any time by executing</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System Analysis Report
@@ -228,17 +234,17 @@ Elements:
 </div>
 </section>
 <section id="performing-the-analysis">
-<h2>Performing the analysis<a class="headerlink" href="#performing-the-analysis" title="Permalink to this heading"></a></h2>
+<h2>Performing the analysis<a class="headerlink" href="#performing-the-analysis" title="Link to this heading"></a></h2>
 <ol class="arabic simple" start="6">
 <li><p>Assembly and solve</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="7">
 <li><p>Check out displacements and internal forces</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System Analysis Report
@@ -278,7 +284,7 @@ Elements:
 </pre></div>
 </div>
 <p>We can also create a force plot, though it doesn’t look all that nice in 1D</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
 <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -286,13 +292,13 @@ Elements:
 <li><img src="../../_images/sphx_glr_plot_spring_system02_001.png" srcset="../../_images/sphx_glr_plot_spring_system02_001.png" alt="Axial Forces" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_spring_system02_002.png" srcset="../../_images/sphx_glr_plot_spring_system02_002.png" alt="Deformed System (magnification=10.00)" class = "sphx-glr-multi-img"/></li>
 </ul>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.121 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.110 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-springs-plot-spring-system02-py">
-<div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/42e9d85c61e5fdaf1c61d6cdf0e22416/plot_spring_system02.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_spring_system02.py</span></code></a></p>
-</div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/0f9d64c55c1785c83e20470d4b0f24c2/plot_spring_system02.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_spring_system02.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/42e9d85c61e5fdaf1c61d6cdf0e22416/plot_spring_system02.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_spring_system02.py</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -311,7 +317,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jul 25, 2023.
+      <span class="lastupdated">Last updated on Apr 07, 2024.
       </span></p>
   </div>
 

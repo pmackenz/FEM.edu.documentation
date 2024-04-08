@@ -29,7 +29,7 @@ Author: Peter Mackenzie-Helnwein
 
 .. GENERATED FROM PYTHON SOURCE LINES 11-134
 
-.. code-block:: default
+.. code-block:: Python
 
     import matplotlib.pyplot as plt
     from femedu.examples.Example import *
@@ -168,7 +168,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. GENERATED FROM PYTHON SOURCE LINES 154-161
 
-.. code-block:: default
+.. code-block:: Python
 
 
     if __name__ == "__main__":
@@ -263,9 +263,9 @@ Run the example by creating an instance of the problem and executing it by calli
 
     ==== perform the analysis ===
 
-    /usr/local/lib/python3.10/site-packages/matplotlib/quiver.py:635: RuntimeWarning: Mean of empty slice.
+    /usr/local/lib/python3.11/site-packages/matplotlib/quiver.py:632: RuntimeWarning: Mean of empty slice.
       amean = a.mean()
-    /usr/local/lib/python3.10/site-packages/numpy/core/_methods.py:190: RuntimeWarning: invalid value encountered in double_scalars
+    /usr/local/lib/python3.11/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
       ret = ret.dtype.type(ret / rcount)
     norm of the out-of-balance force:   0.0000e+00
     +
@@ -402,7 +402,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.642 seconds)
+   **Total running time of the script:** (0 minutes 0.744 seconds)
 
 
 .. _sphx_glr_download_auto_examples_mixed_plot_mixed01.py:
@@ -411,16 +411,13 @@ Run the example by creating an instance of the problem and executing it by calli
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: plot_mixed01.ipynb <plot_mixed01.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_mixed01.py <plot_mixed01.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: plot_mixed01.ipynb <plot_mixed01.ipynb>`
 
 
 .. only:: html

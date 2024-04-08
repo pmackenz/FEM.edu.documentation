@@ -37,7 +37,7 @@ we are going to use several :py:class:`Node` and :py:class:`Element` instances.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
+   **Total running time of the script:** (0 minutes 0.000 seconds)
 
 
 .. _sphx_glr_download_auto_tutorials_model_creation_plot_02_loading.py:
@@ -46,16 +46,13 @@ we are going to use several :py:class:`Node` and :py:class:`Element` instances.
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: plot_02_loading.ipynb <plot_02_loading.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_02_loading.py <plot_02_loading.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: plot_02_loading.ipynb <plot_02_loading.ipynb>`
 
 
 .. only:: html

@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ModelRecorder class &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,11 +34,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> FEM.edu
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            FEM.edu
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -58,6 +64,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../Utilities/ShapeFunction_classes.html">Shape Function classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Plotter/Plot_Support_Classes.html">Plot Support classes</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="Recorder_class.html">Recorder class</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Recorder_class.html#femedu.recorder.Recorder.Recorder"><code class="docutils literal notranslate"><span class="pre">Recorder</span></code></a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="Recorder_class.html#derived-classes">Derived classes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Recorder_class.html#helper-classes">Helper classes</a></li>
 </ul>
@@ -81,10 +88,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../implementation.html">Implementation</a> &raquo;</li>
-          <li><a href="Recorder_class.html">Recorder class</a> &raquo;</li>
-      <li>ModelRecorder class</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../implementation.html">Implementation</a></li>
+          <li class="breadcrumb-item"><a href="Recorder_class.html">Recorder class</a></li>
+      <li class="breadcrumb-item active">ModelRecorder class</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/implementation/Recorder/ModelRecorder_class.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -95,19 +102,19 @@
            <div itemprop="articleBody">
              
   <section id="modelrecorder-class">
-<h1>ModelRecorder class<a class="headerlink" href="#modelrecorder-class" title="Permalink to this heading"></a></h1>
+<h1>ModelRecorder class<a class="headerlink" href="#modelrecorder-class" title="Link to this heading"></a></h1>
 <p>Data recorder class specialized for collecting system level data, i.e., analysis parameters.</p>
 <section id="parent-class">
-<h2>Parent class<a class="headerlink" href="#parent-class" title="Permalink to this heading"></a></h2>
+<h2>Parent class<a class="headerlink" href="#parent-class" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="Recorder_class.html"><span class="doc">Recorder class</span></a></p></li>
 </ul>
 </section>
 <section id="module-femedu.recorder.ModelRecorder">
-<span id="class-doc"></span><h2>Class doc<a class="headerlink" href="#module-femedu.recorder.ModelRecorder" title="Permalink to this heading"></a></h2>
+<span id="class-doc"></span><h2>Class doc<a class="headerlink" href="#module-femedu.recorder.ModelRecorder" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="femedu.recorder.ModelRecorder.ModelRecorder">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.recorder.ModelRecorder.</span></span><span class="sig-name descname"><span class="pre">ModelRecorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.ModelRecorder.ModelRecorder" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.recorder.ModelRecorder.</span></span><span class="sig-name descname"><span class="pre">ModelRecorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.ModelRecorder.ModelRecorder" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </section>
@@ -125,7 +132,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jul 25, 2023.
+      <span class="lastupdated">Last updated on Apr 07, 2024.
       </span></p>
   </div>
 

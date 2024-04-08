@@ -54,7 +54,7 @@ Author: Peter Mackenzie-Helnwein
 
 .. GENERATED FROM PYTHON SOURCE LINES 36-130
 
-.. code-block:: default
+.. code-block:: Python
 
     import numpy as np
 
@@ -164,7 +164,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. GENERATED FROM PYTHON SOURCE LINES 163-169
 
-.. code-block:: default
+.. code-block:: Python
 
 
     if __name__ == "__main__":
@@ -262,7 +262,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.979 seconds)
+   **Total running time of the script:** (0 minutes 1.477 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate08.py:
@@ -271,16 +271,13 @@ Run the example by creating an instance of the problem and executing it by calli
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: plot_plate08.ipynb <plot_plate08.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_plate08.py <plot_plate08.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: plot_plate08.ipynb <plot_plate08.ipynb>`
 
 
 .. only:: html

@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mesher classes &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,11 +34,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> FEM.edu
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            FEM.edu
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -56,6 +62,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../Elements/Element_class.html">Element classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Materials/Material_class.html">Material class</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Mesher classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#femedu.mesher.Mesher.Mesher"><code class="docutils literal notranslate"><span class="pre">Mesher</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#derived-classes">Derived Classes</a></li>
 </ul>
 </li>
@@ -82,9 +89,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../implementation.html">Implementation</a> &raquo;</li>
-      <li>Mesher classes</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../implementation.html">Implementation</a></li>
+      <li class="breadcrumb-item active">Mesher classes</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/implementation/Mesher/Mesher_class.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -95,7 +102,7 @@
            <div itemprop="articleBody">
              
   <section id="mesher-classes">
-<h1>Mesher classes<a class="headerlink" href="#mesher-classes" title="Permalink to this heading"></a></h1>
+<h1>Mesher classes<a class="headerlink" href="#mesher-classes" title="Link to this heading"></a></h1>
 <p>This class represents no particular element but rather defines common functionality for all elements.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -106,16 +113,16 @@
 <p>Meshers are currently under development but not yet available with the distribution.
 Stay tuned for updates.</p>
 </div>
-<span class="target" id="module-femedu.mesher.Mesher"></span><dl class="py class">
+<dl class="py class" id="module-femedu.mesher.Mesher">
 <dt class="sig sig-object py" id="femedu.mesher.Mesher.Mesher">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.mesher.Mesher.</span></span><span class="sig-name descname"><span class="pre">Mesher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">pts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.mesher.Mesher.</span></span><span class="sig-name descname"><span class="pre">Mesher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">pts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher" title="Link to this definition"></a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="femedu.mesher.Mesher.Mesher.brickMesh">
-<span class="sig-name descname"><span class="pre">brickMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NeX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeZ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.brickMesh" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">brickMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NeX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeZ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.brickMesh" title="Link to this definition"></a></dt>
 <dd><p>Solid mesher using brick elements</p>
 <p>This is an abstract class - requires implementation in subclass</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>NeX</strong> (<em>int</em>) – number of elements along the first axis</p></li>
 <li><p><strong>NeY</strong> (<em>int</em>) – number of elements along the second axis</p></li>
@@ -129,11 +136,11 @@ Stay tuned for updates.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.mesher.Mesher.Mesher.lineMesh">
-<span class="sig-name descname"><span class="pre">lineMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NeX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.lineMesh" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">lineMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NeX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.lineMesh" title="Link to this definition"></a></dt>
 <dd><p>nD mesher using line elements</p>
 <p>This is an abstract class - requires implementation in subclass</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>NeX</strong> (<em>int</em>) – number of elements along the curve</p></li>
 <li><p><strong>element_type</strong> – compatible element type</p></li>
@@ -145,11 +152,11 @@ Stay tuned for updates.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.mesher.Mesher.Mesher.quadMesh">
-<span class="sig-name descname"><span class="pre">quadMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NeX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.quadMesh" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">quadMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NeX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.quadMesh" title="Link to this definition"></a></dt>
 <dd><p>2D mesher using quadrilateral elements</p>
 <p>This is an abstract class - requires implementation in subclass</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>NeX</strong> (<em>int</em>) – number of elements along the first axis</p></li>
 <li><p><strong>NeY</strong> (<em>int</em>) – number of elements along the second axis</p></li>
@@ -162,9 +169,9 @@ Stay tuned for updates.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.mesher.Mesher.Mesher.shift">
-<span class="sig-name descname"><span class="pre">shift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.shift" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">shift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.shift" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dx</strong> – move patch to the right</p></li>
 <li><p><strong>dy</strong> – move patch up</p></li>
@@ -175,11 +182,11 @@ Stay tuned for updates.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.mesher.Mesher.Mesher.tetMesh">
-<span class="sig-name descname"><span class="pre">tetMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NeX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeZ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.tetMesh" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">tetMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NeX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeZ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.tetMesh" title="Link to this definition"></a></dt>
 <dd><p>Solid mesher using tetrahedral elements</p>
 <p>This is an abstract class - requires implementation in subclass</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>NeX</strong> (<em>int</em>) – number of elements along the first axis</p></li>
 <li><p><strong>NeY</strong> (<em>int</em>) – number of elements along the second axis</p></li>
@@ -193,12 +200,12 @@ Stay tuned for updates.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.mesher.Mesher.Mesher.tie">
-<span class="sig-name descname"><span class="pre">tie</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.tie" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">tie</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.tie" title="Link to this definition"></a></dt>
 <dd><p>Check nodes of <strong>other</strong> Mesher object for (near) identical
 location to any node in this Mesher object.  If overlap is identified, make the
 node in <strong>other</strong> a follower of the respective node in this Mesher.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> – Mesher instance</p>
 </dd>
 </dl>
@@ -206,11 +213,11 @@ node in <strong>other</strong> a follower of the respective node in this Mesher.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.mesher.Mesher.Mesher.triangleMesh">
-<span class="sig-name descname"><span class="pre">triangleMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NeX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.triangleMesh" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">triangleMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NeX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.triangleMesh" title="Link to this definition"></a></dt>
 <dd><p>2D mesher using triangular elements</p>
 <p>This is an abstract class - requires implementation in subclass</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>NeX</strong> (<em>int</em>) – number of elements along the first axis</p></li>
 <li><p><strong>NeY</strong> (<em>int</em>) – number of elements along the second axis</p></li>
@@ -224,7 +231,7 @@ node in <strong>other</strong> a follower of the respective node in this Mesher.
 </dd></dl>
 
 <section id="derived-classes">
-<h2>Derived Classes<a class="headerlink" href="#derived-classes" title="Permalink to this heading"></a></h2>
+<h2>Derived Classes<a class="headerlink" href="#derived-classes" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="CurveMesher_class.html">CurveMesher class</a></li>
@@ -248,7 +255,7 @@ node in <strong>other</strong> a follower of the respective node in this Mesher.
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jul 25, 2023.
+      <span class="lastupdated">Last updated on Apr 07, 2024.
       </span></p>
   </div>
 

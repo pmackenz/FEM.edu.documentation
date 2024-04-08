@@ -26,7 +26,7 @@ Using PatchMesher to model a quarter of the plate
 
 .. GENERATED FROM PYTHON SOURCE LINES 9-131
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # sphinx_gallery_thumbnail_path = '_static/profiler.png'
@@ -166,7 +166,8 @@ This time, we are running the example in the profiler, writing profiling data to
 
 .. GENERATED FROM PYTHON SOURCE LINES 153-164
 
-.. code-block:: default
+.. code-block:: Python
+   :dedent: 1
 
 
 
@@ -360,7 +361,8 @@ Now it's time to process the profiling data
 
 .. GENERATED FROM PYTHON SOURCE LINES 170-193
 
-.. code-block:: default
+.. code-block:: Python
+   :dedent: 1
 
 
 
@@ -393,64 +395,64 @@ Now it's time to process the profiling data
 
  .. code-block:: none
 
-    Tue Jul 25 16:34:50 2023    profile_data_full.txt
+    Sun Apr  7 23:00:35 2024    profile_data_full.txt
 
-             7765541 function calls (7220608 primitive calls) in 11.374 seconds
+             6565514 function calls (6301192 primitive calls) in 12.533 seconds
 
        Ordered by: cumulative time
-       List reduced from 286 to 20 due to restriction <20>
+       List reduced from 267 to 20 due to restriction <20>
 
        ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-            1    0.000    0.000   11.386   11.386 {built-in method builtins.exec}
-            1    0.000    0.000   11.386   11.386 <string>:1(<module>)
-            1    0.000    0.000   11.386   11.386 Example.py:20(run)
-            1    0.005    0.005   11.386   11.386 plot_plate10.py:46(problem)
-            1    0.000    0.000    9.549    9.549 System.py:313(solve)
-            1    0.000    0.000    9.549    9.549 NewtonRaphsonSolver.py:13(solve)
-            4    0.000    0.000    8.627    2.157 NewtonRaphsonSolver.py:105(assemble)
-            4    1.665    0.416    8.627    2.157 Solver.py:166(assemble)
-        19200    0.073    0.000    5.077    0.000 Element.py:237(getForce)
-        19200    1.782    0.000    5.005    0.000 Triangle.py:80(updateState)
-            2    0.000    0.000    4.283    2.141 Solver.py:385(checkResiduum)
-    602900/322289    0.467    0.000    2.919    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
-        38400    0.427    0.000    2.623    0.000 Triangle.py:155(computeSurfaceLoads)
-            1    0.024    0.024    1.774    1.774 PatchMesher.py:99(triangleMesh)
-       115200    0.565    0.000    1.345    0.000 Face2D.py:54(computeNodalForces)
-        19200    0.028    0.000    1.253    0.000 Element.py:246(getLoad)
-         4800    0.112    0.000    0.990    0.000 Triangle.py:10(__init__)
-       153600    0.089    0.000    0.918    0.000 <__array_function__ internals>:177(outer)
-            1    0.002    0.002    0.908    0.908 NewtonRaphsonSolver.py:58(solveSingleStep)
-            1    0.000    0.000    0.895    0.895 <__array_function__ internals>:177(solve)
+            1    0.000    0.000   12.548   12.548 {built-in method builtins.exec}
+            1    0.000    0.000   12.548   12.548 <string>:1(<module>)
+            1    0.000    0.000   12.548   12.548 Example.py:20(run)
+            1    0.007    0.007   12.548   12.548 plot_plate10.py:46(problem)
+            1    0.000    0.000   10.382   10.382 System.py:313(solve)
+            1    0.000    0.000   10.382   10.382 NewtonRaphsonSolver.py:13(solve)
+            4    0.000    0.000    9.263    2.316 NewtonRaphsonSolver.py:105(assemble)
+            4    1.845    0.461    9.263    2.316 Solver.py:166(assemble)
+        19200    0.080    0.000    5.452    0.000 Element.py:237(getForce)
+        19200    2.010    0.000    5.372    0.000 Triangle.py:80(updateState)
+            2    0.000    0.000    4.621    2.311 Solver.py:385(checkResiduum)
+        38400    0.503    0.000    2.583    0.000 Triangle.py:155(computeSurfaceLoads)
+            1    0.028    0.028    2.090    2.090 PatchMesher.py:99(triangleMesh)
+       115200    0.707    0.000    1.476    0.000 Face2D.py:54(computeNodalForces)
+        19200    0.029    0.000    1.208    0.000 Element.py:246(getLoad)
+         4800    0.130    0.000    1.107    0.000 Triangle.py:10(__init__)
+            1    0.003    0.003    1.105    1.105 NewtonRaphsonSolver.py:58(solveSingleStep)
+            1    1.087    1.087    1.087    1.087 linalg.py:329(solve)
+    254400/4800    0.409    0.000    0.856    0.000 copy.py:128(deepcopy)
+       153600    0.717    0.000    0.846    0.000 numeric.py:841(outer)
 
 
-    Tue Jul 25 16:34:50 2023    profile_data_full.txt
+    Sun Apr  7 23:00:35 2024    profile_data_full.txt
 
-             7765541 function calls (7220608 primitive calls) in 11.374 seconds
+             6565514 function calls (6301192 primitive calls) in 12.533 seconds
 
        Ordered by: internal time
-       List reduced from 286 to 20 due to restriction <20>
+       List reduced from 267 to 20 due to restriction <20>
 
        ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        19200    1.782    0.000    5.005    0.000 Triangle.py:80(updateState)
-            4    1.665    0.416    8.627    2.157 Solver.py:166(assemble)
-            1    0.895    0.895    0.895    0.895 linalg.py:320(solve)
-       153600    0.625    0.000    0.730    0.000 numeric.py:857(outer)
-       639031    0.587    0.000    0.587    0.000 {built-in method numpy.array}
-       115200    0.565    0.000    1.345    0.000 Face2D.py:54(computeNodalForces)
-    602900/322289    0.467    0.000    2.919    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
-       230400    0.438    0.000    0.610    0.000 Node.py:411(getIdx4Element)
-        38400    0.427    0.000    2.623    0.000 Triangle.py:155(computeSurfaceLoads)
-        19201    0.383    0.000    0.496    0.000 PlaneStress.py:25(updateState)
-    254400/4800    0.314    0.000    0.671    0.000 copy.py:128(deepcopy)
-        76800    0.272    0.000    0.539    0.000 Node.py:360(getDeformedPos)
-        76800    0.172    0.000    0.255    0.000 Node.py:267(getDisp)
-       115201    0.160    0.000    0.615    0.000 numeric.py:76(zeros_like)
-        24000    0.147    0.000    0.163    0.000 shape_base.py:81(atleast_2d)
-        14400    0.124    0.000    0.257    0.000 Face2D.py:16(initialize)
-         4800    0.112    0.000    0.990    0.000 Triangle.py:10(__init__)
-        14400    0.094    0.000    0.355    0.000 Faces.py:10(__init__)
-       115201    0.091    0.000    0.222    0.000 <__array_function__ internals>:177(empty_like)
-       153600    0.089    0.000    0.918    0.000 <__array_function__ internals>:177(outer)
+        19200    2.010    0.000    5.372    0.000 Triangle.py:80(updateState)
+            4    1.845    0.461    9.263    2.316 Solver.py:166(assemble)
+            1    1.087    1.087    1.087    1.087 linalg.py:329(solve)
+       153600    0.717    0.000    0.846    0.000 numeric.py:841(outer)
+       115200    0.707    0.000    1.476    0.000 Face2D.py:54(computeNodalForces)
+       639031    0.653    0.000    0.653    0.000 {built-in method numpy.array}
+       230400    0.528    0.000    0.731    0.000 Node.py:417(getIdx4Element)
+        38400    0.503    0.000    2.583    0.000 Triangle.py:155(computeSurfaceLoads)
+        19201    0.435    0.000    0.552    0.000 PlaneStress.py:25(updateState)
+    254400/4800    0.409    0.000    0.856    0.000 copy.py:128(deepcopy)
+       115201    0.338    0.000    0.428    0.000 numeric.py:67(zeros_like)
+        76800    0.304    0.000    0.628    0.000 Node.py:366(getDeformedPos)
+        76800    0.207    0.000    0.309    0.000 Node.py:273(getDisp)
+        14400    0.207    0.000    0.345    0.000 Face2D.py:16(initialize)
+        38400    0.147    0.000    0.596    0.000 Triangle.py:163(<listcomp>)
+        24000    0.136    0.000    0.257    0.000 shape_base.py:219(vstack)
+    19200/4800    0.130    0.000    0.734    0.000 copy.py:227(_deepcopy_dict)
+         4800    0.130    0.000    1.107    0.000 Triangle.py:10(__init__)
+        14400    0.122    0.000    0.472    0.000 Faces.py:10(__init__)
+       200334    0.094    0.000    0.094    0.000 {built-in method numpy.zeros}
 
 
 
@@ -460,7 +462,7 @@ Now it's time to process the profiling data
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.436 seconds)
+   **Total running time of the script:** (0 minutes 12.587 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate10.py:
@@ -469,16 +471,13 @@ Now it's time to process the profiling data
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: plot_plate10.ipynb <plot_plate10.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_plate10.py <plot_plate10.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: plot_plate10.ipynb <plot_plate10.ipynb>`
 
 
 .. only:: html

@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ElementPlotter class &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,11 +34,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> FEM.edu
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            FEM.edu
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -57,6 +63,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../Utilities/Integration_class.html">Integration classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../Utilities/ShapeFunction_classes.html">Shape Function classes</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="Plot_Support_Classes.html">Plot Support classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Plot_Support_Classes.html#femedu.plotter.AbstractPlotter.AbstractPlotter"><code class="docutils literal notranslate"><span class="pre">AbstractPlotter</span></code></a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="Plot_Support_Classes.html#derived-classes">Derived Classes</a></li>
 </ul>
 </li>
@@ -80,10 +87,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../implementation.html">Implementation</a> &raquo;</li>
-          <li><a href="Plot_Support_Classes.html">Plot Support classes</a> &raquo;</li>
-      <li>ElementPlotter class</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../implementation.html">Implementation</a></li>
+          <li class="breadcrumb-item"><a href="Plot_Support_Classes.html">Plot Support classes</a></li>
+      <li class="breadcrumb-item active">ElementPlotter class</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/implementation/Plotter/ElementPlotter_class.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -94,18 +101,18 @@
            <div itemprop="articleBody">
              
   <section id="elementplotter-class">
-<h1>ElementPlotter class<a class="headerlink" href="#elementplotter-class" title="Permalink to this heading"></a></h1>
+<h1>ElementPlotter class<a class="headerlink" href="#elementplotter-class" title="Link to this heading"></a></h1>
 <section id="parent-class">
-<h2>Parent class<a class="headerlink" href="#parent-class" title="Permalink to this heading"></a></h2>
+<h2>Parent class<a class="headerlink" href="#parent-class" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><cite>Plot Support Classes</cite></p></li>
 </ul>
 </section>
 <section id="module-femedu.plotter.ElementPlotter">
-<span id="class-doc"></span><h2>Class doc<a class="headerlink" href="#module-femedu.plotter.ElementPlotter" title="Permalink to this heading"></a></h2>
+<span id="class-doc"></span><h2>Class doc<a class="headerlink" href="#module-femedu.plotter.ElementPlotter" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="femedu.plotter.ElementPlotter.ElementPlotter">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.plotter.ElementPlotter.</span></span><span class="sig-name descname"><span class="pre">ElementPlotter</span></span><a class="headerlink" href="#femedu.plotter.ElementPlotter.ElementPlotter" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.plotter.ElementPlotter.</span></span><span class="sig-name descname"><span class="pre">ElementPlotter</span></span><a class="headerlink" href="#femedu.plotter.ElementPlotter.ElementPlotter" title="Link to this definition"></a></dt>
 <dd><p>A plotter class that takes a list of nodes and elements from a finite element model
 and plots a deformed mesh, potentially shaded based on a value of a user-specified state
 variable.</p>
@@ -114,23 +121,29 @@ Default versions of those functions are implemented through the Element-class, b
 methods may be overloaded by user-implemented elements.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.plotter.ElementPlotter.ElementPlotter.addForces">
-<span class="sig-name descname"><span class="pre">addForces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reactions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.ElementPlotter.ElementPlotter.addForces" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">addForces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reactions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('ux',</span> <span class="pre">'uy',</span> <span class="pre">'rz')</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.ElementPlotter.ElementPlotter.addForces" title="Link to this definition"></a></dt>
 <dd><p>add nodal forces to the plot shown in <strong>axs</strong></p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>axs</strong> – axis on which to plot</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>axs</strong> – axis on which to plot</p></li>
+<li><p><strong>loads</strong> – set to True for loads added to the plot</p></li>
+<li><p><strong>reactions</strong> – set to True for reactions added to the plot</p></li>
+<li><p><strong>factor</strong> – deformation factor. default: 0.0</p></li>
+<li><p><strong>dofs</strong> – dof mapping. default are 2D forces and in-plane moment</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.plotter.ElementPlotter.ElementPlotter.beamValuePlot">
-<span class="sig-name descname"><span class="pre">beamValuePlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_arrows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.ElementPlotter.ElementPlotter.beamValuePlot" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">beamValuePlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_arrows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.ElementPlotter.ElementPlotter.beamValuePlot" title="Link to this definition"></a></dt>
 <dd><p>Create a deformed system plot</p>
 <p>If <strong>file</strong> is given, store the plot to that file.
 Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>variable_name</strong> – string code for variable</p></li>
 <li><p><strong>factor</strong> – displacement scaling factor</p></li>
@@ -142,25 +155,21 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.plotter.ElementPlotter.ElementPlotter.displacementPlot">
-<span class="sig-name descname"><span class="pre">displacementPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modeshape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.ElementPlotter.ElementPlotter.displacementPlot" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">displacementPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modeshape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.ElementPlotter.ElementPlotter.displacementPlot" title="Link to this definition"></a></dt>
 <dd><p>Create a deformed system plot</p>
 <p>If <strong>file</strong> is given, store the plot to that file.
 Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dl class="field-list">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>factor</strong> – displacement scaling factor</p></li>
 <li><p><strong>file</strong> – filename (str)</p></li>
 <li><p><strong>**kwargs</strong> – see list of optional parameters below.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Keywords</dt>
+<dt class="field-even">Keywords<span class="colon">:</span></dt>
 <dd class="field-even"><p>optional parameters</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_bc</span></code></p></td>
 <td><p>set to <strong>True</strong> to mark fixed DOFs</p></td>
@@ -186,12 +195,12 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.plotter.ElementPlotter.ElementPlotter.valuePlot">
-<span class="sig-name descname"><span class="pre">valuePlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.ElementPlotter.ElementPlotter.valuePlot" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">valuePlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.ElementPlotter.ElementPlotter.valuePlot" title="Link to this definition"></a></dt>
 <dd><p>Create a plot using colors to identify magnitude of internal force.</p>
 <p>If <strong>file</strong> is given, store the plot to that file.
 Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>factor</strong> – True | <strong>False</strong></p></li>
 <li><p><strong>filename</strong> – (str)</p></li>
@@ -202,12 +211,12 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.plotter.ElementPlotter.ElementPlotter.xyPlot">
-<span class="sig-name descname"><span class="pre">xyPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_arrows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.ElementPlotter.ElementPlotter.xyPlot" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">xyPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_arrows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.ElementPlotter.ElementPlotter.xyPlot" title="Link to this definition"></a></dt>
 <dd><p>Create a x-y-plot</p>
 <p>If <strong>filename</strong> is given, store the plot to that file.
 Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>X</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code> holding x-values</p></li>
 <li><p><strong>Y</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">Record</span></code> holding y-values</p></li>
@@ -237,7 +246,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jul 25, 2023.
+      <span class="lastupdated">Last updated on Apr 07, 2024.
       </span></p>
   </div>
 

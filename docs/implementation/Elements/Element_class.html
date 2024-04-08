@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Element classes &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -33,11 +35,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> FEM.edu
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            FEM.edu
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +61,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../implementation.html#model-builder-and-model-controls">Model Builder and Model Controls</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../implementation.html#fem-component-classes">FEM Component Classes</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Element classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#femedu.elements.Element.Element"><code class="docutils literal notranslate"><span class="pre">Element</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-femedu.elements.DrawElement">Inherited methods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#helper-classes">Helper Classes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#derived-classes">Derived Classes</a></li>
@@ -85,9 +92,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../implementation.html">Implementation</a> &raquo;</li>
-      <li>Element classes</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../implementation.html">Implementation</a></li>
+      <li class="breadcrumb-item active">Element classes</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/implementation/Elements/Element_class.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -98,7 +105,7 @@
            <div itemprop="articleBody">
              
   <section id="element-classes">
-<h1>Element classes<a class="headerlink" href="#element-classes" title="Permalink to this heading"></a></h1>
+<h1>Element classes<a class="headerlink" href="#element-classes" title="Link to this heading"></a></h1>
 <p>This class represents no particular element but rather defines common functionality for all elements.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -113,13 +120,13 @@ for the default plotting mechanism to work.  The default constructor defines <co
 which means that this element <strong>will not be plotted</strong>.</p>
 <p>See <a class="reference internal" href="#inherited-methods">Inherited methods</a> below for more detail on the <code class="code docutils literal notranslate"><span class="pre">DrawElement</span></code> class.</p>
 </div>
-<span class="target" id="module-femedu.elements.Element"></span><dl class="py class">
+<dl class="py class" id="module-femedu.elements.Element">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.Element.</span></span><span class="sig-name descname"><span class="pre">Element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.Element.</span></span><span class="sig-name descname"><span class="pre">Element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element" title="Link to this definition"></a></dt>
 <dd><p>abstract class: representing a single generic element</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.addTransformation">
-<span class="sig-name descname"><span class="pre">addTransformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.addTransformation" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">addTransformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.addTransformation" title="Link to this definition"></a></dt>
 <dd><p>Attach a transformation to any node of the element.</p>
 <p>If no <strong>local_nodes</strong> list is given or an empty list is handed to the function,
 the transformation, <strong>T</strong>, will be applied to all nodes in the element.</p>
@@ -130,12 +137,12 @@ Local nodes start at 0 and go to N-1, where N is the number of elements in this 
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.getDisp">
-<span class="sig-name descname"><span class="pre">getDisp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.getDisp" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">getDisp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.getDisp" title="Link to this definition"></a></dt>
 <dd><p>Use this function to get nodal displacements from inside your element implementation.</p>
 <p>This is a wrapper around the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Node.getDisp(caller)()</span></code> method that adds the caller information
 for the node.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>node</strong> – local node number for which displacements are requested.</p>
 </dd>
 </dl>
@@ -143,16 +150,16 @@ for the node.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.getDofs">
-<span class="sig-name descname"><span class="pre">getDofs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.getDofs" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">getDofs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.getDofs" title="Link to this definition"></a></dt>
 <dd><p>returns the dof-codes for this element in a list</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.getForce">
-<span class="sig-name descname"><span class="pre">getForce</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.getForce" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">getForce</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.getForce" title="Link to this definition"></a></dt>
 <dd><p>Request the internal force vector (stress driven force only; <strong>no applied element loads</strong>)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p>
 </dd>
 </dl>
@@ -160,7 +167,7 @@ for the node.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.getLoad">
-<span class="sig-name descname"><span class="pre">getLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">apply_load_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.getLoad" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">getLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">apply_load_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.getLoad" title="Link to this definition"></a></dt>
 <dd><p>Requesting nodal forces generated by element loads, like</p>
 <ul class="simple">
 <li><p>line loads on beams of frames</p></li>
@@ -168,10 +175,10 @@ for the node.</p>
 <li><p>body forces on solids.</p></li>
 </ul>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>apply_load_factor</strong> – shall the global load factor be applied by the element.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>element load vector</p>
 </dd>
 </dl>
@@ -179,12 +186,12 @@ for the node.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.getPos">
-<span class="sig-name descname"><span class="pre">getPos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.getPos" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">getPos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.getPos" title="Link to this definition"></a></dt>
 <dd><p>Use this function to get nodal displacements from inside your element implementation.</p>
 <p>This is a wrapper around the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Node.getPos(caller)()</span></code> method that adds the caller information
 for the node.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>node</strong> – local node number for which displacements are requested.</p>
 </dd>
 </dl>
@@ -192,9 +199,9 @@ for the node.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.getStiffness">
-<span class="sig-name descname"><span class="pre">getStiffness</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.getStiffness" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">getStiffness</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.getStiffness" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p>
 </dd>
 </dl>
@@ -202,7 +209,7 @@ for the node.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.on_converged">
-<span class="sig-name descname"><span class="pre">on_converged</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.on_converged" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">on_converged</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.on_converged" title="Link to this definition"></a></dt>
 <dd><p>This method is called by the solver if convergence has been achieved.</p>
 <p>The element shall perform all necessary state updates,
 especially inform it’s material instances about the necessary updates.</p>
@@ -210,19 +217,19 @@ especially inform it’s material instances about the necessary updates.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.recordThisStep">
-<span class="sig-name descname"><span class="pre">recordThisStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_level</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.recordThisStep" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">recordThisStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_level</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.recordThisStep" title="Link to this definition"></a></dt>
 <dd><p>record current state of the system</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.resetLoads">
-<span class="sig-name descname"><span class="pre">resetLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.resetLoads" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">resetLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.resetLoads" title="Link to this definition"></a></dt>
 <dd><p>default implementation for resetting element loads.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.revert">
-<span class="sig-name descname"><span class="pre">revert</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.revert" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">revert</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.revert" title="Link to this definition"></a></dt>
 <dd><p>This method is called by the solver if the current load step failed to converge
 and the system shall be returned to the last converged state.</p>
 <p>The element shall perform all necessary state updates,
@@ -231,7 +238,7 @@ especially inform it’s material instances about the necessary updates.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.setLoadFactor">
-<span class="sig-name descname"><span class="pre">setLoadFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lam</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.setLoadFactor" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setLoadFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lam</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.setLoadFactor" title="Link to this definition"></a></dt>
 <dd><p>Set the target load factor to <strong>lam</strong></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -246,13 +253,13 @@ entire entered load is applied in full.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.setSurfaceLoad">
-<span class="sig-name descname"><span class="pre">setSurfaceLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.setSurfaceLoad" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setSurfaceLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.setSurfaceLoad" title="Link to this definition"></a></dt>
 <dd><div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This method needs to be implemented by every element that shall accept a surface load.</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>face_ix</strong> – face index for the laoded face (integer starting at 0)</p></li>
 <li><p><strong>pn</strong> – magnitude of distributed normal load per unit length. Tension on a surface is positive.</p></li>
@@ -264,23 +271,19 @@ entire entered load is applied in full.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Element.Element.updateState">
-<span class="sig-name descname"><span class="pre">updateState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.updateState" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">updateState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Element.Element.updateState" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <section id="module-femedu.elements.DrawElement">
-<span id="inherited-methods"></span><h2>Inherited methods<a class="headerlink" href="#module-femedu.elements.DrawElement" title="Permalink to this heading"></a></h2>
+<span id="inherited-methods"></span><h2>Inherited methods<a class="headerlink" href="#module-femedu.elements.DrawElement" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="femedu.elements.DrawElement.DrawElement">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.DrawElement.</span></span><span class="sig-name descname"><span class="pre">DrawElement</span></span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.DrawElement.</span></span><span class="sig-name descname"><span class="pre">DrawElement</span></span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement" title="Link to this definition"></a></dt>
 <dd><p>class for drawing any element</p>
 <p>element types are:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>UNKNOWN</p></td>
 <td></td>
@@ -307,15 +310,15 @@ entire entered load is applied in full.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.DrawElement.DrawElement.draw">
-<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modeshape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement.draw" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modeshape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement.draw" title="Link to this definition"></a></dt>
 <dd><p>Returns a series of coordinate vectors representing the _x_, _y_, and _z_ values
 of points for plotting the deformed shape the current element (<code class="code docutils literal notranslate"><span class="pre">self</span></code>).
 For the undeformed element, set <code class="code docutils literal notranslate"><span class="pre">factor=0.0</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>factor</strong> – magnification factor for deformation</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>a tuple (list) of coordinate vectors</p>
 </dd>
 </dl>
@@ -323,37 +326,37 @@ For the undeformed element, set <code class="code docutils literal notranslate">
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.DrawElement.DrawElement.drawBrick">
-<span class="sig-name descname"><span class="pre">drawBrick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement.drawBrick" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">drawBrick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement.drawBrick" title="Link to this definition"></a></dt>
 <dd><p>implementation of a generic <code class="code docutils literal notranslate"><span class="pre">BRICK</span></code> type</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.DrawElement.DrawElement.drawCurve">
-<span class="sig-name descname"><span class="pre">drawCurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement.drawCurve" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">drawCurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement.drawCurve" title="Link to this definition"></a></dt>
 <dd><p>implementation of a generic <code class="code docutils literal notranslate"><span class="pre">CURVE</span></code> type</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.DrawElement.DrawElement.drawLine">
-<span class="sig-name descname"><span class="pre">drawLine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement.drawLine" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">drawLine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement.drawLine" title="Link to this definition"></a></dt>
 <dd><p>implementation of a generic <code class="code docutils literal notranslate"><span class="pre">LINE</span></code> type</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.DrawElement.DrawElement.drawQuad">
-<span class="sig-name descname"><span class="pre">drawQuad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement.drawQuad" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">drawQuad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement.drawQuad" title="Link to this definition"></a></dt>
 <dd><p>implementation of a generic <code class="code docutils literal notranslate"><span class="pre">QUAD</span></code> type</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.DrawElement.DrawElement.drawTetrahedron">
-<span class="sig-name descname"><span class="pre">drawTetrahedron</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement.drawTetrahedron" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">drawTetrahedron</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement.drawTetrahedron" title="Link to this definition"></a></dt>
 <dd><p>implementation of a generic <code class="code docutils literal notranslate"><span class="pre">TETRAHEDRON</span></code> type</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.DrawElement.DrawElement.drawTriangle">
-<span class="sig-name descname"><span class="pre">drawTriangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement.drawTriangle" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">drawTriangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.DrawElement.DrawElement.drawTriangle" title="Link to this definition"></a></dt>
 <dd><p>implementation of a generic <code class="code docutils literal notranslate"><span class="pre">TRIANGLE</span></code> type</p>
 </dd></dl>
 
@@ -361,7 +364,7 @@ For the undeformed element, set <code class="code docutils literal notranslate">
 
 </section>
 <section id="helper-classes">
-<h2>Helper Classes<a class="headerlink" href="#helper-classes" title="Permalink to this heading"></a></h2>
+<h2>Helper Classes<a class="headerlink" href="#helper-classes" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Face_classes.html">Face classes</a></li>
@@ -369,7 +372,7 @@ For the undeformed element, set <code class="code docutils literal notranslate">
 </div>
 </section>
 <section id="derived-classes">
-<h2>Derived Classes<a class="headerlink" href="#derived-classes" title="Permalink to this heading"></a></h2>
+<h2>Derived Classes<a class="headerlink" href="#derived-classes" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Linear/Spring_class.html">Spring class</a></li>
@@ -398,7 +401,7 @@ For the undeformed element, set <code class="code docutils literal notranslate">
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jul 25, 2023.
+      <span class="lastupdated">Last updated on Apr 07, 2024.
       </span></p>
   </div>
 
