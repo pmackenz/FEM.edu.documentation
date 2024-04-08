@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Node class &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Solver class" href="../Solvers/Solver_class.html" />
+    <link rel="prev" title="SolidMesher class" href="../Mesher/SolidMesher_class.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Example Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">Tutorials Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../implementation.html">Implementation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../implementation.html#model-builder-and-model-controls">Model Builder and Model Controls</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../implementation.html#fem-component-classes">FEM Component Classes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Elements/Element_class.html">Element classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Materials/Material_class.html">Material class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Mesher/Mesher_class.html">Mesher classes</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Node class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#femedu.domain.Node.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Solvers/Solver_class.html">Solver class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Transformation_class.html">Transformation class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../implementation.html#utility-classes">Utility Classes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../implementation.html">Implementation</a></li>
+      <li class="breadcrumb-item active">Node class</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/implementation/Domain/Node_class.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="node-class">
+<span id="id1"></span><h1>Node class<a class="headerlink" href="#node-class" title="Link to this heading"></a></h1>
+<dl class="py class" id="module-femedu.domain.Node">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.domain.Node.</span></span><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node" title="Link to this definition"></a></dt>
+<dd><p>class: representing a single Node</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.addLoad">
+<span class="sig-name descname"><span class="pre">addLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loads</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.addLoad" title="Link to this definition"></a></dt>
+<dd><p>Nodes are applied as components energetically linked to any degree of freedom provided at this node.</p>
+<p>For example, in a 2D-problem with the x-axis to the right and the y-axis pointing up,
+applying a vertical downward force, P, and a counter-clockwise moment, M, at a node, xn:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xn</span><span class="o">.</span><span class="n">addLoad</span><span class="p">([</span><span class="o">-</span><span class="n">P</span><span class="p">,</span> <span class="n">M</span><span class="p">],[</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>loads</strong> (<em>list</em><em> of </em><em>floats</em>) – </p></li>
+<li><p><strong>dofs</strong> (<em>list</em><em> of </em><em>dof-codes</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.addTransformation">
+<span class="sig-name descname"><span class="pre">addTransformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.addTransformation" title="Link to this definition"></a></dt>
+<dd><p>Attach a transformation object to this node.
+The transformation defines a local coordinate system.
+If a transformation is given, all loads and prescribed displacements are assumed in that local coordinate system.
+Furthermore, all nodal displacements, velocity, or acceleration will be reported in that local coordinate system.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.areFixed">
+<span class="sig-name descname"><span class="pre">areFixed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.areFixed" title="Link to this definition"></a></dt>
+<dd><p>To be used by the assembly routines.</p>
+<p>return a list of indices pointing to fixed dofs in this node.
+Indices are local to this node: <code class="code docutils literal notranslate"><span class="pre">0..num_dofs</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.fixDOF">
+<span class="sig-name descname"><span class="pre">fixDOF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">dofs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.fixDOF" title="Link to this definition"></a></dt>
+<dd><p>provide a list of dof codes that shall be restrained</p>
+<p>see also: <code class="code docutils literal notranslate"><span class="pre">request()</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dofs</strong> – fix the dof defined by key(s)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getDeformedPos">
+<span class="sig-name descname"><span class="pre">getDeformedPos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getDeformedPos" title="Link to this definition"></a></dt>
+<dd><p>Return deformed position <span class="math notranslate nohighlight">\({\bf x} = {\bf X} + f \: {\bf u}\)</span></p>
+<p>If a caller is specified, the node will adjust the output to the d.o.f.s specified by the
+element’s request() call. (called during initialization.)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>caller</strong> – pointer to the calling element.</p></li>
+<li><p><strong>factor</strong> – deformation magnification factor, <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>deformed position vector, <span class="math notranslate nohighlight">\({\bf x}\)</span>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getDeltaU">
+<span class="sig-name descname"><span class="pre">getDeltaU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">previous_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getDeltaU" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>delta u = (current u) -  (last converged u)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getDisp">
+<span class="sig-name descname"><span class="pre">getDisp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getDisp" title="Link to this definition"></a></dt>
+<dd><p>return a vector (nd.array) of (generalized) displacements.</p>
+<p>If a <code class="code docutils literal notranslate"><span class="pre">caller</span></code> is given, the element-specific d.o.f.s will be returned as a sequence
+in the same order as given by the element’s <code class="code docutils literal notranslate"><span class="pre">request()</span></code> call.</p>
+<p>If a <code class="code docutils literal notranslate"><span class="pre">dof_list</span></code> is given, d.o.f.s will be returned as the sequence given by that list.
+A zero value will be returned for all d.o.f.s that do not exist at this node.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A single d.o.f., e.g., “ux”, can be requested using <code class="code docutils literal notranslate"><span class="pre">getDisp(dofs=('ux',))</span></code>.
+Do not forget the <code class="code docutils literal notranslate"><span class="pre">,</span></code> to indicate the definition of a single-element tuple.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>caller</strong> – pointer to element</p></li>
+<li><p><strong>dofs</strong> – tuple or list of d.o.f. keys</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>nodal displacement vector</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getFixedDofs">
+<span class="sig-name descname"><span class="pre">getFixedDofs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getFixedDofs" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a list of fixed dofs by dof-code strings.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getID">
+<span class="sig-name descname"><span class="pre">getID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getID" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the node ID (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getIdx4DOFs">
+<span class="sig-name descname"><span class="pre">getIdx4DOFs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getIdx4DOFs" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>an index list to this node’s dofs in the global list of dofs</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getIdx4Element">
+<span class="sig-name descname"><span class="pre">getIdx4Element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getIdx4Element" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>an index list to nodal dofs associated with the attached <strong>elem</strong> within the global dof list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getLead">
+<span class="sig-name descname"><span class="pre">getLead</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getLead" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pointer to the <strong>lead</strong> node (<code class="docutils literal notranslate"><span class="pre">Node</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getLeadID">
+<span class="sig-name descname"><span class="pre">getLeadID</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getLeadID" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the node ID of the <strong>lead</strong> node (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getLoad">
+<span class="sig-name descname"><span class="pre">getLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dof_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_load_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getLoad" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dof_list</strong> – list (or tuple) if dof-keys for which nodal loads are requested. Fill missing dofs by 0.0.</p></li>
+<li><p><strong>apply_load_factor</strong> – defaults to False -&gt; no factors applied.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>nodal load vector (ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getNormDeltaU2">
+<span class="sig-name descname"><span class="pre">getNormDeltaU2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">previous_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getNormDeltaU2" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>norm of delta u = (current u) -  (last converged u)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>0.0 if node is a “follower”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getPos">
+<span class="sig-name descname"><span class="pre">getPos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getPos" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>caller</strong> – pointer to calling element</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>initial position vector</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.hasLoad">
+<span class="sig-name descname"><span class="pre">hasLoad</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.hasLoad" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>True</strong> if this node has <strong>any</strong> loads (bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.isFixed">
+<span class="sig-name descname"><span class="pre">isFixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dof</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.isFixed" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dof</strong> – dof code as defined in <code class="code docutils literal notranslate"><span class="pre">request()</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.make_follower">
+<span class="sig-name descname"><span class="pre">make_follower</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lead</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.make_follower" title="Link to this definition"></a></dt>
+<dd><p>this command tells the current node (<strong>self</strong>) to “follow” whatever the <strong>lead</strong> node is doing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lead</strong> (<a class="reference internal" href="#femedu.domain.Node.Node" title="femedu.domain.Node.Node"><em>Node</em></a>) – pointer to the lead node</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.on_converged">
+<span class="sig-name descname"><span class="pre">on_converged</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.on_converged" title="Link to this definition"></a></dt>
+<dd><p>This method is called every time a solver signals a converged solution.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.popU">
+<span class="sig-name descname"><span class="pre">popU</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.popU" title="Link to this definition"></a></dt>
+<dd><p>Restore a previously pushed displacement vector (using <code class="code docutils literal notranslate"><span class="pre">pushU()</span></code>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.pushU">
+<span class="sig-name descname"><span class="pre">pushU</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.pushU" title="Link to this definition"></a></dt>
+<dd><p>Store the current displacement vector for later restore using <code class="code docutils literal notranslate"><span class="pre">popU()</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.recordThisStep">
+<span class="sig-name descname"><span class="pre">recordThisStep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_level</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.recordThisStep" title="Link to this definition"></a></dt>
+<dd><p>record current state of the system</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.request">
+<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dof_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caller</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.request" title="Link to this definition"></a></dt>
+<dd><p>send list or individual dof code. Common codes:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>code</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>ux</strong></p></td>
+<td><p>displacement in x-direction</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>uy</strong></p></td>
+<td><p>displacement in y-direction</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>uz</strong></p></td>
+<td><p>displacement in z-direction</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rx</strong></p></td>
+<td><p>rotation about x-axis</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ry</strong></p></td>
+<td><p>rotation about y-axis</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rz</strong></p></td>
+<td><p>rotation about z-axis</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dof_list</strong> – list of dof-codes required by calling element</p></li>
+<li><p><strong>caller</strong> – pointer to calling element (usually sent as self)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.resetAll">
+<span class="sig-name descname"><span class="pre">resetAll</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.resetAll" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.resetDisp">
+<span class="sig-name descname"><span class="pre">resetDisp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.resetDisp" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.resetLoad">
+<span class="sig-name descname"><span class="pre">resetLoad</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.resetLoad" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.setDisp">
+<span class="sig-name descname"><span class="pre">setDisp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modeshape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.setDisp" title="Link to this definition"></a></dt>
+<dd><p>use for prescribed displacements</p>
+<p><strong>NEEDS TO BE IMPLEMENTED</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>U</strong> – </p></li>
+<li><p><strong>modeshape</strong> – set to True if U represents a mode shape (BOOL)</p></li>
+<li><p><strong>dof_list</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.setLoad">
+<span class="sig-name descname"><span class="pre">setLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loads</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.setLoad" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>loads</strong> – list of force components</p></li>
+<li><p><strong>dofs</strong> – associated list of DOFs to which respective loads are to be applied</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.setLoadFactor">
+<span class="sig-name descname"><span class="pre">setLoadFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lam</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.setLoadFactor" title="Link to this definition"></a></dt>
+<dd><p>Set the target load factor to <strong>lam</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method should not be called by the user.
+<strong>USE</strong> <code class="code docutils literal notranslate"><span class="pre">System.setLoadFactor(lam)</span></code> instead!</p>
+</div>
+<p>The entered load pattern is considered a reference load,
+to be multiplied by a scalar load factor, <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<p>If no load factor is set explicitly, a factor of 1.0 is assumed, i.e., the
+entire entered load is applied in full.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.setTrialState">
+<span class="sig-name descname"><span class="pre">setTrialState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.setTrialState" title="Link to this definition"></a></dt>
+<dd><p>This will set a suitable trial position for the
+arc-length method to</p>
+<div class="math notranslate nohighlight">
+\[{\bf u}^{(0)}_{n+1} = 2{\bf u}^{(\infty)}_{n} - {\bf u}^{(\infty)}_{n-1}\]</div>
+<p>This should be used by a solution algorithm but not by regular
+user input.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Mesher/SolidMesher_class.html" class="btn btn-neutral float-left" title="SolidMesher class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Solvers/Solver_class.html" class="btn btn-neutral float-right" title="Solver class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on Apr 08, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+
+.. _sphx_glr_auto_examples_mixed:
+
+.. _mixed_examples:
+
+Mixed Structures Examples
+-----------------------------
+
+For more in-depth information about the colormaps available in matplotlib
+as well as a description of their properties,
+see the :ref:`Tutorials <tutorials>`.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="modeled using a 2D frame element for the main structure and a truss element for the brace">
+
+.. only:: html
+
+  .. image:: /auto_examples/mixed/images/thumb/sphx_glr_plot_mixed01_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_mixed_plot_mixed01.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Braced building frame</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/mixed/plot_mixed01
+

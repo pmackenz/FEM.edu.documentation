@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System class &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Element classes" href="../Elements/Element_class.html" />
+    <link rel="prev" title="Implementation" href="../implementation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Example Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">Tutorials Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../implementation.html">Implementation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../implementation.html#model-builder-and-model-controls">Model Builder and Model Controls</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">System class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#femedu.domain.System.System"><code class="docutils literal notranslate"><span class="pre">System</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../implementation.html#fem-component-classes">FEM Component Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../implementation.html#utility-classes">Utility Classes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../implementation.html">Implementation</a></li>
+      <li class="breadcrumb-item active">System class</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/implementation/Domain/System_class.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="system-class">
+<span id="id1"></span><h1>System class<a class="headerlink" href="#system-class" title="Link to this heading"></a></h1>
+<dl class="py class" id="module-femedu.domain.System">
+<dt class="sig sig-object py" id="femedu.domain.System.System">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.domain.System.</span></span><span class="sig-name descname"><span class="pre">System</span></span><a class="headerlink" href="#femedu.domain.System.System" title="Link to this definition"></a></dt>
+<dd><p>class: representing a System model</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.addConstraint">
+<span class="sig-name descname"><span class="pre">addConstraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">newConstraints</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.addConstraint" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>newConstraints</strong> – one or more <code class="xref py py-class docutils literal notranslate"><span class="pre">Constraint</span></code> or a subclass objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.addElement">
+<span class="sig-name descname"><span class="pre">addElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">newElements</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.addElement" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>newElement</strong> – an <code class="code docutils literal notranslate"><span class="pre">Element</span></code> object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.addNode">
+<span class="sig-name descname"><span class="pre">addNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.addNode" title="Link to this definition"></a></dt>
+<dd><p>Add one or more nodes to the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>newNode</strong> – a <code class="code docutils literal notranslate"><span class="pre">Node</span></code> object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.beamValuePlot">
+<span class="sig-name descname"><span class="pre">beamValuePlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.beamValuePlot" title="Link to this definition"></a></dt>
+<dd><p>Create a traditional beam value plot, i.e., moment and shear diagrams.</p>
+<p>If <strong>filename</strong> is given, store the plot to that file.
+Use proper file extensions to indicate the desired format (.png, .pdf)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>variable</strong> – string code for variable</p></li>
+<li><p><strong>deformed</strong> – True | <strong>False</strong></p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.checkStability">
+<span class="sig-name descname"><span class="pre">checkStability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwdargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.checkStability" title="Link to this definition"></a></dt>
+<dd><p>Computes the stability index as</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathop{det}([{\bf K}_t])\)</span> for systems with less than 25 d.o.f.s</p></li>
+<li><p><span class="math notranslate nohighlight">\(\min\lambda_i\)</span> where <span class="math notranslate nohighlight">\(\lambda_i\)</span> are the eigenvalues of <span class="math notranslate nohighlight">\({\bf K}_t\)</span></p></li>
+</ul>
+<p><strong>Implemented</strong> by <code class="xref py py-class docutils literal notranslate"><span class="pre">Solver</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>verbose</strong> – set to <strong>True</strong> for log info</p></li>
+<li><p><strong>num_eigen</strong> – if set to a value greater than 0, show the <strong>num_eigen</strong> eigenvalues
+closest to the current load level.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>stability index</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.fetchRecord">
+<span class="sig-name descname"><span class="pre">fetchRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.fetchRecord" title="Link to this definition"></a></dt>
+<dd><p>Request recorded time history data for the listed keys.
+If a single key is given as a string, a single <cite>np.array()</cite> is returned.
+If a list of keys is given, a <cite>list of np.array()</cite> is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>time history data for the listed keys.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.getSolver">
+<span class="sig-name descname"><span class="pre">getSolver</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.getSolver" title="Link to this definition"></a></dt>
+<dd><p>Provides a pointer to the current solver instance.</p>
+<p>This function is used to get access to the solver and give instructions directly to that solver.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.historyPlot">
+<span class="sig-name descname"><span class="pre">historyPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">varX</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varY</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.historyPlot" title="Link to this definition"></a></dt>
+<dd><p>Create a generic X-Y plot using recorder data for load-level (horizontal)
+and varY (vertical).</p>
+<p>If <strong>filename</strong> is given, store the plot to that file.
+Use proper file extensions to indicate the desired format (.png, .pdf)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>varX</strong> – <p>X-axis parameter;
+This must be a variable code previously set by <a class="reference internal" href="#femedu.domain.System.System.initRecorder" title="femedu.domain.System.System.initRecorder"><code class="xref py py-meth docutils literal notranslate"><span class="pre">initRecorder()</span></code></a>.</p>
+<p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">varX</span></code> is a <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, it is assumed to be a global parameter/variable, e.g.,
+load factor <strong>lam</strong>, or pseudo time <strong>time</strong> (time not yet supported)</p>
+<p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">varX</span></code> is a <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code> containing a variable code and a <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> pointer,
+the respective nodal DOF defined by the parameter will be used.</p>
+<p>If <code class="xref py py-attr docutils literal notranslate"><span class="pre">varX</span></code> is a <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code> containing a variable code and a <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> pointer,
+the respective element DOF defined by the parameter will be used. The parameter must identify a scalar parameter.
+Hence, you may use <code class="xref py py-data docutils literal notranslate"><span class="pre">'sig:xx'</span></code> but <strong>not</strong> <code class="xref py py-data docutils literal notranslate"><span class="pre">'stress'</span></code>.</p>
+</p></li>
+<li><p><strong>varY</strong> – a variable code previously set by <a class="reference internal" href="#femedu.domain.System.System.initRecorder" title="femedu.domain.System.System.initRecorder"><code class="xref py py-meth docutils literal notranslate"><span class="pre">initRecorder()</span></code></a></p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – </p></li>
+<li><p><strong>node</strong> – (optional)</p></li>
+<li><p><strong>nodes</strong> – (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.initArcLength">
+<span class="sig-name descname"><span class="pre">initArcLength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_increment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.initArcLength" title="Link to this definition"></a></dt>
+<dd><p>Initializes parameters for the arc-length constraint.</p>
+<div class="math notranslate nohighlight">
+\[g({\bf u}, \lambda)) := \alpha ||\bar {\bf P}|| (\lambda-\lambda_n)^2 + ({\bf u} - {\bf u}_n)({\bf u} - {\bf u}_n) - \Delta s^2 = 0\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This feature requires a nonlinear solver. Review the <a class="reference internal" href="#femedu.domain.System.System.setSolver" title="femedu.domain.System.System.setSolver"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setSolver()</span></code></a> function.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>load_increment</strong> – load increment used to calibrate the constraint</p></li>
+<li><p><strong>alpha</strong> – load contribution factor</p></li>
+<li><p><strong>tolerance</strong> – convergence tolerance</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.initRecorder">
+<span class="sig-name descname"><span class="pre">initRecorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.initRecorder" title="Link to this definition"></a></dt>
+<dd><p>initializes data arrays for gathering of load history data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>variables</strong> (<em>list-type</em>) – list of variables or d.o.f.-codes to be recorded</p></li>
+<li><p><strong>nodes</strong> (list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code>) – nodes for which to record</p></li>
+<li><p><strong>elements</strong> (list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code>) – elements for which to record</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># examples:</span>
+
+<span class="c1"># system recorder tracking the stability index</span>
+<span class="n">initRecorder</span><span class="p">(</span><span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;stability&#39;</span><span class="p">,])</span>
+
+<span class="c1"># tracking &#39;ux&#39; at nodes X1 and X7</span>
+<span class="n">initRecorder</span><span class="p">(</span><span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ux&#39;</span><span class="p">,],</span> <span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="n">X1</span><span class="p">,</span> <span class="n">X7</span><span class="p">])</span>
+
+<span class="c1"># tracking all components of stress at Elem2 and Elem42</span>
+<span class="n">initRecorder</span><span class="p">(</span><span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;stress&#39;</span><span class="p">,],</span> <span class="n">elements</span><span class="o">=</span><span class="p">[</span><span class="n">Elem2</span><span class="p">,</span> <span class="n">Elem42</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.pauseRecorder">
+<span class="sig-name descname"><span class="pre">pauseRecorder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.pauseRecorder" title="Link to this definition"></a></dt>
+<dd><p>pauses the recorder.  You can restart the recorder by calling
+<cite>startRecorder()</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_reactions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_loads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.plot" title="Link to this definition"></a></dt>
+<dd><p>Create mesh plot showing the undeformed and the deformed system</p>
+<p>If <strong>filename</strong> is given, store the plot to that file.
+Use proper file extensions to indicate the desired format (.png, .pdf)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>factor</strong> – deformation magnification factor</p></li>
+<li><p><strong>show_reactions</strong> – plot reaction forces if this evaluates to <strong>True</strong></p></li>
+<li><p><strong>show_loads</strong> – plot nodal load vectors if this evaluates to <strong>True</strong></p></li>
+<li><p><strong>force_limit</strong> – don’t plot forces smaller than this value</p></li>
+<li><p><strong>filename</strong> – filename (str)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.plotBucklingMode">
+<span class="sig-name descname"><span class="pre">plotBucklingMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.plotBucklingMode" title="Link to this definition"></a></dt>
+<dd><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method has been marked <strong>DEPRECATED</strong> !</p>
+<p>Use the <code class="code docutils literal notranslate"><span class="pre">System.plot()</span></code> method with appropriate <code class="code docutils literal notranslate"><span class="pre">**kwargs</span></code> instead.</p>
+</div>
+<p>Select a mode shape by setting <cite>mode</cite> to an integer, where <cite>0</cite> stands for the mode with the smallest
+absolute eigenvalue, <cite>1</cite> the second smallest, and so forth.  If the resulting eigenvalue (shown in the plot)
+is negative, the load-level associated with that mode is below the current load level.</p>
+<p>If a <cite>filename</cite> is given, e.g., <cite>filename=”buckling_mode.png”</cite>, the plot will be saved to the respective file.
+The file type will be determined from the given extensions, e.g., <cite>.png</cite> for a PNG format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>factor</strong> – Scale the mode shape by this factor.</p></li>
+<li><p><strong>mode</strong> – which mode shape shall be plotted?</p></li>
+<li><p><strong>filename</strong> – string</p></li>
+<li><p><strong>kwargs</strong> – not specified here.  These are handed over to the <code class="code docutils literal notranslate"><span class="pre">Solver(...)</span></code> instance.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.plotDOF">
+<span class="sig-name descname"><span class="pre">plotDOF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.plotDOF" title="Link to this definition"></a></dt>
+<dd><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method has been marked <strong>DEPRECATED</strong> !</p>
+<p>Use the <code class="code docutils literal notranslate"><span class="pre">System.plot()</span></code> method with appropriate <code class="code docutils literal notranslate"><span class="pre">**kwargs</span></code> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.plotSystem">
+<span class="sig-name descname"><span class="pre">plotSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.plotSystem" title="Link to this definition"></a></dt>
+<dd><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method has been marked <strong>DEPRECATED</strong> !</p>
+<p>Use the <code class="code docutils literal notranslate"><span class="pre">System.plot()</span></code> method with appropriate <code class="code docutils literal notranslate"><span class="pre">**kwargs</span></code> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.popU">
+<span class="sig-name descname"><span class="pre">popU</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.popU" title="Link to this definition"></a></dt>
+<dd><p>Restore a previously pushed displacement vector (using <code class="code docutils literal notranslate"><span class="pre">pushU()</span></code>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.pushU">
+<span class="sig-name descname"><span class="pre">pushU</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.pushU" title="Link to this definition"></a></dt>
+<dd><p>Store the current displacement vector for later restore using <code class="code docutils literal notranslate"><span class="pre">popU()</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.recordThisStep">
+<span class="sig-name descname"><span class="pre">recordThisStep</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.recordThisStep" title="Link to this definition"></a></dt>
+<dd><p>record current state of the system</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.report">
+<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.report" title="Link to this definition"></a></dt>
+<dd><p>print a text-based summary report</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.resetAll">
+<span class="sig-name descname"><span class="pre">resetAll</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.resetAll" title="Link to this definition"></a></dt>
+<dd><p>Resets load and displacement vectors.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.resetDisp">
+<span class="sig-name descname"><span class="pre">resetDisp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.resetDisp" title="Link to this definition"></a></dt>
+<dd><p>Resets the displacement vector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.resetLoad">
+<span class="sig-name descname"><span class="pre">resetLoad</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.resetLoad" title="Link to this definition"></a></dt>
+<dd><p>Resets the load vector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.setDisplacementControl">
+<span class="sig-name descname"><span class="pre">setDisplacementControl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.setDisplacementControl" title="Link to this definition"></a></dt>
+<dd><p>activate displacement control for the next load step</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> – pointer to the controlling node</p></li>
+<li><p><strong>dof</strong> – dof code for controlled dof</p></li>
+<li><p><strong>target</strong> – target displacement value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.setLoadFactor">
+<span class="sig-name descname"><span class="pre">setLoadFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lam</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.setLoadFactor" title="Link to this definition"></a></dt>
+<dd><p>Set the target load factor to <strong>lam</strong></p>
+<p>The entered load pattern is considered a reference load,
+to be multiplied by a scalar load factor, <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<p>If no load factor is set explicitly, a factor of 1.0 is assumed, i.e., the
+entire entered load is applied in full.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.setSolver">
+<span class="sig-name descname"><span class="pre">setSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solver</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.setSolver" title="Link to this definition"></a></dt>
+<dd><p>This method will change the current solver to the provided solver.</p>
+<p>Upon successful update of the solver, the old solver state will be
+pushed to the new solver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>solver</strong> – a pointer to a solver object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.solve" title="Link to this definition"></a></dt>
+<dd><p>Solve system of equations and find state of deformation for the given load level.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.startRecorder">
+<span class="sig-name descname"><span class="pre">startRecorder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.startRecorder" title="Link to this definition"></a></dt>
+<dd><p>starts the recorder</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.stepArcLength">
+<span class="sig-name descname"><span class="pre">stepArcLength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.stepArcLength" title="Link to this definition"></a></dt>
+<dd><p>Progresses the model state by one arc-length.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to initialize arc-length control by one call to
+<a class="reference internal" href="#femedu.domain.System.System.initArcLength" title="femedu.domain.System.System.initArcLength"><code class="xref py py-meth docutils literal notranslate"><span class="pre">initArcLength()</span></code></a> at least once to set all necessary parameters.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return normR<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the norm of the generalized residuum from the last iteration step</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.stopRecorder">
+<span class="sig-name descname"><span class="pre">stopRecorder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.stopRecorder" title="Link to this definition"></a></dt>
+<dd><p>stops the recorder</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.valuePlot">
+<span class="sig-name descname"><span class="pre">valuePlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.valuePlot" title="Link to this definition"></a></dt>
+<dd><p>Create a false color contour plot for the selected variable.
+A value of zero (0.0) will be assigned for any variable not
+provided by an element or a node.</p>
+<p>If <strong>filename</strong> is given, store the plot to that file.
+Use proper file extensions to indicate the desired format (.png, .pdf)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>variable</strong> – string code for variable to show</p></li>
+<li><p><strong>factor</strong> – deformation magnification factor (default is undeformed)</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../implementation.html" class="btn btn-neutral float-left" title="Implementation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Elements/Element_class.html" class="btn btn-neutral float-right" title="Element classes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on Apr 08, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

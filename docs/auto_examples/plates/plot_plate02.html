@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A square patch made of two triangular plate elements &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Patch test for triangular plate under in-plane loading" href="plot_plate03.html" />
+    <link rel="prev" title="A square patch made of two triangular plate elements" href="plot_plate01.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#spring-examples">Spring Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#diffusion-examples">Diffusion Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#mixed-structures-examples">Mixed Structures Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../springs/index.html">Spring Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../diffusion/index.html">Diffusion Examples</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Plate Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot_benchmark01.html">Benchmark problem: Wedged Plate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate01.html">A square patch made of two triangular plate elements</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">A square patch made of two triangular plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate03.html">Patch test for triangular plate under in-plane loading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate04.html">Patch test for triangular plate under in-plane loading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate05.html">Pulling a plate with a circular hole : using triangles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate06.html">Pulling a plate with a circular hole : using quads</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate07.html">A square patch made of one quadrilateral plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate08.html">A square patch made of one quadrilateral plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate09.html">Patch test for quadrilateral plate elements under in-plane loading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate10.html">Profiling the code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate11.html">Bending a cantilever beam</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">Tutorials Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Example Gallery</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Plate Examples</a></li>
+      <li class="breadcrumb-item active">A square patch made of two triangular plate elements</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/auto_examples/plates/plot_plate02.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-plates-plot-plate02-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code</p>
+</div>
+<section class="sphx-glr-example-title" id="a-square-patch-made-of-two-triangular-plate-elements">
+<span id="sphx-glr-auto-examples-plates-plot-plate02-py"></span><h1>A square patch made of two triangular plate elements<a class="headerlink" href="#a-square-patch-made-of-two-triangular-plate-elements" title="Link to this heading"></a></h1>
+<dl class="simple">
+<dt>Basic implementation test with applied loads.</dt><dd><p>Testing the tangent stiffness computation.</p>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">free</span>   <span class="n">free</span>
+ <span class="o">^</span>     <span class="o">^</span>
+ <span class="o">|</span>     <span class="o">|</span>
+ <span class="mi">3</span><span class="o">-----</span><span class="mi">2</span> <span class="o">-&gt;</span> <span class="n">free</span>
+ <span class="o">|</span>\  <span class="n">b</span> <span class="o">|</span> <span class="o">&gt;</span>
+ <span class="o">|</span> \   <span class="o">|</span> <span class="o">&gt;</span>
+ <span class="o">|</span>  \  <span class="o">|</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">w</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">)</span>
+ <span class="o">|</span>   \ <span class="o">|</span> <span class="o">&gt;</span>
+ <span class="o">|</span> <span class="n">a</span>  \<span class="o">|</span> <span class="o">&gt;</span>
+ <span class="mi">0</span><span class="o">-----</span><span class="mi">1</span> <span class="o">-&gt;</span> <span class="n">free</span>
+
+<span class="n">width</span><span class="p">:</span>  <span class="mf">10.</span>
+<span class="n">height</span><span class="p">:</span> <span class="mf">10.</span>
+
+<span class="n">Material</span> <span class="n">parameters</span><span class="p">:</span> <span class="n">St</span><span class="o">.</span> <span class="n">Venant</span><span class="o">-</span><span class="n">Kirchhoff</span><span class="p">,</span> <span class="n">plane</span> <span class="n">stress</span>
+    <span class="n">E</span>  <span class="o">=</span> <span class="mf">10.0</span>
+    <span class="n">nu</span> <span class="o">=</span>  <span class="mf">0.30</span>
+    <span class="n">t</span>  <span class="o">=</span>  <span class="mf">1.0</span>
+
+<span class="n">Element</span> <span class="n">loads</span><span class="p">:</span>
+    <span class="n">node</span> <span class="mi">0</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+    <span class="n">node</span> <span class="mi">1</span><span class="p">:</span> <span class="p">[</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+    <span class="n">node</span> <span class="mi">2</span><span class="p">:</span> <span class="p">[</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+    <span class="n">node</span> <span class="mi">3</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+
+<span class="mi">2</span><span class="n">nd</span> <span class="n">Piola</span><span class="o">-</span><span class="n">Kirchhoff</span> <span class="n">stress</span><span class="p">:</span>
+    <span class="n">S_XX</span> <span class="o">=</span>  <span class="n">w</span>                  <span class="o">=</span>  <span class="mf">1.000</span>
+    <span class="n">S_YY</span> <span class="o">=</span> <span class="n">S_XY</span> <span class="o">=</span> <span class="n">S_YX</span> <span class="o">=</span> <span class="n">S_ZZ</span>  <span class="o">=</span>  <span class="mf">0.000</span>
+
+<span class="n">Green</span> <span class="n">Lagrange</span> <span class="n">strain</span><span class="p">:</span>
+    <span class="n">eps_XX</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">E</span><span class="p">)</span> <span class="p">((</span><span class="mf">1.000</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.30</span><span class="p">)(</span><span class="mf">0.000</span><span class="p">))</span> <span class="o">=</span>  <span class="mf">0.100</span>
+    <span class="n">eps_YY</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">E</span><span class="p">)</span> <span class="p">((</span><span class="mf">0.000</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.30</span><span class="p">)(</span><span class="mf">1.000</span><span class="p">))</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.030</span>
+    <span class="n">eps_XY</span> <span class="o">=</span> <span class="n">eps_YX</span>                          <span class="o">=</span>  <span class="mf">0.000</span>
+    <span class="n">eps_ZZ</span> <span class="o">=</span> <span class="o">-</span><span class="n">nu</span> <span class="o">*</span> <span class="p">(</span><span class="n">eps_XX</span> <span class="o">+</span> <span class="n">eps_YY</span><span class="p">)</span>         <span class="o">=</span> <span class="o">-</span><span class="mf">0.021</span>
+
+<span class="n">Stretches</span><span class="p">:</span>
+    <span class="n">lam_X</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="n">eps_XX</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.095</span>
+    <span class="n">lam_Y</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="n">eps_YY</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.9695</span>
+
+<span class="n">Displacements</span><span class="p">:</span>
+    <span class="n">ux</span> <span class="o">=</span> <span class="p">(</span><span class="n">lam_X</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="n">uy</span> <span class="o">=</span> <span class="p">(</span><span class="n">lam_Y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span>
+    <span class="n">node</span> <span class="mi">0</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.000</span><span class="p">,</span>  <span class="mf">0.000</span> <span class="p">]</span>
+    <span class="n">node</span> <span class="mi">1</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.954</span><span class="p">,</span>  <span class="mf">0.000</span> <span class="p">]</span>
+    <span class="n">node</span> <span class="mi">2</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.954</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.305</span> <span class="p">]</span>
+    <span class="n">node</span> <span class="mi">3</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.305</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>Author: Peter Mackenzie-Helnwein</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples</span> <span class="kn">import</span> <span class="n">Example</span>
+
+<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">femedu.solver</span> <span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Triangle</span>
+<span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">PlaneStress</span>
+
+
+<span class="k">class</span> <span class="nc">ExamplePlate02</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">E</span>  <span class="o">=</span> <span class="mf">10.</span><span class="p">,</span>   <span class="c1"># Young&#39;s modulus</span>
+            <span class="n">nu</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>   <span class="c1"># Poisson&#39;s ratio</span>
+            <span class="n">t</span>  <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>   <span class="c1"># thickness of the plate</span>
+            <span class="n">fy</span> <span class="o">=</span> <span class="mf">1.e30</span>  <span class="c1"># yield stress</span>
+        <span class="p">)</span>
+
+        <span class="n">a</span> <span class="o">=</span> <span class="mf">10.</span>     <span class="c1"># length of the plate in the x-direction</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="mf">10.</span>     <span class="c1"># length of the plate in the y-direction</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">setSolver</span><span class="p">(</span><span class="n">NewtonRaphsonSolver</span><span class="p">())</span>
+
+        <span class="n">nd0</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">nd1</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>   <span class="n">a</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">nd2</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>   <span class="n">a</span><span class="p">,</span>   <span class="n">b</span><span class="p">)</span>
+        <span class="n">nd3</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span> <span class="mf">0.0</span><span class="p">,</span>   <span class="n">b</span><span class="p">)</span>
+
+        <span class="n">nd0</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span> <span class="s1">&#39;uy&#39;</span><span class="p">)</span>
+        <span class="n">nd1</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;uy&#39;</span><span class="p">)</span>
+        <span class="n">nd3</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">nd0</span><span class="p">,</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">nd2</span><span class="p">,</span> <span class="n">nd3</span><span class="p">)</span>
+
+        <span class="n">elemA</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="n">nd0</span><span class="p">,</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">nd3</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+        <span class="n">elemB</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="n">nd2</span><span class="p">,</span> <span class="n">nd3</span><span class="p">,</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">elemA</span><span class="p">,</span> <span class="n">elemB</span><span class="p">)</span>
+
+        <span class="n">elemB</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="n">face</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pn</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+        <span class="c1">#model.report()  # activate this line for lots of debug info</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Undeformed system&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate02_undeformed.png&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate02_deformed.png&quot;</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ex</span> <span class="o">=</span> <span class="n">ExamplePlate02</span><span class="p">()</span>
+    <span class="n">ex</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_plate02_001.png" srcset="../../_images/sphx_glr_plot_plate02_001.png" alt="Undeformed system" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate02_002.png" srcset="../../_images/sphx_glr_plot_plate02_002.png" alt="Deformed System (magnification=1.00)" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+
+/usr/local/lib/python3.11/site-packages/matplotlib/quiver.py:632: RuntimeWarning: Mean of empty slice.
+  amean = a.mean()
+/usr/local/lib/python3.11/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
++
+
+System Analysis Report
+=======================
+
+Nodes:
+---------------------
+  Node_313:
+      x:    [0. 0.]
+      fix:  [&#39;ux&#39;, &#39;uy&#39;]
+      u:    [0. 0.]
+  Node_314:
+      x:    [10.  0.]
+      fix:  [&#39;uy&#39;]
+      u:    [1. 0.]
+  Node_315:
+      x:    [10. 10.]
+      u:    [ 1.  -0.3]
+  Node_316:
+      x:    [ 0. 10.]
+      fix:  [&#39;ux&#39;]
+      u:    [ 0.  -0.3]
+
+Elements:
+---------------------
+  Triangle_435: nodes ( Node_313 Node_314 Node_316 )
+      material: PlaneStress
+      strain: xx=1.000e-01 yy=-3.000e-02 xy=0.000e+00 zz=-2.100e-02
+      stress: xx=1.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
+  Triangle_436: nodes ( Node_315 Node_316 Node_314 )
+      material: PlaneStress
+      strain: xx=1.000e-01 yy=-3.000e-02 xy=1.776e-16 zz=-2.100e-02
+      stress: xx=1.000e+00 yy=2.442e-15 xy=6.832e-16 zz=0.000e+00
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.324 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate02-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/df3f5fcf7b831986fc3aa1479c9d6d16/plot_plate02.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate02.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/b94a6b667a7a0e628ad0a181381ed7cf/plot_plate02.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate02.py</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="plot_plate01.html" class="btn btn-neutral float-left" title="A square patch made of two triangular plate elements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plot_plate03.html" class="btn btn-neutral float-right" title="Patch test for triangular plate under in-plane loading" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on Apr 08, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
