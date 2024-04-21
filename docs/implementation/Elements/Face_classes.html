@@ -116,6 +116,12 @@ The are used to store and compute surface loads on elements.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.Faces.</span></span><span class="sig-name descname"><span class="pre">Faces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">nds</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Faces.Faces" title="Link to this definition"></a></dt>
 <dd><p>abstract class: representing one face of a 2D or 3D element</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.Faces.Faces.computeNodalFlux">
+<span class="sig-name descname"><span class="pre">computeNodalFlux</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Faces.Faces.computeNodalFlux" title="Link to this definition"></a></dt>
+<dd><p>This is a virtual method.  Any class derived from <a class="reference internal" href="#femedu.elements.Faces.Faces" title="femedu.elements.Faces.Faces"><code class="xref py py-class docutils literal notranslate"><span class="pre">Faces</span></code></a> must implement this function.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Faces.Faces.computeNodalForces">
 <span class="sig-name descname"><span class="pre">computeNodalForces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Faces.Faces.computeNodalForces" title="Link to this definition"></a></dt>
 <dd><p>This is a virtual method.  Any class derived from <a class="reference internal" href="#femedu.elements.Faces.Faces" title="femedu.elements.Faces.Faces"><code class="xref py py-class docutils literal notranslate"><span class="pre">Faces</span></code></a> must implement this function.</p>
@@ -149,6 +155,21 @@ The are used to store and compute surface loads on elements.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.Faces.Faces.setFlux">
+<span class="sig-name descname"><span class="pre">setFlux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">influx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Faces.Faces.setFlux" title="Link to this definition"></a></dt>
+<dd><p>Defines a scalar surface flux on this Face.
+Coordinates n is the outward normal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>qn</strong> – normal flux per unit length (or unit area in 3d)</p></li>
+<li><p><strong>influx</strong> – set to <cite>True</cite> if given value is an in-flux. (same as entering a negative out-flux)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Faces.Faces.setLoad">
 <span class="sig-name descname"><span class="pre">setLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Faces.Faces.setLoad" title="Link to this definition"></a></dt>
 <dd><p>Defines surface loading on this Face.
@@ -175,6 +196,21 @@ The local tangent is defined from the first to th esecond (to the third) node.</
 <p>The face may be defined by two nodes (liner interpolation)
 or three nodes (quadratic interpolation).
 The node order for quadratic elements is nodes at <cite>[-1, 0, +1]</cite></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.Face2D.Face2D.computeNodalFlux">
+<span class="sig-name descname"><span class="pre">computeNodalFlux</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Face2D.Face2D.computeNodalFlux" title="Link to this definition"></a></dt>
+<dd><p>Implementation of nodal flux calculation from surface flux.</p>
+<p>Surface out-flux (in-flux) is considered positive (negative).</p>
+<p>The surface is described  as</p>
+<div class="math notranslate nohighlight">
+\[{\boldsymbol\varphi}(s) = \sum_k \phi_k(s) {\bf X}_k\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi_k(s)\)</span> is the k-th shape function on <cite>[-1,1]</cite>,
+and <span class="math notranslate nohighlight">\({\bf X}_k\)</span> is the coordinate of the k-th node.</p>
+<p>The nodal fluxes are obtained as</p>
+<div class="math notranslate nohighlight">
+\[{\bf P}_i = \int_{-1}^{+1} \phi_i(s) \: q_n \: || \boldsymbol\varphi}_{,s} || \: ds\]</div>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Face2D.Face2D.computeNodalForces">
 <span class="sig-name descname"><span class="pre">computeNodalForces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Face2D.Face2D.computeNodalForces" title="Link to this definition"></a></dt>
@@ -276,7 +312,7 @@ and <span class="math notranslate nohighlight">\({\bf X}_k\)</span> is the coord
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 08, 2024.
+      <span class="lastupdated">Last updated on Apr 20, 2024.
       </span></p>
   </div>
 

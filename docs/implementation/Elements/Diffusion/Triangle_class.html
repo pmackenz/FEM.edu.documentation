@@ -106,7 +106,7 @@
            <div itemprop="articleBody">
              
   <section id="triangle-class-for-diffusion">
-<h1>Triangle class for Diffusion<a class="headerlink" href="#triangle-class-for-diffusion" title="Link to this heading"></a></h1>
+<span id="diffusion-triangle-class"></span><h1>Triangle class for Diffusion<a class="headerlink" href="#triangle-class-for-diffusion" title="Link to this heading"></a></h1>
 <p>Coordinate-free formulation for a bi-linear diffusion triangle.</p>
 <p>Coordinate mapping:</p>
 <div class="math notranslate nohighlight">
@@ -152,6 +152,68 @@ A t \lambda  \left[
 </section>
 <section id="module-femedu.elements.diffusion">
 <span id="class-doc"></span><h2>Class doc<a class="headerlink" href="#module-femedu.elements.diffusion" title="Link to this heading"></a></h2>
+<section id="diffusion-elements">
+<h3>Diffusion elements<a class="headerlink" href="#diffusion-elements" title="Link to this heading"></a></h3>
+<p>Elements in this group share the following features:
+* gradients with respect to an undeformed configuration
+* flux proportional to gradient of the potential.</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="femedu.elements.diffusion.Triangle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.diffusion.</span></span><span class="sig-name descname"><span class="pre">Triangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.diffusion.Triangle" title="Link to this definition"></a></dt>
+<dd><p>class: representing a 3-node trangle for diffusion problems</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.diffusion.Triangle.computeSurfaceLoads">
+<span class="sig-name descname"><span class="pre">computeSurfaceLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.diffusion.Triangle.computeSurfaceLoads" title="Link to this definition"></a></dt>
+<dd><p>compute surface loads using faces</p>
+<p>This method should be called during <a class="reference internal" href="#femedu.elements.diffusion.Triangle.updateState" title="femedu.elements.diffusion.Triangle.updateState"><code class="xref py py-meth docutils literal notranslate"><span class="pre">updateState()</span></code></a> by every
+element supporting surface loads</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.diffusion.Triangle.resetLoads">
+<span class="sig-name descname"><span class="pre">resetLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.diffusion.Triangle.resetLoads" title="Link to this definition"></a></dt>
+<dd><p>default implementation for resetting element loads.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.diffusion.Triangle.setSurfaceLoad">
+<span class="sig-name descname"><span class="pre">setSurfaceLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.diffusion.Triangle.setSurfaceLoad" title="Link to this definition"></a></dt>
+<dd><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>face ID</p></th>
+<th class="head"><p>nodes defining that face</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">0</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">1</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">2</span></code> to <code class="xref py py-obj docutils literal notranslate"><span class="pre">node</span> <span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>face</strong> – face ID for the loaded face</p></li>
+<li><p><strong>qn</strong> – magnitude of distributed heat flux <span class="math notranslate nohighlight">\(q_n\)</span>. Influx on a surface is positive.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.elements.diffusion.Triangle.updateState">
+<span class="sig-name descname"><span class="pre">updateState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.diffusion.Triangle.updateState" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 
@@ -167,7 +229,7 @@ A t \lambda  \left[
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 08, 2024.
+      <span class="lastupdated">Last updated on Apr 20, 2024.
       </span></p>
   </div>
 
