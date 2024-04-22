@@ -3,8 +3,8 @@
 Heat transfer through a wall
 ==========================================================
 
-This problem demonstrates the use of prescribed temperature
-on both sides of the wall.
+This problem demonstrates a combination of prescribed temperature
+on the left and prescribed flux on the right side.
 
 Using
 
@@ -47,7 +47,7 @@ class ExampleThermal01(Example):
     def problem(self):
         # ========== setting mesh parameters ==============
 
-        Nx = 8  # number of elements through the wall
+        Nx = 5  # number of elements through the wall
         Ny = 1  # number of elements parallel to the wall
         Lx = 10.00  # wall thickness in m
         Ly =  1.00  # wall thickness in m
@@ -109,9 +109,25 @@ class ExampleThermal01(Example):
         for node in nodes:
             X = node.getPos()
             if math.isclose(X[0], 0.0):
-                node.setDOF(['T'],[200.])    # prescribed temperature at x=0.0
+                node.fixDOF('T')    # prescribed temperature at x=0.0
+            # if math.isclose(X[0], Lx):
+            #     node.fixDOF('T')  # prescribed temperature at x=Lx
+
+        # ==== complete the reference load ====
+
+        Xo = np.array([Lx, 0.0])
+        No = np.array([1.0, 0.0])
+
+        for node in nodes:
+            X = node.getPos()
             if math.isclose(X[0], Lx):
-                node.setDOF(['T'],[300.])    # prescribed temperature at x=0.0
+                print(node)
+                for elem in node.elements:
+                    print('+', elem)
+                    for face in elem.faces:
+                        for x, area in zip(face.pos, face.area):
+                            if np.abs((x - Xo) @ No) < 1.0e-2 and No @ area / np.linalg.norm(area) > 1.0e-2:
+                                face.setFlux(qn)
 
         # perform the analysis
         model.setLoadFactor(1.0)

@@ -22,8 +22,8 @@
 Heat transfer through a wall
 ==========================================================
 
-This problem demonstrates the use of prescribed temperature
-on both sides of the wall.
+This problem demonstrates a combination of prescribed temperature
+on the left and prescribed flux on the right side.
 
 Using
 
@@ -31,7 +31,7 @@ Using
 * :py:class:`diffusion.Triangle` (see :ref:`diffusion_triangle_class`)
 * :py:class:`materials.Thermal`  (see :ref:`diffusion_material_classes`)
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-108
+.. GENERATED FROM PYTHON SOURCE LINES 16-124
 
 .. code-block:: Python
 
@@ -52,7 +52,7 @@ Using
         def problem(self):
             # ========== setting mesh parameters ==============
 
-            Nx = 8  # number of elements through the wall
+            Nx = 5  # number of elements through the wall
             Ny = 1  # number of elements parallel to the wall
             Lx = 10.00  # wall thickness in m
             Ly =  1.00  # wall thickness in m
@@ -114,9 +114,25 @@ Using
             for node in nodes:
                 X = node.getPos()
                 if math.isclose(X[0], 0.0):
-                    node.setDOF(['T'],[200.])    # prescribed temperature at x=0.0
+                    node.fixDOF('T')    # prescribed temperature at x=0.0
+                # if math.isclose(X[0], Lx):
+                #     node.fixDOF('T')  # prescribed temperature at x=Lx
+
+            # ==== complete the reference load ====
+
+            Xo = np.array([Lx, 0.0])
+            No = np.array([1.0, 0.0])
+
+            for node in nodes:
+                X = node.getPos()
                 if math.isclose(X[0], Lx):
-                    node.setDOF(['T'],[300.])    # prescribed temperature at x=0.0
+                    print(node)
+                    for elem in node.elements:
+                        print('+', elem)
+                        for face in elem.faces:
+                            for x, area in zip(face.pos, face.area):
+                                if np.abs((x - Xo) @ No) < 1.0e-2 and No @ area / np.linalg.norm(area) > 1.0e-2:
+                                    face.setFlux(qn)
 
             # perform the analysis
             model.setLoadFactor(1.0)
@@ -134,12 +150,12 @@ Using
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 126-128
+.. GENERATED FROM PYTHON SOURCE LINES 142-144
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-132
+.. GENERATED FROM PYTHON SOURCE LINES 144-148
 
 .. code-block:: Python
 
@@ -178,259 +194,191 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_219:
+      Node_0:
           x:    [0. 0.]
           u:    [0.]
-      Node_220:
-          x:    [1.25 0.  ]
+      Node_1:
+          x:    [2. 0.]
           u:    [0.]
-      Node_221:
-          x:    [2.5 0. ]
+      Node_2:
+          x:    [4. 0.]
           u:    [0.]
-      Node_222:
-          x:    [3.75 0.  ]
+      Node_3:
+          x:    [6. 0.]
           u:    [0.]
-      Node_223:
-          x:    [5. 0.]
+      Node_4:
+          x:    [8. 0.]
           u:    [0.]
-      Node_224:
-          x:    [6.25 0.  ]
-          u:    [0.]
-      Node_225:
-          x:    [7.5 0. ]
-          u:    [0.]
-      Node_226:
-          x:    [8.75 0.  ]
-          u:    [0.]
-      Node_227:
+      Node_5:
           x:    [10.  0.]
           u:    [0.]
-      Node_228:
+      Node_6:
           x:    [0. 1.]
           u:    [0.]
-      Node_229:
-          x:    [1.25 1.  ]
+      Node_7:
+          x:    [2. 1.]
           u:    [0.]
-      Node_230:
-          x:    [2.5 1. ]
+      Node_8:
+          x:    [4. 1.]
           u:    [0.]
-      Node_231:
-          x:    [3.75 1.  ]
+      Node_9:
+          x:    [6. 1.]
           u:    [0.]
-      Node_232:
-          x:    [5. 1.]
+      Node_10:
+          x:    [8. 1.]
           u:    [0.]
-      Node_233:
-          x:    [6.25 1.  ]
-          u:    [0.]
-      Node_234:
-          x:    [7.5 1. ]
-          u:    [0.]
-      Node_235:
-          x:    [8.75 1.  ]
-          u:    [0.]
-      Node_236:
+      Node_11:
           x:    [10.  1.]
           u:    [0.]
 
     Elements:
     ---------------------
-      Triangle_337: nodes ( Node_219 Node_220 Node_228 )
+      Triangle_0: nodes ( Node_0 Node_1 Node_6 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_338: nodes ( Node_229 Node_228 Node_220 )
+      Triangle_1: nodes ( Node_7 Node_6 Node_1 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_339: nodes ( Node_220 Node_221 Node_229 )
+      Triangle_2: nodes ( Node_1 Node_2 Node_7 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_340: nodes ( Node_230 Node_229 Node_221 )
+      Triangle_3: nodes ( Node_8 Node_7 Node_2 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_341: nodes ( Node_221 Node_222 Node_230 )
+      Triangle_4: nodes ( Node_2 Node_3 Node_8 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_342: nodes ( Node_231 Node_230 Node_222 )
+      Triangle_5: nodes ( Node_9 Node_8 Node_3 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_343: nodes ( Node_222 Node_223 Node_231 )
+      Triangle_6: nodes ( Node_3 Node_4 Node_9 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_344: nodes ( Node_232 Node_231 Node_223 )
+      Triangle_7: nodes ( Node_10 Node_9 Node_4 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_345: nodes ( Node_223 Node_224 Node_232 )
+      Triangle_8: nodes ( Node_4 Node_5 Node_10 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_346: nodes ( Node_233 Node_232 Node_224 )
-          material: Thermal
-          grad phi: x=0.000e+00 y=0.000e+00
-          flux:     x=0.000e+00 y=0.000e+00
-      Triangle_347: nodes ( Node_224 Node_225 Node_233 )
-          material: Thermal
-          grad phi: x=0.000e+00 y=0.000e+00
-          flux:     x=0.000e+00 y=0.000e+00
-      Triangle_348: nodes ( Node_234 Node_233 Node_225 )
-          material: Thermal
-          grad phi: x=0.000e+00 y=0.000e+00
-          flux:     x=0.000e+00 y=0.000e+00
-      Triangle_349: nodes ( Node_225 Node_226 Node_234 )
-          material: Thermal
-          grad phi: x=0.000e+00 y=0.000e+00
-          flux:     x=0.000e+00 y=0.000e+00
-      Triangle_350: nodes ( Node_235 Node_234 Node_226 )
-          material: Thermal
-          grad phi: x=0.000e+00 y=0.000e+00
-          flux:     x=0.000e+00 y=0.000e+00
-      Triangle_351: nodes ( Node_226 Node_227 Node_235 )
-          material: Thermal
-          grad phi: x=0.000e+00 y=0.000e+00
-          flux:     x=0.000e+00 y=0.000e+00
-      Triangle_352: nodes ( Node_236 Node_235 Node_227 )
+      Triangle_9: nodes ( Node_11 Node_10 Node_5 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
 
+    Node_5:
+        x:    [10.  0.]
+        u:    [0.]
+    + Triangle_8: nodes ( Node_4 Node_5 Node_10 )
+        material: Thermal
+        grad phi: x=0.000e+00 y=0.000e+00
+        flux:     x=0.000e+00 y=0.000e+00
+    + Triangle_9: nodes ( Node_11 Node_10 Node_5 )
+        material: Thermal
+        grad phi: x=0.000e+00 y=0.000e+00
+        flux:     x=0.000e+00 y=0.000e+00
+    Node_11:
+        x:    [10.  1.]
+        u:    [0.]
+    + Triangle_9: nodes ( Node_11 Node_10 Node_5 )
+        material: Thermal
+        grad phi: x=0.000e+00 y=0.000e+00
+        flux:     x=0.000e+00 y=0.000e+00
 
     System Analysis Report
     =======================
 
     Nodes:
     ---------------------
-      Node_219:
+      Node_0:
           x:    [0. 0.]
           fix:  ['T']
-          u:    [200.]
-      Node_220:
-          x:    [1.25 0.  ]
-          u:    [212.5]
-      Node_221:
-          x:    [2.5 0. ]
-          u:    [225.]
-      Node_222:
-          x:    [3.75 0.  ]
-          u:    [237.5]
-      Node_223:
-          x:    [5. 0.]
-          u:    [250.]
-      Node_224:
-          x:    [6.25 0.  ]
-          u:    [262.5]
-      Node_225:
-          x:    [7.5 0. ]
-          u:    [275.]
-      Node_226:
-          x:    [8.75 0.  ]
-          u:    [287.5]
-      Node_227:
+          u:    [0.]
+      Node_1:
+          x:    [2. 0.]
+          u:    [2.]
+      Node_2:
+          x:    [4. 0.]
+          u:    [4.]
+      Node_3:
+          x:    [6. 0.]
+          u:    [6.]
+      Node_4:
+          x:    [8. 0.]
+          u:    [8.]
+      Node_5:
           x:    [10.  0.]
-          fix:  ['T']
-          u:    [300.]
-      Node_228:
+          u:    [10.]
+      Node_6:
           x:    [0. 1.]
           fix:  ['T']
-          u:    [200.]
-      Node_229:
-          x:    [1.25 1.  ]
-          u:    [212.5]
-      Node_230:
-          x:    [2.5 1. ]
-          u:    [225.]
-      Node_231:
-          x:    [3.75 1.  ]
-          u:    [237.5]
-      Node_232:
-          x:    [5. 1.]
-          u:    [250.]
-      Node_233:
-          x:    [6.25 1.  ]
-          u:    [262.5]
-      Node_234:
-          x:    [7.5 1. ]
-          u:    [275.]
-      Node_235:
-          x:    [8.75 1.  ]
-          u:    [287.5]
-      Node_236:
+          u:    [0.]
+      Node_7:
+          x:    [2. 1.]
+          u:    [2.]
+      Node_8:
+          x:    [4. 1.]
+          u:    [4.]
+      Node_9:
+          x:    [6. 1.]
+          u:    [6.]
+      Node_10:
+          x:    [8. 1.]
+          u:    [8.]
+      Node_11:
           x:    [10.  1.]
-          fix:  ['T']
-          u:    [300.]
+          u:    [10.]
 
     Elements:
     ---------------------
-      Triangle_337: nodes ( Node_219 Node_220 Node_228 )
+      Triangle_0: nodes ( Node_0 Node_1 Node_6 )
           material: Thermal
-          grad phi: x=1.000e+01 y=0.000e+00
-          flux:     x=-1.000e+01 y=-0.000e+00
-      Triangle_338: nodes ( Node_229 Node_228 Node_220 )
+          grad phi: x=1.000e+00 y=0.000e+00
+          flux:     x=-1.000e+00 y=-0.000e+00
+      Triangle_1: nodes ( Node_7 Node_6 Node_1 )
           material: Thermal
-          grad phi: x=1.000e+01 y=0.000e+00
-          flux:     x=-1.000e+01 y=-0.000e+00
-      Triangle_339: nodes ( Node_220 Node_221 Node_229 )
+          grad phi: x=1.000e+00 y=0.000e+00
+          flux:     x=-1.000e+00 y=-0.000e+00
+      Triangle_2: nodes ( Node_1 Node_2 Node_7 )
           material: Thermal
-          grad phi: x=1.000e+01 y=0.000e+00
-          flux:     x=-1.000e+01 y=-0.000e+00
-      Triangle_340: nodes ( Node_230 Node_229 Node_221 )
+          grad phi: x=1.000e+00 y=0.000e+00
+          flux:     x=-1.000e+00 y=-0.000e+00
+      Triangle_3: nodes ( Node_8 Node_7 Node_2 )
           material: Thermal
-          grad phi: x=1.000e+01 y=-2.842e-14
-          flux:     x=-1.000e+01 y=2.842e-14
-      Triangle_341: nodes ( Node_221 Node_222 Node_230 )
+          grad phi: x=1.000e+00 y=0.000e+00
+          flux:     x=-1.000e+00 y=-0.000e+00
+      Triangle_4: nodes ( Node_2 Node_3 Node_8 )
           material: Thermal
-          grad phi: x=1.000e+01 y=-2.842e-14
-          flux:     x=-1.000e+01 y=2.842e-14
-      Triangle_342: nodes ( Node_231 Node_230 Node_222 )
+          grad phi: x=1.000e+00 y=0.000e+00
+          flux:     x=-1.000e+00 y=-0.000e+00
+      Triangle_5: nodes ( Node_9 Node_8 Node_3 )
           material: Thermal
-          grad phi: x=1.000e+01 y=-2.842e-14
-          flux:     x=-1.000e+01 y=2.842e-14
-      Triangle_343: nodes ( Node_222 Node_223 Node_231 )
+          grad phi: x=1.000e+00 y=0.000e+00
+          flux:     x=-1.000e+00 y=-0.000e+00
+      Triangle_6: nodes ( Node_3 Node_4 Node_9 )
           material: Thermal
-          grad phi: x=1.000e+01 y=-2.842e-14
-          flux:     x=-1.000e+01 y=2.842e-14
-      Triangle_344: nodes ( Node_232 Node_231 Node_223 )
+          grad phi: x=1.000e+00 y=0.000e+00
+          flux:     x=-1.000e+00 y=-0.000e+00
+      Triangle_7: nodes ( Node_10 Node_9 Node_4 )
           material: Thermal
-          grad phi: x=1.000e+01 y=0.000e+00
-          flux:     x=-1.000e+01 y=-0.000e+00
-      Triangle_345: nodes ( Node_223 Node_224 Node_232 )
+          grad phi: x=1.000e+00 y=-8.882e-16
+          flux:     x=-1.000e+00 y=8.882e-16
+      Triangle_8: nodes ( Node_4 Node_5 Node_10 )
           material: Thermal
-          grad phi: x=1.000e+01 y=0.000e+00
-          flux:     x=-1.000e+01 y=-0.000e+00
-      Triangle_346: nodes ( Node_233 Node_232 Node_224 )
+          grad phi: x=1.000e+00 y=-8.882e-16
+          flux:     x=-1.000e+00 y=8.882e-16
+      Triangle_9: nodes ( Node_11 Node_10 Node_5 )
           material: Thermal
-          grad phi: x=1.000e+01 y=0.000e+00
-          flux:     x=-1.000e+01 y=-0.000e+00
-      Triangle_347: nodes ( Node_224 Node_225 Node_233 )
-          material: Thermal
-          grad phi: x=1.000e+01 y=0.000e+00
-          flux:     x=-1.000e+01 y=-0.000e+00
-      Triangle_348: nodes ( Node_234 Node_233 Node_225 )
-          material: Thermal
-          grad phi: x=1.000e+01 y=5.684e-14
-          flux:     x=-1.000e+01 y=-5.684e-14
-      Triangle_349: nodes ( Node_225 Node_226 Node_234 )
-          material: Thermal
-          grad phi: x=1.000e+01 y=5.684e-14
-          flux:     x=-1.000e+01 y=-5.684e-14
-      Triangle_350: nodes ( Node_235 Node_234 Node_226 )
-          material: Thermal
-          grad phi: x=1.000e+01 y=0.000e+00
-          flux:     x=-1.000e+01 y=-0.000e+00
-      Triangle_351: nodes ( Node_226 Node_227 Node_235 )
-          material: Thermal
-          grad phi: x=1.000e+01 y=0.000e+00
-          flux:     x=-1.000e+01 y=-0.000e+00
-      Triangle_352: nodes ( Node_236 Node_235 Node_227 )
-          material: Thermal
-          grad phi: x=1.000e+01 y=0.000e+00
-          flux:     x=-1.000e+01 y=-0.000e+00
+          grad phi: x=1.000e+00 y=-1.776e-15
+          flux:     x=-1.000e+00 y=1.776e-15
 
 
 
@@ -439,7 +387,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.629 seconds)
+   **Total running time of the script:** (0 minutes 1.208 seconds)
 
 
 .. _sphx_glr_download_auto_examples_diffusion_plot_thermal01.py:

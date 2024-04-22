@@ -410,7 +410,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This problem demonstrates the use of prescribed temperature on both sides of the wall.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This problem demonstrates a combination of prescribed temperature on the left and prescribed fl...">
 
 .. only:: html
 
@@ -427,7 +427,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This problem demonstrates a combination of prescribed temperature on the left and prescribed fl...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This problem demonstrates the use of prescribed temperature on both sides of the wall.">
 
 .. only:: html
 
@@ -456,6 +456,23 @@ see the :ref:`Tutorials <tutorials>`.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Heat transfer at the corner of a building</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This problem demonstrates the use of prescribed temperature on both sides of the wall.">
+
+.. only:: html
+
+  .. image:: /auto_examples/diffusion/images/thumb/sphx_glr_plot_thermal04_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_diffusion_plot_thermal04.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Heat transfer through a thick cylinder</div>
     </div>
 
 
