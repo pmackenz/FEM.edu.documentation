@@ -31,9 +31,11 @@ Using
 * :py:class:`diffusion.Triangle` (see :ref:`diffusion_triangle_class`)
 * :py:class:`materials.Thermal`  (see :ref:`diffusion_material_classes`)
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-124
+.. GENERATED FROM PYTHON SOURCE LINES 16-145
 
 .. code-block:: Python
+
+    import matplotlib.pyplot as plt
 
     import math
     import sys
@@ -142,6 +144,24 @@ Using
 
             model.valuePlot('T', show_mesh=True)
 
+            # creating a path plot
+
+            R_list = []
+            T_list = []
+
+            for node in nodes:
+                X = node.getPos()
+                T = node.getDisp('T')
+                R_list.append(X[0])
+                T_list.append(T)
+
+            fig, axs = plt.subplots()
+            axs.plot(R_list,T_list,'ro')
+            axs.set_title('Nodal Temperature for ALL Nodes')
+            axs.set_xlabel("X distance")
+            axs.set_ylabel('T')
+            axs.grid(True)
+            plt.show()
 
 
 
@@ -150,12 +170,13 @@ Using
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 142-144
+
+.. GENERATED FROM PYTHON SOURCE LINES 163-165
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 144-148
+.. GENERATED FROM PYTHON SOURCE LINES 165-169
 
 .. code-block:: Python
 
@@ -181,6 +202,13 @@ Run the example by creating an instance of the problem and executing it by calli
       .. image-sg:: /auto_examples/diffusion/images/sphx_glr_plot_thermal01_002.png
          :alt: Contours of 'T'
          :srcset: /auto_examples/diffusion/images/sphx_glr_plot_thermal01_002.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/diffusion/images/sphx_glr_plot_thermal01_003.png
+         :alt: Nodal Temperature for ALL Nodes
+         :srcset: /auto_examples/diffusion/images/sphx_glr_plot_thermal01_003.png
          :class: sphx-glr-multi-img
 
 
@@ -387,7 +415,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.208 seconds)
+   **Total running time of the script:** (0 minutes 1.746 seconds)
 
 
 .. _sphx_glr_download_auto_examples_diffusion_plot_thermal01.py:

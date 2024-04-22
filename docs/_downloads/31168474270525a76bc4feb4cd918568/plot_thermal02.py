@@ -13,6 +13,8 @@ Using
 * :py:class:`materials.Thermal`  (see :ref:`diffusion_material_classes`)
 
 """
+import matplotlib.pyplot as plt
+
 import math
 import sys
 import numpy as np
@@ -122,6 +124,25 @@ class ExampleThermal02(Example):
         model.report()
 
         model.valuePlot('T', show_mesh=True)
+
+        # creating a path plot
+
+        R_list = []
+        T_list = []
+
+        for node in nodes:
+            X = node.getPos()
+            T = node.getDisp('T')
+            R_list.append(X[0])
+            T_list.append(T)
+
+        fig, axs = plt.subplots()
+        axs.plot(R_list,T_list,'ro')
+        axs.set_title('Nodal Temperature for ALL Nodes')
+        axs.set_xlabel("X distance")
+        axs.set_ylabel('T')
+        axs.grid(True)
+        plt.show()
 
 
 # %%
