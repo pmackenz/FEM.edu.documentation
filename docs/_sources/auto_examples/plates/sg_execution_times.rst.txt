@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**01:55.063** total execution time for 12 files **from auto_examples/plates**:
+**01:24.710** total execution time for 12 files **from auto_examples/plates**:
 
 .. container::
 
@@ -33,38 +33,38 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate11.py` (``plot_plate11.py``)
-     - 01:03.567
+     - 00:45.084
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_benchmark01.py` (``plot_benchmark01.py``)
-     - 00:19.196
+     - 00:14.658
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate10.py` (``plot_plate10.py``)
-     - 00:15.925
+     - 00:12.471
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate05.py` (``plot_plate05.py``)
-     - 00:05.663
+     - 00:04.070
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate06.py` (``plot_plate06.py``)
-     - 00:04.445
+     - 00:03.500
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate08.py` (``plot_plate08.py``)
-     - 00:01.668
+     - 00:01.352
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate07.py` (``plot_plate07.py``)
-     - 00:01.526
+     - 00:01.274
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate04.py` (``plot_plate04.py``)
-     - 00:01.045
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate03.py` (``plot_plate03.py``)
-     - 00:00.722
+     - 00:00.745
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate09.py` (``plot_plate09.py``)
-     - 00:00.692
+     - 00:00.570
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate03.py` (``plot_plate03.py``)
+     - 00:00.524
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate02.py` (``plot_plate02.py``)
-     - 00:00.319
+     - 00:00.236
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate01.py` (``plot_plate01.py``)
-     - 00:00.296
+     - 00:00.226
      - 0.0

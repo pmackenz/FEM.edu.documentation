@@ -144,13 +144,32 @@ Indices are local to this node: <code class="code docutils literal notranslate">
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.distanceTo">
+<span class="sig-name descname"><span class="pre">distanceTo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.distanceTo" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">nd.array</span></code></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>scalar distance from x</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.fixDOF">
 <span class="sig-name descname"><span class="pre">fixDOF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">dofs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.fixDOF" title="Link to this definition"></a></dt>
 <dd><p>provide a list of dof codes that shall be restrained</p>
-<p>see also: <code class="code docutils literal notranslate"><span class="pre">request()</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dofs</strong> – fix the dof defined by key(s)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>See also:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#femedu.domain.Node.Node.setDOF" title="femedu.domain.Node.Node.setDOF"><code class="xref py py-meth docutils literal notranslate"><span class="pre">femedu.domain.Node.Node.setDOF()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#femedu.domain.Node.Node.request" title="femedu.domain.Node.Node.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">femedu.domain.Node.Node.request()</span></code></a></p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -323,6 +342,19 @@ Do not forget the <code class="code docutils literal notranslate"><span class="p
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.isClose">
+<span class="sig-name descname"><span class="pre">isClose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TOL</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.isClose" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – <code class="xref py py-obj docutils literal notranslate"><span class="pre">nd.array</span></code></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>True</strong> if x is within <a href="#id2"><span class="problematic" id="id3">**</span></a>TOL* from this node.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.isFixed">
 <span class="sig-name descname"><span class="pre">isFixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dof</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.isFixed" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
@@ -424,16 +456,45 @@ Do not forget the <code class="code docutils literal notranslate"><span class="p
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="femedu.domain.Node.Node.setDisp">
-<span class="sig-name descname"><span class="pre">setDisp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modeshape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.setDisp" title="Link to this definition"></a></dt>
-<dd><p>use for prescribed displacements</p>
-<p><strong>NEEDS TO BE IMPLEMENTED</strong></p>
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.setDOF">
+<span class="sig-name descname"><span class="pre">setDOF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.setDOF" title="Link to this definition"></a></dt>
+<dd><p>alternative to the <cite>fixDOF()</cite> method that
+allows to set a prescribed value other than <cite>0.0</cite>
+for each degree of freedom.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>U</strong> – </p></li>
+<li><p><strong>dofs</strong> – list of dofs, defined by key(s), for which displacement values shall be prescribed.</p></li>
+<li><p><strong>values</strong> – <p>list of prescribed values for the given list of dofs.
+Values may be given as a float or as a list of two values.</p>
+<ul>
+<li><p>If only a single value is given, the respective dof will be set to that value.</p></li>
+<li><p>If a list is given, the dof will be set to <cite>value[0] + loadfactor*value[1]</cite></p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>See also:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#femedu.domain.Node.Node.fixDOF" title="femedu.domain.Node.Node.fixDOF"><code class="xref py py-meth docutils literal notranslate"><span class="pre">femedu.domain.Node.Node.fixDOF()</span></code></a></p></li>
+<li><p><a class="reference internal" href="System_class.html#femedu.domain.System.System.setLoadFactor" title="femedu.domain.System.System.setLoadFactor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">femedu.domain.System.System.setLoadFactor()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#femedu.domain.Node.Node.request" title="femedu.domain.Node.Node.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">femedu.domain.Node.Node.request()</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.setDisp">
+<span class="sig-name descname"><span class="pre">setDisp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modeshape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.setDisp" title="Link to this definition"></a></dt>
+<dd><p>use for prescribed displacements</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>U</strong> – list or tuple of prescribed values</p></li>
+<li><p><strong>dof_list</strong> – list or tuple of dof-codes associated with values in U</p></li>
 <li><p><strong>modeshape</strong> – set to True if U represents a mode shape (BOOL)</p></li>
-<li><p><strong>dof_list</strong> – </p></li>
 </ul>
 </dd>
 </dl>
@@ -494,7 +555,7 @@ user input.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 20, 2024.
+      <span class="lastupdated">Last updated on Apr 21, 2024.
       </span></p>
   </div>
 
