@@ -16,5 +16,5 @@ See also
 Class doc
 -------------
 
-.. automodule:: femedu.elements.diffusion
+.. automodule:: femedu.elements.diffusion.Triangle6
   :members:
