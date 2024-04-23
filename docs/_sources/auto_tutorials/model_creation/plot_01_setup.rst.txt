@@ -43,8 +43,8 @@ Loading those class definitions requires the following:
 
 
     from femedu.domain import System, Node
-    from femedu.elements.linear.Truss import *
-    from femedu.materials.ElasticSection import *
+    from femedu.elements.linear import Truss
+    from femedu.materials import ElasticSection
 
 
 
@@ -350,28 +350,28 @@ report about the current state of the model as follows.
 
     Nodes:
     ---------------------
-      Node_4092:
+      Node_0:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    None
-      Node_4093:
+      Node_1:
           x:    [8. 6.]
           P:    [ 0. -1.]
           u:    None
-      Node_4094:
+      Node_2:
           x:    [16.  0.]
           fix:  ['uy']
           u:    None
 
     Elements:
     ---------------------
-      Truss: Node_4092 to Node_4093:
+      Truss: Node_0 to Node_1:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': 0.0, 'flexure': 0.0}   stress:{'axial': 0.0, 'flexure': 0.0}  
           internal force: 0.0
-      Truss: Node_4093 to Node_4094:
+      Truss: Node_1 to Node_2:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': 0.0, 'flexure': 0.0}   stress:{'axial': 0.0, 'flexure': 0.0}  
           internal force: 0.0
-      Truss: Node_4092 to Node_4094:
+      Truss: Node_0 to Node_2:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': 0.0, 'flexure': 0.0}   stress:{'axial': 0.0, 'flexure': 0.0}  
           internal force: 0.0
 
@@ -475,12 +475,13 @@ At this point, we may just plot the deformed system
    to used ".pdf" for best quality (vector graphics for use in publications) or ".png" for web presentation.
    Avoid ".jpg" for line-graphics like this one.
 
-.. GENERATED FROM PYTHON SOURCE LINES 224-226
+.. GENERATED FROM PYTHON SOURCE LINES 224-227
 
 .. code-block:: Python
 
 
     model.report()
+
 
 
 
@@ -495,30 +496,67 @@ At this point, we may just plot the deformed system
 
     Nodes:
     ---------------------
-      Node_4092:
+      Node_0:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    [0. 0.]
-      Node_4093:
+      Node_1:
           x:    [8. 6.]
           P:    [ 0. -1.]
           u:    [ 0.00533333 -0.021     ]
-      Node_4094:
+      Node_2:
           x:    [16.  0.]
           fix:  ['uy']
           u:    [0.01066667 0.        ]
 
     Elements:
     ---------------------
-      Truss: Node_4092 to Node_4093:
+      Truss: Node_0 to Node_1:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': -0.0008333333333333333}   stress:{'axial': -0.8333333333333333, 'flexure': 0.0}  
           internal force: -0.8333333333333333
-      Truss: Node_4093 to Node_4094:
+      Truss: Node_1 to Node_2:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': -0.0008333333333333333}   stress:{'axial': -0.8333333333333333, 'flexure': 0.0}  
           internal force: -0.8333333333333333
-      Truss: Node_4092 to Node_4094:
+      Truss: Node_0 to Node_2:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': 0.0006666666666666664}   stress:{'axial': 0.6666666666666664, 'flexure': 0.0}  
           internal force: 0.6666666666666664
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 228-244
+
+Truss, beam, and frame elements further allow for plotting of internal forces through the
+`beamValuePlot(variable,factor=1.0,filename='...')` method.
+
+Valid variables are
+
+.. list-table::
+   :widths: 25 75
+   :header-rows: 0
+
+   * - `'F'`
+     - Axial force (tension positive)
+   * - `'V'`
+     - transverse shear force
+   * - `'M'`
+     - Bending moment
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 244-246
+
+.. code-block:: Python
+
+
+    model.beamValuePlot('F',filename='tutorial01_axial.png')
+
+
+
+.. image-sg:: /auto_tutorials/model_creation/images/sphx_glr_plot_01_setup_003.png
+   :alt: Axial Forces
+   :srcset: /auto_tutorials/model_creation/images/sphx_glr_plot_01_setup_003.png
+   :class: sphx-glr-single-img
 
 
 
@@ -527,7 +565,7 @@ At this point, we may just plot the deformed system
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.174 seconds)
+   **Total running time of the script:** (0 minutes 0.597 seconds)
 
 
 .. _sphx_glr_download_auto_tutorials_model_creation_plot_01_setup.py:

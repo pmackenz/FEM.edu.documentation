@@ -26,8 +26,8 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Quad class" href="../Quad_class.html" />
-    <link rel="prev" title="Triangle class" href="../Triangle_class.html" /> 
+    <link rel="next" title="Triangle6 class for Diffusion" href="Triangle6_class.html" />
+    <link rel="prev" title="Triangle6 class" href="../Triangle6_class.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -150,35 +150,35 @@ A t \lambda  \left[
 <li><p><a class="reference internal" href="../Element_class.html"><span class="doc">Element classes</span></a></p></li>
 </ul>
 </section>
-<section id="module-femedu.elements.diffusion">
-<span id="class-doc"></span><h2>Class doc<a class="headerlink" href="#module-femedu.elements.diffusion" title="Link to this heading"></a></h2>
-<section id="diffusion-elements">
-<h3>Diffusion elements<a class="headerlink" href="#diffusion-elements" title="Link to this heading"></a></h3>
-<p>Elements in this group share the following features:
-* gradients with respect to an undeformed configuration
-* flux proportional to gradient of the potential.</p>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="Triangle6_class.html"><span class="doc">Triangle6 class for Diffusion</span></a></p></li>
+</ul>
 </section>
+<section id="module-femedu.elements.diffusion.Triangle">
+<span id="class-doc"></span><h2>Class doc<a class="headerlink" href="#module-femedu.elements.diffusion.Triangle" title="Link to this heading"></a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="femedu.elements.diffusion.Triangle">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.diffusion.</span></span><span class="sig-name descname"><span class="pre">Triangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.diffusion.Triangle" title="Link to this definition"></a></dt>
-<dd><p>class: representing a 3-node trangle for diffusion problems</p>
+<dt class="sig sig-object py" id="femedu.elements.diffusion.Triangle.Triangle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.diffusion.Triangle.</span></span><span class="sig-name descname"><span class="pre">Triangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.diffusion.Triangle.Triangle" title="Link to this definition"></a></dt>
+<dd><p>class: representing a 3-node triangle for diffusion problems</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="femedu.elements.diffusion.Triangle.computeSurfaceLoads">
-<span class="sig-name descname"><span class="pre">computeSurfaceLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.diffusion.Triangle.computeSurfaceLoads" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="femedu.elements.diffusion.Triangle.Triangle.computeSurfaceLoads">
+<span class="sig-name descname"><span class="pre">computeSurfaceLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.diffusion.Triangle.Triangle.computeSurfaceLoads" title="Link to this definition"></a></dt>
 <dd><p>compute surface loads using faces</p>
-<p>This method should be called during <a class="reference internal" href="#femedu.elements.diffusion.Triangle.updateState" title="femedu.elements.diffusion.Triangle.updateState"><code class="xref py py-meth docutils literal notranslate"><span class="pre">updateState()</span></code></a> by every
+<p>This method should be called during <a class="reference internal" href="Triangle6_class.html#femedu.elements.diffusion.Triangle.updateState" title="femedu.elements.diffusion.Triangle.updateState"><code class="xref py py-meth docutils literal notranslate"><span class="pre">updateState()</span></code></a> by every
 element supporting surface loads</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="femedu.elements.diffusion.Triangle.resetLoads">
-<span class="sig-name descname"><span class="pre">resetLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.diffusion.Triangle.resetLoads" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="femedu.elements.diffusion.Triangle.Triangle.resetLoads">
+<span class="sig-name descname"><span class="pre">resetLoads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.diffusion.Triangle.Triangle.resetLoads" title="Link to this definition"></a></dt>
 <dd><p>default implementation for resetting element loads.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="femedu.elements.diffusion.Triangle.setSurfaceLoad">
-<span class="sig-name descname"><span class="pre">setSurfaceLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.diffusion.Triangle.setSurfaceLoad" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="femedu.elements.diffusion.Triangle.Triangle.setSurfaceLoad">
+<span class="sig-name descname"><span class="pre">setSurfaceLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.diffusion.Triangle.Triangle.setSurfaceLoad" title="Link to this definition"></a></dt>
 <dd><table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>face ID</p></th>
@@ -208,8 +208,8 @@ element supporting surface loads</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="femedu.elements.diffusion.Triangle.updateState">
-<span class="sig-name descname"><span class="pre">updateState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.diffusion.Triangle.updateState" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="femedu.elements.diffusion.Triangle.Triangle.updateState">
+<span class="sig-name descname"><span class="pre">updateState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.diffusion.Triangle.Triangle.updateState" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -221,15 +221,15 @@ element supporting surface loads</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../Triangle_class.html" class="btn btn-neutral float-left" title="Triangle class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../Quad_class.html" class="btn btn-neutral float-right" title="Quad class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../Triangle6_class.html" class="btn btn-neutral float-left" title="Triangle6 class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Triangle6_class.html" class="btn btn-neutral float-right" title="Triangle6 class for Diffusion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 22, 2024.
+      <span class="lastupdated">Last updated on Apr 23, 2024.
       </span></p>
   </div>
 

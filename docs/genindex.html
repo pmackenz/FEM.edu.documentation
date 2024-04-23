@@ -196,11 +196,13 @@
         <li><a href="implementation/Elements/Face_classes.html#femedu.elements.Faces.Faces.computeNodalForces">(femedu.elements.Faces.Faces method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="implementation/Elements/Diffusion/Triangle_class.html#femedu.elements.diffusion.Triangle.computeSurfaceLoads">computeSurfaceLoads() (femedu.elements.diffusion.Triangle method)</a>
+      <li><a href="implementation/Elements/Diffusion/Triangle6_class.html#femedu.elements.diffusion.Triangle.computeSurfaceLoads">computeSurfaceLoads() (femedu.elements.diffusion.Triangle method)</a>
 
       <ul>
+        <li><a href="implementation/Elements/Diffusion/Triangle_class.html#femedu.elements.diffusion.Triangle.Triangle.computeSurfaceLoads">(femedu.elements.diffusion.Triangle.Triangle method)</a>
+</li>
+        <li><a href="implementation/Elements/Diffusion/Triangle6_class.html#femedu.elements.diffusion.Triangle6.computeSurfaceLoads">(femedu.elements.diffusion.Triangle6 method)</a>
+</li>
         <li><a href="implementation/Elements/Quad_class.html#femedu.elements.finite.Quad.Quad.computeSurfaceLoads">(femedu.elements.finite.Quad.Quad method)</a>
 </li>
         <li><a href="implementation/Elements/Quad8_class.html#femedu.elements.finite.Quad8.Quad8.computeSurfaceLoads">(femedu.elements.finite.Quad8.Quad8 method)</a>
@@ -209,7 +211,11 @@
 </li>
         <li><a href="implementation/Elements/Triangle_class.html#femedu.elements.linear.Triangle.Triangle.computeSurfaceLoads">(femedu.elements.linear.Triangle.Triangle method)</a>
 </li>
+        <li><a href="implementation/Elements/Triangle6_class.html#femedu.elements.linear.Triangle6.Triangle6.computeSurfaceLoads">(femedu.elements.linear.Triangle6.Triangle6 method)</a>
+</li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="implementation/Mesher/CurveMesher_class.html#femedu.mesher.CurveMesher.CurveMesher">CurveMesher (class in femedu.mesher.CurveMesher)</a>
 </li>
   </ul></td>
@@ -323,7 +329,14 @@
     femedu.elements.diffusion
 
       <ul>
-        <li><a href="implementation/Elements/Diffusion/Triangle_class.html#module-femedu.elements.diffusion">module</a>
+        <li><a href="implementation/Elements/Diffusion/Triangle6_class.html#module-femedu.elements.diffusion">module</a>
+</li>
+      </ul></li>
+      <li>
+    femedu.elements.diffusion.Triangle
+
+      <ul>
+        <li><a href="implementation/Elements/Diffusion/Triangle_class.html#module-femedu.elements.diffusion.Triangle">module</a>
 </li>
       </ul></li>
       <li>
@@ -418,6 +431,13 @@
 </li>
       </ul></li>
       <li>
+    femedu.elements.linear.Triangle6
+
+      <ul>
+        <li><a href="implementation/Elements/Triangle6_class.html#module-femedu.elements.linear.Triangle6">module</a>
+</li>
+      </ul></li>
+      <li>
     femedu.materials.DiffusionGeneral
 
       <ul>
@@ -487,6 +507,8 @@
         <li><a href="implementation/Mesher/Mesher_class.html#module-femedu.mesher.Mesher">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     femedu.mesher.PatchMesher
 
@@ -494,8 +516,6 @@
         <li><a href="implementation/Mesher/PatchMesher_class.html#module-femedu.mesher.PatchMesher">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     femedu.mesher.SolidMesher
 
@@ -884,7 +904,9 @@
 </li>
         <li><a href="implementation/Domain/Transformation_class.html#module-femedu.domain.Transformation">femedu.domain.Transformation</a>
 </li>
-        <li><a href="implementation/Elements/Diffusion/Triangle_class.html#module-femedu.elements.diffusion">femedu.elements.diffusion</a>
+        <li><a href="implementation/Elements/Diffusion/Triangle6_class.html#module-femedu.elements.diffusion">femedu.elements.diffusion</a>
+</li>
+        <li><a href="implementation/Elements/Diffusion/Triangle_class.html#module-femedu.elements.diffusion.Triangle">femedu.elements.diffusion.Triangle</a>
 </li>
         <li><a href="implementation/Elements/Element_class.html#module-femedu.elements.DrawElement">femedu.elements.DrawElement</a>
 </li>
@@ -911,6 +933,8 @@
         <li><a href="implementation/Elements/Linear/Spring_class.html#module-femedu.elements.linear.Spring">femedu.elements.linear.Spring</a>
 </li>
         <li><a href="implementation/Elements/Triangle_class.html#module-femedu.elements.linear.Triangle">femedu.elements.linear.Triangle</a>
+</li>
+        <li><a href="implementation/Elements/Triangle6_class.html#module-femedu.elements.linear.Triangle6">femedu.elements.linear.Triangle6</a>
 </li>
         <li><a href="implementation/Materials/Diffusion.html#module-femedu.materials.DiffusionGeneral">femedu.materials.DiffusionGeneral</a>
 </li>
@@ -1135,10 +1159,10 @@
         <li><a href="implementation/Domain/System_class.html#femedu.domain.System.System.resetDisp">(femedu.domain.System.System method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="implementation/Solvers/Solver_class.html#femedu.solver.Solver.Solver.resetDisplacements">resetDisplacements() (femedu.solver.Solver.Solver method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="implementation/Solvers/Solver_class.html#femedu.solver.Solver.Solver.resetForces">resetForces() (femedu.solver.Solver.Solver method)</a>
 </li>
       <li><a href="implementation/Domain/Node_class.html#femedu.domain.Node.Node.resetLoad">resetLoad() (femedu.domain.Node.Node method)</a>
@@ -1147,9 +1171,13 @@
         <li><a href="implementation/Domain/System_class.html#femedu.domain.System.System.resetLoad">(femedu.domain.System.System method)</a>
 </li>
       </ul></li>
-      <li><a href="implementation/Elements/Diffusion/Triangle_class.html#femedu.elements.diffusion.Triangle.resetLoads">resetLoads() (femedu.elements.diffusion.Triangle method)</a>
+      <li><a href="implementation/Elements/Diffusion/Triangle6_class.html#femedu.elements.diffusion.Triangle.resetLoads">resetLoads() (femedu.elements.diffusion.Triangle method)</a>
 
       <ul>
+        <li><a href="implementation/Elements/Diffusion/Triangle_class.html#femedu.elements.diffusion.Triangle.Triangle.resetLoads">(femedu.elements.diffusion.Triangle.Triangle method)</a>
+</li>
+        <li><a href="implementation/Elements/Diffusion/Triangle6_class.html#femedu.elements.diffusion.Triangle6.resetLoads">(femedu.elements.diffusion.Triangle6 method)</a>
+</li>
         <li><a href="implementation/Elements/Element_class.html#femedu.elements.Element.Element.resetLoads">(femedu.elements.Element.Element method)</a>
 </li>
         <li><a href="implementation/Elements/Frame2D_class.html#femedu.elements.finite.Frame2D.Frame2D.resetLoads">(femedu.elements.finite.Frame2D.Frame2D method)</a>
@@ -1163,6 +1191,8 @@
         <li><a href="implementation/Elements/Beam2D_class.html#femedu.elements.linear.Beam2D.Beam2D.resetLoads">(femedu.elements.linear.Beam2D.Beam2D method)</a>
 </li>
         <li><a href="implementation/Elements/Triangle_class.html#femedu.elements.linear.Triangle.Triangle.resetLoads">(femedu.elements.linear.Triangle.Triangle method)</a>
+</li>
+        <li><a href="implementation/Elements/Triangle6_class.html#femedu.elements.linear.Triangle6.Triangle6.resetLoads">(femedu.elements.linear.Triangle6.Triangle6 method)</a>
 </li>
       </ul></li>
       <li><a href="implementation/Elements/Element_class.html#femedu.elements.Element.Element.revert">revert() (femedu.elements.Element.Element method)</a>
@@ -1241,9 +1271,13 @@
         <li><a href="implementation/Materials/PlaneStrain.html#femedu.materials.PlaneStrain.PlaneStrain.setStrain">(femedu.materials.PlaneStrain.PlaneStrain method)</a>
 </li>
       </ul></li>
-      <li><a href="implementation/Elements/Diffusion/Triangle_class.html#femedu.elements.diffusion.Triangle.setSurfaceLoad">setSurfaceLoad() (femedu.elements.diffusion.Triangle method)</a>
+      <li><a href="implementation/Elements/Diffusion/Triangle6_class.html#femedu.elements.diffusion.Triangle.setSurfaceLoad">setSurfaceLoad() (femedu.elements.diffusion.Triangle method)</a>
 
       <ul>
+        <li><a href="implementation/Elements/Diffusion/Triangle_class.html#femedu.elements.diffusion.Triangle.Triangle.setSurfaceLoad">(femedu.elements.diffusion.Triangle.Triangle method)</a>
+</li>
+        <li><a href="implementation/Elements/Diffusion/Triangle6_class.html#femedu.elements.diffusion.Triangle6.setSurfaceLoad">(femedu.elements.diffusion.Triangle6 method)</a>
+</li>
         <li><a href="implementation/Elements/Element_class.html#femedu.elements.Element.Element.setSurfaceLoad">(femedu.elements.Element.Element method)</a>
 </li>
         <li><a href="implementation/Elements/Quad_class.html#femedu.elements.finite.Quad.Quad.setSurfaceLoad">(femedu.elements.finite.Quad.Quad method)</a>
@@ -1253,6 +1287,8 @@
         <li><a href="implementation/Elements/Quad9_class.html#femedu.elements.finite.Quad9.Quad9.setSurfaceLoad">(femedu.elements.finite.Quad9.Quad9 method)</a>
 </li>
         <li><a href="implementation/Elements/Triangle_class.html#femedu.elements.linear.Triangle.Triangle.setSurfaceLoad">(femedu.elements.linear.Triangle.Triangle method)</a>
+</li>
+        <li><a href="implementation/Elements/Triangle6_class.html#femedu.elements.linear.Triangle6.Triangle6.setSurfaceLoad">(femedu.elements.linear.Triangle6.Triangle6 method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1327,14 +1363,22 @@
 </li>
       <li><a href="implementation/Domain/Transformation_class.html#femedu.domain.Transformation.Transformation">Transformation (class in femedu.domain.Transformation)</a>
 </li>
-      <li><a href="implementation/Elements/Diffusion/Triangle_class.html#femedu.elements.diffusion.Triangle">Triangle (class in femedu.elements.diffusion)</a>
+      <li><a href="implementation/Elements/Diffusion/Triangle6_class.html#femedu.elements.diffusion.Triangle">Triangle (class in femedu.elements.diffusion)</a>
 
       <ul>
+        <li><a href="implementation/Elements/Diffusion/Triangle_class.html#femedu.elements.diffusion.Triangle.Triangle">(class in femedu.elements.diffusion.Triangle)</a>
+</li>
         <li><a href="implementation/Elements/Triangle_class.html#femedu.elements.linear.Triangle.Triangle">(class in femedu.elements.linear.Triangle)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="implementation/Elements/Diffusion/Triangle6_class.html#femedu.elements.diffusion.Triangle6">Triangle6 (class in femedu.elements.diffusion)</a>
+
+      <ul>
+        <li><a href="implementation/Elements/Triangle6_class.html#femedu.elements.linear.Triangle6.Triangle6">(class in femedu.elements.linear.Triangle6)</a>
+</li>
+      </ul></li>
       <li><a href="implementation/Utilities/Integration_class.html#femedu.utilities.TriangleIntegration.TriangleIntegration">TriangleIntegration (class in femedu.utilities.TriangleIntegration)</a>
 </li>
       <li><a href="implementation/Mesher/Mesher_class.html#femedu.mesher.Mesher.Mesher.triangleMesh">triangleMesh() (femedu.mesher.Mesher.Mesher method)</a>
@@ -1357,9 +1401,13 @@
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="implementation/Elements/Diffusion/Triangle_class.html#femedu.elements.diffusion.Triangle.updateState">updateState() (femedu.elements.diffusion.Triangle method)</a>
+      <li><a href="implementation/Elements/Diffusion/Triangle6_class.html#femedu.elements.diffusion.Triangle.updateState">updateState() (femedu.elements.diffusion.Triangle method)</a>
 
       <ul>
+        <li><a href="implementation/Elements/Diffusion/Triangle_class.html#femedu.elements.diffusion.Triangle.Triangle.updateState">(femedu.elements.diffusion.Triangle.Triangle method)</a>
+</li>
+        <li><a href="implementation/Elements/Diffusion/Triangle6_class.html#femedu.elements.diffusion.Triangle6.updateState">(femedu.elements.diffusion.Triangle6 method)</a>
+</li>
         <li><a href="implementation/Elements/Element_class.html#femedu.elements.Element.Element.updateState">(femedu.elements.Element.Element method)</a>
 </li>
         <li><a href="implementation/Elements/Frame2D_class.html#femedu.elements.finite.Frame2D.Frame2D.updateState">(femedu.elements.finite.Frame2D.Frame2D method)</a>
@@ -1377,6 +1425,8 @@
         <li><a href="implementation/Elements/Linear/Spring_class.html#femedu.elements.linear.Spring.Spring.updateState">(femedu.elements.linear.Spring.Spring method)</a>
 </li>
         <li><a href="implementation/Elements/Triangle_class.html#femedu.elements.linear.Triangle.Triangle.updateState">(femedu.elements.linear.Triangle.Triangle method)</a>
+</li>
+        <li><a href="implementation/Elements/Triangle6_class.html#femedu.elements.linear.Triangle6.Triangle6.updateState">(femedu.elements.linear.Triangle6.Triangle6 method)</a>
 </li>
         <li><a href="implementation/Materials/Diffusion.html#femedu.materials.DiffusionGeneral.DiffusionGeneral.updateState">(femedu.materials.DiffusionGeneral.DiffusionGeneral method)</a>
 </li>
@@ -1432,7 +1482,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 22, 2024.
+      <span class="lastupdated">Last updated on Apr 23, 2024.
       </span></p>
   </div>
 

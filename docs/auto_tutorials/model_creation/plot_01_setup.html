@@ -119,8 +119,8 @@ Every model needs one <code class="xref py py-class docutils literal notranslate
 we are going to use several <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> instances.</p>
 <p>Loading those class definitions requires the following:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear.Truss</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.materials.ElasticSection</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Truss</span>
+<span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">ElasticSection</span>
 </pre></div>
 </div>
 <p>The first line imports the <code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> class definitions,
@@ -280,28 +280,28 @@ report about the current state of the model as follows.</p>
 
 Nodes:
 ---------------------
-  Node_4092:
+  Node_0:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    None
-  Node_4093:
+  Node_1:
       x:    [8. 6.]
       P:    [ 0. -1.]
       u:    None
-  Node_4094:
+  Node_2:
       x:    [16.  0.]
       fix:  [&#39;uy&#39;]
       u:    None
 
 Elements:
 ---------------------
-  Truss: Node_4092 to Node_4093:
+  Truss: Node_0 to Node_1:
       material properties: ElasticSection(Material)({&#39;E&#39;: 1000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30, &#39;I&#39;: 1.0})  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
       internal force: 0.0
-  Truss: Node_4093 to Node_4094:
+  Truss: Node_1 to Node_2:
       material properties: ElasticSection(Material)({&#39;E&#39;: 1000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30, &#39;I&#39;: 1.0})  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
       internal force: 0.0
-  Truss: Node_4092 to Node_4094:
+  Truss: Node_0 to Node_2:
       material properties: ElasticSection(Material)({&#39;E&#39;: 1000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30, &#39;I&#39;: 1.0})  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
       internal force: 0.0
 </pre></div>
@@ -352,33 +352,56 @@ Avoid “.jpg” for line-graphics like this one.</p>
 
 Nodes:
 ---------------------
-  Node_4092:
+  Node_0:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0. 0.]
-  Node_4093:
+  Node_1:
       x:    [8. 6.]
       P:    [ 0. -1.]
       u:    [ 0.00533333 -0.021     ]
-  Node_4094:
+  Node_2:
       x:    [16.  0.]
       fix:  [&#39;uy&#39;]
       u:    [0.01066667 0.        ]
 
 Elements:
 ---------------------
-  Truss: Node_4092 to Node_4093:
+  Truss: Node_0 to Node_1:
       material properties: ElasticSection(Material)({&#39;E&#39;: 1000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30, &#39;I&#39;: 1.0})  strain:{&#39;axial&#39;: -0.0008333333333333333}   stress:{&#39;axial&#39;: -0.8333333333333333, &#39;flexure&#39;: 0.0}
       internal force: -0.8333333333333333
-  Truss: Node_4093 to Node_4094:
+  Truss: Node_1 to Node_2:
       material properties: ElasticSection(Material)({&#39;E&#39;: 1000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30, &#39;I&#39;: 1.0})  strain:{&#39;axial&#39;: -0.0008333333333333333}   stress:{&#39;axial&#39;: -0.8333333333333333, &#39;flexure&#39;: 0.0}
       internal force: -0.8333333333333333
-  Truss: Node_4092 to Node_4094:
+  Truss: Node_0 to Node_2:
       material properties: ElasticSection(Material)({&#39;E&#39;: 1000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30, &#39;I&#39;: 1.0})  strain:{&#39;axial&#39;: 0.0006666666666666664}   stress:{&#39;axial&#39;: 0.6666666666666664, &#39;flexure&#39;: 0.0}
       internal force: 0.6666666666666664
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.174 seconds)</p>
+<p>Truss, beam, and frame elements further allow for plotting of internal forces through the
+<cite>beamValuePlot(variable,factor=1.0,filename=’…’)</cite> method.</p>
+<p>Valid variables are</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><cite>‘F’</cite></p></td>
+<td><p>Axial force (tension positive)</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>‘V’</cite></p></td>
+<td><p>transverse shear force</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>‘M’</cite></p></td>
+<td><p>Bending moment</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;tutorial01_axial.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_01_setup_003.png" srcset="../../_images/sphx_glr_plot_01_setup_003.png" alt="Axial Forces" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.597 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-model-creation-plot-01-setup-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/29eb8dabe6549980d2a99ec56c347d3a/plot_01_setup.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_01_setup.ipynb</span></code></a></p>
@@ -403,7 +426,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 22, 2024.
+      <span class="lastupdated">Last updated on Apr 23, 2024.
       </span></p>
   </div>
 
