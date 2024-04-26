@@ -11,6 +11,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
 
   
   <!--[if lt IE 9]>
@@ -22,11 +23,12 @@
         <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
         <script src="../../_static/doctools.js?v=888ff710"></script>
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Patch test for triangular plate under in-plane loading" href="plot_plate04.html" />
-    <link rel="prev" title="A square patch made of two triangular plate elements" href="plot_plate02.html" /> 
+    <link rel="prev" title="A square patch made of two triangular plate elements" href="plot_plate02b.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -69,6 +71,7 @@
 <li class="toctree-l4"><a class="reference internal" href="plot_benchmark01.html">Benchmark problem: Wedged Plate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate01.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate02.html">A square patch made of two triangular plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate02b.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate04.html">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate05.html">Pulling a plate with a circular hole : using triangles</a></li>
@@ -297,164 +300,164 @@ e.g., constant tension in the x-direction, or constant shear, etc.</p>
 
 Nodes:
 ---------------------
-  Node_590:
+  Node_646:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    None
-  Node_591:
+  Node_647:
       x:    [20.  0.]
       u:    None
-  Node_592:
+  Node_648:
       x:    [50.  0.]
       u:    None
-  Node_593:
+  Node_649:
       x:    [70.  0.]
       u:    None
-  Node_594:
+  Node_650:
       x:    [100.   0.]
       fix:  [&#39;uy&#39;]
       u:    None
-  Node_595:
+  Node_651:
       x:    [ 0. 16.]
       u:    None
-  Node_596:
+  Node_652:
       x:    [15. 24.]
       u:    None
-  Node_597:
+  Node_653:
       x:    [50. 16.]
       u:    None
-  Node_598:
+  Node_654:
       x:    [80. 24.]
       u:    None
-  Node_599:
+  Node_655:
       x:    [100.  16.]
       u:    None
-  Node_600:
+  Node_656:
       x:    [ 0. 48.]
       u:    None
-  Node_601:
+  Node_657:
       x:    [20. 40.]
       u:    None
-  Node_602:
+  Node_658:
       x:    [70. 56.]
       u:    None
-  Node_603:
+  Node_659:
       x:    [90. 48.]
       u:    None
-  Node_604:
+  Node_660:
       x:    [100.  64.]
       u:    None
-  Node_605:
+  Node_661:
       x:    [ 0. 80.]
       u:    None
-  Node_606:
+  Node_662:
       x:    [30. 80.]
       u:    None
-  Node_607:
+  Node_663:
       x:    [55. 80.]
       u:    None
-  Node_608:
+  Node_664:
       x:    [80. 80.]
       u:    None
-  Node_609:
+  Node_665:
       x:    [100.  80.]
       u:    None
 
 Elements:
 ---------------------
-  Triangle_847: nodes ( Node_590 Node_591 Node_595 )
+  Triangle_921: nodes ( Node_646 Node_647 Node_651 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_848: nodes ( Node_591 Node_592 Node_596 )
+  Triangle_922: nodes ( Node_647 Node_648 Node_652 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_849: nodes ( Node_592 Node_593 Node_597 )
+  Triangle_923: nodes ( Node_648 Node_649 Node_653 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_850: nodes ( Node_593 Node_594 Node_598 )
+  Triangle_924: nodes ( Node_649 Node_650 Node_654 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_851: nodes ( Node_596 Node_595 Node_591 )
+  Triangle_925: nodes ( Node_652 Node_651 Node_647 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_852: nodes ( Node_597 Node_596 Node_592 )
+  Triangle_926: nodes ( Node_653 Node_652 Node_648 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_853: nodes ( Node_598 Node_597 Node_593 )
+  Triangle_927: nodes ( Node_654 Node_653 Node_649 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_854: nodes ( Node_599 Node_598 Node_594 )
+  Triangle_928: nodes ( Node_655 Node_654 Node_650 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_855: nodes ( Node_595 Node_596 Node_600 )
+  Triangle_929: nodes ( Node_651 Node_652 Node_656 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_856: nodes ( Node_596 Node_597 Node_601 )
+  Triangle_930: nodes ( Node_652 Node_653 Node_657 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_857: nodes ( Node_597 Node_598 Node_602 )
+  Triangle_931: nodes ( Node_653 Node_654 Node_658 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_858: nodes ( Node_598 Node_599 Node_603 )
+  Triangle_932: nodes ( Node_654 Node_655 Node_659 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_859: nodes ( Node_601 Node_600 Node_596 )
+  Triangle_933: nodes ( Node_657 Node_656 Node_652 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_860: nodes ( Node_602 Node_601 Node_597 )
+  Triangle_934: nodes ( Node_658 Node_657 Node_653 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_861: nodes ( Node_603 Node_602 Node_598 )
+  Triangle_935: nodes ( Node_659 Node_658 Node_654 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_862: nodes ( Node_604 Node_603 Node_599 )
+  Triangle_936: nodes ( Node_660 Node_659 Node_655 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_863: nodes ( Node_600 Node_601 Node_605 )
+  Triangle_937: nodes ( Node_656 Node_657 Node_661 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_864: nodes ( Node_601 Node_602 Node_606 )
+  Triangle_938: nodes ( Node_657 Node_658 Node_662 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_865: nodes ( Node_602 Node_603 Node_607 )
+  Triangle_939: nodes ( Node_658 Node_659 Node_663 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_866: nodes ( Node_603 Node_604 Node_608 )
+  Triangle_940: nodes ( Node_659 Node_660 Node_664 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_867: nodes ( Node_606 Node_605 Node_601 )
+  Triangle_941: nodes ( Node_662 Node_661 Node_657 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_868: nodes ( Node_607 Node_606 Node_602 )
+  Triangle_942: nodes ( Node_663 Node_662 Node_658 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_869: nodes ( Node_608 Node_607 Node_603 )
+  Triangle_943: nodes ( Node_664 Node_663 Node_659 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_870: nodes ( Node_609 Node_608 Node_604 )
+  Triangle_944: nodes ( Node_665 Node_664 Node_660 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -466,164 +469,164 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_590:
+  Node_646:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0. 0.]
-  Node_591:
+  Node_647:
       x:    [20.  0.]
       u:    [ 1.00000000e-01 -1.42162675e-16]
-  Node_592:
+  Node_648:
       x:    [50.  0.]
       u:    [2.50000000e-01 5.58828228e-16]
-  Node_593:
+  Node_649:
       x:    [70.  0.]
       u:    [ 3.50000000e-01 -4.75859138e-15]
-  Node_594:
+  Node_650:
       x:    [100.   0.]
       fix:  [&#39;uy&#39;]
       u:    [0.5 0. ]
-  Node_595:
+  Node_651:
       x:    [ 0. 16.]
       u:    [-1.02467033e-15 -2.00000000e-02]
-  Node_596:
+  Node_652:
       x:    [15. 24.]
       u:    [ 0.075 -0.03 ]
-  Node_597:
+  Node_653:
       x:    [50. 16.]
       u:    [ 0.25 -0.02]
-  Node_598:
+  Node_654:
       x:    [80. 24.]
       u:    [ 0.4  -0.03]
-  Node_599:
+  Node_655:
       x:    [100.  16.]
       u:    [ 0.5  -0.02]
-  Node_600:
+  Node_656:
       x:    [ 0. 48.]
       u:    [ 1.37573745e-15 -6.00000000e-02]
-  Node_601:
+  Node_657:
       x:    [20. 40.]
       u:    [ 0.1  -0.05]
-  Node_602:
+  Node_658:
       x:    [70. 56.]
       u:    [ 0.35 -0.07]
-  Node_603:
+  Node_659:
       x:    [90. 48.]
       u:    [ 0.45 -0.06]
-  Node_604:
+  Node_660:
       x:    [100.  64.]
       u:    [ 0.5  -0.08]
-  Node_605:
+  Node_661:
       x:    [ 0. 80.]
       u:    [-2.5888467e-15 -1.0000000e-01]
-  Node_606:
+  Node_662:
       x:    [30. 80.]
       u:    [ 0.15 -0.1 ]
-  Node_607:
+  Node_663:
       x:    [55. 80.]
       u:    [ 0.275 -0.1  ]
-  Node_608:
+  Node_664:
       x:    [80. 80.]
       u:    [ 0.4 -0.1]
-  Node_609:
+  Node_665:
       x:    [100.  80.]
       u:    [ 0.5 -0.1]
 
 Elements:
 ---------------------
-  Triangle_847: nodes ( Node_590 Node_591 Node_595 )
+  Triangle_921: nodes ( Node_646 Node_647 Node_651 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=-7.115e-17 zz=-9.375e-04
       stress: xx=1.000e+02 yy=1.187e-12 xy=-5.692e-13 zz=0.000e+00
-  Triangle_848: nodes ( Node_591 Node_592 Node_596 )
+  Triangle_922: nodes ( Node_647 Node_648 Node_652 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=-6.687e-17 zz=-9.375e-04
       stress: xx=1.000e+02 yy=-2.370e-12 xy=-5.349e-13 zz=0.000e+00
-  Triangle_849: nodes ( Node_592 Node_593 Node_597 )
+  Triangle_923: nodes ( Node_648 Node_649 Node_653 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=-2.659e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=-1.183e-12 xy=-2.127e-12 zz=0.000e+00
-  Triangle_850: nodes ( Node_593 Node_594 Node_598 )
+  Triangle_924: nodes ( Node_649 Node_650 Node_654 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=-1.050e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=-1.183e-12 xy=-8.400e-13 zz=0.000e+00
-  Triangle_851: nodes ( Node_596 Node_595 Node_591 )
+  Triangle_925: nodes ( Node_652 Node_651 Node_647 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=-1.388e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=1.187e-12 xy=-1.110e-12 zz=0.000e+00
-  Triangle_852: nodes ( Node_597 Node_596 Node_592 )
+  Triangle_926: nodes ( Node_653 Node_652 Node_648 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=5.551e-17 zz=-9.375e-04
       stress: xx=1.000e+02 yy=-1.183e-12 xy=4.441e-13 zz=0.000e+00
-  Triangle_853: nodes ( Node_598 Node_597 Node_593 )
+  Triangle_927: nodes ( Node_654 Node_653 Node_649 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=1.665e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=-1.183e-12 xy=1.332e-12 zz=0.000e+00
-  Triangle_854: nodes ( Node_599 Node_598 Node_594 )
+  Triangle_928: nodes ( Node_655 Node_654 Node_650 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=-5.551e-17 zz=-9.375e-04
       stress: xx=1.000e+02 yy=1.183e-12 xy=-4.441e-13 zz=0.000e+00
-  Triangle_855: nodes ( Node_595 Node_596 Node_600 )
+  Triangle_929: nodes ( Node_651 Node_652 Node_656 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=-3.601e-17 zz=-9.375e-04
       stress: xx=1.000e+02 yy=-1.183e-12 xy=-2.881e-13 zz=0.000e+00
-  Triangle_856: nodes ( Node_596 Node_597 Node_601 )
+  Triangle_930: nodes ( Node_652 Node_653 Node_657 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=-2.776e-17 zz=-9.375e-04
       stress: xx=1.000e+02 yy=-2.370e-12 xy=-2.220e-13 zz=0.000e+00
-  Triangle_857: nodes ( Node_597 Node_598 Node_602 )
+  Triangle_931: nodes ( Node_653 Node_654 Node_658 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=1.110e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=4.736e-12 xy=8.882e-13 zz=0.000e+00
-  Triangle_858: nodes ( Node_598 Node_599 Node_603 )
+  Triangle_932: nodes ( Node_654 Node_655 Node_659 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=3.886e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=2.370e-12 xy=3.109e-12 zz=0.000e+00
-  Triangle_859: nodes ( Node_601 Node_600 Node_596 )
+  Triangle_933: nodes ( Node_657 Node_656 Node_652 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=-3.331e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=-4.739e-12 xy=-2.665e-12 zz=0.000e+00
-  Triangle_860: nodes ( Node_602 Node_601 Node_597 )
+  Triangle_934: nodes ( Node_658 Node_657 Node_653 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=-5.551e-17 zz=-9.375e-04
       stress: xx=1.000e+02 yy=1.187e-12 xy=-4.441e-13 zz=0.000e+00
-  Triangle_861: nodes ( Node_603 Node_602 Node_598 )
+  Triangle_935: nodes ( Node_659 Node_658 Node_654 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=2.776e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=2.370e-12 xy=2.220e-12 zz=0.000e+00
-  Triangle_862: nodes ( Node_604 Node_603 Node_599 )
+  Triangle_936: nodes ( Node_660 Node_659 Node_655 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=5.836e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=1.183e-12 xy=4.668e-12 zz=0.000e+00
-  Triangle_863: nodes ( Node_600 Node_601 Node_605 )
+  Triangle_937: nodes ( Node_656 Node_657 Node_661 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=-2.904e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=-3.553e-12 xy=-2.323e-12 zz=0.000e+00
-  Triangle_864: nodes ( Node_601 Node_602 Node_606 )
+  Triangle_938: nodes ( Node_657 Node_658 Node_662 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=2.220e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=-3.553e-12 xy=1.776e-12 zz=0.000e+00
-  Triangle_865: nodes ( Node_602 Node_603 Node_607 )
+  Triangle_939: nodes ( Node_658 Node_659 Node_663 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=-2.220e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=-2.366e-12 xy=-1.776e-12 zz=0.000e+00
-  Triangle_866: nodes ( Node_603 Node_604 Node_608 )
+  Triangle_940: nodes ( Node_659 Node_660 Node_664 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=1.943e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=1.187e-12 xy=1.554e-12 zz=0.000e+00
-  Triangle_867: nodes ( Node_606 Node_605 Node_601 )
+  Triangle_941: nodes ( Node_662 Node_661 Node_657 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=2.599e-17 zz=-9.375e-04
       stress: xx=1.000e+02 yy=-1.183e-12 xy=2.079e-13 zz=0.000e+00
-  Triangle_868: nodes ( Node_607 Node_606 Node_602 )
+  Triangle_942: nodes ( Node_663 Node_662 Node_658 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=-1.135e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=-9.475e-12 xy=-9.078e-13 zz=0.000e+00
-  Triangle_869: nodes ( Node_608 Node_607 Node_603 )
+  Triangle_943: nodes ( Node_664 Node_663 Node_659 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=-3.331e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=-3.553e-12 xy=-2.665e-12 zz=0.000e+00
-  Triangle_870: nodes ( Node_609 Node_608 Node_604 )
+  Triangle_944: nodes ( Node_665 Node_664 Node_660 )
       material: PlaneStress
       strain: xx=5.000e-03 yy=-1.250e-03 xy=7.105e-16 zz=-9.375e-04
       stress: xx=1.000e+02 yy=8.288e-12 xy=5.684e-12 zz=0.000e+00
@@ -634,7 +637,7 @@ Elements:
   ret = ret.dtype.type(ret / rcount)
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.524 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.548 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate03-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/6514daca88a1dd3f06d8eaf1979ddb12/plot_plate03.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate03.ipynb</span></code></a></p>
@@ -650,7 +653,7 @@ Elements:
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="plot_plate02.html" class="btn btn-neutral float-left" title="A square patch made of two triangular plate elements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plot_plate02b.html" class="btn btn-neutral float-left" title="A square patch made of two triangular plate elements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="plot_plate04.html" class="btn btn-neutral float-right" title="Patch test for triangular plate under in-plane loading" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
@@ -658,7 +661,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 24, 2024.
+      <span class="lastupdated">Last updated on Apr 26, 2024.
       </span></p>
   </div>
 

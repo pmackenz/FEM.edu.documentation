@@ -11,6 +11,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
 
   
   <!--[if lt IE 9]>
@@ -22,6 +23,7 @@
         <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
         <script src="../../_static/doctools.js?v=888ff710"></script>
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -65,8 +67,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../Plotter/Plot_Support_Classes.html">Plot Support classes</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Recorder class</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#femedu.recorder.Recorder.Recorder"><code class="docutils literal notranslate"><span class="pre">Recorder</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#derived-classes">Derived classes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#helper-classes">Helper classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ModelRecorder_class.html">ModelRecorder class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="NodeRecorder_class.html">NodeRecorder class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ElementRecorder_class.html">ElementRecorder class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MaterialRecorder_class.html">MaterialRecorder class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Record_class.html">Record class</a></li>
 </ul>
 </li>
 </ul>
@@ -101,26 +106,33 @@
            <div itemprop="articleBody">
              
   <section id="recorder-class">
-<h1>Recorder class<a class="headerlink" href="#recorder-class" title="Link to this heading"></a></h1>
+<span id="id1"></span><h1>Recorder class<a class="headerlink" href="#recorder-class" title="Link to this heading"></a></h1>
 <p>A <cite>Recorder</cite> object takes care of recording time-history data during load-stepping, displacement-control,
 arc-length, creep, or dynamic analyses.</p>
 <p>That data can be exported as text, CSV, JSON, or Excel files for further processing outside of <strong>FEM.edu</strong>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Abstract Recorder class<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <dl class="py class" id="module-femedu.recorder.Recorder">
 <dt class="sig sig-object py" id="femedu.recorder.Recorder.Recorder">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.recorder.Recorder.</span></span><span class="sig-name descname"><span class="pre">Recorder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder" title="Link to this definition"></a></dt>
-<dd><p>A time history recorder</p>
+<dd><p class="sd-card-text">A time history recorder</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>**kwargs</strong> – additional parameters passed through to specialized recorders.
+<dd class="field-odd"><p class="sd-card-text"><strong>**kwargs</strong> – additional parameters passed through to specialized recorders.
 See below for more details.</p>
 </dd>
 <dt class="field-even">Keyword Arguments<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>variable</strong> (<code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">All</span></code>)
+<li><p class="sd-card-text"><strong>variable</strong> (<code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">All</span></code>)
 – Extra stuff</p></li>
-<li><p><strong>nodes</strong> (<code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">Node</span></code> ptrs or <code class="docutils literal notranslate"><span class="pre">All</span></code>)
+<li><p class="sd-card-text"><strong>nodes</strong> (<code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">Node</span></code> ptrs or <code class="docutils literal notranslate"><span class="pre">All</span></code>)
 – nodes for which those variables shall be recorded. Use <code class="docutils literal notranslate"><span class="pre">nodes=All</span></code> to apply to all nodes.</p></li>
-<li><p><strong>elements</strong> (<code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">Element</span></code> ptrs or <code class="docutils literal notranslate"><span class="pre">All</span></code>)
+<li><p class="sd-card-text"><strong>elements</strong> (<code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">Element</span></code> ptrs or <code class="docutils literal notranslate"><span class="pre">All</span></code>)
 – elements for which those variables shall be recorded. Use <code class="docutils literal notranslate"><span class="pre">elements=All</span></code> to apply to all elements.</p></li>
 </ul>
 </dd>
@@ -128,10 +140,10 @@ See below for more details.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.recorder.Recorder.Recorder.addData">
 <span class="sig-name descname"><span class="pre">addData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.addData" title="Link to this definition"></a></dt>
-<dd><p><em>For internal use only.</em></p>
+<dd><p class="sd-card-text"><em>For internal use only.</em></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dta</strong> (<em>dict</em>) – variable code as key and scalar value pairs.</p>
+<dd class="field-odd"><p class="sd-card-text"><strong>dta</strong> (<em>dict</em>) – variable code as key and scalar value pairs.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -139,16 +151,16 @@ See below for more details.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.recorder.Recorder.Recorder.disable">
 <span class="sig-name descname"><span class="pre">disable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.disable" title="Link to this definition"></a></dt>
-<dd><p>Disables the recorder.  You may resume data collection without loss of previous data by calling <code class="docutils literal notranslate"><span class="pre">enable()</span></code></p>
-<p><strong>Note</strong>: This method should not be called by the user.
+<dd><p class="sd-card-text">Disables the recorder.  You may resume data collection without loss of previous data by calling <code class="docutils literal notranslate"><span class="pre">enable()</span></code></p>
+<p class="sd-card-text"><strong>Note</strong>: This method should not be called by the user.
 Use <code class="docutils literal notranslate"><span class="pre">System.pauseRecorder()</span></code> or  <code class="docutils literal notranslate"><span class="pre">System.stopRecorder()</span></code> instead.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.recorder.Recorder.Recorder.enable">
 <span class="sig-name descname"><span class="pre">enable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.enable" title="Link to this definition"></a></dt>
-<dd><p>Enables the recorder.  You may suspend data collection without loss of previous data by calling <code class="docutils literal notranslate"><span class="pre">disable()</span></code></p>
-<p><strong>Note</strong>: This method should not be called by the user.  Use <code class="docutils literal notranslate"><span class="pre">System.startRecorder()</span></code> instead.</p>
+<dd><p class="sd-card-text">Enables the recorder.  You may suspend data collection without loss of previous data by calling <code class="docutils literal notranslate"><span class="pre">disable()</span></code></p>
+<p class="sd-card-text"><strong>Note</strong>: This method should not be called by the user.  Use <code class="docutils literal notranslate"><span class="pre">System.startRecorder()</span></code> instead.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -156,25 +168,25 @@ Use <code class="docutils literal notranslate"><span class="pre">System.pauseRec
 <span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unknown.txt'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.export" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – <p>full path to file where recorded data shall be written to.
+<dd class="field-odd"><p class="sd-card-text"><strong>filename</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – <p class="sd-card-text">full path to file where recorded data shall be written to.
 The file type will be determined from the given extension.
 Recognized file types are</p>
 <table class="docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p>.txt</p></td>
-<td><p>tab-separated text file</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">.txt</p></td>
+<td><p class="sd-card-text">tab-separated text file</p></td>
 </tr>
-<tr class="row-even"><td><p>.csv</p></td>
-<td><p>comma-separated text file</p></td>
+<tr class="row-even"><td><p class="sd-card-text">.csv</p></td>
+<td><p class="sd-card-text">comma-separated text file</p></td>
 </tr>
-<tr class="row-odd"><td><p>.hdf</p></td>
-<td><p>HDF5 file</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">.hdf</p></td>
+<td><p class="sd-card-text">HDF5 file</p></td>
 </tr>
-<tr class="row-even"><td><p>.json, .jsn</p></td>
-<td><p>comma-separated text file</p></td>
+<tr class="row-even"><td><p class="sd-card-text">.json, .jsn</p></td>
+<td><p class="sd-card-text">comma-separated text file</p></td>
 </tr>
-<tr class="row-odd"><td><p>.xlsx</p></td>
-<td><p>MicroSoft Excel file (see the <cite>pandas</cite> package for more detail)</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">.xlsx</p></td>
+<td><p class="sd-card-text">MicroSoft Excel file (see the <cite>pandas</cite> package for more detail)</p></td>
 </tr>
 </tbody>
 </table>
@@ -188,7 +200,7 @@ Recognized file types are</p>
 <span class="sig-name descname"><span class="pre">export_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.export_csv" title="Link to this definition"></a></dt>
 <dd><div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This method is has not yet been implemented.</p>
+<p class="sd-card-text">This method is has not yet been implemented.</p>
 </div>
 </dd></dl>
 
@@ -197,7 +209,7 @@ Recognized file types are</p>
 <span class="sig-name descname"><span class="pre">export_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.export_excel" title="Link to this definition"></a></dt>
 <dd><div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This method is has not yet been implemented.</p>
+<p class="sd-card-text">This method is has not yet been implemented.</p>
 </div>
 </dd></dl>
 
@@ -206,7 +218,7 @@ Recognized file types are</p>
 <span class="sig-name descname"><span class="pre">export_hdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.export_hdf" title="Link to this definition"></a></dt>
 <dd><div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This method is has not yet been implemented.</p>
+<p class="sd-card-text">This method is has not yet been implemented.</p>
 </div>
 </dd></dl>
 
@@ -215,7 +227,7 @@ Recognized file types are</p>
 <span class="sig-name descname"><span class="pre">export_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.export_json" title="Link to this definition"></a></dt>
 <dd><div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This method is has not yet been implemented.</p>
+<p class="sd-card-text">This method is has not yet been implemented.</p>
 </div>
 </dd></dl>
 
@@ -224,20 +236,20 @@ Recognized file types are</p>
 <span class="sig-name descname"><span class="pre">export_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.export_text" title="Link to this definition"></a></dt>
 <dd><div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This method is has not yet been implemented.</p>
+<p class="sd-card-text">This method is has not yet been implemented.</p>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.recorder.Recorder.Recorder.fetchRecord">
 <span class="sig-name descname"><span class="pre">fetchRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.fetchRecord" title="Link to this definition"></a></dt>
-<dd><p>Request recorded time history data for the listed keys.</p>
+<dd><p class="sd-card-text">Request recorded time history data for the listed keys.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>keys</strong> – If a single key is given as a string, a single <cite>np.array()</cite> is returned.
+<li><p class="sd-card-text"><strong>keys</strong> – If a single key is given as a string, a single <cite>np.array()</cite> is returned.
 If a list of keys is given, a <cite>list of np.array()</cite> is returned.</p></li>
-<li><p><strong>source</strong> – If a single <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> is given, pick record from that node.
+<li><p class="sd-card-text"><strong>source</strong> – If a single <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> is given, pick record from that node.
 If a list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> objects is given, match keys and nodes
 based on order in lists.  <strong>source</strong> and <strong>keys</strong> list must match in shape.
 If a value should be picked from the model domain instead of a node, enter <strong>None</strong>
@@ -245,7 +257,7 @@ in the respective slot.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>time history data for the listed keys.</p>
+<dd class="field-even"><p class="sd-card-text">time history data for the listed keys.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -255,7 +267,7 @@ in the respective slot.</p></li>
 <span class="sig-name descname"><span class="pre">isActive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.isActive" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>True</strong> if recording is on, False otherwise.</p>
+<dd class="field-odd"><p class="sd-card-text"><strong>True</strong> if recording is on, False otherwise.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -263,13 +275,19 @@ in the respective slot.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.recorder.Recorder.Recorder.reset">
 <span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.recorder.Recorder.Recorder.reset" title="Link to this definition"></a></dt>
-<dd><p>This will reset the data recorder to a <em>disabled</em> state and wipe all previously collected data.</p>
+<dd><p class="sd-card-text">This will reset the data recorder to a <em>disabled</em> state and wipe all previously collected data.</p>
 </dd></dl>
 
 </dd></dl>
 
-<section id="derived-classes">
-<h2>Derived classes<a class="headerlink" href="#derived-classes" title="Link to this heading"></a></h2>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Derived classes<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="ModelRecorder_class.html">ModelRecorder class</a></li>
@@ -278,16 +296,21 @@ in the respective slot.</p></li>
 <li class="toctree-l1"><a class="reference internal" href="MaterialRecorder_class.html">MaterialRecorder class</a></li>
 </ul>
 </div>
-</section>
-<section id="helper-classes">
-<h2>Helper classes<a class="headerlink" href="#helper-classes" title="Link to this heading"></a></h2>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Helper classes<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Record_class.html">Record class</a></li>
 </ul>
 </div>
-</section>
-</section>
+</div>
+</details></section>
 
 
            </div>
@@ -301,7 +324,7 @@ in the respective slot.</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 24, 2024.
+      <span class="lastupdated">Last updated on Apr 26, 2024.
       </span></p>
   </div>
 

@@ -23,7 +23,13 @@ A square patch made of two triangular plate elements
 ===============================================================
 
 Basic implementation test with applied loads.
-    Testing the tangent stiffness computation.
+    Testing the tangent stiffness computation
+    for a :func:`Triangle` (using linear shape functions).
+
+Using
+
+* :py:class:`elements.linear.Triangle` (see :ref:`triangle_class`)
+* :py:class:`materials.PlaneStress`  (see :ref:`plane_stress_material_class`)
 
 .. code::
 
@@ -75,7 +81,7 @@ Basic implementation test with applied loads.
 
 Author: Peter Mackenzie-Helnwein
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-115
+.. GENERATED FROM PYTHON SOURCE LINES 65-121
 
 .. code-block:: Python
 
@@ -142,12 +148,12 @@ Author: Peter Mackenzie-Helnwein
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 175-177
+.. GENERATED FROM PYTHON SOURCE LINES 181-183
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 177-183
+.. GENERATED FROM PYTHON SOURCE LINES 183-189
 
 .. code-block:: Python
 
@@ -194,29 +200,29 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_586:
+      Node_633:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    [0. 0.]
-      Node_587:
+      Node_634:
           x:    [10.  0.]
           fix:  ['uy']
           u:    [1. 0.]
-      Node_588:
+      Node_635:
           x:    [10. 10.]
           u:    [ 1.  -0.3]
-      Node_589:
+      Node_636:
           x:    [ 0. 10.]
           fix:  ['ux']
           u:    [ 0.  -0.3]
 
     Elements:
     ---------------------
-      Triangle_845: nodes ( Node_586 Node_587 Node_589 )
+      Triangle_917: nodes ( Node_633 Node_634 Node_636 )
           material: PlaneStress
           strain: xx=1.000e-01 yy=-3.000e-02 xy=0.000e+00 zz=-2.100e-02
           stress: xx=1.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-      Triangle_846: nodes ( Node_588 Node_589 Node_587 )
+      Triangle_918: nodes ( Node_635 Node_636 Node_634 )
           material: PlaneStress
           strain: xx=1.000e-01 yy=-3.000e-02 xy=1.776e-16 zz=-2.100e-02
           stress: xx=1.000e+00 yy=2.442e-15 xy=6.832e-16 zz=0.000e+00
@@ -228,7 +234,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.236 seconds)
+   **Total running time of the script:** (0 minutes 0.252 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate02.py:

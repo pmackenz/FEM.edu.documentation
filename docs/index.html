@@ -11,6 +11,7 @@
       <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+      <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
 
   
   <!--[if lt IE 9]>
@@ -22,6 +23,7 @@
         <script src="_static/documentation_options.js?v=d3aa145f"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/design-tabs.js?v=36754332"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -85,8 +87,8 @@
              
   <table class="docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><strong>Version 1.0.17</strong></p></td>
-<td><p><strong>last updated:</strong> Apr 24, 2024</p></td>
+<tr class="row-odd"><td><p><strong>Version 1.0.18</strong></p></td>
+<td><p><strong>last updated:</strong> Apr 26, 2024</p></td>
 <td><a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.7824340"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.7824340.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.7824340.svg" /></a>
 </td>
 </tr>
@@ -178,15 +180,11 @@
 <section id="revision-log">
 <h2>Revision Log<a class="headerlink" href="#revision-log" title="Link to this heading"></a></h2>
 <ul>
-<li><p><strong>More diffusion examples</strong><span> by </span><em>Peter Mackenzie-Helnwein</em><span> at </span><em>2024-04-22 16:05:40</em></p></li>
-<li><p><strong>Adding prescribed dofs</strong><span> by </span><em>Peter Mackenzie-Helnwein</em><span> at </span><em>2024-04-21 18:43:54</em></p>
-<p>* used to apply temperature in thermal problems
-* used to model support settlement
-* discplacement-control for element testing</p>
-</li>
-<li><p><strong>Adding helper functions to the node</strong><span> by </span><em>Peter Mackenzie-Helnwein</em><span> at </span><em>2024-04-21 00:11:03</em></p>
-<p>* distanceTo(x)
-* isClose(x, tol)</p>
+<li><p><strong>Working on quadratic triangles for plane stress and diffusion</strong><span> by </span><em>Peter Mackenzie-Helnwein</em><span> at </span><em>2024-04-25 23:11:02</em></p></li>
+<li><p><strong>Enhancing the documentation for better readability</strong><span> by </span><em>Peter Mackenzie-Helnwein</em><span> at </span><em>2024-04-25 23:10:29</em></p></li>
+<li><p><strong>Minor improvements</strong><span> by </span><em>Peter Mackenzie-Helnwein</em><span> at </span><em>2024-04-25 23:09:34</em></p>
+<p>* Adding gauss-point data class
+* rearranging functionality from LinearElements to general Elements class</p>
 </li>
 </ul>
 <div class="toctree-wrapper compound">
@@ -223,7 +221,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 24, 2024.
+      <span class="lastupdated">Last updated on Apr 26, 2024.
       </span></p>
   </div>
 

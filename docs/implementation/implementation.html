@@ -11,6 +11,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
 
   
   <!--[if lt IE 9]>
@@ -22,6 +23,7 @@
         <script src="../_static/documentation_options.js?v=d3aa145f"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/design-tabs.js?v=36754332"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -163,35 +165,89 @@
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.getLoad"><code class="docutils literal notranslate"><span class="pre">Element.getLoad()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.getPos"><code class="docutils literal notranslate"><span class="pre">Element.getPos()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.getStiffness"><code class="docutils literal notranslate"><span class="pre">Element.getStiffness()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.initialize"><code class="docutils literal notranslate"><span class="pre">Element.initialize()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.on_converged"><code class="docutils literal notranslate"><span class="pre">Element.on_converged()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.recordThisStep"><code class="docutils literal notranslate"><span class="pre">Element.recordThisStep()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.resetLoads"><code class="docutils literal notranslate"><span class="pre">Element.resetLoads()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.reset_matrices"><code class="docutils literal notranslate"><span class="pre">Element.reset_matrices()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.revert"><code class="docutils literal notranslate"><span class="pre">Element.revert()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.setLoadFactor"><code class="docutils literal notranslate"><span class="pre">Element.setLoadFactor()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.setSurfaceLoad"><code class="docutils literal notranslate"><span class="pre">Element.setSurfaceLoad()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.updateState"><code class="docutils literal notranslate"><span class="pre">Element.updateState()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Elements/Element_class.html#module-femedu.elements.DrawElement">Inherited methods</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.DrawElement.DrawElement"><code class="docutils literal notranslate"><span class="pre">DrawElement</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.DrawElement.DrawElement"><code class="docutils literal notranslate"><span class="pre">DrawElement</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.DrawElement.DrawElement.draw"><code class="docutils literal notranslate"><span class="pre">DrawElement.draw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.DrawElement.DrawElement.drawBrick"><code class="docutils literal notranslate"><span class="pre">DrawElement.drawBrick()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.DrawElement.DrawElement.drawCurve"><code class="docutils literal notranslate"><span class="pre">DrawElement.drawCurve()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.DrawElement.DrawElement.drawLine"><code class="docutils literal notranslate"><span class="pre">DrawElement.drawLine()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.DrawElement.DrawElement.drawQuad"><code class="docutils literal notranslate"><span class="pre">DrawElement.drawQuad()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.DrawElement.DrawElement.drawTetrahedron"><code class="docutils literal notranslate"><span class="pre">DrawElement.drawTetrahedron()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.DrawElement.DrawElement.drawTriangle"><code class="docutils literal notranslate"><span class="pre">DrawElement.drawTriangle()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Elements/Element_class.html#helper-classes">Helper Classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Elements/Face_classes.html">Face classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Elements/Linear/Spring_class.html">Spring class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Linear/Spring_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Linear/Spring_class.html#module-femedu.elements.linear.Spring">Class doc</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Elements/Element_class.html#derived-classes">Derived Classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Elements/Linear/Spring_class.html">Spring class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Elements/Truss_class.html">Truss class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Elements/Beam2D_class.html">Beam2D class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Elements/Frame2D_class.html">Frame2D class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Elements/Triangle_class.html">Triangle class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Elements/Triangle6_class.html">Triangle6 class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Elements/Diffusion/Triangle_class.html">Triangle class for Diffusion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Elements/Diffusion/Triangle6_class.html">Triangle6 class for Diffusion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Elements/Quad_class.html">Quad class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Elements/Quad8_class.html">Quad8 class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Elements/Quad9_class.html">Quad9 class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Elements/Truss_class.html">Truss class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Truss_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Truss_class.html#module-femedu.elements.finite.Truss">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Elements/Beam2D_class.html">Beam2D class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Beam2D_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Beam2D_class.html#module-femedu.elements.linear.Beam2D">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Elements/Frame2D_class.html">Frame2D class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Frame2D_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Frame2D_class.html#module-femedu.elements.finite.Frame2D">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Elements/Triangle_class.html">Triangle class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Triangle_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Triangle_class.html#see-also">See also</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Triangle_class.html#module-femedu.elements.linear.Triangle">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Elements/Triangle6_class.html">Triangle6 class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Triangle6_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Triangle6_class.html#see-also">See also</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Triangle6_class.html#module-femedu.elements.linear.Triangle6">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Elements/Diffusion/Triangle_class.html">Triangle class for Diffusion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Diffusion/Triangle_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Diffusion/Triangle_class.html#see-also">See also</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Diffusion/Triangle_class.html#module-femedu.elements.diffusion.Triangle">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Elements/Diffusion/Triangle6_class.html">Triangle6 class for Diffusion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Diffusion/Triangle6_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Diffusion/Triangle6_class.html#see-also">See also</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Diffusion/Triangle6_class.html#module-femedu.elements.diffusion.Triangle6">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Elements/Quad_class.html">Quad class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Quad_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Quad_class.html#module-femedu.elements.finite.Quad">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Elements/Quad8_class.html">Quad8 class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Quad8_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Quad8_class.html#module-femedu.elements.finite.Quad8">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Elements/Quad9_class.html">Quad9 class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Quad9_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Quad9_class.html#module-femedu.elements.finite.Quad9">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Elements/Face_classes.html">Face classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Face_classes.html#femedu.elements.Faces.Faces"><code class="docutils literal notranslate"><span class="pre">Faces</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Face_classes.html#module-femedu.elements.Face2D">Derived Classes</a></li>
 </ul>
 </li>
 </ul>
@@ -224,11 +280,24 @@
 <li class="toctree-l3"><a class="reference internal" href="Mesher/Mesher_class.html#femedu.mesher.Mesher.Mesher.triangleMesh"><code class="docutils literal notranslate"><span class="pre">Mesher.triangleMesh()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Mesher/Mesher_class.html#derived-classes">Derived Classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Mesher/CurveMesher_class.html">CurveMesher class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Mesher/PatchMesher_class.html">PatchMesher class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Mesher/TriPatchMesher_class.html">TriPatchMesher class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Mesher/SolidMesher_class.html">SolidMesher class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Mesher/CurveMesher_class.html">CurveMesher class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Mesher/CurveMesher_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mesher/CurveMesher_class.html#module-femedu.mesher.CurveMesher">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Mesher/PatchMesher_class.html">PatchMesher class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Mesher/PatchMesher_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mesher/PatchMesher_class.html#module-femedu.mesher.PatchMesher">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Mesher/TriPatchMesher_class.html">TriPatchMesher class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Mesher/TriPatchMesher_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mesher/TriPatchMesher_class.html#module-femedu.mesher.TriPatchMesher">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Mesher/SolidMesher_class.html">SolidMesher class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Mesher/SolidMesher_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mesher/SolidMesher_class.html#module-femedu.mesher.SolidMesher">Class doc</a></li>
 </ul>
 </li>
 </ul>
@@ -313,29 +382,36 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Utilities/Integration_class.html">Integration classes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Utilities/Integration_class.html#module-femedu.utilities.Integration">Abstract Integration Class</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.Integration.Integration"><code class="docutils literal notranslate"><span class="pre">Integration</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.Integration.Integration"><code class="docutils literal notranslate"><span class="pre">Integration</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.Integration.Integration.dunavant"><code class="docutils literal notranslate"><span class="pre">Integration.dunavant()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.Integration.Integration.gauss1D"><code class="docutils literal notranslate"><span class="pre">Integration.gauss1D()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.Integration.Integration.parameters"><code class="docutils literal notranslate"><span class="pre">Integration.parameters()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.Integration.Integration.points"><code class="docutils literal notranslate"><span class="pre">Integration.points()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.Integration.Integration.weights"><code class="docutils literal notranslate"><span class="pre">Integration.weights()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Utilities/Integration_class.html#module-femedu.utilities.LineIntegration">Derived Classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.LineIntegration.LineIntegration"><code class="docutils literal notranslate"><span class="pre">LineIntegration</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.TriangleIntegration.TriangleIntegration"><code class="docutils literal notranslate"><span class="pre">TriangleIntegration</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.QuadIntegration.QuadIntegration"><code class="docutils literal notranslate"><span class="pre">QuadIntegration</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.TetraIntegration.TetraIntegration"><code class="docutils literal notranslate"><span class="pre">TetraIntegration</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.BrickIntegration.BrickIntegration"><code class="docutils literal notranslate"><span class="pre">BrickIntegration</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.LineIntegration.LineIntegration"><code class="docutils literal notranslate"><span class="pre">LineIntegration</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.TriangleIntegration.TriangleIntegration"><code class="docutils literal notranslate"><span class="pre">TriangleIntegration</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.QuadIntegration.QuadIntegration"><code class="docutils literal notranslate"><span class="pre">QuadIntegration</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.TetraIntegration.TetraIntegration"><code class="docutils literal notranslate"><span class="pre">TetraIntegration</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Utilities/Integration_class.html#femedu.utilities.BrickIntegration.BrickIntegration"><code class="docutils literal notranslate"><span class="pre">BrickIntegration</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Utilities/ShapeFunction_classes.html">Shape Function classes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Utilities/ShapeFunction_classes.html#module-femedu.utilities.ShapeFunctions">Abstract Shape Function Class</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Utilities/ShapeFunction_classes.html#femedu.utilities.ShapeFunctions.ShapeFunctions"><code class="docutils literal notranslate"><span class="pre">ShapeFunctions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Utilities/ShapeFunction_classes.html#femedu.utilities.ShapeFunctions.ShapeFunctions"><code class="docutils literal notranslate"><span class="pre">ShapeFunctions</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Utilities/ShapeFunction_classes.html#femedu.utilities.ShapeFunctions.ShapeFunctions.shape"><code class="docutils literal notranslate"><span class="pre">ShapeFunctions.shape()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Utilities/ShapeFunction_classes.html#module-femedu.utilities.LineShapes">Derived Classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Utilities/ShapeFunction_classes.html#femedu.utilities.LineShapes.LineShapes"><code class="docutils literal notranslate"><span class="pre">LineShapes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="Utilities/ShapeFunction_classes.html#femedu.utilities.TriangleShapes.TriangleShapes"><code class="docutils literal notranslate"><span class="pre">TriangleShapes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="Utilities/ShapeFunction_classes.html#femedu.utilities.QuadShapes.QuadShapes"><code class="docutils literal notranslate"><span class="pre">QuadShapes</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Utilities/ShapeFunction_classes.html#femedu.utilities.LineShapes.LineShapes"><code class="docutils literal notranslate"><span class="pre">LineShapes</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Utilities/ShapeFunction_classes.html#femedu.utilities.LineShapes.LineShapes.shape"><code class="docutils literal notranslate"><span class="pre">LineShapes.shape()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Utilities/ShapeFunction_classes.html#femedu.utilities.TriangleShapes.TriangleShapes"><code class="docutils literal notranslate"><span class="pre">TriangleShapes</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Utilities/ShapeFunction_classes.html#femedu.utilities.TriangleShapes.TriangleShapes.shape"><code class="docutils literal notranslate"><span class="pre">TriangleShapes.shape()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Utilities/ShapeFunction_classes.html#femedu.utilities.QuadShapes.QuadShapes"><code class="docutils literal notranslate"><span class="pre">QuadShapes</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Utilities/ShapeFunction_classes.html#femedu.utilities.QuadShapes.QuadShapes.shape"><code class="docutils literal notranslate"><span class="pre">QuadShapes.shape()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -354,11 +430,24 @@
 <li class="toctree-l3"><a class="reference internal" href="Plotter/Plot_Support_Classes.html#femedu.plotter.AbstractPlotter.AbstractPlotter.valuePlot"><code class="docutils literal notranslate"><span class="pre">AbstractPlotter.valuePlot()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Plotter/Plot_Support_Classes.html#derived-classes">Derived Classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Plotter/Plotter_class.html">Plotter class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Plotter/Plotter3D_class.html">Plotter3D class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Plotter/ElementPlotter_class.html">ElementPlotter class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Plotter/ElementPlotter3D_class.html">ElementPlotter3D class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plotter/Plotter_class.html">Plotter class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Plotter/Plotter_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Plotter/Plotter_class.html#module-femedu.plotter.Plotter">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Plotter/Plotter3D_class.html">Plotter3D class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Plotter/Plotter3D_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Plotter/Plotter3D_class.html#module-femedu.plotter.Plotter3D">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Plotter/ElementPlotter_class.html">ElementPlotter class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Plotter/ElementPlotter_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Plotter/ElementPlotter_class.html#module-femedu.plotter.ElementPlotter">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Plotter/ElementPlotter3D_class.html">ElementPlotter3D class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Plotter/ElementPlotter3D_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Plotter/ElementPlotter3D_class.html#module-femedu.plotter.ElementPlotter3D">Class doc</a></li>
 </ul>
 </li>
 </ul>
@@ -379,15 +468,28 @@
 <li class="toctree-l3"><a class="reference internal" href="Recorder/Recorder_class.html#femedu.recorder.Recorder.Recorder.reset"><code class="docutils literal notranslate"><span class="pre">Recorder.reset()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Recorder/Recorder_class.html#derived-classes">Derived classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Recorder/ModelRecorder_class.html">ModelRecorder class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Recorder/NodeRecorder_class.html">NodeRecorder class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Recorder/ElementRecorder_class.html">ElementRecorder class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Recorder/MaterialRecorder_class.html">MaterialRecorder class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Recorder/ModelRecorder_class.html">ModelRecorder class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Recorder/ModelRecorder_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Recorder/ModelRecorder_class.html#module-femedu.recorder.ModelRecorder">Class doc</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Recorder/Recorder_class.html#helper-classes">Helper classes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Recorder/Record_class.html">Record class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Recorder/NodeRecorder_class.html">NodeRecorder class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Recorder/NodeRecorder_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Recorder/NodeRecorder_class.html#module-femedu.recorder.NodeRecorder">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Recorder/ElementRecorder_class.html">ElementRecorder class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Recorder/ElementRecorder_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Recorder/ElementRecorder_class.html#module-femedu.recorder.ElementRecorder">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Recorder/MaterialRecorder_class.html">MaterialRecorder class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Recorder/MaterialRecorder_class.html#parent-class">Parent class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Recorder/MaterialRecorder_class.html#module-femedu.recorder.MaterialRecorder">Class doc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Recorder/Record_class.html">Record class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Recorder/Record_class.html#module-femedu.recorder.Record">Class doc</a></li>
 </ul>
 </li>
 </ul>
@@ -409,7 +511,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 24, 2024.
+      <span class="lastupdated">Last updated on Apr 26, 2024.
       </span></p>
   </div>
 

@@ -11,6 +11,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
 
   
   <!--[if lt IE 9]>
@@ -22,6 +23,7 @@
         <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
         <script src="../../_static/doctools.js?v=888ff710"></script>
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -64,7 +66,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../Utilities/ShapeFunction_classes.html">Shape Function classes</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Plot Support classes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#femedu.plotter.AbstractPlotter.AbstractPlotter"><code class="docutils literal notranslate"><span class="pre">AbstractPlotter</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#derived-classes">Derived Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plotter_class.html">Plotter class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Plotter3D_class.html">Plotter3D class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ElementPlotter_class.html">ElementPlotter class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ElementPlotter3D_class.html">ElementPlotter3D class</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../Recorder/Recorder_class.html">Recorder class</a></li>
@@ -100,23 +105,30 @@
            <div itemprop="articleBody">
              
   <section id="plot-support-classes">
-<h1>Plot Support classes<a class="headerlink" href="#plot-support-classes" title="Link to this heading"></a></h1>
+<span id="id1"></span><h1>Plot Support classes<a class="headerlink" href="#plot-support-classes" title="Link to this heading"></a></h1>
 <p>All plotters are based on an abstract plotter class that defines the fundamental
 plot features.  Actual plotter classes are derived from that class and provide specific implementations
 of those features.</p>
 <p>In addition, all <a class="reference internal" href="../Elements/Element_class.html"><span class="doc">Element classes</span></a> inherit plot support methods from <code class="code docutils literal notranslate"><span class="pre">DrawElement</span></code>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Abstract Plotter class<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <dl class="py class" id="module-femedu.plotter.AbstractPlotter">
 <dt class="sig sig-object py" id="femedu.plotter.AbstractPlotter.AbstractPlotter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.plotter.AbstractPlotter.</span></span><span class="sig-name descname"><span class="pre">AbstractPlotter</span></span><a class="headerlink" href="#femedu.plotter.AbstractPlotter.AbstractPlotter" title="Link to this definition"></a></dt>
-<dd><p>Defines all supported plot features.
+<dd><p class="sd-card-text">Defines all supported plot features.
 Implementation is required through derived classes.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.plotter.AbstractPlotter.AbstractPlotter.addForces">
 <span class="sig-name descname"><span class="pre">addForces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.AbstractPlotter.AbstractPlotter.addForces" title="Link to this definition"></a></dt>
-<dd><p>add nodal forces to the plot shown in <strong>axs</strong></p>
+<dd><p class="sd-card-text">add nodal forces to the plot shown in <strong>axs</strong></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>axs</strong> – axis on which to plot</p>
+<dd class="field-odd"><p class="sd-card-text"><strong>axs</strong> – axis on which to plot</p>
 </dd>
 </dl>
 </dd></dl>
@@ -124,15 +136,15 @@ Implementation is required through derived classes.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.plotter.AbstractPlotter.AbstractPlotter.beamValuePlot">
 <span class="sig-name descname"><span class="pre">beamValuePlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.AbstractPlotter.AbstractPlotter.beamValuePlot" title="Link to this definition"></a></dt>
-<dd><p>Create a traditional beam value plot, i.e., moment and shear diagrams.</p>
-<p>If <strong>file</strong> is given, store the plot to that file.
+<dd><p class="sd-card-text">Create a traditional beam value plot, i.e., moment and shear diagrams.</p>
+<p class="sd-card-text">If <strong>file</strong> is given, store the plot to that file.
 Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>variable_name</strong> – string code for variable</p></li>
-<li><p><strong>factor</strong> – displacement scaling factor</p></li>
-<li><p><strong>file</strong> – filename (str)</p></li>
+<li><p class="sd-card-text"><strong>variable_name</strong> – string code for variable</p></li>
+<li><p class="sd-card-text"><strong>factor</strong> – displacement scaling factor</p></li>
+<li><p class="sd-card-text"><strong>file</strong> – filename (str)</p></li>
 </ul>
 </dd>
 </dl>
@@ -141,14 +153,14 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.plotter.AbstractPlotter.AbstractPlotter.displacementPlot">
 <span class="sig-name descname"><span class="pre">displacementPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.AbstractPlotter.AbstractPlotter.displacementPlot" title="Link to this definition"></a></dt>
-<dd><p>Create a deformed system plot</p>
-<p>If <strong>file</strong> is given, store the plot to that file.
+<dd><p class="sd-card-text">Create a deformed system plot</p>
+<p class="sd-card-text">If <strong>file</strong> is given, store the plot to that file.
 Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>factor</strong> – displacement magnification factor</p></li>
-<li><p><strong>file</strong> – filename (str)</p></li>
+<li><p class="sd-card-text"><strong>factor</strong> – displacement magnification factor</p></li>
+<li><p class="sd-card-text"><strong>file</strong> – filename (str)</p></li>
 </ul>
 </dd>
 </dl>
@@ -159,7 +171,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <span class="sig-name descname"><span class="pre">setDisplacements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.AbstractPlotter.AbstractPlotter.setDisplacements" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>disp</strong> – </p>
+<dd class="field-odd"><p class="sd-card-text"><strong>disp</strong> – </p>
 </dd>
 </dl>
 </dd></dl>
@@ -167,12 +179,12 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.plotter.AbstractPlotter.AbstractPlotter.setMesh">
 <span class="sig-name descname"><span class="pre">setMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elems</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.AbstractPlotter.AbstractPlotter.setMesh" title="Link to this definition"></a></dt>
-<dd><p>Link the nodes and elements so the ElementPlotter can get information from them.</p>
+<dd><p class="sd-card-text">Link the nodes and elements so the ElementPlotter can get information from them.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nodes</strong> – list of node pointers</p></li>
-<li><p><strong>elements</strong> – list of element pointer</p></li>
+<li><p class="sd-card-text"><strong>nodes</strong> – list of node pointers</p></li>
+<li><p class="sd-card-text"><strong>elements</strong> – list of element pointer</p></li>
 </ul>
 </dd>
 </dl>
@@ -183,7 +195,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <span class="sig-name descname"><span class="pre">setNodalLoads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.AbstractPlotter.AbstractPlotter.setNodalLoads" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>P</strong> – list or tuple of nodal force vectors</p>
+<dd class="field-odd"><p class="sd-card-text"><strong>P</strong> – list or tuple of nodal force vectors</p>
 </dd>
 </dl>
 </dd></dl>
@@ -193,7 +205,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <span class="sig-name descname"><span class="pre">setReactions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">R</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.AbstractPlotter.AbstractPlotter.setReactions" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>R</strong> – list or tuple of nodal force vectors</p>
+<dd class="field-odd"><p class="sd-card-text"><strong>R</strong> – list or tuple of nodal force vectors</p>
 </dd>
 </dl>
 </dd></dl>
@@ -203,7 +215,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <span class="sig-name descname"><span class="pre">setValues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vals</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.AbstractPlotter.AbstractPlotter.setValues" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>vals</strong> – </p>
+<dd class="field-odd"><p class="sd-card-text"><strong>vals</strong> – </p>
 </dd>
 </dl>
 </dd></dl>
@@ -211,29 +223,29 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.plotter.AbstractPlotter.AbstractPlotter.set_axes_equal">
 <span class="sig-name descname"><span class="pre">set_axes_equal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.AbstractPlotter.AbstractPlotter.set_axes_equal" title="Link to this definition"></a></dt>
-<dd><p>Make axes of 3D plot have equal scale so that spheres appear as spheres,
+<dd><p class="sd-card-text">Make axes of 3D plot have equal scale so that spheres appear as spheres,
 cubes as cubes, etc..  This is one possible solution to Matplotlib’s
 ax.set_aspect(‘equal’) and ax.axis(‘equal’) not working for 3D.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ax</strong> – a matplotlib axis, e.g., as output from plt.gca().</p>
+<dd class="field-odd"><p class="sd-card-text"><strong>ax</strong> – a matplotlib axis, e.g., as output from plt.gca().</p>
 </dd>
 </dl>
-<p>Source of this method from: <a class="reference external" href="https://stackoverflow.com/questions/13685386/matplotlib-equal-unit-length-with-equal-aspect-ratio-z-axis-is-not-equal-to">https://stackoverflow.com/questions/13685386/matplotlib-equal-unit-length-with-equal-aspect-ratio-z-axis-is-not-equal-to</a></p>
+<p class="sd-card-text">Source of this method from: <a class="reference external" href="https://stackoverflow.com/questions/13685386/matplotlib-equal-unit-length-with-equal-aspect-ratio-z-axis-is-not-equal-to">https://stackoverflow.com/questions/13685386/matplotlib-equal-unit-length-with-equal-aspect-ratio-z-axis-is-not-equal-to</a></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.plotter.AbstractPlotter.AbstractPlotter.valuePlot">
 <span class="sig-name descname"><span class="pre">valuePlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deformed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.AbstractPlotter.AbstractPlotter.valuePlot" title="Link to this definition"></a></dt>
-<dd><p>Create a plot using colors to identify magnitude of internal force.</p>
-<p>If <strong>file</strong> is given, store the plot to that file.
+<dd><p class="sd-card-text">Create a plot using colors to identify magnitude of internal force.</p>
+<p class="sd-card-text">If <strong>file</strong> is given, store the plot to that file.
 Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>variable_name</strong> – string code for variable</p></li>
-<li><p><strong>deformed</strong> – True | <strong>False</strong></p></li>
-<li><p><strong>file</strong> – filename (str)</p></li>
+<li><p class="sd-card-text"><strong>variable_name</strong> – string code for variable</p></li>
+<li><p class="sd-card-text"><strong>deformed</strong> – True | <strong>False</strong></p></li>
+<li><p class="sd-card-text"><strong>file</strong> – filename (str)</p></li>
 </ul>
 </dd>
 </dl>
@@ -241,8 +253,14 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 
 </dd></dl>
 
-<section id="derived-classes">
-<h2>Derived Classes<a class="headerlink" href="#derived-classes" title="Link to this heading"></a></h2>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Derived Classes<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Plotter_class.html">Plotter class</a></li>
@@ -251,8 +269,8 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <li class="toctree-l1"><a class="reference internal" href="ElementPlotter3D_class.html">ElementPlotter3D class</a></li>
 </ul>
 </div>
-</section>
-</section>
+</div>
+</details></section>
 
 
            </div>
@@ -266,7 +284,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 24, 2024.
+      <span class="lastupdated">Last updated on Apr 26, 2024.
       </span></p>
   </div>
 

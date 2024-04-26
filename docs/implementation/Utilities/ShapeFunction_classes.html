@@ -11,6 +11,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
 
   
   <!--[if lt IE 9]>
@@ -22,6 +23,7 @@
         <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
         <script src="../../_static/doctools.js?v=888ff710"></script>
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -63,8 +65,10 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../implementation.html#utility-classes">Utility Classes</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="Integration_class.html">Integration classes</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Shape Function classes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#module-femedu.utilities.ShapeFunctions">Abstract Shape Function Class</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-femedu.utilities.LineShapes">Derived Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#femedu.utilities.ShapeFunctions.ShapeFunctions"><code class="docutils literal notranslate"><span class="pre">ShapeFunctions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#femedu.utilities.LineShapes.LineShapes"><code class="docutils literal notranslate"><span class="pre">LineShapes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#femedu.utilities.TriangleShapes.TriangleShapes"><code class="docutils literal notranslate"><span class="pre">TriangleShapes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#femedu.utilities.QuadShapes.QuadShapes"><code class="docutils literal notranslate"><span class="pre">QuadShapes</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../Plotter/Plot_Support_Classes.html">Plot Support classes</a></li>
@@ -136,111 +140,160 @@ over a quad-shaped domain, assuming a function
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Int_V g(s,t) Phi(s,t) dV = </span><span class="si">{</span><span class="n">F</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="module-femedu.utilities.ShapeFunctions">
-<span id="abstract-shape-function-class"></span><h2>Abstract Shape Function Class<a class="headerlink" href="#module-femedu.utilities.ShapeFunctions" title="Link to this heading"></a></h2>
-<dl class="py class">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Abstract Shape Function Class<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<dl class="py class" id="module-femedu.utilities.ShapeFunctions">
 <dt class="sig sig-object py" id="femedu.utilities.ShapeFunctions.ShapeFunctions">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.ShapeFunctions.</span></span><span class="sig-name descname"><span class="pre">ShapeFunctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.ShapeFunctions.ShapeFunctions" title="Link to this definition"></a></dt>
-<dd><p>Abstract parent class for shape functions or their
+<dd><p class="sd-card-text">Abstract parent class for shape functions or their
 n-th (mixed) derivative for various interpolation functions.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.utilities.ShapeFunctions.ShapeFunctions.shape">
 <span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argvs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.ShapeFunctions.ShapeFunctions.shape" title="Link to this definition"></a></dt>
-<dd><p>interface function to gets shape functions or their
+<dd><p class="sd-card-text">interface function to gets shape functions or their
 n-th derivative for various interpolation functions.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This is a virtual function that needs to be implemented
+<p class="sd-card-text">This is a virtual function that needs to be implemented
 by any subclass</p>
 </div>
 </dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="module-femedu.utilities.LineShapes">
-<span id="derived-classes"></span><h2>Derived Classes<a class="headerlink" href="#module-femedu.utilities.LineShapes" title="Link to this heading"></a></h2>
-<dl class="py class">
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Derived Classes<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Lines</label><div class="sd-tab-content docutils">
+<dl class="py class" id="module-femedu.utilities.LineShapes">
 <dt class="sig sig-object py" id="femedu.utilities.LineShapes.LineShapes">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.LineShapes.</span></span><span class="sig-name descname"><span class="pre">LineShapes</span></span><a class="headerlink" href="#femedu.utilities.LineShapes.LineShapes" title="Link to this definition"></a></dt>
-<dd><p>Shape functions or their n-th derivative
+<dd><p class="sd-card-text">Shape functions or their n-th derivative
 for one-dimensional domains <span class="math notranslate nohighlight">\([0,+1]\)</span>.</p>
-<p>Derivatives are with respect to the normalized coordinate and need to be scaled accordingly.</p>
+<p class="sd-card-text">Derivatives are with respect to the normalized coordinate and need to be scaled accordingly.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.utilities.LineShapes.LineShapes.shape">
 <span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Le</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.LineShapes.LineShapes.shape" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>order</strong> – polynomial order of the shape functions. Options: 0,1,2,3,4,5</p></li>
-<li><p><strong>xi</strong> – normalized location on interval [0,1]</p></li>
-<li><p><strong>n</strong> – return n-th derivative of the requested shape function</p></li>
-<li><p><strong>Le</strong> – element length; needed to correct for rotational dof</p></li>
+<li><p class="sd-card-text"><strong>order</strong> – polynomial order of the shape functions. Options: 0,1,2,3,4,5</p></li>
+<li><p class="sd-card-text"><strong>xi</strong> – normalized location on interval [0,1]</p></li>
+<li><p class="sd-card-text"><strong>n</strong> – return n-th derivative of the requested shape function</p></li>
+<li><p class="sd-card-text"><strong>Le</strong> – element length; needed to correct for rotational dof</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>PHI: a list of shape function values</p>
+<dd class="field-even"><p class="sd-card-text">PHI: a list of shape function values</p>
 </dd>
 </dl>
 </dd></dl>
 
 </dd></dl>
 
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Triangles</label><div class="sd-tab-content docutils">
 <dl class="py class" id="module-femedu.utilities.TriangleShapes">
 <dt class="sig sig-object py" id="femedu.utilities.TriangleShapes.TriangleShapes">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.TriangleShapes.</span></span><span class="sig-name descname"><span class="pre">TriangleShapes</span></span><a class="headerlink" href="#femedu.utilities.TriangleShapes.TriangleShapes" title="Link to this definition"></a></dt>
-<dd><p>Shape functions or their <cite>*n-th</cite> mixed derivative
+<dd><p class="sd-card-text">Shape functions or their <cite>*n-th</cite> mixed derivative
 for the unit-triangle (two-dimensional domain <span class="math notranslate nohighlight">\((s,t)\in[0,+1]\times[0,+1]\)</span> with <span class="math notranslate nohighlight">\(s+t\le +1\)</span>).</p>
-<p>Derivatives are with respect to the normalized coordinate and need to be scaled accordingly.</p>
+<p class="sd-card-text">Derivatives are with respect to the normalized coordinate and need to be scaled accordingly.</p>
+<p class="sd-card-text">Triangle shape functions are commonly formulated in triangle coordinates <span class="math notranslate nohighlight">\((\xi_1,\xi_2,\xi_3)\)</span>
+where <span class="math notranslate nohighlight">\(\xi_1+\xi_2+\xi_3=1\)</span>.  This implementation uses
+<span class="math notranslate nohighlight">\(s\to\xi_1\)</span> and <span class="math notranslate nohighlight">\(t\to\xi_2\)</span>. The third component is implicitly computed as <span class="math notranslate nohighlight">\(\xi_3=1-\xi_1-\xi_2\)</span>.
+The derivatives are returned as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{rcl}
+   \frac{\partial }{\partial s} &amp;=&amp; \frac{\partial }{\partial \xi_1} - \frac{\partial }{\partial \xi_3} \\[2ex]
+   \frac{\partial }{\partial t} &amp;=&amp; \frac{\partial }{\partial \xi_2} - \frac{\partial }{\partial \xi_3}
+\end{array}\end{split}\]</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.utilities.TriangleShapes.TriangleShapes.shape">
 <span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.TriangleShapes.TriangleShapes.shape" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>order</strong> – polynomial order of the shape functions. Options: 0,1,2,</p></li>
-<li><p><strong>s</strong> (<em>float</em><em> or </em><em>np.array</em>) – first coordinate of point of interest on interval [-1,1]</p></li>
-<li><p><strong>t</strong> (<em>float</em><em> or </em><em>np.array</em>) – second coordinate location on interval [-1,1]</p></li>
-<li><p><strong>n</strong> – return n-th derivative of the requested shape function.</p></li>
+<li><p class="sd-card-text"><strong>order</strong> – polynomial order of the shape functions. Options: 0,1,2,</p></li>
+<li><p class="sd-card-text"><strong>s</strong> (<em>float</em><em> or </em><em>np.array</em>) – first coordinate of point of interest on interval [-1,1]</p></li>
+<li><p class="sd-card-text"><strong>t</strong> (<em>float</em><em> or </em><em>np.array</em>) – second coordinate location on interval [-1,1]</p></li>
+<li><p class="sd-card-text"><strong>n</strong> – return n-th derivative of the requested shape function.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>PHI: a list of shape function values</p>
+<dd class="field-even"><p class="sd-card-text">PHI: a list of shape function values</p>
 </dd>
 </dl>
 </dd></dl>
 
 </dd></dl>
 
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Quads</label><div class="sd-tab-content docutils">
 <dl class="py class" id="module-femedu.utilities.QuadShapes">
 <dt class="sig sig-object py" id="femedu.utilities.QuadShapes.QuadShapes">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.QuadShapes.</span></span><span class="sig-name descname"><span class="pre">QuadShapes</span></span><a class="headerlink" href="#femedu.utilities.QuadShapes.QuadShapes" title="Link to this definition"></a></dt>
-<dd><p>Shape functions or their <code class="code docutils literal notranslate"><span class="pre">*n-th</span></code> mixed derivative
+<dd><p class="sd-card-text">Shape functions or their <code class="code docutils literal notranslate"><span class="pre">*n-th</span></code> mixed derivative
 for the bi-unit-square (two-dimensional domain <span class="math notranslate nohighlight">\((s,t)\in[-1,+1]\times[-1,+1]\)</span>.</p>
-<p>Derivatives are with respect to the normalized coordinate and need to be scaled accordingly.</p>
+<p class="sd-card-text">Derivatives are with respect to the normalized coordinate and need to be scaled accordingly.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.utilities.QuadShapes.QuadShapes.shape">
 <span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serendipity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.QuadShapes.QuadShapes.shape" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>order</strong> – polynomial order of the shape functions. Options: 0,1,2,</p></li>
-<li><p><strong>s</strong> (<em>float</em><em> or </em><em>np.array</em>) – first coordinate of point of interest on interval [-1,1]</p></li>
-<li><p><strong>t</strong> (<em>float</em><em> or </em><em>np.array</em>) – second coordinate location on interval [-1,1]</p></li>
-<li><p><strong>n</strong> – return n-th derivative of the requested shape function.</p></li>
-<li><p><strong>serendipity</strong> (<em>bool</em>) – set to <strong>True</strong> for 8-node serendipity or <strong>False</strong> for bi-quadratic (9-node) quads.</p></li>
+<li><p class="sd-card-text"><strong>order</strong> – polynomial order of the shape functions. Options: 0,1,2,</p></li>
+<li><p class="sd-card-text"><strong>s</strong> (<em>float</em><em> or </em><em>np.array</em>) – first coordinate of point of interest on interval [-1,1]</p></li>
+<li><p class="sd-card-text"><strong>t</strong> (<em>float</em><em> or </em><em>np.array</em>) – second coordinate location on interval [-1,1]</p></li>
+<li><p class="sd-card-text"><strong>n</strong> – return n-th derivative of the requested shape function.</p></li>
+<li><p class="sd-card-text"><strong>serendipity</strong> (<em>bool</em>) – set to <strong>True</strong> for 8-node serendipity or <strong>False</strong> for bi-quadratic (9-node) quads.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>PHI: a list of shape function values</p>
+<dd class="field-even"><p class="sd-card-text">PHI: a list of shape function values</p>
 </dd>
 </dl>
 </dd></dl>
 
 </dd></dl>
 
-</section>
-</section>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Tetrahedrals</label><div class="sd-tab-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">This functionality is not yet available.</p>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Bricks</label><div class="sd-tab-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">This functionality is not yet available.</p>
+</div>
+</div>
+</div>
+</div>
+</details></section>
 
 
            </div>
@@ -254,7 +307,7 @@ for the bi-unit-square (two-dimensional domain <span class="math notranslate noh
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 24, 2024.
+      <span class="lastupdated">Last updated on Apr 26, 2024.
       </span></p>
   </div>
 

@@ -11,6 +11,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
 
   
   <!--[if lt IE 9]>
@@ -22,10 +23,11 @@
         <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
         <script src="../../_static/doctools.js?v=888ff710"></script>
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Patch test for triangular plate under in-plane loading" href="plot_plate03.html" />
+    <link rel="next" title="A square patch made of two triangular plate elements" href="plot_plate02b.html" />
     <link rel="prev" title="A square patch made of two triangular plate elements" href="plot_plate01.html" /> 
 </head>
 
@@ -69,6 +71,7 @@
 <li class="toctree-l4"><a class="reference internal" href="plot_benchmark01.html">Benchmark problem: Wedged Plate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate01.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">A square patch made of two triangular plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate02b.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate03.html">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate04.html">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate05.html">Pulling a plate with a circular hole : using triangles</a></li>
@@ -125,9 +128,15 @@ to download the full example code</p>
 <section class="sphx-glr-example-title" id="a-square-patch-made-of-two-triangular-plate-elements">
 <span id="sphx-glr-auto-examples-plates-plot-plate02-py"></span><h1>A square patch made of two triangular plate elements<a class="headerlink" href="#a-square-patch-made-of-two-triangular-plate-elements" title="Link to this heading"></a></h1>
 <dl class="simple">
-<dt>Basic implementation test with applied loads.</dt><dd><p>Testing the tangent stiffness computation.</p>
+<dt>Basic implementation test with applied loads.</dt><dd><p>Testing the tangent stiffness computation
+for a <code class="xref py py-func docutils literal notranslate"><span class="pre">Triangle()</span></code> (using linear shape functions).</p>
 </dd>
 </dl>
+<p>Using</p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">elements.linear.Triangle</span></code> (see <a class="reference internal" href="../../implementation/Elements/Triangle_class.html#triangle-class"><span class="std std-ref">Triangle class</span></a>)</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">materials.PlaneStress</span></code>  (see <a class="reference internal" href="../../implementation/Materials/PlaneStress.html#plane-stress-material-class"><span class="std std-ref">PlaneStress material class</span></a>)</p></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">free</span>   <span class="n">free</span>
  <span class="o">^</span>     <span class="o">^</span>
  <span class="o">|</span>     <span class="o">|</span>
@@ -253,35 +262,35 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_586:
+  Node_633:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0. 0.]
-  Node_587:
+  Node_634:
       x:    [10.  0.]
       fix:  [&#39;uy&#39;]
       u:    [1. 0.]
-  Node_588:
+  Node_635:
       x:    [10. 10.]
       u:    [ 1.  -0.3]
-  Node_589:
+  Node_636:
       x:    [ 0. 10.]
       fix:  [&#39;ux&#39;]
       u:    [ 0.  -0.3]
 
 Elements:
 ---------------------
-  Triangle_845: nodes ( Node_586 Node_587 Node_589 )
+  Triangle_917: nodes ( Node_633 Node_634 Node_636 )
       material: PlaneStress
       strain: xx=1.000e-01 yy=-3.000e-02 xy=0.000e+00 zz=-2.100e-02
       stress: xx=1.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_846: nodes ( Node_588 Node_589 Node_587 )
+  Triangle_918: nodes ( Node_635 Node_636 Node_634 )
       material: PlaneStress
       strain: xx=1.000e-01 yy=-3.000e-02 xy=1.776e-16 zz=-2.100e-02
       stress: xx=1.000e+00 yy=2.442e-15 xy=6.832e-16 zz=0.000e+00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.236 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.252 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate02-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/df3f5fcf7b831986fc3aa1479c9d6d16/plot_plate02.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate02.ipynb</span></code></a></p>
@@ -298,14 +307,14 @@ Elements:
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="plot_plate01.html" class="btn btn-neutral float-left" title="A square patch made of two triangular plate elements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="plot_plate03.html" class="btn btn-neutral float-right" title="Patch test for triangular plate under in-plane loading" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="plot_plate02b.html" class="btn btn-neutral float-right" title="A square patch made of two triangular plate elements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 24, 2024.
+      <span class="lastupdated">Last updated on Apr 26, 2024.
       </span></p>
   </div>
 

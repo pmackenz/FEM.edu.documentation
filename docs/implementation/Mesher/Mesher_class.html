@@ -11,6 +11,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
 
   
   <!--[if lt IE 9]>
@@ -22,6 +23,7 @@
         <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
         <script src="../../_static/doctools.js?v=888ff710"></script>
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -63,7 +65,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../Materials/Material_class.html">Material class</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Mesher classes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#femedu.mesher.Mesher.Mesher"><code class="docutils literal notranslate"><span class="pre">Mesher</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#derived-classes">Derived Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CurveMesher_class.html">CurveMesher class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PatchMesher_class.html">PatchMesher class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TriPatchMesher_class.html">TriPatchMesher class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SolidMesher_class.html">SolidMesher class</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../Domain/Node_class.html">Node class</a></li>
@@ -113,22 +118,29 @@
 <p>Meshers are currently under development but not yet available with the distribution.
 Stay tuned for updates.</p>
 </div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Mesher base class<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <dl class="py class" id="module-femedu.mesher.Mesher">
 <dt class="sig sig-object py" id="femedu.mesher.Mesher.Mesher">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.mesher.Mesher.</span></span><span class="sig-name descname"><span class="pre">Mesher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">pts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher" title="Link to this definition"></a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="femedu.mesher.Mesher.Mesher.brickMesh">
 <span class="sig-name descname"><span class="pre">brickMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NeX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeZ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.brickMesh" title="Link to this definition"></a></dt>
-<dd><p>Solid mesher using brick elements</p>
-<p>This is an abstract class - requires implementation in subclass</p>
+<dd><p class="sd-card-text">Solid mesher using brick elements</p>
+<p class="sd-card-text">This is an abstract class - requires implementation in subclass</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>NeX</strong> (<em>int</em>) – number of elements along the first axis</p></li>
-<li><p><strong>NeY</strong> (<em>int</em>) – number of elements along the second axis</p></li>
-<li><p><strong>NeZ</strong> (<em>int</em>) – number of elements along the third axis</p></li>
-<li><p><strong>element_type</strong> – compatible element type</p></li>
-<li><p><strong>material</strong> – a material object</p></li>
+<li><p class="sd-card-text"><strong>NeX</strong> (<em>int</em>) – number of elements along the first axis</p></li>
+<li><p class="sd-card-text"><strong>NeY</strong> (<em>int</em>) – number of elements along the second axis</p></li>
+<li><p class="sd-card-text"><strong>NeZ</strong> (<em>int</em>) – number of elements along the third axis</p></li>
+<li><p class="sd-card-text"><strong>element_type</strong> – compatible element type</p></li>
+<li><p class="sd-card-text"><strong>material</strong> – a material object</p></li>
 </ul>
 </dd>
 </dl>
@@ -137,14 +149,14 @@ Stay tuned for updates.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.mesher.Mesher.Mesher.lineMesh">
 <span class="sig-name descname"><span class="pre">lineMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NeX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.lineMesh" title="Link to this definition"></a></dt>
-<dd><p>nD mesher using line elements</p>
-<p>This is an abstract class - requires implementation in subclass</p>
+<dd><p class="sd-card-text">nD mesher using line elements</p>
+<p class="sd-card-text">This is an abstract class - requires implementation in subclass</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>NeX</strong> (<em>int</em>) – number of elements along the curve</p></li>
-<li><p><strong>element_type</strong> – compatible element type</p></li>
-<li><p><strong>material</strong> – a material object</p></li>
+<li><p class="sd-card-text"><strong>NeX</strong> (<em>int</em>) – number of elements along the curve</p></li>
+<li><p class="sd-card-text"><strong>element_type</strong> – compatible element type</p></li>
+<li><p class="sd-card-text"><strong>material</strong> – a material object</p></li>
 </ul>
 </dd>
 </dl>
@@ -153,15 +165,15 @@ Stay tuned for updates.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.mesher.Mesher.Mesher.quadMesh">
 <span class="sig-name descname"><span class="pre">quadMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NeX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.quadMesh" title="Link to this definition"></a></dt>
-<dd><p>2D mesher using quadrilateral elements</p>
-<p>This is an abstract class - requires implementation in subclass</p>
+<dd><p class="sd-card-text">2D mesher using quadrilateral elements</p>
+<p class="sd-card-text">This is an abstract class - requires implementation in subclass</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>NeX</strong> (<em>int</em>) – number of elements along the first axis</p></li>
-<li><p><strong>NeY</strong> (<em>int</em>) – number of elements along the second axis</p></li>
-<li><p><strong>element_type</strong> – compatible element type</p></li>
-<li><p><strong>material</strong> – a material object</p></li>
+<li><p class="sd-card-text"><strong>NeX</strong> (<em>int</em>) – number of elements along the first axis</p></li>
+<li><p class="sd-card-text"><strong>NeY</strong> (<em>int</em>) – number of elements along the second axis</p></li>
+<li><p class="sd-card-text"><strong>element_type</strong> – compatible element type</p></li>
+<li><p class="sd-card-text"><strong>material</strong> – a material object</p></li>
 </ul>
 </dd>
 </dl>
@@ -173,8 +185,8 @@ Stay tuned for updates.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dx</strong> – move patch to the right</p></li>
-<li><p><strong>dy</strong> – move patch up</p></li>
+<li><p class="sd-card-text"><strong>dx</strong> – move patch to the right</p></li>
+<li><p class="sd-card-text"><strong>dy</strong> – move patch up</p></li>
 </ul>
 </dd>
 </dl>
@@ -183,16 +195,16 @@ Stay tuned for updates.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.mesher.Mesher.Mesher.tetMesh">
 <span class="sig-name descname"><span class="pre">tetMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NeX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeZ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.tetMesh" title="Link to this definition"></a></dt>
-<dd><p>Solid mesher using tetrahedral elements</p>
-<p>This is an abstract class - requires implementation in subclass</p>
+<dd><p class="sd-card-text">Solid mesher using tetrahedral elements</p>
+<p class="sd-card-text">This is an abstract class - requires implementation in subclass</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>NeX</strong> (<em>int</em>) – number of elements along the first axis</p></li>
-<li><p><strong>NeY</strong> (<em>int</em>) – number of elements along the second axis</p></li>
-<li><p><strong>NeZ</strong> (<em>int</em>) – number of elements along the third axis</p></li>
-<li><p><strong>element_type</strong> – compatible element type</p></li>
-<li><p><strong>material</strong> – a material object</p></li>
+<li><p class="sd-card-text"><strong>NeX</strong> (<em>int</em>) – number of elements along the first axis</p></li>
+<li><p class="sd-card-text"><strong>NeY</strong> (<em>int</em>) – number of elements along the second axis</p></li>
+<li><p class="sd-card-text"><strong>NeZ</strong> (<em>int</em>) – number of elements along the third axis</p></li>
+<li><p class="sd-card-text"><strong>element_type</strong> – compatible element type</p></li>
+<li><p class="sd-card-text"><strong>material</strong> – a material object</p></li>
 </ul>
 </dd>
 </dl>
@@ -201,12 +213,12 @@ Stay tuned for updates.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.mesher.Mesher.Mesher.tie">
 <span class="sig-name descname"><span class="pre">tie</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.tie" title="Link to this definition"></a></dt>
-<dd><p>Check nodes of <strong>other</strong> Mesher object for (near) identical
+<dd><p class="sd-card-text">Check nodes of <strong>other</strong> Mesher object for (near) identical
 location to any node in this Mesher object.  If overlap is identified, make the
 node in <strong>other</strong> a follower of the respective node in this Mesher.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>other</strong> – Mesher instance</p>
+<dd class="field-odd"><p class="sd-card-text"><strong>other</strong> – Mesher instance</p>
 </dd>
 </dl>
 </dd></dl>
@@ -214,15 +226,15 @@ node in <strong>other</strong> a follower of the respective node in this Mesher.
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.mesher.Mesher.Mesher.triangleMesh">
 <span class="sig-name descname"><span class="pre">triangleMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">NeX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">NeY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.Mesher.Mesher.triangleMesh" title="Link to this definition"></a></dt>
-<dd><p>2D mesher using triangular elements</p>
-<p>This is an abstract class - requires implementation in subclass</p>
+<dd><p class="sd-card-text">2D mesher using triangular elements</p>
+<p class="sd-card-text">This is an abstract class - requires implementation in subclass</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>NeX</strong> (<em>int</em>) – number of elements along the first axis</p></li>
-<li><p><strong>NeY</strong> (<em>int</em>) – number of elements along the second axis</p></li>
-<li><p><strong>element_type</strong> – compatible element type</p></li>
-<li><p><strong>material</strong> – a material object</p></li>
+<li><p class="sd-card-text"><strong>NeX</strong> (<em>int</em>) – number of elements along the first axis</p></li>
+<li><p class="sd-card-text"><strong>NeY</strong> (<em>int</em>) – number of elements along the second axis</p></li>
+<li><p class="sd-card-text"><strong>element_type</strong> – compatible element type</p></li>
+<li><p class="sd-card-text"><strong>material</strong> – a material object</p></li>
 </ul>
 </dd>
 </dl>
@@ -230,8 +242,14 @@ node in <strong>other</strong> a follower of the respective node in this Mesher.
 
 </dd></dl>
 
-<section id="derived-classes">
-<h2>Derived Classes<a class="headerlink" href="#derived-classes" title="Link to this heading"></a></h2>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Derived Classes<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="CurveMesher_class.html">CurveMesher class</a></li>
@@ -240,8 +258,8 @@ node in <strong>other</strong> a follower of the respective node in this Mesher.
 <li class="toctree-l1"><a class="reference internal" href="SolidMesher_class.html">SolidMesher class</a></li>
 </ul>
 </div>
-</section>
-</section>
+</div>
+</details></section>
 
 
            </div>
@@ -255,7 +273,7 @@ node in <strong>other</strong> a follower of the respective node in this Mesher.
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 24, 2024.
+      <span class="lastupdated">Last updated on Apr 26, 2024.
       </span></p>
   </div>
 

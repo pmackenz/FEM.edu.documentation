@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:05.640** total execution time for 4 files **from auto_examples/frames**:
+**00:05.118** total execution time for 4 files **from auto_examples/frames**:
 
 .. container::
 
@@ -33,14 +33,14 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_auto_examples_frames_plot_frame04.py` (``plot_frame04.py``)
-     - 00:03.342
+     - 00:02.778
      - 0.0
    * - :ref:`sphx_glr_auto_examples_frames_plot_frame01.py` (``plot_frame01.py``)
-     - 00:00.897
+     - 00:00.940
      - 0.0
    * - :ref:`sphx_glr_auto_examples_frames_plot_frame03.py` (``plot_frame03.py``)
-     - 00:00.872
+     - 00:00.860
      - 0.0
    * - :ref:`sphx_glr_auto_examples_frames_plot_frame02.py` (``plot_frame02.py``)
-     - 00:00.530
+     - 00:00.540
      - 0.0

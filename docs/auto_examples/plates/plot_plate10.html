@@ -11,6 +11,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
 
   
   <!--[if lt IE 9]>
@@ -22,6 +23,7 @@
         <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
         <script src="../../_static/doctools.js?v=888ff710"></script>
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -69,6 +71,7 @@
 <li class="toctree-l4"><a class="reference internal" href="plot_benchmark01.html">Benchmark problem: Wedged Plate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate01.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate02.html">A square patch made of two triangular plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate02b.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate03.html">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate04.html">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate05.html">Pulling a plate with a circular hole : using triangles</a></li>
@@ -258,167 +261,167 @@ to download the full example code</p>
         <span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;ex.run()&#39;</span><span class="p">,</span><span class="s1">&#39;profile_data_full.txt&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Node_1422 [120.   0.]
-+ Elem_1862
-+ Elem_1863 1863.2 : [[2. 0.]]
-Node_1483 [120.   2.]
-+ Elem_1863 1863.2 : [[2. 0.]]
-+ Elem_1982
-+ Elem_1983 1983.2 : [[2.00000000e+00 1.42108547e-14]]
-Node_1544 [120.   4.]
-+ Elem_1983 1983.2 : [[2.00000000e+00 1.42108547e-14]]
-+ Elem_2102
-+ Elem_2103 2103.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-Node_1605 [120.   6.]
-+ Elem_2103 2103.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-+ Elem_2222
-+ Elem_2223 2223.2 : [[2. 0.]]
-Node_1666 [120.   8.]
-+ Elem_2223 2223.2 : [[2. 0.]]
-+ Elem_2342
-+ Elem_2343 2343.2 : [[2. 0.]]
-Node_1727 [120.  10.]
-+ Elem_2343 2343.2 : [[2. 0.]]
-+ Elem_2462
-+ Elem_2463 2463.2 : [[2. 0.]]
-Node_1788 [120.  12.]
-+ Elem_2463 2463.2 : [[2. 0.]]
-+ Elem_2582
-+ Elem_2583 2583.2 : [[2. 0.]]
-Node_1849 [120.  14.]
-+ Elem_2583 2583.2 : [[2. 0.]]
-+ Elem_2702
-+ Elem_2703 2703.2 : [[2. 0.]]
-Node_1910 [120.  16.]
-+ Elem_2703 2703.2 : [[2. 0.]]
-+ Elem_2822
-+ Elem_2823 2823.2 : [[2. 0.]]
-Node_1971 [120.  18.]
-+ Elem_2823 2823.2 : [[2. 0.]]
-+ Elem_2942
-+ Elem_2943 2943.2 : [[2. 0.]]
-Node_2032 [120.  20.]
-+ Elem_2943 2943.2 : [[2. 0.]]
-+ Elem_3062
-+ Elem_3063 3063.2 : [[2. 0.]]
-Node_2093 [120.  22.]
-+ Elem_3063 3063.2 : [[2. 0.]]
-+ Elem_3182
-+ Elem_3183 3183.2 : [[2. 0.]]
-Node_2154 [120.  24.]
-+ Elem_3183 3183.2 : [[2. 0.]]
-+ Elem_3302
-+ Elem_3303 3303.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-Node_2215 [120.  26.]
-+ Elem_3303 3303.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-+ Elem_3422
-+ Elem_3423 3423.2 : [[2.00000000e+00 2.84217094e-14]]
-Node_2276 [120.  28.]
-+ Elem_3423 3423.2 : [[2.00000000e+00 2.84217094e-14]]
-+ Elem_3542
-+ Elem_3543 3543.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-Node_2337 [120.  30.]
-+ Elem_3543 3543.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-+ Elem_3662
-+ Elem_3663 3663.2 : [[2.00000000e+00 1.42108547e-14]]
-Node_2398 [120.  32.]
-+ Elem_3663 3663.2 : [[2.00000000e+00 1.42108547e-14]]
-+ Elem_3782
-+ Elem_3783 3783.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-Node_2459 [120.  34.]
-+ Elem_3783 3783.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-+ Elem_3902
-+ Elem_3903 3903.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-Node_2520 [120.  36.]
-+ Elem_3903 3903.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-+ Elem_4022
-+ Elem_4023 4023.2 : [[2.00000000e+00 2.84217094e-14]]
-Node_2581 [120.  38.]
-+ Elem_4023 4023.2 : [[2.00000000e+00 2.84217094e-14]]
-+ Elem_4142
-+ Elem_4143 4143.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-Node_2642 [120.  40.]
-+ Elem_4143 4143.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-+ Elem_4262
-+ Elem_4263 4263.2 : [[2.00000000e+00 1.42108547e-14]]
-Node_2703 [120.  42.]
-+ Elem_4263 4263.2 : [[2.00000000e+00 1.42108547e-14]]
-+ Elem_4382
-+ Elem_4383 4383.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-Node_2764 [120.  44.]
-+ Elem_4383 4383.2 : [[ 2.00000000e+00 -1.42108547e-14]]
-+ Elem_4502
-+ Elem_4503 4503.2 : [[2. 0.]]
-Node_2825 [120.  46.]
-+ Elem_4503 4503.2 : [[2. 0.]]
-+ Elem_4622
-+ Elem_4623 4623.2 : [[2. 0.]]
-Node_2886 [120.  48.]
-+ Elem_4623 4623.2 : [[2. 0.]]
-+ Elem_4742
-+ Elem_4743 4743.2 : [[2. 0.]]
-Node_2947 [120.  50.]
-+ Elem_4743 4743.2 : [[2. 0.]]
-+ Elem_4862
-+ Elem_4863 4863.2 : [[2. 0.]]
-Node_3008 [120.  52.]
-+ Elem_4863 4863.2 : [[2. 0.]]
-+ Elem_4982
-+ Elem_4983 4983.2 : [[2. 0.]]
-Node_3069 [120.  54.]
-+ Elem_4983 4983.2 : [[2. 0.]]
-+ Elem_5102
-+ Elem_5103 5103.2 : [[2. 0.]]
-Node_3130 [120.  56.]
-+ Elem_5103 5103.2 : [[2. 0.]]
-+ Elem_5222
-+ Elem_5223 5223.2 : [[2. 0.]]
-Node_3191 [120.  58.]
-+ Elem_5223 5223.2 : [[2. 0.]]
-+ Elem_5342
-+ Elem_5343 5343.2 : [[2. 0.]]
-Node_3252 [120.  60.]
-+ Elem_5343 5343.2 : [[2. 0.]]
-+ Elem_5462
-+ Elem_5463 5463.2 : [[2. 0.]]
-Node_3313 [120.  62.]
-+ Elem_5463 5463.2 : [[2. 0.]]
-+ Elem_5582
-+ Elem_5583 5583.2 : [[2. 0.]]
-Node_3374 [120.  64.]
-+ Elem_5583 5583.2 : [[2. 0.]]
-+ Elem_5702
-+ Elem_5703 5703.2 : [[2.00000000e+00 2.84217094e-14]]
-Node_3435 [120.  66.]
-+ Elem_5703 5703.2 : [[2.00000000e+00 2.84217094e-14]]
-+ Elem_5822
-+ Elem_5823 5823.2 : [[ 2.00000000e+00 -2.84217094e-14]]
-Node_3496 [120.  68.]
-+ Elem_5823 5823.2 : [[ 2.00000000e+00 -2.84217094e-14]]
-+ Elem_5942
-+ Elem_5943 5943.2 : [[2. 0.]]
-Node_3557 [120.  70.]
-+ Elem_5943 5943.2 : [[2. 0.]]
-+ Elem_6062
-+ Elem_6063 6063.2 : [[2. 0.]]
-Node_3618 [120.  72.]
-+ Elem_6063 6063.2 : [[2. 0.]]
-+ Elem_6182
-+ Elem_6183 6183.2 : [[2. 0.]]
-Node_3679 [120.  74.]
-+ Elem_6183 6183.2 : [[2. 0.]]
-+ Elem_6302
-+ Elem_6303 6303.2 : [[2. 0.]]
-Node_3740 [120.  76.]
-+ Elem_6303 6303.2 : [[2. 0.]]
-+ Elem_6422
-+ Elem_6423 6423.2 : [[2. 0.]]
-Node_3801 [120.  78.]
-+ Elem_6423 6423.2 : [[2. 0.]]
-+ Elem_6542
-+ Elem_6543 6543.2 : [[2. 0.]]
-Node_3862 [120.  80.]
-+ Elem_6543 6543.2 : [[2. 0.]]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Node_1478 [120.   0.]
++ Elem_1936
++ Elem_1937 1937.2 : [[2. 0.]]
+Node_1539 [120.   2.]
++ Elem_1937 1937.2 : [[2. 0.]]
++ Elem_2056
++ Elem_2057 2057.2 : [[2.00000000e+00 1.42108547e-14]]
+Node_1600 [120.   4.]
++ Elem_2057 2057.2 : [[2.00000000e+00 1.42108547e-14]]
++ Elem_2176
++ Elem_2177 2177.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_1661 [120.   6.]
++ Elem_2177 2177.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_2296
++ Elem_2297 2297.2 : [[2. 0.]]
+Node_1722 [120.   8.]
++ Elem_2297 2297.2 : [[2. 0.]]
++ Elem_2416
++ Elem_2417 2417.2 : [[2. 0.]]
+Node_1783 [120.  10.]
++ Elem_2417 2417.2 : [[2. 0.]]
++ Elem_2536
++ Elem_2537 2537.2 : [[2. 0.]]
+Node_1844 [120.  12.]
++ Elem_2537 2537.2 : [[2. 0.]]
++ Elem_2656
++ Elem_2657 2657.2 : [[2. 0.]]
+Node_1905 [120.  14.]
++ Elem_2657 2657.2 : [[2. 0.]]
++ Elem_2776
++ Elem_2777 2777.2 : [[2. 0.]]
+Node_1966 [120.  16.]
++ Elem_2777 2777.2 : [[2. 0.]]
++ Elem_2896
++ Elem_2897 2897.2 : [[2. 0.]]
+Node_2027 [120.  18.]
++ Elem_2897 2897.2 : [[2. 0.]]
++ Elem_3016
++ Elem_3017 3017.2 : [[2. 0.]]
+Node_2088 [120.  20.]
++ Elem_3017 3017.2 : [[2. 0.]]
++ Elem_3136
++ Elem_3137 3137.2 : [[2. 0.]]
+Node_2149 [120.  22.]
++ Elem_3137 3137.2 : [[2. 0.]]
++ Elem_3256
++ Elem_3257 3257.2 : [[2. 0.]]
+Node_2210 [120.  24.]
++ Elem_3257 3257.2 : [[2. 0.]]
++ Elem_3376
++ Elem_3377 3377.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_2271 [120.  26.]
++ Elem_3377 3377.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_3496
++ Elem_3497 3497.2 : [[2.00000000e+00 2.84217094e-14]]
+Node_2332 [120.  28.]
++ Elem_3497 3497.2 : [[2.00000000e+00 2.84217094e-14]]
++ Elem_3616
++ Elem_3617 3617.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_2393 [120.  30.]
++ Elem_3617 3617.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_3736
++ Elem_3737 3737.2 : [[2.00000000e+00 1.42108547e-14]]
+Node_2454 [120.  32.]
++ Elem_3737 3737.2 : [[2.00000000e+00 1.42108547e-14]]
++ Elem_3856
++ Elem_3857 3857.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_2515 [120.  34.]
++ Elem_3857 3857.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_3976
++ Elem_3977 3977.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_2576 [120.  36.]
++ Elem_3977 3977.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_4096
++ Elem_4097 4097.2 : [[2.00000000e+00 2.84217094e-14]]
+Node_2637 [120.  38.]
++ Elem_4097 4097.2 : [[2.00000000e+00 2.84217094e-14]]
++ Elem_4216
++ Elem_4217 4217.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_2698 [120.  40.]
++ Elem_4217 4217.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_4336
++ Elem_4337 4337.2 : [[2.00000000e+00 1.42108547e-14]]
+Node_2759 [120.  42.]
++ Elem_4337 4337.2 : [[2.00000000e+00 1.42108547e-14]]
++ Elem_4456
++ Elem_4457 4457.2 : [[ 2.00000000e+00 -1.42108547e-14]]
+Node_2820 [120.  44.]
++ Elem_4457 4457.2 : [[ 2.00000000e+00 -1.42108547e-14]]
++ Elem_4576
++ Elem_4577 4577.2 : [[2. 0.]]
+Node_2881 [120.  46.]
++ Elem_4577 4577.2 : [[2. 0.]]
++ Elem_4696
++ Elem_4697 4697.2 : [[2. 0.]]
+Node_2942 [120.  48.]
++ Elem_4697 4697.2 : [[2. 0.]]
++ Elem_4816
++ Elem_4817 4817.2 : [[2. 0.]]
+Node_3003 [120.  50.]
++ Elem_4817 4817.2 : [[2. 0.]]
++ Elem_4936
++ Elem_4937 4937.2 : [[2. 0.]]
+Node_3064 [120.  52.]
++ Elem_4937 4937.2 : [[2. 0.]]
++ Elem_5056
++ Elem_5057 5057.2 : [[2. 0.]]
+Node_3125 [120.  54.]
++ Elem_5057 5057.2 : [[2. 0.]]
++ Elem_5176
++ Elem_5177 5177.2 : [[2. 0.]]
+Node_3186 [120.  56.]
++ Elem_5177 5177.2 : [[2. 0.]]
++ Elem_5296
++ Elem_5297 5297.2 : [[2. 0.]]
+Node_3247 [120.  58.]
++ Elem_5297 5297.2 : [[2. 0.]]
++ Elem_5416
++ Elem_5417 5417.2 : [[2. 0.]]
+Node_3308 [120.  60.]
++ Elem_5417 5417.2 : [[2. 0.]]
++ Elem_5536
++ Elem_5537 5537.2 : [[2. 0.]]
+Node_3369 [120.  62.]
++ Elem_5537 5537.2 : [[2. 0.]]
++ Elem_5656
++ Elem_5657 5657.2 : [[2. 0.]]
+Node_3430 [120.  64.]
++ Elem_5657 5657.2 : [[2. 0.]]
++ Elem_5776
++ Elem_5777 5777.2 : [[2.00000000e+00 2.84217094e-14]]
+Node_3491 [120.  66.]
++ Elem_5777 5777.2 : [[2.00000000e+00 2.84217094e-14]]
++ Elem_5896
++ Elem_5897 5897.2 : [[ 2.00000000e+00 -2.84217094e-14]]
+Node_3552 [120.  68.]
++ Elem_5897 5897.2 : [[ 2.00000000e+00 -2.84217094e-14]]
++ Elem_6016
++ Elem_6017 6017.2 : [[2. 0.]]
+Node_3613 [120.  70.]
++ Elem_6017 6017.2 : [[2. 0.]]
++ Elem_6136
++ Elem_6137 6137.2 : [[2. 0.]]
+Node_3674 [120.  72.]
++ Elem_6137 6137.2 : [[2. 0.]]
++ Elem_6256
++ Elem_6257 6257.2 : [[2. 0.]]
+Node_3735 [120.  74.]
++ Elem_6257 6257.2 : [[2. 0.]]
++ Elem_6376
++ Elem_6377 6377.2 : [[2. 0.]]
+Node_3796 [120.  76.]
++ Elem_6377 6377.2 : [[2. 0.]]
++ Elem_6496
++ Elem_6497 6497.2 : [[2. 0.]]
+Node_3857 [120.  78.]
++ Elem_6497 6497.2 : [[2. 0.]]
++ Elem_6616
++ Elem_6617 6617.2 : [[2. 0.]]
+Node_3918 [120.  80.]
++ Elem_6617 6617.2 : [[2. 0.]]
 +
 </pre></div>
 </div>
@@ -445,67 +448,67 @@ Node_3862 [120.  80.]
         <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">TIME</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Sun Apr 21 18:42:11 2024    profile_data_full.txt
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Fri Apr 26 00:03:38 2024    profile_data_full.txt
 
-         6567554 function calls (6303232 primitive calls) in 12.416 seconds
+         6567554 function calls (6303232 primitive calls) in 12.640 seconds
 
    Ordered by: cumulative time
    List reduced from 267 to 20 due to restriction &lt;20&gt;
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.000    0.000   12.432   12.432 {built-in method builtins.exec}
-        1    0.000    0.000   12.432   12.432 &lt;string&gt;:1(&lt;module&gt;)
-        1    0.000    0.000   12.432   12.432 Example.py:20(run)
-        1    0.007    0.007   12.431   12.431 plot_plate10.py:46(problem)
-        1    0.000    0.000   10.169   10.169 System.py:313(solve)
-        1    0.000    0.000   10.169   10.169 NewtonRaphsonSolver.py:13(solve)
-        4    0.000    0.000    9.163    2.291 NewtonRaphsonSolver.py:105(assemble)
-        4    1.881    0.470    9.163    2.291 Solver.py:166(assemble)
-    19200    0.080    0.000    5.371    0.000 Element.py:237(getForce)
-    19200    1.962    0.000    5.291    0.000 Triangle.py:80(updateState)
-        2    0.000    0.000    4.544    2.272 Solver.py:388(checkResiduum)
-    38400    0.478    0.000    2.477    0.000 Triangle.py:155(computeSurfaceLoads)
-        1    0.030    0.030    2.182    2.182 PatchMesher.py:99(triangleMesh)
-   115200    0.662    0.000    1.405    0.000 Face2D.py:54(computeNodalForces)
-    19200    0.030    0.000    1.172    0.000 Element.py:246(getLoad)
-     4800    0.139    0.000    1.150    0.000 Triangle.py:10(__init__)
-        1    0.003    0.003    0.989    0.989 NewtonRaphsonSolver.py:58(solveSingleStep)
-        1    0.973    0.973    0.973    0.973 linalg.py:329(solve)
-254400/4800    0.435    0.000    0.899    0.000 copy.py:128(deepcopy)
-   153600    0.726    0.000    0.851    0.000 numeric.py:841(outer)
+        1    0.000    0.000   12.655   12.655 {built-in method builtins.exec}
+        1    0.000    0.000   12.655   12.655 &lt;string&gt;:1(&lt;module&gt;)
+        1    0.000    0.000   12.655   12.655 Example.py:20(run)
+        1    0.006    0.006   12.655   12.655 plot_plate10.py:46(problem)
+        1    0.000    0.000   10.430   10.430 System.py:313(solve)
+        1    0.000    0.000   10.430   10.430 NewtonRaphsonSolver.py:13(solve)
+        4    0.000    0.000    9.177    2.294 NewtonRaphsonSolver.py:105(assemble)
+        4    1.922    0.481    9.177    2.294 Solver.py:166(assemble)
+    19200    0.081    0.000    5.349    0.000 Element.py:269(getForce)
+    19200    1.977    0.000    5.268    0.000 Triangle.py:80(updateState)
+        2    0.000    0.000    4.591    2.295 Solver.py:388(checkResiduum)
+    38400    0.469    0.000    2.470    0.000 Triangle.py:155(computeSurfaceLoads)
+        1    0.028    0.028    2.148    2.148 PatchMesher.py:99(triangleMesh)
+   115200    0.645    0.000    1.392    0.000 Face2D.py:54(computeNodalForces)
+        1    0.003    0.003    1.237    1.237 NewtonRaphsonSolver.py:58(solveSingleStep)
+        1    1.220    1.220    1.220    1.220 linalg.py:329(solve)
+    19200    0.030    0.000    1.175    0.000 Element.py:278(getLoad)
+     4800    0.133    0.000    1.135    0.000 Triangle.py:10(__init__)
+254400/4800    0.426    0.000    0.888    0.000 copy.py:128(deepcopy)
+     4800    0.026    0.000    0.836    0.000 copy.py:259(_reconstruct)
 
 
-Sun Apr 21 18:42:11 2024    profile_data_full.txt
+Fri Apr 26 00:03:38 2024    profile_data_full.txt
 
-         6567554 function calls (6303232 primitive calls) in 12.416 seconds
+         6567554 function calls (6303232 primitive calls) in 12.640 seconds
 
    Ordered by: internal time
    List reduced from 267 to 20 due to restriction &lt;20&gt;
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-    19200    1.962    0.000    5.291    0.000 Triangle.py:80(updateState)
-        4    1.881    0.470    9.163    2.291 Solver.py:166(assemble)
-        1    0.973    0.973    0.973    0.973 linalg.py:329(solve)
-   153600    0.726    0.000    0.851    0.000 numeric.py:841(outer)
-   115200    0.662    0.000    1.405    0.000 Face2D.py:54(computeNodalForces)
-   639439    0.635    0.000    0.635    0.000 {built-in method numpy.array}
-   230400    0.515    0.000    0.705    0.000 Node.py:467(getIdx4Element)
-    38400    0.478    0.000    2.477    0.000 Triangle.py:155(computeSurfaceLoads)
-254400/4800    0.435    0.000    0.899    0.000 copy.py:128(deepcopy)
-    19201    0.429    0.000    0.544    0.000 PlaneStress.py:25(updateState)
-   115201    0.331    0.000    0.420    0.000 numeric.py:67(zeros_like)
-    76800    0.306    0.000    0.648    0.000 Node.py:416(getDeformedPos)
-    77208    0.227    0.000    0.328    0.000 Node.py:313(getDisp)
-    14400    0.182    0.000    0.479    0.000 Faces.py:10(__init__)
-    38400    0.146    0.000    0.586    0.000 Triangle.py:163(&lt;listcomp&gt;)
-    14400    0.146    0.000    0.292    0.000 Face2D.py:16(initialize)
-     4800    0.139    0.000    1.150    0.000 Triangle.py:10(__init__)
-    24000    0.138    0.000    0.263    0.000 shape_base.py:219(vstack)
-19200/4800    0.135    0.000    0.763    0.000 copy.py:227(_deepcopy_dict)
-    19200    0.096    0.000    0.120    0.000 twodim_base.py:158(eye)
+    19200    1.977    0.000    5.268    0.000 Triangle.py:80(updateState)
+        4    1.922    0.481    9.177    2.294 Solver.py:166(assemble)
+        1    1.220    1.220    1.220    1.220 linalg.py:329(solve)
+   153600    0.699    0.000    0.828    0.000 numeric.py:841(outer)
+   115200    0.645    0.000    1.392    0.000 Face2D.py:54(computeNodalForces)
+   639439    0.644    0.000    0.644    0.000 {built-in method numpy.array}
+   230400    0.499    0.000    0.696    0.000 Node.py:467(getIdx4Element)
+    38400    0.469    0.000    2.470    0.000 Triangle.py:155(computeSurfaceLoads)
+    19201    0.427    0.000    0.543    0.000 PlaneStress.py:25(updateState)
+254400/4800    0.426    0.000    0.888    0.000 copy.py:128(deepcopy)
+   115201    0.335    0.000    0.425    0.000 numeric.py:67(zeros_like)
+    76800    0.299    0.000    0.645    0.000 Node.py:416(getDeformedPos)
+    77208    0.230    0.000    0.332    0.000 Node.py:313(getDisp)
+    38400    0.155    0.000    0.601    0.000 Triangle.py:163(&lt;listcomp&gt;)
+    24000    0.140    0.000    0.263    0.000 shape_base.py:219(vstack)
+    14400    0.138    0.000    0.279    0.000 Face2D.py:16(initialize)
+19200/4800    0.136    0.000    0.752    0.000 copy.py:227(_deepcopy_dict)
+     4800    0.133    0.000    1.135    0.000 Triangle.py:10(__init__)
+    14400    0.121    0.000    0.405    0.000 Faces.py:10(__init__)
+    14400    0.098    0.000    0.503    0.000 Face2D.py:13(__init__)
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 12.471 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 12.710 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate10-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/ae33efdebb28467e9b52973845e57766/plot_plate10.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate10.ipynb</span></code></a></p>
@@ -529,7 +532,7 @@ Sun Apr 21 18:42:11 2024    profile_data_full.txt
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 24, 2024.
+      <span class="lastupdated">Last updated on Apr 26, 2024.
       </span></p>
   </div>
 
