@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_auto_tutorials_model_creation_plot_02_loading.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -53,6 +53,10 @@ we are going to use several :py:class:`Node` and :py:class:`Element` instances.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_02_loading.py <plot_02_loading.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_02_loading.zip <plot_02_loading.zip>`
 
 
 .. only:: html

@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_auto_examples_trusses_plot_truss02.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -165,9 +165,9 @@ Run the example by creating an instance of the problem and executing it by calli
 
  .. code-block:: none
 
-    /usr/local/lib/python3.11/site-packages/matplotlib/quiver.py:632: RuntimeWarning: Mean of empty slice.
+    /Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/matplotlib/quiver.py:678: RuntimeWarning: Mean of empty slice.
       amean = a.mean()
-    /usr/local/lib/python3.11/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+    /Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:145: RuntimeWarning: invalid value encountered in scalar divide
       ret = ret.dtype.type(ret / rcount)
     +
 
@@ -213,49 +213,49 @@ Run the example by creating an instance of the problem and executing it by calli
     Elements:
     ---------------------
       Truss: Node_27 to Node_28:
-          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.00025000000000000017   stress:{'xx': 2.5000000000000018, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.00025000000000000017   stress:{'xx': np.float64(2.5000000000000018), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 7.500000000000005
       Truss: Node_28 to Node_29:
-          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0005   stress:{'xx': 5.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0005   stress:{'xx': np.float64(5.0), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 15.0
       Truss: Node_29 to Node_30:
-          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0005000000000000002   stress:{'xx': 5.000000000000003, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0005000000000000002   stress:{'xx': np.float64(5.000000000000003), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 15.000000000000007
       Truss: Node_30 to Node_31:
-          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.00025   stress:{'xx': 2.5, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.00025   stress:{'xx': np.float64(2.5), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 7.5
       Truss: Node_32 to Node_33:
-          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.00037499999999999974   stress:{'xx': -3.7499999999999973, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.00037499999999999974   stress:{'xx': np.float64(-3.7499999999999973), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -11.249999999999993
       Truss: Node_33 to Node_34:
-          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.0005   stress:{'xx': -5.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.0005   stress:{'xx': np.float64(-5.0), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -15.0
       Truss: Node_34 to Node_35:
-          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.0003750000000000001   stress:{'xx': -3.7500000000000013, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: -11.250000000000004
+          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.00037500000000000006   stress:{'xx': np.float64(-3.7500000000000004), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: -11.250000000000002
       Truss: Node_27 to Node_32:
-          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.0007120003121097942   stress:{'xx': -7.120003121097942, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.0007120003121097942   stress:{'xx': np.float64(-7.120003121097942), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -21.360009363293827
       Truss: Node_28 to Node_33:
-          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.00035600015605489685   stress:{'xx': -3.5600015605489683, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.00035600015605489685   stress:{'xx': np.float64(-3.5600015605489683), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -10.680004681646905
       Truss: Node_29 to Node_34:
-          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-1.7765477248433666e-19   stress:{'xx': -1.7765477248433666e-15, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-1.7765477248433666e-19   stress:{'xx': np.float64(-1.7765477248433666e-15), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -5.3296431745301e-15
       Truss: Node_30 to Node_35:
-          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.00035600015605489685   stress:{'xx': 3.5600015605489683, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.00035600015605489685   stress:{'xx': np.float64(3.5600015605489683), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 10.680004681646905
       Truss: Node_28 to Node_32:
-          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0003560001560548972   stress:{'xx': 3.560001560548972, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0003560001560548972   stress:{'xx': np.float64(3.560001560548972), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 10.680004681646915
       Truss: Node_29 to Node_33:
-          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-2.0303402569638477e-19   stress:{'xx': -2.0303402569638477e-15, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-2.0303402569638477e-19   stress:{'xx': np.float64(-2.0303402569638477e-15), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -6.091020770891543e-15
       Truss: Node_30 to Node_34:
-          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.00035600015605489707   stress:{'xx': -3.5600015605489705, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.00035600015605489707   stress:{'xx': np.float64(-3.5600015605489705), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -10.680004681646912
       Truss: Node_31 to Node_35:
-          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.0007120003121097942   stress:{'xx': -7.120003121097942, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 10000.0, 'A': 3.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.0007120003121097942   stress:{'xx': np.float64(-7.120003121097942), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -21.360009363293827
 
 
@@ -265,7 +265,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.402 seconds)
+   **Total running time of the script:** (0 minutes 0.456 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss02.py:
@@ -281,6 +281,10 @@ Run the example by creating an instance of the problem and executing it by calli
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_truss02.py <plot_truss02.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_truss02.zip <plot_truss02.zip>`
 
 
 .. only:: html

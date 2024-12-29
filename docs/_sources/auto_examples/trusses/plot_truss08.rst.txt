@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_auto_examples_trusses_plot_truss08.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -265,7 +265,7 @@ Create the example by subclassing the :py:class:`Example`
 
             plt.grid(True)
             plt.xlabel('displacements $ u_i $')
-            plt.ylabel('load factor $ \lambda $')
+            plt.ylabel('load factor $ \\lambda $')
             plt.legend(['$ u_x $','$ u_y $'])
             plt.savefig("truss08_deformation_history.png")
             plt.show()
@@ -761,7 +761,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.527 seconds)
+   **Total running time of the script:** (0 minutes 3.677 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss08.py:
@@ -777,6 +777,10 @@ Run the example by creating an instance of the problem and executing it by calli
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_truss08.py <plot_truss08.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_truss08.zip <plot_truss08.zip>`
 
 
 .. only:: html

@@ -17,10 +17,11 @@ see the :ref:`Tutorials <tutorials>`.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for easy validation of calculated deformation, r...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for easy validation of calculated deformation, reactions and internal forces.">
 
 .. only:: html
 
@@ -37,7 +38,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically indeterminate but simple enough to validate deformation, reactions and...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically indeterminate but simple enough to validate deformation, reactions and internal forces.">
 
 .. only:: html
 
@@ -51,6 +52,8 @@ see the :ref:`Tutorials <tutorials>`.
       <div class="sphx-glr-thumbnail-title">Three-span continuous beam under uniform load.</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

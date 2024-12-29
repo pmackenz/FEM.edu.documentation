@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../">
 <head>
@@ -6,28 +8,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bending a cantilever beam &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/design-tabs.js?v=36754332"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Mixed Structures Examples" href="../mixed/index.html" />
+    <link rel="next" title="A square patch made of one quadrilateral plate elements" href="plot_plate_element_modes.html" />
     <link rel="prev" title="Profiling the code" href="plot_plate10.html" /> 
 </head>
 
@@ -81,6 +79,7 @@
 <li class="toctree-l4"><a class="reference internal" href="plot_plate09.html">Patch test for quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate10.html">Profiling the code</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Bending a cantilever beam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate_element_modes.html">A square patch made of one quadrilateral plate elements</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
@@ -123,7 +122,7 @@
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p><a class="reference internal" href="#sphx-glr-download-auto-examples-plates-plot-plate11-py"><span class="std std-ref">Go to the end</span></a>
-to download the full example code</p>
+to download the full example code.</p>
 </div>
 <section class="sphx-glr-example-title" id="bending-a-cantilever-beam">
 <span id="sphx-glr-auto-examples-plates-plot-plate11-py"></span><h1>Bending a cantilever beam<a class="headerlink" href="#bending-a-cantilever-beam" title="Link to this heading"></a></h1>
@@ -276,22 +275,22 @@ norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   1.9467e+03
 norm of the out-of-balance force:   7.9605e+00
 norm of the out-of-balance force:   2.3934e-04
-norm of the out-of-balance force:   3.0140e-09
+norm of the out-of-balance force:   2.7317e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   1.9219e+03
 norm of the out-of-balance force:   7.7868e+00
 norm of the out-of-balance force:   2.3191e-02
-norm of the out-of-balance force:   4.4781e-07
+norm of the out-of-balance force:   4.4775e-07
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   1.8506e+03
 norm of the out-of-balance force:   7.2971e+00
 norm of the out-of-balance force:   7.4489e-02
-norm of the out-of-balance force:   1.2426e-06
-norm of the out-of-balance force:   2.5485e-09
+norm of the out-of-balance force:   1.2427e-06
+norm of the out-of-balance force:   2.5260e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
@@ -299,132 +298,135 @@ norm of the out-of-balance force:   1.7413e+03
 norm of the out-of-balance force:   6.5823e+00
 norm of the out-of-balance force:   1.2884e-01
 norm of the out-of-balance force:   1.7002e-06
-norm of the out-of-balance force:   2.8543e-09
+norm of the out-of-balance force:   2.6667e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   1.6056e+03
 norm of the out-of-balance force:   5.7552e+00
 norm of the out-of-balance force:   1.6477e-01
-norm of the out-of-balance force:   1.6049e-06
-norm of the out-of-balance force:   3.0527e-09
+norm of the out-of-balance force:   1.6052e-06
+norm of the out-of-balance force:   2.7399e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   1.4556e+03
 norm of the out-of-balance force:   4.9154e+00
 norm of the out-of-balance force:   1.7389e-01
-norm of the out-of-balance force:   1.1863e-06
-norm of the out-of-balance force:   3.0253e-09
+norm of the out-of-balance force:   1.1862e-06
+norm of the out-of-balance force:   2.5633e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   1.3020e+03
 norm of the out-of-balance force:   4.1306e+00
 norm of the out-of-balance force:   1.6004e-01
-norm of the out-of-balance force:   7.3543e-07
+norm of the out-of-balance force:   7.3561e-07
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   1.1528e+03
 norm of the out-of-balance force:   3.4348e+00
 norm of the out-of-balance force:   1.3294e-01
-norm of the out-of-balance force:   4.0033e-07
+norm of the out-of-balance force:   4.0044e-07
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   1.0133e+03
 norm of the out-of-balance force:   2.8379e+00
 norm of the out-of-balance force:   1.0211e-01
-norm of the out-of-balance force:   1.9726e-07
+norm of the out-of-balance force:   1.9811e-07
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   8.8641e+02
 norm of the out-of-balance force:   2.3355e+00
 norm of the out-of-balance force:   7.3852e-02
-norm of the out-of-balance force:   9.0733e-08
+norm of the out-of-balance force:   9.0754e-08
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   7.7324e+02
 norm of the out-of-balance force:   1.9174e+00
 norm of the out-of-balance force:   5.1028e-02
-norm of the out-of-balance force:   3.9545e-08
+norm of the out-of-balance force:   3.9851e-08
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   6.7371e+02
 norm of the out-of-balance force:   1.5719e+00
 norm of the out-of-balance force:   3.4075e-02
-norm of the out-of-balance force:   1.6925e-08
+norm of the out-of-balance force:   1.7144e-08
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   5.8699e+02
 norm of the out-of-balance force:   1.2876e+00
 norm of the out-of-balance force:   2.2197e-02
-norm of the out-of-balance force:   7.5164e-09
+norm of the out-of-balance force:   7.9017e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   5.1193e+02
 norm of the out-of-balance force:   1.0547e+00
 norm of the out-of-balance force:   1.4212e-02
-norm of the out-of-balance force:   4.4972e-09
+norm of the out-of-balance force:   5.2521e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   4.4719e+02
 norm of the out-of-balance force:   8.6434e-01
 norm of the out-of-balance force:   8.9976e-03
-norm of the out-of-balance force:   4.3767e-09
+norm of the out-of-balance force:   3.9016e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   3.9148e+02
 norm of the out-of-balance force:   7.0914e-01
 norm of the out-of-balance force:   5.6599e-03
-norm of the out-of-balance force:   3.7459e-09
+norm of the out-of-balance force:   3.9538e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   3.4356e+02
 norm of the out-of-balance force:   5.8278e-01
 norm of the out-of-balance force:   3.5509e-03
-norm of the out-of-balance force:   3.9089e-09
+norm of the out-of-balance force:   4.5275e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   3.0233e+02
 norm of the out-of-balance force:   4.7996e-01
 norm of the out-of-balance force:   2.2284e-03
-norm of the out-of-balance force:   3.5516e-09
+norm of the out-of-balance force:   4.0840e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   2.6682e+02
 norm of the out-of-balance force:   3.9630e-01
 norm of the out-of-balance force:   1.4021e-03
-norm of the out-of-balance force:   3.7406e-09
+norm of the out-of-balance force:   4.1904e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   5.1349e+01
 norm of the out-of-balance force:   2.3618e+02
 norm of the out-of-balance force:   3.2818e-01
 norm of the out-of-balance force:   8.8593e-04
-norm of the out-of-balance force:   4.0110e-09
+norm of the out-of-balance force:   4.3792e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 52.046 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 45.839 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate11-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/0bc856d2c1a956d1141abaa12677d549/plot_plate11.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate11.ipynb</span></code></a></p>
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/c66f1db85ad6cd2084474f1c7ee99fb5/plot_plate11.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate11.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/85a481a5e8ae2efcc5d3d1635b7f8223/plot_plate11.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">plot_plate11.zip</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -435,14 +437,14 @@ Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="plot_plate10.html" class="btn btn-neutral float-left" title="Profiling the code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../mixed/index.html" class="btn btn-neutral float-right" title="Mixed Structures Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="plot_plate_element_modes.html" class="btn btn-neutral float-right" title="A square patch made of one quadrilateral plate elements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 26, 2024.
+      <span class="lastupdated">Last updated on Dec 28, 2024.
       </span></p>
   </div>
 

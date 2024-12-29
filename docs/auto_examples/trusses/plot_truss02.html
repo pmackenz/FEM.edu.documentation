@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../">
 <head>
@@ -6,24 +8,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Statically determinate truss bridge. &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/design-tabs.js?v=36754332"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -119,7 +117,7 @@
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p><a class="reference internal" href="#sphx-glr-download-auto-examples-trusses-plot-truss02-py"><span class="std std-ref">Go to the end</span></a>
-to download the full example code</p>
+to download the full example code.</p>
 </div>
 <section class="sphx-glr-example-title" id="statically-determinate-truss-bridge">
 <span id="sphx-glr-auto-examples-trusses-plot-truss02-py"></span><h1>Statically determinate truss bridge.<a class="headerlink" href="#statically-determinate-truss-bridge" title="Link to this heading"></a></h1>
@@ -218,9 +216,9 @@ calculated deformation, reactions and internal forces.</p>
 <li><img src="../../_images/sphx_glr_plot_truss02_002.png" srcset="../../_images/sphx_glr_plot_truss02_002.png" alt="Deformed System (magnification=50.00)" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_truss02_003.png" srcset="../../_images/sphx_glr_plot_truss02_003.png" alt="Axial Forces" class = "sphx-glr-multi-img"/></li>
 </ul>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.11/site-packages/matplotlib/quiver.py:632: RuntimeWarning: Mean of empty slice.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/matplotlib/quiver.py:678: RuntimeWarning: Mean of empty slice.
   amean = a.mean()
-/usr/local/lib/python3.11/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+/Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:145: RuntimeWarning: invalid value encountered in scalar divide
   ret = ret.dtype.type(ret / rcount)
 +
 
@@ -266,59 +264,62 @@ Nodes:
 Elements:
 ---------------------
   Truss: Node_27 to Node_28:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.00025000000000000017   stress:{&#39;xx&#39;: 2.5000000000000018, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.00025000000000000017   stress:{&#39;xx&#39;: np.float64(2.5000000000000018), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 7.500000000000005
   Truss: Node_28 to Node_29:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0005   stress:{&#39;xx&#39;: 5.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0005   stress:{&#39;xx&#39;: np.float64(5.0), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 15.0
   Truss: Node_29 to Node_30:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0005000000000000002   stress:{&#39;xx&#39;: 5.000000000000003, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0005000000000000002   stress:{&#39;xx&#39;: np.float64(5.000000000000003), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 15.000000000000007
   Truss: Node_30 to Node_31:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.00025   stress:{&#39;xx&#39;: 2.5, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.00025   stress:{&#39;xx&#39;: np.float64(2.5), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 7.5
   Truss: Node_32 to Node_33:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.00037499999999999974   stress:{&#39;xx&#39;: -3.7499999999999973, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.00037499999999999974   stress:{&#39;xx&#39;: np.float64(-3.7499999999999973), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -11.249999999999993
   Truss: Node_33 to Node_34:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.0005   stress:{&#39;xx&#39;: -5.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.0005   stress:{&#39;xx&#39;: np.float64(-5.0), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -15.0
   Truss: Node_34 to Node_35:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.0003750000000000001   stress:{&#39;xx&#39;: -3.7500000000000013, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
-      internal force: -11.250000000000004
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.00037500000000000006   stress:{&#39;xx&#39;: np.float64(-3.7500000000000004), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: -11.250000000000002
   Truss: Node_27 to Node_32:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.0007120003121097942   stress:{&#39;xx&#39;: -7.120003121097942, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.0007120003121097942   stress:{&#39;xx&#39;: np.float64(-7.120003121097942), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -21.360009363293827
   Truss: Node_28 to Node_33:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.00035600015605489685   stress:{&#39;xx&#39;: -3.5600015605489683, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.00035600015605489685   stress:{&#39;xx&#39;: np.float64(-3.5600015605489683), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -10.680004681646905
   Truss: Node_29 to Node_34:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-1.7765477248433666e-19   stress:{&#39;xx&#39;: -1.7765477248433666e-15, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-1.7765477248433666e-19   stress:{&#39;xx&#39;: np.float64(-1.7765477248433666e-15), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -5.3296431745301e-15
   Truss: Node_30 to Node_35:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.00035600015605489685   stress:{&#39;xx&#39;: 3.5600015605489683, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.00035600015605489685   stress:{&#39;xx&#39;: np.float64(3.5600015605489683), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 10.680004681646905
   Truss: Node_28 to Node_32:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0003560001560548972   stress:{&#39;xx&#39;: 3.560001560548972, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0003560001560548972   stress:{&#39;xx&#39;: np.float64(3.560001560548972), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 10.680004681646915
   Truss: Node_29 to Node_33:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-2.0303402569638477e-19   stress:{&#39;xx&#39;: -2.0303402569638477e-15, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-2.0303402569638477e-19   stress:{&#39;xx&#39;: np.float64(-2.0303402569638477e-15), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -6.091020770891543e-15
   Truss: Node_30 to Node_34:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.00035600015605489707   stress:{&#39;xx&#39;: -3.5600015605489705, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.00035600015605489707   stress:{&#39;xx&#39;: np.float64(-3.5600015605489705), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -10.680004681646912
   Truss: Node_31 to Node_35:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.0007120003121097942   stress:{&#39;xx&#39;: -7.120003121097942, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10000.0, &#39;A&#39;: 3.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.0007120003121097942   stress:{&#39;xx&#39;: np.float64(-7.120003121097942), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: -21.360009363293827
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.402 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.456 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-trusses-plot-truss02-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/d0503ada99d89a371a55eece5cfc7c7b/plot_truss02.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_truss02.ipynb</span></code></a></p>
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/82dfc7b00ab2727b53c95b27d070083c/plot_truss02.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_truss02.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/d14192a74ccef264ff91c54584c51278/plot_truss02.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">plot_truss02.zip</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -336,7 +337,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 26, 2024.
+      <span class="lastupdated">Last updated on Dec 28, 2024.
       </span></p>
   </div>
 

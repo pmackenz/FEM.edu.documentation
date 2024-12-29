@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../">
 <head>
@@ -6,25 +8,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Node class &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/design-tabs.js?v=36754332"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -109,6 +107,11 @@
 <dt class="sig sig-object py" id="femedu.domain.Node.Node">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.domain.Node.</span></span><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node" title="Link to this definition"></a></dt>
 <dd><p>class: representing a single Node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x0</strong> – Initial position (List)</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.addLoad">
 <span class="sig-name descname"><span class="pre">addLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loads</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dofs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.addLoad" title="Link to this definition"></a></dt>
@@ -121,8 +124,8 @@ applying a vertical downward force, P, and a counter-clockwise moment, M, at a n
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>loads</strong> (<em>list</em><em> of </em><em>floats</em>) – </p></li>
-<li><p><strong>dofs</strong> (<em>list</em><em> of </em><em>dof-codes</em>) – </p></li>
+<li><p><strong>loads</strong> (<em>list</em><em> of </em><em>floats</em>)</p></li>
+<li><p><strong>dofs</strong> (<em>list</em><em> of </em><em>dof-codes</em>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -131,10 +134,12 @@ applying a vertical downward force, P, and a counter-clockwise moment, M, at a n
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.addTransformation">
 <span class="sig-name descname"><span class="pre">addTransformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.addTransformation" title="Link to this definition"></a></dt>
-<dd><p>Attach a transformation object to this node.
-The transformation defines a local coordinate system.
-If a transformation is given, all loads and prescribed displacements are assumed in that local coordinate system.
-Furthermore, all nodal displacements, velocity, or acceleration will be reported in that local coordinate system.</p>
+<dd><p>Attach a <a class="reference internal" href="Transformation_class.html#module-femedu.domain.Transformation" title="femedu.domain.Transformation"><code class="xref py py-meth docutils literal notranslate"><span class="pre">femedu.domain.Transformation()</span></code></a> object to this node.
+The transformation defines a local coordinate system.</p>
+<ul class="simple">
+<li><p>If a transformation is given, all loads and prescribed displacements are assumed in that local coordinate system.</p></li>
+<li><p>Furthermore, all nodal displacements, velocity, or acceleration will be reported in that local coordinate system.</p></li>
+</ul>
 </dd></dl>
 
 <dl class="py method">
@@ -200,7 +205,7 @@ element’s request() call. (called during initialization.)</p>
 <span class="sig-name descname"><span class="pre">getDeltaU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">previous_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getDeltaU" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>delta u = (current u) -  (last converged u)</p>
+<dd class="field-odd"><p>delta u = (current u) - (last converged u)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -208,7 +213,7 @@ element’s request() call. (called during initialization.)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.getDisp">
 <span class="sig-name descname"><span class="pre">getDisp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getDisp" title="Link to this definition"></a></dt>
-<dd><p>return a vector (nd.array) of (generalized) displacements.</p>
+<dd><p>return a vector (<cite>nd.array</cite>) of (generalized) displacements.</p>
 <p>If a <code class="code docutils literal notranslate"><span class="pre">caller</span></code> is given, the element-specific d.o.f.s will be returned as a sequence
 in the same order as given by the element’s <code class="code docutils literal notranslate"><span class="pre">request()</span></code> call.</p>
 <p>If a <code class="code docutils literal notranslate"><span class="pre">dof_list</span></code> is given, d.o.f.s will be returned as the sequence given by that list.
@@ -312,7 +317,7 @@ Do not forget the <code class="code docutils literal notranslate"><span class="p
 <span class="sig-name descname"><span class="pre">getNormDeltaU2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">previous_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getNormDeltaU2" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>norm of delta u = (current u) -  (last converged u)</p>
+<dd class="field-odd"><p>norm of delta u = (current u) - (last converged u)</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>0.0 if node is a “follower”</p>
@@ -471,7 +476,7 @@ for each degree of freedom.</p>
 Values may be given as a float or as a list of two values.</p>
 <ul>
 <li><p>If only a single value is given, the respective dof will be set to that value.</p></li>
-<li><p>If a list is given, the dof will be set to <cite>value[0] + loadfactor*value[1]</cite></p></li>
+<li><p>If a list is given, the dof will be set to <code class="code docutils literal notranslate"><span class="pre">value[0]</span> <span class="pre">+</span> <span class="pre">loadfactor*value[1]</span></code></p></li>
 </ul>
 </p></li>
 </ul>
@@ -557,7 +562,7 @@ user input.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 26, 2024.
+      <span class="lastupdated">Last updated on Dec 28, 2024.
       </span></p>
   </div>
 

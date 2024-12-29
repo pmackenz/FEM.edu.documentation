@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_auto_examples_trusses_plot_truss04.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -160,25 +160,25 @@ Run the example by creating an instance of the problem and executing it by calli
     Elements:
     ---------------------
       Truss: Node_39 to Node_43:
-          material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.030517537429943266   stress:{'xx': -64.08682860288086, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.030517537429943266   stress:{'xx': np.float64(-64.08682860288086), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -64.08682860288086
       Truss: Node_39 to Node_44:
-          material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0004892637349850222   stress:{'xx': 1.0274538434685465, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0004892637349850222   stress:{'xx': np.float64(1.0274538434685465), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 1.0274538434685465
       Truss: Node_40 to Node_43:
-          material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.02040406329686611   stress:{'xx': -42.84853292341884, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.02040406329686611   stress:{'xx': np.float64(-42.84853292341884), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -42.84853292341884
       Truss: Node_41 to Node_44:
-          material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.00044111478214312256   stress:{'xx': -0.9263410425005574, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.00044111478214312256   stress:{'xx': np.float64(-0.9263410425005574), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -0.9263410425005574
       Truss: Node_42 to Node_43:
-          material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.01687382151131819   stress:{'xx': -35.435025173768196, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.01687382151131819   stress:{'xx': np.float64(-35.435025173768196), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: -35.435025173768196
       Truss: Node_42 to Node_44:
-          material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:1.7248299270645772e-06   stress:{'xx': 0.003622142846835612, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:1.7248299270645772e-06   stress:{'xx': np.float64(0.003622142846835612), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 0.003622142846835612
       Truss: Node_43 to Node_44:
-          material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.005301537509333449   stress:{'xx': 11.133228769600242, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          material properties: FiberMaterial(Material)({'E': 2100.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.005301537509333449   stress:{'xx': np.float64(11.133228769600242), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 11.133228769600242
 
 
@@ -188,7 +188,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.090 seconds)
+   **Total running time of the script:** (0 minutes 0.089 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss04.py:
@@ -204,6 +204,10 @@ Run the example by creating an instance of the problem and executing it by calli
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_truss04.py <plot_truss04.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_truss04.zip <plot_truss04.zip>`
 
 
 .. only:: html

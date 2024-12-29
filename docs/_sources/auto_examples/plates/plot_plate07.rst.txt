@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_auto_examples_plates_plot_plate07.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -45,14 +45,14 @@ Basic implementation test with applied loads.
         t  =  1.0
 
     Element loads:
-        node 0: [ 0.0, 0.0]
-        node 1: [ 5.0, 0.0]
-        node 2: [ 5.0, 0.0]
-        node 3: [ 0.0, 0.0]
+        node 0: [ 0.0,  0.0]
+        node 1: [10.0,  0.0]
+        node 2: [10.0, 10.0]
+        node 3: [ 0.0,  0.0]
 
 Author: Peter Mackenzie-Helnwein
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-125
+.. GENERATED FROM PYTHON SOURCE LINES 36-127
 
 .. code-block:: Python
 
@@ -62,7 +62,8 @@ Author: Peter Mackenzie-Helnwein
 
     from femedu.domain import System, Node
     from femedu.solver import NewtonRaphsonSolver
-    from femedu.elements.linear import Quad
+    #from femedu.elements.linear import Quad
+    from femedu.elements.linear import ReducedIntegrationQuad as Quad
     from femedu.materials import PlaneStress
 
 
@@ -99,6 +100,7 @@ Author: Peter Mackenzie-Helnwein
             model.addElement(elemA)
 
             elemA.setSurfaceLoad(face=1, pn=1.0)
+            elemA.setSurfaceLoad(face=3, pn=1.0)
 
             model.plot(factor=0.0, title="Undeformed system", filename="plate07_undeformed.png", show_bc=1)
 
@@ -129,7 +131,7 @@ Author: Peter Mackenzie-Helnwein
 
             nd0.fixDOF('ux', 'uy')
             nd1.fixDOF('uy')
-            nd3.fixDOF('ux')
+            #nd3.fixDOF('ux')
 
             model.setLoadFactor(1.0)
             model.solve()
@@ -152,12 +154,12 @@ Author: Peter Mackenzie-Helnwein
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 183-185
+.. GENERATED FROM PYTHON SOURCE LINES 185-187
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 185-191
+.. GENERATED FROM PYTHON SOURCE LINES 187-193
 
 .. code-block:: Python
 
@@ -190,7 +192,7 @@ Run the example by creating an instance of the problem and executing it by calli
     *
 
       .. image-sg:: /auto_examples/plates/images/sphx_glr_plot_plate07_003.png
-         :alt: Mode Shape for $ \lambda = -0.00 $
+         :alt: Mode Shape for $ \lambda = 0.00 $
          :srcset: /auto_examples/plates/images/sphx_glr_plot_plate07_003.png
          :class: sphx-glr-multi-img
 
@@ -204,14 +206,14 @@ Run the example by creating an instance of the problem and executing it by calli
     *
 
       .. image-sg:: /auto_examples/plates/images/sphx_glr_plot_plate07_005.png
-         :alt: Mode Shape for $ \lambda = 4.95 $
+         :alt: Mode Shape for $ \lambda = 3.66 $
          :srcset: /auto_examples/plates/images/sphx_glr_plot_plate07_005.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/plates/images/sphx_glr_plot_plate07_006.png
-         :alt: Mode Shape for $ \lambda = 4.95 $
+         :alt: Mode Shape for $ \lambda = 3.66 $
          :srcset: /auto_examples/plates/images/sphx_glr_plot_plate07_006.png
          :class: sphx-glr-multi-img
 
@@ -250,40 +252,43 @@ Run the example by creating an instance of the problem and executing it by calli
 
     +
     +
+    /Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/matplotlib/quiver.py:678: RuntimeWarning: Mean of empty slice.
+      amean = a.mean()
+    /Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:145: RuntimeWarning: invalid value encountered in scalar divide
+      ret = ret.dtype.type(ret / rcount)
 
     System Analysis Report
     =======================
 
     Nodes:
     ---------------------
-      Node_1388:
+      Node_1397:
           x:    [0. 0.]
           fix:  ['ux', 'uy']
           u:    [0. 0.]
-      Node_1389:
+      Node_1398:
           x:    [10.  0.]
           fix:  ['uy']
           u:    [1. 0.]
-      Node_1390:
+      Node_1399:
           x:    [10. 10.]
           u:    [ 1.  -0.3]
-      Node_1391:
+      Node_1400:
           x:    [ 0. 10.]
-          fix:  ['ux']
-          u:    [ 0.  -0.3]
+          u:    [-3.70153565e-16 -3.00000000e-01]
 
     Elements:
     ---------------------
-      Quad_1803: nodes ( Node_1388 Node_1389 Node_1390 Node_1391 )
+      ReducedIntegrationQuad_1811: nodes ( Node_1397 Node_1398 Node_1399 Node_1400 )
           material: list
-          strain (0): xx=1.000e-01 yy=-3.000e-02 xy=-4.760e-18 zz=-2.100e-02
-          stress (0): xx=1.000e+00 yy=0.000e+00 xy=-1.831e-17 zz=0.000e+00
-          strain (1): xx=1.000e-01 yy=-3.000e-02 xy=8.302e-17 zz=-2.100e-02
-          stress (1): xx=1.000e+00 yy=0.000e+00 xy=3.193e-16 zz=0.000e+00
-          strain (2): xx=1.000e-01 yy=-3.000e-02 xy=-7.511e-17 zz=-2.100e-02
-          stress (2): xx=1.000e+00 yy=0.000e+00 xy=-2.889e-16 zz=0.000e+00
-          strain (3): xx=1.000e-01 yy=-3.000e-02 xy=1.857e-17 zz=-2.100e-02
-          stress (3): xx=1.000e+00 yy=0.000e+00 xy=7.142e-17 zz=0.000e+00
+          strain (0): xx=1.000e-01 yy=-3.000e-02 xy=-3.710e-17 zz=-2.100e-02
+          stress (0): xx=1.000e+00 yy=4.148e-18 xy=-1.427e-16 zz=0.000e+00
+          strain (1): xx=1.000e-01 yy=-3.000e-02 xy=-3.710e-17 zz=-2.100e-02
+          stress (1): xx=1.000e+00 yy=4.148e-18 xy=-1.427e-16 zz=0.000e+00
+          strain (2): xx=1.000e-01 yy=-3.000e-02 xy=-3.710e-17 zz=-2.100e-02
+          stress (2): xx=1.000e+00 yy=4.148e-18 xy=-1.427e-16 zz=0.000e+00
+          strain (3): xx=1.000e-01 yy=-3.000e-02 xy=-3.710e-17 zz=-2.100e-02
+          stress (3): xx=1.000e+00 yy=4.148e-18 xy=-1.427e-16 zz=0.000e+00
 
 
 
@@ -292,7 +297,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.233 seconds)
+   **Total running time of the script:** (0 minutes 1.174 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate07.py:
@@ -308,6 +313,10 @@ Run the example by creating an instance of the problem and executing it by calli
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_plate07.py <plot_plate07.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_plate07.zip <plot_plate07.zip>`
 
 
 .. only:: html

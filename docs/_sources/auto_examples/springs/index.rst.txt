@@ -20,10 +20,11 @@ see the :ref:`Tutorials <tutorials>`.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="                o---/\/\/\---o---/\/\/\---o    x---/\/\/\---o                         o---&gt;    ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="                o---/\/\/\---o---/\/\/\---o    x---/\/\/\---o                         o---&gt;                 o-------/\/\/\/\/\--------o">
 
 .. only:: html
 
@@ -40,7 +41,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="                o---/\/\/\---o---/\/\/\---o    x---/\/\/\---o                         o---&gt;    ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="                o---/\/\/\---o---/\/\/\---o    x---/\/\/\---o                         o---&gt;                 o-------/\/\/\/\/\--------o">
 
 .. only:: html
 
@@ -54,6 +55,8 @@ see the :ref:`Tutorials <tutorials>`.
       <div class="sphx-glr-thumbnail-title">A first 1D spring system with nicer plots</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

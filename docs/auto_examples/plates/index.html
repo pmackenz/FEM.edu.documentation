@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../">
 <head>
@@ -6,24 +8,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plate Examples &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/design-tabs.js?v=36754332"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -81,6 +79,7 @@
 <li class="toctree-l4"><a class="reference internal" href="plot_plate09.html">Patch test for quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate10.html">Profiling the code</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate11.html">Bending a cantilever beam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate_element_modes.html">A square patch made of one quadrilateral plate elements</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
@@ -127,16 +126,16 @@ see the <a class="reference internal" href="../../tutorials.html#tutorials"><spa
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Using PatchMesher to model the plate"><img alt="" src="../../_images/sphx_glr_plot_benchmark01_thumb.png" />
 <p><a class="reference internal" href="plot_benchmark01.html#sphx-glr-auto-examples-plates-plot-benchmark01-py"><span class="std std-ref">Benchmark problem: Wedged Plate</span></a></p>
   <div class="sphx-glr-thumbnail-title">Benchmark problem: Wedged Plate</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="    v=-5   v=-5      |     |      v     v      3-----2 -&gt; u=5      |\  b | &gt;      | \   | &gt;    ..."><img alt="" src="../../_images/sphx_glr_plot_plate01_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="    v=-5   v=-5      |     |      v     v      3-----2 -&gt; u=5      |\  b | &gt;      | \   | &gt;      |  \  | &gt; (w = 1.0)      |   \ | &gt;      | a  \| &gt;      0-----1 -&gt; u=5"><img alt="" src="../../_images/sphx_glr_plot_plate01_thumb.png" />
 <p><a class="reference internal" href="plot_plate01.html#sphx-glr-auto-examples-plates-plot-plate01-py"><span class="std std-ref">A square patch made of two triangular plate elements</span></a></p>
   <div class="sphx-glr-thumbnail-title">A square patch made of two triangular plate elements</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Basic implementation test with applied loads.     Testing the tangent stiffness computation    ..."><img alt="" src="../../_images/sphx_glr_plot_plate02_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Basic implementation test with applied loads.     Testing the tangent stiffness computation     for a Triangle (using linear shape functions)."><img alt="" src="../../_images/sphx_glr_plot_plate02_thumb.png" />
 <p><a class="reference internal" href="plot_plate02.html#sphx-glr-auto-examples-plates-plot-plate02-py"><span class="std std-ref">A square patch made of two triangular plate elements</span></a></p>
   <div class="sphx-glr-thumbnail-title">A square patch made of two triangular plate elements</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Basic implementation test with applied loads.     Testing the tangent stiffness computation    ..."><img alt="" src="../../_images/sphx_glr_plot_plate02b_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="Basic implementation test with applied loads.     Testing the tangent stiffness computation     for a Triangle6 (using quadratic shape functions)."><img alt="" src="../../_images/sphx_glr_plot_plate02b_thumb.png" />
 <p><a class="reference internal" href="plot_plate02b.html#sphx-glr-auto-examples-plates-plot-plate02b-py"><span class="std std-ref">A square patch made of two triangular plate elements</span></a></p>
   <div class="sphx-glr-thumbnail-title">A square patch made of two triangular plate elements</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The patch test is an empirical minimum test which every finite element has to pass to ensure co..."><img alt="" src="../../_images/sphx_glr_plot_plate03_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="The patch test is an empirical minimum test which every finite element has to pass to ensure convergence with mesh refinement."><img alt="" src="../../_images/sphx_glr_plot_plate03_thumb.png" />
 <p><a class="reference internal" href="plot_plate03.html#sphx-glr-auto-examples-plates-plot-plate03-py"><span class="std std-ref">Patch test for triangular plate under in-plane loading</span></a></p>
   <div class="sphx-glr-thumbnail-title">Patch test for triangular plate under in-plane loading</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="PatchMesher test for the LinearTriangle (Constant Strain Triangle)"><img alt="" src="../../_images/sphx_glr_plot_plate04_thumb.png" />
@@ -154,7 +153,7 @@ see the <a class="reference internal" href="../../tutorials.html#tutorials"><spa
 </div><div class="sphx-glr-thumbcontainer" tooltip="Basic implementation test with applied loads.     Testing the tangent stiffness computation."><img alt="" src="../../_images/sphx_glr_plot_plate08_thumb.png" />
 <p><a class="reference internal" href="plot_plate08.html#sphx-glr-auto-examples-plates-plot-plate08-py"><span class="std std-ref">A square patch made of one quadrilateral plate elements</span></a></p>
   <div class="sphx-glr-thumbnail-title">A square patch made of one quadrilateral plate elements</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="The patch test is an empirical minimum test which every finite element has to pass to ensure co..."><img alt="" src="../../_images/sphx_glr_plot_plate09_thumb.png" />
+</div><div class="sphx-glr-thumbcontainer" tooltip="The patch test is an empirical minimum test which every finite element has to pass to ensure convergence with mesh refinement."><img alt="" src="../../_images/sphx_glr_plot_plate09_thumb.png" />
 <p><a class="reference internal" href="plot_plate09.html#sphx-glr-auto-examples-plates-plot-plate09-py"><span class="std std-ref">Patch test for quadrilateral plate elements under in-plane loading</span></a></p>
   <div class="sphx-glr-thumbnail-title">Patch test for quadrilateral plate elements under in-plane loading</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Using PatchMesher to model a quarter of the plate"><img alt="" src="../../_images/sphx_glr_plot_plate10_thumb.png" />
@@ -163,6 +162,9 @@ see the <a class="reference internal" href="../../tutorials.html#tutorials"><spa
 </div><div class="sphx-glr-thumbcontainer" tooltip="Using PatchMesher to model the beam"><img alt="" src="../../_images/sphx_glr_plot_plate11_thumb.png" />
 <p><a class="reference internal" href="plot_plate11.html#sphx-glr-auto-examples-plates-plot-plate11-py"><span class="std std-ref">Bending a cantilever beam</span></a></p>
   <div class="sphx-glr-thumbnail-title">Bending a cantilever beam</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Basic implementation test with applied loads.     Testing the tangent stiffness computation."><img alt="" src="../../_images/sphx_glr_plot_plate_element_modes_thumb.png" />
+<p><a class="reference internal" href="plot_plate_element_modes.html#sphx-glr-auto-examples-plates-plot-plate-element-modes-py"><span class="std std-ref">A square patch made of one quadrilateral plate elements</span></a></p>
+  <div class="sphx-glr-thumbnail-title">A square patch made of one quadrilateral plate elements</div>
 </div></div><div class="toctree-wrapper compound">
 </div>
 </section>
@@ -179,7 +181,7 @@ see the <a class="reference internal" href="../../tutorials.html#tutorials"><spa
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 26, 2024.
+      <span class="lastupdated">Last updated on Dec 28, 2024.
       </span></p>
   </div>
 

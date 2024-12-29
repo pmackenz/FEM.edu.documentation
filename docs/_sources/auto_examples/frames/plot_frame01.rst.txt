@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_auto_examples_frames_plot_frame01.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -203,8 +203,8 @@ Author: Peter Mackenzie-Helnwein
 
             ax.plot(lambdas,detKt,'--*r')
             ax.grid(True)
-            ax.set_xlabel('Load factor, $ \lambda $')
-            ax.set_ylabel("Stability index, $ {det}\: {\\bf K}_t $")
+            ax.set_xlabel('Load factor, $ \\lambda $')
+            ax.set_ylabel("Stability index, $ {det}\\: {\\bf K}_t $")
 
             fig.savefig("frame1_stability.png")
             fig.show()
@@ -318,7 +318,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 2.432144038297571
+     ** Stability check: (smallest eigenvalue of Kt) = 2.432144038335496
 
     +
 
@@ -326,14 +326,14 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   3.9834e-02
-    norm of the out-of-balance force:   3.5463e-11
+    norm of the out-of-balance force:   3.5439e-11
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        2.16
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 2.1646162526563075
+     ** Stability check: (smallest eigenvalue of Kt) = 2.1646162524938175
 
     +
 
@@ -341,14 +341,14 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   8.9520e-02
-    norm of the out-of-balance force:   2.5309e-11
+    norm of the out-of-balance force:   2.5189e-11
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        1.90
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 1.897086480938334
+     ** Stability check: (smallest eigenvalue of Kt) = 1.8970864809980343
 
     +
 
@@ -356,14 +356,14 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   1.5323e-01
-    norm of the out-of-balance force:   2.8686e-11
+    norm of the out-of-balance force:   2.8547e-11
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        1.63
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 1.6295547207298116
+     ** Stability check: (smallest eigenvalue of Kt) = 1.6295547208400913
 
     +
 
@@ -371,14 +371,14 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   2.3787e-01
-    norm of the out-of-balance force:   4.7776e-11
+    norm of the out-of-balance force:   4.7667e-11
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        1.36
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 1.3620209694583907
+     ** Stability check: (smallest eigenvalue of Kt) = 1.3620209694352918
 
     +
 
@@ -386,14 +386,14 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   3.5578e-01
-    norm of the out-of-balance force:   4.9634e-11
+    norm of the out-of-balance force:   4.8415e-11
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        1.09
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 1.0944852246263654
+     ** Stability check: (smallest eigenvalue of Kt) = 1.0944852245476049
 
     +
 
@@ -401,14 +401,14 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   5.3137e-01
-    norm of the out-of-balance force:   2.1510e-11
+    norm of the out-of-balance force:   1.9768e-11
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        0.83
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 0.826947483518603
+     ** Stability check: (smallest eigenvalue of Kt) = 0.8269474836464931
 
     +
 
@@ -416,14 +416,14 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   8.2064e-01
-    norm of the out-of-balance force:   2.2279e-12
+    norm of the out-of-balance force:   2.6538e-12
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        0.56
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 0.5594077438868548
+     ** Stability check: (smallest eigenvalue of Kt) = 0.5594077439021518
 
     +
 
@@ -431,14 +431,14 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   1.3867e+00
-    norm of the out-of-balance force:   2.7505e-11
+    norm of the out-of-balance force:   2.6658e-11
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        0.29
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 0.2918660028917888
+     ** Stability check: (smallest eigenvalue of Kt) = 0.2918660029127227
 
     +
 
@@ -446,14 +446,14 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   2.1717e+01
     norm of the out-of-balance force:   2.9907e+00
-    norm of the out-of-balance force:   6.8549e-09
+    norm of the out-of-balance force:   6.7525e-09
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        0.02
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 0.024322257944867483
+     ** Stability check: (smallest eigenvalue of Kt) = 0.02432225800791405
 
     +
 
@@ -480,7 +480,7 @@ Run the example by creating an instance of the problem and executing it by calli
           u:    [-3.66409063e-03 -5.97734339e+01 -7.77608633e-01]
       Node_181:
           x:    [50.  0.]
-          u:    [-4.88545418e-03 -6.46967903e+01 -5.03187629e-13]
+          u:    [-4.88545418e-03 -6.46967903e+01 -5.07997037e-13]
       Node_182:
           x:    [62.5  0. ]
           u:    [-6.10681772e-03 -5.97734339e+01  7.77608633e-01]
@@ -530,7 +530,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.940 seconds)
+   **Total running time of the script:** (0 minutes 0.814 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame01.py:
@@ -546,6 +546,10 @@ Run the example by creating an instance of the problem and executing it by calli
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_frame01.py <plot_frame01.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_frame01.zip <plot_frame01.zip>`
 
 
 .. only:: html

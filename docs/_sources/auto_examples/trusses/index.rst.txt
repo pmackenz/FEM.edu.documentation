@@ -17,10 +17,11 @@ see the :ref:`Tutorials <tutorials>`.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for easy validation of calculated deformation, r...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for easy validation of calculated deformation, reactions and internal forces.">
 
 .. only:: html
 
@@ -37,7 +38,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for relatively easy validation of calculated def...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for relatively easy validation of calculated deformation, reactions and internal forces.">
 
 .. only:: html
 
@@ -54,7 +55,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example is structurally identical to ExampleTruss01 but utilizes the alternative input sty...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example is structurally identical to ExampleTruss01 but utilizes the alternative input style for adding Nodes and Elements to the model.">
 
 .. only:: html
 
@@ -71,7 +72,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for easy validation of calculated deformation, r...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for easy validation of calculated deformation, reactions and internal forces.">
 
 .. only:: html
 
@@ -139,7 +140,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This is the same structure as in problem sphx_glr_auto_examples_trusses_plot_truss07.py but usi...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This is the same structure as in problem sphx_glr_auto_examples_trusses_plot_truss07.py but using a mix of load control and displacement control.">
 
 .. only:: html
 
@@ -156,7 +157,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This is the same structure as in problem sphx_glr_auto_examples_trusses_plot_truss07.py but it ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This is the same structure as in problem sphx_glr_auto_examples_trusses_plot_truss07.py but it will be solved using arc-length-control.">
 
 .. only:: html
 
@@ -170,6 +171,8 @@ see the :ref:`Tutorials <tutorials>`.
       <div class="sphx-glr-thumbnail-title">Post-buckling of a truss column using Arc-Length Control.</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

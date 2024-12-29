@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../">
 <head>
@@ -6,24 +8,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tutorial 1 - Creating a Model &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/design-tabs.js?v=36754332"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -108,7 +106,7 @@
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p><a class="reference internal" href="#sphx-glr-download-auto-tutorials-model-creation-plot-01-setup-py"><span class="std std-ref">Go to the end</span></a>
-to download the full example code</p>
+to download the full example code.</p>
 </div>
 <section class="sphx-glr-example-title" id="tutorial-1-creating-a-model">
 <span id="model-creation-01"></span><span id="sphx-glr-auto-tutorials-model-creation-plot-01-setup-py"></span><h1>Tutorial 1 - Creating a Model<a class="headerlink" href="#tutorial-1-creating-a-model" title="Link to this heading"></a></h1>
@@ -282,28 +280,28 @@ report about the current state of the model as follows.</p>
 
 Nodes:
 ---------------------
-  Node_4148:
+  Node_4161:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    None
-  Node_4149:
+  Node_4162:
       x:    [8. 6.]
       P:    [ 0. -1.]
       u:    None
-  Node_4150:
+  Node_4163:
       x:    [16.  0.]
       fix:  [&#39;uy&#39;]
       u:    None
 
 Elements:
 ---------------------
-  Truss: Node_4148 to Node_4149:
+  Truss: Node_4161 to Node_4162:
       material properties: ElasticSection(Material)({&#39;E&#39;: 1000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30, &#39;I&#39;: 1.0})  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
       internal force: 0.0
-  Truss: Node_4149 to Node_4150:
+  Truss: Node_4162 to Node_4163:
       material properties: ElasticSection(Material)({&#39;E&#39;: 1000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30, &#39;I&#39;: 1.0})  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
       internal force: 0.0
-  Truss: Node_4148 to Node_4150:
+  Truss: Node_4161 to Node_4163:
       material properties: ElasticSection(Material)({&#39;E&#39;: 1000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30, &#39;I&#39;: 1.0})  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
       internal force: 0.0
 </pre></div>
@@ -354,29 +352,29 @@ Avoid “.jpg” for line-graphics like this one.</p>
 
 Nodes:
 ---------------------
-  Node_4148:
+  Node_4161:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0. 0.]
-  Node_4149:
+  Node_4162:
       x:    [8. 6.]
       P:    [ 0. -1.]
       u:    [ 0.00533333 -0.021     ]
-  Node_4150:
+  Node_4163:
       x:    [16.  0.]
       fix:  [&#39;uy&#39;]
       u:    [0.01066667 0.        ]
 
 Elements:
 ---------------------
-  Truss: Node_4148 to Node_4149:
-      material properties: ElasticSection(Material)({&#39;E&#39;: 1000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30, &#39;I&#39;: 1.0})  strain:{&#39;axial&#39;: -0.0008333333333333333}   stress:{&#39;axial&#39;: -0.8333333333333333, &#39;flexure&#39;: 0.0}
+  Truss: Node_4161 to Node_4162:
+      material properties: ElasticSection(Material)({&#39;E&#39;: 1000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30, &#39;I&#39;: 1.0})  strain:{&#39;axial&#39;: np.float64(-0.0008333333333333333)}   stress:{&#39;axial&#39;: np.float64(-0.8333333333333333), &#39;flexure&#39;: 0.0}
       internal force: -0.8333333333333333
-  Truss: Node_4149 to Node_4150:
-      material properties: ElasticSection(Material)({&#39;E&#39;: 1000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30, &#39;I&#39;: 1.0})  strain:{&#39;axial&#39;: -0.0008333333333333333}   stress:{&#39;axial&#39;: -0.8333333333333333, &#39;flexure&#39;: 0.0}
+  Truss: Node_4162 to Node_4163:
+      material properties: ElasticSection(Material)({&#39;E&#39;: 1000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30, &#39;I&#39;: 1.0})  strain:{&#39;axial&#39;: np.float64(-0.0008333333333333333)}   stress:{&#39;axial&#39;: np.float64(-0.8333333333333333), &#39;flexure&#39;: 0.0}
       internal force: -0.8333333333333333
-  Truss: Node_4148 to Node_4150:
-      material properties: ElasticSection(Material)({&#39;E&#39;: 1000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30, &#39;I&#39;: 1.0})  strain:{&#39;axial&#39;: 0.0006666666666666664}   stress:{&#39;axial&#39;: 0.6666666666666664, &#39;flexure&#39;: 0.0}
+  Truss: Node_4161 to Node_4163:
+      material properties: ElasticSection(Material)({&#39;E&#39;: 1000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30, &#39;I&#39;: 1.0})  strain:{&#39;axial&#39;: np.float64(0.0006666666666666664)}   stress:{&#39;axial&#39;: np.float64(0.6666666666666664), &#39;flexure&#39;: 0.0}
       internal force: 0.6666666666666664
 </pre></div>
 </div>
@@ -403,13 +401,16 @@ Elements:
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;tutorial01_axial.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_01_setup_003.png" srcset="../../_images/sphx_glr_plot_01_setup_003.png" alt="Axial Forces" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.310 seconds)</p>
+<img src="../../_images/sphx_glr_plot_01_setup_003.png" srcset="../../_images/sphx_glr_plot_01_setup_003.png" alt="Axial Forces" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.291 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-model-creation-plot-01-setup-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/29eb8dabe6549980d2a99ec56c347d3a/plot_01_setup.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_01_setup.ipynb</span></code></a></p>
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/ae1fec07aec3868e1f923a0d334ce91b/plot_01_setup.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_01_setup.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/82af2455791855a9da1fde2b62f8cbc4/plot_01_setup.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">plot_01_setup.zip</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -428,7 +429,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 26, 2024.
+      <span class="lastupdated">Last updated on Dec 28, 2024.
       </span></p>
   </div>
 

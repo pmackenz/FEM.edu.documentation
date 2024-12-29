@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_auto_examples_mixed_plot_mixed01.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -229,43 +229,43 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_4144:
+      Node_4157:
           x:    [0. 0.]
           fix:  ['ux', 'uy', 'rz']
           u:    None
-      Node_4145:
+      Node_4158:
           x:    [ 0. 50.]
           P:    [20.  0.  0.]
           u:    None
-      Node_4146:
+      Node_4159:
           x:    [80.  0.]
           fix:  ['ux', 'uy', 'rz']
           u:    None
-      Node_4147:
+      Node_4160:
           x:    [80. 50.]
           u:    None
 
     Elements:
     ---------------------
-      Frame2D_6810: nodes ( Node_4144 Node_4145 )
+      Frame2D_6819: nodes ( Node_4157 Node_4158 )
           material: ElasticSection
           internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-      Frame2D_6811: nodes ( Node_4146 Node_4147 )
+      Frame2D_6820: nodes ( Node_4159 Node_4160 )
           material: ElasticSection
           internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-      Frame2D_6812: nodes ( Node_4145 Node_4147 )
+      Frame2D_6821: nodes ( Node_4158 Node_4160 )
           material: ElasticSection
           internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-      Truss: Node_4144 to Node_4147:
+      Truss: Node_4157 to Node_4160:
           material properties: FiberMaterial(Material)({'E': 29000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0   stress:{'xx': 0.0, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 0.0
 
 
     ==== perform the analysis ===
 
-    /usr/local/lib/python3.11/site-packages/matplotlib/quiver.py:632: RuntimeWarning: Mean of empty slice.
+    /Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/matplotlib/quiver.py:678: RuntimeWarning: Mean of empty slice.
       amean = a.mean()
-    /usr/local/lib/python3.11/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+    /Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:145: RuntimeWarning: invalid value encountered in scalar divide
       ret = ret.dtype.type(ret / rcount)
     norm of the out-of-balance force:   0.0000e+00
     +
@@ -364,35 +364,35 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_4144:
+      Node_4157:
           x:    [0. 0.]
           fix:  ['ux', 'uy', 'rz']
           u:    [0. 0. 0.]
-      Node_4145:
+      Node_4158:
           x:    [ 0. 50.]
           P:    [20.  0.  0.]
           u:    [ 0.81143807 -0.01625057 -0.03775122]
-      Node_4146:
+      Node_4159:
           x:    [80.  0.]
           fix:  ['ux', 'uy', 'rz']
           u:    [0. 0. 0.]
-      Node_4147:
+      Node_4160:
           x:    [80. 50.]
           u:    [ 0.78293564 -0.02726958  0.03215376]
 
     Elements:
     ---------------------
-      Frame2D_6810: nodes ( Node_4144 Node_4145 )
+      Frame2D_6819: nodes ( Node_4157 Node_4158 )
           material: ElasticSection
           internal forces: f0=-188.51 V0=-6.64 M0=-98.88 fl=-188.51 Vl=-6.64 Ml=-278.06 Pw=0.00 Mw=0.00
-      Frame2D_6811: nodes ( Node_4146 Node_4147 )
+      Frame2D_6820: nodes ( Node_4159 Node_4160 )
           material: ElasticSection
           internal forces: f0=-316.33 V0=37.17 M0=-911.14 fl=-316.33 Vl=37.17 Ml=1195.25 Pw=0.00 Mw=0.00
-      Frame2D_6812: nodes ( Node_4145 Node_4147 )
+      Frame2D_6821: nodes ( Node_4158 Node_4160 )
           material: ElasticSection
           internal forces: f0=-206.64 V0=-11.49 M0=2388.61 fl=-206.64 Vl=-11.49 Ml=1471.42 Pw=-200.00 Mw=-2666.67
-      Truss: Node_4144 to Node_4147:
-          material properties: FiberMaterial(Material)({'E': 29000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.006871468961325107   stress:{'xx': 199.27259987842808, 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+      Truss: Node_4157 to Node_4160:
+          material properties: FiberMaterial(Material)({'E': 29000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.006871468961325107   stress:{'xx': np.float64(199.27259987842808), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
           internal force: 199.27259987842808
 
 
@@ -402,7 +402,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.845 seconds)
+   **Total running time of the script:** (0 minutes 0.837 seconds)
 
 
 .. _sphx_glr_download_auto_examples_mixed_plot_mixed01.py:
@@ -418,6 +418,10 @@ Run the example by creating an instance of the problem and executing it by calli
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_mixed01.py <plot_mixed01.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_mixed01.zip <plot_mixed01.zip>`
 
 
 .. only:: html

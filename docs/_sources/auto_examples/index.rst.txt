@@ -20,6 +20,9 @@ For longer, more comprehensive example documentation, see our :ref:`Tutorials Ga
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 
@@ -42,10 +45,11 @@ see the :ref:`Tutorials <tutorials>`.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="                o---/\/\/\---o---/\/\/\---o    x---/\/\/\---o                         o---&gt;    ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="                o---/\/\/\---o---/\/\/\---o    x---/\/\/\---o                         o---&gt;                 o-------/\/\/\/\/\--------o">
 
 .. only:: html
 
@@ -62,7 +66,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="                o---/\/\/\---o---/\/\/\---o    x---/\/\/\---o                         o---&gt;    ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="                o---/\/\/\---o---/\/\/\---o    x---/\/\/\---o                         o---&gt;                 o-------/\/\/\/\/\--------o">
 
 .. only:: html
 
@@ -76,6 +80,8 @@ see the :ref:`Tutorials <tutorials>`.
       <div class="sphx-glr-thumbnail-title">A first 1D spring system with nicer plots</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 
@@ -95,10 +101,11 @@ see the :ref:`Tutorials <tutorials>`.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for easy validation of calculated deformation, r...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for easy validation of calculated deformation, reactions and internal forces.">
 
 .. only:: html
 
@@ -115,7 +122,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically indeterminate but simple enough to validate deformation, reactions and...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically indeterminate but simple enough to validate deformation, reactions and internal forces.">
 
 .. only:: html
 
@@ -129,6 +136,8 @@ see the :ref:`Tutorials <tutorials>`.
       <div class="sphx-glr-thumbnail-title">Three-span continuous beam under uniform load.</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 
@@ -148,10 +157,11 @@ see the :ref:`Tutorials <tutorials>`.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for easy validation of calculated deformation, r...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for easy validation of calculated deformation, reactions and internal forces.">
 
 .. only:: html
 
@@ -168,7 +178,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for relatively easy validation of calculated def...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for relatively easy validation of calculated deformation, reactions and internal forces.">
 
 .. only:: html
 
@@ -185,7 +195,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example is structurally identical to ExampleTruss01 but utilizes the alternative input sty...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example is structurally identical to ExampleTruss01 but utilizes the alternative input style for adding Nodes and Elements to the model.">
 
 .. only:: html
 
@@ -202,7 +212,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for easy validation of calculated deformation, r...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The system is statically determined and allows for easy validation of calculated deformation, reactions and internal forces.">
 
 .. only:: html
 
@@ -270,7 +280,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This is the same structure as in problem sphx_glr_auto_examples_trusses_plot_truss07.py but usi...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This is the same structure as in problem sphx_glr_auto_examples_trusses_plot_truss07.py but using a mix of load control and displacement control.">
 
 .. only:: html
 
@@ -287,7 +297,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This is the same structure as in problem sphx_glr_auto_examples_trusses_plot_truss07.py but it ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This is the same structure as in problem sphx_glr_auto_examples_trusses_plot_truss07.py but it will be solved using arc-length-control.">
 
 .. only:: html
 
@@ -301,6 +311,8 @@ see the :ref:`Tutorials <tutorials>`.
       <div class="sphx-glr-thumbnail-title">Post-buckling of a truss column using Arc-Length Control.</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 
@@ -320,6 +332,7 @@ see the :ref:`Tutorials <tutorials>`.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -374,7 +387,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="modeled using a 2D frame element">
+    <div class="sphx-glr-thumbcontainer" tooltip="modeled using  a 2D frame element  inclined boundary condition (using Transformation) * element loading">
 
 .. only:: html
 
@@ -388,6 +401,25 @@ see the :ref:`Tutorials <tutorials>`.
       <div class="sphx-glr-thumbnail-title">Buckling of a building frame</div>
     </div>
 
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="modeled using a 2D frame element">
+
+.. only:: html
+
+  .. image:: /auto_examples/frames/images/thumb/sphx_glr_plot_frame05_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_frames_plot_frame05.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Buckling of a building frame</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 
@@ -407,10 +439,11 @@ see the :ref:`Tutorials <tutorials>`.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This problem demonstrates a combination of prescribed temperature on the left and prescribed fl...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This problem demonstrates a combination of prescribed temperature on the left and prescribed flux on the right side.">
 
 .. only:: html
 
@@ -476,6 +509,8 @@ see the :ref:`Tutorials <tutorials>`.
     </div>
 
 
+.. thumbnail-parent-div-close
+
 .. raw:: html
 
     </div>
@@ -494,6 +529,7 @@ see the :ref:`Tutorials <tutorials>`.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -514,7 +550,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="    v=-5   v=-5      |     |      v     v      3-----2 -&gt; u=5      |\  b | &gt;      | \   | &gt;    ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="    v=-5   v=-5      |     |      v     v      3-----2 -&gt; u=5      |\  b | &gt;      | \   | &gt;      |  \  | &gt; (w = 1.0)      |   \ | &gt;      | a  \| &gt;      0-----1 -&gt; u=5">
 
 .. only:: html
 
@@ -531,7 +567,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Basic implementation test with applied loads.     Testing the tangent stiffness computation    ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Basic implementation test with applied loads.     Testing the tangent stiffness computation     for a Triangle (using linear shape functions).">
 
 .. only:: html
 
@@ -548,7 +584,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Basic implementation test with applied loads.     Testing the tangent stiffness computation    ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Basic implementation test with applied loads.     Testing the tangent stiffness computation     for a Triangle6 (using quadratic shape functions).">
 
 .. only:: html
 
@@ -565,7 +601,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The patch test is an empirical minimum test which every finite element has to pass to ensure co...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The patch test is an empirical minimum test which every finite element has to pass to ensure convergence with mesh refinement.">
 
 .. only:: html
 
@@ -667,7 +703,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The patch test is an empirical minimum test which every finite element has to pass to ensure co...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The patch test is an empirical minimum test which every finite element has to pass to ensure convergence with mesh refinement.">
 
 .. only:: html
 
@@ -718,6 +754,25 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Basic implementation test with applied loads.     Testing the tangent stiffness computation.">
+
+.. only:: html
+
+  .. image:: /auto_examples/plates/images/thumb/sphx_glr_plot_plate_element_modes_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_plates_plot_plate_element_modes.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">A square patch made of one quadrilateral plate elements</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
     </div>
 
 
@@ -734,6 +789,7 @@ see the :ref:`Tutorials <tutorials>`.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -751,6 +807,8 @@ see the :ref:`Tutorials <tutorials>`.
       <div class="sphx-glr-thumbnail-title">Braced building frame</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

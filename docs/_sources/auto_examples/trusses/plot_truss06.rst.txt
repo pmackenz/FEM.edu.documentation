@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_auto_examples_trusses_plot_truss06.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -152,7 +152,7 @@ Create the example by subclassing the :py:class:`Example`
             plt.plot(data, load)
             plt.grid(True)
             plt.xlabel('displacements $ u_i $')
-            plt.ylabel('load factor $ \lambda $')
+            plt.ylabel('load factor $ \\lambda $')
             plt.legend(['$ u_x $','$ u_x $'])
             plt.show()
 
@@ -161,13 +161,13 @@ Create the example by subclassing the :py:class:`Example`
 
             ax0.plot(load, data[:,0])
             ax0.grid(True)
-            ax0.set_xlabel('load factor $ \lambda $')
+            ax0.set_xlabel('load factor $ \\lambda $')
             ax0.set_ylabel('displacements $ u_i $')
             ax0.legend(['$ u_x $'])
 
             ax1.plot(load, data[:,1])
             ax1.grid(True)
-            ax1.set_xlabel('load factor $ \lambda $')
+            ax1.set_xlabel('load factor $ \\lambda $')
             ax1.set_ylabel('displacements $ u_i $')
             ax1.legend(['$ u_y $'])
 
@@ -455,7 +455,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.412 seconds)
+   **Total running time of the script:** (0 minutes 1.528 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss06.py:
@@ -471,6 +471,10 @@ Run the example by creating an instance of the problem and executing it by calli
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_truss06.py <plot_truss06.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_truss06.zip <plot_truss06.zip>`
 
 
 .. only:: html

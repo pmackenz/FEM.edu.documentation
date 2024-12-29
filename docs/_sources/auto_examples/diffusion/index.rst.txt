@@ -17,10 +17,11 @@ see the :ref:`Tutorials <tutorials>`.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This problem demonstrates a combination of prescribed temperature on the left and prescribed fl...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This problem demonstrates a combination of prescribed temperature on the left and prescribed flux on the right side.">
 
 .. only:: html
 
@@ -85,6 +86,8 @@ see the :ref:`Tutorials <tutorials>`.
       <div class="sphx-glr-thumbnail-title">Heat transfer through a thick cylinder</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

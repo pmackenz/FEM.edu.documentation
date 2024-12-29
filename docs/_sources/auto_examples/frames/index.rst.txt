@@ -17,6 +17,7 @@ see the :ref:`Tutorials <tutorials>`.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -71,7 +72,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="modeled using a 2D frame element">
+    <div class="sphx-glr-thumbcontainer" tooltip="modeled using  a 2D frame element  inclined boundary condition (using Transformation) * element loading">
 
 .. only:: html
 
@@ -88,6 +89,25 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="modeled using a 2D frame element">
+
+.. only:: html
+
+  .. image:: /auto_examples/frames/images/thumb/sphx_glr_plot_frame05_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_frames_plot_frame05.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Buckling of a building frame</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
     </div>
 
 
@@ -98,4 +118,5 @@ see the :ref:`Tutorials <tutorials>`.
    /auto_examples/frames/plot_frame02
    /auto_examples/frames/plot_frame03
    /auto_examples/frames/plot_frame04
+   /auto_examples/frames/plot_frame05
 

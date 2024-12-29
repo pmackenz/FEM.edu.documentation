@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../">
 <head>
@@ -6,24 +8,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A square patch made of one quadrilateral plate elements &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/design-tabs.js?v=36754332"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -81,6 +79,7 @@
 <li class="toctree-l4"><a class="reference internal" href="plot_plate09.html">Patch test for quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate10.html">Profiling the code</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate11.html">Bending a cantilever beam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate_element_modes.html">A square patch made of one quadrilateral plate elements</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
@@ -123,7 +122,7 @@
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p><a class="reference internal" href="#sphx-glr-download-auto-examples-plates-plot-plate07-py"><span class="std std-ref">Go to the end</span></a>
-to download the full example code</p>
+to download the full example code.</p>
 </div>
 <section class="sphx-glr-example-title" id="a-square-patch-made-of-one-quadrilateral-plate-elements">
 <span id="sphx-glr-auto-examples-plates-plot-plate07-py"></span><h1>A square patch made of one quadrilateral plate elements<a class="headerlink" href="#a-square-patch-made-of-one-quadrilateral-plate-elements" title="Link to this heading"></a></h1>
@@ -149,10 +148,10 @@ to download the full example code</p>
     <span class="n">t</span>  <span class="o">=</span>  <span class="mf">1.0</span>
 
 <span class="n">Element</span> <span class="n">loads</span><span class="p">:</span>
-    <span class="n">node</span> <span class="mi">0</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
-    <span class="n">node</span> <span class="mi">1</span><span class="p">:</span> <span class="p">[</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
-    <span class="n">node</span> <span class="mi">2</span><span class="p">:</span> <span class="p">[</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
-    <span class="n">node</span> <span class="mi">3</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+    <span class="n">node</span> <span class="mi">0</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">]</span>
+    <span class="n">node</span> <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">]</span>
+    <span class="n">node</span> <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">]</span>
+    <span class="n">node</span> <span class="mi">3</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Author: Peter Mackenzie-Helnwein</p>
@@ -162,7 +161,8 @@ to download the full example code</p>
 
 <span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
 <span class="kn">from</span> <span class="nn">femedu.solver</span> <span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Quad</span>
+<span class="c1">#from femedu.elements.linear import Quad</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">ReducedIntegrationQuad</span> <span class="k">as</span> <span class="n">Quad</span>
 <span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">PlaneStress</span>
 
 
@@ -199,6 +199,7 @@ to download the full example code</p>
         <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">elemA</span><span class="p">)</span>
 
         <span class="n">elemA</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="n">face</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pn</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">elemA</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="n">face</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pn</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
 
         <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Undeformed system&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate07_undeformed.png&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
@@ -229,7 +230,7 @@ to download the full example code</p>
 
         <span class="n">nd0</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span> <span class="s1">&#39;uy&#39;</span><span class="p">)</span>
         <span class="n">nd1</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;uy&#39;</span><span class="p">)</span>
-        <span class="n">nd3</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">)</span>
+        <span class="c1">#nd3.fixDOF(&#39;ux&#39;)</span>
 
         <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
         <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
@@ -254,10 +255,10 @@ to download the full example code</p>
 <ul class="sphx-glr-horizontal">
 <li><img src="../../_images/sphx_glr_plot_plate07_001.png" srcset="../../_images/sphx_glr_plot_plate07_001.png" alt="Undeformed system" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate07_002.png" srcset="../../_images/sphx_glr_plot_plate07_002.png" alt="Mode Shape for $ \lambda = -0.00 $" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_plate07_003.png" srcset="../../_images/sphx_glr_plot_plate07_003.png" alt="Mode Shape for $ \lambda = -0.00 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate07_003.png" srcset="../../_images/sphx_glr_plot_plate07_003.png" alt="Mode Shape for $ \lambda = 0.00 $" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate07_004.png" srcset="../../_images/sphx_glr_plot_plate07_004.png" alt="Mode Shape for $ \lambda = 0.00 $" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_plate07_005.png" srcset="../../_images/sphx_glr_plot_plate07_005.png" alt="Mode Shape for $ \lambda = 4.95 $" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_plate07_006.png" srcset="../../_images/sphx_glr_plot_plate07_006.png" alt="Mode Shape for $ \lambda = 4.95 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate07_005.png" srcset="../../_images/sphx_glr_plot_plate07_005.png" alt="Mode Shape for $ \lambda = 3.66 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate07_006.png" srcset="../../_images/sphx_glr_plot_plate07_006.png" alt="Mode Shape for $ \lambda = 3.66 $" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate07_007.png" srcset="../../_images/sphx_glr_plot_plate07_007.png" alt="Mode Shape for $ \lambda = 7.69 $" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate07_008.png" srcset="../../_images/sphx_glr_plot_plate07_008.png" alt="Mode Shape for $ \lambda = 7.69 $" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate07_009.png" srcset="../../_images/sphx_glr_plot_plate07_009.png" alt="Mode Shape for $ \lambda = 14.29 $" class = "sphx-glr-multi-img"/></li>
@@ -265,49 +266,55 @@ to download the full example code</p>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+
 +
+/Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/matplotlib/quiver.py:678: RuntimeWarning: Mean of empty slice.
+  amean = a.mean()
+/Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:145: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
 
 System Analysis Report
 =======================
 
 Nodes:
 ---------------------
-  Node_1388:
+  Node_1397:
       x:    [0. 0.]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0. 0.]
-  Node_1389:
+  Node_1398:
       x:    [10.  0.]
       fix:  [&#39;uy&#39;]
       u:    [1. 0.]
-  Node_1390:
+  Node_1399:
       x:    [10. 10.]
       u:    [ 1.  -0.3]
-  Node_1391:
+  Node_1400:
       x:    [ 0. 10.]
-      fix:  [&#39;ux&#39;]
-      u:    [ 0.  -0.3]
+      u:    [-3.70153565e-16 -3.00000000e-01]
 
 Elements:
 ---------------------
-  Quad_1803: nodes ( Node_1388 Node_1389 Node_1390 Node_1391 )
+  ReducedIntegrationQuad_1811: nodes ( Node_1397 Node_1398 Node_1399 Node_1400 )
       material: list
-      strain (0): xx=1.000e-01 yy=-3.000e-02 xy=-4.760e-18 zz=-2.100e-02
-      stress (0): xx=1.000e+00 yy=0.000e+00 xy=-1.831e-17 zz=0.000e+00
-      strain (1): xx=1.000e-01 yy=-3.000e-02 xy=8.302e-17 zz=-2.100e-02
-      stress (1): xx=1.000e+00 yy=0.000e+00 xy=3.193e-16 zz=0.000e+00
-      strain (2): xx=1.000e-01 yy=-3.000e-02 xy=-7.511e-17 zz=-2.100e-02
-      stress (2): xx=1.000e+00 yy=0.000e+00 xy=-2.889e-16 zz=0.000e+00
-      strain (3): xx=1.000e-01 yy=-3.000e-02 xy=1.857e-17 zz=-2.100e-02
-      stress (3): xx=1.000e+00 yy=0.000e+00 xy=7.142e-17 zz=0.000e+00
+      strain (0): xx=1.000e-01 yy=-3.000e-02 xy=-3.710e-17 zz=-2.100e-02
+      stress (0): xx=1.000e+00 yy=4.148e-18 xy=-1.427e-16 zz=0.000e+00
+      strain (1): xx=1.000e-01 yy=-3.000e-02 xy=-3.710e-17 zz=-2.100e-02
+      stress (1): xx=1.000e+00 yy=4.148e-18 xy=-1.427e-16 zz=0.000e+00
+      strain (2): xx=1.000e-01 yy=-3.000e-02 xy=-3.710e-17 zz=-2.100e-02
+      stress (2): xx=1.000e+00 yy=4.148e-18 xy=-1.427e-16 zz=0.000e+00
+      strain (3): xx=1.000e-01 yy=-3.000e-02 xy=-3.710e-17 zz=-2.100e-02
+      stress (3): xx=1.000e+00 yy=4.148e-18 xy=-1.427e-16 zz=0.000e+00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.233 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.174 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate07-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/62da168d245b575d03c39c5df76458f1/plot_plate07.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate07.ipynb</span></code></a></p>
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/8484d34548d21fbaef0a49006b675c4a/plot_plate07.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate07.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/a82f44a9f2fd9c09b4bd13fe1db20892/plot_plate07.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">plot_plate07.zip</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -325,7 +332,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 26, 2024.
+      <span class="lastupdated">Last updated on Dec 28, 2024.
       </span></p>
   </div>
 

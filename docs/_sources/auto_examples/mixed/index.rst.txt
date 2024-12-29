@@ -17,6 +17,7 @@ see the :ref:`Tutorials <tutorials>`.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -34,6 +35,8 @@ see the :ref:`Tutorials <tutorials>`.
       <div class="sphx-glr-thumbnail-title">Braced building frame</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

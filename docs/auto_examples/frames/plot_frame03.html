@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../">
 <head>
@@ -6,24 +8,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buckling of a building frame &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-      <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../../_static/design-tabs.js?v=36754332"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -70,6 +68,7 @@
 <li class="toctree-l4"><a class="reference internal" href="plot_frame02.html">Buckling of a vertical beam with pin-pin support</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Buckling of a building frame</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_frame04.html">Buckling of a building frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_frame05.html">Buckling of a building frame</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../diffusion/index.html">Diffusion Examples</a></li>
@@ -114,7 +113,7 @@
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p><a class="reference internal" href="#sphx-glr-download-auto-examples-frames-plot-frame03-py"><span class="std std-ref">Go to the end</span></a>
-to download the full example code</p>
+to download the full example code.</p>
 </div>
 <section class="sphx-glr-example-title" id="buckling-of-a-building-frame">
 <span id="sphx-glr-auto-examples-frames-plot-frame03-py"></span><h1>Buckling of a building frame<a class="headerlink" href="#buckling-of-a-building-frame" title="Link to this heading"></a></h1>
@@ -294,8 +293,8 @@ to download the full example code</p>
 
         <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span><span class="n">detKt</span><span class="p">,</span><span class="s1">&#39;--*r&#39;</span><span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Load factor, $ \lambda $&#39;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Stability index, $ </span><span class="si">{det}</span><span class="s2">\: {</span><span class="se">\\</span><span class="s2">bf K}_t $&quot;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Load factor, $ </span><span class="se">\\</span><span class="s1">lambda $&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Stability index, $ </span><span class="si">{det}</span><span class="se">\\</span><span class="s2">: {</span><span class="se">\\</span><span class="s2">bf K}_t $&quot;</span><span class="p">)</span>
 
         <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;frame3_stability.png&quot;</span><span class="p">)</span>
         <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -339,7 +338,7 @@ norm of the out-of-balance force:   0.0000e+00
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 25.362866066892394
+ ** Stability check: (smallest eigenvalue of Kt) = 25.362866066891545
 
 +
 
@@ -356,7 +355,7 @@ norm of the out-of-balance force:   1.3304e-07
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 22.553344322698855
+ ** Stability check: (smallest eigenvalue of Kt) = 22.55334432269496
 
 +
 
@@ -374,7 +373,7 @@ norm of the out-of-balance force:   1.0102e-08
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 19.736675218770774
+ ** Stability check: (smallest eigenvalue of Kt) = 19.736675218770433
 
 +
 
@@ -392,7 +391,7 @@ norm of the out-of-balance force:   8.3344e-08
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 16.91257943489863
+ ** Stability check: (smallest eigenvalue of Kt) = 16.912579434902266
 
 +
 
@@ -410,7 +409,7 @@ norm of the out-of-balance force:   3.7531e-07
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 14.080761870683443
+ ** Stability check: (smallest eigenvalue of Kt) = 14.080761870685262
 
 +
 
@@ -429,7 +428,7 @@ norm of the out-of-balance force:   1.4385e-08
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 11.240910493712873
+ ** Stability check: (smallest eigenvalue of Kt) = 11.24091049371112
 
 +
 
@@ -448,7 +447,7 @@ norm of the out-of-balance force:   4.6476e-08
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 8.392695084555516
+ ** Stability check: (smallest eigenvalue of Kt) = 8.39269508455168
 
 +
 
@@ -467,7 +466,7 @@ norm of the out-of-balance force:   1.2627e-07
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 5.535765867200808
+ ** Stability check: (smallest eigenvalue of Kt) = 5.535765867202627
 
 +
 
@@ -486,7 +485,7 @@ norm of the out-of-balance force:   3.0400e-07
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 2.669752012635755
+ ** Stability check: (smallest eigenvalue of Kt) = 2.6697520126339356
 
 +
 
@@ -505,7 +504,7 @@ norm of the out-of-balance force:   6.6657e-07
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = -0.20573999904608956
+ ** Stability check: (smallest eigenvalue of Kt) = -0.20573999904776644
 
 +
 
@@ -545,13 +544,16 @@ Elements:
       internal forces: f0=-117.11 V0=0.00 M0=11395.82 fl=-117.11 Vl=0.00 Ml=11395.82 Pw=-1080.00 Mw=-14400.00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.860 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.839 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-frames-plot-frame03-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/6e026a8327aaf7199ddd04976d668792/plot_frame03.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_frame03.ipynb</span></code></a></p>
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/32fd880e109e940272d694bbf6555869/plot_frame03.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_frame03.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/4c35e10274e18240ea609c3269f80196/plot_frame03.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">plot_frame03.zip</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -569,7 +571,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Apr 26, 2024.
+      <span class="lastupdated">Last updated on Dec 28, 2024.
       </span></p>
   </div>
 

@@ -15,6 +15,7 @@ Model Creation
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -49,6 +50,8 @@ Model Creation
       <div class="sphx-glr-thumbnail-title">Tutorial 2 - Loading a Model</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

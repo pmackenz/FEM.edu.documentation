@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_auto_examples_frames_plot_frame03.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -197,8 +197,8 @@ Author: Peter Mackenzie-Helnwein
 
             ax.plot(lambdas,detKt,'--*r')
             ax.grid(True)
-            ax.set_xlabel('Load factor, $ \lambda $')
-            ax.set_ylabel("Stability index, $ {det}\: {\\bf K}_t $")
+            ax.set_xlabel('Load factor, $ \\lambda $')
+            ax.set_ylabel("Stability index, $ {det}\\: {\\bf K}_t $")
 
             fig.savefig("frame3_stability.png")
             fig.show()
@@ -304,7 +304,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 25.362866066892394
+     ** Stability check: (smallest eigenvalue of Kt) = 25.362866066891545
 
     +
 
@@ -321,7 +321,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 22.553344322698855
+     ** Stability check: (smallest eigenvalue of Kt) = 22.55334432269496
 
     +
 
@@ -339,7 +339,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 19.736675218770774
+     ** Stability check: (smallest eigenvalue of Kt) = 19.736675218770433
 
     +
 
@@ -357,7 +357,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 16.91257943489863
+     ** Stability check: (smallest eigenvalue of Kt) = 16.912579434902266
 
     +
 
@@ -375,7 +375,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 14.080761870683443
+     ** Stability check: (smallest eigenvalue of Kt) = 14.080761870685262
 
     +
 
@@ -394,7 +394,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 11.240910493712873
+     ** Stability check: (smallest eigenvalue of Kt) = 11.24091049371112
 
     +
 
@@ -413,7 +413,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 8.392695084555516
+     ** Stability check: (smallest eigenvalue of Kt) = 8.39269508455168
 
     +
 
@@ -432,7 +432,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 5.535765867200808
+     ** Stability check: (smallest eigenvalue of Kt) = 5.535765867202627
 
     +
 
@@ -451,7 +451,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 2.669752012635755
+     ** Stability check: (smallest eigenvalue of Kt) = 2.6697520126339356
 
     +
 
@@ -470,7 +470,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = -0.20573999904608956
+     ** Stability check: (smallest eigenvalue of Kt) = -0.20573999904776644
 
     +
 
@@ -516,7 +516,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.860 seconds)
+   **Total running time of the script:** (0 minutes 0.839 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame03.py:
@@ -532,6 +532,10 @@ Run the example by creating an instance of the problem and executing it by calli
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_frame03.py <plot_frame03.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_frame03.zip <plot_frame03.zip>`
 
 
 .. only:: html
