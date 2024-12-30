@@ -256,34 +256,34 @@ to download the full example code.</p>
 
 Nodes:
 ---------------------
-  Node_4157:
-      x:    [0. 0.]
+  Node_4165:
+      x:    [0.000 0.000]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    None
-  Node_4158:
-      x:    [ 0. 50.]
-      P:    [20.  0.  0.]
+  Node_4166:
+      x:    [0.000 50.000]
+      P:    [20.000 0.000 0.000]
       u:    None
-  Node_4159:
-      x:    [80.  0.]
+  Node_4167:
+      x:    [80.000 0.000]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
       u:    None
-  Node_4160:
-      x:    [80. 50.]
+  Node_4168:
+      x:    [80.000 50.000]
       u:    None
 
 Elements:
 ---------------------
-  Frame2D_6819: nodes ( Node_4157 Node_4158 )
+  Frame2D_6827: nodes ( Node_4165 Node_4166 )
       material: ElasticSection
       internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-  Frame2D_6820: nodes ( Node_4159 Node_4160 )
+  Frame2D_6828: nodes ( Node_4167 Node_4168 )
       material: ElasticSection
       internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-  Frame2D_6821: nodes ( Node_4158 Node_4160 )
+  Frame2D_6829: nodes ( Node_4166 Node_4168 )
       material: ElasticSection
       internal forces: f0=0.00 V0=0.00 M0=0.00 fl=0.00 Vl=0.00 Ml=0.00 Pw=0.00 Mw=0.00
-  Truss: Node_4157 to Node_4160:
+  Truss: Node_4165 to Node_4168:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0   stress:{&#39;xx&#39;: 0.0, &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 0.0
 
@@ -391,39 +391,39 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_4157:
-      x:    [0. 0.]
+  Node_4165:
+      x:    [0.000 0.000]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
-      u:    [0. 0. 0.]
-  Node_4158:
-      x:    [ 0. 50.]
-      P:    [20.  0.  0.]
-      u:    [ 0.81143807 -0.01625057 -0.03775122]
-  Node_4159:
-      x:    [80.  0.]
+      u:    [0.000 0.000 0.000]
+  Node_4166:
+      x:    [0.000 50.000]
+      P:    [20.000 0.000 0.000]
+      u:    [0.811 -0.016 -0.038]
+  Node_4167:
+      x:    [80.000 0.000]
       fix:  [&#39;ux&#39;, &#39;uy&#39;, &#39;rz&#39;]
-      u:    [0. 0. 0.]
-  Node_4160:
-      x:    [80. 50.]
-      u:    [ 0.78293564 -0.02726958  0.03215376]
+      u:    [0.000 0.000 0.000]
+  Node_4168:
+      x:    [80.000 50.000]
+      u:    [0.783 -0.027 0.032]
 
 Elements:
 ---------------------
-  Frame2D_6819: nodes ( Node_4157 Node_4158 )
+  Frame2D_6827: nodes ( Node_4165 Node_4166 )
       material: ElasticSection
       internal forces: f0=-188.51 V0=-6.64 M0=-98.88 fl=-188.51 Vl=-6.64 Ml=-278.06 Pw=0.00 Mw=0.00
-  Frame2D_6820: nodes ( Node_4159 Node_4160 )
+  Frame2D_6828: nodes ( Node_4167 Node_4168 )
       material: ElasticSection
       internal forces: f0=-316.33 V0=37.17 M0=-911.14 fl=-316.33 Vl=37.17 Ml=1195.25 Pw=0.00 Mw=0.00
-  Frame2D_6821: nodes ( Node_4158 Node_4160 )
+  Frame2D_6829: nodes ( Node_4166 Node_4168 )
       material: ElasticSection
       internal forces: f0=-206.64 V0=-11.49 M0=2388.61 fl=-206.64 Vl=-11.49 Ml=1471.42 Pw=-200.00 Mw=-2666.67
-  Truss: Node_4157 to Node_4160:
+  Truss: Node_4165 to Node_4168:
       material properties: FiberMaterial(Material)({&#39;E&#39;: 29000.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.006871468961325107   stress:{&#39;xx&#39;: np.float64(199.27259987842808), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
       internal force: 199.27259987842808
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.837 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.721 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-mixed-plot-mixed01-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/9eb8ba2f493e430b3eb75da73ea80c22/plot_mixed01.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_mixed01.ipynb</span></code></a></p>
@@ -450,7 +450,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Dec 28, 2024.
+      <span class="lastupdated">Last updated on Dec 29, 2024.
       </span></p>
   </div>
 

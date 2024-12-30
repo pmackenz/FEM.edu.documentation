@@ -414,54 +414,54 @@ Run the example by creating an instance of the problem and executing it by calli
  .. code-block:: none
 
     System object
-    Node_208(x=[0. 0.], u=None)
-    Node_209(x=[  0. 180.], u=None)
-    Node_210(x=[  0. 360.], u=None)
-    Node_211(x=[  0. 540.], u=None)
-    Node_212(x=[  0. 720.], u=None)
-    Node_213(x=[240.   0.], u=None)
-    Node_214(x=[240. 180.], u=None)
-    Node_215(x=[240. 360.], u=None)
-    Node_216(x=[240. 540.], u=None)
-    Node_217(x=[240. 720.], u=None)
-    Node_218(x=[480.   0.], u=None)
-    Node_219(x=[480. 180.], u=None)
-    Node_220(x=[480. 360.], u=None)
-    Node_221(x=[480. 540.], u=None)
-    Node_222(x=[480. 720.], u=None)
-    Node_223(x=[720.   0.], u=None)
-    Node_224(x=[720. 180.], u=None)
-    Node_225(x=[720. 360.], u=None)
-    Node_226(x=[720. 540.], u=None)
-    Node_227(x=[720. 720.], u=None)
-    Frame2D(Node_208, Node_209, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_209, Node_210, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_210, Node_211, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_211, Node_212, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_213, Node_214, ElasticSection(Material)({'E': 29000.0, 'A': 300.0, 'I': 375.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_214, Node_215, ElasticSection(Material)({'E': 29000.0, 'A': 300.0, 'I': 375.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_215, Node_216, ElasticSection(Material)({'E': 29000.0, 'A': 300.0, 'I': 375.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_216, Node_217, ElasticSection(Material)({'E': 29000.0, 'A': 300.0, 'I': 375.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_218, Node_219, ElasticSection(Material)({'E': 29000.0, 'A': 300.0, 'I': 375.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_219, Node_220, ElasticSection(Material)({'E': 29000.0, 'A': 300.0, 'I': 375.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_220, Node_221, ElasticSection(Material)({'E': 29000.0, 'A': 300.0, 'I': 375.0, 'nu': 0.0, 'fy': 1e+30}))
+    Node_216(x=[0 0], u=None)
+    Node_217(x=[0 180], u=None)
+    Node_218(x=[0 360], u=None)
+    Node_219(x=[0 540], u=None)
+    Node_220(x=[0 720], u=None)
+    Node_221(x=[240 0], u=None)
+    Node_222(x=[240 180], u=None)
+    Node_223(x=[240 360], u=None)
+    Node_224(x=[240 540], u=None)
+    Node_225(x=[240 720], u=None)
+    Node_226(x=[480 0], u=None)
+    Node_227(x=[480 180], u=None)
+    Node_228(x=[480 360], u=None)
+    Node_229(x=[480 540], u=None)
+    Node_230(x=[480 720], u=None)
+    Node_231(x=[720 0], u=None)
+    Node_232(x=[720 180], u=None)
+    Node_233(x=[720 360], u=None)
+    Node_234(x=[720 540], u=None)
+    Node_235(x=[720 720], u=None)
+    Frame2D(Node_216, Node_217, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_217, Node_218, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_218, Node_219, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_219, Node_220, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
     Frame2D(Node_221, Node_222, ElasticSection(Material)({'E': 29000.0, 'A': 300.0, 'I': 375.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_223, Node_224, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_224, Node_225, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_225, Node_226, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_226, Node_227, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_209, Node_214, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_214, Node_219, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_219, Node_224, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_210, Node_215, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_215, Node_220, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_220, Node_225, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_211, Node_216, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_216, Node_221, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_221, Node_226, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_212, Node_217, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_222, Node_223, ElasticSection(Material)({'E': 29000.0, 'A': 300.0, 'I': 375.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_223, Node_224, ElasticSection(Material)({'E': 29000.0, 'A': 300.0, 'I': 375.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_224, Node_225, ElasticSection(Material)({'E': 29000.0, 'A': 300.0, 'I': 375.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_226, Node_227, ElasticSection(Material)({'E': 29000.0, 'A': 300.0, 'I': 375.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_227, Node_228, ElasticSection(Material)({'E': 29000.0, 'A': 300.0, 'I': 375.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_228, Node_229, ElasticSection(Material)({'E': 29000.0, 'A': 300.0, 'I': 375.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_229, Node_230, ElasticSection(Material)({'E': 29000.0, 'A': 300.0, 'I': 375.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_231, Node_232, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_232, Node_233, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_233, Node_234, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_234, Node_235, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 250.0, 'nu': 0.0, 'fy': 1e+30}))
     Frame2D(Node_217, Node_222, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
     Frame2D(Node_222, Node_227, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_227, Node_232, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_218, Node_223, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_223, Node_228, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_228, Node_233, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_219, Node_224, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_224, Node_229, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_229, Node_234, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_220, Node_225, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_225, Node_230, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_230, Node_235, ElasticSection(Material)({'E': 29000.0, 'A': 150.0, 'I': 750.0, 'nu': 0.0, 'fy': 1e+30}))
 
     ==== perform the analysis ===
 
@@ -641,155 +641,155 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_208:
-          x:    [0. 0.]
-          fix:  ['ux', 'uy', 'rz']
-          u:    [0. 0. 0.]
-      Node_209:
-          x:    [  0. 180.]
-          u:    [-0.00195269 -0.05845162 -0.02403623]
-      Node_210:
-          x:    [  0. 360.]
-          u:    [ 0.00035802 -0.10234068 -0.01990617]
-      Node_211:
-          x:    [  0. 540.]
-          u:    [-0.00103192 -0.13142317 -0.01829479]
-      Node_212:
-          x:    [  0. 720.]
-          u:    [ 0.00479755 -0.14562156 -0.0304816 ]
-      Node_213:
-          x:    [240.   0.]
-          fix:  ['ux', 'uy', 'rz']
-          u:    [0. 0. 0.]
-      Node_214:
-          x:    [240. 180.]
-          u:    [-0.00054966 -0.06909143  0.00451655]
-      Node_215:
-          x:    [240. 360.]
-          u:    [ 4.92702827e-05 -1.20884831e-01  2.89826296e-03]
       Node_216:
-          x:    [240. 540.]
-          u:    [-0.00019519 -0.15550221  0.00208175]
+          x:    [0.000 0.000]
+          fix:  ['ux', 'uy', 'rz']
+          u:    [0.000 0.000 0.000]
       Node_217:
-          x:    [240. 720.]
-          u:    [ 0.00128191 -0.17298232  0.00685415]
+          x:    [0.000 180.000]
+          u:    [-0.002 -0.058 -0.024]
       Node_218:
-          x:    [480.   0.]
-          fix:  ['ux', 'uy', 'rz']
-          u:    [0. 0. 0.]
+          x:    [0.000 360.000]
+          u:    [0.000 -0.102 -0.020]
       Node_219:
-          x:    [480. 180.]
-          u:    [ 0.00054966 -0.06909143 -0.00451655]
+          x:    [0.000 540.000]
+          u:    [-0.001 -0.131 -0.018]
       Node_220:
-          x:    [480. 360.]
-          u:    [-4.92702999e-05 -1.20884831e-01 -2.89826296e-03]
+          x:    [0.000 720.000]
+          u:    [0.005 -0.146 -0.030]
       Node_221:
-          x:    [480. 540.]
-          u:    [ 0.00019519 -0.15550221 -0.00208175]
-      Node_222:
-          x:    [480. 720.]
-          u:    [-0.00128191 -0.17298232 -0.00685415]
-      Node_223:
-          x:    [720.   0.]
+          x:    [240.000 0.000]
           fix:  ['ux', 'uy', 'rz']
-          u:    [0. 0. 0.]
+          u:    [0.000 0.000 0.000]
+      Node_222:
+          x:    [240.000 180.000]
+          u:    [-0.001 -0.069 0.005]
+      Node_223:
+          x:    [240.000 360.000]
+          u:    [0.000 -0.121 0.003]
       Node_224:
-          x:    [720. 180.]
-          u:    [ 0.00195269 -0.05845162  0.02403623]
+          x:    [240.000 540.000]
+          u:    [-0.000 -0.156 0.002]
       Node_225:
-          x:    [720. 360.]
-          u:    [-0.00035802 -0.10234068  0.01990617]
+          x:    [240.000 720.000]
+          u:    [0.001 -0.173 0.007]
       Node_226:
-          x:    [720. 540.]
-          u:    [ 0.00103192 -0.13142317  0.01829479]
+          x:    [480.000 0.000]
+          fix:  ['ux', 'uy', 'rz']
+          u:    [0.000 0.000 0.000]
       Node_227:
-          x:    [720. 720.]
-          u:    [-0.00479755 -0.14562156  0.0304816 ]
+          x:    [480.000 180.000]
+          u:    [0.001 -0.069 -0.005]
+      Node_228:
+          x:    [480.000 360.000]
+          u:    [-0.000 -0.121 -0.003]
+      Node_229:
+          x:    [480.000 540.000]
+          u:    [0.000 -0.156 -0.002]
+      Node_230:
+          x:    [480.000 720.000]
+          u:    [-0.001 -0.173 -0.007]
+      Node_231:
+          x:    [720.000 0.000]
+          fix:  ['ux', 'uy', 'rz']
+          u:    [0.000 0.000 0.000]
+      Node_232:
+          x:    [720.000 180.000]
+          u:    [0.002 -0.058 0.024]
+      Node_233:
+          x:    [720.000 360.000]
+          u:    [-0.000 -0.102 0.020]
+      Node_234:
+          x:    [720.000 540.000]
+          u:    [0.001 -0.131 0.018]
+      Node_235:
+          x:    [720.000 720.000]
+          u:    [-0.005 -0.146 0.030]
 
     Elements:
     ---------------------
-      Frame2D_317: nodes ( Node_208 Node_209 )
+      Frame2D_325: nodes ( Node_216 Node_217 )
           material: ElasticSection
           internal forces: f0=-1412.58 V0=-28.72 M0=2190.63 fl=-1412.58 Vl=-28.72 Ml=-2981.99 Pw=0.00 Mw=0.00
-      Frame2D_318: nodes ( Node_209 Node_210 )
+      Frame2D_326: nodes ( Node_217 Node_218 )
           material: ElasticSection
           internal forces: f0=-1060.65 V0=-54.15 M0=4967.18 fl=-1060.65 Vl=-54.15 Ml=-4777.61 Pw=0.00 Mw=0.00
-      Frame2D_319: nodes ( Node_210 Node_211 )
+      Frame2D_327: nodes ( Node_218 Node_219 )
           material: ElasticSection
           internal forces: f0=-702.83 V0=-48.56 M0=4417.41 fl=-702.83 Vl=-48.56 Ml=-4323.51 Pw=0.00 Mw=0.00
-      Frame2D_320: nodes ( Node_211 Node_212 )
+      Frame2D_328: nodes ( Node_219 Node_220 )
           material: ElasticSection
           internal forces: f0=-343.13 V0=-63.72 M0=5307.41 fl=-343.13 Vl=-63.72 Ml=-6160.35 Pw=0.00 Mw=0.00
-      Frame2D_321: nodes ( Node_213 Node_214 )
+      Frame2D_329: nodes ( Node_221 Node_222 )
           material: ElasticSection
           internal forces: f0=-3339.42 V0=7.47 M0=-673.83 fl=-3339.42 Vl=7.47 Ml=668.39 Pw=0.00 Mw=0.00
-      Frame2D_322: nodes ( Node_214 Node_215 )
+      Frame2D_330: nodes ( Node_222 Node_223 )
           material: ElasticSection
           internal forces: f0=-2503.35 V0=12.97 M0=-1196.02 fl=-2503.35 Vl=12.97 Ml=1140.41 Pw=0.00 Mw=0.00
-      Frame2D_323: nodes ( Node_215 Node_216 )
+      Frame2D_331: nodes ( Node_223 Node_224 )
           material: ElasticSection
           internal forces: f0=-1673.17 V0=9.16 M0=-851.26 fl=-1673.17 Vl=9.16 Ml=797.45 Pw=0.00 Mw=0.00
-      Frame2D_324: nodes ( Node_216 Node_217 )
+      Frame2D_332: nodes ( Node_224 Node_225 )
           material: ElasticSection
           internal forces: f0=-844.87 V0=17.25 M0=-1328.12 fl=-844.87 Vl=17.25 Ml=1778.43 Pw=0.00 Mw=0.00
-      Frame2D_325: nodes ( Node_218 Node_219 )
+      Frame2D_333: nodes ( Node_226 Node_227 )
           material: ElasticSection
           internal forces: f0=-3339.42 V0=-7.47 M0=673.83 fl=-3339.42 Vl=-7.47 Ml=-668.39 Pw=0.00 Mw=0.00
-      Frame2D_326: nodes ( Node_219 Node_220 )
+      Frame2D_334: nodes ( Node_227 Node_228 )
           material: ElasticSection
           internal forces: f0=-2503.35 V0=-12.97 M0=1196.02 fl=-2503.35 Vl=-12.97 Ml=-1140.41 Pw=0.00 Mw=0.00
-      Frame2D_327: nodes ( Node_220 Node_221 )
+      Frame2D_335: nodes ( Node_228 Node_229 )
           material: ElasticSection
           internal forces: f0=-1673.17 V0=-9.16 M0=851.26 fl=-1673.17 Vl=-9.16 Ml=-797.45 Pw=0.00 Mw=0.00
-      Frame2D_328: nodes ( Node_221 Node_222 )
+      Frame2D_336: nodes ( Node_229 Node_230 )
           material: ElasticSection
           internal forces: f0=-844.87 V0=-17.25 M0=1328.12 fl=-844.87 Vl=-17.25 Ml=-1778.43 Pw=0.00 Mw=0.00
-      Frame2D_329: nodes ( Node_223 Node_224 )
+      Frame2D_337: nodes ( Node_231 Node_232 )
           material: ElasticSection
           internal forces: f0=-1412.58 V0=28.72 M0=-2190.63 fl=-1412.58 Vl=28.72 Ml=2981.99 Pw=0.00 Mw=0.00
-      Frame2D_330: nodes ( Node_224 Node_225 )
+      Frame2D_338: nodes ( Node_232 Node_233 )
           material: ElasticSection
           internal forces: f0=-1060.65 V0=54.15 M0=-4967.18 fl=-1060.65 Vl=54.15 Ml=4777.61 Pw=0.00 Mw=0.00
-      Frame2D_331: nodes ( Node_225 Node_226 )
+      Frame2D_339: nodes ( Node_233 Node_234 )
           material: ElasticSection
           internal forces: f0=-702.83 V0=48.56 M0=-4417.41 fl=-702.83 Vl=48.56 Ml=4323.51 Pw=0.00 Mw=0.00
-      Frame2D_332: nodes ( Node_226 Node_227 )
+      Frame2D_340: nodes ( Node_234 Node_235 )
           material: ElasticSection
           internal forces: f0=-343.13 V0=63.72 M0=-5307.41 fl=-343.13 Vl=63.72 Ml=6160.35 Pw=0.00 Mw=0.00
-      Frame2D_333: nodes ( Node_209 Node_214 )
+      Frame2D_341: nodes ( Node_217 Node_222 )
           material: ElasticSection
           internal forces: f0=25.43 V0=-44.07 M0=7890.83 fl=25.43 Vl=-44.07 Ml=-2686.63 Pw=-396.00 Mw=-15840.00
-      Frame2D_334: nodes ( Node_214 Node_219 )
+      Frame2D_342: nodes ( Node_222 Node_227 )
           material: ElasticSection
           internal forces: f0=19.93 V0=0.00 M0=-822.22 fl=19.93 Vl=0.00 Ml=-822.22 Pw=-396.00 Mw=-15840.00
-      Frame2D_335: nodes ( Node_219 Node_224 )
+      Frame2D_343: nodes ( Node_227 Node_232 )
           material: ElasticSection
           internal forces: f0=25.43 V0=44.07 M0=-2686.63 fl=25.43 Vl=44.07 Ml=7890.83 Pw=-396.00 Mw=-15840.00
-      Frame2D_336: nodes ( Node_210 Node_215 )
+      Frame2D_344: nodes ( Node_218 Node_223 )
           material: ElasticSection
           internal forces: f0=-5.60 V0=-38.17 M0=6644.98 fl=-5.60 Vl=-38.17 Ml=-2516.78 Pw=-396.00 Mw=-15840.00
-      Frame2D_337: nodes ( Node_215 Node_220 )
+      Frame2D_345: nodes ( Node_223 Node_228 )
           material: ElasticSection
           internal forces: f0=-1.79 V0=0.00 M0=-525.10 fl=-1.79 Vl=0.00 Ml=-525.10 Pw=-396.00 Mw=-15840.00
-      Frame2D_338: nodes ( Node_220 Node_225 )
+      Frame2D_346: nodes ( Node_228 Node_233 )
           material: ElasticSection
           internal forces: f0=-5.60 V0=38.17 M0=-2516.78 fl=-5.60 Vl=38.17 Ml=6644.98 Pw=-396.00 Mw=-15840.00
-      Frame2D_339: nodes ( Node_211 Node_216 )
+      Frame2D_347: nodes ( Node_219 Node_224 )
           material: ElasticSection
           internal forces: f0=15.17 V0=-36.30 M0=6209.08 fl=15.17 Vl=-36.30 Ml=-2503.48 Pw=-396.00 Mw=-15840.00
-      Frame2D_340: nodes ( Node_216 Node_221 )
+      Frame2D_348: nodes ( Node_224 Node_229 )
           material: ElasticSection
           internal forces: f0=7.08 V0=-0.00 M0=-377.91 fl=7.08 Vl=-0.00 Ml=-377.91 Pw=-396.00 Mw=-15840.00
-      Frame2D_341: nodes ( Node_221 Node_226 )
+      Frame2D_349: nodes ( Node_229 Node_234 )
           material: ElasticSection
           internal forces: f0=15.17 V0=36.30 M0=-2503.48 fl=15.17 Vl=36.30 Ml=6209.08 Pw=-396.00 Mw=-15840.00
-      Frame2D_342: nodes ( Node_212 Node_217 )
+      Frame2D_350: nodes ( Node_220 Node_225 )
           material: ElasticSection
           internal forces: f0=-63.72 V0=-52.87 M0=9679.65 fl=-63.72 Vl=-52.87 Ml=-3007.97 Pw=-396.00 Mw=-15840.00
-      Frame2D_343: nodes ( Node_217 Node_222 )
+      Frame2D_351: nodes ( Node_225 Node_230 )
           material: ElasticSection
           internal forces: f0=-46.47 V0=-0.00 M0=-1229.55 fl=-46.47 Vl=-0.00 Ml=-1229.55 Pw=-396.00 Mw=-15840.00
-      Frame2D_344: nodes ( Node_222 Node_227 )
+      Frame2D_352: nodes ( Node_230 Node_235 )
           material: ElasticSection
           internal forces: f0=-63.72 V0=52.87 M0=-3007.97 fl=-63.72 Vl=52.87 Ml=9679.65 Pw=-396.00 Mw=-15840.00
 
@@ -800,7 +800,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.472 seconds)
+   **Total running time of the script:** (0 minutes 2.410 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame05.py:

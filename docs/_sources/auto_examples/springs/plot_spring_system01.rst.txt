@@ -184,18 +184,18 @@ You may check your model any time by executing
     Nodes:
     ---------------------
       Node_0:
-          x:    [0. 0.]
+          x:    [0.000 0.000]
           fix:  ['ux']
           u:    None
       Node_1:
-          x:    [2. 0.]
+          x:    [2.000 0.000]
           u:    None
       Node_2:
-          x:    [4. 0.]
+          x:    [4.000 0.000]
           u:    None
       Node_3:
-          x:    [6. 0.]
-          P:    [2.]
+          x:    [6.000 0.000]
+          P:    [2.000]
           u:    None
 
     Elements:
@@ -261,19 +261,19 @@ Performing the analysis
     Nodes:
     ---------------------
       Node_0:
-          x:    [0. 0.]
+          x:    [0.000 0.000]
           fix:  ['ux']
-          u:    [0.]
+          u:    [0.000]
       Node_1:
-          x:    [2. 0.]
-          u:    [0.13333333]
+          x:    [2.000 0.000]
+          u:    [0.133]
       Node_2:
-          x:    [4. 0.]
-          u:    [0.2]
+          x:    [4.000 0.000]
+          u:    [0.200]
       Node_3:
-          x:    [6. 0.]
-          P:    [2.]
-          u:    [0.26666667]
+          x:    [6.000 0.000]
+          P:    [2.000]
+          u:    [0.267]
 
     Elements:
     ---------------------
@@ -319,7 +319,7 @@ We can also create a force plot, though it doesn't look all that nice in 1D
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.201 seconds)
+   **Total running time of the script:** (0 minutes 0.831 seconds)
 
 
 .. _sphx_glr_download_auto_examples_springs_plot_spring_system01.py:

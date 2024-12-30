@@ -19,30 +19,32 @@
 
 
 ======================================================
-Buckling of a building frame
+Frame with inclined support
 ======================================================
 
 modeled using
-* a 2D frame element
+* a linear 2D frame element
 * inclined boundary condition (using Transformation)
 * element loading
 
 .. list-table:: setting given parameters
 
-    * - N  = 2
+    * - N  = 8
       - number of elements
-    * - L  = 100.0
-      - column length
-    * - EA = 2000000.0
-      - axial stiffness
-    * - EI = 21000.0
-      - flexural stiffness
-    * - w  = 0.1
+    * - L  = 10.0 ft
+      - segment length
+    * - MOE = 29000 ksi
+      - modulus of elasticity
+    * - A = 1.04828 in^2
+      - cross section area
+    * - I = 5.5908 in^4
+      - moment of inertia
+    * - w = 0.333 * kip / ft
       - applied lateral load
 
 Author: Peter Mackenzie-Helnwein
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-143
+.. GENERATED FROM PYTHON SOURCE LINES 28-147
 
 .. code-block:: Python
 
@@ -51,9 +53,10 @@ Author: Peter Mackenzie-Helnwein
     from femedu.examples.Example import *
 
     from femedu.domain import *
-    from femedu.solver.NewtonRaphsonSolver import *
-    from femedu.elements.finite.Frame2D import *
-    from femedu.materials.ElasticSection import *
+    from femedu.solver import LinearSolver, NewtonRaphsonSolver
+    from femedu.elements.linear import Frame2D
+    from femedu.domain import Frame2dTransformation
+    from femedu.materials import ElasticSection
 
 
     class ExampleFrame04(Example):
@@ -105,8 +108,8 @@ Author: Peter Mackenzie-Helnwein
             # ... the first node
             nodes[0].fixDOF(['ux','uy','rz'])
             # ... the last node
-            nvec = nodes[1].getPos() - nodes[0].getPos()   # vector parallel to the member axis
-            svec = np.array([[0, 1],[-1, 0]]) @ nvec       # vector perpendicular to the member axis
+            nvec = nodes[-1].getPos() - nodes[-2].getPos()   # vector parallel to the member axis
+            svec = np.array([[0, -1],[1, 0]]) @ nvec       # vector perpendicular to the member axis
 
             try:
                 transform = Frame2dTransformation(nvec, svec)  # an in-plane rotation
@@ -125,7 +128,7 @@ Author: Peter Mackenzie-Helnwein
         def problem(self):
             # initialize a system model
 
-            N  = 8     # number of elements
+            N  = 16     # number of elements
 
             # ========== setting global parameters ==============
 
@@ -135,6 +138,7 @@ Author: Peter Mackenzie-Helnwein
 
             model = System()
             model.setSolver(NewtonRaphsonSolver())
+            # model.setSolver(LinearSolver())
 
             nodes, elements = self.createMesh(N)
 
@@ -148,7 +152,7 @@ Author: Peter Mackenzie-Helnwein
 
             # solve
             model.setLoadFactor(target_load_level)
-            model.solve(verbose=True)
+            model.solve(verbose=True, max_steps=10)
 
             #
             # ==== create some nice plots ===
@@ -170,12 +174,12 @@ Author: Peter Mackenzie-Helnwein
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 162-164
+.. GENERATED FROM PYTHON SOURCE LINES 166-168
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 164-170
+.. GENERATED FROM PYTHON SOURCE LINES 168-174
 
 .. code-block:: Python
 
@@ -224,33 +228,45 @@ Run the example by creating an instance of the problem and executing it by calli
 
  .. code-block:: none
 
-    no transformation class found
     System object
-    Node_199(x=[0. 0.], u=None)
-    Node_200(x=[ 0. 30.], u=None)
-    Node_201(x=[ 0. 60.], u=None)
-    Node_202(x=[ 0. 90.], u=None)
-    Node_203(x=[  0. 120.], u=None)
-    Node_204(x=[ 25.98076211 135.        ], u=None)
-    Node_205(x=[ 51.96152423 150.        ], u=None)
-    Node_206(x=[ 77.94228634 165.        ], u=None)
-    Node_207(x=[103.92304845 180.        ], u=None)
-    Frame2D(Node_199, Node_200, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_200, Node_201, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_201, Node_202, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_202, Node_203, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_203, Node_204, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_204, Node_205, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_205, Node_206, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
-    Frame2D(Node_206, Node_207, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Node_0(x=[0. 0.], u=None)
+    Node_1(x=[ 0. 15.], u=None)
+    Node_2(x=[ 0. 30.], u=None)
+    Node_3(x=[ 0. 45.], u=None)
+    Node_4(x=[ 0. 60.], u=None)
+    Node_5(x=[ 0. 75.], u=None)
+    Node_6(x=[ 0. 90.], u=None)
+    Node_7(x=[  0. 105.], u=None)
+    Node_8(x=[  0. 120.], u=None)
+    Node_9(x=[ 12.99038106 127.5       ], u=None)
+    Node_10(x=[ 25.98076211 135.        ], u=None)
+    Node_11(x=[ 38.97114317 142.5       ], u=None)
+    Node_12(x=[ 51.96152423 150.        ], u=None)
+    Node_13(x=[ 64.95190528 157.5       ], u=None)
+    Node_14(x=[ 77.94228634 165.        ], u=None)
+    Node_15(x=[ 90.9326674 172.5      ], u=None)
+    Node_16(x=[103.92304845 180.        ], u=None)
+    Frame2D(Node_0, Node_1, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_1, Node_2, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_2, Node_3, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_3, Node_4, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_4, Node_5, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_5, Node_6, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_6, Node_7, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_7, Node_8, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_8, Node_9, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_9, Node_10, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_10, Node_11, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_11, Node_12, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_12, Node_13, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_13, Node_14, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_14, Node_15, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
+    Frame2D(Node_15, Node_16, ElasticSection(Material)({'E': 29000.0, 'A': 1.0482758620689656, 'I': 5.590793103448276, 'nu': 0.0, 'fy': 1e+30}))
 
     ==== perform the analysis ===
 
-    norm of the out-of-balance force:   3.3039e+00
-    norm of the out-of-balance force:   3.8349e-02
-    norm of the out-of-balance force:   2.5580e-04
-    norm of the out-of-balance force:   3.4300e-06
-    norm of the out-of-balance force:   6.3097e-08
+    norm of the out-of-balance force:   1.3408e+00
+    norm of the out-of-balance force:   4.8412e-12
     +
 
     System Analysis Report
@@ -258,62 +274,111 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_199:
-          x:    [0. 0.]
+      Node_0:
+          x:    [0.000 0.000]
           fix:  ['ux', 'uy', 'rz']
-          u:    [0. 0. 0.]
-      Node_200:
-          x:    [ 0. 30.]
-          u:    [ 4.19099799e-01 -2.40247840e-04 -2.56261850e-02]
-      Node_201:
-          x:    [ 0. 60.]
-          u:    [ 1.39859799e+00 -4.80495679e-04 -3.73556856e-02]
-      Node_202:
-          x:    [ 0. 90.]
-          u:    [ 2.52708571e+00 -7.20743519e-04 -3.59428101e-02]
-      Node_203:
-          x:    [  0. 120.]
-          u:    [ 3.46226303e+00 -9.60991359e-04 -2.52399957e-02]
-      Node_204:
-          x:    [ 25.98076211 135.        ]
-          u:    [ 3.73221485 -0.46734855 -0.01050021]
-      Node_205:
-          x:    [ 51.96152423 150.        ]
-          u:    [ 3.78417043e+00 -5.56155537e-01  3.06406795e-03]
-      Node_206:
-          x:    [ 77.94228634 165.        ]
-          u:    [ 3.6671898  -0.35235644  0.01164578]
-      Node_207:
-          x:    [103.92304845 180.        ]
+          u:    [0.000 0.000 0.000]
+      Node_1:
+          x:    [0.000 15.000]
+          u:    [0.084 -0.000 -0.011]
+      Node_2:
+          x:    [0.000 30.000]
+          u:    [0.306 -0.001 -0.019]
+      Node_3:
+          x:    [0.000 45.000]
+          u:    [0.626 -0.001 -0.024]
+      Node_4:
+          x:    [0.000 60.000]
+          u:    [1.001 -0.001 -0.026]
+      Node_5:
+          x:    [0.000 75.000]
+          u:    [1.388 -0.002 -0.025]
+      Node_6:
+          x:    [0.000 90.000]
+          u:    [1.751 -0.002 -0.023]
+      Node_7:
+          x:    [0.000 105.000]
+          u:    [2.059 -0.002 -0.018]
+      Node_8:
+          x:    [0.000 120.000]
+          u:    [2.294 -0.002 -0.013]
+      Node_9:
+          x:    [12.990 127.500]
+          u:    [2.367 -0.130 -0.007]
+      Node_10:
+          x:    [25.981 135.000]
+          u:    [2.392 -0.173 0.000]
+      Node_11:
+          x:    [38.971 142.500]
+          u:    [2.367 -0.130 0.007]
+      Node_12:
+          x:    [51.962 150.000]
+          u:    [2.296 -0.007 0.012]
+      Node_13:
+          x:    [64.952 157.500]
+          u:    [2.186 0.184 0.017]
+      Node_14:
+          x:    [77.942 165.000]
+          u:    [2.047 0.425 0.020]
+      Node_15:
+          x:    [90.933 172.500]
+          u:    [1.888 0.701 0.022]
+      Node_16:
+          x:    [103.923 180.000]
+          local: x=[0.866 0.500 0.000], y=[-0.500 0.866 0.000], z=[0.000 -0.000 1.000]
           fix:  ['uy']
-          u:    [3.46443956 0.         0.01450319]
+          u:    [1.719 0.993 0.023]
 
     Elements:
     ---------------------
-      Frame2D_309: nodes ( Node_199 Node_200 )
+      Frame2D_0: nodes ( Node_0 Node_1 )
           material: ElasticSection
-          internal forces: f0=-0.24 V0=2.50 M0=-175.99 fl=-0.24 Vl=2.50 Ml=-100.97 Pw=0.00 Mw=0.00
-      Frame2D_310: nodes ( Node_200 Node_201 )
+          internal forces: f0=-0.63 V0=2.03 M0=-130.69 fl=-0.63 Vl=2.03 Ml=-100.27 Pw=0.00 Mw=0.00
+      Frame2D_1: nodes ( Node_1 Node_2 )
           material: ElasticSection
-          internal forces: f0=-0.24 V0=2.50 M0=-100.97 fl=-0.24 Vl=2.50 Ml=-25.80 Pw=0.00 Mw=0.00
-      Frame2D_311: nodes ( Node_201 Node_202 )
+          internal forces: f0=-0.63 V0=2.03 M0=-100.27 fl=-0.63 Vl=2.03 Ml=-69.85 Pw=0.00 Mw=0.00
+      Frame2D_2: nodes ( Node_2 Node_3 )
           material: ElasticSection
-          internal forces: f0=-0.24 V0=2.08 M0=-23.72 fl=-0.24 Vl=2.08 Ml=38.99 Pw=-0.42 Mw=-2.08
-      Frame2D_312: nodes ( Node_202 Node_203 )
+          internal forces: f0=-0.63 V0=2.03 M0=-69.85 fl=-0.63 Vl=2.03 Ml=-39.43 Pw=0.00 Mw=0.00
+      Frame2D_3: nodes ( Node_3 Node_4 )
           material: ElasticSection
-          internal forces: f0=-0.24 V0=1.25 M0=38.99 fl=-0.24 Vl=1.25 Ml=76.68 Pw=-0.42 Mw=-2.08
-      Frame2D_313: nodes ( Node_203 Node_204 )
+          internal forces: f0=-0.63 V0=2.03 M0=-39.43 fl=-0.63 Vl=2.03 Ml=-9.01 Pw=0.00 Mw=0.00
+      Frame2D_4: nodes ( Node_4 Node_5 )
           material: ElasticSection
-          internal forces: f0=0.60 V0=0.21 M0=76.68 fl=0.60 Vl=0.21 Ml=82.68 Pw=-0.42 Mw=-2.08
-      Frame2D_314: nodes ( Node_204 Node_205 )
+          internal forces: f0=-0.63 V0=1.82 M0=-8.49 fl=-0.63 Vl=1.82 Ml=18.81 Pw=-0.21 Mw=-0.52
+      Frame2D_5: nodes ( Node_5 Node_6 )
           material: ElasticSection
-          internal forces: f0=0.60 V0=-0.62 M0=82.68 fl=0.60 Vl=-0.62 Ml=63.97 Pw=-0.42 Mw=-2.08
-      Frame2D_315: nodes ( Node_205 Node_206 )
+          internal forces: f0=-0.63 V0=1.40 M0=18.81 fl=-0.63 Vl=1.40 Ml=39.86 Pw=-0.21 Mw=-0.52
+      Frame2D_6: nodes ( Node_6 Node_7 )
           material: ElasticSection
-          internal forces: f0=0.60 V0=-1.04 M0=61.89 fl=0.60 Vl=-1.04 Ml=30.89 Pw=0.00 Mw=0.00
-      Frame2D_316: nodes ( Node_206 Node_207 )
+          internal forces: f0=-0.63 V0=0.99 M0=39.86 fl=-0.63 Vl=0.99 Ml=54.67 Pw=-0.21 Mw=-0.52
+      Frame2D_7: nodes ( Node_7 Node_8 )
           material: ElasticSection
-          internal forces: f0=0.60 V0=-1.04 M0=30.89 fl=0.60 Vl=-1.04 Ml=0.00 Pw=0.00 Mw=0.00
+          internal forces: f0=-0.63 V0=0.57 M0=54.67 fl=-0.63 Vl=0.57 Ml=63.24 Pw=-0.21 Mw=-0.52
+      Frame2D_8: nodes ( Node_8 Node_9 )
+          material: ElasticSection
+          internal forces: f0=0.00 V0=0.52 M0=63.24 fl=0.00 Vl=0.52 Ml=71.01 Pw=-0.21 Mw=-0.52
+      Frame2D_9: nodes ( Node_9 Node_10 )
+          material: ElasticSection
+          internal forces: f0=0.00 V0=0.10 M0=71.01 fl=0.00 Vl=0.10 Ml=72.54 Pw=-0.21 Mw=-0.52
+      Frame2D_10: nodes ( Node_10 Node_11 )
+          material: ElasticSection
+          internal forces: f0=0.00 V0=-0.31 M0=72.54 fl=0.00 Vl=-0.31 Ml=67.82 Pw=-0.21 Mw=-0.52
+      Frame2D_11: nodes ( Node_11 Node_12 )
+          material: ElasticSection
+          internal forces: f0=0.00 V0=-0.73 M0=67.82 fl=0.00 Vl=-0.73 Ml=56.86 Pw=-0.21 Mw=-0.52
+      Frame2D_12: nodes ( Node_12 Node_13 )
+          material: ElasticSection
+          internal forces: f0=0.00 V0=-0.94 M0=56.34 fl=0.00 Vl=-0.94 Ml=42.25 Pw=0.00 Mw=0.00
+      Frame2D_13: nodes ( Node_13 Node_14 )
+          material: ElasticSection
+          internal forces: f0=0.00 V0=-0.94 M0=42.25 fl=0.00 Vl=-0.94 Ml=28.17 Pw=0.00 Mw=0.00
+      Frame2D_14: nodes ( Node_14 Node_15 )
+          material: ElasticSection
+          internal forces: f0=0.00 V0=-0.94 M0=28.17 fl=0.00 Vl=-0.94 Ml=14.08 Pw=0.00 Mw=0.00
+      Frame2D_15: nodes ( Node_15 Node_16 )
+          material: ElasticSection
+          internal forces: f0=-0.00 V0=-0.94 M0=14.08 fl=-0.00 Vl=-0.94 Ml=0.00 Pw=0.00 Mw=0.00
 
 
 
@@ -322,7 +387,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.538 seconds)
+   **Total running time of the script:** (0 minutes 1.035 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame04.py:

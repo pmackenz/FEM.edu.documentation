@@ -344,134 +344,134 @@ Run the example by creating an instance of the problem and executing it by calli
     Nodes:
     ---------------------
       Node_93:
-          x:    [0. 0.]
+          x:    [0.000 0.000]
           fix:  ['ux', 'uy']
           u:    None
       Node_94:
-          x:    [250.   0.]
+          x:    [250.000 0.000]
           fix:  ['ux', 'uy']
           u:    None
       Node_95:
-          x:    [  0. 250.]
+          x:    [0.000 250.000]
           u:    None
       Node_96:
-          x:    [250. 250.]
+          x:    [250.000 250.000]
           u:    None
       Node_97:
-          x:    [  0. 500.]
+          x:    [0.000 500.000]
           u:    None
       Node_98:
-          x:    [250. 500.]
+          x:    [250.000 500.000]
           u:    None
       Node_99:
-          x:    [  0. 750.]
+          x:    [0.000 750.000]
           u:    None
       Node_100:
-          x:    [250. 750.]
+          x:    [250.000 750.000]
           u:    None
       Node_101:
-          x:    [   0. 1000.]
+          x:    [0.000 1000.000]
           u:    None
       Node_102:
-          x:    [ 250. 1000.]
+          x:    [250.000 1000.000]
           u:    None
       Node_103:
-          x:    [   0. 1250.]
+          x:    [0.000 1250.000]
           u:    None
       Node_104:
-          x:    [ 250. 1250.]
+          x:    [250.000 1250.000]
           u:    None
       Node_105:
-          x:    [   0. 1500.]
+          x:    [0.000 1500.000]
           u:    None
       Node_106:
-          x:    [ 250. 1500.]
+          x:    [250.000 1500.000]
           u:    None
       Node_107:
-          x:    [   0. 1750.]
+          x:    [0.000 1750.000]
           u:    None
       Node_108:
-          x:    [ 250. 1750.]
+          x:    [250.000 1750.000]
           u:    None
       Node_109:
-          x:    [   0. 2000.]
+          x:    [0.000 2000.000]
           u:    None
       Node_110:
-          x:    [ 250. 2000.]
+          x:    [250.000 2000.000]
           u:    None
       Node_111:
-          x:    [   0. 2250.]
+          x:    [0.000 2250.000]
           u:    None
       Node_112:
-          x:    [ 250. 2250.]
+          x:    [250.000 2250.000]
           u:    None
       Node_113:
-          x:    [   0. 2500.]
+          x:    [0.000 2500.000]
           u:    None
       Node_114:
-          x:    [ 250. 2500.]
+          x:    [250.000 2500.000]
           u:    None
       Node_115:
-          x:    [   0. 2750.]
+          x:    [0.000 2750.000]
           u:    None
       Node_116:
-          x:    [ 250. 2750.]
+          x:    [250.000 2750.000]
           u:    None
       Node_117:
-          x:    [   0. 3000.]
+          x:    [0.000 3000.000]
           u:    None
       Node_118:
-          x:    [ 250. 3000.]
+          x:    [250.000 3000.000]
           u:    None
       Node_119:
-          x:    [   0. 3250.]
+          x:    [0.000 3250.000]
           u:    None
       Node_120:
-          x:    [ 250. 3250.]
+          x:    [250.000 3250.000]
           u:    None
       Node_121:
-          x:    [   0. 3500.]
+          x:    [0.000 3500.000]
           u:    None
       Node_122:
-          x:    [ 250. 3500.]
+          x:    [250.000 3500.000]
           u:    None
       Node_123:
-          x:    [   0. 3750.]
+          x:    [0.000 3750.000]
           u:    None
       Node_124:
-          x:    [ 250. 3750.]
+          x:    [250.000 3750.000]
           u:    None
       Node_125:
-          x:    [   0. 4000.]
+          x:    [0.000 4000.000]
           u:    None
       Node_126:
-          x:    [ 250. 4000.]
+          x:    [250.000 4000.000]
           u:    None
       Node_127:
-          x:    [   0. 4250.]
+          x:    [0.000 4250.000]
           u:    None
       Node_128:
-          x:    [ 250. 4250.]
+          x:    [250.000 4250.000]
           u:    None
       Node_129:
-          x:    [   0. 4500.]
+          x:    [0.000 4500.000]
           u:    None
       Node_130:
-          x:    [ 250. 4500.]
+          x:    [250.000 4500.000]
           u:    None
       Node_131:
-          x:    [   0. 4750.]
+          x:    [0.000 4750.000]
           u:    None
       Node_132:
-          x:    [ 250. 4750.]
+          x:    [250.000 4750.000]
           u:    None
       Node_133:
-          x:    [   0. 5000.]
-          P:    [   25.         -3084.25137534]
+          x:    [0.000 5000.000]
+          P:    [25.000 -3084.251]
           u:    None
       Node_134:
-          x:    [ 250. 5000.]
-          P:    [   25.         -3084.25137534]
+          x:    [250.000 5000.000]
+          P:    [25.000 -3084.251]
           u:    None
 
     Elements:
@@ -761,7 +761,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.677 seconds)
+   **Total running time of the script:** (0 minutes 4.217 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss08.py:

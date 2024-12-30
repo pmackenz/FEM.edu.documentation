@@ -72,7 +72,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="modeled using  a 2D frame element  inclined boundary condition (using Transformation) * element loading">
+    <div class="sphx-glr-thumbcontainer" tooltip="modeled using  a linear 2D frame element  inclined boundary condition (using Transformation) * element loading">
 
 .. only:: html
 
@@ -83,7 +83,7 @@ see the :ref:`Tutorials <tutorials>`.
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Buckling of a building frame</div>
+      <div class="sphx-glr-thumbnail-title">Frame with inclined support</div>
     </div>
 
 

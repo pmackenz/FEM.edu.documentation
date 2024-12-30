@@ -1,24 +1,26 @@
 """
 ======================================================
-Buckling of a building frame
+Frame with inclined support
 ======================================================
 
 modeled using
-* a 2D frame element
+* a linear 2D frame element
 * inclined boundary condition (using Transformation)
 * element loading
 
 .. list-table:: setting given parameters
 
-    * - N  = 2
+    * - N  = 8
       - number of elements
-    * - L  = 100.0
-      - column length
-    * - EA = 2000000.0
-      - axial stiffness
-    * - EI = 21000.0
-      - flexural stiffness
-    * - w  = 0.1
+    * - L  = 10.0 ft
+      - segment length
+    * - MOE = 29000 ksi
+      - modulus of elasticity
+    * - A = 1.04828 in^2
+      - cross section area
+    * - I = 5.5908 in^4
+      - moment of inertia
+    * - w = 0.333 * kip / ft
       - applied lateral load
 
 Author: Peter Mackenzie-Helnwein
@@ -28,9 +30,10 @@ import numpy as np
 from femedu.examples.Example import *
 
 from femedu.domain import *
-from femedu.solver.NewtonRaphsonSolver import *
-from femedu.elements.finite.Frame2D import *
-from femedu.materials.ElasticSection import *
+from femedu.solver import LinearSolver, NewtonRaphsonSolver
+from femedu.elements.linear import Frame2D
+from femedu.domain import Frame2dTransformation
+from femedu.materials import ElasticSection
 
 
 class ExampleFrame04(Example):
@@ -100,8 +103,8 @@ class ExampleFrame04(Example):
         # ... the first node
         nodes[0].fixDOF(['ux','uy','rz'])
         # ... the last node
-        nvec = nodes[1].getPos() - nodes[0].getPos()   # vector parallel to the member axis
-        svec = np.array([[0, 1],[-1, 0]]) @ nvec       # vector perpendicular to the member axis
+        nvec = nodes[-1].getPos() - nodes[-2].getPos()   # vector parallel to the member axis
+        svec = np.array([[0, -1],[1, 0]]) @ nvec       # vector perpendicular to the member axis
 
         try:
             transform = Frame2dTransformation(nvec, svec)  # an in-plane rotation
@@ -120,7 +123,7 @@ class ExampleFrame04(Example):
     def problem(self):
         # initialize a system model
 
-        N  = 8     # number of elements
+        N  = 16     # number of elements
 
         # ========== setting global parameters ==============
 
@@ -130,6 +133,7 @@ class ExampleFrame04(Example):
 
         model = System()
         model.setSolver(NewtonRaphsonSolver())
+        # model.setSolver(LinearSolver())
 
         nodes, elements = self.createMesh(N)
 
@@ -143,7 +147,7 @@ class ExampleFrame04(Example):
 
         # solve
         model.setLoadFactor(target_load_level)
-        model.solve(verbose=True)
+        model.solve(verbose=True, max_steps=10)
 
         #
         # ==== create some nice plots ===

@@ -291,15 +291,15 @@ Run the example by creating an instance of the problem and executing it by calli
  .. code-block:: none
 
     System object
-    Node_177(x=[0. 0.], u=None)
-    Node_178(x=[12.5  0. ], u=None)
-    Node_179(x=[25.  0.], u=None)
-    Node_180(x=[37.5  0. ], u=None)
-    Node_181(x=[50.  0.], u=None)
-    Node_182(x=[62.5  0. ], u=None)
-    Node_183(x=[75.  0.], u=None)
-    Node_184(x=[87.5  0. ], u=None)
-    Node_185(x=[100.   0.], u=None)
+    Node_177(x=[0 0], u=None)
+    Node_178(x=[12.5 0], u=None)
+    Node_179(x=[25 0], u=None)
+    Node_180(x=[37.5 0], u=None)
+    Node_181(x=[50 0], u=None)
+    Node_182(x=[62.5 0], u=None)
+    Node_183(x=[75 0], u=None)
+    Node_184(x=[87.5 0], u=None)
+    Node_185(x=[100 0], u=None)
     Frame2D(Node_177, Node_178, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
     Frame2D(Node_178, Node_179, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
     Frame2D(Node_179, Node_180, ElasticSection(Material)({'E': 20000.0, 'A': 100.0, 'I': 10.0, 'nu': 0.0, 'fy': 1e+30}))
@@ -466,35 +466,35 @@ Run the example by creating an instance of the problem and executing it by calli
     Nodes:
     ---------------------
       Node_177:
-          x:    [0. 0.]
+          x:    [0.000 0.000]
           fix:  ['ux', 'uy']
-          u:    [ 0.          0.         -2.03292855]
+          u:    [0.000 0.000 -2.033]
       Node_178:
-          x:    [12.5  0. ]
-          u:    [-1.22136354e-03 -2.47624315e+01 -1.87795981e+00]
+          x:    [12.500 0.000]
+          u:    [-0.001 -24.762 -1.878]
       Node_179:
-          x:    [25.  0.]
-          u:    [-2.44272709e-03 -4.57514676e+01 -1.43704758e+00]
+          x:    [25.000 0.000]
+          u:    [-0.002 -45.751 -1.437]
       Node_180:
-          x:    [37.5  0. ]
-          u:    [-3.66409063e-03 -5.97734339e+01 -7.77608633e-01]
+          x:    [37.500 0.000]
+          u:    [-0.004 -59.773 -0.778]
       Node_181:
-          x:    [50.  0.]
-          u:    [-4.88545418e-03 -6.46967903e+01 -5.07997037e-13]
+          x:    [50.000 0.000]
+          u:    [-0.005 -64.697 -0.000]
       Node_182:
-          x:    [62.5  0. ]
-          u:    [-6.10681772e-03 -5.97734339e+01  7.77608633e-01]
+          x:    [62.500 0.000]
+          u:    [-0.006 -59.773 0.778]
       Node_183:
-          x:    [75.  0.]
-          u:    [-7.32818127e-03 -4.57514676e+01  1.43704758e+00]
+          x:    [75.000 0.000]
+          u:    [-0.007 -45.751 1.437]
       Node_184:
-          x:    [87.5  0. ]
-          u:    [-8.54954481e-03 -2.47624315e+01  1.87795981e+00]
+          x:    [87.500 0.000]
+          u:    [-0.009 -24.762 1.878]
       Node_185:
-          x:    [100.   0.]
+          x:    [100.000 0.000]
           fix:  ['uy']
-          P:    [-1.97392088  0.          0.        ]
-          u:    [-0.00977091  0.          2.03292855]
+          P:    [-1.974 0.000 0.000]
+          u:    [-0.010 0.000 2.033]
 
     Elements:
     ---------------------
@@ -530,7 +530,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.814 seconds)
+   **Total running time of the script:** (0 minutes 0.949 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame01.py:

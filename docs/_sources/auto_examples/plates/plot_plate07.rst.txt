@@ -262,24 +262,24 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_1397:
-          x:    [0. 0.]
+      Node_1405:
+          x:    [0.000 0.000]
           fix:  ['ux', 'uy']
-          u:    [0. 0.]
-      Node_1398:
-          x:    [10.  0.]
+          u:    [0.000 0.000]
+      Node_1406:
+          x:    [10.000 0.000]
           fix:  ['uy']
-          u:    [1. 0.]
-      Node_1399:
-          x:    [10. 10.]
-          u:    [ 1.  -0.3]
-      Node_1400:
-          x:    [ 0. 10.]
-          u:    [-3.70153565e-16 -3.00000000e-01]
+          u:    [1.000 0.000]
+      Node_1407:
+          x:    [10.000 10.000]
+          u:    [1.000 -0.300]
+      Node_1408:
+          x:    [0.000 10.000]
+          u:    [-0.000 -0.300]
 
     Elements:
     ---------------------
-      ReducedIntegrationQuad_1811: nodes ( Node_1397 Node_1398 Node_1399 Node_1400 )
+      ReducedIntegrationQuad_1819: nodes ( Node_1405 Node_1406 Node_1407 Node_1408 )
           material: list
           strain (0): xx=1.000e-01 yy=-3.000e-02 xy=-3.710e-17 zz=-2.100e-02
           stress (0): xx=1.000e+00 yy=4.148e-18 xy=-1.427e-16 zz=0.000e+00
@@ -297,7 +297,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.174 seconds)
+   **Total running time of the script:** (0 minutes 1.150 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate07.py:

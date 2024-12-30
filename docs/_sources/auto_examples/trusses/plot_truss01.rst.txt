@@ -151,17 +151,17 @@ Run the example by creating an instance of the problem and executing it by calli
     Nodes:
     ---------------------
       Node_24:
-          x:    [0. 0.]
+          x:    [0.000 0.000]
           fix:  ['ux', 'uy']
-          u:    [0. 0.]
+          u:    [0.000 0.000]
       Node_25:
-          x:    [72.  0.]
+          x:    [72.000 0.000]
           fix:  ['uy']
-          u:    [3.6 0. ]
+          u:    [3.600 0.000]
       Node_26:
-          x:    [36. 36.]
-          P:    [ 0. -1.]
-          u:    [ 1.8        -6.89116882]
+          x:    [36.000 36.000]
+          P:    [0.000 -1.000]
+          u:    [1.800 -6.891]
 
     Elements:
     ---------------------
@@ -182,7 +182,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.229 seconds)
+   **Total running time of the script:** (0 minutes 0.226 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss01.py:

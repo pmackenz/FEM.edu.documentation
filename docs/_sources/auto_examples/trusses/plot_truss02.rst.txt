@@ -177,38 +177,38 @@ Run the example by creating an instance of the problem and executing it by calli
     Nodes:
     ---------------------
       Node_27:
-          x:    [0. 0.]
+          x:    [0.000 0.000]
           fix:  ['ux', 'uy']
-          u:    [0. 0.]
+          u:    [0.000 0.000]
       Node_28:
-          x:    [72.  0.]
-          u:    [ 0.018      -0.18444605]
+          x:    [72.000 0.000]
+          u:    [0.018 -0.184]
       Node_29:
-          x:    [144.   0.]
-          u:    [ 0.054      -0.25042807]
+          x:    [144.000 0.000]
+          u:    [0.054 -0.250]
       Node_30:
-          x:    [216.   0.]
-          u:    [ 0.09       -0.18444605]
+          x:    [216.000 0.000]
+          u:    [0.090 -0.184]
       Node_31:
-          x:    [288.   0.]
+          x:    [288.000 0.000]
           fix:  ['uy']
-          u:    [0.108 0.   ]
+          u:    [0.108 0.000]
       Node_32:
-          x:    [36. 96.]
-          P:    [  0. -10.]
-          u:    [ 0.099      -0.11508903]
+          x:    [36.000 96.000]
+          P:    [0.000 -10.000]
+          u:    [0.099 -0.115]
       Node_33:
-          x:    [108.  96.]
-          P:    [  0. -10.]
-          u:    [ 0.072      -0.24367807]
+          x:    [108.000 96.000]
+          P:    [0.000 -10.000]
+          u:    [0.072 -0.244]
       Node_34:
-          x:    [180.  96.]
-          P:    [  0. -10.]
-          u:    [ 0.036      -0.24367807]
+          x:    [180.000 96.000]
+          P:    [0.000 -10.000]
+          u:    [0.036 -0.244]
       Node_35:
-          x:    [252.  96.]
-          P:    [  0. -10.]
-          u:    [ 0.009      -0.11508903]
+          x:    [252.000 96.000]
+          P:    [0.000 -10.000]
+          u:    [0.009 -0.115]
 
     Elements:
     ---------------------
@@ -265,7 +265,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.456 seconds)
+   **Total running time of the script:** (0 minutes 0.390 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss02.py:

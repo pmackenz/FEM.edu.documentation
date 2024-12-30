@@ -318,6 +318,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.getLead"><code class="docutils literal notranslate"><span class="pre">Node.getLead()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.getLeadID"><code class="docutils literal notranslate"><span class="pre">Node.getLeadID()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.getLoad"><code class="docutils literal notranslate"><span class="pre">Node.getLoad()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.getLocalTransformationMap"><code class="docutils literal notranslate"><span class="pre">Node.getLocalTransformationMap()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.getNormDeltaU2"><code class="docutils literal notranslate"><span class="pre">Node.getNormDeltaU2()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.getPos"><code class="docutils literal notranslate"><span class="pre">Node.getPos()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.hasLoad"><code class="docutils literal notranslate"><span class="pre">Node.hasLoad()</span></code></a></li>
@@ -370,7 +371,19 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Domain/Transformation_class.html">Transformation class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation"><code class="docutils literal notranslate"><span class="pre">Transformation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation"><code class="docutils literal notranslate"><span class="pre">Transformation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.matrixToGlobal"><code class="docutils literal notranslate"><span class="pre">Transformation.matrixToGlobal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.matrixToLocal"><code class="docutils literal notranslate"><span class="pre">Transformation.matrixToLocal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.vectorToGlobal"><code class="docutils literal notranslate"><span class="pre">Transformation.vectorToGlobal()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.vectorToLocal"><code class="docutils literal notranslate"><span class="pre">Transformation.vectorToLocal()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.SolidTransformation.SolidTransformation"><code class="docutils literal notranslate"><span class="pre">SolidTransformation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Solid2dTransformation.Solid2dTransformation"><code class="docutils literal notranslate"><span class="pre">Solid2dTransformation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.FrameTransformation.FrameTransformation"><code class="docutils literal notranslate"><span class="pre">FrameTransformation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Frame2dTransformation.Frame2dTransformation"><code class="docutils literal notranslate"><span class="pre">Frame2dTransformation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.BeamTransformation.BeamTransformation"><code class="docutils literal notranslate"><span class="pre">BeamTransformation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Beam2dTransformation.Beam2dTransformation"><code class="docutils literal notranslate"><span class="pre">Beam2dTransformation</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -510,7 +523,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Dec 28, 2024.
+      <span class="lastupdated">Last updated on Dec 29, 2024.
       </span></p>
   </div>
 

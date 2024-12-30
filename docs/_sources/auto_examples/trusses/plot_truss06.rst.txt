@@ -401,15 +401,15 @@ Run the example by creating an instance of the problem and executing it by calli
     Nodes:
     ---------------------
       Node_48:
-          x:    [0. 0.]
+          x:    [0.000 0.000]
           fix:  ['ux', 'uy']
           u:    None
       Node_49:
-          x:    [5.5 0.5]
-          P:    [ 0. -1.]
+          x:    [5.500 0.500]
+          P:    [0.000 -1.000]
           u:    None
       Node_50:
-          x:    [9.5 0. ]
+          x:    [9.500 0.000]
           fix:  ['ux', 'uy']
           u:    None
 
@@ -442,7 +442,7 @@ Run the example by creating an instance of the problem and executing it by calli
     +
     +
     +
-    /Users/pmackenz/Development/Educational/FEM.edu/src/femedu/plotter/ElementPlotter.py:119: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+    /Users/pmackenz/Development/Educational/FEM.edu/src/femedu/plotter/ElementPlotter.py:120: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
       fig, axs = plt.subplots()
     +
     +
@@ -455,7 +455,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.528 seconds)
+   **Total running time of the script:** (0 minutes 1.487 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss06.py:
