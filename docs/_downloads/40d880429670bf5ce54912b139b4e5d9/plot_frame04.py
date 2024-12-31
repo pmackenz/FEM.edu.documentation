@@ -103,14 +103,11 @@ class ExampleFrame04(Example):
         # ... the first node
         nodes[0].fixDOF(['ux','uy','rz'])
         # ... the last node
-        nvec = nodes[-1].getPos() - nodes[-2].getPos()   # vector parallel to the member axis
-        svec = np.array([[0, -1],[1, 0]]) @ nvec       # vector perpendicular to the member axis
+        nvec = nodes[-1].getPos() - nodes[-2].getPos() # vector parallel to the member axis
 
-        try:
-            transform = Frame2dTransformation(nvec, svec)  # an in-plane rotation
-            nodes[-1].addTransformation(transform)         # defining a local frame for the last node
-        except:
-            print("no transformation class found")
+        transform = Frame2dTransformation(nvec)        # an in-plane rotation
+        nodes[-1].addTransformation(transform)         # defining a local frame for the last node
+
         nodes[-1].fixDOF(['uy', ])                     # fixing the LOCAL y-direction
 
         # load the top half of the vertical member

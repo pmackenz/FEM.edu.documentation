@@ -258,10 +258,18 @@ Do not forget the <code class="code docutils literal notranslate"><span class="p
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.getIdx4DOFs">
-<span class="sig-name descname"><span class="pre">getIdx4DOFs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getIdx4DOFs" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">getIdx4DOFs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getIdx4DOFs" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>an index list to this node’s dofs in the global list of dofs</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dofs</strong> – a list of named dofs for which an index is requested.
+The returned list will be in the same order as listed in <strong>dofs</strong>.</p></li>
+<li><p><strong>local</strong> – by default return index to the global list of dofs.
+Set <code class="code docutils literal notranslate"><span class="pre">local=True</span></code> to return index to this node’s list of dofs.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>an index list to this node’s dofs</p>
 </dd>
 </dl>
 </dd></dl>
@@ -571,8 +579,8 @@ user input.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Dec 29, 2024.
+    <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on Dec 31, 2024.
       </span></p>
   </div>
 

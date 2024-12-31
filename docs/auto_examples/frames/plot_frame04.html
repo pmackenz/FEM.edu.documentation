@@ -205,14 +205,11 @@ to download the full example code.</p>
         <span class="c1"># ... the first node</span>
         <span class="n">nodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">([</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span><span class="s1">&#39;rz&#39;</span><span class="p">])</span>
         <span class="c1"># ... the last node</span>
-        <span class="n">nvec</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span> <span class="o">-</span> <span class="n">nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>   <span class="c1"># vector parallel to the member axis</span>
-        <span class="n">svec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span> <span class="o">@</span> <span class="n">nvec</span>       <span class="c1"># vector perpendicular to the member axis</span>
+        <span class="n">nvec</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span> <span class="o">-</span> <span class="n">nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span> <span class="c1"># vector parallel to the member axis</span>
 
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">transform</span> <span class="o">=</span> <span class="n">Frame2dTransformation</span><span class="p">(</span><span class="n">nvec</span><span class="p">,</span> <span class="n">svec</span><span class="p">)</span>  <span class="c1"># an in-plane rotation</span>
-            <span class="n">nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">addTransformation</span><span class="p">(</span><span class="n">transform</span><span class="p">)</span>         <span class="c1"># defining a local frame for the last node</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no transformation class found&quot;</span><span class="p">)</span>
+        <span class="n">transform</span> <span class="o">=</span> <span class="n">Frame2dTransformation</span><span class="p">(</span><span class="n">nvec</span><span class="p">)</span>        <span class="c1"># an in-plane rotation</span>
+        <span class="n">nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">addTransformation</span><span class="p">(</span><span class="n">transform</span><span class="p">)</span>         <span class="c1"># defining a local frame for the last node</span>
+
         <span class="n">nodes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">([</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span> <span class="p">])</span>                     <span class="c1"># fixing the LOCAL y-direction</span>
 
         <span class="c1"># load the top half of the vertical member</span>
@@ -429,7 +426,7 @@ Elements:
       internal forces: f0=-0.00 V0=-0.94 M0=14.08 fl=-0.00 Vl=-0.94 Ml=0.00 Pw=0.00 Mw=0.00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.035 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.956 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-frames-plot-frame04-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/5c7bb42081b778e79fe693a6147f6519/plot_frame04.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_frame04.ipynb</span></code></a></p>
@@ -455,8 +452,8 @@ Elements:
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Dec 29, 2024.
+    <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on Dec 31, 2024.
       </span></p>
   </div>
 

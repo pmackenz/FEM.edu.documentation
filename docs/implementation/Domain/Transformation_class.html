@@ -131,24 +131,136 @@ shall be used.  If no node is specified, the transformation will be applied at a
 attached nodes.</p></li>
 </ul>
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Transformation.Transformation.addVector">
+<span class="sig-name descname"><span class="pre">addVector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vecdef</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Transformation.Transformation.addVector" title="Link to this definition"></a></dt>
+<dd><p class="sd-card-text">Register a vector to be transformed by this Transformation object.</p>
+<p class="sd-card-text">This method is most commonly used internally, though may be used to add user-defined
+vector dofs to any (nodal) transformation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>vecdef</strong> – an array-like definitions of a vector.</p>
+</dd>
+</dl>
+<p class="sd-card-text"><strong>Examples for vecdef</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">2d solids use <code class="code docutils literal notranslate"><span class="pre">['ux,'uy']</span></code></p></li>
+<li><p class="sd-card-text">3d solids use <code class="code docutils literal notranslate"><span class="pre">['ux','uy','uz']</span></code></p></li>
+<li><p class="sd-card-text">3d Frames use <code class="code docutils literal notranslate"><span class="pre">['ux','uy','uz']</span></code> and <code class="code docutils literal notranslate"><span class="pre">['rx','ry','rz']</span></code></p></li>
+<li><p class="sd-card-text">your own vector dofs may use <code class="code docutils literal notranslate"><span class="pre">['myx','myy','myz']</span></code> if ‘myx’ represents the x-component of a <code class="code docutils literal notranslate"><span class="pre">my</span></code>-vector. These dofs must be requested by the constructor of your element.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Transformation.Transformation.getT">
+<span class="sig-name descname"><span class="pre">getT</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Transformation.Transformation.getT" title="Link to this definition"></a></dt>
+<dd><p class="sd-card-text">returns a 3d transformation matrix that maps components from the local to the global system</p>
+<p class="sd-card-text"><strong>Usage</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">getT</span><span class="p">()</span>
+
+<span class="c1"># vectors</span>
+<span class="n">Uglobal</span> <span class="o">=</span> <span class="n">T</span> <span class="o">@</span> <span class="n">Ulocal</span>          <span class="c1"># local to global for a vector U</span>
+<span class="n">Vlocal</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Vglobal</span>        <span class="c1"># global to local for a vector V</span>
+<span class="n">Vlocal</span> <span class="o">=</span> <span class="n">Vglobal</span> <span class="o">@</span> <span class="n">T</span>          <span class="c1"># alternative global to local for a vector V</span>
+
+<span class="c1"># matrices</span>
+<span class="n">Mglobal</span> <span class="o">=</span> <span class="n">T</span> <span class="o">@</span> <span class="n">Mlocal</span> <span class="o">@</span> <span class="n">T</span><span class="o">.</span><span class="n">T</span>    <span class="c1"># local to global</span>
+<span class="n">Mlocal</span>  <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Mglobal</span> <span class="o">@</span> <span class="n">T</span>   <span class="c1"># global to local</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Transformation.Transformation.matrixToGlobal">
-<span class="sig-name descname"><span class="pre">matrixToGlobal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Transformation.Transformation.matrixToGlobal" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">matrixToGlobal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Transformation.Transformation.matrixToGlobal" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>M</strong> – [2x2] or [3x3] matrix</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Transformation.Transformation.matrixToLocal">
-<span class="sig-name descname"><span class="pre">matrixToLocal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Transformation.Transformation.matrixToLocal" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">matrixToLocal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Transformation.Transformation.matrixToLocal" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>M</strong> – [2x2] or [3x3] matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Transformation.Transformation.refreshMaps">
+<span class="sig-name descname"><span class="pre">refreshMaps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Transformation.Transformation.refreshMaps" title="Link to this definition"></a></dt>
+<dd><p class="sd-card-text">Reinitialize dof-maps for vector transformations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">This method shall be called every time a vector is registered for transformation <strong>and</strong>
+if an element is added to a node since a new element addition may change the list of
+locally available dofs!</p>
+</div>
+<p class="sd-card-text">The map structure is defined as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">known_vectors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># one entry per vector that needs transformation</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;dofs&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="n">dofs_defining_this_vector</span> <span class="p">],</span>
+        <span class="s1">&#39;map&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="c1"># one entry per client</span>
+                    <span class="n">Node</span><span class="o">|</span><span class="n">Element</span><span class="p">:</span> <span class="p">[</span> <span class="n">idx_for_dof</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">idx_for_dof</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">...</span> <span class="p">],</span>
+                    <span class="o">...</span>
+               <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p class="sd-card-text">The map for any requested vector can be obtained using</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">node</span> <span class="o">=</span> <span class="o">...</span>     <span class="c1"># pointer to node of interest</span>
+<span class="n">elem</span> <span class="o">=</span> <span class="o">...</span>     <span class="c1"># pointer to elem of interest</span>
+
+<span class="k">for</span> <span class="n">vec</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">known_vectors</span><span class="p">:</span>
+
+    <span class="n">vector_dofs</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[</span><span class="s1">&#39;dofs&#39;</span><span class="p">]</span>  <span class="c1"># list of named dofs forming this vector</span>
+
+    <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">vec</span><span class="p">[</span><span class="s1">&#39;map&#39;</span><span class="p">]:</span>
+        <span class="n">node_map</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[</span><span class="s1">&#39;map&#39;</span><span class="p">][</span><span class="n">node</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">vec</span><span class="p">[</span><span class="s1">&#39;map&#39;</span><span class="p">]:</span>
+        <span class="n">elem_map</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[</span><span class="s1">&#39;map&#39;</span><span class="p">][</span><span class="n">elem</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Transformation.Transformation.registerClient">
+<span class="sig-name descname"><span class="pre">registerClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Transformation.Transformation.registerClient" title="Link to this definition"></a></dt>
+<dd><p class="sd-card-text">Register a Node or Element object with this transformation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>client</strong> – pointer to the node/element to be registered</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Transformation.Transformation.vectorToGlobal">
 <span class="sig-name descname"><span class="pre">vectorToGlobal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Transformation.Transformation.vectorToGlobal" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>U</strong> – 2d or 3d vector</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Transformation.Transformation.vectorToLocal">
 <span class="sig-name descname"><span class="pre">vectorToLocal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Transformation.Transformation.vectorToLocal" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>U</strong> – 2d or 3d vector</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -164,8 +276,29 @@ attached nodes.</p></li>
 
 <dl class="py class" id="module-femedu.domain.Solid2dTransformation">
 <dt class="sig sig-object py" id="femedu.domain.Solid2dTransformation.Solid2dTransformation">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.domain.Solid2dTransformation.</span></span><span class="sig-name descname"><span class="pre">Solid2dTransformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Solid2dTransformation.Solid2dTransformation" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.domain.Solid2dTransformation.</span></span><span class="sig-name descname"><span class="pre">Solid2dTransformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Solid2dTransformation.Solid2dTransformation" title="Link to this definition"></a></dt>
 <dd><p class="sd-card-text">A Transformation including only displacement dofs (no rotational dofs)</p>
+<p class="sd-card-text">If vectors <span class="math notranslate nohighlight">\({\bf d}_1\)</span>  is given, the local coordinate frame <span class="math notranslate nohighlight">\(\{{\bf g}_x,{\bf g}_y\}\)</span> is defined as follows.</p>
+<p class="sd-card-text">Normalized base</p>
+<div class="math notranslate nohighlight">
+\[{\bf g}_x = \frac{1}{||{\bf d}_1||} \: {\bf d}_1\]</div>
+<div class="math notranslate nohighlight">
+\[{\bf g}_y = {\bf e}_3 \times {\bf g}_x\]</div>
+<p class="sd-card-text">where <span class="math notranslate nohighlight">\({\bf e}_3\)</span> is the default out-of-plane unit vector.</p>
+<p class="sd-card-text">If instead an angle, <span class="math notranslate nohighlight">\(\theta\)</span>, is given, the local coordinate frame is defined as</p>
+<div class="math notranslate nohighlight">
+\[{\bf g}_x = \cos\theta \: {\bf e}_x + \sin\theta \: {\bf e}_y\]</div>
+<div class="math notranslate nohighlight">
+\[{\bf g}_y = \sin\theta \: {\bf e}_x + \cos\theta \: {\bf e}_y\]</div>
+<p class="sd-card-text">where  <span class="math notranslate nohighlight">\(\{{\bf e}_x,{\bf e}_y\}\)</span> is the global cartesian coordinate frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p class="sd-card-text"><strong>dir1</strong> – in-plane vector, <strong>dir1</strong> == <span class="math notranslate nohighlight">\({\bf d}_1\)</span>, defining the local x-direction</p></li>
+<li><p class="sd-card-text"><strong>angle</strong> – rotation angle, <span class="math notranslate nohighlight">\(\theta\)</span>, in degrees</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -212,15 +345,15 @@ defined by the following equivalence.</p>
 
 <dl class="py class" id="module-femedu.domain.Frame2dTransformation">
 <dt class="sig sig-object py" id="femedu.domain.Frame2dTransformation.Frame2dTransformation">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.domain.Frame2dTransformation.</span></span><span class="sig-name descname"><span class="pre">Frame2dTransformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Frame2dTransformation.Frame2dTransformation" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.domain.Frame2dTransformation.</span></span><span class="sig-name descname"><span class="pre">Frame2dTransformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Frame2dTransformation.Frame2dTransformation" title="Link to this definition"></a></dt>
 <dd><p class="sd-card-text">A Transformation including displacement dofs and rotational dofs</p>
-<p class="sd-card-text">If vectors <span class="math notranslate nohighlight">\({\bf d}_1\)</span> and <span class="math notranslate nohighlight">\({\bf d}_2\)</span> are given, the local coordinate frame <span class="math notranslate nohighlight">\(\{{\bf g}_x,{\bf g}_y\}\)</span> is defined as follows</p>
+<p class="sd-card-text">If vectors <span class="math notranslate nohighlight">\({\bf d}_1\)</span>  is given, the local coordinate frame <span class="math notranslate nohighlight">\(\{{\bf g}_x,{\bf g}_y\}\)</span> is defined as follows.</p>
+<p class="sd-card-text">Normalized base</p>
 <div class="math notranslate nohighlight">
 \[{\bf g}_x = \frac{1}{||{\bf d}_1||} \: {\bf d}_1\]</div>
 <div class="math notranslate nohighlight">
-\[\hat{\bf g}_y = {\bf d}_2 - ({\bf d}_2\cdot{\bf g}_x) {\bf g}_x\]</div>
-<div class="math notranslate nohighlight">
-\[{\bf g}_y = \frac{1}{||\hat{\bf g}_y||} \: \hat{\bf g}_y\]</div>
+\[{\bf g}_y = {\bf e}_3 \times {\bf g}_x\]</div>
+<p class="sd-card-text">where <span class="math notranslate nohighlight">\({\bf e}_3\)</span> is the default out-of-plane unit vector.</p>
 <p class="sd-card-text">If instead an angle, <span class="math notranslate nohighlight">\(\theta\)</span>, is given, the local coordinate frame is defined as</p>
 <div class="math notranslate nohighlight">
 \[{\bf g}_x = \cos\theta \: {\bf e}_x + \sin\theta \: {\bf e}_y\]</div>
@@ -231,7 +364,6 @@ defined by the following equivalence.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>dir1</strong> – in-plane vector, <strong>dir1</strong> == <span class="math notranslate nohighlight">\({\bf d}_1\)</span>, defining the local x-direction</p></li>
-<li><p class="sd-card-text"><strong>dir2</strong> – in-plane vector, <strong>dir2</strong> == <span class="math notranslate nohighlight">\({\bf d}_2\)</span>, used to define the local y-direction</p></li>
 <li><p class="sd-card-text"><strong>angle</strong> – rotation angle, <span class="math notranslate nohighlight">\(\theta\)</span>, in degrees</p></li>
 </ul>
 </dd>
@@ -278,8 +410,8 @@ See documentation for the <code class="xref py py-meth docutils literal notransl
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Dec 29, 2024.
+    <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on Dec 31, 2024.
       </span></p>
   </div>
 

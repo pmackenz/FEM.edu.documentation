@@ -44,7 +44,7 @@ modeled using
 
 Author: Peter Mackenzie-Helnwein
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-147
+.. GENERATED FROM PYTHON SOURCE LINES 28-144
 
 .. code-block:: Python
 
@@ -108,14 +108,11 @@ Author: Peter Mackenzie-Helnwein
             # ... the first node
             nodes[0].fixDOF(['ux','uy','rz'])
             # ... the last node
-            nvec = nodes[-1].getPos() - nodes[-2].getPos()   # vector parallel to the member axis
-            svec = np.array([[0, -1],[1, 0]]) @ nvec       # vector perpendicular to the member axis
+            nvec = nodes[-1].getPos() - nodes[-2].getPos() # vector parallel to the member axis
 
-            try:
-                transform = Frame2dTransformation(nvec, svec)  # an in-plane rotation
-                nodes[-1].addTransformation(transform)         # defining a local frame for the last node
-            except:
-                print("no transformation class found")
+            transform = Frame2dTransformation(nvec)        # an in-plane rotation
+            nodes[-1].addTransformation(transform)         # defining a local frame for the last node
+
             nodes[-1].fixDOF(['uy', ])                     # fixing the LOCAL y-direction
 
             # load the top half of the vertical member
@@ -174,12 +171,12 @@ Author: Peter Mackenzie-Helnwein
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 166-168
+.. GENERATED FROM PYTHON SOURCE LINES 163-165
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 168-174
+.. GENERATED FROM PYTHON SOURCE LINES 165-171
 
 .. code-block:: Python
 
@@ -387,7 +384,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.035 seconds)
+   **Total running time of the script:** (0 minutes 1.956 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame04.py:
