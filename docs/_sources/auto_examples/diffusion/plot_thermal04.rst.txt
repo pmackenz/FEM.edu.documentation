@@ -241,397 +241,397 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_511:
+      Node_499:
           x:    [5.000 0.000]
           u:    [0.000]
-      Node_512:
+      Node_500:
           x:    [6.250 0.000]
           u:    [0.000]
-      Node_513:
+      Node_501:
           x:    [7.500 0.000]
           u:    [0.000]
-      Node_514:
+      Node_502:
           x:    [8.750 0.000]
           u:    [0.000]
-      Node_515:
+      Node_503:
           x:    [10.000 0.000]
           u:    [0.000]
-      Node_516:
+      Node_504:
           x:    [11.250 0.000]
           u:    [0.000]
-      Node_517:
+      Node_505:
           x:    [12.500 0.000]
           u:    [0.000]
-      Node_518:
+      Node_506:
           x:    [13.750 0.000]
           u:    [0.000]
-      Node_519:
+      Node_507:
           x:    [15.000 0.000]
           u:    [0.000]
-      Node_520:
+      Node_508:
           x:    [4.898 0.993]
           u:    [0.000]
-      Node_521:
+      Node_509:
           x:    [6.007 1.194]
           u:    [0.000]
-      Node_522:
+      Node_510:
           x:    [7.149 1.408]
           u:    [0.000]
-      Node_523:
+      Node_511:
           x:    [8.324 1.636]
           u:    [0.000]
-      Node_524:
+      Node_512:
           x:    [9.531 1.877]
           u:    [0.000]
-      Node_525:
+      Node_513:
           x:    [10.772 2.132]
           u:    [0.000]
-      Node_526:
+      Node_514:
           x:    [12.046 2.401]
           u:    [0.000]
-      Node_527:
+      Node_515:
           x:    [13.353 2.683]
           u:    [0.000]
-      Node_528:
+      Node_516:
           x:    [14.693 2.979]
           u:    [0.000]
-      Node_529:
+      Node_517:
           x:    [4.619 1.913]
           u:    [0.000]
-      Node_530:
+      Node_518:
           x:    [5.620 2.328]
           u:    [0.000]
-      Node_531:
+      Node_519:
           x:    [6.665 2.761]
           u:    [0.000]
-      Node_532:
+      Node_520:
           x:    [7.754 3.212]
           u:    [0.000]
-      Node_533:
+      Node_521:
           x:    [8.887 3.681]
           u:    [0.000]
-      Node_534:
+      Node_522:
           x:    [10.064 4.169]
           u:    [0.000]
-      Node_535:
+      Node_523:
           x:    [11.285 4.674]
           u:    [0.000]
-      Node_536:
+      Node_524:
           x:    [12.550 5.198]
           u:    [0.000]
-      Node_537:
+      Node_525:
           x:    [13.858 5.740]
           u:    [0.000]
-      Node_538:
+      Node_526:
           x:    [4.165 2.761]
           u:    [0.000]
-      Node_539:
+      Node_527:
           x:    [5.091 3.403]
           u:    [0.000]
-      Node_540:
+      Node_528:
           x:    [6.050 4.059]
           u:    [0.000]
-      Node_541:
+      Node_529:
           x:    [7.042 4.729]
           u:    [0.000]
-      Node_542:
+      Node_530:
           x:    [8.067 5.413]
           u:    [0.000]
-      Node_543:
+      Node_531:
           x:    [9.125 6.110]
           u:    [0.000]
-      Node_544:
+      Node_532:
           x:    [10.216 6.820]
           u:    [0.000]
-      Node_545:
+      Node_533:
           x:    [11.339 7.545]
           u:    [0.000]
-      Node_546:
+      Node_534:
           x:    [12.496 8.283]
           u:    [0.000]
-      Node_547:
+      Node_535:
           x:    [3.536 3.536]
           u:    [0.000]
-      Node_548:
+      Node_536:
           x:    [4.419 4.419]
           u:    [0.000]
-      Node_549:
+      Node_537:
           x:    [5.303 5.303]
           u:    [0.000]
-      Node_550:
+      Node_538:
           x:    [6.187 6.187]
           u:    [0.000]
-      Node_551:
+      Node_539:
           x:    [7.071 7.071]
           u:    [0.000]
-      Node_552:
+      Node_540:
           x:    [7.955 7.955]
           u:    [0.000]
-      Node_553:
+      Node_541:
           x:    [8.839 8.839]
           u:    [0.000]
-      Node_554:
+      Node_542:
           x:    [9.723 9.723]
           u:    [0.000]
-      Node_555:
+      Node_543:
           x:    [10.607 10.607]
           u:    [0.000]
 
     Elements:
     ---------------------
-      Triangle_771: nodes ( Node_511 Node_512 Node_520 )
+      Triangle_759: nodes ( Node_499 Node_500 Node_508 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_772: nodes ( Node_521 Node_520 Node_512 )
+      Triangle_760: nodes ( Node_509 Node_508 Node_500 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_773: nodes ( Node_512 Node_513 Node_521 )
+      Triangle_761: nodes ( Node_500 Node_501 Node_509 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_774: nodes ( Node_522 Node_521 Node_513 )
+      Triangle_762: nodes ( Node_510 Node_509 Node_501 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_775: nodes ( Node_513 Node_514 Node_522 )
+      Triangle_763: nodes ( Node_501 Node_502 Node_510 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_776: nodes ( Node_523 Node_522 Node_514 )
+      Triangle_764: nodes ( Node_511 Node_510 Node_502 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_777: nodes ( Node_514 Node_515 Node_523 )
+      Triangle_765: nodes ( Node_502 Node_503 Node_511 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_778: nodes ( Node_524 Node_523 Node_515 )
+      Triangle_766: nodes ( Node_512 Node_511 Node_503 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_779: nodes ( Node_515 Node_516 Node_524 )
+      Triangle_767: nodes ( Node_503 Node_504 Node_512 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_780: nodes ( Node_525 Node_524 Node_516 )
+      Triangle_768: nodes ( Node_513 Node_512 Node_504 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_781: nodes ( Node_516 Node_517 Node_525 )
+      Triangle_769: nodes ( Node_504 Node_505 Node_513 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_782: nodes ( Node_526 Node_525 Node_517 )
+      Triangle_770: nodes ( Node_514 Node_513 Node_505 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_783: nodes ( Node_517 Node_518 Node_526 )
+      Triangle_771: nodes ( Node_505 Node_506 Node_514 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_784: nodes ( Node_527 Node_526 Node_518 )
+      Triangle_772: nodes ( Node_515 Node_514 Node_506 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_785: nodes ( Node_518 Node_519 Node_527 )
+      Triangle_773: nodes ( Node_506 Node_507 Node_515 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_786: nodes ( Node_528 Node_527 Node_519 )
+      Triangle_774: nodes ( Node_516 Node_515 Node_507 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_787: nodes ( Node_520 Node_521 Node_529 )
+      Triangle_775: nodes ( Node_508 Node_509 Node_517 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_788: nodes ( Node_530 Node_529 Node_521 )
+      Triangle_776: nodes ( Node_518 Node_517 Node_509 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_789: nodes ( Node_521 Node_522 Node_530 )
+      Triangle_777: nodes ( Node_509 Node_510 Node_518 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_790: nodes ( Node_531 Node_530 Node_522 )
+      Triangle_778: nodes ( Node_519 Node_518 Node_510 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_791: nodes ( Node_522 Node_523 Node_531 )
+      Triangle_779: nodes ( Node_510 Node_511 Node_519 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_792: nodes ( Node_532 Node_531 Node_523 )
+      Triangle_780: nodes ( Node_520 Node_519 Node_511 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_793: nodes ( Node_523 Node_524 Node_532 )
+      Triangle_781: nodes ( Node_511 Node_512 Node_520 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_794: nodes ( Node_533 Node_532 Node_524 )
+      Triangle_782: nodes ( Node_521 Node_520 Node_512 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_795: nodes ( Node_524 Node_525 Node_533 )
+      Triangle_783: nodes ( Node_512 Node_513 Node_521 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_796: nodes ( Node_534 Node_533 Node_525 )
+      Triangle_784: nodes ( Node_522 Node_521 Node_513 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_797: nodes ( Node_525 Node_526 Node_534 )
+      Triangle_785: nodes ( Node_513 Node_514 Node_522 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_798: nodes ( Node_535 Node_534 Node_526 )
+      Triangle_786: nodes ( Node_523 Node_522 Node_514 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_799: nodes ( Node_526 Node_527 Node_535 )
+      Triangle_787: nodes ( Node_514 Node_515 Node_523 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_800: nodes ( Node_536 Node_535 Node_527 )
+      Triangle_788: nodes ( Node_524 Node_523 Node_515 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_801: nodes ( Node_527 Node_528 Node_536 )
+      Triangle_789: nodes ( Node_515 Node_516 Node_524 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_802: nodes ( Node_537 Node_536 Node_528 )
+      Triangle_790: nodes ( Node_525 Node_524 Node_516 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_803: nodes ( Node_529 Node_530 Node_538 )
+      Triangle_791: nodes ( Node_517 Node_518 Node_526 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_804: nodes ( Node_539 Node_538 Node_530 )
+      Triangle_792: nodes ( Node_527 Node_526 Node_518 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_805: nodes ( Node_530 Node_531 Node_539 )
+      Triangle_793: nodes ( Node_518 Node_519 Node_527 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_806: nodes ( Node_540 Node_539 Node_531 )
+      Triangle_794: nodes ( Node_528 Node_527 Node_519 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_807: nodes ( Node_531 Node_532 Node_540 )
+      Triangle_795: nodes ( Node_519 Node_520 Node_528 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_808: nodes ( Node_541 Node_540 Node_532 )
+      Triangle_796: nodes ( Node_529 Node_528 Node_520 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_809: nodes ( Node_532 Node_533 Node_541 )
+      Triangle_797: nodes ( Node_520 Node_521 Node_529 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_810: nodes ( Node_542 Node_541 Node_533 )
+      Triangle_798: nodes ( Node_530 Node_529 Node_521 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_811: nodes ( Node_533 Node_534 Node_542 )
+      Triangle_799: nodes ( Node_521 Node_522 Node_530 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_812: nodes ( Node_543 Node_542 Node_534 )
+      Triangle_800: nodes ( Node_531 Node_530 Node_522 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_813: nodes ( Node_534 Node_535 Node_543 )
+      Triangle_801: nodes ( Node_522 Node_523 Node_531 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_814: nodes ( Node_544 Node_543 Node_535 )
+      Triangle_802: nodes ( Node_532 Node_531 Node_523 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_815: nodes ( Node_535 Node_536 Node_544 )
+      Triangle_803: nodes ( Node_523 Node_524 Node_532 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_816: nodes ( Node_545 Node_544 Node_536 )
+      Triangle_804: nodes ( Node_533 Node_532 Node_524 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_817: nodes ( Node_536 Node_537 Node_545 )
+      Triangle_805: nodes ( Node_524 Node_525 Node_533 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_818: nodes ( Node_546 Node_545 Node_537 )
+      Triangle_806: nodes ( Node_534 Node_533 Node_525 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_819: nodes ( Node_538 Node_539 Node_547 )
+      Triangle_807: nodes ( Node_526 Node_527 Node_535 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_820: nodes ( Node_548 Node_547 Node_539 )
+      Triangle_808: nodes ( Node_536 Node_535 Node_527 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_821: nodes ( Node_539 Node_540 Node_548 )
+      Triangle_809: nodes ( Node_527 Node_528 Node_536 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_822: nodes ( Node_549 Node_548 Node_540 )
+      Triangle_810: nodes ( Node_537 Node_536 Node_528 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_823: nodes ( Node_540 Node_541 Node_549 )
+      Triangle_811: nodes ( Node_528 Node_529 Node_537 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_824: nodes ( Node_550 Node_549 Node_541 )
+      Triangle_812: nodes ( Node_538 Node_537 Node_529 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_825: nodes ( Node_541 Node_542 Node_550 )
+      Triangle_813: nodes ( Node_529 Node_530 Node_538 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_826: nodes ( Node_551 Node_550 Node_542 )
+      Triangle_814: nodes ( Node_539 Node_538 Node_530 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_827: nodes ( Node_542 Node_543 Node_551 )
+      Triangle_815: nodes ( Node_530 Node_531 Node_539 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_828: nodes ( Node_552 Node_551 Node_543 )
+      Triangle_816: nodes ( Node_540 Node_539 Node_531 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_829: nodes ( Node_543 Node_544 Node_552 )
+      Triangle_817: nodes ( Node_531 Node_532 Node_540 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_830: nodes ( Node_553 Node_552 Node_544 )
+      Triangle_818: nodes ( Node_541 Node_540 Node_532 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_831: nodes ( Node_544 Node_545 Node_553 )
+      Triangle_819: nodes ( Node_532 Node_533 Node_541 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_832: nodes ( Node_554 Node_553 Node_545 )
+      Triangle_820: nodes ( Node_542 Node_541 Node_533 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_833: nodes ( Node_545 Node_546 Node_554 )
+      Triangle_821: nodes ( Node_533 Node_534 Node_542 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
-      Triangle_834: nodes ( Node_555 Node_554 Node_546 )
+      Triangle_822: nodes ( Node_543 Node_542 Node_534 )
           material: Thermal
           grad phi: x=0.000e+00 y=0.000e+00
           flux:     x=0.000e+00 y=0.000e+00
@@ -642,407 +642,407 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_511:
+      Node_499:
           x:    [5.000 0.000]
           fix:  ['T']
           u:    [200.000]
-      Node_512:
+      Node_500:
           x:    [6.250 0.000]
           u:    [220.291]
-      Node_513:
+      Node_501:
           x:    [7.500 0.000]
           u:    [236.881]
-      Node_514:
+      Node_502:
           x:    [8.750 0.000]
           u:    [250.921]
-      Node_515:
+      Node_503:
           x:    [10.000 0.000]
           u:    [263.088]
-      Node_516:
+      Node_504:
           x:    [11.250 0.000]
           u:    [273.819]
-      Node_517:
+      Node_505:
           x:    [12.500 0.000]
           u:    [283.415]
-      Node_518:
+      Node_506:
           x:    [13.750 0.000]
           u:    [292.090]
-      Node_519:
+      Node_507:
           x:    [15.000 0.000]
           fix:  ['T']
           u:    [300.000]
-      Node_520:
+      Node_508:
           x:    [4.898 0.993]
           fix:  ['T']
           u:    [200.000]
-      Node_521:
+      Node_509:
           x:    [6.007 1.194]
           u:    [218.453]
-      Node_522:
+      Node_510:
           x:    [7.149 1.408]
           u:    [234.246]
-      Node_523:
+      Node_511:
           x:    [8.324 1.636]
           u:    [248.087]
-      Node_524:
+      Node_512:
           x:    [9.531 1.877]
           u:    [260.436]
-      Node_525:
+      Node_513:
           x:    [10.772 2.132]
           u:    [271.604]
-      Node_526:
+      Node_514:
           x:    [12.046 2.401]
           u:    [281.816]
-      Node_527:
+      Node_515:
           x:    [13.353 2.683]
           u:    [291.237]
-      Node_528:
+      Node_516:
           x:    [14.693 2.979]
           fix:  ['T']
           u:    [300.000]
-      Node_529:
+      Node_517:
           x:    [4.619 1.913]
           fix:  ['T']
           u:    [200.000]
-      Node_530:
+      Node_518:
           x:    [5.620 2.328]
           u:    [217.836]
-      Node_531:
+      Node_519:
           x:    [6.665 2.761]
           u:    [233.346]
-      Node_532:
+      Node_520:
           x:    [7.754 3.212]
           u:    [247.120]
-      Node_533:
+      Node_521:
           x:    [8.887 3.681]
           u:    [259.539]
-      Node_534:
+      Node_522:
           x:    [10.064 4.169]
           u:    [270.867]
-      Node_535:
+      Node_523:
           x:    [11.285 4.674]
           u:    [281.298]
-      Node_536:
+      Node_524:
           x:    [12.550 5.198]
           u:    [290.974]
-      Node_537:
+      Node_525:
           x:    [13.858 5.740]
           fix:  ['T']
           u:    [300.000]
-      Node_538:
+      Node_526:
           x:    [4.165 2.761]
           fix:  ['T']
           u:    [200.000]
-      Node_539:
+      Node_527:
           x:    [5.091 3.403]
           u:    [218.448]
-      Node_540:
+      Node_528:
           x:    [6.050 4.059]
           u:    [234.245]
-      Node_541:
+      Node_529:
           x:    [7.042 4.729]
           u:    [248.090]
-      Node_542:
+      Node_530:
           x:    [8.067 5.413]
           u:    [260.439]
-      Node_543:
+      Node_531:
           x:    [9.125 6.110]
           u:    [271.607]
-      Node_544:
+      Node_532:
           x:    [10.216 6.820]
           u:    [281.818]
-      Node_545:
+      Node_533:
           x:    [11.339 7.545]
           u:    [291.239]
-      Node_546:
+      Node_534:
           x:    [12.496 8.283]
           fix:  ['T']
           u:    [300.000]
-      Node_547:
+      Node_535:
           x:    [3.536 3.536]
           fix:  ['T']
           u:    [200.000]
-      Node_548:
+      Node_536:
           x:    [4.419 4.419]
           u:    [220.318]
-      Node_549:
+      Node_537:
           x:    [5.303 5.303]
           u:    [236.903]
-      Node_550:
+      Node_538:
           x:    [6.187 6.187]
           u:    [250.928]
-      Node_551:
+      Node_539:
           x:    [7.071 7.071]
           u:    [263.082]
-      Node_552:
+      Node_540:
           x:    [7.955 7.955]
           u:    [273.807]
-      Node_553:
+      Node_541:
           x:    [8.839 8.839]
           u:    [283.403]
-      Node_554:
+      Node_542:
           x:    [9.723 9.723]
           u:    [292.083]
-      Node_555:
+      Node_543:
           x:    [10.607 10.607]
           fix:  ['T']
           u:    [300.000]
 
     Elements:
     ---------------------
-      Triangle_771: nodes ( Node_511 Node_512 Node_520 )
+      Triangle_759: nodes ( Node_499 Node_500 Node_508 )
           material: Thermal
           grad phi: x=1.623e+01 y=1.674e+00
           flux:     x=-1.623e+01 y=-1.674e+00
-      Triangle_772: nodes ( Node_521 Node_520 Node_512 )
+      Triangle_760: nodes ( Node_509 Node_508 Node_500 )
           material: Thermal
           grad phi: x=1.632e+01 y=1.786e+00
           flux:     x=-1.632e+01 y=-1.786e+00
-      Triangle_773: nodes ( Node_512 Node_513 Node_521 )
+      Triangle_761: nodes ( Node_500 Node_501 Node_509 )
           material: Thermal
           grad phi: x=1.327e+01 y=1.166e+00
           flux:     x=-1.327e+01 y=-1.166e+00
-      Triangle_774: nodes ( Node_522 Node_521 Node_513 )
+      Triangle_762: nodes ( Node_510 Node_509 Node_501 )
           material: Thermal
           grad phi: x=1.355e+01 y=1.509e+00
           flux:     x=-1.355e+01 y=-1.509e+00
-      Triangle_775: nodes ( Node_513 Node_514 Node_522 )
+      Triangle_763: nodes ( Node_501 Node_502 Node_510 )
           material: Thermal
           grad phi: x=1.123e+01 y=9.313e-01
           flux:     x=-1.123e+01 y=-9.313e-01
-      Triangle_776: nodes ( Node_523 Node_522 Node_514 )
+      Triangle_764: nodes ( Node_511 Node_510 Node_502 )
           material: Thermal
           grad phi: x=1.153e+01 y=1.274e+00
           flux:     x=-1.153e+01 y=-1.274e+00
-      Triangle_777: nodes ( Node_514 Node_515 Node_523 )
+      Triangle_765: nodes ( Node_502 Node_503 Node_511 )
           material: Thermal
           grad phi: x=9.733e+00 y=8.050e-01
           flux:     x=-9.733e+00 y=-8.050e-01
-      Triangle_778: nodes ( Node_524 Node_523 Node_515 )
+      Triangle_766: nodes ( Node_512 Node_511 Node_503 )
           material: Thermal
           grad phi: x=1.001e+01 y=1.085e+00
           flux:     x=-1.001e+01 y=-1.085e+00
-      Triangle_779: nodes ( Node_515 Node_516 Node_524 )
+      Triangle_767: nodes ( Node_503 Node_504 Node_512 )
           material: Thermal
           grad phi: x=8.585e+00 y=7.299e-01
           flux:     x=-8.585e+00 y=-7.299e-01
-      Triangle_780: nodes ( Node_525 Node_524 Node_516 )
+      Triangle_768: nodes ( Node_513 Node_512 Node_504 )
           material: Thermal
           grad phi: x=8.808e+00 y=9.342e-01
           flux:     x=-8.808e+00 y=-9.342e-01
-      Triangle_781: nodes ( Node_516 Node_517 Node_525 )
+      Triangle_769: nodes ( Node_504 Node_505 Node_513 )
           material: Thermal
           grad phi: x=7.677e+00 y=6.807e-01
           flux:     x=-7.677e+00 y=-6.807e-01
-      Triangle_782: nodes ( Node_526 Node_525 Node_517 )
+      Triangle_770: nodes ( Node_514 Node_513 Node_505 )
           material: Thermal
           grad phi: x=7.844e+00 y=8.163e-01
           flux:     x=-7.844e+00 y=-8.163e-01
-      Triangle_783: nodes ( Node_517 Node_518 Node_526 )
+      Triangle_771: nodes ( Node_505 Node_506 Node_514 )
           material: Thermal
           grad phi: x=6.940e+00 y=6.454e-01
           flux:     x=-6.940e+00 y=-6.454e-01
-      Triangle_784: nodes ( Node_527 Node_526 Node_518 )
+      Triangle_772: nodes ( Node_515 Node_514 Node_506 )
           material: Thermal
           grad phi: x=7.053e+00 y=7.257e-01
           flux:     x=-7.053e+00 y=-7.257e-01
-      Triangle_785: nodes ( Node_518 Node_519 Node_527 )
+      Triangle_773: nodes ( Node_506 Node_507 Node_515 )
           material: Thermal
           grad phi: x=6.328e+00 y=6.184e-01
           flux:     x=-6.328e+00 y=-6.184e-01
-      Triangle_786: nodes ( Node_528 Node_527 Node_519 )
+      Triangle_774: nodes ( Node_516 Node_515 Node_507 )
           material: Thermal
           grad phi: x=6.395e+00 y=6.593e-01
           flux:     x=-6.395e+00 y=-6.593e-01
-      Triangle_787: nodes ( Node_520 Node_521 Node_529 )
+      Triangle_775: nodes ( Node_508 Node_509 Node_517 )
           material: Thermal
           grad phi: x=1.578e+01 y=4.769e+00
           flux:     x=-1.578e+01 y=-4.769e+00
-      Triangle_788: nodes ( Node_530 Node_529 Node_521 )
+      Triangle_776: nodes ( Node_518 Node_517 Node_509 )
           material: Thermal
           grad phi: x=1.581e+01 y=4.840e+00
           flux:     x=-1.581e+01 y=-4.840e+00
-      Triangle_789: nodes ( Node_521 Node_522 Node_530 )
+      Triangle_777: nodes ( Node_509 Node_510 Node_518 )
           material: Thermal
           grad phi: x=1.310e+01 y=3.915e+00
           flux:     x=-1.310e+01 y=-3.915e+00
-      Triangle_790: nodes ( Node_531 Node_530 Node_522 )
+      Triangle_778: nodes ( Node_519 Node_518 Node_510 )
           material: Thermal
           grad phi: x=1.317e+01 y=4.039e+00
           flux:     x=-1.317e+01 y=-4.039e+00
-      Triangle_791: nodes ( Node_522 Node_523 Node_531 )
+      Triangle_779: nodes ( Node_510 Node_511 Node_519 )
           material: Thermal
           grad phi: x=1.114e+01 y=3.313e+00
           flux:     x=-1.114e+01 y=-3.313e+00
-      Triangle_792: nodes ( Node_532 Node_531 Node_523 )
+      Triangle_780: nodes ( Node_520 Node_519 Node_511 )
           material: Thermal
           grad phi: x=1.122e+01 y=3.440e+00
           flux:     x=-1.122e+01 y=-3.440e+00
-      Triangle_793: nodes ( Node_523 Node_524 Node_532 )
+      Triangle_781: nodes ( Node_511 Node_512 Node_520 )
           material: Thermal
           grad phi: x=9.649e+00 y=2.871e+00
           flux:     x=-9.649e+00 y=-2.871e+00
-      Triangle_794: nodes ( Node_533 Node_532 Node_524 )
+      Triangle_782: nodes ( Node_521 Node_520 Node_512 )
           material: Thermal
           grad phi: x=9.729e+00 y=2.977e+00
           flux:     x=-9.729e+00 y=-2.977e+00
-      Triangle_795: nodes ( Node_524 Node_525 Node_533 )
+      Triangle_783: nodes ( Node_512 Node_513 Node_521 )
           material: Thermal
           grad phi: x=8.480e+00 y=2.531e+00
           flux:     x=-8.480e+00 y=-2.531e+00
-      Triangle_796: nodes ( Node_534 Node_533 Node_525 )
+      Triangle_784: nodes ( Node_522 Node_521 Node_513 )
           material: Thermal
           grad phi: x=8.545e+00 y=2.611e+00
           flux:     x=-8.545e+00 y=-2.611e+00
-      Triangle_797: nodes ( Node_525 Node_526 Node_534 )
+      Triangle_785: nodes ( Node_513 Node_514 Node_522 )
           material: Thermal
           grad phi: x=7.539e+00 y=2.261e+00
           flux:     x=-7.539e+00 y=-2.261e+00
-      Triangle_798: nodes ( Node_535 Node_534 Node_526 )
+      Triangle_786: nodes ( Node_523 Node_522 Node_514 )
           material: Thermal
           grad phi: x=7.586e+00 y=2.313e+00
           flux:     x=-7.586e+00 y=-2.313e+00
-      Triangle_799: nodes ( Node_526 Node_527 Node_535 )
+      Triangle_787: nodes ( Node_514 Node_515 Node_523 )
           material: Thermal
           grad phi: x=6.769e+00 y=2.040e+00
           flux:     x=-6.769e+00 y=-2.040e+00
-      Triangle_800: nodes ( Node_536 Node_535 Node_527 )
+      Triangle_788: nodes ( Node_524 Node_523 Node_515 )
           material: Thermal
           grad phi: x=6.794e+00 y=2.066e+00
           flux:     x=-6.794e+00 y=-2.066e+00
-      Triangle_801: nodes ( Node_527 Node_528 Node_536 )
+      Triangle_789: nodes ( Node_515 Node_516 Node_524 )
           material: Thermal
           grad phi: x=6.131e+00 y=1.854e+00
           flux:     x=-6.131e+00 y=-1.854e+00
-      Triangle_802: nodes ( Node_537 Node_536 Node_528 )
+      Triangle_790: nodes ( Node_525 Node_524 Node_516 )
           material: Thermal
           grad phi: x=6.129e+00 y=1.853e+00
           flux:     x=-6.129e+00 y=-1.853e+00
-      Triangle_803: nodes ( Node_529 Node_530 Node_538 )
+      Triangle_791: nodes ( Node_517 Node_518 Node_526 )
           material: Thermal
           grad phi: x=1.458e+01 y=7.812e+00
           flux:     x=-1.458e+01 y=-7.812e+00
-      Triangle_804: nodes ( Node_539 Node_538 Node_530 )
+      Triangle_792: nodes ( Node_527 Node_526 Node_518 )
           material: Thermal
           grad phi: x=1.456e+01 y=7.732e+00
           flux:     x=-1.456e+01 y=-7.732e+00
-      Triangle_805: nodes ( Node_530 Node_531 Node_539 )
+      Triangle_793: nodes ( Node_518 Node_519 Node_527 )
           material: Thermal
           grad phi: x=1.213e+01 y=6.539e+00
           flux:     x=-1.213e+01 y=-6.539e+00
-      Triangle_806: nodes ( Node_540 Node_539 Node_531 )
+      Triangle_794: nodes ( Node_528 Node_527 Node_519 )
           material: Thermal
           grad phi: x=1.208e+01 y=6.416e+00
           flux:     x=-1.208e+01 y=-6.416e+00
-      Triangle_807: nodes ( Node_531 Node_532 Node_540 )
+      Triangle_795: nodes ( Node_519 Node_520 Node_528 )
           material: Thermal
           grad phi: x=1.033e+01 y=5.587e+00
           flux:     x=-1.033e+01 y=-5.587e+00
-      Triangle_808: nodes ( Node_541 Node_540 Node_532 )
+      Triangle_796: nodes ( Node_529 Node_528 Node_520 )
           material: Thermal
           grad phi: x=1.027e+01 y=5.460e+00
           flux:     x=-1.027e+01 y=-5.460e+00
-      Triangle_809: nodes ( Node_532 Node_533 Node_541 )
+      Triangle_797: nodes ( Node_520 Node_521 Node_529 )
           material: Thermal
           grad phi: x=8.956e+00 y=4.843e+00
           flux:     x=-8.956e+00 y=-4.843e+00
-      Triangle_810: nodes ( Node_542 Node_541 Node_533 )
+      Triangle_798: nodes ( Node_530 Node_529 Node_521 )
           material: Thermal
           grad phi: x=8.894e+00 y=4.733e+00
           flux:     x=-8.894e+00 y=-4.733e+00
-      Triangle_811: nodes ( Node_533 Node_534 Node_542 )
+      Triangle_799: nodes ( Node_521 Node_522 Node_530 )
           material: Thermal
           grad phi: x=7.867e+00 y=4.247e+00
           flux:     x=-7.867e+00 y=-4.247e+00
-      Triangle_812: nodes ( Node_543 Node_542 Node_534 )
+      Triangle_800: nodes ( Node_531 Node_530 Node_522 )
           material: Thermal
           grad phi: x=7.815e+00 y=4.162e+00
           flux:     x=-7.815e+00 y=-4.162e+00
-      Triangle_813: nodes ( Node_534 Node_535 Node_543 )
+      Triangle_801: nodes ( Node_522 Node_523 Node_531 )
           material: Thermal
           grad phi: x=6.986e+00 y=3.762e+00
           flux:     x=-6.986e+00 y=-3.762e+00
-      Triangle_814: nodes ( Node_544 Node_543 Node_535 )
+      Triangle_802: nodes ( Node_532 Node_531 Node_523 )
           material: Thermal
           grad phi: x=6.948e+00 y=3.704e+00
           flux:     x=-6.948e+00 y=-3.704e+00
-      Triangle_815: nodes ( Node_535 Node_536 Node_544 )
+      Triangle_803: nodes ( Node_523 Node_524 Node_532 )
           material: Thermal
           grad phi: x=6.259e+00 y=3.360e+00
           flux:     x=-6.259e+00 y=-3.360e+00
-      Triangle_816: nodes ( Node_545 Node_544 Node_536 )
+      Triangle_804: nodes ( Node_533 Node_532 Node_524 )
           material: Thermal
           grad phi: x=6.237e+00 y=3.329e+00
           flux:     x=-6.237e+00 y=-3.329e+00
-      Triangle_817: nodes ( Node_536 Node_537 Node_545 )
+      Triangle_805: nodes ( Node_524 Node_525 Node_533 )
           material: Thermal
           grad phi: x=5.644e+00 y=3.024e+00
           flux:     x=-5.644e+00 y=-3.024e+00
-      Triangle_818: nodes ( Node_546 Node_545 Node_537 )
+      Triangle_806: nodes ( Node_534 Node_533 Node_525 )
           material: Thermal
           grad phi: x=5.645e+00 y=3.024e+00
           flux:     x=-5.645e+00 y=-3.024e+00
-      Triangle_819: nodes ( Node_538 Node_539 Node_547 )
+      Triangle_807: nodes ( Node_526 Node_527 Node_535 )
           material: Thermal
           grad phi: x=1.274e+01 y=1.036e+01
           flux:     x=-1.274e+01 y=-1.036e+01
-      Triangle_820: nodes ( Node_548 Node_547 Node_539 )
+      Triangle_808: nodes ( Node_536 Node_535 Node_527 )
           material: Thermal
           grad phi: x=1.273e+01 y=1.026e+01
           flux:     x=-1.273e+01 y=-1.026e+01
-      Triangle_821: nodes ( Node_539 Node_540 Node_548 )
+      Triangle_809: nodes ( Node_527 Node_528 Node_536 )
           material: Thermal
           grad phi: x=1.047e+01 y=8.768e+00
           flux:     x=-1.047e+01 y=-8.768e+00
-      Triangle_822: nodes ( Node_549 Node_548 Node_540 )
+      Triangle_810: nodes ( Node_537 Node_536 Node_528 )
           material: Thermal
           grad phi: x=1.039e+01 y=8.375e+00
           flux:     x=-1.039e+01 y=-8.375e+00
-      Triangle_823: nodes ( Node_540 Node_541 Node_549 )
+      Triangle_811: nodes ( Node_528 Node_529 Node_537 )
           material: Thermal
           grad phi: x=8.905e+00 y=7.484e+00
           flux:     x=-8.905e+00 y=-7.484e+00
-      Triangle_824: nodes ( Node_550 Node_549 Node_541 )
+      Triangle_812: nodes ( Node_538 Node_537 Node_529 )
           material: Thermal
           grad phi: x=8.775e+00 y=7.092e+00
           flux:     x=-8.775e+00 y=-7.092e+00
-      Triangle_825: nodes ( Node_541 Node_542 Node_550 )
+      Triangle_813: nodes ( Node_529 Node_530 Node_538 )
           material: Thermal
           grad phi: x=7.730e+00 y=6.479e+00
           flux:     x=-7.730e+00 y=-6.479e+00
-      Triangle_826: nodes ( Node_551 Node_550 Node_542 )
+      Triangle_814: nodes ( Node_539 Node_538 Node_530 )
           material: Thermal
           grad phi: x=7.596e+00 y=6.155e+00
           flux:     x=-7.596e+00 y=-6.155e+00
-      Triangle_827: nodes ( Node_542 Node_543 Node_551 )
+      Triangle_815: nodes ( Node_530 Node_531 Node_539 )
           material: Thermal
           grad phi: x=6.812e+00 y=5.684e+00
           flux:     x=-6.812e+00 y=-5.684e+00
-      Triangle_828: nodes ( Node_552 Node_551 Node_543 )
+      Triangle_816: nodes ( Node_540 Node_539 Node_531 )
           material: Thermal
           grad phi: x=6.697e+00 y=5.438e+00
           flux:     x=-6.697e+00 y=-5.438e+00
-      Triangle_829: nodes ( Node_543 Node_544 Node_552 )
+      Triangle_817: nodes ( Node_531 Node_532 Node_540 )
           material: Thermal
           grad phi: x=6.075e+00 y=5.043e+00
           flux:     x=-6.075e+00 y=-5.043e+00
-      Triangle_830: nodes ( Node_553 Node_552 Node_544 )
+      Triangle_818: nodes ( Node_541 Node_540 Node_532 )
           material: Thermal
           grad phi: x=5.987e+00 y=4.869e+00
           flux:     x=-5.987e+00 y=-4.869e+00
-      Triangle_831: nodes ( Node_544 Node_545 Node_553 )
+      Triangle_819: nodes ( Node_532 Node_533 Node_541 )
           material: Thermal
           grad phi: x=5.472e+00 y=4.517e+00
           flux:     x=-5.472e+00 y=-4.517e+00
-      Triangle_832: nodes ( Node_554 Node_553 Node_545 )
+      Triangle_820: nodes ( Node_542 Node_541 Node_533 )
           material: Thermal
           grad phi: x=5.414e+00 y=4.406e+00
           flux:     x=-5.414e+00 y=-4.406e+00
-      Triangle_833: nodes ( Node_545 Node_546 Node_554 )
+      Triangle_821: nodes ( Node_533 Node_534 Node_542 )
           material: Thermal
           grad phi: x=4.972e+00 y=4.078e+00
           flux:     x=-4.972e+00 y=-4.078e+00
-      Triangle_834: nodes ( Node_555 Node_554 Node_546 )
+      Triangle_822: nodes ( Node_543 Node_542 Node_534 )
           material: Thermal
           grad phi: x=4.940e+00 y=4.017e+00
           flux:     x=-4.940e+00 y=-4.017e+00
@@ -1054,7 +1054,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.387 seconds)
+   **Total running time of the script:** (0 minutes 0.364 seconds)
 
 
 .. _sphx_glr_download_auto_examples_diffusion_plot_thermal04.py:

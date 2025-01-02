@@ -153,7 +153,7 @@ vector dofs to any (nodal) transformation.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Transformation.Transformation.getT">
 <span class="sig-name descname"><span class="pre">getT</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Transformation.Transformation.getT" title="Link to this definition"></a></dt>
-<dd><p class="sd-card-text">returns a 3d transformation matrix that maps components from the local to the global system</p>
+<dd><p class="sd-card-text">returns the transformation matrix that maps components from a local 3d vector to the global system</p>
 <p class="sd-card-text"><strong>Usage</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">getT</span><span class="p">()</span>
 
@@ -167,6 +167,26 @@ vector dofs to any (nodal) transformation.</p>
 <span class="n">Mlocal</span>  <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Mglobal</span> <span class="o">@</span> <span class="n">T</span>   <span class="c1"># global to local</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Transformation.Transformation.m2g">
+<span class="sig-name descname"><span class="pre">m2g</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Transformation.Transformation.m2g" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>M</strong> – [ndof x ndof] matrix w/ ndof = number of dofs at Node||Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Transformation.Transformation.m2l">
+<span class="sig-name descname"><span class="pre">m2l</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Transformation.Transformation.m2l" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>M</strong> – [ndof x ndof] matrix w/ ndof = number of dofs at Node||Element</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -238,6 +258,26 @@ locally available dofs!</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p class="sd-card-text"><strong>client</strong> – pointer to the node/element to be registered</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Transformation.Transformation.v2g">
+<span class="sig-name descname"><span class="pre">v2g</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Transformation.Transformation.v2g" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>U</strong> – [ndof] vector w/ ndof = number of dofs at Node||Element</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Transformation.Transformation.v2l">
+<span class="sig-name descname"><span class="pre">v2l</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Transformation.Transformation.v2l" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text"><strong>U</strong> – [ndof] vector w/ ndof = number of dofs at Node||Element</p>
 </dd>
 </dl>
 </dd></dl>
@@ -364,7 +404,7 @@ defined by the following equivalence.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p class="sd-card-text"><strong>dir1</strong> – in-plane vector, <strong>dir1</strong> == <span class="math notranslate nohighlight">\({\bf d}_1\)</span>, defining the local x-direction</p></li>
-<li><p class="sd-card-text"><strong>angle</strong> – rotation angle, <span class="math notranslate nohighlight">\(\theta\)</span>, in degrees</p></li>
+<li><p class="sd-card-text"><strong>angle</strong> – rotation angle, <span class="math notranslate nohighlight">\(\theta\)</span>, in <em>degrees</em></p></li>
 </ul>
 </dd>
 </dl>
@@ -411,7 +451,7 @@ See documentation for the <code class="xref py py-meth docutils literal notransl
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Dec 31, 2024.
+      <span class="lastupdated">Last updated on Jan 02, 2025.
       </span></p>
   </div>
 

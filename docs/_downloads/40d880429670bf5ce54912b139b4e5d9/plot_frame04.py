@@ -25,6 +25,8 @@ modeled using
 
 Author: Peter Mackenzie-Helnwein
 """
+from random import betavariate
+
 import numpy as np
 
 from femedu.examples.Example import *
@@ -76,12 +78,16 @@ class ExampleFrame04(Example):
         degrees = np.pi / 180.
 
         # problem parameters
-        MOE =  29000 * ksi
-        EI  = 162133 * kips * inch ** 2
-        EA  =  30400 * kips
-        L   =     10 * ft
-        w0  =  0.333 * kip / ft
+        MOE  =  29000 * ksi
+        EI   = 162133 * kips * inch ** 2
+        EA   =  30400 * kips
+        L    =     10 * ft
+        w0   =  0.333 * kip / ft
+        beta = 30.0 * degrees  # slope of the upper support
 
+        #
+        # start meshing
+        #
         s = np.linspace(0.0, 1.0, nelem // 2 + 1)
 
         params = dict(
@@ -103,7 +109,7 @@ class ExampleFrame04(Example):
         # ... the first node
         nodes[0].fixDOF(['ux','uy','rz'])
         # ... the last node
-        nvec = nodes[-1].getPos() - nodes[-2].getPos() # vector parallel to the member axis
+        nvec = [np.cos(beta), np.sin(beta)]            # vector parallel to the sliding plane of the upper support
 
         transform = Frame2dTransformation(nvec)        # an in-plane rotation
         nodes[-1].addTransformation(transform)         # defining a local frame for the last node
@@ -120,7 +126,7 @@ class ExampleFrame04(Example):
     def problem(self):
         # initialize a system model
 
-        N  = 16     # number of elements
+        N  = 4     # number of elements
 
         # ========== setting global parameters ==============
 

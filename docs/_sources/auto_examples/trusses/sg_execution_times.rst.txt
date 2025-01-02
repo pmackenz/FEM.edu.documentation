@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:17.117** total execution time for 9 files **from auto_examples/trusses**:
+**00:26.378** total execution time for 9 files **from auto_examples/trusses**:
 
 .. container::
 
@@ -33,29 +33,29 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_auto_examples_trusses_plot_truss09.py` (``plot_truss09.py``)
-     - 00:06.231
+     - 00:09.212
      - 0.0
    * - :ref:`sphx_glr_auto_examples_trusses_plot_truss08.py` (``plot_truss08.py``)
-     - 00:04.217
+     - 00:07.390
      - 0.0
    * - :ref:`sphx_glr_auto_examples_trusses_plot_truss07.py` (``plot_truss07.py``)
-     - 00:03.553
+     - 00:05.309
      - 0.0
    * - :ref:`sphx_glr_auto_examples_trusses_plot_truss06.py` (``plot_truss06.py``)
-     - 00:01.487
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss05.py` (``plot_truss05.py``)
-     - 00:00.693
+     - 00:01.669
      - 0.0
    * - :ref:`sphx_glr_auto_examples_trusses_plot_truss02.py` (``plot_truss02.py``)
-     - 00:00.390
+     - 00:00.937
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss05.py` (``plot_truss05.py``)
+     - 00:00.761
      - 0.0
    * - :ref:`sphx_glr_auto_examples_trusses_plot_truss01.py` (``plot_truss01.py``)
-     - 00:00.226
+     - 00:00.594
      - 0.0
    * - :ref:`sphx_glr_auto_examples_trusses_plot_truss03.py` (``plot_truss03.py``)
-     - 00:00.218
+     - 00:00.274
      - 0.0
    * - :ref:`sphx_glr_auto_examples_trusses_plot_truss04.py` (``plot_truss04.py``)
-     - 00:00.102
+     - 00:00.232
      - 0.0

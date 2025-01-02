@@ -324,6 +324,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.hasLoad"><code class="docutils literal notranslate"><span class="pre">Node.hasLoad()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.isClose"><code class="docutils literal notranslate"><span class="pre">Node.isClose()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.isFixed"><code class="docutils literal notranslate"><span class="pre">Node.isFixed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.m2l"><code class="docutils literal notranslate"><span class="pre">Node.m2l()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.make_follower"><code class="docutils literal notranslate"><span class="pre">Node.make_follower()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.on_converged"><code class="docutils literal notranslate"><span class="pre">Node.on_converged()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.popU"><code class="docutils literal notranslate"><span class="pre">Node.popU()</span></code></a></li>
@@ -338,6 +339,8 @@
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.setLoad"><code class="docutils literal notranslate"><span class="pre">Node.setLoad()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.setLoadFactor"><code class="docutils literal notranslate"><span class="pre">Node.setLoadFactor()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.setTrialState"><code class="docutils literal notranslate"><span class="pre">Node.setTrialState()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.v2g"><code class="docutils literal notranslate"><span class="pre">Node.v2g()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.v2l"><code class="docutils literal notranslate"><span class="pre">Node.v2l()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -374,10 +377,14 @@
 <li class="toctree-l2"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation"><code class="docutils literal notranslate"><span class="pre">Transformation</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.addVector"><code class="docutils literal notranslate"><span class="pre">Transformation.addVector()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.getT"><code class="docutils literal notranslate"><span class="pre">Transformation.getT()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.m2g"><code class="docutils literal notranslate"><span class="pre">Transformation.m2g()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.m2l"><code class="docutils literal notranslate"><span class="pre">Transformation.m2l()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.matrixToGlobal"><code class="docutils literal notranslate"><span class="pre">Transformation.matrixToGlobal()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.matrixToLocal"><code class="docutils literal notranslate"><span class="pre">Transformation.matrixToLocal()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.refreshMaps"><code class="docutils literal notranslate"><span class="pre">Transformation.refreshMaps()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.registerClient"><code class="docutils literal notranslate"><span class="pre">Transformation.registerClient()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.v2g"><code class="docutils literal notranslate"><span class="pre">Transformation.v2g()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.v2l"><code class="docutils literal notranslate"><span class="pre">Transformation.v2l()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.vectorToGlobal"><code class="docutils literal notranslate"><span class="pre">Transformation.vectorToGlobal()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Transformation_class.html#femedu.domain.Transformation.Transformation.vectorToLocal"><code class="docutils literal notranslate"><span class="pre">Transformation.vectorToLocal()</span></code></a></li>
 </ul>
@@ -527,7 +534,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Dec 31, 2024.
+      <span class="lastupdated">Last updated on Jan 02, 2025.
       </span></p>
   </div>
 

@@ -243,40 +243,40 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_654:
+      Node_642:
           x:    [0.000 0.000]
           fix:  ['ux', 'uy']
           u:    [0.000 0.000]
-      Node_655:
+      Node_643:
           x:    [10.000 0.000]
           fix:  ['uy']
           u:    [5.000 0.000]
-      Node_656:
+      Node_644:
           x:    [10.000 10.000]
           u:    [5.000 -5.000]
-      Node_657:
+      Node_645:
           x:    [0.000 10.000]
           fix:  ['ux']
           u:    [0.000 -5.000]
-      Node_658:
+      Node_646:
           x:    [5.000 0.000]
           u:    [2.500 0.000]
-      Node_659:
+      Node_647:
           x:    [10.000 5.000]
           u:    [5.000 -2.500]
-      Node_660:
+      Node_648:
           x:    [5.000 10.000]
           u:    [2.500 -5.000]
-      Node_661:
+      Node_649:
           x:    [0.000 5.000]
           u:    [0.000 -2.500]
-      Node_662:
+      Node_650:
           x:    [5.000 5.000]
           u:    [2.500 -2.500]
 
     Elements:
     ---------------------
-      Triangle6_935: nodes ( Node_654 Node_655 Node_657 Node_658 Node_662 Node_661 )
+      Triangle6_923: nodes ( Node_642 Node_643 Node_645 Node_646 Node_650 Node_649 )
           material: PlaneStress
           strain 0: xx=6.250e-01 yy=-3.750e-01 xy=0.000e+00 zz=-7.500e-02
           stress 0: xx=5.632e+00 yy=-2.060e+00 xy=0.000e+00 zz=0.000e+00
@@ -284,7 +284,7 @@ Run the example by creating an instance of the problem and executing it by calli
           stress 1: xx=5.632e+00 yy=-2.060e+00 xy=0.000e+00 zz=0.000e+00
           strain 2: xx=6.250e-01 yy=-3.750e-01 xy=0.000e+00 zz=-7.500e-02
           stress 2: xx=5.632e+00 yy=-2.060e+00 xy=0.000e+00 zz=0.000e+00
-      Triangle6_936: nodes ( Node_656 Node_657 Node_655 Node_660 Node_662 Node_659 )
+      Triangle6_924: nodes ( Node_644 Node_645 Node_643 Node_648 Node_650 Node_647 )
           material: PlaneStress
           strain 0: xx=6.250e-01 yy=-3.750e-01 xy=-1.865e-15 zz=-7.500e-02
           stress 0: xx=5.632e+00 yy=-2.060e+00 xy=-7.174e-15 zz=0.000e+00
@@ -300,40 +300,40 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_654:
+      Node_642:
           x:    [0.000 0.000]
           fix:  ['ux', 'uy']
           u:    [0.000 0.000]
-      Node_655:
+      Node_643:
           x:    [10.000 0.000]
           fix:  ['uy']
           u:    [-0.000 0.000]
-      Node_656:
+      Node_644:
           x:    [10.000 10.000]
           u:    [-0.000 0.000]
-      Node_657:
+      Node_645:
           x:    [0.000 10.000]
           fix:  ['ux']
           u:    [0.000 0.000]
-      Node_658:
+      Node_646:
           x:    [5.000 0.000]
           u:    [-0.000 -0.000]
-      Node_659:
+      Node_647:
           x:    [10.000 5.000]
           u:    [-0.000 0.000]
-      Node_660:
+      Node_648:
           x:    [5.000 10.000]
           u:    [-0.000 0.000]
-      Node_661:
+      Node_649:
           x:    [0.000 5.000]
           u:    [0.000 0.000]
-      Node_662:
+      Node_650:
           x:    [5.000 5.000]
           u:    [-0.000 0.000]
 
     Elements:
     ---------------------
-      Triangle6_935: nodes ( Node_654 Node_655 Node_657 Node_658 Node_662 Node_661 )
+      Triangle6_923: nodes ( Node_642 Node_643 Node_645 Node_646 Node_650 Node_649 )
           material: PlaneStress
           strain 0: xx=-2.198e-13 yy=1.089e-12 xy=6.917e-17 zz=-2.608e-13
           stress 0: xx=1.175e-12 yy=1.124e-11 xy=2.661e-16 zz=0.000e+00
@@ -341,7 +341,7 @@ Run the example by creating an instance of the problem and executing it by calli
           stress 1: xx=1.170e-12 yy=1.124e-11 xy=1.708e-16 zz=0.000e+00
           strain 2: xx=-2.200e-13 yy=1.089e-12 xy=-1.136e-16 zz=-2.608e-13
           stress 2: xx=1.173e-12 yy=1.125e-11 xy=-4.369e-16 zz=0.000e+00
-      Triangle6_936: nodes ( Node_656 Node_657 Node_655 Node_660 Node_662 Node_659 )
+      Triangle6_924: nodes ( Node_644 Node_645 Node_643 Node_648 Node_650 Node_647 )
           material: PlaneStress
           strain 0: xx=-2.199e-13 yy=1.090e-12 xy=-3.553e-16 zz=-2.609e-13
           stress 0: xx=1.175e-12 yy=1.125e-11 xy=-1.366e-15 zz=0.000e+00
@@ -366,40 +366,40 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_654:
+      Node_642:
           x:    [0.000 0.000]
           fix:  ['ux', 'uy']
           u:    [0.000 0.000]
-      Node_655:
+      Node_643:
           x:    [10.000 0.000]
           fix:  ['uy']
           u:    [0.880 0.000]
-      Node_656:
+      Node_644:
           x:    [10.000 10.000]
           u:    [0.880 -0.280]
-      Node_657:
+      Node_645:
           x:    [0.000 10.000]
           fix:  ['ux']
           u:    [0.000 -0.280]
-      Node_658:
+      Node_646:
           x:    [5.000 0.000]
           u:    [0.440 -0.000]
-      Node_659:
+      Node_647:
           x:    [10.000 5.000]
           u:    [0.880 -0.140]
-      Node_660:
+      Node_648:
           x:    [5.000 10.000]
           u:    [0.440 -0.280]
-      Node_661:
+      Node_649:
           x:    [0.000 5.000]
           u:    [-0.000 -0.140]
-      Node_662:
+      Node_650:
           x:    [5.000 5.000]
           u:    [0.440 -0.140]
 
     Elements:
     ---------------------
-      Triangle6_935: nodes ( Node_654 Node_655 Node_657 Node_658 Node_662 Node_661 )
+      Triangle6_923: nodes ( Node_642 Node_643 Node_645 Node_646 Node_650 Node_649 )
           material: PlaneStress
           strain 0: xx=9.191e-02 yy=-2.757e-02 xy=1.773e-17 zz=-1.930e-02
           stress 0: xx=9.191e-01 yy=4.601e-15 xy=6.821e-17 zz=0.000e+00
@@ -407,7 +407,7 @@ Run the example by creating an instance of the problem and executing it by calli
           stress 1: xx=9.191e-01 yy=2.769e-15 xy=7.434e-16 zz=0.000e+00
           strain 2: xx=9.191e-02 yy=-2.757e-02 xy=7.890e-17 zz=-1.930e-02
           stress 2: xx=9.191e-01 yy=2.769e-15 xy=3.035e-16 zz=0.000e+00
-      Triangle6_936: nodes ( Node_656 Node_657 Node_655 Node_660 Node_662 Node_659 )
+      Triangle6_924: nodes ( Node_644 Node_645 Node_643 Node_648 Node_650 Node_647 )
           material: PlaneStress
           strain 0: xx=9.191e-02 yy=-2.757e-02 xy=-3.697e-16 zz=-1.930e-02
           stress 0: xx=9.191e-01 yy=3.264e-16 xy=-1.422e-15 zz=0.000e+00
@@ -423,7 +423,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.515 seconds)
+   **Total running time of the script:** (0 minutes 0.643 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate02b.py:

@@ -390,6 +390,25 @@ Set <code class="code docutils literal notranslate"><span class="pre">local=True
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.m2l">
+<span class="sig-name descname"><span class="pre">m2l</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.m2l" title="Link to this definition"></a></dt>
+<dd><p>transform a nodal matrix from global to local coordinates</p>
+<p>This is commonly used by Elements to transform nodal forces to the Node’s local
+system such that the <code class="code docutils literal notranslate"><span class="pre">Solver.assemble</span></code> method receives stiffness in local coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>M</strong> – vector to be transformed</p></li>
+<li><p><strong>caller</strong> – pointer to the calling element</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the transformed matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.make_follower">
 <span class="sig-name descname"><span class="pre">make_follower</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lead</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.make_follower" title="Link to this definition"></a></dt>
 <dd><p>this command tells the current node (<strong>self</strong>) to “follow” whatever the <strong>lead</strong> node is doing.</p>
@@ -564,6 +583,44 @@ arc-length method to</p>
 user input.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.v2g">
+<span class="sig-name descname"><span class="pre">v2g</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.v2g" title="Link to this definition"></a></dt>
+<dd><p>transform a nodal vector from local to global coordinates</p>
+<p>This is commonly used by the solver to transform nodal displacements from the Node’s local to the global
+system such that the <code class="code docutils literal notranslate"><span class="pre">Node</span></code> class can store displacements internally in global coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>U</strong> – vector to be transformed</p></li>
+<li><p><strong>caller</strong> – pointer to the calling element</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the transformed vector</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.v2l">
+<span class="sig-name descname"><span class="pre">v2l</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.v2l" title="Link to this definition"></a></dt>
+<dd><p>transform a nodal vector from global to local coordinates</p>
+<p>This is commonly used by Elements to transform nodal forces to the Node’s local
+system such that the <code class="code docutils literal notranslate"><span class="pre">Solver.assemble</span></code> method receives forces in local coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>U</strong> – vector to be transformed</p></li>
+<li><p><strong>caller</strong> – pointer to the calling element</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the transformed vector</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -580,7 +637,7 @@ user input.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Dec 31, 2024.
+      <span class="lastupdated">Last updated on Jan 02, 2025.
       </span></p>
   </div>
 
