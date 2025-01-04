@@ -70,7 +70,7 @@ This solution will be compared against the finite element solution in the last f
     from femedu.materials import Thermal
 
 
-    class ExampleThermal01(Example):
+    class ExampleThermal04(Example):
 
         def problem(self):
             # ========== setting mesh parameters ==============
@@ -201,7 +201,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 
     if __name__ == "__main__":
-        ex = ExampleThermal01()
+        ex = ExampleThermal04()
         ex.run()
 
 
@@ -1054,7 +1054,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.364 seconds)
+   **Total running time of the script:** (0 minutes 0.385 seconds)
 
 
 .. _sphx_glr_download_auto_examples_diffusion_plot_thermal04.py:

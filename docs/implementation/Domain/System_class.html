@@ -69,6 +69,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../implementation.html#utility-classes">Utility Classes</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/revision_log.html">Full Revision Log</a></li>
 </ul>
 
         </div>
@@ -182,6 +183,148 @@ If a list of keys is given, a <cite>list of np.array()</cite> is returned.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>time history data for the listed keys.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.findFacesAlongLine">
+<span class="sig-name descname"><span class="pre">findFacesAlongLine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.findFacesAlongLine" title="Link to this definition"></a></dt>
+<dd><p>Find any element faces within distance tol from the given target position (<strong>pos</strong>).
+If a 2d position is given for a 3d-problem, the input target defines a cylinder with a vertical axis (3rd direction) and radius <strong>tol</strong>.
+If a 3d position is given for a 2d-problem, the 3rd coordinate of <strong>pos</strong> will be ignored.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>orientation</p></th>
+<th class="head"><p>filter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><cite>0</cite></p></td>
+<td><p>Any face aligned with the plane will be returned</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>+1</cite></p></td>
+<td><p>Only faces with an outward normal pointing to the right of <strong>dir</strong> will be selected.</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>-1</cite></p></td>
+<td><p>Only faces with an outward normal pointing to the left of <strong>dir</strong> will be selected.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> – a coordinate tuple (2d or 3d) defining th etarget position</p></li>
+<li><p><strong>dir</strong> – direction vector defining the orientation of the line</p></li>
+<li><p><strong>orientation</strong> – search filter</p></li>
+<li><p><strong>tol</strong> – search radius for find. Any node within distance <strong>tol</strong> will be returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a list of tuples (node_pointer, distance)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.findFacesOnPlane">
+<span class="sig-name descname"><span class="pre">findFacesOnPlane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.findFacesOnPlane" title="Link to this definition"></a></dt>
+<dd><p>Find any element faces within distance tol from the given target position (<strong>pos</strong>).</p>
+<p>If a 2d position is given for a 3d-problem, the input target defines a cylinder with a vertical axis (3rd direction) and radius <strong>tol</strong>.</p>
+<p>If a 3d position is given for a 2d-problem, the 3rd coordinate of <strong>pos</strong> will be ignored.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>orientation</p></th>
+<th class="head"><p>filter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><cite>0</cite></p></td>
+<td><p>Any face aligned with the plane will be returned</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>+1</cite></p></td>
+<td><p>Only faces with an outward normal pointing in the direction of <strong>dir</strong> will be selected.</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>-1</cite></p></td>
+<td><p>Only faces with an outward normal pointing against the direction of <strong>dir</strong> will be selected.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> – a coordinate tuple (2d or 3d) defining th etarget position</p></li>
+<li><p><strong>dir</strong> – normal vector to the target plane</p></li>
+<li><p><strong>orientation</strong> – search filter</p></li>
+<li><p><strong>tol</strong> – search radius for find. Any node within distance <strong>tol</strong> will be returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a list of tuples (element_ptr, face_ptr)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.findNodesAlongLine">
+<span class="sig-name descname"><span class="pre">findNodesAlongLine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.findNodesAlongLine" title="Link to this definition"></a></dt>
+<dd><p>Find any node within distance tol from the given target position (<strong>pos</strong>).</p>
+<p>If a 2d position is given for a 3d-problem, the input target defines a cylinder with a vertical axis (3rd direction) and radius <strong>tol</strong>.</p>
+<p>If a 3d position is given for a 2d-problem, the 3rd coordinate of <strong>pos</strong> will be ignored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> – a coordinate tuple (2d or 3d) defining th etarget position</p></li>
+<li><p><strong>dir</strong> – direction vector defining the orientation of the line</p></li>
+<li><p><strong>tol</strong> – search radius for find. Any node within distance <strong>tol</strong> will be returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a list of tuples (node_pointer, distance)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.findNodesAt">
+<span class="sig-name descname"><span class="pre">findNodesAt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.findNodesAt" title="Link to this definition"></a></dt>
+<dd><p>Find any node within distance tol from the given target position (<strong>pos</strong>).</p>
+<p>If a 2d position is given for a 3d-problem, the input target defines a cylinder with a vertical axis (3rd direction) and radius <strong>tol</strong>.</p>
+<p>If a 3d position is given for a 2d-problem, the 3rd coordinate of <strong>pos</strong> will be ignored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> – a coordinate tuple (2d or 3d) defining th etarget position</p></li>
+<li><p><strong>tol</strong> – search radius for find. Any node within distance <strong>tol</strong> will be returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a list of tuples (node_pointer, distance)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.System.System.findNodesOnPlane">
+<span class="sig-name descname"><span class="pre">findNodesOnPlane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System.findNodesOnPlane" title="Link to this definition"></a></dt>
+<dd><p>Find any node within distance tol from the reference plane.</p>
+<p>The plane is defined by</p>
+<div class="math notranslate nohighlight">
+\[| {\bf n} \cdot ( {\bf X}_{node} - {\bf X}_0 ) | &lt; TOL\]</div>
+<p>where
+<span class="math notranslate nohighlight">\({\bf n}\)</span> is the unit normal vector to the plane (normalized <strong>dir</strong>),
+<span class="math notranslate nohighlight">\({\bf X}_{node}\)</span> is the position vector of any node, and
+<span class="math notranslate nohighlight">\({\bf X}_0 )\)</span> is the position vector of a reference point on the plane (<strong>pos</strong>),</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pos</strong> – a coordinate tuple (2d or 3d) defining th etarget position</p></li>
+<li><p><strong>dir</strong> – normal vector to the target plane</p></li>
+<li><p><strong>tol</strong> – search radius for find. Any node within distance <strong>tol</strong> will be returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a list of tuples (node_pointer, distance)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -490,7 +633,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 02, 2025.
+      <span class="lastupdated">Last updated on Jan 03, 2025.
       </span></p>
   </div>
 

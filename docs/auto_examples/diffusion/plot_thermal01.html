@@ -82,6 +82,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/revision_log.html">Full Revision Log</a></li>
 </ul>
 
         </div>
@@ -165,9 +166,9 @@ the outer surface of the wall, <span class="math notranslate nohighlight">\(x=10
         <span class="c1"># ========== setting material parameters ==============</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-            <span class="n">E</span><span class="o">=</span><span class="mf">20000.</span><span class="p">,</span>  <span class="c1"># Young&#39;s modulus</span>
-            <span class="n">nu</span><span class="o">=</span><span class="mf">0.250</span><span class="p">,</span>  <span class="c1"># Poisson&#39;s ratio</span>
-            <span class="n">t</span><span class="o">=</span><span class="mf">1.00</span>     <span class="c1"># thickness of the plate</span>
+            <span class="n">E</span>  <span class="o">=</span> <span class="mf">20000.</span><span class="p">,</span>  <span class="c1"># Young&#39;s modulus</span>
+            <span class="n">nu</span> <span class="o">=</span> <span class="mf">0.250</span><span class="p">,</span>   <span class="c1"># Poisson&#39;s ratio</span>
+            <span class="n">t</span>  <span class="o">=</span> <span class="mf">1.00</span>     <span class="c1"># thickness of the plate</span>
         <span class="p">)</span>
 
         <span class="c1"># ========== setting load parameters ==============</span>
@@ -214,30 +215,15 @@ the outer surface of the wall, <span class="math notranslate nohighlight">\(x=10
 
         <span class="c1"># boundary condition(s)</span>
 
-        <span class="c1">## find nodes at y==0 and x==0</span>
+        <span class="c1">## find nodes at x==0</span>
+        <span class="n">left_boundary_nodes</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">findNodesAlongLine</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">dist</span> <span class="ow">in</span> <span class="n">left_boundary_nodes</span><span class="p">:</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>    <span class="c1"># prescribed temperature at x=0.0</span>
 
-        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
-            <span class="n">X</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mf">0.0</span><span class="p">):</span>
-                <span class="n">node</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>    <span class="c1"># prescribed temperature at x=0.0</span>
-            <span class="c1"># if math.isclose(X[0], Lx):</span>
-            <span class="c1">#     node.fixDOF(&#39;T&#39;)  # prescribed temperature at x=Lx</span>
-
-        <span class="c1"># ==== complete the reference load ====</span>
-
-        <span class="n">Xo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
-        <span class="n">No</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
-
-        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
-            <span class="n">X</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Lx</span><span class="p">):</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">elements</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span>
-                    <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">elem</span><span class="o">.</span><span class="n">faces</span><span class="p">:</span>
-                        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">area</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">face</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">area</span><span class="p">):</span>
-                            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">Xo</span><span class="p">)</span> <span class="o">@</span> <span class="n">No</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1.0e-2</span> <span class="ow">and</span> <span class="n">No</span> <span class="o">@</span> <span class="n">area</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">area</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1.0e-2</span><span class="p">:</span>
-                                <span class="n">face</span><span class="o">.</span><span class="n">setFlux</span><span class="p">(</span><span class="n">qn</span><span class="p">)</span>
+        <span class="c1">## complete the reference load at x=Lx (right edge)</span>
+        <span class="n">right_boundary_faces</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">findFacesAlongLine</span><span class="p">((</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">orientation</span><span class="o">=+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">right_boundary_faces</span><span class="p">:</span>
+            <span class="n">face</span><span class="o">.</span><span class="n">setFlux</span><span class="p">(</span><span class="n">qn</span><span class="p">)</span>
 
         <span class="c1"># perform the analysis</span>
         <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
@@ -369,9 +355,6 @@ Elements:
       grad phi: x=0.000e+00 y=0.000e+00
       flux:     x=0.000e+00 y=0.000e+00
 
-Node_229:
-    x:    [10.000 0.000]
-    u:    [0.000]
 + Triangle_349: nodes ( Node_228 Node_229 Node_234 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -380,9 +363,6 @@ Node_229:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_235:
-    x:    [10.000 1.000]
-    u:    [0.000]
 + Triangle_350: nodes ( Node_235 Node_234 Node_229 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -476,7 +456,7 @@ Elements:
       flux:     x=-1.000e+00 y=1.776e-15
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.992 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.417 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-diffusion-plot-thermal01-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/519ee774ecf066f507036d0694b8eddd/plot_thermal01.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_thermal01.ipynb</span></code></a></p>
@@ -504,7 +484,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 02, 2025.
+      <span class="lastupdated">Last updated on Jan 03, 2025.
       </span></p>
   </div>
 

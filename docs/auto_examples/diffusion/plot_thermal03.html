@@ -81,6 +81,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/revision_log.html">Full Revision Log</a></li>
 </ul>
 
         </div>
@@ -233,35 +234,13 @@ to download the full example code.</p>
 
         <span class="n">loaded_elements</span> <span class="o">=</span> <span class="p">[]</span>
 
-        <span class="n">Xo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">L</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
-        <span class="n">No</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">elem</span><span class="p">,</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">findFacesAlongLine</span><span class="p">((</span><span class="n">L</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">orientation</span><span class="o">=+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">face</span><span class="o">.</span><span class="n">setFlux</span><span class="p">(</span><span class="n">qn</span><span class="p">)</span>
+            <span class="n">loaded_elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
 
-        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
-            <span class="n">X</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">L</span><span class="p">):</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">elements</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span>
-                    <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">elem</span><span class="o">.</span><span class="n">faces</span><span class="p">:</span>
-                        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">area</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">face</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">area</span><span class="p">):</span>
-                            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">Xo</span><span class="p">)</span> <span class="o">@</span> <span class="n">No</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1.0e-4</span> <span class="ow">and</span> <span class="n">No</span> <span class="o">@</span> <span class="n">area</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">area</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1.0e-2</span><span class="p">:</span>
-                                <span class="n">face</span><span class="o">.</span><span class="n">setFlux</span><span class="p">(</span><span class="n">qn</span><span class="p">)</span>
-                                <span class="n">loaded_elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
-
-        <span class="n">Xo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">L</span><span class="p">])</span>
-        <span class="n">No</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
-
-        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
-            <span class="n">X</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">L</span><span class="p">):</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">elements</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span>
-                    <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">elem</span><span class="o">.</span><span class="n">faces</span><span class="p">:</span>
-                        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">area</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">face</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">area</span><span class="p">):</span>
-                            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">Xo</span><span class="p">)</span> <span class="o">@</span> <span class="n">No</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1.0e-4</span> <span class="ow">and</span> <span class="n">No</span> <span class="o">@</span> <span class="n">area</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">area</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1.0e-2</span><span class="p">:</span>
-                                <span class="n">face</span><span class="o">.</span><span class="n">setFlux</span><span class="p">(</span><span class="n">qn</span><span class="p">)</span>
-                                <span class="n">loaded_elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">elem</span><span class="p">,</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">findFacesAlongLine</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">L</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">orientation</span><span class="o">=+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">face</span><span class="o">.</span><span class="n">setFlux</span><span class="p">(</span><span class="n">qn</span><span class="p">)</span>
+            <span class="n">loaded_elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
 
         <span class="c1"># perform the analysis</span>
         <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
@@ -2576,9 +2555,6 @@ Elements:
       grad phi: x=0.000e+00 y=0.000e+00
       flux:     x=0.000e+00 y=0.000e+00
 
-Node_345:
-    x:    [0.300 0.000]
-    u:    [0.000]
 + Triangle_517: nodes ( Node_344 Node_345 Node_353 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2591,9 +2567,6 @@ Node_345:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_354:
-    x:    [0.300 0.038]
-    u:    [0.000]
 + Triangle_518: nodes ( Node_354 Node_353 Node_345 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2606,9 +2579,6 @@ Node_354:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_363:
-    x:    [0.300 0.075]
-    u:    [0.000]
 + Triangle_534: nodes ( Node_363 Node_362 Node_354 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2621,9 +2591,6 @@ Node_363:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_372:
-    x:    [0.300 0.113]
-    u:    [0.000]
 + Triangle_550: nodes ( Node_372 Node_371 Node_363 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2636,9 +2603,6 @@ Node_372:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_381:
-    x:    [0.300 0.150]
-    u:    [0.000]
 + Triangle_566: nodes ( Node_381 Node_380 Node_372 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2651,9 +2615,6 @@ Node_381:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_390:
-    x:    [0.300 0.188]
-    u:    [0.000]
 + Triangle_582: nodes ( Node_390 Node_389 Node_381 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2666,9 +2627,6 @@ Node_390:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_399:
-    x:    [0.300 0.225]
-    u:    [0.000]
 + Triangle_598: nodes ( Node_399 Node_398 Node_390 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2681,9 +2639,6 @@ Node_399:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_408:
-    x:    [0.300 0.263]
-    u:    [0.000]
 + Triangle_614: nodes ( Node_408 Node_407 Node_399 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2696,16 +2651,10 @@ Node_408:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_417:
-    x:    [0.300 0.300]
-    u:    [0.000]
 + Triangle_630: nodes ( Node_417 Node_416 Node_408 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_426:
-    x:    [0.300 -0.300]
-    u:    [0.000]
 + Triangle_645: nodes ( Node_425 Node_426 Node_434 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2714,9 +2663,6 @@ Node_426:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_435:
-    x:    [0.300 -0.263]
-    u:    [0.000]
 + Triangle_646: nodes ( Node_435 Node_434 Node_426 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2729,9 +2675,6 @@ Node_435:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_444:
-    x:    [0.300 -0.225]
-    u:    [0.000]
 + Triangle_662: nodes ( Node_444 Node_443 Node_435 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2744,9 +2687,6 @@ Node_444:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_453:
-    x:    [0.300 -0.188]
-    u:    [0.000]
 + Triangle_678: nodes ( Node_453 Node_452 Node_444 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2759,9 +2699,6 @@ Node_453:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_462:
-    x:    [0.300 -0.150]
-    u:    [0.000]
 + Triangle_694: nodes ( Node_462 Node_461 Node_453 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2774,9 +2711,6 @@ Node_462:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_471:
-    x:    [0.300 -0.113]
-    u:    [0.000]
 + Triangle_710: nodes ( Node_471 Node_470 Node_462 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2789,9 +2723,6 @@ Node_471:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_480:
-    x:    [0.300 -0.075]
-    u:    [0.000]
 + Triangle_726: nodes ( Node_480 Node_479 Node_471 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2804,9 +2735,6 @@ Node_480:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_489:
-    x:    [0.300 -0.038]
-    u:    [0.000]
 + Triangle_742: nodes ( Node_489 Node_488 Node_480 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
@@ -2819,266 +2747,207 @@ Node_489:
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_498:
-    x:    [0.300 0.000]
-    following Node_345
-    u:    None
 + Triangle_758: nodes ( Node_498 Node_497 Node_489 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_328:
-    x:    [-0.300 0.300]
-    u:    [0.000]
-- Triangle_487: nodes ( Node_319 Node_320 Node_328 )
++ Triangle_487: nodes ( Node_319 Node_320 Node_328 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_488: nodes ( Node_329 Node_328 Node_320 )
++ Triangle_488: nodes ( Node_329 Node_328 Node_320 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_329:
-    x:    [-0.263 0.300]
-    u:    [0.000]
-- Triangle_488: nodes ( Node_329 Node_328 Node_320 )
++ Triangle_488: nodes ( Node_329 Node_328 Node_320 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_489: nodes ( Node_320 Node_321 Node_329 )
++ Triangle_489: nodes ( Node_320 Node_321 Node_329 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_490: nodes ( Node_330 Node_329 Node_321 )
++ Triangle_490: nodes ( Node_330 Node_329 Node_321 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_330:
-    x:    [-0.225 0.300]
-    u:    [0.000]
-- Triangle_490: nodes ( Node_330 Node_329 Node_321 )
++ Triangle_490: nodes ( Node_330 Node_329 Node_321 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_491: nodes ( Node_321 Node_322 Node_330 )
++ Triangle_491: nodes ( Node_321 Node_322 Node_330 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_492: nodes ( Node_331 Node_330 Node_322 )
++ Triangle_492: nodes ( Node_331 Node_330 Node_322 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_331:
-    x:    [-0.188 0.300]
-    u:    [0.000]
-- Triangle_492: nodes ( Node_331 Node_330 Node_322 )
++ Triangle_492: nodes ( Node_331 Node_330 Node_322 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_493: nodes ( Node_322 Node_323 Node_331 )
++ Triangle_493: nodes ( Node_322 Node_323 Node_331 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_494: nodes ( Node_332 Node_331 Node_323 )
++ Triangle_494: nodes ( Node_332 Node_331 Node_323 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_332:
-    x:    [-0.150 0.300]
-    u:    [0.000]
-- Triangle_494: nodes ( Node_332 Node_331 Node_323 )
++ Triangle_494: nodes ( Node_332 Node_331 Node_323 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_495: nodes ( Node_323 Node_324 Node_332 )
++ Triangle_495: nodes ( Node_323 Node_324 Node_332 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_496: nodes ( Node_333 Node_332 Node_324 )
++ Triangle_496: nodes ( Node_333 Node_332 Node_324 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_333:
-    x:    [-0.113 0.300]
-    u:    [0.000]
-- Triangle_496: nodes ( Node_333 Node_332 Node_324 )
++ Triangle_496: nodes ( Node_333 Node_332 Node_324 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_497: nodes ( Node_324 Node_325 Node_333 )
++ Triangle_497: nodes ( Node_324 Node_325 Node_333 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_498: nodes ( Node_334 Node_333 Node_325 )
++ Triangle_498: nodes ( Node_334 Node_333 Node_325 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_334:
-    x:    [-0.075 0.300]
-    u:    [0.000]
-- Triangle_498: nodes ( Node_334 Node_333 Node_325 )
++ Triangle_498: nodes ( Node_334 Node_333 Node_325 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_499: nodes ( Node_325 Node_326 Node_334 )
++ Triangle_499: nodes ( Node_325 Node_326 Node_334 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_500: nodes ( Node_335 Node_334 Node_326 )
++ Triangle_500: nodes ( Node_335 Node_334 Node_326 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_335:
-    x:    [-0.038 0.300]
-    u:    [0.000]
-- Triangle_500: nodes ( Node_335 Node_334 Node_326 )
++ Triangle_500: nodes ( Node_335 Node_334 Node_326 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_501: nodes ( Node_326 Node_327 Node_335 )
++ Triangle_501: nodes ( Node_326 Node_327 Node_335 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_502: nodes ( Node_336 Node_335 Node_327 )
++ Triangle_502: nodes ( Node_336 Node_335 Node_327 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_336:
-    x:    [0.000 0.300]
-    u:    [0.000]
-- Triangle_502: nodes ( Node_336 Node_335 Node_327 )
++ Triangle_502: nodes ( Node_336 Node_335 Node_327 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_615: nodes ( Node_400 Node_401 Node_409 )
++ Triangle_615: nodes ( Node_400 Node_401 Node_409 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_616: nodes ( Node_410 Node_409 Node_401 )
++ Triangle_616: nodes ( Node_410 Node_409 Node_401 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_409:
-    x:    [0.000 0.300]
-    following Node_336
-    u:    None
-- Triangle_615: nodes ( Node_400 Node_401 Node_409 )
++ Triangle_615: nodes ( Node_400 Node_401 Node_409 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_616: nodes ( Node_410 Node_409 Node_401 )
++ Triangle_616: nodes ( Node_410 Node_409 Node_401 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_410:
-    x:    [0.038 0.300]
-    u:    [0.000]
-- Triangle_616: nodes ( Node_410 Node_409 Node_401 )
++ Triangle_616: nodes ( Node_410 Node_409 Node_401 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_617: nodes ( Node_401 Node_402 Node_410 )
++ Triangle_617: nodes ( Node_401 Node_402 Node_410 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_618: nodes ( Node_411 Node_410 Node_402 )
++ Triangle_618: nodes ( Node_411 Node_410 Node_402 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_411:
-    x:    [0.075 0.300]
-    u:    [0.000]
-- Triangle_618: nodes ( Node_411 Node_410 Node_402 )
++ Triangle_618: nodes ( Node_411 Node_410 Node_402 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_619: nodes ( Node_402 Node_403 Node_411 )
++ Triangle_619: nodes ( Node_402 Node_403 Node_411 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_620: nodes ( Node_412 Node_411 Node_403 )
++ Triangle_620: nodes ( Node_412 Node_411 Node_403 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_412:
-    x:    [0.113 0.300]
-    u:    [0.000]
-- Triangle_620: nodes ( Node_412 Node_411 Node_403 )
++ Triangle_620: nodes ( Node_412 Node_411 Node_403 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_621: nodes ( Node_403 Node_404 Node_412 )
++ Triangle_621: nodes ( Node_403 Node_404 Node_412 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_622: nodes ( Node_413 Node_412 Node_404 )
++ Triangle_622: nodes ( Node_413 Node_412 Node_404 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_413:
-    x:    [0.150 0.300]
-    u:    [0.000]
-- Triangle_622: nodes ( Node_413 Node_412 Node_404 )
++ Triangle_622: nodes ( Node_413 Node_412 Node_404 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_623: nodes ( Node_404 Node_405 Node_413 )
++ Triangle_623: nodes ( Node_404 Node_405 Node_413 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_624: nodes ( Node_414 Node_413 Node_405 )
++ Triangle_624: nodes ( Node_414 Node_413 Node_405 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_414:
-    x:    [0.188 0.300]
-    u:    [0.000]
-- Triangle_624: nodes ( Node_414 Node_413 Node_405 )
++ Triangle_624: nodes ( Node_414 Node_413 Node_405 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_625: nodes ( Node_405 Node_406 Node_414 )
++ Triangle_625: nodes ( Node_405 Node_406 Node_414 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_626: nodes ( Node_415 Node_414 Node_406 )
++ Triangle_626: nodes ( Node_415 Node_414 Node_406 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_415:
-    x:    [0.225 0.300]
-    u:    [0.000]
-- Triangle_626: nodes ( Node_415 Node_414 Node_406 )
++ Triangle_626: nodes ( Node_415 Node_414 Node_406 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_627: nodes ( Node_406 Node_407 Node_415 )
++ Triangle_627: nodes ( Node_406 Node_407 Node_415 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_628: nodes ( Node_416 Node_415 Node_407 )
++ Triangle_628: nodes ( Node_416 Node_415 Node_407 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_416:
-    x:    [0.263 0.300]
-    u:    [0.000]
-- Triangle_628: nodes ( Node_416 Node_415 Node_407 )
++ Triangle_628: nodes ( Node_416 Node_415 Node_407 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_629: nodes ( Node_407 Node_408 Node_416 )
++ Triangle_629: nodes ( Node_407 Node_408 Node_416 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-- Triangle_630: nodes ( Node_417 Node_416 Node_408 )
++ Triangle_630: nodes ( Node_417 Node_416 Node_408 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
-Node_417:
-    x:    [0.300 0.300]
-    u:    [0.000]
-- Triangle_630: nodes ( Node_417 Node_416 Node_408 )
++ Triangle_630: nodes ( Node_417 Node_416 Node_408 )
     material: Thermal
     grad phi: x=0.000e+00 y=0.000e+00
     flux:     x=0.000e+00 y=0.000e+00
@@ -3348,7 +3217,7 @@ Triangle_630: nodes ( Node_417 Node_416 Node_408 )
     flux:     x=-1.000e+01 y=-1.000e+01
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.819 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.910 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-diffusion-plot-thermal03-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/5bb382687cbf053ef53aa923935c4c91/plot_thermal03.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_thermal03.ipynb</span></code></a></p>
@@ -3375,7 +3244,7 @@ Triangle_630: nodes ( Node_417 Node_416 Node_408 )
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 02, 2025.
+      <span class="lastupdated">Last updated on Jan 03, 2025.
       </span></p>
   </div>
 
