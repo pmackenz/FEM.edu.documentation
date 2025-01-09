@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**02:36.984** total execution time for 14 files **from auto_examples/plates**:
+**00:23.343** total execution time for 14 files **from auto_examples/plates**:
 
 .. container::
 
@@ -32,45 +32,45 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate11.py` (``plot_plate11.py``)
-     - 01:35.827
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate20_benchmark01.py` (``plot_plate20_benchmark01.py``)
+     - 00:23.343
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_benchmark01.py` (``plot_benchmark01.py``)
-     - 00:23.961
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate01_triangle_test1.py` (``plot_plate01_triangle_test1.py``)
+     - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate10.py` (``plot_plate10.py``)
-     - 00:21.929
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate02_triangle_test2.py` (``plot_plate02_triangle_test2.py``)
+     - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate05.py` (``plot_plate05.py``)
-     - 00:04.708
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate03_triangle_test3.py` (``plot_plate03_triangle_test3.py``)
+     - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate06.py` (``plot_plate06.py``)
-     - 00:04.194
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate04_quad_test1.py` (``plot_plate04_quad_test1.py``)
+     - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate08.py` (``plot_plate08.py``)
-     - 00:01.290
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate05_quad_test2.py` (``plot_plate05_quad_test2.py``)
+     - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate07.py` (``plot_plate07.py``)
-     - 00:01.219
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate06_element_modes.py` (``plot_plate06_element_modes.py``)
+     - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate04.py` (``plot_plate04.py``)
-     - 00:00.957
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate08_triangle_patch_test.py` (``plot_plate08_triangle_patch_test.py``)
+     - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate_element_modes.py` (``plot_plate_element_modes.py``)
-     - 00:00.670
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate09_quad_patch_test.py` (``plot_plate09_quad_patch_test.py``)
+     - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate02b.py` (``plot_plate02b.py``)
-     - 00:00.611
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate10_mixed_mesh_patch_test.py` (``plot_plate10_mixed_mesh_patch_test.py``)
+     - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate09.py` (``plot_plate09.py``)
-     - 00:00.602
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate10_profiler.py` (``plot_plate10_profiler.py``)
+     - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate03.py` (``plot_plate03.py``)
-     - 00:00.533
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate11_plate_w_hole_tri_mesh.py` (``plot_plate11_plate_w_hole_tri_mesh.py``)
+     - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate02.py` (``plot_plate02.py``)
-     - 00:00.245
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate12_plate_w_hole_quad_mesh.py` (``plot_plate12_plate_w_hole_quad_mesh.py``)
+     - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate01.py` (``plot_plate01.py``)
-     - 00:00.238
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate14_cantilever_large_disp.py` (``plot_plate14_cantilever_large_disp.py``)
+     - 00:00.000
      - 0.0

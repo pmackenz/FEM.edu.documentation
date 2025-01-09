@@ -273,25 +273,25 @@ Let's finish off with a nice plot of the deformed system.
 
     Nodes:
     ---------------------
-      Node_4149:
+      Node_3605:
           x:    [0.000 0.000]
           fix:  ['ux', 'uy']
           u:    [0.000 0.000]
-      Node_4150:
+      Node_3606:
           x:    [10.000 0.000]
           fix:  ['uy']
           u:    [1.000 0.000]
-      Node_4151:
+      Node_3607:
           x:    [10.000 10.000]
           u:    [1.000 -0.300]
-      Node_4152:
+      Node_3608:
           x:    [0.000 10.000]
           fix:  ['ux']
           u:    [0.000 -0.300]
 
     Elements:
     ---------------------
-      Quad_6814: nodes ( Node_4149 Node_4150 Node_4151 Node_4152 )
+      Quad_5991: nodes ( Node_3605 Node_3606 Node_3607 Node_3608 )
           material: list
           strain (0): xx=1.000e-01 yy=-3.000e-02 xy=-4.760e-18 zz=-2.100e-02
           stress (0): xx=1.000e+00 yy=4.148e-18 xy=-1.831e-17 zz=0.000e+00
@@ -309,7 +309,7 @@ Let's finish off with a nice plot of the deformed system.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.670 seconds)
+   **Total running time of the script:** (0 minutes 0.631 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate_element_modes.py:

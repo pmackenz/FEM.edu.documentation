@@ -1,0 +1,945 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profiling the code &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Pulling a plate with a circular hole : using triangles" href="plot_plate11_plate_w_hole_tri_mesh.html" />
+    <link rel="prev" title="Patch test for mixed mesh of triangular and quadrilateral plate elements under in-plane loading" href="plot_plate10_mixed_mesh_patch_test.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#spring-examples">Spring Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#diffusion-examples">Diffusion Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#mixed-structures-examples">Mixed Structures Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../springs/index.html">Spring Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../diffusion/index.html">Diffusion Examples</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Plate Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot_plate01_triangle_test1.html">A square patch made of two triangular plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate02_triangle_test2.html">A square patch made of two triangular plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate03_triangle_test3.html">A square patch made of two triangular plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate04_quad_test1.html">A square patch made of one quadrilateral plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate05_quad_test2.html">A square patch made of one quadrilateral plate elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate06_element_modes.html">Element Testing: Analyzing Modes and Energy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate08_triangle_patch_test.html">Patch test for triangular plate under in-plane loading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate09_quad_patch_test.html">Patch test for quadrilateral plate elements under in-plane loading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate10_mixed_mesh_patch_test.html">Patch test for mixed mesh of triangular and quadrilateral plate elements under in-plane loading</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Profiling the code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate11_plate_w_hole_tri_mesh.html">Pulling a plate with a circular hole : using triangles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate12_plate_w_hole_quad_mesh.html">Pulling a plate with a circular hole : using quads</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate14_cantilever_large_disp.html">Bending a cantilever beam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate20_benchmark01.html">Benchmark problem: Wedged Plate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">Tutorials Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/revision_log.html">Full Revision Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Example Gallery</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Plate Examples</a></li>
+      <li class="breadcrumb-item active">Profiling the code</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/auto_examples/plates/plot_plate10_profiler.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-plates-plot-plate10-profiler-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="profiling-the-code">
+<span id="sphx-glr-auto-examples-plates-plot-plate10-profiler-py"></span><h1>Profiling the code<a class="headerlink" href="#profiling-the-code" title="Link to this heading"></a></h1>
+<p>Using PatchMesher to model a quarter of the plate</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_path = &#39;_static/profiler.png&#39;</span>
+
+<span class="n">SPARSE</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">femedu.examples</span> <span class="kn">import</span> <span class="n">Example</span>
+
+<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">femedu.solver</span> <span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span><span class="p">,</span> <span class="n">SparseSolver</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Triangle</span>
+<span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">PlaneStress</span>
+<span class="kn">from</span> <span class="nn">femedu.mesher</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="k">class</span> <span class="nc">ExamplePlate14</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># ========== setting mesh parameters ==============</span>
+
+        <span class="n">Nx</span> <span class="o">=</span> <span class="mi">60</span>        <span class="c1"># number of elements in the mesh</span>
+        <span class="n">Ny</span> <span class="o">=</span> <span class="mi">40</span>        <span class="c1"># number of elements in the mesh</span>
+
+        <span class="n">Lx</span> <span class="o">=</span> <span class="mf">120.0</span>    <span class="c1"># length of plate in the x-direction</span>
+        <span class="n">Ly</span> <span class="o">=</span>  <span class="mf">80.0</span>    <span class="c1"># length of plate in the y-direction</span>
+        <span class="n">R</span>  <span class="o">=</span> <span class="n">Ly</span> <span class="o">/</span> <span class="mf">2.</span>
+
+        <span class="c1"># ========== setting material parameters ==============</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">E</span>  <span class="o">=</span> <span class="mf">200.</span><span class="p">,</span>      <span class="c1"># Young&#39;s modulus</span>
+            <span class="n">nu</span> <span class="o">=</span> <span class="mf">0.450</span><span class="p">,</span>     <span class="c1"># Poisson&#39;s ratio</span>
+            <span class="n">t</span>  <span class="o">=</span> <span class="mf">1.00</span>       <span class="c1"># thickness of the plate</span>
+        <span class="p">)</span>
+
+        <span class="c1"># ========== setting load parameters ==============</span>
+
+        <span class="n">px</span>  <span class="o">=</span> <span class="mf">20.0</span>         <span class="c1"># uniform load normal to x=const</span>
+        <span class="n">py</span>  <span class="o">=</span>  <span class="mf">0.0</span>         <span class="c1"># uniform load normal to y=const</span>
+        <span class="n">pxy</span> <span class="o">=</span>  <span class="mf">0.0</span>         <span class="c1"># uniform shear load on x=const and y=const</span>
+
+        <span class="c1"># ========== setting analysis parameters ==============</span>
+
+        <span class="n">target_load_level</span> <span class="o">=</span> <span class="mf">1.00</span>     <span class="c1"># reference load</span>
+        <span class="n">max_steps</span> <span class="o">=</span> <span class="mi">2</span>                <span class="c1"># number of load steps: 2 -&gt; [0.0, 1.0]</span>
+
+        <span class="c1"># define a list of target load levels</span>
+        <span class="n">load_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">target_load_level</span><span class="p">,</span> <span class="n">max_steps</span><span class="p">)</span>
+
+        <span class="c1">#</span>
+        <span class="c1"># ==== Build the system model ====</span>
+        <span class="c1">#</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">SPARSE</span><span class="p">:</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">setSolver</span><span class="p">(</span><span class="n">SparseSolver</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">setSolver</span><span class="p">(</span><span class="n">NewtonRaphsonSolver</span><span class="p">())</span>
+
+        <span class="c1"># create nodes</span>
+
+        <span class="c1">#  3---------2</span>
+        <span class="c1">#  |         |</span>
+        <span class="c1">#  |         |</span>
+        <span class="c1">#  |         |</span>
+        <span class="c1">#  1---------1</span>
+
+        <span class="n">pts</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">Lx</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">Lx</span><span class="p">,</span> <span class="n">Ly</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Ly</span><span class="p">),</span>
+        <span class="p">)</span>
+
+        <span class="n">mesher</span> <span class="o">=</span> <span class="n">PatchMesher</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">nodes</span><span class="p">,</span> <span class="n">elements</span> <span class="o">=</span> <span class="n">mesher</span><span class="o">.</span><span class="n">triangleMesh</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Ny</span><span class="p">,</span> <span class="n">Triangle</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+        <span class="c1"># define support(s)</span>
+
+        <span class="c1">## find nodes at y==0 and x==0</span>
+
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mf">0.0</span><span class="p">):</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">)</span>    <span class="c1"># horizontal support left side</span>
+            <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mf">0.0</span><span class="p">):</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;uy&#39;</span><span class="p">)</span>    <span class="c1"># vertical support at y==0</span>
+
+        <span class="c1"># ==== build the reference load ====</span>
+
+        <span class="c1"># the section at the right end</span>
+        <span class="k">for</span> <span class="n">elem</span><span class="p">,</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">findFacesAlongLine</span><span class="p">((</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">orientation</span><span class="o">=+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">elem</span><span class="o">.</span><span class="n">getID</span><span class="p">(),</span> <span class="n">face</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">face</span><span class="o">.</span><span class="n">area</span><span class="p">)</span>
+            <span class="n">face</span><span class="o">.</span><span class="n">setLoad</span><span class="p">(</span><span class="n">px</span><span class="p">,</span> <span class="n">pxy</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;undeformed system&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate14_undeformed.png&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_loads</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+        <span class="c1">#model.plot(factor=1., filename=&quot;plate14_deformed.png&quot;)</span>
+
+        <span class="c1">#model.solver.showKt(filename=&quot;plate14_spy_Kt.png&quot;)</span>
+        <span class="c1">#np.save(&quot;plate14_Kt.npy&quot;,model.solver.Kt)</span>
+</pre></div>
+</div>
+<p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
+<p>This time, we are running the example in the profiler, writing profiling data to file.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">cProfile</span>
+
+    <span class="n">ex</span> <span class="o">=</span> <span class="n">ExamplePlate14</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">SPARSE</span><span class="p">:</span>
+        <span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;ex.run()&#39;</span><span class="p">,</span><span class="s1">&#39;profile_data_sparse.txt&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;ex.run()&#39;</span><span class="p">,</span><span class="s1">&#39;profile_data_full.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_plate10_profiler_001.png" srcset="../../_images/sphx_glr_plot_plate10_profiler_001.png" alt="undeformed system" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+ Triangle_241: nodes ( Node_210 Node_211 Node_271 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_242: nodes ( Node_272 Node_271 Node_211 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_242: nodes ( Node_272 Node_271 Node_211 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_361: nodes ( Node_271 Node_272 Node_332 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_362: nodes ( Node_333 Node_332 Node_272 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_362: nodes ( Node_333 Node_332 Node_272 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_481: nodes ( Node_332 Node_333 Node_393 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_482: nodes ( Node_394 Node_393 Node_333 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_482: nodes ( Node_394 Node_393 Node_333 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_601: nodes ( Node_393 Node_394 Node_454 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_602: nodes ( Node_455 Node_454 Node_394 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_602: nodes ( Node_455 Node_454 Node_394 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_721: nodes ( Node_454 Node_455 Node_515 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_722: nodes ( Node_516 Node_515 Node_455 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_722: nodes ( Node_516 Node_515 Node_455 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_841: nodes ( Node_515 Node_516 Node_576 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_842: nodes ( Node_577 Node_576 Node_516 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_842: nodes ( Node_577 Node_576 Node_516 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_961: nodes ( Node_576 Node_577 Node_637 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_962: nodes ( Node_638 Node_637 Node_577 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_962: nodes ( Node_638 Node_637 Node_577 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1081: nodes ( Node_637 Node_638 Node_698 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1082: nodes ( Node_699 Node_698 Node_638 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1082: nodes ( Node_699 Node_698 Node_638 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1201: nodes ( Node_698 Node_699 Node_759 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1202: nodes ( Node_760 Node_759 Node_699 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1202: nodes ( Node_760 Node_759 Node_699 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1321: nodes ( Node_759 Node_760 Node_820 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1322: nodes ( Node_821 Node_820 Node_760 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1322: nodes ( Node_821 Node_820 Node_760 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1441: nodes ( Node_820 Node_821 Node_881 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1442: nodes ( Node_882 Node_881 Node_821 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1442: nodes ( Node_882 Node_881 Node_821 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1561: nodes ( Node_881 Node_882 Node_942 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1562: nodes ( Node_943 Node_942 Node_882 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1562: nodes ( Node_943 Node_942 Node_882 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1681: nodes ( Node_942 Node_943 Node_1003 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1682: nodes ( Node_1004 Node_1003 Node_943 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1682: nodes ( Node_1004 Node_1003 Node_943 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1801: nodes ( Node_1003 Node_1004 Node_1064 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1802: nodes ( Node_1065 Node_1064 Node_1004 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1802: nodes ( Node_1065 Node_1064 Node_1004 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1921: nodes ( Node_1064 Node_1065 Node_1125 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1922: nodes ( Node_1126 Node_1125 Node_1065 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_1922: nodes ( Node_1126 Node_1125 Node_1065 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2041: nodes ( Node_1125 Node_1126 Node_1186 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2042: nodes ( Node_1187 Node_1186 Node_1126 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2042: nodes ( Node_1187 Node_1186 Node_1126 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2161: nodes ( Node_1186 Node_1187 Node_1247 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2162: nodes ( Node_1248 Node_1247 Node_1187 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2162: nodes ( Node_1248 Node_1247 Node_1187 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2281: nodes ( Node_1247 Node_1248 Node_1308 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2282: nodes ( Node_1309 Node_1308 Node_1248 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2282: nodes ( Node_1309 Node_1308 Node_1248 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2401: nodes ( Node_1308 Node_1309 Node_1369 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2402: nodes ( Node_1370 Node_1369 Node_1309 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2402: nodes ( Node_1370 Node_1369 Node_1309 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2521: nodes ( Node_1369 Node_1370 Node_1430 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2522: nodes ( Node_1431 Node_1430 Node_1370 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2522: nodes ( Node_1431 Node_1430 Node_1370 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2641: nodes ( Node_1430 Node_1431 Node_1491 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2642: nodes ( Node_1492 Node_1491 Node_1431 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2642: nodes ( Node_1492 Node_1491 Node_1431 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2761: nodes ( Node_1491 Node_1492 Node_1552 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2762: nodes ( Node_1553 Node_1552 Node_1492 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2762: nodes ( Node_1553 Node_1552 Node_1492 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2881: nodes ( Node_1552 Node_1553 Node_1613 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2882: nodes ( Node_1614 Node_1613 Node_1553 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_2882: nodes ( Node_1614 Node_1613 Node_1553 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3001: nodes ( Node_1613 Node_1614 Node_1674 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3002: nodes ( Node_1675 Node_1674 Node_1614 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3002: nodes ( Node_1675 Node_1674 Node_1614 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3121: nodes ( Node_1674 Node_1675 Node_1735 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3122: nodes ( Node_1736 Node_1735 Node_1675 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3122: nodes ( Node_1736 Node_1735 Node_1675 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3241: nodes ( Node_1735 Node_1736 Node_1796 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3242: nodes ( Node_1797 Node_1796 Node_1736 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3242: nodes ( Node_1797 Node_1796 Node_1736 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3361: nodes ( Node_1796 Node_1797 Node_1857 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3362: nodes ( Node_1858 Node_1857 Node_1797 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3362: nodes ( Node_1858 Node_1857 Node_1797 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3481: nodes ( Node_1857 Node_1858 Node_1918 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3482: nodes ( Node_1919 Node_1918 Node_1858 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3482: nodes ( Node_1919 Node_1918 Node_1858 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3601: nodes ( Node_1918 Node_1919 Node_1979 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3602: nodes ( Node_1980 Node_1979 Node_1919 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3602: nodes ( Node_1980 Node_1979 Node_1919 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3721: nodes ( Node_1979 Node_1980 Node_2040 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3722: nodes ( Node_2041 Node_2040 Node_1980 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3722: nodes ( Node_2041 Node_2040 Node_1980 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3841: nodes ( Node_2040 Node_2041 Node_2101 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3842: nodes ( Node_2102 Node_2101 Node_2041 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3842: nodes ( Node_2102 Node_2101 Node_2041 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3961: nodes ( Node_2101 Node_2102 Node_2162 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3962: nodes ( Node_2163 Node_2162 Node_2102 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_3962: nodes ( Node_2163 Node_2162 Node_2102 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4081: nodes ( Node_2162 Node_2163 Node_2223 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4082: nodes ( Node_2224 Node_2223 Node_2163 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4082: nodes ( Node_2224 Node_2223 Node_2163 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4201: nodes ( Node_2223 Node_2224 Node_2284 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4202: nodes ( Node_2285 Node_2284 Node_2224 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4202: nodes ( Node_2285 Node_2284 Node_2224 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4321: nodes ( Node_2284 Node_2285 Node_2345 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4322: nodes ( Node_2346 Node_2345 Node_2285 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4322: nodes ( Node_2346 Node_2345 Node_2285 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4441: nodes ( Node_2345 Node_2346 Node_2406 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4442: nodes ( Node_2407 Node_2406 Node_2346 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4442: nodes ( Node_2407 Node_2406 Node_2346 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4561: nodes ( Node_2406 Node_2407 Node_2467 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4562: nodes ( Node_2468 Node_2467 Node_2407 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4562: nodes ( Node_2468 Node_2467 Node_2407 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4681: nodes ( Node_2467 Node_2468 Node_2528 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4682: nodes ( Node_2529 Node_2528 Node_2468 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4682: nodes ( Node_2529 Node_2528 Node_2468 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4801: nodes ( Node_2528 Node_2529 Node_2589 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4802: nodes ( Node_2590 Node_2589 Node_2529 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4802: nodes ( Node_2590 Node_2589 Node_2529 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4921: nodes ( Node_2589 Node_2590 Node_2650 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4922: nodes ( Node_2651 Node_2650 Node_2590 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Triangle_4922: nodes ( Node_2651 Node_2650 Node_2590 )
+    material: PlaneStress
+    strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
+    stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
++ Elem_242 242.2 : [[2 0]]
++ Elem_242 242.2 : [[2 0]]
++ Elem_362 362.2 : [[2 1.42109e-14]]
++ Elem_362 362.2 : [[2 1.42109e-14]]
++ Elem_482 482.2 : [[2 -1.42109e-14]]
++ Elem_482 482.2 : [[2 -1.42109e-14]]
++ Elem_602 602.2 : [[2 0]]
++ Elem_602 602.2 : [[2 0]]
++ Elem_722 722.2 : [[2 0]]
++ Elem_722 722.2 : [[2 0]]
++ Elem_842 842.2 : [[2 0]]
++ Elem_842 842.2 : [[2 0]]
++ Elem_962 962.2 : [[2 0]]
++ Elem_962 962.2 : [[2 0]]
++ Elem_1082 1082.2 : [[2 0]]
++ Elem_1082 1082.2 : [[2 0]]
++ Elem_1202 1202.2 : [[2 0]]
++ Elem_1202 1202.2 : [[2 0]]
++ Elem_1322 1322.2 : [[2 0]]
++ Elem_1322 1322.2 : [[2 0]]
++ Elem_1442 1442.2 : [[2 0]]
++ Elem_1442 1442.2 : [[2 0]]
++ Elem_1562 1562.2 : [[2 0]]
++ Elem_1562 1562.2 : [[2 0]]
++ Elem_1682 1682.2 : [[2 -1.42109e-14]]
++ Elem_1682 1682.2 : [[2 -1.42109e-14]]
++ Elem_1802 1802.2 : [[2 2.84217e-14]]
++ Elem_1802 1802.2 : [[2 2.84217e-14]]
++ Elem_1922 1922.2 : [[2 -1.42109e-14]]
++ Elem_1922 1922.2 : [[2 -1.42109e-14]]
++ Elem_2042 2042.2 : [[2 1.42109e-14]]
++ Elem_2042 2042.2 : [[2 1.42109e-14]]
++ Elem_2162 2162.2 : [[2 -1.42109e-14]]
++ Elem_2162 2162.2 : [[2 -1.42109e-14]]
++ Elem_2282 2282.2 : [[2 -1.42109e-14]]
++ Elem_2282 2282.2 : [[2 -1.42109e-14]]
++ Elem_2402 2402.2 : [[2 2.84217e-14]]
++ Elem_2402 2402.2 : [[2 2.84217e-14]]
++ Elem_2522 2522.2 : [[2 -1.42109e-14]]
++ Elem_2522 2522.2 : [[2 -1.42109e-14]]
++ Elem_2642 2642.2 : [[2 1.42109e-14]]
++ Elem_2642 2642.2 : [[2 1.42109e-14]]
++ Elem_2762 2762.2 : [[2 -1.42109e-14]]
++ Elem_2762 2762.2 : [[2 -1.42109e-14]]
++ Elem_2882 2882.2 : [[2 0]]
++ Elem_2882 2882.2 : [[2 0]]
++ Elem_3002 3002.2 : [[2 0]]
++ Elem_3002 3002.2 : [[2 0]]
++ Elem_3122 3122.2 : [[2 0]]
++ Elem_3122 3122.2 : [[2 0]]
++ Elem_3242 3242.2 : [[2 0]]
++ Elem_3242 3242.2 : [[2 0]]
++ Elem_3362 3362.2 : [[2 0]]
++ Elem_3362 3362.2 : [[2 0]]
++ Elem_3482 3482.2 : [[2 0]]
++ Elem_3482 3482.2 : [[2 0]]
++ Elem_3602 3602.2 : [[2 0]]
++ Elem_3602 3602.2 : [[2 0]]
++ Elem_3722 3722.2 : [[2 0]]
++ Elem_3722 3722.2 : [[2 0]]
++ Elem_3842 3842.2 : [[2 0]]
++ Elem_3842 3842.2 : [[2 0]]
++ Elem_3962 3962.2 : [[2 0]]
++ Elem_3962 3962.2 : [[2 0]]
++ Elem_4082 4082.2 : [[2 2.84217e-14]]
++ Elem_4082 4082.2 : [[2 2.84217e-14]]
++ Elem_4202 4202.2 : [[2 -2.84217e-14]]
++ Elem_4202 4202.2 : [[2 -2.84217e-14]]
++ Elem_4322 4322.2 : [[2 0]]
++ Elem_4322 4322.2 : [[2 0]]
++ Elem_4442 4442.2 : [[2 0]]
++ Elem_4442 4442.2 : [[2 0]]
++ Elem_4562 4562.2 : [[2 0]]
++ Elem_4562 4562.2 : [[2 0]]
++ Elem_4682 4682.2 : [[2 0]]
++ Elem_4682 4682.2 : [[2 0]]
++ Elem_4802 4802.2 : [[2 0]]
++ Elem_4802 4802.2 : [[2 0]]
++ Elem_4922 4922.2 : [[2 0]]
++ Elem_4922 4922.2 : [[2 0]]
++
+</pre></div>
+</div>
+<p>Now it’s time to process the profiling data</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">pstats</span>
+    <span class="kn">from</span> <span class="nn">pstats</span> <span class="kn">import</span> <span class="n">SortKey</span>
+
+    <span class="k">if</span> <span class="n">SPARSE</span><span class="p">:</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">pstats</span><span class="o">.</span><span class="n">Stats</span><span class="p">(</span><span class="s1">&#39;profile_data_sparse.txt&#39;</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">strip_dirs</span><span class="p">()</span> <span class="c1">#.sort_stats(-1).print_stats()</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span>
+        <span class="c1">#p.print_stats()</span>
+
+        <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">CUMULATIVE</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">TIME</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">pstats</span><span class="o">.</span><span class="n">Stats</span><span class="p">(</span><span class="s1">&#39;profile_data_full.txt&#39;</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">strip_dirs</span><span class="p">()</span> <span class="c1">#.sort_stats(-1).print_stats()</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span>
+        <span class="c1">#p.print_stats()</span>
+
+        <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">CUMULATIVE</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">TIME</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Thu Jan  9 12:26:11 2025    profile_data_full.txt
+
+         21386119 function calls (20733452 primitive calls) in 33.996 seconds
+
+   Ordered by: cumulative time
+   List reduced from 1352 to 20 due to restriction &lt;20&gt;
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        5    0.000    0.000   20.603    4.121 NewtonRaphsonSolver.py:105(assemble)
+        5    2.210    0.442   20.603    4.121 Solver.py:166(assemble)
+        1    0.000    0.000   20.592   20.592 System.py:500(solve)
+        1    0.000    0.000   20.592   20.592 NewtonRaphsonSolver.py:13(solve)
+     35/3    0.026    0.001   13.712    4.571 text.py:358(_get_layout)
+    43200    4.800    0.000   12.689    0.000 Triangle.py:80(updateState)
+     81/7    0.000    0.000    9.925    1.418 text.py:65(_get_text_metrics_with_cache)
+      9/4    0.000    0.000    9.924    2.481 text.py:73(_get_text_metrics_with_cache_impl)
+     10/4    0.033    0.003    9.923    2.481 backend_agg.py:206(get_text_width_height_descent)
+        2    0.000    0.000    9.187    4.593 Solver.py:395(checkResiduum)
+    24000    0.230    0.000    7.917    0.000 Element.py:272(getForce)
+    19200    0.281    0.000    7.373    0.000 Element.py:337(getStiffness)
+     49/2    0.001    0.000    7.241    3.620 text.py:926(get_window_extent)
+    72000    1.270    0.000    4.880    0.000 Triangle.py:155(computeSurfaceLoads)
+663450/182418    1.385    0.000    3.390    0.000 copy.py:119(deepcopy)
+     4902    0.040    0.000    3.297    0.001 _axes.py:1532(plot)
+   216000    1.168    0.000    2.757    0.000 Face2D.py:54(computeNodalForces)
+    28800    0.209    0.000    2.702    0.000 Element.py:287(getLoad)
+    14706    0.121    0.000    2.408    0.000 lines.py:744(draw)
+        1    0.035    0.035    2.346    2.346 PatchMesher.py:99(triangleMesh)
+
+
+Thu Jan  9 12:26:11 2025    profile_data_full.txt
+
+         21386119 function calls (20733452 primitive calls) in 33.996 seconds
+
+   Ordered by: internal time
+   List reduced from 1352 to 20 due to restriction &lt;20&gt;
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    43200    4.800    0.000   12.689    0.000 Triangle.py:80(updateState)
+        5    2.210    0.442   20.603    4.121 Solver.py:166(assemble)
+        1    2.111    2.111    2.111    2.111 _linalg.py:320(solve)
+   302400    1.499    0.000    1.842    0.000 numeric.py:876(outer)
+663450/182418    1.385    0.000    3.390    0.000 copy.py:119(deepcopy)
+  1150138    1.378    0.000    1.378    0.000 {built-in method numpy.array}
+    72000    1.270    0.000    4.880    0.000 Triangle.py:155(computeSurfaceLoads)
+   216000    1.168    0.000    2.757    0.000 Face2D.py:54(computeNodalForces)
+     9806    1.035    0.000    1.674    0.000 backend_agg.py:93(draw_path)
+    43201    1.030    0.000    1.328    0.000 PlaneStress.py:25(updateState)
+   192082    0.808    0.000    1.853    0.000 Node.py:447(getDeformedPos)
+   192490    0.636    0.000    1.006    0.000 Node.py:333(getDisp)
+   244800    0.613    0.000    0.879    0.000 Node.py:498(getIdx4Element)
+   218462    0.604    0.000    0.805    0.000 numeric.py:64(zeros_like)
+  1866124    0.478    0.000    0.478    0.000 {method &#39;append&#39; of &#39;list&#39; objects}
+   470592    0.447    0.000    0.627    0.000 copy.py:232(_keep_alive)
+    14400    0.337    0.000    0.337    0.000 {method &#39;index&#39; of &#39;list&#39; objects}
+  1336912    0.328    0.000    0.377    0.000 {built-in method builtins.isinstance}
+    39338    0.322    0.000    0.359    0.000 __init__.py:65(check_isinstance)
+58946/29508    0.302    0.000    0.600    0.000 transforms.py:2431(get_affine)
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 33.845 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate10-profiler-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/8a6d0b1d0f7bc5711fb0251e11436807/plot_plate10_profiler.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate10_profiler.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/e15a8272e44b502ede74a3da437b7ff6/plot_plate10_profiler.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_plate10_profiler.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/49ac45937969fba54659c6e1e75a180c/plot_plate10_profiler.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">plot_plate10_profiler.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="plot_plate10_mixed_mesh_patch_test.html" class="btn btn-neutral float-left" title="Patch test for mixed mesh of triangular and quadrilateral plate elements under in-plane loading" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plot_plate11_plate_w_hole_tri_mesh.html" class="btn btn-neutral float-right" title="Pulling a plate with a circular hole : using triangles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on Jan 09, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
