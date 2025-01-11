@@ -25,12 +25,6 @@ Basic implementation test with applied loads.
         nu =  0.30
         t  =  1.0
 
-    Element loads:
-        node 0: [ 0.0, 0.0]
-        node 1: [ 5.0, 0.0]
-        node 2: [ 5.0, 0.0]
-        node 3: [ 0.0, 0.0]
-
 Author: Peter Mackenzie-Helnwein
 """
 
@@ -43,6 +37,7 @@ from femedu.examples import Example
 from femedu.domain import System, Node
 from femedu.solver import NewtonRaphsonSolver
 from femedu.elements.linear import Quad
+from femedu.elements.finite import Quad9
 from femedu.materials import PlaneStress
 
 # -------------------------------------------------------------
@@ -57,7 +52,7 @@ params = dict(
 )
 
 a = 10.     # length of the plate in the x-direction
-b = 10.     # length of the plate in the y-direction
+b = 12.     # length of the plate in the y-direction
 
 model = System()
 model.setSolver(NewtonRaphsonSolver())
@@ -67,11 +62,22 @@ nd1 = Node(   a, 0.0)
 nd2 = Node(   a,   b)
 nd3 = Node( 0.0,   b)
 
-model.addNode(nd0, nd1, nd2, nd3)
+nd4 = Node( a/2, 0.0 )
+nd5 = Node( a, b/2 )
+nd6 = Node( a/2, b )
+nd7 = Node( 0., b/2 )
+
+nd8 = Node( a/2, b/2 )
+
+model.addNode(nd0, nd1, nd2, nd3)  # corner nodes
+model.addNode(nd4, nd5, nd6, nd7)  # midside nodes
+model.addNode( nd8 )                      # center node
 
 elemA = Quad(nd0, nd1, nd2, nd3, PlaneStress(params))
+elemB = Quad9(nd0, nd1, nd2, nd3, nd4, nd5, nd6, nd7, nd8, PlaneStress(params))
 
-model.addElement(elemA)
+# model.addElement(elemA)
+model.addElement(elemB)
 
 elemA.setSurfaceLoad(face=1, pn=1.0)
 
@@ -85,9 +91,9 @@ model.plot(factor=0.0, title="Undeformed system", show_bc=1)
 model.setLoadFactor(0.0)
 model.solve()
 
-np.save('../../../Kplate.npy', model.solver.Kt)
+# np.save('../../../Kplate.npy', model.solver.Kt)
 
-for k in range(8):
+for k in range(18):
     model.plotBucklingMode(mode=k, factor=1.0)
 
 # %%

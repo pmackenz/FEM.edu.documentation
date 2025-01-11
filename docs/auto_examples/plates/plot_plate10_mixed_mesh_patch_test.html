@@ -72,14 +72,18 @@
 <li class="toctree-l4"><a class="reference internal" href="plot_plate04_quad_test1.html">A square patch made of one quadrilateral plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate05_quad_test2.html">A square patch made of one quadrilateral plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate06_element_modes.html">Element Testing: Analyzing Modes and Energy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate07_comparison.html">A square patch: element comparison</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate08_triangle_patch_test.html">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate09_quad_patch_test.html">Patch test for quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Patch test for mixed mesh of triangular and quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate10_profiler.html">Profiling the code</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate11_plate_w_hole_tri_mesh.html">Pulling a plate with a circular hole : using triangles</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate12_plate_w_hole_quad_mesh.html">Pulling a plate with a circular hole : using quads</a></li>
-<li class="toctree-l4"><a class="reference internal" href="plot_plate14_cantilever_large_disp.html">Bending a cantilever beam</a></li>
-<li class="toctree-l4"><a class="reference internal" href="plot_plate20_benchmark01.html">Benchmark problem: Wedged Plate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate14_cantilever_large_disp.html">Bending a cantilever beam using Quad elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate15_cantilever_large_disp_higher_order.html">Bending a cantilever beam using Quad9 elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate19_benchmark01.html">Benchmark problem: Wedged Plate - geometrically linear theory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate20_benchmark01.html">Benchmark problem: Wedged Plate - finite deformations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate21_benchmark01.html">Benchmark problem: Wedged Plate - finite deformations</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
@@ -250,7 +254,7 @@ to download the full example code.</p>
 <li><img src="../../_images/sphx_glr_plot_plate10_mixed_mesh_patch_test_001.png" srcset="../../_images/sphx_glr_plot_plate10_mixed_mesh_patch_test_001.png" alt="undeformed system" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate10_mixed_mesh_patch_test_002.png" srcset="../../_images/sphx_glr_plot_plate10_mixed_mesh_patch_test_002.png" alt="Deformed System (magnification=25.00)" class = "sphx-glr-multi-img"/></li>
 </ul>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+ Quad_48: nodes ( Node_64 Node_65 Node_73 Node_72 )
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+ Quad_917: nodes ( Node_692 Node_693 Node_701 Node_700 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -260,82 +264,82 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_83: nodes ( Node_99 Node_100 Node_101 )
++ Triangle_952: nodes ( Node_727 Node_728 Node_729 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_54: nodes ( Node_79 Node_80 Node_86 )
++ Triangle_923: nodes ( Node_707 Node_708 Node_714 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_54: nodes ( Node_79 Node_80 Node_86 )
++ Triangle_923: nodes ( Node_707 Node_708 Node_714 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_63: nodes ( Node_85 Node_86 Node_91 )
++ Triangle_932: nodes ( Node_713 Node_714 Node_719 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_64: nodes ( Node_86 Node_85 Node_79 )
++ Triangle_933: nodes ( Node_714 Node_713 Node_707 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_63: nodes ( Node_85 Node_86 Node_91 )
++ Triangle_932: nodes ( Node_713 Node_714 Node_719 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_71: nodes ( Node_90 Node_91 Node_95 )
++ Triangle_940: nodes ( Node_718 Node_719 Node_723 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_72: nodes ( Node_91 Node_90 Node_85 )
++ Triangle_941: nodes ( Node_719 Node_718 Node_713 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_71: nodes ( Node_90 Node_91 Node_95 )
++ Triangle_940: nodes ( Node_718 Node_719 Node_723 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_77: nodes ( Node_94 Node_95 Node_98 )
++ Triangle_946: nodes ( Node_722 Node_723 Node_726 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_78: nodes ( Node_95 Node_94 Node_90 )
++ Triangle_947: nodes ( Node_723 Node_722 Node_718 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_77: nodes ( Node_94 Node_95 Node_98 )
++ Triangle_946: nodes ( Node_722 Node_723 Node_726 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_81: nodes ( Node_97 Node_98 Node_100 )
++ Triangle_950: nodes ( Node_725 Node_726 Node_728 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_82: nodes ( Node_98 Node_97 Node_94 )
++ Triangle_951: nodes ( Node_726 Node_725 Node_722 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_81: nodes ( Node_97 Node_98 Node_100 )
++ Triangle_950: nodes ( Node_725 Node_726 Node_728 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_83: nodes ( Node_99 Node_100 Node_101 )
++ Triangle_952: nodes ( Node_727 Node_728 Node_729 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_84: nodes ( Node_100 Node_99 Node_97 )
++ Triangle_953: nodes ( Node_728 Node_727 Node_725 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_83: nodes ( Node_99 Node_100 Node_101 )
++ Triangle_952: nodes ( Node_727 Node_728 Node_729 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
 +
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.417 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.534 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate10-mixed-mesh-patch-test-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/657123a7be955c8c0a314b30c556b01b/plot_plate10_mixed_mesh_patch_test.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate10_mixed_mesh_patch_test.ipynb</span></code></a></p>
@@ -362,7 +366,7 @@ to download the full example code.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 09, 2025.
+      <span class="lastupdated">Last updated on Jan 10, 2025.
       </span></p>
   </div>
 

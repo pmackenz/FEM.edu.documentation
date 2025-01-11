@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:23.343** total execution time for 14 files **from auto_examples/plates**:
+**02:20.550** total execution time for 18 files **from auto_examples/plates**:
 
 .. container::
 
@@ -32,8 +32,8 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate20_benchmark01.py` (``plot_plate20_benchmark01.py``)
-     - 00:23.343
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate21_benchmark01.py` (``plot_plate21_benchmark01.py``)
+     - 02:20.550
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate01_triangle_test1.py` (``plot_plate01_triangle_test1.py``)
      - 00:00.000
@@ -51,6 +51,9 @@ Computation times
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate06_element_modes.py` (``plot_plate06_element_modes.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate07_comparison.py` (``plot_plate07_comparison.py``)
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate08_triangle_patch_test.py` (``plot_plate08_triangle_patch_test.py``)
@@ -72,5 +75,14 @@ Computation times
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate14_cantilever_large_disp.py` (``plot_plate14_cantilever_large_disp.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate15_cantilever_large_disp_higher_order.py` (``plot_plate15_cantilever_large_disp_higher_order.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate19_benchmark01.py` (``plot_plate19_benchmark01.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate20_benchmark01.py` (``plot_plate20_benchmark01.py``)
      - 00:00.000
      - 0.0

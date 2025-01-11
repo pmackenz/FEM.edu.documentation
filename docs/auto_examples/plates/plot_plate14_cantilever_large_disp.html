@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bending a cantilever beam &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+  <title>Bending a cantilever beam using Quad elements &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -22,10 +22,11 @@
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Benchmark problem: Wedged Plate" href="plot_plate20_benchmark01.html" />
+    <link rel="next" title="Bending a cantilever beam using Quad9 elements" href="plot_plate15_cantilever_large_disp_higher_order.html" />
     <link rel="prev" title="Pulling a plate with a circular hole : using quads" href="plot_plate12_plate_w_hole_quad_mesh.html" /> 
 </head>
 
@@ -72,14 +73,18 @@
 <li class="toctree-l4"><a class="reference internal" href="plot_plate04_quad_test1.html">A square patch made of one quadrilateral plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate05_quad_test2.html">A square patch made of one quadrilateral plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate06_element_modes.html">Element Testing: Analyzing Modes and Energy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate07_comparison.html">A square patch: element comparison</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate08_triangle_patch_test.html">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate09_quad_patch_test.html">Patch test for quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate10_mixed_mesh_patch_test.html">Patch test for mixed mesh of triangular and quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate10_profiler.html">Profiling the code</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate11_plate_w_hole_tri_mesh.html">Pulling a plate with a circular hole : using triangles</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate12_plate_w_hole_quad_mesh.html">Pulling a plate with a circular hole : using quads</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Bending a cantilever beam</a></li>
-<li class="toctree-l4"><a class="reference internal" href="plot_plate20_benchmark01.html">Benchmark problem: Wedged Plate</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Bending a cantilever beam using Quad elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate15_cantilever_large_disp_higher_order.html">Bending a cantilever beam using Quad9 elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate19_benchmark01.html">Benchmark problem: Wedged Plate - geometrically linear theory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate20_benchmark01.html">Benchmark problem: Wedged Plate - finite deformations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate21_benchmark01.html">Benchmark problem: Wedged Plate - finite deformations</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
@@ -110,7 +115,7 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Example Gallery</a></li>
           <li class="breadcrumb-item"><a href="index.html">Plate Examples</a></li>
-      <li class="breadcrumb-item active">Bending a cantilever beam</li>
+      <li class="breadcrumb-item active">Bending a cantilever beam using Quad elements</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/auto_examples/plates/plot_plate14_cantilever_large_disp.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -125,12 +130,117 @@
 <p><a class="reference internal" href="#sphx-glr-download-auto-examples-plates-plot-plate14-cantilever-large-disp-py"><span class="std std-ref">Go to the end</span></a>
 to download the full example code.</p>
 </div>
-<section class="sphx-glr-example-title" id="bending-a-cantilever-beam">
-<span id="sphx-glr-auto-examples-plates-plot-plate14-cantilever-large-disp-py"></span><h1>Bending a cantilever beam<a class="headerlink" href="#bending-a-cantilever-beam" title="Link to this heading"></a></h1>
+<section class="sphx-glr-example-title" id="bending-a-cantilever-beam-using-quad-elements">
+<span id="sphx-glr-auto-examples-plates-plot-plate14-cantilever-large-disp-py"></span><h1>Bending a cantilever beam using Quad elements<a class="headerlink" href="#bending-a-cantilever-beam-using-quad-elements" title="Link to this heading"></a></h1>
 <p>Using PatchMesher to model the beam</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Background Theory</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">This problem can be approximately validated using Bernoulli-Euler theory for
+small deformations. The given problem shall be modeled using</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 30.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">parameter</p></th>
+<th class="head"><p class="sd-card-text">value</p></th>
+<th class="head"><p class="sd-card-text">description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(E\)</span></p></td>
+<td><ol class="arabic simple" start="20000">
+<li></li>
+</ol>
+</td>
+<td><p class="sd-card-text">modulus of elasticity (in ksi)</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(I\)</span></p></td>
+<td><p class="sd-card-text">666.667</p></td>
+<td><p class="sd-card-text">area moment of inertia (in <span class="math notranslate nohighlight">\(inches^4\)</span>)</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(L\)</span></p></td>
+<td><ol class="arabic simple" start="120">
+<li></li>
+</ol>
+</td>
+<td><p class="sd-card-text">length of the cantilever (in inches)</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(P\)</span></p></td>
+<td><ol class="arabic simple" start="30">
+<li></li>
+</ol>
+</td>
+<td><p class="sd-card-text">force at <span class="math notranslate nohighlight">\(x=L\)</span> (in kips)</p></td>
+</tr>
+</tbody>
+</table>
+<p class="sd-card-text">The general solution then yields</p>
+<div class="math notranslate nohighlight">
+\[v(x) = -\frac{P L^3}{6 EI}\left( \frac{x}{L} \right)^2\left( 3 - \frac{x}{L} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[\theta(x) = \frac{d}{dx} v(x) = -\frac{P L^2}{2 EI}\left( \frac{x}{L} \right)\left( 2 - \frac{x}{L} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[M(x) = EI \frac{d}{dx} theta(x) = -\frac{P L}{6} \left( 1 - \frac{x}{L} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[V(x) = \frac{d}{dx} M(x) = P\]</div>
+<p class="sd-card-text">The horizontal movement follows as (<span class="math notranslate nohighlight">\(2^{nd}\)</span> order accurate)</p>
+<div class="math notranslate nohighlight">
+\[u(x) = \int\limits_{0}^{x} -\theta^2(s) \: ds
+     = -\frac{P^2 L^5}{60 (EI)^2}\left( \frac{x}{L} \right)^3\left( 20 - 15\:\frac{x}{L}+3 \left( \frac{x}{L} \right)^2 \right)\]</div>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Reference values for a load factor of <span class="math notranslate nohighlight">\(\lambda=1.0\)</span></span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 30.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">variable</p></th>
+<th class="head"><p class="sd-card-text">value</p></th>
+<th class="head"><p class="sd-card-text">description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(u(L)\)</span></p></td>
+<td><p class="sd-card-text">-0.0167962</p></td>
+<td><p class="sd-card-text">end displacement (in inches). <span class="math notranslate nohighlight">\(u&gt;0\)</span> means moving to the right.</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(v(L)\)</span></p></td>
+<td><p class="sd-card-text">-1.296</p></td>
+<td><p class="sd-card-text">end displacement (in inches). <span class="math notranslate nohighlight">\(v&gt;0\)</span> means moving up.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Reference values for a load factor of <span class="math notranslate nohighlight">\(\lambda=10.0\)</span></span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 30.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">variable</p></th>
+<th class="head"><p class="sd-card-text">value</p></th>
+<th class="head"><p class="sd-card-text">description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(u(L)\)</span></p></td>
+<td><p class="sd-card-text">-1.67962</p></td>
+<td><p class="sd-card-text">end displacement (in inches). <span class="math notranslate nohighlight">\(u&gt;0\)</span> means moving to the right.</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(v(L)\)</span></p></td>
+<td><p class="sd-card-text">-12.96</p></td>
+<td><p class="sd-card-text">end displacement (in inches). <span class="math notranslate nohighlight">\(v&gt;0\)</span> means moving up.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">from</span> <span class="nn">femedu.examples</span> <span class="kn">import</span> <span class="n">Example</span>
 
@@ -142,7 +252,7 @@ to download the full example code.</p>
 <span class="kn">from</span> <span class="nn">femedu.mesher</span> <span class="kn">import</span> <span class="o">*</span>
 
 
-<span class="k">class</span> <span class="nc">ExamplePlate11</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">ExamplePlate14</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># ========== setting mesh parameters ==============</span>
@@ -168,14 +278,11 @@ to download the full example code.</p>
 
         <span class="c1"># ========== setting analysis parameters ==============</span>
 
-        <span class="n">target_load_level</span> <span class="o">=</span> <span class="mf">100.00</span>    <span class="c1"># reference load</span>
-        <span class="n">max_steps</span> <span class="o">=</span> <span class="mi">21</span>                <span class="c1"># number of load steps: 2 -&gt; [0.0, 1.0]</span>
-
-        <span class="c1"># target_load_level = 10.00    # reference load</span>
-        <span class="c1"># max_steps = 3                # number of load steps: 2 -&gt; [0.0, 1.0]</span>
+        <span class="n">target_load_level</span> <span class="o">=</span> <span class="mf">10.00</span>    <span class="c1"># reference load</span>
+        <span class="n">max_steps</span> <span class="o">=</span> <span class="mi">10</span>               <span class="c1"># number of load steps: 2 -&gt; [0.0, 1.0]</span>
 
         <span class="c1"># define a list of target load levels</span>
-        <span class="n">load_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">target_load_level</span><span class="p">,</span> <span class="n">max_steps</span><span class="p">)</span>
+        <span class="n">load_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">target_load_level</span><span class="p">,</span> <span class="n">max_steps</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 
         <span class="c1">#</span>
         <span class="c1"># ==== Build the system model ====</span>
@@ -214,7 +321,7 @@ to download the full example code.</p>
 
         <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;undeformed system&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate11_undeformed.png&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_loads</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-        <span class="k">for</span> <span class="n">lf</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">target_load_level</span><span class="p">,</span> <span class="n">max_steps</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">lf</span> <span class="ow">in</span> <span class="n">load_levels</span><span class="p">:</span>
 
             <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="n">lf</span><span class="p">)</span>
             <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -235,7 +342,7 @@ to download the full example code.</p>
 </div>
 <p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">ex</span> <span class="o">=</span> <span class="n">ExamplePlate11</span><span class="p">()</span>
+    <span class="n">ex</span> <span class="o">=</span> <span class="n">ExamplePlate14</span><span class="p">()</span>
     <span class="n">ex</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -247,7 +354,7 @@ to download the full example code.</p>
 <li><img src="../../_images/sphx_glr_plot_plate14_cantilever_large_disp_005.png" srcset="../../_images/sphx_glr_plot_plate14_cantilever_large_disp_005.png" alt="Load History Plot" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate14_cantilever_large_disp_006.png" srcset="../../_images/sphx_glr_plot_plate14_cantilever_large_disp_006.png" alt="Load History Plot" class = "sphx-glr-multi-img"/></li>
 </ul>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+ Quad_5726: nodes ( Node_3313 Node_3314 Node_3339 Node_3338 )
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+ Quad_6557: nodes ( Node_3892 Node_3893 Node_3918 Node_3917 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -257,7 +364,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5726: nodes ( Node_3313 Node_3314 Node_3339 Node_3338 )
++ Quad_6557: nodes ( Node_3892 Node_3893 Node_3918 Node_3917 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -267,7 +374,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5750: nodes ( Node_3338 Node_3339 Node_3364 Node_3363 )
++ Quad_6581: nodes ( Node_3917 Node_3918 Node_3943 Node_3942 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -277,7 +384,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5750: nodes ( Node_3338 Node_3339 Node_3364 Node_3363 )
++ Quad_6581: nodes ( Node_3917 Node_3918 Node_3943 Node_3942 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -287,7 +394,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5774: nodes ( Node_3363 Node_3364 Node_3389 Node_3388 )
++ Quad_6605: nodes ( Node_3942 Node_3943 Node_3968 Node_3967 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -297,7 +404,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5774: nodes ( Node_3363 Node_3364 Node_3389 Node_3388 )
++ Quad_6605: nodes ( Node_3942 Node_3943 Node_3968 Node_3967 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -307,7 +414,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5798: nodes ( Node_3388 Node_3389 Node_3414 Node_3413 )
++ Quad_6629: nodes ( Node_3967 Node_3968 Node_3993 Node_3992 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -317,7 +424,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5798: nodes ( Node_3388 Node_3389 Node_3414 Node_3413 )
++ Quad_6629: nodes ( Node_3967 Node_3968 Node_3993 Node_3992 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -327,7 +434,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5822: nodes ( Node_3413 Node_3414 Node_3439 Node_3438 )
++ Quad_6653: nodes ( Node_3992 Node_3993 Node_4018 Node_4017 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -337,7 +444,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5822: nodes ( Node_3413 Node_3414 Node_3439 Node_3438 )
++ Quad_6653: nodes ( Node_3992 Node_3993 Node_4018 Node_4017 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -347,7 +454,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5846: nodes ( Node_3438 Node_3439 Node_3464 Node_3463 )
++ Quad_6677: nodes ( Node_4017 Node_4018 Node_4043 Node_4042 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -357,7 +464,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5846: nodes ( Node_3438 Node_3439 Node_3464 Node_3463 )
++ Quad_6677: nodes ( Node_4017 Node_4018 Node_4043 Node_4042 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -367,7 +474,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5870: nodes ( Node_3463 Node_3464 Node_3489 Node_3488 )
++ Quad_6701: nodes ( Node_4042 Node_4043 Node_4068 Node_4067 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -377,7 +484,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5870: nodes ( Node_3463 Node_3464 Node_3489 Node_3488 )
++ Quad_6701: nodes ( Node_4042 Node_4043 Node_4068 Node_4067 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -387,7 +494,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5894: nodes ( Node_3488 Node_3489 Node_3514 Node_3513 )
++ Quad_6725: nodes ( Node_4067 Node_4068 Node_4093 Node_4092 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -397,7 +504,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5894: nodes ( Node_3488 Node_3489 Node_3514 Node_3513 )
++ Quad_6725: nodes ( Node_4067 Node_4068 Node_4093 Node_4092 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -407,7 +514,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5871: nodes ( Node_3465 Node_3466 Node_3491 Node_3490 )
++ Quad_6702: nodes ( Node_4044 Node_4045 Node_4070 Node_4069 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -417,7 +524,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5871: nodes ( Node_3465 Node_3466 Node_3491 Node_3490 )
++ Quad_6702: nodes ( Node_4044 Node_4045 Node_4070 Node_4069 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -427,7 +534,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5872: nodes ( Node_3466 Node_3467 Node_3492 Node_3491 )
++ Quad_6703: nodes ( Node_4045 Node_4046 Node_4071 Node_4070 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -437,7 +544,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5872: nodes ( Node_3466 Node_3467 Node_3492 Node_3491 )
++ Quad_6703: nodes ( Node_4045 Node_4046 Node_4071 Node_4070 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -447,7 +554,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5873: nodes ( Node_3467 Node_3468 Node_3493 Node_3492 )
++ Quad_6704: nodes ( Node_4046 Node_4047 Node_4072 Node_4071 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -457,7 +564,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5873: nodes ( Node_3467 Node_3468 Node_3493 Node_3492 )
++ Quad_6704: nodes ( Node_4046 Node_4047 Node_4072 Node_4071 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -467,7 +574,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5874: nodes ( Node_3468 Node_3469 Node_3494 Node_3493 )
++ Quad_6705: nodes ( Node_4047 Node_4048 Node_4073 Node_4072 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -477,7 +584,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5874: nodes ( Node_3468 Node_3469 Node_3494 Node_3493 )
++ Quad_6705: nodes ( Node_4047 Node_4048 Node_4073 Node_4072 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -487,7 +594,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5875: nodes ( Node_3469 Node_3470 Node_3495 Node_3494 )
++ Quad_6706: nodes ( Node_4048 Node_4049 Node_4074 Node_4073 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -497,7 +604,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5875: nodes ( Node_3469 Node_3470 Node_3495 Node_3494 )
++ Quad_6706: nodes ( Node_4048 Node_4049 Node_4074 Node_4073 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -507,7 +614,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5876: nodes ( Node_3470 Node_3471 Node_3496 Node_3495 )
++ Quad_6707: nodes ( Node_4049 Node_4050 Node_4075 Node_4074 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -517,7 +624,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5876: nodes ( Node_3470 Node_3471 Node_3496 Node_3495 )
++ Quad_6707: nodes ( Node_4049 Node_4050 Node_4075 Node_4074 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -527,7 +634,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5877: nodes ( Node_3471 Node_3472 Node_3497 Node_3496 )
++ Quad_6708: nodes ( Node_4050 Node_4051 Node_4076 Node_4075 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -537,7 +644,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5877: nodes ( Node_3471 Node_3472 Node_3497 Node_3496 )
++ Quad_6708: nodes ( Node_4050 Node_4051 Node_4076 Node_4075 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -547,7 +654,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5878: nodes ( Node_3472 Node_3473 Node_3498 Node_3497 )
++ Quad_6709: nodes ( Node_4051 Node_4052 Node_4077 Node_4076 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -557,7 +664,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5878: nodes ( Node_3472 Node_3473 Node_3498 Node_3497 )
++ Quad_6709: nodes ( Node_4051 Node_4052 Node_4077 Node_4076 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -567,7 +674,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5879: nodes ( Node_3473 Node_3474 Node_3499 Node_3498 )
++ Quad_6710: nodes ( Node_4052 Node_4053 Node_4078 Node_4077 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -577,7 +684,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5879: nodes ( Node_3473 Node_3474 Node_3499 Node_3498 )
++ Quad_6710: nodes ( Node_4052 Node_4053 Node_4078 Node_4077 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -587,7 +694,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5880: nodes ( Node_3474 Node_3475 Node_3500 Node_3499 )
++ Quad_6711: nodes ( Node_4053 Node_4054 Node_4079 Node_4078 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -597,7 +704,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5880: nodes ( Node_3474 Node_3475 Node_3500 Node_3499 )
++ Quad_6711: nodes ( Node_4053 Node_4054 Node_4079 Node_4078 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -607,7 +714,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5881: nodes ( Node_3475 Node_3476 Node_3501 Node_3500 )
++ Quad_6712: nodes ( Node_4054 Node_4055 Node_4080 Node_4079 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -617,7 +724,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5881: nodes ( Node_3475 Node_3476 Node_3501 Node_3500 )
++ Quad_6712: nodes ( Node_4054 Node_4055 Node_4080 Node_4079 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -627,7 +734,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5882: nodes ( Node_3476 Node_3477 Node_3502 Node_3501 )
++ Quad_6713: nodes ( Node_4055 Node_4056 Node_4081 Node_4080 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -637,7 +744,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5882: nodes ( Node_3476 Node_3477 Node_3502 Node_3501 )
++ Quad_6713: nodes ( Node_4055 Node_4056 Node_4081 Node_4080 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -647,7 +754,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5883: nodes ( Node_3477 Node_3478 Node_3503 Node_3502 )
++ Quad_6714: nodes ( Node_4056 Node_4057 Node_4082 Node_4081 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -657,7 +764,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5883: nodes ( Node_3477 Node_3478 Node_3503 Node_3502 )
++ Quad_6714: nodes ( Node_4056 Node_4057 Node_4082 Node_4081 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -667,7 +774,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5884: nodes ( Node_3478 Node_3479 Node_3504 Node_3503 )
++ Quad_6715: nodes ( Node_4057 Node_4058 Node_4083 Node_4082 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -677,7 +784,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5884: nodes ( Node_3478 Node_3479 Node_3504 Node_3503 )
++ Quad_6715: nodes ( Node_4057 Node_4058 Node_4083 Node_4082 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -687,7 +794,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5885: nodes ( Node_3479 Node_3480 Node_3505 Node_3504 )
++ Quad_6716: nodes ( Node_4058 Node_4059 Node_4084 Node_4083 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -697,7 +804,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5885: nodes ( Node_3479 Node_3480 Node_3505 Node_3504 )
++ Quad_6716: nodes ( Node_4058 Node_4059 Node_4084 Node_4083 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -707,7 +814,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5886: nodes ( Node_3480 Node_3481 Node_3506 Node_3505 )
++ Quad_6717: nodes ( Node_4059 Node_4060 Node_4085 Node_4084 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -717,7 +824,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5886: nodes ( Node_3480 Node_3481 Node_3506 Node_3505 )
++ Quad_6717: nodes ( Node_4059 Node_4060 Node_4085 Node_4084 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -727,7 +834,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5887: nodes ( Node_3481 Node_3482 Node_3507 Node_3506 )
++ Quad_6718: nodes ( Node_4060 Node_4061 Node_4086 Node_4085 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -737,7 +844,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5887: nodes ( Node_3481 Node_3482 Node_3507 Node_3506 )
++ Quad_6718: nodes ( Node_4060 Node_4061 Node_4086 Node_4085 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -747,7 +854,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5888: nodes ( Node_3482 Node_3483 Node_3508 Node_3507 )
++ Quad_6719: nodes ( Node_4061 Node_4062 Node_4087 Node_4086 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -757,7 +864,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5888: nodes ( Node_3482 Node_3483 Node_3508 Node_3507 )
++ Quad_6719: nodes ( Node_4061 Node_4062 Node_4087 Node_4086 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -767,7 +874,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5889: nodes ( Node_3483 Node_3484 Node_3509 Node_3508 )
++ Quad_6720: nodes ( Node_4062 Node_4063 Node_4088 Node_4087 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -777,7 +884,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5889: nodes ( Node_3483 Node_3484 Node_3509 Node_3508 )
++ Quad_6720: nodes ( Node_4062 Node_4063 Node_4088 Node_4087 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -787,7 +894,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5890: nodes ( Node_3484 Node_3485 Node_3510 Node_3509 )
++ Quad_6721: nodes ( Node_4063 Node_4064 Node_4089 Node_4088 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -797,7 +904,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5890: nodes ( Node_3484 Node_3485 Node_3510 Node_3509 )
++ Quad_6721: nodes ( Node_4063 Node_4064 Node_4089 Node_4088 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -807,7 +914,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5891: nodes ( Node_3485 Node_3486 Node_3511 Node_3510 )
++ Quad_6722: nodes ( Node_4064 Node_4065 Node_4090 Node_4089 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -817,7 +924,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5891: nodes ( Node_3485 Node_3486 Node_3511 Node_3510 )
++ Quad_6722: nodes ( Node_4064 Node_4065 Node_4090 Node_4089 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -827,7 +934,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5892: nodes ( Node_3486 Node_3487 Node_3512 Node_3511 )
++ Quad_6723: nodes ( Node_4065 Node_4066 Node_4091 Node_4090 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -837,7 +944,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5892: nodes ( Node_3486 Node_3487 Node_3512 Node_3511 )
++ Quad_6723: nodes ( Node_4065 Node_4066 Node_4091 Node_4090 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -847,7 +954,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5893: nodes ( Node_3487 Node_3488 Node_3513 Node_3512 )
++ Quad_6724: nodes ( Node_4066 Node_4067 Node_4092 Node_4091 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -857,7 +964,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5893: nodes ( Node_3487 Node_3488 Node_3513 Node_3512 )
++ Quad_6724: nodes ( Node_4066 Node_4067 Node_4092 Node_4091 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -867,7 +974,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5894: nodes ( Node_3488 Node_3489 Node_3514 Node_3513 )
++ Quad_6725: nodes ( Node_4067 Node_4068 Node_4093 Node_4092 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -877,7 +984,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_5894: nodes ( Node_3488 Node_3489 Node_3514 Node_3513 )
++ Quad_6725: nodes ( Node_4067 Node_4068 Node_4093 Node_4092 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -890,153 +997,69 @@ to download the full example code.</p>
 norm of the out-of-balance force:   1.2214e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   1.9467e+03
-norm of the out-of-balance force:   7.9605e+00
-norm of the out-of-balance force:   2.3934e-04
-norm of the out-of-balance force:   2.7317e-09
+norm of the out-of-balance force:   1.0270e+01
+norm of the out-of-balance force:   7.7668e+01
+norm of the out-of-balance force:   1.2854e-02
+norm of the out-of-balance force:   2.6298e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   1.9219e+03
-norm of the out-of-balance force:   7.7868e+00
-norm of the out-of-balance force:   2.3191e-02
-norm of the out-of-balance force:   4.4775e-07
+norm of the out-of-balance force:   1.0270e+01
+norm of the out-of-balance force:   7.7628e+01
+norm of the out-of-balance force:   1.2849e-02
+norm of the out-of-balance force:   1.1732e-08
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   1.8506e+03
-norm of the out-of-balance force:   7.2971e+00
-norm of the out-of-balance force:   7.4489e-02
-norm of the out-of-balance force:   1.2427e-06
-norm of the out-of-balance force:   2.5260e-09
+norm of the out-of-balance force:   1.0270e+01
+norm of the out-of-balance force:   7.7508e+01
+norm of the out-of-balance force:   1.2833e-02
+norm of the out-of-balance force:   4.1344e-08
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   1.7413e+03
-norm of the out-of-balance force:   6.5823e+00
-norm of the out-of-balance force:   1.2884e-01
-norm of the out-of-balance force:   1.7002e-06
-norm of the out-of-balance force:   2.6667e-09
+norm of the out-of-balance force:   1.0270e+01
+norm of the out-of-balance force:   7.7310e+01
+norm of the out-of-balance force:   1.2805e-02
+norm of the out-of-balance force:   8.9214e-08
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   1.6056e+03
-norm of the out-of-balance force:   5.7552e+00
-norm of the out-of-balance force:   1.6477e-01
-norm of the out-of-balance force:   1.6052e-06
-norm of the out-of-balance force:   2.7399e-09
+norm of the out-of-balance force:   1.0270e+01
+norm of the out-of-balance force:   7.7033e+01
+norm of the out-of-balance force:   1.2766e-02
+norm of the out-of-balance force:   1.5379e-07
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   1.4556e+03
-norm of the out-of-balance force:   4.9154e+00
-norm of the out-of-balance force:   1.7389e-01
-norm of the out-of-balance force:   1.1862e-06
-norm of the out-of-balance force:   2.5633e-09
+norm of the out-of-balance force:   1.0270e+01
+norm of the out-of-balance force:   7.6680e+01
+norm of the out-of-balance force:   1.2715e-02
+norm of the out-of-balance force:   2.3305e-07
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   1.3020e+03
-norm of the out-of-balance force:   4.1306e+00
-norm of the out-of-balance force:   1.6004e-01
-norm of the out-of-balance force:   7.3561e-07
+norm of the out-of-balance force:   1.0270e+01
+norm of the out-of-balance force:   7.6252e+01
+norm of the out-of-balance force:   1.2653e-02
+norm of the out-of-balance force:   3.2476e-07
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   1.1528e+03
-norm of the out-of-balance force:   3.4348e+00
-norm of the out-of-balance force:   1.3294e-01
-norm of the out-of-balance force:   4.0044e-07
+norm of the out-of-balance force:   1.0270e+01
+norm of the out-of-balance force:   7.5752e+01
+norm of the out-of-balance force:   1.2579e-02
+norm of the out-of-balance force:   4.2605e-07
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   1.0133e+03
-norm of the out-of-balance force:   2.8379e+00
-norm of the out-of-balance force:   1.0211e-01
-norm of the out-of-balance force:   1.9811e-07
+norm of the out-of-balance force:   1.0270e+01
+norm of the out-of-balance force:   7.5182e+01
+norm of the out-of-balance force:   1.2493e-02
+norm of the out-of-balance force:   5.3411e-07
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   8.8641e+02
-norm of the out-of-balance force:   2.3355e+00
-norm of the out-of-balance force:   7.3852e-02
-norm of the out-of-balance force:   9.0754e-08
-Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
-+
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   7.7324e+02
-norm of the out-of-balance force:   1.9174e+00
-norm of the out-of-balance force:   5.1028e-02
-norm of the out-of-balance force:   3.9851e-08
-Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
-+
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   6.7371e+02
-norm of the out-of-balance force:   1.5719e+00
-norm of the out-of-balance force:   3.4075e-02
-norm of the out-of-balance force:   1.7144e-08
-Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
-+
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   5.8699e+02
-norm of the out-of-balance force:   1.2876e+00
-norm of the out-of-balance force:   2.2197e-02
-norm of the out-of-balance force:   7.9017e-09
-Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
-+
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   5.1193e+02
-norm of the out-of-balance force:   1.0547e+00
-norm of the out-of-balance force:   1.4212e-02
-norm of the out-of-balance force:   5.2521e-09
-Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
-+
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   4.4719e+02
-norm of the out-of-balance force:   8.6434e-01
-norm of the out-of-balance force:   8.9976e-03
-norm of the out-of-balance force:   3.9016e-09
-Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
-+
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   3.9148e+02
-norm of the out-of-balance force:   7.0914e-01
-norm of the out-of-balance force:   5.6599e-03
-norm of the out-of-balance force:   3.9538e-09
-Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
-+
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   3.4356e+02
-norm of the out-of-balance force:   5.8278e-01
-norm of the out-of-balance force:   3.5509e-03
-norm of the out-of-balance force:   4.5275e-09
-Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
-+
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   3.0233e+02
-norm of the out-of-balance force:   4.7996e-01
-norm of the out-of-balance force:   2.2284e-03
-norm of the out-of-balance force:   4.0840e-09
-Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
-+
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   2.6682e+02
-norm of the out-of-balance force:   3.9630e-01
-norm of the out-of-balance force:   1.4021e-03
-norm of the out-of-balance force:   4.1904e-09
-Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
-+
-norm of the out-of-balance force:   5.1349e+01
-norm of the out-of-balance force:   2.3618e+02
-norm of the out-of-balance force:   3.2818e-01
-norm of the out-of-balance force:   8.8593e-04
-norm of the out-of-balance force:   4.3792e-09
+norm of the out-of-balance force:   1.0270e+01
+norm of the out-of-balance force:   7.4544e+01
+norm of the out-of-balance force:   1.2394e-02
+norm of the out-of-balance force:   6.4643e-07
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (1 minutes 38.677 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 40.649 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate14-cantilever-large-disp-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/4906a91983a68dd0346fcb1b3d62efe4/plot_plate14_cantilever_large_disp.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate14_cantilever_large_disp.ipynb</span></code></a></p>
@@ -1056,14 +1079,14 @@ Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="plot_plate12_plate_w_hole_quad_mesh.html" class="btn btn-neutral float-left" title="Pulling a plate with a circular hole : using quads" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="plot_plate20_benchmark01.html" class="btn btn-neutral float-right" title="Benchmark problem: Wedged Plate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="plot_plate15_cantilever_large_disp_higher_order.html" class="btn btn-neutral float-right" title="Bending a cantilever beam using Quad9 elements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 09, 2025.
+      <span class="lastupdated">Last updated on Jan 10, 2025.
       </span></p>
   </div>
 

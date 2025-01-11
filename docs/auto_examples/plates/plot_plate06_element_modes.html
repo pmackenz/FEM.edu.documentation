@@ -25,7 +25,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Patch test for triangular plate under in-plane loading" href="plot_plate08_triangle_patch_test.html" />
+    <link rel="next" title="A square patch: element comparison" href="plot_plate07_comparison.html" />
     <link rel="prev" title="A square patch made of one quadrilateral plate elements" href="plot_plate05_quad_test2.html" /> 
 </head>
 
@@ -72,14 +72,18 @@
 <li class="toctree-l4"><a class="reference internal" href="plot_plate04_quad_test1.html">A square patch made of one quadrilateral plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate05_quad_test2.html">A square patch made of one quadrilateral plate elements</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Element Testing: Analyzing Modes and Energy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate07_comparison.html">A square patch: element comparison</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate08_triangle_patch_test.html">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate09_quad_patch_test.html">Patch test for quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate10_mixed_mesh_patch_test.html">Patch test for mixed mesh of triangular and quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate10_profiler.html">Profiling the code</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate11_plate_w_hole_tri_mesh.html">Pulling a plate with a circular hole : using triangles</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate12_plate_w_hole_quad_mesh.html">Pulling a plate with a circular hole : using quads</a></li>
-<li class="toctree-l4"><a class="reference internal" href="plot_plate14_cantilever_large_disp.html">Bending a cantilever beam</a></li>
-<li class="toctree-l4"><a class="reference internal" href="plot_plate20_benchmark01.html">Benchmark problem: Wedged Plate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate14_cantilever_large_disp.html">Bending a cantilever beam using Quad elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate15_cantilever_large_disp_higher_order.html">Bending a cantilever beam using Quad9 elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate19_benchmark01.html">Benchmark problem: Wedged Plate - geometrically linear theory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate20_benchmark01.html">Benchmark problem: Wedged Plate - finite deformations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate21_benchmark01.html">Benchmark problem: Wedged Plate - finite deformations</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
@@ -147,12 +151,6 @@ to download the full example code.</p>
     <span class="n">E</span>  <span class="o">=</span> <span class="mf">10.0</span>
     <span class="n">nu</span> <span class="o">=</span>  <span class="mf">0.30</span>
     <span class="n">t</span>  <span class="o">=</span>  <span class="mf">1.0</span>
-
-<span class="n">Element</span> <span class="n">loads</span><span class="p">:</span>
-    <span class="n">node</span> <span class="mi">0</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
-    <span class="n">node</span> <span class="mi">1</span><span class="p">:</span> <span class="p">[</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
-    <span class="n">node</span> <span class="mi">2</span><span class="p">:</span> <span class="p">[</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
-    <span class="n">node</span> <span class="mi">3</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Author: Peter Mackenzie-Helnwein</p>
@@ -165,6 +163,7 @@ to download the full example code.</p>
 <span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
 <span class="kn">from</span> <span class="nn">femedu.solver</span> <span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span>
 <span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Quad</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.finite</span> <span class="kn">import</span> <span class="n">Quad9</span>
 <span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">PlaneStress</span>
 
 <span class="c1"># -------------------------------------------------------------</span>
@@ -179,7 +178,7 @@ to download the full example code.</p>
 <span class="p">)</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="mf">10.</span>     <span class="c1"># length of the plate in the x-direction</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mf">10.</span>     <span class="c1"># length of the plate in the y-direction</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">12.</span>     <span class="c1"># length of the plate in the y-direction</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
 <span class="n">model</span><span class="o">.</span><span class="n">setSolver</span><span class="p">(</span><span class="n">NewtonRaphsonSolver</span><span class="p">())</span>
@@ -189,11 +188,22 @@ to download the full example code.</p>
 <span class="n">nd2</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>   <span class="n">a</span><span class="p">,</span>   <span class="n">b</span><span class="p">)</span>
 <span class="n">nd3</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span> <span class="mf">0.0</span><span class="p">,</span>   <span class="n">b</span><span class="p">)</span>
 
-<span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">nd0</span><span class="p">,</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">nd2</span><span class="p">,</span> <span class="n">nd3</span><span class="p">)</span>
+<span class="n">nd4</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span> <span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.0</span> <span class="p">)</span>
+<span class="n">nd5</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">/</span><span class="mi">2</span> <span class="p">)</span>
+<span class="n">nd6</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span> <span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">b</span> <span class="p">)</span>
+<span class="n">nd7</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">b</span><span class="o">/</span><span class="mi">2</span> <span class="p">)</span>
+
+<span class="n">nd8</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span> <span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">b</span><span class="o">/</span><span class="mi">2</span> <span class="p">)</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">nd0</span><span class="p">,</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">nd2</span><span class="p">,</span> <span class="n">nd3</span><span class="p">)</span>  <span class="c1"># corner nodes</span>
+<span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span><span class="n">nd4</span><span class="p">,</span> <span class="n">nd5</span><span class="p">,</span> <span class="n">nd6</span><span class="p">,</span> <span class="n">nd7</span><span class="p">)</span>  <span class="c1"># midside nodes</span>
+<span class="n">model</span><span class="o">.</span><span class="n">addNode</span><span class="p">(</span> <span class="n">nd8</span> <span class="p">)</span>                      <span class="c1"># center node</span>
 
 <span class="n">elemA</span> <span class="o">=</span> <span class="n">Quad</span><span class="p">(</span><span class="n">nd0</span><span class="p">,</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">nd2</span><span class="p">,</span> <span class="n">nd3</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+<span class="n">elemB</span> <span class="o">=</span> <span class="n">Quad9</span><span class="p">(</span><span class="n">nd0</span><span class="p">,</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">nd2</span><span class="p">,</span> <span class="n">nd3</span><span class="p">,</span> <span class="n">nd4</span><span class="p">,</span> <span class="n">nd5</span><span class="p">,</span> <span class="n">nd6</span><span class="p">,</span> <span class="n">nd7</span><span class="p">,</span> <span class="n">nd8</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
 
-<span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">elemA</span><span class="p">)</span>
+<span class="c1"># model.addElement(elemA)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">elemB</span><span class="p">)</span>
 
 <span class="n">elemA</span><span class="o">.</span><span class="n">setSurfaceLoad</span><span class="p">(</span><span class="n">face</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pn</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
 
@@ -206,9 +216,9 @@ at the current load level (0.0)</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
 <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 
-<span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;../../../Kplate.npy&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">Kt</span><span class="p">)</span>
+<span class="c1"># np.save(&#39;../../../Kplate.npy&#39;, model.solver.Kt)</span>
 
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">18</span><span class="p">):</span>
     <span class="n">model</span><span class="o">.</span><span class="n">plotBucklingMode</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -216,11 +226,21 @@ at the current load level (0.0)</p>
 <li><img src="../../_images/sphx_glr_plot_plate06_element_modes_002.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_002.png" alt="Mode Shape for $ \lambda = -0.00 $" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate06_element_modes_003.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_003.png" alt="Mode Shape for $ \lambda = 0.00 $" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate06_element_modes_004.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_004.png" alt="Mode Shape for $ \lambda = 0.00 $" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_005.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_005.png" alt="Mode Shape for $ \lambda = 4.95 $" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_006.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_006.png" alt="Mode Shape for $ \lambda = 4.95 $" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_007.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_007.png" alt="Mode Shape for $ \lambda = 7.69 $" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_008.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_008.png" alt="Mode Shape for $ \lambda = 7.69 $" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_009.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_009.png" alt="Mode Shape for $ \lambda = 14.29 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_005.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_005.png" alt="Mode Shape for $ \lambda = 1.73 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_006.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_006.png" alt="Mode Shape for $ \lambda = 2.16 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_007.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_007.png" alt="Mode Shape for $ \lambda = 3.31 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_008.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_008.png" alt="Mode Shape for $ \lambda = 4.40 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_009.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_009.png" alt="Mode Shape for $ \lambda = 5.57 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_010.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_010.png" alt="Mode Shape for $ \lambda = 6.61 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_011.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_011.png" alt="Mode Shape for $ \lambda = 6.98 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_012.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_012.png" alt="Mode Shape for $ \lambda = 9.30 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_013.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_013.png" alt="Mode Shape for $ \lambda = 11.28 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_014.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_014.png" alt="Mode Shape for $ \lambda = 15.34 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_015.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_015.png" alt="Mode Shape for $ \lambda = 16.52 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_016.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_016.png" alt="Mode Shape for $ \lambda = 22.13 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_017.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_017.png" alt="Mode Shape for $ \lambda = 24.02 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_018.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_018.png" alt="Mode Shape for $ \lambda = 48.80 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_019.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_019.png" alt="Mode Shape for $ \lambda = 63.17 $" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+
 </pre></div>
@@ -248,42 +268,67 @@ and check the convergence behavior.</p>
 <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_plate06_element_modes_010.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_010.png" alt="Deformed System (magnification=1.00)" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System Analysis Report
+<img src="../../_images/sphx_glr_plot_plate06_element_modes_020.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_020.png" alt="Deformed System (magnification=1.00)" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System Analysis Report
 =======================
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_571:
       x:    [0.000 0.000]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0.000 0.000]
-  Node_1:
+  Node_572:
       x:    [10.000 0.000]
       fix:  [&#39;uy&#39;]
-      u:    [1.000 0.000]
-  Node_2:
-      x:    [10.000 10.000]
-      u:    [1.000 -0.300]
-  Node_3:
-      x:    [0.000 10.000]
+      u:    [0.000 0.000]
+  Node_573:
+      x:    [10.000 12.000]
+      u:    [0.000 0.000]
+  Node_574:
+      x:    [0.000 12.000]
       fix:  [&#39;ux&#39;]
-      u:    [0.000 -0.300]
+      u:    [0.000 0.000]
+  Node_575:
+      x:    [5.000 0.000]
+      u:    [0.000 0.000]
+  Node_576:
+      x:    [10.000 6.000]
+      u:    [0.000 0.000]
+  Node_577:
+      x:    [5.000 12.000]
+      u:    [0.000 0.000]
+  Node_578:
+      x:    [0.000 6.000]
+      u:    [0.000 0.000]
+  Node_579:
+      x:    [5.000 6.000]
+      u:    [0.000 0.000]
 
 Elements:
 ---------------------
-  Quad_0: nodes ( Node_0 Node_1 Node_2 Node_3 )
+  Quad9_833: nodes ( Node_571 Node_572 Node_573 Node_574 Node_575 Node_576 Node_577 Node_578 Node_579 )
       material: list
-      strain (0): xx=1.000e-01 yy=-3.000e-02 xy=-4.760e-18 zz=-2.100e-02
-      stress (0): xx=1.000e+00 yy=4.148e-18 xy=-1.831e-17 zz=0.000e+00
-      strain (1): xx=1.000e-01 yy=-3.000e-02 xy=8.302e-17 zz=-2.100e-02
-      stress (1): xx=1.000e+00 yy=4.148e-18 xy=3.193e-16 zz=0.000e+00
-      strain (2): xx=1.000e-01 yy=-3.000e-02 xy=-7.511e-17 zz=-2.100e-02
-      stress (2): xx=1.000e+00 yy=4.148e-18 xy=-2.889e-16 zz=0.000e+00
-      strain (3): xx=1.000e-01 yy=-3.000e-02 xy=1.857e-17 zz=-2.100e-02
-      stress (3): xx=1.000e+00 yy=4.148e-18 xy=7.142e-17 zz=0.000e+00
+      strain (0): xx=-1.110e-16 yy=-1.110e-16 xy=-5.551e-17 zz=6.661e-17
+      stress (0): xx=-1.586e-15 yy=-1.586e-15 xy=-2.135e-16 zz=0.000e+00
+      strain (1): xx=2.220e-16 yy=0.000e+00 xy=9.382e-17 zz=-6.661e-17
+      stress (1): xx=2.440e-15 yy=7.320e-16 xy=3.609e-16 zz=0.000e+00
+      strain (2): xx=2.220e-16 yy=-1.110e-16 xy=2.914e-16 zz=-3.331e-17
+      stress (2): xx=2.074e-15 yy=-4.880e-16 xy=1.121e-15 zz=0.000e+00
+      strain (3): xx=2.220e-16 yy=0.000e+00 xy=6.711e-18 zz=-6.661e-17
+      stress (3): xx=2.440e-15 yy=7.320e-16 xy=2.581e-17 zz=0.000e+00
+      strain (4): xx=0.000e+00 yy=0.000e+00 xy=6.939e-17 zz=-0.000e+00
+      stress (4): xx=0.000e+00 yy=0.000e+00 xy=2.669e-16 zz=0.000e+00
+      strain (5): xx=-2.220e-16 yy=2.220e-16 xy=-1.892e-16 zz=-0.000e+00
+      stress (5): xx=-1.708e-15 yy=1.708e-15 xy=-7.276e-16 zz=0.000e+00
+      strain (6): xx=0.000e+00 yy=0.000e+00 xy=1.943e-16 zz=-0.000e+00
+      stress (6): xx=0.000e+00 yy=0.000e+00 xy=7.473e-16 zz=0.000e+00
+      strain (7): xx=-2.220e-16 yy=-2.220e-16 xy=1.949e-16 zz=1.332e-16
+      stress (7): xx=-3.172e-15 yy=-3.172e-15 xy=7.495e-16 zz=0.000e+00
+      strain (8): xx=0.000e+00 yy=-2.220e-16 xy=-3.192e-16 zz=6.661e-17
+      stress (8): xx=-7.320e-16 yy=-2.440e-15 xy=-1.228e-15 zz=0.000e+00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.462 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.510 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate06-element-modes-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/14ff78e68b69d08707f3ae74dd0d669a/plot_plate06_element_modes.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate06_element_modes.ipynb</span></code></a></p>
@@ -303,14 +348,14 @@ Elements:
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="plot_plate05_quad_test2.html" class="btn btn-neutral float-left" title="A square patch made of one quadrilateral plate elements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="plot_plate08_triangle_patch_test.html" class="btn btn-neutral float-right" title="Patch test for triangular plate under in-plane loading" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="plot_plate07_comparison.html" class="btn btn-neutral float-right" title="A square patch: element comparison" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 09, 2025.
+      <span class="lastupdated">Last updated on Jan 10, 2025.
       </span></p>
   </div>
 

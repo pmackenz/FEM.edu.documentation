@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:23.343** total execution time for 39 files **from all galleries**:
+**02:20.550** total execution time for 43 files **from all galleries**:
 
 .. container::
 
@@ -32,8 +32,8 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate20_benchmark01.py` (``../../galleries/examples/plates/plot_plate20_benchmark01.py``)
-     - 00:23.343
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate21_benchmark01.py` (``../../galleries/examples/plates/plot_plate21_benchmark01.py``)
+     - 02:20.550
      - 0.0
    * - :ref:`sphx_glr_auto_examples_beams_plot_beam01.py` (``../../galleries/examples/beams/plot_beam01.py``)
      - 00:00.000
@@ -89,6 +89,9 @@ Computation times
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate06_element_modes.py` (``../../galleries/examples/plates/plot_plate06_element_modes.py``)
      - 00:00.000
      - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate07_comparison.py` (``../../galleries/examples/plates/plot_plate07_comparison.py``)
+     - 00:00.000
+     - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate08_triangle_patch_test.py` (``../../galleries/examples/plates/plot_plate08_triangle_patch_test.py``)
      - 00:00.000
      - 0.0
@@ -108,6 +111,15 @@ Computation times
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate14_cantilever_large_disp.py` (``../../galleries/examples/plates/plot_plate14_cantilever_large_disp.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate15_cantilever_large_disp_higher_order.py` (``../../galleries/examples/plates/plot_plate15_cantilever_large_disp_higher_order.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate19_benchmark01.py` (``../../galleries/examples/plates/plot_plate19_benchmark01.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate20_benchmark01.py` (``../../galleries/examples/plates/plot_plate20_benchmark01.py``)
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_auto_examples_springs_plot_spring_system01.py` (``../../galleries/examples/springs/plot_spring_system01.py``)

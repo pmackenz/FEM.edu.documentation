@@ -72,14 +72,18 @@
 <li class="toctree-l4"><a class="reference internal" href="plot_plate04_quad_test1.html">A square patch made of one quadrilateral plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate05_quad_test2.html">A square patch made of one quadrilateral plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate06_element_modes.html">Element Testing: Analyzing Modes and Energy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate07_comparison.html">A square patch: element comparison</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate08_triangle_patch_test.html">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Patch test for quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate10_mixed_mesh_patch_test.html">Patch test for mixed mesh of triangular and quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate10_profiler.html">Profiling the code</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate11_plate_w_hole_tri_mesh.html">Pulling a plate with a circular hole : using triangles</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate12_plate_w_hole_quad_mesh.html">Pulling a plate with a circular hole : using quads</a></li>
-<li class="toctree-l4"><a class="reference internal" href="plot_plate14_cantilever_large_disp.html">Bending a cantilever beam</a></li>
-<li class="toctree-l4"><a class="reference internal" href="plot_plate20_benchmark01.html">Benchmark problem: Wedged Plate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate14_cantilever_large_disp.html">Bending a cantilever beam using Quad elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate15_cantilever_large_disp_higher_order.html">Bending a cantilever beam using Quad9 elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate19_benchmark01.html">Benchmark problem: Wedged Plate - geometrically linear theory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate20_benchmark01.html">Benchmark problem: Wedged Plate - finite deformations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate21_benchmark01.html">Benchmark problem: Wedged Plate - finite deformations</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
@@ -293,72 +297,72 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_626:
       x:    [0.000 0.000]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0.000 0.000]
-  Node_1:
+  Node_627:
       x:    [20.000 0.000]
       u:    [0.100 -0.000]
-  Node_2:
+  Node_628:
       x:    [50.000 0.000]
       u:    [0.250 -0.000]
-  Node_3:
+  Node_629:
       x:    [70.000 0.000]
       u:    [0.350 -0.000]
-  Node_4:
+  Node_630:
       x:    [100.000 0.000]
       fix:  [&#39;uy&#39;]
       u:    [0.500 0.000]
-  Node_5:
+  Node_631:
       x:    [0.000 16.000]
       u:    [-0.000 -0.020]
-  Node_6:
+  Node_632:
       x:    [15.000 24.000]
       u:    [0.075 -0.030]
-  Node_7:
+  Node_633:
       x:    [50.000 16.000]
       u:    [0.250 -0.020]
-  Node_8:
+  Node_634:
       x:    [80.000 24.000]
       u:    [0.400 -0.030]
-  Node_9:
+  Node_635:
       x:    [100.000 16.000]
       u:    [0.500 -0.020]
-  Node_10:
+  Node_636:
       x:    [0.000 48.000]
       u:    [0.000 -0.060]
-  Node_11:
+  Node_637:
       x:    [20.000 40.000]
       u:    [0.100 -0.050]
-  Node_12:
+  Node_638:
       x:    [70.000 56.000]
       u:    [0.350 -0.070]
-  Node_13:
+  Node_639:
       x:    [90.000 48.000]
       u:    [0.450 -0.060]
-  Node_14:
+  Node_640:
       x:    [100.000 56.000]
       u:    [0.500 -0.070]
-  Node_15:
+  Node_641:
       x:    [0.000 80.000]
       u:    [0.000 -0.100]
-  Node_16:
+  Node_642:
       x:    [30.000 80.000]
       u:    [0.150 -0.100]
-  Node_17:
+  Node_643:
       x:    [55.000 80.000]
       u:    [0.275 -0.100]
-  Node_18:
+  Node_644:
       x:    [80.000 80.000]
       u:    [0.400 -0.100]
-  Node_19:
+  Node_645:
       x:    [100.000 80.000]
       u:    [0.500 -0.100]
 
 Elements:
 ---------------------
-  Quad_0: nodes ( Node_0 Node_1 Node_6 Node_5 )
+  Quad_864: nodes ( Node_626 Node_627 Node_632 Node_631 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=-1.046e-16 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=2.367e-12 xy=-8.367e-13 zz=0.000e+00
@@ -368,7 +372,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=2.367e-12 xy=-1.356e-12 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=1.009e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=8.527e-16 xy=8.073e-13 zz=0.000e+00
-  Quad_1: nodes ( Node_1 Node_2 Node_7 Node_6 )
+  Quad_865: nodes ( Node_627 Node_628 Node_633 Node_632 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=7.529e-17 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=2.369e-12 xy=6.023e-13 zz=0.000e+00
@@ -378,7 +382,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=-3.554e-12 xy=1.901e-13 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=3.897e-17 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=1.185e-12 xy=3.118e-13 zz=0.000e+00
-  Quad_2: nodes ( Node_2 Node_3 Node_8 Node_7 )
+  Quad_866: nodes ( Node_628 Node_629 Node_634 Node_633 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=3.344e-16 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=8.527e-16 xy=2.675e-12 zz=0.000e+00
@@ -388,7 +392,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=1.185e-12 xy=3.304e-12 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=-7.355e-17 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=3.551e-12 xy=-5.884e-13 zz=0.000e+00
-  Quad_3: nodes ( Node_3 Node_4 Node_9 Node_8 )
+  Quad_867: nodes ( Node_629 Node_630 Node_635 Node_634 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=-3.066e-16 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=-5.923e-12 xy=-2.452e-12 zz=0.000e+00
@@ -398,7 +402,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=-3.316e-16 xy=7.859e-13 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=2.679e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=2.367e-12 xy=2.143e-12 zz=0.000e+00
-  Quad_4: nodes ( Node_5 Node_6 Node_11 Node_10 )
+  Quad_868: nodes ( Node_631 Node_632 Node_637 Node_636 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=2.026e-17 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=1.183e-12 xy=1.621e-13 zz=0.000e+00
@@ -408,7 +412,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=1.185e-12 xy=-4.932e-14 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=-1.247e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=8.291e-12 xy=-9.975e-13 zz=0.000e+00
-  Quad_5: nodes ( Node_6 Node_7 Node_12 Node_11 )
+  Quad_869: nodes ( Node_632 Node_633 Node_638 Node_637 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=1.100e-16 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=2.367e-12 xy=8.800e-13 zz=0.000e+00
@@ -418,7 +422,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=-2.369e-12 xy=1.586e-12 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=-2.046e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=3.551e-12 xy=-1.637e-12 zz=0.000e+00
-  Quad_6: nodes ( Node_7 Node_8 Node_13 Node_12 )
+  Quad_870: nodes ( Node_633 Node_634 Node_639 Node_638 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=8.123e-17 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=3.554e-12 xy=6.498e-13 zz=0.000e+00
@@ -428,7 +432,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=-2.369e-12 xy=-2.821e-12 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=1.849e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=7.105e-12 xy=1.479e-12 zz=0.000e+00
-  Quad_7: nodes ( Node_8 Node_9 Node_14 Node_13 )
+  Quad_871: nodes ( Node_634 Node_635 Node_640 Node_639 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=-7.082e-17 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=-1.183e-12 xy=-5.666e-13 zz=0.000e+00
@@ -438,7 +442,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=-1.303e-11 xy=-7.607e-12 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=4.363e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=-3.553e-12 xy=3.490e-12 zz=0.000e+00
-  Quad_8: nodes ( Node_10 Node_11 Node_16 Node_15 )
+  Quad_872: nodes ( Node_636 Node_637 Node_642 Node_641 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=1.015e-17 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=5.921e-12 xy=8.120e-14 zz=0.000e+00
@@ -448,7 +452,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=3.551e-12 xy=1.150e-12 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=5.399e-17 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=8.527e-16 xy=4.319e-13 zz=0.000e+00
-  Quad_9: nodes ( Node_11 Node_12 Node_17 Node_16 )
+  Quad_873: nodes ( Node_637 Node_638 Node_643 Node_642 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=1.955e-17 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=-4.737e-12 xy=1.564e-13 zz=0.000e+00
@@ -458,7 +462,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=3.551e-12 xy=-2.883e-12 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=-3.240e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=-4.738e-12 xy=-2.592e-12 zz=0.000e+00
-  Quad_10: nodes ( Node_12 Node_13 Node_18 Node_17 )
+  Quad_874: nodes ( Node_638 Node_639 Node_644 Node_643 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=1.873e-16 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=-3.554e-12 xy=1.498e-12 zz=0.000e+00
@@ -468,7 +472,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=-2.368e-12 xy=1.627e-13 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=2.146e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=9.472e-12 xy=1.717e-12 zz=0.000e+00
-  Quad_11: nodes ( Node_13 Node_14 Node_19 Node_18 )
+  Quad_875: nodes ( Node_639 Node_640 Node_645 Node_644 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=-1.364e-16 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=1.183e-12 xy=-1.091e-12 zz=0.000e+00
@@ -485,7 +489,7 @@ Elements:
   ret = ret.dtype.type(ret / rcount)
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.358 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.189 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate09-quad-patch-test-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/b00d5e9e4be8b0d33a3369a510aecd92/plot_plate09_quad_patch_test.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate09_quad_patch_test.ipynb</span></code></a></p>
@@ -512,7 +516,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 09, 2025.
+      <span class="lastupdated">Last updated on Jan 10, 2025.
       </span></p>
   </div>
 

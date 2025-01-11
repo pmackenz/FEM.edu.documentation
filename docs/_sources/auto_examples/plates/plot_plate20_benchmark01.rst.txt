@@ -19,30 +19,33 @@
 
 
 ==========================================================
-Benchmark problem: Wedged Plate
+Benchmark problem: Wedged Plate - finite deformations
 ==========================================================
 
-Using PatchMesher to model the plate
+**Features**
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-135
+* Using PatchMesher to model the plate
+* nodal boundary conditions using location-based search
+* face loads using location-based search
+* finite deformation Triangle and Quad elements
+* history plot feature
+
+.. GENERATED FROM PYTHON SOURCE LINES 15-137
 
 .. code-block:: Python
 
-    import math
-    import sys
     import numpy as np
 
     from femedu.examples import Example
 
-    from femedu.domain import System, Node
+    from femedu.domain import System
     from femedu.solver import NewtonRaphsonSolver
-    #from femedu.elements.linear import Quad, Triangle
     from femedu.elements.finite import Quad, Triangle
     from femedu.materials import PlaneStress
     from femedu.mesher import *
 
 
-    class ExampleBenchmark01(Example):
+    class Example20_Benchmark01(Example):
 
         def problem(self):
             # ========== setting mesh parameters ==============
@@ -64,7 +67,6 @@ Using PatchMesher to model the plate
             # ========== setting load parameters ==============
 
             px  =  0.0         # uniform load normal to x=Lx
-            py  =  0.0         # uniform load normal to y=Ly
             pxy =  100.0/L3    # uniform shear load on x=L1
 
             # ========== setting analysis parameters ==============
@@ -161,18 +163,18 @@ Using PatchMesher to model the plate
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 149-151
+.. GENERATED FROM PYTHON SOURCE LINES 151-153
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-157
+.. GENERATED FROM PYTHON SOURCE LINES 153-159
 
 .. code-block:: Python
 
 
     if __name__ == "__main__":
-        ex = ExampleBenchmark01()
+        ex = Example20_Benchmark01()
         ex.run()
 
 
@@ -222,7 +224,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
  .. code-block:: none
 
-    + Quad_7: nodes ( Node_7 Node_8 Node_17 Node_16 )
+    + Quad_6833: nodes ( Node_4218 Node_4219 Node_4228 Node_4227 )
         material: list
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -232,7 +234,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad_7: nodes ( Node_7 Node_8 Node_17 Node_16 )
+    + Quad_6833: nodes ( Node_4218 Node_4219 Node_4228 Node_4227 )
         material: list
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -242,7 +244,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad_15: nodes ( Node_16 Node_17 Node_26 Node_25 )
+    + Quad_6841: nodes ( Node_4227 Node_4228 Node_4237 Node_4236 )
         material: list
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -252,7 +254,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad_15: nodes ( Node_16 Node_17 Node_26 Node_25 )
+    + Quad_6841: nodes ( Node_4227 Node_4228 Node_4237 Node_4236 )
         material: list
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -262,7 +264,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad_23: nodes ( Node_25 Node_26 Node_35 Node_34 )
+    + Quad_6849: nodes ( Node_4236 Node_4237 Node_4246 Node_4245 )
         material: list
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -272,7 +274,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad_23: nodes ( Node_25 Node_26 Node_35 Node_34 )
+    + Quad_6849: nodes ( Node_4236 Node_4237 Node_4246 Node_4245 )
         material: list
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -282,7 +284,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad_31: nodes ( Node_34 Node_35 Node_44 Node_43 )
+    + Quad_6857: nodes ( Node_4245 Node_4246 Node_4255 Node_4254 )
         material: list
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -292,7 +294,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad_31: nodes ( Node_34 Node_35 Node_44 Node_43 )
+    + Quad_6857: nodes ( Node_4245 Node_4246 Node_4255 Node_4254 )
         material: list
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -302,51 +304,51 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_46: nodes ( Node_52 Node_53 Node_61 )
+    + Triangle_6872: nodes ( Node_4263 Node_4264 Node_4272 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_47: nodes ( Node_62 Node_61 Node_53 )
+    + Triangle_6873: nodes ( Node_4273 Node_4272 Node_4264 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_47: nodes ( Node_62 Node_61 Node_53 )
+    + Triangle_6873: nodes ( Node_4273 Node_4272 Node_4264 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_62: nodes ( Node_61 Node_62 Node_70 )
+    + Triangle_6888: nodes ( Node_4272 Node_4273 Node_4281 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_63: nodes ( Node_71 Node_70 Node_62 )
+    + Triangle_6889: nodes ( Node_4282 Node_4281 Node_4273 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_63: nodes ( Node_71 Node_70 Node_62 )
+    + Triangle_6889: nodes ( Node_4282 Node_4281 Node_4273 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_78: nodes ( Node_70 Node_71 Node_79 )
+    + Triangle_6904: nodes ( Node_4281 Node_4282 Node_4290 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_79: nodes ( Node_80 Node_79 Node_71 )
+    + Triangle_6905: nodes ( Node_4291 Node_4290 Node_4282 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_79: nodes ( Node_80 Node_79 Node_71 )
+    + Triangle_6905: nodes ( Node_4291 Node_4290 Node_4282 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_94: nodes ( Node_79 Node_80 Node_88 )
+    + Triangle_6920: nodes ( Node_4290 Node_4291 Node_4299 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_95: nodes ( Node_89 Node_88 Node_80 )
+    + Triangle_6921: nodes ( Node_4300 Node_4299 Node_4291 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_95: nodes ( Node_89 Node_88 Node_80 )
+    + Triangle_6921: nodes ( Node_4300 Node_4299 Node_4291 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -510,7 +512,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 23.343 seconds)
+   **Total running time of the script:** (0 minutes 25.897 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate20_benchmark01.py:

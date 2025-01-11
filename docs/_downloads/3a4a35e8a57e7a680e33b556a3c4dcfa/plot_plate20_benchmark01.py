@@ -1,26 +1,29 @@
-"""
+r"""
 ==========================================================
-Benchmark problem: Wedged Plate
+Benchmark problem: Wedged Plate - finite deformations
 ==========================================================
 
-Using PatchMesher to model the plate
+**Features**
+
+* Using PatchMesher to model the plate
+* nodal boundary conditions using location-based search
+* face loads using location-based search
+* finite deformation Triangle and Quad elements
+* history plot feature
 
 """
-import math
-import sys
 import numpy as np
 
 from femedu.examples import Example
 
-from femedu.domain import System, Node
+from femedu.domain import System
 from femedu.solver import NewtonRaphsonSolver
-#from femedu.elements.linear import Quad, Triangle
 from femedu.elements.finite import Quad, Triangle
 from femedu.materials import PlaneStress
 from femedu.mesher import *
 
 
-class ExampleBenchmark01(Example):
+class Example20_Benchmark01(Example):
 
     # sphinx_gallery_start_ignore
     # sphinx_gallery_thumbnail_number = 2
@@ -55,7 +58,6 @@ class ExampleBenchmark01(Example):
         # ========== setting load parameters ==============
 
         px  =  0.0         # uniform load normal to x=Lx
-        py  =  0.0         # uniform load normal to y=Ly
         pxy =  100.0/L3    # uniform shear load on x=L1
 
         # ========== setting analysis parameters ==============
@@ -150,7 +152,7 @@ class ExampleBenchmark01(Example):
 #
 
 if __name__ == "__main__":
-    ex = ExampleBenchmark01()
+    ex = Example20_Benchmark01()
     ex.run()
 
 

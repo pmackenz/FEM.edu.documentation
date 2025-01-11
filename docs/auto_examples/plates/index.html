@@ -22,6 +22,7 @@
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -72,14 +73,18 @@
 <li class="toctree-l4"><a class="reference internal" href="plot_plate04_quad_test1.html">A square patch made of one quadrilateral plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate05_quad_test2.html">A square patch made of one quadrilateral plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate06_element_modes.html">Element Testing: Analyzing Modes and Energy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate07_comparison.html">A square patch: element comparison</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate08_triangle_patch_test.html">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate09_quad_patch_test.html">Patch test for quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate10_mixed_mesh_patch_test.html">Patch test for mixed mesh of triangular and quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate10_profiler.html">Profiling the code</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate11_plate_w_hole_tri_mesh.html">Pulling a plate with a circular hole : using triangles</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate12_plate_w_hole_quad_mesh.html">Pulling a plate with a circular hole : using quads</a></li>
-<li class="toctree-l4"><a class="reference internal" href="plot_plate14_cantilever_large_disp.html">Bending a cantilever beam</a></li>
-<li class="toctree-l4"><a class="reference internal" href="plot_plate20_benchmark01.html">Benchmark problem: Wedged Plate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate14_cantilever_large_disp.html">Bending a cantilever beam using Quad elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate15_cantilever_large_disp_higher_order.html">Bending a cantilever beam using Quad9 elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate19_benchmark01.html">Benchmark problem: Wedged Plate - geometrically linear theory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate20_benchmark01.html">Benchmark problem: Wedged Plate - finite deformations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate21_benchmark01.html">Benchmark problem: Wedged Plate - finite deformations</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
@@ -142,6 +147,9 @@ see the <a class="reference internal" href="../../tutorials.html#tutorials"><spa
 </div><div class="sphx-glr-thumbcontainer" tooltip="Basic implementation test with applied loads.     Testing the tangent stiffness computation."><img alt="" src="../../_images/sphx_glr_plot_plate06_element_modes_thumb.png" />
 <p><a class="reference internal" href="plot_plate06_element_modes.html#sphx-glr-auto-examples-plates-plot-plate06-element-modes-py"><span class="std std-ref">Element Testing: Analyzing Modes and Energy</span></a></p>
   <div class="sphx-glr-thumbnail-title">Element Testing: Analyzing Modes and Energy</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="    v=-5   v=-5      |     |      v     v      3-----2 -&gt; u=5      |\  b | &gt;      | \   | &gt;      |  \  | &gt; (w = 1.0)      |   \ | &gt;      | a  \| &gt;      0-----1 -&gt; u=5"><img alt="" src="../../_images/sphx_glr_plot_plate07_comparison_thumb.png" />
+<p><a class="reference internal" href="plot_plate07_comparison.html#sphx-glr-auto-examples-plates-plot-plate07-comparison-py"><span class="std std-ref">A square patch: element comparison</span></a></p>
+  <div class="sphx-glr-thumbnail-title">A square patch: element comparison</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="The patch test is an empirical minimum test which every finite element has to pass to ensure convergence with mesh refinement."><img alt="" src="../../_images/sphx_glr_plot_plate08_triangle_patch_test_thumb.png" />
 <p><a class="reference internal" href="plot_plate08_triangle_patch_test.html#sphx-glr-auto-examples-plates-plot-plate08-triangle-patch-test-py"><span class="std std-ref">Patch test for triangular plate under in-plane loading</span></a></p>
   <div class="sphx-glr-thumbnail-title">Patch test for triangular plate under in-plane loading</div>
@@ -161,11 +169,20 @@ see the <a class="reference internal" href="../../tutorials.html#tutorials"><spa
 <p><a class="reference internal" href="plot_plate12_plate_w_hole_quad_mesh.html#sphx-glr-auto-examples-plates-plot-plate12-plate-w-hole-quad-mesh-py"><span class="std std-ref">Pulling a plate with a circular hole : using quads</span></a></p>
   <div class="sphx-glr-thumbnail-title">Pulling a plate with a circular hole : using quads</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Using PatchMesher to model the beam"><img alt="" src="../../_images/sphx_glr_plot_plate14_cantilever_large_disp_thumb.png" />
-<p><a class="reference internal" href="plot_plate14_cantilever_large_disp.html#sphx-glr-auto-examples-plates-plot-plate14-cantilever-large-disp-py"><span class="std std-ref">Bending a cantilever beam</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Bending a cantilever beam</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Using PatchMesher to model the plate"><img alt="" src="../../_images/sphx_glr_plot_plate20_benchmark01_thumb.png" />
-<p><a class="reference internal" href="plot_plate20_benchmark01.html#sphx-glr-auto-examples-plates-plot-plate20-benchmark01-py"><span class="std std-ref">Benchmark problem: Wedged Plate</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Benchmark problem: Wedged Plate</div>
+<p><a class="reference internal" href="plot_plate14_cantilever_large_disp.html#sphx-glr-auto-examples-plates-plot-plate14-cantilever-large-disp-py"><span class="std std-ref">Bending a cantilever beam using Quad elements</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Bending a cantilever beam using Quad elements</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Using PatchMesher to model the beam"><img alt="" src="../../_images/sphx_glr_plot_plate15_cantilever_large_disp_higher_order_thumb.png" />
+<p><a class="reference internal" href="plot_plate15_cantilever_large_disp_higher_order.html#sphx-glr-auto-examples-plates-plot-plate15-cantilever-large-disp-higher-order-py"><span class="std std-ref">Bending a cantilever beam using Quad9 elements</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Bending a cantilever beam using Quad9 elements</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Features"><img alt="" src="../../_images/sphx_glr_plot_plate19_benchmark01_thumb.png" />
+<p><a class="reference internal" href="plot_plate19_benchmark01.html#sphx-glr-auto-examples-plates-plot-plate19-benchmark01-py"><span class="std std-ref">Benchmark problem: Wedged Plate - geometrically linear theory</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Benchmark problem: Wedged Plate - geometrically linear theory</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Features"><img alt="" src="../../_images/sphx_glr_plot_plate20_benchmark01_thumb.png" />
+<p><a class="reference internal" href="plot_plate20_benchmark01.html#sphx-glr-auto-examples-plates-plot-plate20-benchmark01-py"><span class="std std-ref">Benchmark problem: Wedged Plate - finite deformations</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Benchmark problem: Wedged Plate - finite deformations</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Features"><img alt="" src="../../_images/sphx_glr_plot_plate21_benchmark01_thumb.png" />
+<p><a class="reference internal" href="plot_plate21_benchmark01.html#sphx-glr-auto-examples-plates-plot-plate21-benchmark01-py"><span class="std std-ref">Benchmark problem: Wedged Plate - finite deformations</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Benchmark problem: Wedged Plate - finite deformations</div>
 </div></div><div class="toctree-wrapper compound">
 </div>
 </section>
@@ -182,7 +199,7 @@ see the <a class="reference internal" href="../../tutorials.html#tutorials"><spa
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 09, 2025.
+      <span class="lastupdated">Last updated on Jan 10, 2025.
       </span></p>
   </div>
 

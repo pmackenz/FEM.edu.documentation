@@ -72,14 +72,18 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">A square patch made of one quadrilateral plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate05_quad_test2.html">A square patch made of one quadrilateral plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate06_element_modes.html">Element Testing: Analyzing Modes and Energy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate07_comparison.html">A square patch: element comparison</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate08_triangle_patch_test.html">Patch test for triangular plate under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate09_quad_patch_test.html">Patch test for quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate10_mixed_mesh_patch_test.html">Patch test for mixed mesh of triangular and quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate10_profiler.html">Profiling the code</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate11_plate_w_hole_tri_mesh.html">Pulling a plate with a circular hole : using triangles</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate12_plate_w_hole_quad_mesh.html">Pulling a plate with a circular hole : using quads</a></li>
-<li class="toctree-l4"><a class="reference internal" href="plot_plate14_cantilever_large_disp.html">Bending a cantilever beam</a></li>
-<li class="toctree-l4"><a class="reference internal" href="plot_plate20_benchmark01.html">Benchmark problem: Wedged Plate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate14_cantilever_large_disp.html">Bending a cantilever beam using Quad elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate15_cantilever_large_disp_higher_order.html">Bending a cantilever beam using Quad9 elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate19_benchmark01.html">Benchmark problem: Wedged Plate - geometrically linear theory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate20_benchmark01.html">Benchmark problem: Wedged Plate - finite deformations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_plate21_benchmark01.html">Benchmark problem: Wedged Plate - finite deformations</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../mixed/index.html">Mixed Structures Examples</a></li>
@@ -277,24 +281,24 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_0:
+  Node_561:
       x:    [0.000 0.000]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0.000 0.000]
-  Node_1:
+  Node_562:
       x:    [10.000 0.000]
       fix:  [&#39;uy&#39;]
       u:    [1.000 0.000]
-  Node_2:
+  Node_563:
       x:    [10.000 10.000]
       u:    [1.000 -0.300]
-  Node_3:
+  Node_564:
       x:    [0.000 10.000]
       u:    [-0.000 -0.300]
 
 Elements:
 ---------------------
-  ReducedIntegrationQuad_0: nodes ( Node_0 Node_1 Node_2 Node_3 )
+  ReducedIntegrationQuad_829: nodes ( Node_561 Node_562 Node_563 Node_564 )
       material: list
       strain (0): xx=1.000e-01 yy=-3.000e-02 xy=-3.710e-17 zz=-2.100e-02
       stress (0): xx=1.000e+00 yy=4.148e-18 xy=-1.427e-16 zz=0.000e+00
@@ -306,7 +310,7 @@ Elements:
       stress (3): xx=1.000e+00 yy=4.148e-18 xy=-1.427e-16 zz=0.000e+00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.523 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.199 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate04-quad-test1-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/40b225c8a082beb50035a5458fc47318/plot_plate04_quad_test1.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate04_quad_test1.ipynb</span></code></a></p>
@@ -333,7 +337,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 09, 2025.
+      <span class="lastupdated">Last updated on Jan 10, 2025.
       </span></p>
   </div>
 
