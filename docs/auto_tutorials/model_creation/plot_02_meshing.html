@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorial 2 - Using Meshers &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tutorial 3 - Loading a Model" href="plot_03_loading.html" />
+    <link rel="prev" title="Tutorial 1 - Creating a Model" href="plot_01_setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Example Gallery</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#model-creation">Model Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#finite-elements-based-on-the-direct-stiffness-method">Finite Elements based on the Direct Stiffness Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#linear-finite-elements">Linear Finite Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#large-deformation-finite-elements">Large Deformation Finite Elements</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#plastic-analysis">Plastic Analysis</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Model Creation</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot_01_setup.html">Tutorial 1 - Creating a Model</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Tutorial 2 - Using Meshers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plot_03_loading.html">Tutorial 3 - Loading a Model</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../direct_stiffness/index.html">Finite Elements based on the Direct Stiffness Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../linear_fem/index.html">Linear Finite Elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../large_deformation/index.html">Large Deformation Finite Elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plasticity/index.html">Plastic Analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/revision_log.html">Full Revision Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Tutorials Gallery</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Model Creation</a></li>
+      <li class="breadcrumb-item active">Tutorial 2 - Using Meshers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/auto_tutorials/model_creation/plot_02_meshing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-tutorials-model-creation-plot-02-meshing-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="tutorial-2-using-meshers">
+<span id="meshing-02"></span><span id="sphx-glr-auto-tutorials-model-creation-plot-02-meshing-py"></span><h1>Tutorial 2 - Using Meshers<a class="headerlink" href="#tutorial-2-using-meshers" title="Link to this heading"></a></h1>
+<p>This tutorial shows how to utilize <a class="reference internal" href="../../implementation/Mesher/Mesher_class.html#mesher-classes"><span class="std std-ref">Mesher classes</span></a>
+to quickly create your structural model.
+The key difference to the technique demonstrated in <a class="reference internal" href="plot_01_setup.html#model-creation-01"><span class="std std-ref">Tutorial 1 - Creating a Model</span></a>
+is that <code class="xref py py-class docutils literal notranslate"><span class="pre">Mesher</span></code> classes describe a general geometry, not finite elements and nodes,
+and provide methods to mesh those geometric domains with beam-, frame-, or plate-elements.</p>
+<section id="the-preparation-stage">
+<h2>The preparation stage<a class="headerlink" href="#the-preparation-stage" title="Link to this heading"></a></h2>
+<p>Before building a model, we need to load the used components.
+Every model needs one <code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code> instance.  Furthermore,
+we are going to load several <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> instances for use throughout this tutorial.</p>
+<p>We will load the respective <code class="xref py py-class docutils literal notranslate"><span class="pre">Mesher</span></code> class right where we demonstrate their use.</p>
+<p>Loading those class definitions requires the following:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span>
+<span class="c1"># line-type elements</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Frame2D</span>
+<span class="c1"># triangle plate-type elements</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Triangle</span><span class="p">,</span> <span class="n">Triangle6</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.diffusion</span> <span class="kn">import</span> <span class="n">Triangle</span> <span class="k">as</span> <span class="n">ThermalTriangle</span>
+<span class="c1"># quadrilateral plate-type elements</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Quad</span><span class="p">,</span> <span class="n">Quad9</span>
+<span class="c1"># elastic materials</span>
+<span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">ElasticSection</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">,</span> <span class="n">PlaneStrain</span><span class="p">,</span> <span class="n">Thermal</span>
+</pre></div>
+</div>
+<p>For more detail on the loaded types, read <a class="reference internal" href="../../implementation/Elements/Element_class.html#element-classes"><span class="std std-ref">Element classes</span></a> and <a class="reference internal" href="../../implementation/Materials/Material_class.html#material-classes"><span class="std std-ref">Material class</span></a>.</p>
+</section>
+<section id="curve-meshers">
+<h2>Curve Meshers<a class="headerlink" href="#curve-meshers" title="Link to this heading"></a></h2>
+<p>This mesher takes two or more points to create an interpolated smooth curve using B-splines.
+The <code class="xref py py-meth docutils literal notranslate"><span class="pre">CurveMesher.mesh()</span></code> generates nodes and elements along that curve and adds them to your model.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.mesher</span> <span class="kn">import</span> <span class="n">CurveMesher</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+<span class="n">mesher</span> <span class="o">=</span> <span class="n">CurveMesher</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">.25</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mf">3.</span><span class="p">,</span><span class="mf">1.5</span><span class="p">))</span>
+<span class="n">mesher</span><span class="o">.</span><span class="n">mesh</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">Frame2D</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">())</span>
+<span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;CurveMesher demo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_02_meshing_001.png" srcset="../../_images/sphx_glr_plot_02_meshing_001.png" alt="CurveMesher demo" class = "sphx-glr-single-img"/><p>Read <a class="reference internal" href="../../implementation/Mesher/CurveMesher_class.html#curvemesher-class"><span class="std std-ref">CurveMesher class</span></a> for more information on this <code class="xref py py-meth docutils literal notranslate"><span class="pre">Mesher()</span></code></p>
+</section>
+<section id="triangle-domain-meshers">
+<h2>Triangle Domain Meshers<a class="headerlink" href="#triangle-domain-meshers" title="Link to this heading"></a></h2>
+<p>This mesher defines a triangular domain out of a minimum of three (3) corner points.
+You may define up to three additional points, where each additional point defines the location of the
+mid-point along the first (pt0 to pt1),
+second (pt1 to pt2), and third (pt2 to pt0) side, respectively.
+Sides and the respective domain will be interpolated using a full quadratic polynomial.</p>
+<p>Entering <cite>None</cite> in place of a point will place a midpoint at the half point along a straight side.</p>
+<p>It makes sense to parametrize any mesh generation to easily perform mesh refinement,
+change dimensions and/or units, or modify material parameters for the entire model.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.mesher</span> <span class="kn">import</span> <span class="n">PatchMesher</span><span class="p">,</span> <span class="n">TriPatchMesher</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+
+<span class="c1"># ========== setting mesh parameters ==============</span>
+<span class="n">Nx</span> <span class="o">=</span> <span class="mi">6</span>        <span class="c1"># number of elements per side</span>
+<span class="n">Lx</span> <span class="o">=</span> <span class="mf">100.0</span>    <span class="c1"># length of plate in the x-direction</span>
+<span class="n">Ly</span> <span class="o">=</span>  <span class="mf">60.0</span>    <span class="c1"># length of plate in the y-direction</span>
+
+<span class="c1"># ========== setting material parameters ==============</span>
+<span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">E</span>  <span class="o">=</span> <span class="mf">20000.</span><span class="p">,</span>    <span class="c1"># Young&#39;s modulus</span>
+    <span class="n">nu</span> <span class="o">=</span> <span class="mf">0.250</span><span class="p">,</span>     <span class="c1"># Poisson&#39;s ratio</span>
+    <span class="n">t</span>  <span class="o">=</span> <span class="mf">1.00</span>       <span class="c1"># thickness of the plate</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>We shall generate two equally shaped domains to side-by-side demonstrate different meshing options.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create reference points</span>
+<span class="n">pt0</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.25</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="n">pt1</span> <span class="o">=</span> <span class="p">(</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">);</span> <span class="n">pt2</span> <span class="o">=</span> <span class="p">(</span><span class="n">Lx</span><span class="p">,</span> <span class="n">Ly</span><span class="p">);</span> <span class="n">pt4</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.95</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">Ly</span><span class="p">);</span> <span class="n">pt5</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.75</span><span class="o">*</span><span class="n">Ly</span><span class="p">)</span>
+<span class="n">pt6</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.25</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="n">pt7</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.00</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">);</span> <span class="n">pt8</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.00</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="n">Ly</span><span class="p">);</span> <span class="n">pt10</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.95</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">Ly</span><span class="p">);</span> <span class="n">pt11</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.5</span><span class="o">*</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.75</span><span class="o">*</span><span class="n">Ly</span><span class="p">)</span>
+
+<span class="n">mesher1</span> <span class="o">=</span> <span class="n">TriPatchMesher</span><span class="p">(</span><span class="n">model</span><span class="p">,</span>
+                         <span class="n">pt0</span><span class="p">,</span> <span class="n">pt1</span><span class="p">,</span> <span class="n">pt2</span><span class="p">,</span>  <span class="c1"># corner nodes</span>
+                         <span class="kc">None</span><span class="p">,</span> <span class="n">pt4</span><span class="p">,</span> <span class="n">pt5</span><span class="p">,</span>  <span class="c1"># mid-side nodes</span>
+                         <span class="p">)</span>
+<span class="n">mesher2</span> <span class="o">=</span> <span class="n">TriPatchMesher</span><span class="p">(</span><span class="n">model</span><span class="p">,</span>
+                         <span class="n">pt6</span><span class="p">,</span> <span class="n">pt7</span><span class="p">,</span> <span class="n">pt8</span><span class="p">,</span>  <span class="c1"># corner nodes</span>
+                         <span class="kc">None</span><span class="p">,</span> <span class="n">pt10</span><span class="p">,</span> <span class="n">pt11</span><span class="p">,</span>  <span class="c1"># mid-side nodes</span>
+                         <span class="p">)</span>
+</pre></div>
+</div>
+<p>The above code generated the geometric domain, while the following commands will generate nodes and finite elements
+within those two domains.  We shall mesh the first domain with triangles, the second with quadrilaterals.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">nodes1</span><span class="p">,</span> <span class="n">elements1</span> <span class="o">=</span> <span class="n">mesher1</span><span class="o">.</span><span class="n">triangleMesh</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Triangle</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+<span class="n">nodes2</span><span class="p">,</span> <span class="n">elements2</span> <span class="o">=</span> <span class="n">mesher2</span><span class="o">.</span><span class="n">quadMesh</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Quad</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Note that the user needs to provide a suitable, i.e., with proper shape, element and material model.  The given element type will be used
+when generating elements.  Each element will receive a unique clone of the provided material object in the process.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The mesher methods <code class="xref py py-meth docutils literal notranslate"><span class="pre">triangleMesh()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">quadMesh()</span></code> will return
+a list of all created nodes, followed by a list of all created elements.  Those
+nodes and elements have been added to the model already and do not require any
+further action by the user.  They are provided for convenience and/or validation only.</p>
+<p>If that information is not needed, simply call the meshing methods without assigning
+their return value to local variables.</p>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;TriPatchMesher demo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_02_meshing_002.png" srcset="../../_images/sphx_glr_plot_02_meshing_002.png" alt="TriPatchMesher demo" class = "sphx-glr-single-img"/><p>Read <a class="reference internal" href="../../implementation/Mesher/TriPatchMesher_class.html#tripatch-mesher-class"><span class="std std-ref">TriPatchMesher class</span></a> for more information on this <code class="xref py py-meth docutils literal notranslate"><span class="pre">Mesher()</span></code></p>
+</section>
+<section id="quadrilateral-domain-meshers">
+<h2>Quadrilateral Domain Meshers<a class="headerlink" href="#quadrilateral-domain-meshers" title="Link to this heading"></a></h2>
+<p>This mesher defines a quadrilateral domain out of a minimum of four (4) corner points.
+You may define up to three additional points, where each additional point defines the location of the
+mid-point along the first (pt0 to pt1),
+second (pt1 to pt2), and third (pt2 to pt0) side, respectively.
+Sides and the respective domain will be interpolated using a full quadratic polynomial.</p>
+<p>Entering <cite>None</cite> in place of a point will place a midpoint at the half point along a straight side.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.mesher</span> <span class="kn">import</span> <span class="n">PatchMesher</span><span class="p">,</span> <span class="n">TriPatchMesher</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+
+<span class="c1"># ========== setting mesh parameters ==============</span>
+<span class="n">Nx</span> <span class="o">=</span> <span class="mi">6</span>  <span class="c1"># number of elements through the wall</span>
+<span class="n">Ny</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># number of elements parallel to the wall</span>
+<span class="n">Lx</span> <span class="o">=</span> <span class="mf">10.00</span>  <span class="c1"># wall thickness in m</span>
+<span class="n">Ly</span> <span class="o">=</span>  <span class="mf">5.00</span>  <span class="c1"># wall thickness in m</span>
+<span class="n">Ri</span> <span class="o">=</span>  <span class="mf">5.00</span>
+<span class="n">Ro</span> <span class="o">=</span> <span class="n">Ri</span> <span class="o">+</span> <span class="n">Lx</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mf">45.0</span><span class="p">)</span>
+<span class="n">dX</span> <span class="o">=</span> <span class="mf">1.2</span><span class="o">*</span><span class="p">(</span><span class="n">Ro</span> <span class="o">-</span> <span class="n">Ri</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span>
+
+<span class="n">pts</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span> <span class="n">Ri</span><span class="p">,</span>  <span class="mi">0</span><span class="p">),</span>  <span class="c1"># 0</span>
+    <span class="p">(</span> <span class="n">Ro</span><span class="p">,</span>  <span class="mi">0</span><span class="p">),</span>  <span class="c1"># 1</span>
+    <span class="p">(</span> <span class="n">Ri</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="n">Ri</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)),</span>  <span class="c1"># 2</span>
+    <span class="p">(</span> <span class="n">Ro</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="n">Ro</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)),</span>  <span class="c1"># 3</span>
+    <span class="p">(</span> <span class="n">Ri</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">Ri</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">)),</span>  <span class="c1"># 4</span>
+    <span class="p">(</span> <span class="n">Ro</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">Ro</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">)),</span>  <span class="c1"># 5</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>The above code generated the geometric domain, while the following commands will generate nodes and finite elements
+within that domain.  We shall mesh this domain with triangles.</p>
+<p>Note that the user needs to provide a suitable, i.e., with proper shape, element and material model.
+The given element type will be used when generating elements.
+Each element will receive a unique clone of the provided material object in the process.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mesher1</span> <span class="o">=</span> <span class="n">PatchMesher</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">nodes1</span><span class="p">,</span> <span class="n">elements1</span> <span class="o">=</span> <span class="n">mesher1</span><span class="o">.</span><span class="n">triangleMesh</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Ny</span><span class="p">,</span> <span class="n">ThermalTriangle</span><span class="p">,</span> <span class="n">Thermal</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Let’s generate a second identical domain but mesh it with quadrilaterals instead.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span> <span class="n">dX</span><span class="o">+</span><span class="n">Ri</span><span class="p">,</span>  <span class="mi">0</span><span class="p">),</span>  <span class="c1"># 0</span>
+    <span class="p">(</span> <span class="n">dX</span><span class="o">+</span><span class="n">Ro</span><span class="p">,</span>  <span class="mi">0</span><span class="p">),</span>  <span class="c1"># 1</span>
+    <span class="p">(</span> <span class="n">dX</span><span class="o">+</span><span class="n">Ri</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="n">Ri</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)),</span>  <span class="c1"># 2</span>
+    <span class="p">(</span> <span class="n">dX</span><span class="o">+</span><span class="n">Ro</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">),</span> <span class="n">Ro</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="p">)),</span>  <span class="c1"># 3</span>
+    <span class="p">(</span> <span class="n">dX</span><span class="o">+</span><span class="n">Ri</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">Ri</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">)),</span>  <span class="c1"># 4</span>
+    <span class="p">(</span> <span class="n">dX</span><span class="o">+</span><span class="n">Ro</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">Ro</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">)),</span>  <span class="c1"># 5</span>
+<span class="p">)</span>
+
+<span class="n">mesher2</span> <span class="o">=</span> <span class="n">PatchMesher</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">pts</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="n">pts</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">nodes2</span><span class="p">,</span> <span class="n">elements2</span> <span class="o">=</span> <span class="n">mesher2</span><span class="o">.</span><span class="n">quadMesh</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Ny</span><span class="p">,</span> <span class="n">Quad</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;PatchMesher demo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_02_meshing_003.png" srcset="../../_images/sphx_glr_plot_02_meshing_003.png" alt="PatchMesher demo" class = "sphx-glr-single-img"/><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The mesher methods <code class="xref py py-meth docutils literal notranslate"><span class="pre">triangleMesh()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">quadMesh()</span></code> will return
+a list of all created nodes, followed by a list of all created elements.  Those
+nodes and elements have been added to the model already and do not require any
+further action by the user.  They are provided for convenience and/or validation only.</p>
+<p>If that information is not needed, simply call the meshing methods without assigning
+their return value to local variables.</p>
+</div>
+<p>Read <a class="reference internal" href="../../implementation/Mesher/PatchMesher_class.html#patch-mesher-class"><span class="std std-ref">PatchMesher class</span></a> for more information on this <code class="xref py py-meth docutils literal notranslate"><span class="pre">Mesher()</span></code></p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.548 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-model-creation-plot-02-meshing-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/8f5c1e5dc20b16fe4a3e1372048fa701/plot_02_meshing.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_02_meshing.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/be10ed4cce0d95dbfb8f6b3cb3a5b65d/plot_02_meshing.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_02_meshing.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/a22a8c1a510e762948363c02eca9e566/plot_02_meshing.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">plot_02_meshing.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="plot_01_setup.html" class="btn btn-neutral float-left" title="Tutorial 1 - Creating a Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plot_03_loading.html" class="btn btn-neutral float-right" title="Tutorial 3 - Loading a Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on Jan 12, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

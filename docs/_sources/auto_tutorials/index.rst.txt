@@ -8,10 +8,9 @@
 Tutorials Gallery
 ===================
 
-This page contains tutorials plots. Click on any image to see the full image
-and source code.
-
-For examples, see our :ref:`Examples Gallery<examples_gallery>`.
+This page contains tutorials on various tasks, and an overview over available element types.
+Those tutorials provide a quick overview on features and modeling techniques.
+For more full examples, see the :ref:`Examples Gallery<examples_gallery>`.
 
 
 
@@ -61,18 +60,35 @@ Model Creation
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Tutorial 2 - Loading a Model">
+    <div class="sphx-glr-thumbcontainer" tooltip="Tutorial 2 - Using Meshers">
 
 .. only:: html
 
-  .. image:: /auto_tutorials/model_creation/images/thumb/sphx_glr_plot_02_loading_thumb.png
+  .. image:: /auto_tutorials/model_creation/images/thumb/sphx_glr_plot_02_meshing_thumb.png
     :alt:
 
-  :ref:`sphx_glr_auto_tutorials_model_creation_plot_02_loading.py`
+  :ref:`sphx_glr_auto_tutorials_model_creation_plot_02_meshing.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Tutorial 2 - Loading a Model</div>
+      <div class="sphx-glr-thumbnail-title">Tutorial 2 - Using Meshers</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Tutorial 3 - Loading a Model">
+
+.. only:: html
+
+  .. image:: /auto_tutorials/model_creation/images/thumb/sphx_glr_plot_03_loading_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_tutorials_model_creation_plot_03_loading.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Tutorial 3 - Loading a Model</div>
     </div>
 
 
@@ -141,6 +157,7 @@ Large Deformation Finite Elements
 Plastic Analysis
 -----------------
 
+This feature and related examples will be made available in version 1.2, estimated for mid 2025.
 
 
 

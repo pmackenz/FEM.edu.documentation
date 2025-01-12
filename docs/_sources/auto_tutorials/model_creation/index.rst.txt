@@ -36,18 +36,35 @@ Model Creation
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Tutorial 2 - Loading a Model">
+    <div class="sphx-glr-thumbcontainer" tooltip="Tutorial 2 - Using Meshers">
 
 .. only:: html
 
-  .. image:: /auto_tutorials/model_creation/images/thumb/sphx_glr_plot_02_loading_thumb.png
+  .. image:: /auto_tutorials/model_creation/images/thumb/sphx_glr_plot_02_meshing_thumb.png
     :alt:
 
-  :ref:`sphx_glr_auto_tutorials_model_creation_plot_02_loading.py`
+  :ref:`sphx_glr_auto_tutorials_model_creation_plot_02_meshing.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Tutorial 2 - Loading a Model</div>
+      <div class="sphx-glr-thumbnail-title">Tutorial 2 - Using Meshers</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Tutorial 3 - Loading a Model">
+
+.. only:: html
+
+  .. image:: /auto_tutorials/model_creation/images/thumb/sphx_glr_plot_03_loading_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_tutorials_model_creation_plot_03_loading.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Tutorial 3 - Loading a Model</div>
     </div>
 
 
@@ -62,5 +79,6 @@ Model Creation
    :hidden:
 
    /auto_tutorials/model_creation/plot_01_setup
-   /auto_tutorials/model_creation/plot_02_loading
+   /auto_tutorials/model_creation/plot_02_meshing
+   /auto_tutorials/model_creation/plot_03_loading
 

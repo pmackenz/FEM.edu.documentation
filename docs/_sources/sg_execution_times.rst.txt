@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:07.032** total execution time for 43 files **from all galleries**:
+**00:01.548** total execution time for 44 files **from all galleries**:
 
 .. container::
 
@@ -32,8 +32,8 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate15_cantilever_large_disp_higher_order.py` (``../../galleries/examples/plates/plot_plate15_cantilever_large_disp_higher_order.py``)
-     - 00:07.032
+   * - :ref:`sphx_glr_auto_tutorials_model_creation_plot_02_meshing.py` (``../../galleries/tutorials/model_creation/plot_02_meshing.py``)
+     - 00:01.548
      - 0.0
    * - :ref:`sphx_glr_auto_examples_beams_plot_beam01.py` (``../../galleries/examples/beams/plot_beam01.py``)
      - 00:00.000
@@ -113,6 +113,9 @@ Computation times
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate14_cantilever_large_disp.py` (``../../galleries/examples/plates/plot_plate14_cantilever_large_disp.py``)
      - 00:00.000
      - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate15_cantilever_large_disp_higher_order.py` (``../../galleries/examples/plates/plot_plate15_cantilever_large_disp_higher_order.py``)
+     - 00:00.000
+     - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate19_benchmark01.py` (``../../galleries/examples/plates/plot_plate19_benchmark01.py``)
      - 00:00.000
      - 0.0
@@ -158,6 +161,6 @@ Computation times
    * - :ref:`sphx_glr_auto_tutorials_model_creation_plot_01_setup.py` (``../../galleries/tutorials/model_creation/plot_01_setup.py``)
      - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_tutorials_model_creation_plot_02_loading.py` (``../../galleries/tutorials/model_creation/plot_02_loading.py``)
+   * - :ref:`sphx_glr_auto_tutorials_model_creation_plot_03_loading.py` (``../../galleries/tutorials/model_creation/plot_03_loading.py``)
      - 00:00.000
      - 0.0
