@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:01.548** total execution time for 3 files **from auto_tutorials/model_creation**:
+**00:01.126** total execution time for 3 files **from auto_tutorials/model_creation**:
 
 .. container::
 
@@ -32,12 +32,12 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_auto_tutorials_model_creation_plot_02_meshing.py` (``plot_02_meshing.py``)
-     - 00:01.548
+   * - :ref:`sphx_glr_auto_tutorials_model_creation_plot_03_loading.py` (``plot_03_loading.py``)
+     - 00:01.126
      - 0.0
    * - :ref:`sphx_glr_auto_tutorials_model_creation_plot_01_setup.py` (``plot_01_setup.py``)
      - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_tutorials_model_creation_plot_03_loading.py` (``plot_03_loading.py``)
+   * - :ref:`sphx_glr_auto_tutorials_model_creation_plot_02_meshing.py` (``plot_02_meshing.py``)
      - 00:00.000
      - 0.0

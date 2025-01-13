@@ -34,10 +34,234 @@ Before building a model, we need to load the used components.
 Every model needs one :py:class:`System` instance.  Furthermore,
 we are going to use several :py:class:`Node` and :py:class:`Element` instances.
 
+.. GENERATED FROM PYTHON SOURCE LINES 17-25
+
+.. code-block:: Python
+
+
+    from femedu.domain import System, Node
+    from femedu.elements.linear import Quad, Triangle
+    from femedu.materials import PlaneStress
+
+    # create a model domain
+    model = System()
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 26-31
+
+========================
+Nodal loads
+========================
+Depending on your model, these may be nodal forces, moments, or field values (e.g., temperature)
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 32-45
+
+.. code-block:: Python
+
+
+    # create a node and add it to the model
+    node0 = Node(10., 2.)
+    model.addNode(node0)
+
+    # you need to create a mesh to such that your node learns about the available degrees of freedom
+    # ...
+    nd1 = Node(3., 5.)
+    nd2 = Node(0.,0.0)
+    model += nd1
+    model += nd2
+    model += Triangle(node0, nd1, nd2, PlaneStress())
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 46-51
+
+------------------------
+Direct approach
+------------------------
+If you create a node directly and, thus, have its handle available,
+you can load that node as follows.
+
+.. GENERATED FROM PYTHON SOURCE LINES 53-54
+
+apply a point load :math:`P_x = 3.14` and :math:`P_y=-12.345` driving dofs 'ux' and 'uy'
+
+.. GENERATED FROM PYTHON SOURCE LINES 54-56
+
+.. code-block:: Python
+
+    node0.addLoad((3.14, -12.345), ('ux','uy'))
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 57-58
+
+apply a moment :math:`M_z=20.0` at the node.  This moment drives a rotation 'rz', so we need to use that dof-indicator.
+
+.. GENERATED FROM PYTHON SOURCE LINES 58-60
+
+.. code-block:: Python
+
+    node0.addLoad((20.0,),('rz',))
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 61-68
+
+.. note::
+
+   Both values and dof-indicators must be provided as a list.  Python list-types :code:`list` and :code:`tuple` are accepts.
+   When using :code:`tuple`, as in the above example, you must not forget the extra comma (:code:`,`) when
+   creating a tuple containing just a single element.  Alternatively, you may use a :code:`list` as follows.
+
+   :code:`node0.addLoad([20.0],['rz'])`
+
+.. GENERATED FROM PYTHON SOURCE LINES 70-71
+
+You may verify that your load has been properly recorded by printing the loaded node's internal loads dictionary.
+
+.. GENERATED FROM PYTHON SOURCE LINES 71-75
+
+.. code-block:: Python
+
+    print(node0.loads)
+
+    model.plot(show_loads=1, show_reactions=0)
+
+
+
+
+.. image-sg:: /auto_tutorials/model_creation/images/sphx_glr_plot_03_loading_001.png
+   :alt: Deformed System (magnification=1.00)
+   :srcset: /auto_tutorials/model_creation/images/sphx_glr_plot_03_loading_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    {'ux': 3.14, 'uy': -12.345, 'rz': 20.0}
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 76-81
+
+------------------------
+Geometry-based loading
+------------------------
+This approach is needed when a :py:meth:`Mesher` was used to generate the finite element mesh.
+In that case, you can locate one or more node objects based on their location using
+
+.. GENERATED FROM PYTHON SOURCE LINES 81-84
+
+.. code-block:: Python
+
+
+    nodes = model.findNodesAt((3.,5.))
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 85-94
+
+This function return a :code:`list` of tuples containing a :py:meth:`Node` object and its distance from the target point.
+If no nodes are found, an empty list is returned.
+
+Since more than one node might be located, the user should check if
+
+* any node was found: :code:`if nodes: ...`
+* more than one node has been found: :code:`if len(nodes) >1: ...`
+* or simply use the first node in that list: :code:`node_at_location, dist = nodes[0]`
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 94-99
+
+.. code-block:: Python
+
+
+    node_at_location, dist = nodes[0]
+    node_at_location.addLoad((30.0,),('ux',))
+    model.plot(show_loads=1, show_reactions=0)
+
+
+
+
+.. image-sg:: /auto_tutorials/model_creation/images/sphx_glr_plot_03_loading_002.png
+   :alt: Deformed System (magnification=1.00)
+   :srcset: /auto_tutorials/model_creation/images/sphx_glr_plot_03_loading_002.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 100-105
+
+.. note::
+
+   Nodal loads are only applied to those degrees of freedom that are actually supported by the attached elements.
+   Loads attached to dofs that are not part of the mechanical model are ignored.
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 107-112
+
+=======================
+Line loads
+=======================
+These are commonly used with beams and frames to represent axial and transverse distributed loads.
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 116-126
+
+=======================
+Face Loads in 2D
+=======================
+These represent distributed normal and shear loads along the edges of plates.
+To understand how those loads are applied within |Application| we need
+to know that each triangular or each quadrilateral element possesses three
+or four :py:meth:`Face2D` objects, respectively.
+It is those objects that are handling user-provided distributed loads and converting
+them into nodal forces for the element.
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 130-134
+
+=======================
+Surface loads in 3D
+=======================
+These are not yet available in |Application|.
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.000 seconds)
+   **Total running time of the script:** (0 minutes 1.126 seconds)
 
 
 .. _sphx_glr_download_auto_tutorials_model_creation_plot_03_loading.py:
