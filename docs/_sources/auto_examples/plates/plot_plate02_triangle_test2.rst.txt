@@ -81,7 +81,7 @@ Using
 
 Author: Peter Mackenzie-Helnwein
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-121
+.. GENERATED FROM PYTHON SOURCE LINES 65-126
 
 .. code-block:: Python
 
@@ -140,6 +140,10 @@ Author: Peter Mackenzie-Helnwein
 
             model.report()
 
+            # requires femedu-1.0.25 or newer
+            model.valuePlot('sxx', show_mesh=True)
+            model.valuePlot('syy', show_mesh=True)
+            model.valuePlot('sxy', show_mesh=True)
 
 
 
@@ -148,12 +152,13 @@ Author: Peter Mackenzie-Helnwein
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 182-184
+
+.. GENERATED FROM PYTHON SOURCE LINES 187-189
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 184-190
+.. GENERATED FROM PYTHON SOURCE LINES 189-195
 
 .. code-block:: Python
 
@@ -183,6 +188,27 @@ Run the example by creating an instance of the problem and executing it by calli
          :srcset: /auto_examples/plates/images/sphx_glr_plot_plate02_triangle_test2_002.png
          :class: sphx-glr-multi-img
 
+    *
+
+      .. image-sg:: /auto_examples/plates/images/sphx_glr_plot_plate02_triangle_test2_003.png
+         :alt: Contours of '$\sigma_{xx}$'
+         :srcset: /auto_examples/plates/images/sphx_glr_plot_plate02_triangle_test2_003.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/plates/images/sphx_glr_plot_plate02_triangle_test2_004.png
+         :alt: Contours of '$\sigma_{yy}$'
+         :srcset: /auto_examples/plates/images/sphx_glr_plot_plate02_triangle_test2_004.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/plates/images/sphx_glr_plot_plate02_triangle_test2_005.png
+         :alt: Contours of '$\sigma_{xy}$'
+         :srcset: /auto_examples/plates/images/sphx_glr_plot_plate02_triangle_test2_005.png
+         :class: sphx-glr-multi-img
+
 
 .. rst-class:: sphx-glr-script-out
 
@@ -200,29 +226,29 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_548:
+      Node_597:
           x:    [0.000 0.000]
           fix:  ['ux', 'uy']
           u:    [0.000 0.000]
-      Node_549:
+      Node_598:
           x:    [10.000 0.000]
           fix:  ['uy']
           u:    [1.000 0.000]
-      Node_550:
+      Node_599:
           x:    [10.000 10.000]
           u:    [1.000 -0.300]
-      Node_551:
+      Node_600:
           x:    [0.000 10.000]
           fix:  ['ux']
           u:    [0.000 -0.300]
 
     Elements:
     ---------------------
-      Triangle_825: nodes ( Node_548 Node_549 Node_551 )
+      Triangle_834: nodes ( Node_597 Node_598 Node_600 )
           material: PlaneStress
           strain: xx=1.000e-01 yy=-3.000e-02 xy=0.000e+00 zz=-2.100e-02
           stress: xx=1.000e+00 yy=4.148e-18 xy=0.000e+00 zz=0.000e+00
-      Triangle_826: nodes ( Node_550 Node_551 Node_549 )
+      Triangle_835: nodes ( Node_599 Node_600 Node_598 )
           material: PlaneStress
           strain: xx=1.000e-01 yy=-3.000e-02 xy=1.776e-16 zz=-2.100e-02
           stress: xx=1.000e+00 yy=2.447e-15 xy=6.832e-16 zz=0.000e+00
@@ -234,7 +260,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.266 seconds)
+   **Total running time of the script:** (0 minutes 0.546 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate02_triangle_test2.py:

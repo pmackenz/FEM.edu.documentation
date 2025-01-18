@@ -66,6 +66,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../diffusion/index.html">Diffusion Examples</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Plate Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot09b_quad9_patch_test.html">Patch test for mixed mesh of triangular and quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate01_triangle_test1.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate03_triangle_test3.html">A square patch made of two triangular plate elements</a></li>
@@ -242,6 +243,11 @@ for a <code class="xref py py-func docutils literal notranslate"><span class="pr
         <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate02_deformed.png&quot;</span><span class="p">)</span>
 
         <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
+
+        <span class="c1"># requires femedu-1.0.25 or newer</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;sxx&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;syy&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;sxy&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
@@ -253,6 +259,9 @@ for a <code class="xref py py-func docutils literal notranslate"><span class="pr
 <ul class="sphx-glr-horizontal">
 <li><img src="../../_images/sphx_glr_plot_plate02_triangle_test2_001.png" srcset="../../_images/sphx_glr_plot_plate02_triangle_test2_001.png" alt="Undeformed system" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate02_triangle_test2_002.png" srcset="../../_images/sphx_glr_plot_plate02_triangle_test2_002.png" alt="Deformed System (magnification=1.00)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate02_triangle_test2_003.png" srcset="../../_images/sphx_glr_plot_plate02_triangle_test2_003.png" alt="Contours of '$\sigma_{xx}$'" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate02_triangle_test2_004.png" srcset="../../_images/sphx_glr_plot_plate02_triangle_test2_004.png" alt="Contours of '$\sigma_{yy}$'" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate02_triangle_test2_005.png" srcset="../../_images/sphx_glr_plot_plate02_triangle_test2_005.png" alt="Contours of '$\sigma_{xy}$'" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+
 /Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/matplotlib/quiver.py:678: RuntimeWarning: Mean of empty slice.
@@ -266,35 +275,35 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_548:
+  Node_597:
       x:    [0.000 0.000]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0.000 0.000]
-  Node_549:
+  Node_598:
       x:    [10.000 0.000]
       fix:  [&#39;uy&#39;]
       u:    [1.000 0.000]
-  Node_550:
+  Node_599:
       x:    [10.000 10.000]
       u:    [1.000 -0.300]
-  Node_551:
+  Node_600:
       x:    [0.000 10.000]
       fix:  [&#39;ux&#39;]
       u:    [0.000 -0.300]
 
 Elements:
 ---------------------
-  Triangle_825: nodes ( Node_548 Node_549 Node_551 )
+  Triangle_834: nodes ( Node_597 Node_598 Node_600 )
       material: PlaneStress
       strain: xx=1.000e-01 yy=-3.000e-02 xy=0.000e+00 zz=-2.100e-02
       stress: xx=1.000e+00 yy=4.148e-18 xy=0.000e+00 zz=0.000e+00
-  Triangle_826: nodes ( Node_550 Node_551 Node_549 )
+  Triangle_835: nodes ( Node_599 Node_600 Node_598 )
       material: PlaneStress
       strain: xx=1.000e-01 yy=-3.000e-02 xy=1.776e-16 zz=-2.100e-02
       stress: xx=1.000e+00 yy=2.447e-15 xy=6.832e-16 zz=0.000e+00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.266 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.546 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate02-triangle-test2-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/a5749cff2bf3efee28de55a6dceb8ec8/plot_plate02_triangle_test2.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate02_triangle_test2.ipynb</span></code></a></p>
@@ -321,7 +330,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 16, 2025.
+      <span class="lastupdated">Last updated on Jan 17, 2025.
       </span></p>
   </div>
 

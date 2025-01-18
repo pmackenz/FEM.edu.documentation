@@ -28,7 +28,7 @@ Using
 * :py:class:`diffusion.Triangle` (see :ref:`diffusion_triangle_class`)
 * :py:class:`materials.Thermal`  (see :ref:`diffusion_material_classes`)
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-143
+.. GENERATED FROM PYTHON SOURCE LINES 13-145
 
 .. code-block:: Python
 
@@ -160,6 +160,8 @@ Using
                 print(elem)
 
             model.valuePlot('T', show_mesh=True)
+            model.valuePlot('qx', show_mesh=True)
+            model.valuePlot('qy', show_mesh=True)
 
 
 
@@ -169,12 +171,12 @@ Using
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 161-163
+.. GENERATED FROM PYTHON SOURCE LINES 163-165
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 163-167
+.. GENERATED FROM PYTHON SOURCE LINES 165-169
 
 .. code-block:: Python
 
@@ -200,6 +202,20 @@ Run the example by creating an instance of the problem and executing it by calli
       .. image-sg:: /auto_examples/diffusion/images/sphx_glr_plot_thermal03_002.png
          :alt: Contours of 'T'
          :srcset: /auto_examples/diffusion/images/sphx_glr_plot_thermal03_002.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/diffusion/images/sphx_glr_plot_thermal03_003.png
+         :alt: Contours of '$q_{x}$'
+         :srcset: /auto_examples/diffusion/images/sphx_glr_plot_thermal03_003.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/diffusion/images/sphx_glr_plot_thermal03_004.png
+         :alt: Contours of '$q_{y}$'
+         :srcset: /auto_examples/diffusion/images/sphx_glr_plot_thermal03_004.png
          :class: sphx-glr-multi-img
 
 
@@ -3031,7 +3047,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.651 seconds)
+   **Total running time of the script:** (0 minutes 1.350 seconds)
 
 
 .. _sphx_glr_download_auto_examples_diffusion_plot_thermal03.py:

@@ -24,7 +24,7 @@ Patch test for mixed mesh of triangular and quadrilateral plate elements under i
 
 PatchMesher test for the mixed mesh of triangular and quadrilateral plate elements.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-121
+.. GENERATED FROM PYTHON SOURCE LINES 9-124
 
 .. code-block:: Python
 
@@ -130,14 +130,17 @@ PatchMesher test for the mixed mesh of triangular and quadrilateral plate elemen
 
             #model.report()
 
-            model.plot(factor=0, title="undeformed system", filename="plate04_undeformed.png", show_bc=1, show_loads=1)
+            model.plot(factor=0, title="undeformed system", show_bc=1, show_loads=1)
 
             model.setLoadFactor(10.0)
             model.solve()
 
             #model.report()
 
-            model.plot(factor=25., filename="plate04_deformed.png")
+            model.plot(factor=25.)
+            model.valuePlot('sxx', show_mesh=1)
+            model.valuePlot('syy', show_mesh=1)
+            model.valuePlot('sxy', show_mesh=1)
 
 
 
@@ -147,12 +150,12 @@ PatchMesher test for the mixed mesh of triangular and quadrilateral plate elemen
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-143
+.. GENERATED FROM PYTHON SOURCE LINES 144-146
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 143-149
+.. GENERATED FROM PYTHON SOURCE LINES 146-152
 
 .. code-block:: Python
 
@@ -182,12 +185,33 @@ Run the example by creating an instance of the problem and executing it by calli
          :srcset: /auto_examples/plates/images/sphx_glr_plot_plate10_mixed_mesh_patch_test_002.png
          :class: sphx-glr-multi-img
 
+    *
+
+      .. image-sg:: /auto_examples/plates/images/sphx_glr_plot_plate10_mixed_mesh_patch_test_003.png
+         :alt: Contours of '$\sigma_{xx}$'
+         :srcset: /auto_examples/plates/images/sphx_glr_plot_plate10_mixed_mesh_patch_test_003.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/plates/images/sphx_glr_plot_plate10_mixed_mesh_patch_test_004.png
+         :alt: Contours of '$\sigma_{yy}$'
+         :srcset: /auto_examples/plates/images/sphx_glr_plot_plate10_mixed_mesh_patch_test_004.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/plates/images/sphx_glr_plot_plate10_mixed_mesh_patch_test_005.png
+         :alt: Contours of '$\sigma_{xy}$'
+         :srcset: /auto_examples/plates/images/sphx_glr_plot_plate10_mixed_mesh_patch_test_005.png
+         :class: sphx-glr-multi-img
+
 
 .. rst-class:: sphx-glr-script-out
 
  .. code-block:: none
 
-    + Quad_917: nodes ( Node_692 Node_693 Node_701 Node_700 )
+    + Quad_926: nodes ( Node_741 Node_742 Node_750 Node_749 )
         material: list
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -197,75 +221,75 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_952: nodes ( Node_727 Node_728 Node_729 )
+    + Triangle_961: nodes ( Node_776 Node_777 Node_778 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_923: nodes ( Node_707 Node_708 Node_714 )
+    + Triangle_932: nodes ( Node_756 Node_757 Node_763 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_923: nodes ( Node_707 Node_708 Node_714 )
+    + Triangle_932: nodes ( Node_756 Node_757 Node_763 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_932: nodes ( Node_713 Node_714 Node_719 )
+    + Triangle_941: nodes ( Node_762 Node_763 Node_768 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_933: nodes ( Node_714 Node_713 Node_707 )
+    + Triangle_942: nodes ( Node_763 Node_762 Node_756 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_932: nodes ( Node_713 Node_714 Node_719 )
+    + Triangle_941: nodes ( Node_762 Node_763 Node_768 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_940: nodes ( Node_718 Node_719 Node_723 )
+    + Triangle_949: nodes ( Node_767 Node_768 Node_772 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_941: nodes ( Node_719 Node_718 Node_713 )
+    + Triangle_950: nodes ( Node_768 Node_767 Node_762 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_940: nodes ( Node_718 Node_719 Node_723 )
+    + Triangle_949: nodes ( Node_767 Node_768 Node_772 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_946: nodes ( Node_722 Node_723 Node_726 )
+    + Triangle_955: nodes ( Node_771 Node_772 Node_775 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_947: nodes ( Node_723 Node_722 Node_718 )
+    + Triangle_956: nodes ( Node_772 Node_771 Node_767 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_946: nodes ( Node_722 Node_723 Node_726 )
+    + Triangle_955: nodes ( Node_771 Node_772 Node_775 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_950: nodes ( Node_725 Node_726 Node_728 )
+    + Triangle_959: nodes ( Node_774 Node_775 Node_777 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_951: nodes ( Node_726 Node_725 Node_722 )
+    + Triangle_960: nodes ( Node_775 Node_774 Node_771 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_950: nodes ( Node_725 Node_726 Node_728 )
+    + Triangle_959: nodes ( Node_774 Node_775 Node_777 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_952: nodes ( Node_727 Node_728 Node_729 )
+    + Triangle_961: nodes ( Node_776 Node_777 Node_778 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_953: nodes ( Node_728 Node_727 Node_725 )
+    + Triangle_962: nodes ( Node_777 Node_776 Node_774 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_952: nodes ( Node_727 Node_728 Node_729 )
+    + Triangle_961: nodes ( Node_776 Node_777 Node_778 )
         material: PlaneStress
         strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -277,7 +301,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.534 seconds)
+   **Total running time of the script:** (0 minutes 1.122 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate10_mixed_mesh_patch_test.py:

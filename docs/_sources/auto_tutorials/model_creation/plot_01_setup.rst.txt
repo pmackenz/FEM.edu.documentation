@@ -304,7 +304,7 @@ in the following table.
 .. GENERATED FROM PYTHON SOURCE LINES 165-167
 
 Now we are ready to load the model.  This example shall be limited to simple nodal loads.
-For examples of more complex load patters refer to :ref:`model_creation_02`
+For examples of more complex load patters refer to :ref:`meshing_02`
 
 .. GENERATED FROM PYTHON SOURCE LINES 167-170
 
@@ -350,28 +350,28 @@ report about the current state of the model as follows.
 
     Nodes:
     ---------------------
-      Node_4611:
+      Node_4714:
           x:    [0.000 0.000]
           fix:  ['ux', 'uy']
           u:    None
-      Node_4612:
+      Node_4715:
           x:    [8.000 6.000]
           P:    [0.000 -1.000]
           u:    None
-      Node_4613:
+      Node_4716:
           x:    [16.000 0.000]
           fix:  ['uy']
           u:    None
 
     Elements:
     ---------------------
-      Truss: Node_4611 to Node_4612:
+      Truss: Node_4714 to Node_4715:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': 0.0, 'flexure': 0.0}   stress:{'axial': 0.0, 'flexure': 0.0}  
           internal force: 0.0
-      Truss: Node_4612 to Node_4613:
+      Truss: Node_4715 to Node_4716:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': 0.0, 'flexure': 0.0}   stress:{'axial': 0.0, 'flexure': 0.0}  
           internal force: 0.0
-      Truss: Node_4611 to Node_4613:
+      Truss: Node_4714 to Node_4716:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': 0.0, 'flexure': 0.0}   stress:{'axial': 0.0, 'flexure': 0.0}  
           internal force: 0.0
 
@@ -496,28 +496,28 @@ At this point, we may just plot the deformed system
 
     Nodes:
     ---------------------
-      Node_4611:
+      Node_4714:
           x:    [0.000 0.000]
           fix:  ['ux', 'uy']
           u:    [0.000 0.000]
-      Node_4612:
+      Node_4715:
           x:    [8.000 6.000]
           P:    [0.000 -1.000]
           u:    [0.005 -0.021]
-      Node_4613:
+      Node_4716:
           x:    [16.000 0.000]
           fix:  ['uy']
           u:    [0.011 0.000]
 
     Elements:
     ---------------------
-      Truss: Node_4611 to Node_4612:
+      Truss: Node_4714 to Node_4715:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': np.float64(-0.0008333333333333333)}   stress:{'axial': np.float64(-0.8333333333333333), 'flexure': 0.0}  
           internal force: -0.8333333333333333
-      Truss: Node_4612 to Node_4613:
+      Truss: Node_4715 to Node_4716:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': np.float64(-0.0008333333333333333)}   stress:{'axial': np.float64(-0.8333333333333333), 'flexure': 0.0}  
           internal force: -0.8333333333333333
-      Truss: Node_4611 to Node_4613:
+      Truss: Node_4714 to Node_4716:
           material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': np.float64(0.0006666666666666664)}   stress:{'axial': np.float64(0.6666666666666664), 'flexure': 0.0}  
           internal force: 0.6666666666666664
 
@@ -565,7 +565,7 @@ Valid variables are
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.288 seconds)
+   **Total running time of the script:** (0 minutes 0.287 seconds)
 
 
 .. _sphx_glr_download_auto_tutorials_model_creation_plot_01_setup.py:

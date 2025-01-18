@@ -199,7 +199,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.plotter.ElementPlotter.ElementPlotter.valuePlot">
-<span class="sig-name descname"><span class="pre">valuePlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.ElementPlotter.ElementPlotter.valuePlot" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">valuePlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gaussptvalue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.ElementPlotter.ElementPlotter.valuePlot" title="Link to this definition"></a></dt>
 <dd><p>Create a plot using colors to identify magnitude of internal force.</p>
 <p>If <strong>file</strong> is given, store the plot to that file.
 Use proper file extensions to indicate the desired format (.png, .pdf)</p>
@@ -208,6 +208,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>factor</strong> – True | <strong>False</strong></p></li>
 <li><p><strong>filename</strong> – (str)</p></li>
+<li><p><strong>gaussptvalue</strong> – False if variable_name is nodal dof, True if variable_name is a guass-point variable.</p></li>
 </ul>
 </dd>
 </dl>
@@ -250,7 +251,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 16, 2025.
+      <span class="lastupdated">Last updated on Jan 17, 2025.
       </span></p>
   </div>
 

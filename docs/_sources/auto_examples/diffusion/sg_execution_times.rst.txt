@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:03.888** total execution time for 4 files **from auto_examples/diffusion**:
+**00:03.048** total execution time for 4 files **from auto_examples/diffusion**:
 
 .. container::
 
@@ -33,14 +33,14 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_auto_examples_diffusion_plot_thermal03.py` (``plot_thermal03.py``)
-     - 00:01.651
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_diffusion_plot_thermal01.py` (``plot_thermal01.py``)
-     - 00:01.054
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_diffusion_plot_thermal02.py` (``plot_thermal02.py``)
-     - 00:00.762
+     - 00:01.350
      - 0.0
    * - :ref:`sphx_glr_auto_examples_diffusion_plot_thermal04.py` (``plot_thermal04.py``)
-     - 00:00.421
+     - 00:00.633
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_diffusion_plot_thermal01.py` (``plot_thermal01.py``)
+     - 00:00.575
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_diffusion_plot_thermal02.py` (``plot_thermal02.py``)
+     - 00:00.490
      - 0.0

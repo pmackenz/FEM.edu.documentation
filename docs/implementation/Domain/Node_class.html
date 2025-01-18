@@ -332,6 +332,21 @@ Set <code class="code docutils literal notranslate"><span class="pre">local=True
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getMappedValue">
+<span class="sig-name descname"><span class="pre">getMappedValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_lead</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getMappedValue" title="Link to this definition"></a></dt>
+<dd><p>Returns the mapped and weighted nodal value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>var</strong> – optional. If a string identifying the variable is given, this function will return zero i fthe current variable does not match
+the once provided by the caller.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the weighted nodal average for the requested variable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.getNormDeltaU2">
 <span class="sig-name descname"><span class="pre">getNormDeltaU2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">previous_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getNormDeltaU2" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
@@ -353,6 +368,19 @@ Set <code class="code docutils literal notranslate"><span class="pre">local=True
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>initial position vector</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.hasDOF">
+<span class="sig-name descname"><span class="pre">hasDOF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dof</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.hasDOF" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dof</strong> – a dof string ID</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True(False) if dof in(not in) the node’s dof-list</p>
 </dd>
 </dl>
 </dd></dl>
@@ -641,7 +669,7 @@ system such that the <code class="code docutils literal notranslate"><span class
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 16, 2025.
+      <span class="lastupdated">Last updated on Jan 17, 2025.
       </span></p>
   </div>
 

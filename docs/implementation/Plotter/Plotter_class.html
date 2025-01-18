@@ -22,6 +22,7 @@
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -189,6 +190,42 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dt class="sig sig-object py" id="femedu.plotter.Plotter.Plotter.valuePlot">
 <span class="sig-name descname"><span class="pre">valuePlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deformed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.plotter.Plotter.Plotter.valuePlot" title="Link to this definition"></a></dt>
 <dd><p>Create a plot using colors to identify magnitude of internal force.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">known variable_name</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>keyword</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>‘ux’, ‘uy’, ‘uz’</p></td>
+<td><p>displacement component in the <cite>x</cite>, <cite>y</cite> or <cite>z</cite> direction</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘rx’, ‘ry’, ‘rz’</p></td>
+<td><p>rotation around the <cite>x</cite>, <cite>y</cite> or <cite>z</cite> axis</p></td>
+</tr>
+<tr class="row-even"><td><p>‘sxx’, ‘syy’, ‘szz’</p></td>
+<td><p>normal stress <span class="math notranslate nohighlight">\(\sigma_{xx}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{yy}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{zz}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>‘sxy’, ‘syz’, ‘szx’</p></td>
+<td><p>shear stress <span class="math notranslate nohighlight">\(\sigma_{xy}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{yz}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{zx}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>‘epsxx’, ‘epsyy’, ‘epszz’</p></td>
+<td><p>normal strain <span class="math notranslate nohighlight">\(\varepsilon_{xx}\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_{yy}\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_{zz}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>‘epsxy’, ‘epsyz’, ‘epszx’</p></td>
+<td><p>engineering shear strain <span class="math notranslate nohighlight">\(\gamma_{xy}=2\varepsilon_{xy}\)</span>,
+<span class="math notranslate nohighlight">\(\gamma_{yz}=2\varepsilon_{yz}\)</span>,
+<span class="math notranslate nohighlight">\(\gamma_{zx}=2\varepsilon_{zx}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>‘T’</p></td>
+<td><p>temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘qx’, ‘qy’, ‘qz’</p></td>
+<td><p><cite>x</cite>, <cite>y</cite> or <cite>z</cite> component of the temperature gradient, <span class="math notranslate nohighlight">\(q_i = \partial T/\partial x_i\)</span></p></td>
+</tr>
+</tbody>
+</table>
 <p>If <strong>file</strong> is given, store the plot to that file.
 Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 <dl class="field-list simple">
@@ -218,7 +255,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 16, 2025.
+      <span class="lastupdated">Last updated on Jan 17, 2025.
       </span></p>
   </div>
 

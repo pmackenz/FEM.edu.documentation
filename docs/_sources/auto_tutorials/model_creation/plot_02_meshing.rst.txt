@@ -381,7 +381,7 @@ Read :ref:`patch_mesher_class` for more information on this :py:meth:`Mesher`
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.548 seconds)
+   **Total running time of the script:** (0 minutes 0.507 seconds)
 
 
 .. _sphx_glr_download_auto_tutorials_model_creation_plot_02_meshing.py:

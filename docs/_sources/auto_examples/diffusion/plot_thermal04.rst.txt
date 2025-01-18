@@ -52,7 +52,7 @@ The analytic solution follows as
 
 This solution will be compared against the finite element solution in the last figure.
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-163
+.. GENERATED FROM PYTHON SOURCE LINES 36-165
 
 .. code-block:: Python
 
@@ -154,6 +154,8 @@ This solution will be compared against the finite element solution in the last f
             model.report()
 
             model.valuePlot('T', show_mesh=True)
+            model.valuePlot('qx', show_mesh=True)
+            model.valuePlot('qy', show_mesh=True)
 
             # creating a path plot
 
@@ -190,12 +192,12 @@ This solution will be compared against the finite element solution in the last f
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-183
+.. GENERATED FROM PYTHON SOURCE LINES 183-185
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 183-187
+.. GENERATED FROM PYTHON SOURCE LINES 185-189
 
 .. code-block:: Python
 
@@ -226,8 +228,22 @@ Run the example by creating an instance of the problem and executing it by calli
     *
 
       .. image-sg:: /auto_examples/diffusion/images/sphx_glr_plot_thermal04_003.png
-         :alt: Nodal Temperature for ALL Nodes
+         :alt: Contours of '$q_{x}$'
          :srcset: /auto_examples/diffusion/images/sphx_glr_plot_thermal04_003.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/diffusion/images/sphx_glr_plot_thermal04_004.png
+         :alt: Contours of '$q_{y}$'
+         :srcset: /auto_examples/diffusion/images/sphx_glr_plot_thermal04_004.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/diffusion/images/sphx_glr_plot_thermal04_005.png
+         :alt: Nodal Temperature for ALL Nodes
+         :srcset: /auto_examples/diffusion/images/sphx_glr_plot_thermal04_005.png
          :class: sphx-glr-multi-img
 
 
@@ -1054,7 +1070,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.421 seconds)
+   **Total running time of the script:** (0 minutes 0.633 seconds)
 
 
 .. _sphx_glr_download_auto_examples_diffusion_plot_thermal04.py:

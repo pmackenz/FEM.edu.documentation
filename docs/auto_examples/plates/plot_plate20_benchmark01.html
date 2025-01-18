@@ -66,6 +66,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../diffusion/index.html">Diffusion Examples</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Plate Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot09b_quad9_patch_test.html">Patch test for mixed mesh of triangular and quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate01_triangle_test1.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate02_triangle_test2.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate03_triangle_test3.html">A square patch made of two triangular plate elements</a></li>
@@ -248,11 +249,11 @@ to download the full example code.</p>
 
             <span class="c1">#model.report()</span>
 
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_loads</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_reactions</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;benchmark01_deformed_lf</span><span class="si">{</span><span class="n">lf</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_loads</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_reactions</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;benchmark01_ux_lf</span><span class="si">{</span><span class="n">lf</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;uy&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;benchmark01_uy_lf</span><span class="si">{</span><span class="n">lf</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;sxx&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;syy&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;sxy&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="c1"># create a history plot for the end node</span>
 
@@ -270,11 +271,12 @@ to download the full example code.</p>
 <ul class="sphx-glr-horizontal">
 <li><img src="../../_images/sphx_glr_plot_plate20_benchmark01_001.png" srcset="../../_images/sphx_glr_plot_plate20_benchmark01_001.png" alt="undeformed system" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate20_benchmark01_002.png" srcset="../../_images/sphx_glr_plot_plate20_benchmark01_002.png" alt="Deformed System (magnification=1.00)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_plate20_benchmark01_003.png" srcset="../../_images/sphx_glr_plot_plate20_benchmark01_003.png" alt="Contours of 'ux'" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_plate20_benchmark01_004.png" srcset="../../_images/sphx_glr_plot_plate20_benchmark01_004.png" alt="Contours of 'uy'" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_plate20_benchmark01_005.png" srcset="../../_images/sphx_glr_plot_plate20_benchmark01_005.png" alt="Load History Plot" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate20_benchmark01_003.png" srcset="../../_images/sphx_glr_plot_plate20_benchmark01_003.png" alt="Contours of '$\sigma_{xx}$'" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate20_benchmark01_004.png" srcset="../../_images/sphx_glr_plot_plate20_benchmark01_004.png" alt="Contours of '$\sigma_{yy}$'" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate20_benchmark01_005.png" srcset="../../_images/sphx_glr_plot_plate20_benchmark01_005.png" alt="Contours of '$\sigma_{xy}$'" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate20_benchmark01_006.png" srcset="../../_images/sphx_glr_plot_plate20_benchmark01_006.png" alt="Load History Plot" class = "sphx-glr-multi-img"/></li>
 </ul>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+ Quad_6833: nodes ( Node_4218 Node_4219 Node_4228 Node_4227 )
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+ Quad_6854: nodes ( Node_4321 Node_4322 Node_4331 Node_4330 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -284,7 +286,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_6833: nodes ( Node_4218 Node_4219 Node_4228 Node_4227 )
++ Quad_6854: nodes ( Node_4321 Node_4322 Node_4331 Node_4330 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -294,7 +296,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_6841: nodes ( Node_4227 Node_4228 Node_4237 Node_4236 )
++ Quad_6862: nodes ( Node_4330 Node_4331 Node_4340 Node_4339 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -304,7 +306,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_6841: nodes ( Node_4227 Node_4228 Node_4237 Node_4236 )
++ Quad_6862: nodes ( Node_4330 Node_4331 Node_4340 Node_4339 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -314,7 +316,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_6849: nodes ( Node_4236 Node_4237 Node_4246 Node_4245 )
++ Quad_6870: nodes ( Node_4339 Node_4340 Node_4349 Node_4348 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -324,7 +326,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_6849: nodes ( Node_4236 Node_4237 Node_4246 Node_4245 )
++ Quad_6870: nodes ( Node_4339 Node_4340 Node_4349 Node_4348 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -334,7 +336,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_6857: nodes ( Node_4245 Node_4246 Node_4255 Node_4254 )
++ Quad_6878: nodes ( Node_4348 Node_4349 Node_4358 Node_4357 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -344,7 +346,7 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad_6857: nodes ( Node_4245 Node_4246 Node_4255 Node_4254 )
++ Quad_6878: nodes ( Node_4348 Node_4349 Node_4358 Node_4357 )
     material: list
     strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -354,51 +356,51 @@ to download the full example code.</p>
     stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_6872: nodes ( Node_4263 Node_4264 Node_4272 )
++ Triangle_6893: nodes ( Node_4366 Node_4367 Node_4375 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_6873: nodes ( Node_4273 Node_4272 Node_4264 )
++ Triangle_6894: nodes ( Node_4376 Node_4375 Node_4367 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_6873: nodes ( Node_4273 Node_4272 Node_4264 )
++ Triangle_6894: nodes ( Node_4376 Node_4375 Node_4367 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_6888: nodes ( Node_4272 Node_4273 Node_4281 )
++ Triangle_6909: nodes ( Node_4375 Node_4376 Node_4384 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_6889: nodes ( Node_4282 Node_4281 Node_4273 )
++ Triangle_6910: nodes ( Node_4385 Node_4384 Node_4376 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_6889: nodes ( Node_4282 Node_4281 Node_4273 )
++ Triangle_6910: nodes ( Node_4385 Node_4384 Node_4376 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_6904: nodes ( Node_4281 Node_4282 Node_4290 )
++ Triangle_6925: nodes ( Node_4384 Node_4385 Node_4393 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_6905: nodes ( Node_4291 Node_4290 Node_4282 )
++ Triangle_6926: nodes ( Node_4394 Node_4393 Node_4385 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_6905: nodes ( Node_4291 Node_4290 Node_4282 )
++ Triangle_6926: nodes ( Node_4394 Node_4393 Node_4385 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_6920: nodes ( Node_4290 Node_4291 Node_4299 )
++ Triangle_6941: nodes ( Node_4393 Node_4394 Node_4402 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_6921: nodes ( Node_4300 Node_4299 Node_4291 )
++ Triangle_6942: nodes ( Node_4403 Node_4402 Node_4394 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle_6921: nodes ( Node_4300 Node_4299 Node_4291 )
++ Triangle_6942: nodes ( Node_4403 Node_4402 Node_4394 )
     material: PlaneStress
     strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
     stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -557,7 +559,7 @@ Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 25.897 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 23.394 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate20-benchmark01-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/1d4acd38632f5c8cf2f49d2a0ce22f7f/plot_plate20_benchmark01.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate20_benchmark01.ipynb</span></code></a></p>
@@ -584,7 +586,7 @@ Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 16, 2025.
+      <span class="lastupdated">Last updated on Jan 17, 2025.
       </span></p>
   </div>
 

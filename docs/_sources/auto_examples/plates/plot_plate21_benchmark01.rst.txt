@@ -141,11 +141,11 @@ Benchmark problem: Wedged Plate - finite deformations
 
                 # model.report()
 
-            model.plot(factor=1., filename=f"benchmark01_deformed_lf{lf:.2f}.png", show_bc=1, show_loads=1,
-                       show_reactions=1)
+            model.plot(factor=1., show_bc=1, show_loads=1, show_reactions=1)
 
-            model.valuePlot('ux', filename=f"benchmark01_ux_lf{lf:.2f}.png")
-            model.valuePlot('uy', show_mesh=True, filename=f"benchmark01_uy_lf{lf:.2f}.png")
+            model.valuePlot('sxx', show_mesh=1)
+            model.valuePlot('syy', show_mesh=1)
+            model.valuePlot('sxy', show_mesh=1)
 
             # create a history plot for the end node
 
@@ -199,22 +199,29 @@ Run the example by creating an instance of the problem and executing it by calli
     *
 
       .. image-sg:: /auto_examples/plates/images/sphx_glr_plot_plate21_benchmark01_003.png
-         :alt: Contours of 'ux'
+         :alt: Contours of '$\sigma_{xx}$'
          :srcset: /auto_examples/plates/images/sphx_glr_plot_plate21_benchmark01_003.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/plates/images/sphx_glr_plot_plate21_benchmark01_004.png
-         :alt: Contours of 'uy'
+         :alt: Contours of '$\sigma_{yy}$'
          :srcset: /auto_examples/plates/images/sphx_glr_plot_plate21_benchmark01_004.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/plates/images/sphx_glr_plot_plate21_benchmark01_005.png
-         :alt: Load History Plot
+         :alt: Contours of '$\sigma_{xy}$'
          :srcset: /auto_examples/plates/images/sphx_glr_plot_plate21_benchmark01_005.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/plates/images/sphx_glr_plot_plate21_benchmark01_006.png
+         :alt: Load History Plot
+         :srcset: /auto_examples/plates/images/sphx_glr_plot_plate21_benchmark01_006.png
          :class: sphx-glr-multi-img
 
 
@@ -222,8 +229,8 @@ Run the example by creating an instance of the problem and executing it by calli
 
  .. code-block:: none
 
-    + Quad9_7: nodes ( Node_14 Node_16 Node_50 Node_48 Node_15 Node_33 Node_49 Node_31 Node_32 )
-        material: list
+    + Quad9_6950: nodes ( Node_4418 Node_4420 Node_4454 Node_4452 Node_4419 Node_4437 Node_4453 Node_4435 Node_4436 )
+        material: PlaneStress
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
@@ -242,8 +249,8 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad9_7: nodes ( Node_14 Node_16 Node_50 Node_48 Node_15 Node_33 Node_49 Node_31 Node_32 )
-        material: list
+    + Quad9_6950: nodes ( Node_4418 Node_4420 Node_4454 Node_4452 Node_4419 Node_4437 Node_4453 Node_4435 Node_4436 )
+        material: PlaneStress
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
@@ -262,8 +269,8 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad9_7: nodes ( Node_14 Node_16 Node_50 Node_48 Node_15 Node_33 Node_49 Node_31 Node_32 )
-        material: list
+    + Quad9_6950: nodes ( Node_4418 Node_4420 Node_4454 Node_4452 Node_4419 Node_4437 Node_4453 Node_4435 Node_4436 )
+        material: PlaneStress
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
@@ -282,8 +289,8 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad9_15: nodes ( Node_48 Node_50 Node_84 Node_82 Node_49 Node_67 Node_83 Node_65 Node_66 )
-        material: list
+    + Quad9_6958: nodes ( Node_4452 Node_4454 Node_4488 Node_4486 Node_4453 Node_4471 Node_4487 Node_4469 Node_4470 )
+        material: PlaneStress
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
@@ -302,8 +309,8 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad9_15: nodes ( Node_48 Node_50 Node_84 Node_82 Node_49 Node_67 Node_83 Node_65 Node_66 )
-        material: list
+    + Quad9_6958: nodes ( Node_4452 Node_4454 Node_4488 Node_4486 Node_4453 Node_4471 Node_4487 Node_4469 Node_4470 )
+        material: PlaneStress
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
@@ -322,8 +329,8 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad9_15: nodes ( Node_48 Node_50 Node_84 Node_82 Node_49 Node_67 Node_83 Node_65 Node_66 )
-        material: list
+    + Quad9_6958: nodes ( Node_4452 Node_4454 Node_4488 Node_4486 Node_4453 Node_4471 Node_4487 Node_4469 Node_4470 )
+        material: PlaneStress
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
@@ -342,8 +349,8 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad9_23: nodes ( Node_82 Node_84 Node_118 Node_116 Node_83 Node_101 Node_117 Node_99 Node_100 )
-        material: list
+    + Quad9_6966: nodes ( Node_4486 Node_4488 Node_4522 Node_4520 Node_4487 Node_4505 Node_4521 Node_4503 Node_4504 )
+        material: PlaneStress
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
@@ -362,8 +369,8 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad9_23: nodes ( Node_82 Node_84 Node_118 Node_116 Node_83 Node_101 Node_117 Node_99 Node_100 )
-        material: list
+    + Quad9_6966: nodes ( Node_4486 Node_4488 Node_4522 Node_4520 Node_4487 Node_4505 Node_4521 Node_4503 Node_4504 )
+        material: PlaneStress
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
@@ -382,8 +389,8 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad9_23: nodes ( Node_82 Node_84 Node_118 Node_116 Node_83 Node_101 Node_117 Node_99 Node_100 )
-        material: list
+    + Quad9_6966: nodes ( Node_4486 Node_4488 Node_4522 Node_4520 Node_4487 Node_4505 Node_4521 Node_4503 Node_4504 )
+        material: PlaneStress
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
@@ -402,8 +409,8 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad9_31: nodes ( Node_116 Node_118 Node_152 Node_150 Node_117 Node_135 Node_151 Node_133 Node_134 )
-        material: list
+    + Quad9_6974: nodes ( Node_4520 Node_4522 Node_4556 Node_4554 Node_4521 Node_4539 Node_4555 Node_4537 Node_4538 )
+        material: PlaneStress
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
@@ -422,8 +429,8 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad9_31: nodes ( Node_116 Node_118 Node_152 Node_150 Node_117 Node_135 Node_151 Node_133 Node_134 )
-        material: list
+    + Quad9_6974: nodes ( Node_4520 Node_4522 Node_4556 Node_4554 Node_4521 Node_4539 Node_4555 Node_4537 Node_4538 )
+        material: PlaneStress
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
@@ -442,8 +449,8 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad9_31: nodes ( Node_116 Node_118 Node_152 Node_150 Node_117 Node_135 Node_151 Node_133 Node_134 )
-        material: list
+    + Quad9_6974: nodes ( Node_4520 Node_4522 Node_4556 Node_4554 Node_4521 Node_4539 Node_4555 Node_4537 Node_4538 )
+        material: PlaneStress
         strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
@@ -462,7 +469,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_46: nodes ( Node_167 Node_169 Node_201 Node_168 Node_185 Node_184 )
+    + Triangle6_6989: nodes ( Node_4571 Node_4573 Node_4605 Node_4572 Node_4589 Node_4588 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -470,7 +477,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_47: nodes ( Node_203 Node_201 Node_169 Node_202 Node_185 Node_186 )
+    + Triangle6_6990: nodes ( Node_4607 Node_4605 Node_4573 Node_4606 Node_4589 Node_4590 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -478,7 +485,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_47: nodes ( Node_203 Node_201 Node_169 Node_202 Node_185 Node_186 )
+    + Triangle6_6990: nodes ( Node_4607 Node_4605 Node_4573 Node_4606 Node_4589 Node_4590 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -486,7 +493,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_47: nodes ( Node_203 Node_201 Node_169 Node_202 Node_185 Node_186 )
+    + Triangle6_6990: nodes ( Node_4607 Node_4605 Node_4573 Node_4606 Node_4589 Node_4590 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -494,7 +501,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_62: nodes ( Node_201 Node_203 Node_235 Node_202 Node_219 Node_218 )
+    + Triangle6_7005: nodes ( Node_4605 Node_4607 Node_4639 Node_4606 Node_4623 Node_4622 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -502,7 +509,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_63: nodes ( Node_237 Node_235 Node_203 Node_236 Node_219 Node_220 )
+    + Triangle6_7006: nodes ( Node_4641 Node_4639 Node_4607 Node_4640 Node_4623 Node_4624 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -510,7 +517,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_63: nodes ( Node_237 Node_235 Node_203 Node_236 Node_219 Node_220 )
+    + Triangle6_7006: nodes ( Node_4641 Node_4639 Node_4607 Node_4640 Node_4623 Node_4624 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -518,7 +525,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_63: nodes ( Node_237 Node_235 Node_203 Node_236 Node_219 Node_220 )
+    + Triangle6_7006: nodes ( Node_4641 Node_4639 Node_4607 Node_4640 Node_4623 Node_4624 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -526,7 +533,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_78: nodes ( Node_235 Node_237 Node_269 Node_236 Node_253 Node_252 )
+    + Triangle6_7021: nodes ( Node_4639 Node_4641 Node_4673 Node_4640 Node_4657 Node_4656 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -534,7 +541,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_79: nodes ( Node_271 Node_269 Node_237 Node_270 Node_253 Node_254 )
+    + Triangle6_7022: nodes ( Node_4675 Node_4673 Node_4641 Node_4674 Node_4657 Node_4658 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -542,7 +549,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_79: nodes ( Node_271 Node_269 Node_237 Node_270 Node_253 Node_254 )
+    + Triangle6_7022: nodes ( Node_4675 Node_4673 Node_4641 Node_4674 Node_4657 Node_4658 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -550,7 +557,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_79: nodes ( Node_271 Node_269 Node_237 Node_270 Node_253 Node_254 )
+    + Triangle6_7022: nodes ( Node_4675 Node_4673 Node_4641 Node_4674 Node_4657 Node_4658 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -558,7 +565,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_94: nodes ( Node_269 Node_271 Node_303 Node_270 Node_287 Node_286 )
+    + Triangle6_7037: nodes ( Node_4673 Node_4675 Node_4707 Node_4674 Node_4691 Node_4690 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -566,7 +573,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_95: nodes ( Node_305 Node_303 Node_271 Node_304 Node_287 Node_288 )
+    + Triangle6_7038: nodes ( Node_4709 Node_4707 Node_4675 Node_4708 Node_4691 Node_4692 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -574,7 +581,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_95: nodes ( Node_305 Node_303 Node_271 Node_304 Node_287 Node_288 )
+    + Triangle6_7038: nodes ( Node_4709 Node_4707 Node_4675 Node_4708 Node_4691 Node_4692 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -582,7 +589,7 @@ Run the example by creating an instance of the problem and executing it by calli
         stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
         strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle6_95: nodes ( Node_305 Node_303 Node_271 Node_304 Node_287 Node_288 )
+    + Triangle6_7038: nodes ( Node_4709 Node_4707 Node_4675 Node_4708 Node_4691 Node_4692 )
         material: PlaneStress
         strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
         stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
@@ -596,151 +603,151 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   4.4148e+00
     norm of the out-of-balance force:   1.7209e-03
-    norm of the out-of-balance force:   9.7723e-09
+    norm of the out-of-balance force:   9.7855e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   4.2749e+00
     norm of the out-of-balance force:   1.6512e-03
-    norm of the out-of-balance force:   9.4742e-09
+    norm of the out-of-balance force:   9.4793e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   4.1351e+00
     norm of the out-of-balance force:   1.5809e-03
-    norm of the out-of-balance force:   9.0388e-09
+    norm of the out-of-balance force:   9.0103e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   3.9960e+00
     norm of the out-of-balance force:   1.5105e-03
-    norm of the out-of-balance force:   8.5657e-09
+    norm of the out-of-balance force:   8.5706e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   3.8580e+00
     norm of the out-of-balance force:   1.4404e-03
-    norm of the out-of-balance force:   8.0256e-09
+    norm of the out-of-balance force:   8.0254e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   3.7216e+00
     norm of the out-of-balance force:   1.3709e-03
-    norm of the out-of-balance force:   7.4007e-09
+    norm of the out-of-balance force:   7.4338e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   3.5873e+00
     norm of the out-of-balance force:   1.3025e-03
-    norm of the out-of-balance force:   6.7732e-09
+    norm of the out-of-balance force:   6.7808e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   3.4554e+00
     norm of the out-of-balance force:   1.2354e-03
-    norm of the out-of-balance force:   6.2123e-09
+    norm of the out-of-balance force:   6.2301e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   3.3263e+00
     norm of the out-of-balance force:   1.1699e-03
-    norm of the out-of-balance force:   5.6284e-09
+    norm of the out-of-balance force:   5.6192e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   3.2001e+00
     norm of the out-of-balance force:   1.1062e-03
-    norm of the out-of-balance force:   5.0876e-09
+    norm of the out-of-balance force:   5.1121e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   3.0772e+00
     norm of the out-of-balance force:   1.0446e-03
-    norm of the out-of-balance force:   4.6003e-09
+    norm of the out-of-balance force:   4.5933e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   2.9577e+00
     norm of the out-of-balance force:   9.8513e-04
-    norm of the out-of-balance force:   4.1090e-09
+    norm of the out-of-balance force:   4.1141e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   2.8417e+00
     norm of the out-of-balance force:   9.2800e-04
-    norm of the out-of-balance force:   3.6871e-09
+    norm of the out-of-balance force:   3.6971e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   2.7294e+00
     norm of the out-of-balance force:   8.7327e-04
-    norm of the out-of-balance force:   3.2628e-09
+    norm of the out-of-balance force:   3.2329e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   2.6208e+00
     norm of the out-of-balance force:   8.2098e-04
-    norm of the out-of-balance force:   2.8511e-09
+    norm of the out-of-balance force:   2.8627e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   2.5159e+00
     norm of the out-of-balance force:   7.7115e-04
-    norm of the out-of-balance force:   2.5485e-09
+    norm of the out-of-balance force:   2.5234e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   2.4148e+00
     norm of the out-of-balance force:   7.2380e-04
-    norm of the out-of-balance force:   2.2262e-09
+    norm of the out-of-balance force:   2.2656e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   2.3175e+00
     norm of the out-of-balance force:   6.7890e-04
-    norm of the out-of-balance force:   1.9834e-09
+    norm of the out-of-balance force:   1.9576e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   2.2238e+00
     norm of the out-of-balance force:   6.3641e-04
-    norm of the out-of-balance force:   1.7282e-09
+    norm of the out-of-balance force:   1.7049e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   2.1339e+00
     norm of the out-of-balance force:   5.9627e-04
-    norm of the out-of-balance force:   1.4834e-09
+    norm of the out-of-balance force:   1.4794e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   2.0476e+00
     norm of the out-of-balance force:   5.5842e-04
-    norm of the out-of-balance force:   1.3200e-09
+    norm of the out-of-balance force:   1.3324e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   1.9648e+00
     norm of the out-of-balance force:   5.2278e-04
-    norm of the out-of-balance force:   1.1732e-09
+    norm of the out-of-balance force:   1.1520e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   1.8855e+00
     norm of the out-of-balance force:   4.8927e-04
-    norm of the out-of-balance force:   1.1018e-09
+    norm of the out-of-balance force:   1.1128e-09
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   1.8095e+00
     norm of the out-of-balance force:   4.5780e-04
-    norm of the out-of-balance force:   8.9935e-10
+    norm of the out-of-balance force:   8.8935e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
     norm of the out-of-balance force:   1.7369e+00
     norm of the out-of-balance force:   4.2829e-04
-    norm of the out-of-balance force:   8.2426e-10
+    norm of the out-of-balance force:   8.2249e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
 
@@ -750,7 +757,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (2 minutes 20.550 seconds)
+   **Total running time of the script:** (2 minutes 10.093 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate21_benchmark01.py:

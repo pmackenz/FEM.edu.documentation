@@ -60,7 +60,7 @@ Author: Peter Mackenzie-Helnwein
     from femedu.domain import System, Node
     from femedu.solver import NewtonRaphsonSolver
     from femedu.elements.linear import Quad
-    from femedu.elements.finite import Quad9
+    from femedu.elements.linear import Quad9
     from femedu.materials import PlaneStress
 
     # -------------------------------------------------------------
@@ -352,41 +352,41 @@ Let's finish off with a nice plot of the deformed system.
 
     Nodes:
     ---------------------
-      Node_571:
+      Node_620:
           x:    [0.000 0.000]
           fix:  ['ux', 'uy']
           u:    [0.000 0.000]
-      Node_572:
+      Node_621:
           x:    [10.000 0.000]
           fix:  ['uy']
           u:    [0.000 0.000]
-      Node_573:
+      Node_622:
           x:    [10.000 12.000]
           u:    [0.000 0.000]
-      Node_574:
+      Node_623:
           x:    [0.000 12.000]
           fix:  ['ux']
           u:    [0.000 0.000]
-      Node_575:
+      Node_624:
           x:    [5.000 0.000]
           u:    [0.000 0.000]
-      Node_576:
+      Node_625:
           x:    [10.000 6.000]
           u:    [0.000 0.000]
-      Node_577:
+      Node_626:
           x:    [5.000 12.000]
           u:    [0.000 0.000]
-      Node_578:
+      Node_627:
           x:    [0.000 6.000]
           u:    [0.000 0.000]
-      Node_579:
+      Node_628:
           x:    [5.000 6.000]
           u:    [0.000 0.000]
 
     Elements:
     ---------------------
-      Quad9_833: nodes ( Node_571 Node_572 Node_573 Node_574 Node_575 Node_576 Node_577 Node_578 Node_579 )
-          material: list
+      Quad9_842: nodes ( Node_620 Node_621 Node_622 Node_623 Node_624 Node_625 Node_626 Node_627 Node_628 )
+          material: PlaneStress
           strain (0): xx=-1.110e-16 yy=-1.110e-16 xy=-5.551e-17 zz=6.661e-17
           stress (0): xx=-1.586e-15 yy=-1.586e-15 xy=-2.135e-16 zz=0.000e+00
           strain (1): xx=2.220e-16 yy=0.000e+00 xy=9.382e-17 zz=-6.661e-17
@@ -413,7 +413,7 @@ Let's finish off with a nice plot of the deformed system.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.510 seconds)
+   **Total running time of the script:** (0 minutes 1.376 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate06_element_modes.py:

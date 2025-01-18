@@ -66,6 +66,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../diffusion/index.html">Diffusion Examples</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Plate Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot09b_quad9_patch_test.html">Patch test for mixed mesh of triangular and quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate01_triangle_test1.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate02_triangle_test2.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate03_triangle_test3.html">A square patch made of two triangular plate elements</a></li>
@@ -349,7 +350,10 @@ to download the full example code.</p>
 
         <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
 
-        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate07_deformed.png&quot;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;sxx&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;syy&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;sxy&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
@@ -361,102 +365,105 @@ to download the full example code.</p>
 <ul class="sphx-glr-horizontal">
 <li><img src="../../_images/sphx_glr_plot_plate07_comparison_001.png" srcset="../../_images/sphx_glr_plot_plate07_comparison_001.png" alt="Undeformed system" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate07_comparison_002.png" srcset="../../_images/sphx_glr_plot_plate07_comparison_002.png" alt="Deformed System (magnification=1.00)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate07_comparison_003.png" srcset="../../_images/sphx_glr_plot_plate07_comparison_003.png" alt="Contours of '$\sigma_{xx}$'" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate07_comparison_004.png" srcset="../../_images/sphx_glr_plot_plate07_comparison_004.png" alt="Contours of '$\sigma_{yy}$'" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate07_comparison_005.png" srcset="../../_images/sphx_glr_plot_plate07_comparison_005.png" alt="Contours of '$\sigma_{xy}$'" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System Analysis Report
 =======================
 
 Nodes:
 ---------------------
-  Node_580:
+  Node_629:
       x:    [0.000 0.000]
       u:    [0.000 0.000]
-  Node_581:
+  Node_630:
       x:    [10.000 0.000]
       u:    [0.000 0.000]
-  Node_582:
+  Node_631:
       x:    [10.000 10.000]
       u:    [0.000 0.000]
-  Node_583:
+  Node_632:
       x:    [0.000 10.000]
       u:    [0.000 0.000]
-  Node_584:
+  Node_633:
       x:    [22.000 0.000]
       u:    [0.000 0.000]
-  Node_585:
+  Node_634:
       x:    [27.000 0.000]
       u:    [0.000 0.000]
-  Node_586:
+  Node_635:
       x:    [32.000 0.000]
       u:    [0.000 0.000]
-  Node_587:
+  Node_636:
       x:    [22.000 5.000]
       u:    [0.000 0.000]
-  Node_588:
+  Node_637:
       x:    [27.000 5.000]
       u:    [0.000 0.000]
-  Node_589:
+  Node_638:
       x:    [32.000 5.000]
       u:    [0.000 0.000]
-  Node_590:
+  Node_639:
       x:    [22.000 10.000]
       u:    [0.000 0.000]
-  Node_591:
+  Node_640:
       x:    [27.000 10.000]
       u:    [0.000 0.000]
-  Node_592:
+  Node_641:
       x:    [32.000 10.000]
       u:    [0.000 0.000]
-  Node_593:
+  Node_642:
       x:    [22.000 15.000]
       u:    [0.000 0.000]
-  Node_594:
+  Node_643:
       x:    [27.000 15.000]
       u:    [0.000 0.000]
-  Node_595:
+  Node_644:
       x:    [32.000 15.000]
       u:    [0.000 0.000]
-  Node_596:
+  Node_645:
       x:    [22.000 20.000]
       u:    [0.000 0.000]
-  Node_597:
+  Node_646:
       x:    [27.000 20.000]
       u:    [0.000 0.000]
-  Node_598:
+  Node_647:
       x:    [32.000 20.000]
       u:    [0.000 0.000]
-  Node_599:
+  Node_648:
       x:    [22.000 25.000]
       u:    [0.000 0.000]
-  Node_600:
+  Node_649:
       x:    [27.000 25.000]
       u:    [0.000 0.000]
-  Node_601:
+  Node_650:
       x:    [32.000 25.000]
       u:    [0.000 0.000]
-  Node_602:
+  Node_651:
       x:    [0.000 15.000]
       u:    [0.000 0.000]
-  Node_603:
+  Node_652:
       x:    [10.000 15.000]
       u:    [0.000 0.000]
-  Node_604:
+  Node_653:
       x:    [0.000 25.000]
       u:    [0.000 0.000]
-  Node_605:
+  Node_654:
       x:    [10.000 25.000]
       u:    [0.000 0.000]
 
 Elements:
 ---------------------
-  Triangle_834: nodes ( Node_580 Node_581 Node_583 )
+  Triangle_843: nodes ( Node_629 Node_630 Node_632 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_835: nodes ( Node_582 Node_583 Node_581 )
+  Triangle_844: nodes ( Node_631 Node_632 Node_630 )
       material: PlaneStress
       strain: xx=0.000e+00 yy=0.000e+00 xy=-0.000e+00 zz=-0.000e+00
       stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle6_836: nodes ( Node_584 Node_586 Node_590 Node_585 Node_588 Node_587 )
+  Triangle6_845: nodes ( Node_633 Node_635 Node_639 Node_634 Node_637 Node_636 )
       material: PlaneStress
       strain 0: xx=-1.110e-16 yy=0.000e+00 xy=0.000e+00 zz=3.331e-17
       stress 0: xx=-1.220e-15 yy=-3.660e-16 xy=0.000e+00 zz=0.000e+00
@@ -464,7 +471,7 @@ Elements:
       stress 1: xx=-1.220e-15 yy=-3.660e-16 xy=6.459e-31 zz=0.000e+00
       strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
       stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle6_837: nodes ( Node_590 Node_586 Node_592 Node_588 Node_589 Node_591 )
+  Triangle6_846: nodes ( Node_639 Node_635 Node_641 Node_637 Node_638 Node_640 )
       material: PlaneStress
       strain 0: xx=0.000e+00 yy=-1.110e-16 xy=2.484e-16 zz=3.331e-17
       stress 0: xx=-3.660e-16 yy=-1.220e-15 xy=9.554e-16 zz=0.000e+00
@@ -472,8 +479,8 @@ Elements:
       stress 1: xx=-3.660e-16 yy=-1.220e-15 xy=-8.594e-16 zz=0.000e+00
       strain 2: xx=2.220e-16 yy=-1.110e-16 xy=-2.998e-16 zz=-3.331e-17
       stress 2: xx=2.074e-15 yy=-4.880e-16 xy=-1.153e-15 zz=0.000e+00
-  Quad9_838: nodes ( Node_593 Node_595 Node_601 Node_599 Node_594 Node_598 Node_600 Node_596 Node_597 )
-      material: list
+  Quad9_847: nodes ( Node_642 Node_644 Node_650 Node_648 Node_643 Node_647 Node_649 Node_645 Node_646 )
+      material: PlaneStress
       strain (0): xx=8.882e-16 yy=-3.331e-16 xy=-2.776e-17 zz=-1.665e-16
       stress (0): xx=8.662e-15 yy=-7.320e-16 xy=-1.068e-16 zz=0.000e+00
       strain (1): xx=2.220e-16 yy=-4.441e-16 xy=-5.888e-16 zz=6.661e-17
@@ -492,7 +499,7 @@ Elements:
       stress (7): xx=-2.440e-16 yy=6.588e-15 xy=1.057e-14 zz=0.000e+00
       strain (8): xx=-1.776e-15 yy=-2.220e-16 xy=-1.874e-15 zz=5.995e-16
       stress (8): xx=-2.025e-14 yy=-8.296e-15 xy=-7.206e-15 zz=0.000e+00
-  Quad_839: nodes ( Node_602 Node_603 Node_605 Node_604 )
+  Quad_848: nodes ( Node_651 Node_652 Node_654 Node_653 )
       material: list
       strain (0): xx=0.000e+00 yy=0.000e+00 xy=6.245e-17 zz=-0.000e+00
       stress (0): xx=0.000e+00 yy=0.000e+00 xy=2.402e-16 zz=0.000e+00
@@ -509,96 +516,96 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_580:
+  Node_629:
       x:    [0.000 0.000]
       u:    [0.000 0.000]
-  Node_581:
+  Node_630:
       x:    [10.000 0.000]
       u:    [5.000 0.000]
-  Node_582:
+  Node_631:
       x:    [10.000 10.000]
       u:    [5.000 -5.000]
-  Node_583:
+  Node_632:
       x:    [0.000 10.000]
       u:    [0.000 -5.000]
-  Node_584:
+  Node_633:
       x:    [22.000 0.000]
       u:    [0.000 0.000]
-  Node_585:
+  Node_634:
       x:    [27.000 0.000]
       u:    [2.500 0.000]
-  Node_586:
+  Node_635:
       x:    [32.000 0.000]
       u:    [5.000 0.000]
-  Node_587:
+  Node_636:
       x:    [22.000 5.000]
       u:    [0.000 -2.500]
-  Node_588:
+  Node_637:
       x:    [27.000 5.000]
       u:    [2.500 -2.500]
-  Node_589:
+  Node_638:
       x:    [32.000 5.000]
       u:    [5.000 -2.500]
-  Node_590:
+  Node_639:
       x:    [22.000 10.000]
       u:    [0.000 -5.000]
-  Node_591:
+  Node_640:
       x:    [27.000 10.000]
       u:    [2.500 -5.000]
-  Node_592:
+  Node_641:
       x:    [32.000 10.000]
       u:    [5.000 -5.000]
-  Node_593:
+  Node_642:
       x:    [22.000 15.000]
       u:    [0.000 0.000]
-  Node_594:
+  Node_643:
       x:    [27.000 15.000]
       u:    [2.500 0.000]
-  Node_595:
+  Node_644:
       x:    [32.000 15.000]
       u:    [5.000 0.000]
-  Node_596:
+  Node_645:
       x:    [22.000 20.000]
       u:    [0.000 -2.500]
-  Node_597:
+  Node_646:
       x:    [27.000 20.000]
       u:    [2.500 -2.500]
-  Node_598:
+  Node_647:
       x:    [32.000 20.000]
       u:    [5.000 -2.500]
-  Node_599:
+  Node_648:
       x:    [22.000 25.000]
       u:    [0.000 -5.000]
-  Node_600:
+  Node_649:
       x:    [27.000 25.000]
       u:    [2.500 -5.000]
-  Node_601:
+  Node_650:
       x:    [32.000 25.000]
       u:    [5.000 -5.000]
-  Node_602:
+  Node_651:
       x:    [0.000 15.000]
       u:    [0.000 0.000]
-  Node_603:
+  Node_652:
       x:    [10.000 15.000]
       u:    [5.000 0.000]
-  Node_604:
+  Node_653:
       x:    [0.000 25.000]
       u:    [0.000 -5.000]
-  Node_605:
+  Node_654:
       x:    [10.000 25.000]
       u:    [5.000 -5.000]
 
 Elements:
 ---------------------
-  Triangle_834: nodes ( Node_580 Node_581 Node_583 )
+  Triangle_843: nodes ( Node_629 Node_630 Node_632 )
       material: PlaneStress
       strain: xx=5.000e-01 yy=-5.000e-01 xy=0.000e+00 zz=-0.000e+00
       stress: xx=3.846e+00 yy=-3.846e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle_835: nodes ( Node_582 Node_583 Node_581 )
+  Triangle_844: nodes ( Node_631 Node_632 Node_630 )
       material: PlaneStress
       strain: xx=5.000e-01 yy=-5.000e-01 xy=-0.000e+00 zz=-0.000e+00
       stress: xx=3.846e+00 yy=-3.846e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle6_836: nodes ( Node_584 Node_586 Node_590 Node_585 Node_588 Node_587 )
+  Triangle6_845: nodes ( Node_633 Node_635 Node_639 Node_634 Node_637 Node_636 )
       material: PlaneStress
       strain 0: xx=5.000e-01 yy=-5.000e-01 xy=0.000e+00 zz=1.332e-16
       stress 0: xx=3.846e+00 yy=-3.846e+00 xy=0.000e+00 zz=0.000e+00
@@ -606,7 +613,7 @@ Elements:
       stress 1: xx=3.846e+00 yy=-3.846e+00 xy=-9.394e-16 zz=0.000e+00
       strain 2: xx=5.000e-01 yy=-5.000e-01 xy=0.000e+00 zz=5.329e-16
       stress 2: xx=3.846e+00 yy=-3.846e+00 xy=0.000e+00 zz=0.000e+00
-  Triangle6_837: nodes ( Node_590 Node_586 Node_592 Node_588 Node_589 Node_591 )
+  Triangle6_846: nodes ( Node_639 Node_635 Node_641 Node_637 Node_638 Node_640 )
       material: PlaneStress
       strain 0: xx=5.000e-01 yy=-5.000e-01 xy=4.573e-16 zz=-1.332e-16
       stress 0: xx=3.846e+00 yy=-3.846e+00 xy=1.759e-15 zz=0.000e+00
@@ -614,8 +621,8 @@ Elements:
       stress 1: xx=3.846e+00 yy=-3.846e+00 xy=3.840e-15 zz=0.000e+00
       strain 2: xx=5.000e-01 yy=-5.000e-01 xy=-2.609e-16 zz=-0.000e+00
       stress 2: xx=3.846e+00 yy=-3.846e+00 xy=-1.003e-15 zz=0.000e+00
-  Quad9_838: nodes ( Node_593 Node_595 Node_601 Node_599 Node_594 Node_598 Node_600 Node_596 Node_597 )
-      material: list
+  Quad9_847: nodes ( Node_642 Node_644 Node_650 Node_648 Node_643 Node_647 Node_649 Node_645 Node_646 )
+      material: PlaneStress
       strain (0): xx=5.000e-01 yy=-5.000e-01 xy=3.053e-16 zz=-3.331e-16
       stress (0): xx=3.846e+00 yy=-3.846e+00 xy=1.174e-15 zz=0.000e+00
       strain (1): xx=5.000e-01 yy=-5.000e-01 xy=-1.154e-15 zz=-6.661e-17
@@ -634,7 +641,7 @@ Elements:
       stress (7): xx=3.846e+00 yy=-3.846e+00 xy=1.178e-14 zz=0.000e+00
       strain (8): xx=5.000e-01 yy=-5.000e-01 xy=-1.402e-15 zz=6.328e-16
       stress (8): xx=3.846e+00 yy=-3.846e+00 xy=-5.391e-15 zz=0.000e+00
-  Quad_839: nodes ( Node_602 Node_603 Node_605 Node_604 )
+  Quad_848: nodes ( Node_651 Node_652 Node_654 Node_653 )
       material: list
       strain (0): xx=5.000e-01 yy=-5.000e-01 xy=4.510e-17 zz=-0.000e+00
       stress (0): xx=3.846e+00 yy=-3.846e+00 xy=1.735e-16 zz=0.000e+00
@@ -646,7 +653,7 @@ Elements:
       stress (3): xx=3.846e+00 yy=-3.846e+00 xy=1.601e-16 zz=0.000e+00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.420 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.487 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate07-comparison-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/57eb61f5ec65712139e420a73637f953/plot_plate07_comparison.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate07_comparison.ipynb</span></code></a></p>
@@ -673,7 +680,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 16, 2025.
+      <span class="lastupdated">Last updated on Jan 17, 2025.
       </span></p>
   </div>
 

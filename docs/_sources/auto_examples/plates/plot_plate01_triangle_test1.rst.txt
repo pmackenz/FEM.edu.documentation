@@ -177,26 +177,26 @@ Run the example by creating an instance of the problem and executing it by calli
 
     Nodes:
     ---------------------
-      Node_544:
+      Node_593:
           x:    [0.000 0.000]
           u:    [0.000 0.000]
-      Node_545:
+      Node_594:
           x:    [10.000 0.000]
           u:    [5.000 0.000]
-      Node_546:
+      Node_595:
           x:    [10.000 10.000]
           u:    [5.000 -5.000]
-      Node_547:
+      Node_596:
           x:    [0.000 10.000]
           u:    [0.000 -5.000]
 
     Elements:
     ---------------------
-      Triangle_823: nodes ( Node_544 Node_545 Node_547 )
+      Triangle_832: nodes ( Node_593 Node_594 Node_596 )
           material: PlaneStress
           strain: xx=5.000e-01 yy=-5.000e-01 xy=0.000e+00 zz=-0.000e+00
           stress: xx=3.846e+00 yy=-3.846e+00 xy=0.000e+00 zz=0.000e+00
-      Triangle_824: nodes ( Node_546 Node_547 Node_545 )
+      Triangle_833: nodes ( Node_595 Node_596 Node_594 )
           material: PlaneStress
           strain: xx=5.000e-01 yy=-5.000e-01 xy=-0.000e+00 zz=-0.000e+00
           stress: xx=3.846e+00 yy=-3.846e+00 xy=0.000e+00 zz=0.000e+00
@@ -208,7 +208,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.252 seconds)
+   **Total running time of the script:** (0 minutes 0.262 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate01_triangle_test1.py:

@@ -66,6 +66,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../diffusion/index.html">Diffusion Examples</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Plate Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot09b_quad9_patch_test.html">Patch test for mixed mesh of triangular and quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate01_triangle_test1.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate02_triangle_test2.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate03_triangle_test3.html">A square patch made of two triangular plate elements</a></li>
@@ -163,7 +164,7 @@ to download the full example code.</p>
 <span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
 <span class="kn">from</span> <span class="nn">femedu.solver</span> <span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span>
 <span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Quad</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.finite</span> <span class="kn">import</span> <span class="n">Quad9</span>
+<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Quad9</span>
 <span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">PlaneStress</span>
 
 <span class="c1"># -------------------------------------------------------------</span>
@@ -273,41 +274,41 @@ and check the convergence behavior.</p>
 
 Nodes:
 ---------------------
-  Node_571:
+  Node_620:
       x:    [0.000 0.000]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0.000 0.000]
-  Node_572:
+  Node_621:
       x:    [10.000 0.000]
       fix:  [&#39;uy&#39;]
       u:    [0.000 0.000]
-  Node_573:
+  Node_622:
       x:    [10.000 12.000]
       u:    [0.000 0.000]
-  Node_574:
+  Node_623:
       x:    [0.000 12.000]
       fix:  [&#39;ux&#39;]
       u:    [0.000 0.000]
-  Node_575:
+  Node_624:
       x:    [5.000 0.000]
       u:    [0.000 0.000]
-  Node_576:
+  Node_625:
       x:    [10.000 6.000]
       u:    [0.000 0.000]
-  Node_577:
+  Node_626:
       x:    [5.000 12.000]
       u:    [0.000 0.000]
-  Node_578:
+  Node_627:
       x:    [0.000 6.000]
       u:    [0.000 0.000]
-  Node_579:
+  Node_628:
       x:    [5.000 6.000]
       u:    [0.000 0.000]
 
 Elements:
 ---------------------
-  Quad9_833: nodes ( Node_571 Node_572 Node_573 Node_574 Node_575 Node_576 Node_577 Node_578 Node_579 )
-      material: list
+  Quad9_842: nodes ( Node_620 Node_621 Node_622 Node_623 Node_624 Node_625 Node_626 Node_627 Node_628 )
+      material: PlaneStress
       strain (0): xx=-1.110e-16 yy=-1.110e-16 xy=-5.551e-17 zz=6.661e-17
       stress (0): xx=-1.586e-15 yy=-1.586e-15 xy=-2.135e-16 zz=0.000e+00
       strain (1): xx=2.220e-16 yy=0.000e+00 xy=9.382e-17 zz=-6.661e-17
@@ -328,7 +329,7 @@ Elements:
       stress (8): xx=-7.320e-16 yy=-2.440e-15 xy=-1.228e-15 zz=0.000e+00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.510 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.376 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate06-element-modes-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/14ff78e68b69d08707f3ae74dd0d669a/plot_plate06_element_modes.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate06_element_modes.ipynb</span></code></a></p>
@@ -355,7 +356,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 16, 2025.
+      <span class="lastupdated">Last updated on Jan 17, 2025.
       </span></p>
   </div>
 

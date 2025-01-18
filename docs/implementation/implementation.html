@@ -171,6 +171,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.getPos"><code class="docutils literal notranslate"><span class="pre">Element.getPos()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.getStiffness"><code class="docutils literal notranslate"><span class="pre">Element.getStiffness()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.initialize"><code class="docutils literal notranslate"><span class="pre">Element.initialize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.mapGaussPoints"><code class="docutils literal notranslate"><span class="pre">Element.mapGaussPoints()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.on_converged"><code class="docutils literal notranslate"><span class="pre">Element.on_converged()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.recordThisStep"><code class="docutils literal notranslate"><span class="pre">Element.recordThisStep()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Elements/Element_class.html#femedu.elements.Element.Element.resetLoads"><code class="docutils literal notranslate"><span class="pre">Element.resetLoads()</span></code></a></li>
@@ -325,8 +326,10 @@
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.getLeadID"><code class="docutils literal notranslate"><span class="pre">Node.getLeadID()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.getLoad"><code class="docutils literal notranslate"><span class="pre">Node.getLoad()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.getLocalTransformationMap"><code class="docutils literal notranslate"><span class="pre">Node.getLocalTransformationMap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.getMappedValue"><code class="docutils literal notranslate"><span class="pre">Node.getMappedValue()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.getNormDeltaU2"><code class="docutils literal notranslate"><span class="pre">Node.getNormDeltaU2()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.getPos"><code class="docutils literal notranslate"><span class="pre">Node.getPos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.hasDOF"><code class="docutils literal notranslate"><span class="pre">Node.hasDOF()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.hasLoad"><code class="docutils literal notranslate"><span class="pre">Node.hasLoad()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.isClose"><code class="docutils literal notranslate"><span class="pre">Node.isClose()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Domain/Node_class.html#femedu.domain.Node.Node.isFixed"><code class="docutils literal notranslate"><span class="pre">Node.isFixed()</span></code></a></li>
@@ -450,6 +453,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Plotter/Plot_Support_Classes.html#femedu.plotter.AbstractPlotter.AbstractPlotter.addForces"><code class="docutils literal notranslate"><span class="pre">AbstractPlotter.addForces()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Plotter/Plot_Support_Classes.html#femedu.plotter.AbstractPlotter.AbstractPlotter.beamValuePlot"><code class="docutils literal notranslate"><span class="pre">AbstractPlotter.beamValuePlot()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Plotter/Plot_Support_Classes.html#femedu.plotter.AbstractPlotter.AbstractPlotter.displacementPlot"><code class="docutils literal notranslate"><span class="pre">AbstractPlotter.displacementPlot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Plotter/Plot_Support_Classes.html#femedu.plotter.AbstractPlotter.AbstractPlotter.getLabel"><code class="docutils literal notranslate"><span class="pre">AbstractPlotter.getLabel()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Plotter/Plot_Support_Classes.html#femedu.plotter.AbstractPlotter.AbstractPlotter.setDisplacements"><code class="docutils literal notranslate"><span class="pre">AbstractPlotter.setDisplacements()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Plotter/Plot_Support_Classes.html#femedu.plotter.AbstractPlotter.AbstractPlotter.setMesh"><code class="docutils literal notranslate"><span class="pre">AbstractPlotter.setMesh()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Plotter/Plot_Support_Classes.html#femedu.plotter.AbstractPlotter.AbstractPlotter.setNodalLoads"><code class="docutils literal notranslate"><span class="pre">AbstractPlotter.setNodalLoads()</span></code></a></li>
@@ -540,7 +544,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 16, 2025.
+      <span class="lastupdated">Last updated on Jan 17, 2025.
       </span></p>
   </div>
 

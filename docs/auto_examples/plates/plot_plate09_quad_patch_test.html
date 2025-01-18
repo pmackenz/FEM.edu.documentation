@@ -66,6 +66,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../diffusion/index.html">Diffusion Examples</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Plate Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot09b_quad9_patch_test.html">Patch test for mixed mesh of triangular and quadrilateral plate elements under in-plane loading</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate01_triangle_test1.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate02_triangle_test2.html">A square patch made of two triangular plate elements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="plot_plate03_triangle_test3.html">A square patch made of two triangular plate elements</a></li>
@@ -259,7 +260,7 @@ e.g., constant tension in the x-direction, or constant shear, etc.</p>
         <span class="c1"># these are only nodal forces as part of the reference load</span>
         <span class="c1"># .. load only the upper node</span>
 
-        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;undeformed system&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate09_undeformed.png&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;undeformed system&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
         <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
         <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
@@ -271,11 +272,14 @@ e.g., constant tension in the x-direction, or constant shear, etc.</p>
         <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="mf">10.0</span><span class="p">)</span>
         <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 
-        <span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">showKt</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate09_spy_Kt.png&quot;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">showKt</span><span class="p">()</span>
 
         <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
 
-        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">25.</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;plate09_deformed.png&quot;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">25.</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;sxx&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;syy&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;sxy&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
@@ -288,6 +292,9 @@ e.g., constant tension in the x-direction, or constant shear, etc.</p>
 <li><img src="../../_images/sphx_glr_plot_plate09_quad_patch_test_001.png" srcset="../../_images/sphx_glr_plot_plate09_quad_patch_test_001.png" alt="undeformed system" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate09_quad_patch_test_002.png" srcset="../../_images/sphx_glr_plot_plate09_quad_patch_test_002.png" alt="plot plate09 quad patch test" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate09_quad_patch_test_003.png" srcset="../../_images/sphx_glr_plot_plate09_quad_patch_test_003.png" alt="Deformed System (magnification=25.00)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate09_quad_patch_test_004.png" srcset="../../_images/sphx_glr_plot_plate09_quad_patch_test_004.png" alt="Contours of '$\sigma_{xx}$'" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate09_quad_patch_test_005.png" srcset="../../_images/sphx_glr_plot_plate09_quad_patch_test_005.png" alt="Contours of '$\sigma_{yy}$'" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate09_quad_patch_test_006.png" srcset="../../_images/sphx_glr_plot_plate09_quad_patch_test_006.png" alt="Contours of '$\sigma_{xy}$'" class = "sphx-glr-multi-img"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+
 +
@@ -297,72 +304,72 @@ System Analysis Report
 
 Nodes:
 ---------------------
-  Node_626:
+  Node_675:
       x:    [0.000 0.000]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
       u:    [0.000 0.000]
-  Node_627:
+  Node_676:
       x:    [20.000 0.000]
       u:    [0.100 -0.000]
-  Node_628:
+  Node_677:
       x:    [50.000 0.000]
       u:    [0.250 -0.000]
-  Node_629:
+  Node_678:
       x:    [70.000 0.000]
       u:    [0.350 -0.000]
-  Node_630:
+  Node_679:
       x:    [100.000 0.000]
       fix:  [&#39;uy&#39;]
       u:    [0.500 0.000]
-  Node_631:
+  Node_680:
       x:    [0.000 16.000]
       u:    [-0.000 -0.020]
-  Node_632:
+  Node_681:
       x:    [15.000 24.000]
       u:    [0.075 -0.030]
-  Node_633:
+  Node_682:
       x:    [50.000 16.000]
       u:    [0.250 -0.020]
-  Node_634:
+  Node_683:
       x:    [80.000 24.000]
       u:    [0.400 -0.030]
-  Node_635:
+  Node_684:
       x:    [100.000 16.000]
       u:    [0.500 -0.020]
-  Node_636:
+  Node_685:
       x:    [0.000 48.000]
       u:    [0.000 -0.060]
-  Node_637:
+  Node_686:
       x:    [20.000 40.000]
       u:    [0.100 -0.050]
-  Node_638:
+  Node_687:
       x:    [70.000 56.000]
       u:    [0.350 -0.070]
-  Node_639:
+  Node_688:
       x:    [90.000 48.000]
       u:    [0.450 -0.060]
-  Node_640:
+  Node_689:
       x:    [100.000 56.000]
       u:    [0.500 -0.070]
-  Node_641:
+  Node_690:
       x:    [0.000 80.000]
       u:    [0.000 -0.100]
-  Node_642:
+  Node_691:
       x:    [30.000 80.000]
       u:    [0.150 -0.100]
-  Node_643:
+  Node_692:
       x:    [55.000 80.000]
       u:    [0.275 -0.100]
-  Node_644:
+  Node_693:
       x:    [80.000 80.000]
       u:    [0.400 -0.100]
-  Node_645:
+  Node_694:
       x:    [100.000 80.000]
       u:    [0.500 -0.100]
 
 Elements:
 ---------------------
-  Quad_864: nodes ( Node_626 Node_627 Node_632 Node_631 )
+  Quad_873: nodes ( Node_675 Node_676 Node_681 Node_680 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=-1.046e-16 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=2.367e-12 xy=-8.367e-13 zz=0.000e+00
@@ -372,7 +379,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=2.367e-12 xy=-1.356e-12 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=1.009e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=8.527e-16 xy=8.073e-13 zz=0.000e+00
-  Quad_865: nodes ( Node_627 Node_628 Node_633 Node_632 )
+  Quad_874: nodes ( Node_676 Node_677 Node_682 Node_681 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=7.529e-17 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=2.369e-12 xy=6.023e-13 zz=0.000e+00
@@ -382,7 +389,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=-3.554e-12 xy=1.901e-13 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=3.897e-17 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=1.185e-12 xy=3.118e-13 zz=0.000e+00
-  Quad_866: nodes ( Node_628 Node_629 Node_634 Node_633 )
+  Quad_875: nodes ( Node_677 Node_678 Node_683 Node_682 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=3.344e-16 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=8.527e-16 xy=2.675e-12 zz=0.000e+00
@@ -392,7 +399,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=1.185e-12 xy=3.304e-12 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=-7.355e-17 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=3.551e-12 xy=-5.884e-13 zz=0.000e+00
-  Quad_867: nodes ( Node_629 Node_630 Node_635 Node_634 )
+  Quad_876: nodes ( Node_678 Node_679 Node_684 Node_683 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=-3.066e-16 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=-5.923e-12 xy=-2.452e-12 zz=0.000e+00
@@ -402,7 +409,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=-3.316e-16 xy=7.859e-13 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=2.679e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=2.367e-12 xy=2.143e-12 zz=0.000e+00
-  Quad_868: nodes ( Node_631 Node_632 Node_637 Node_636 )
+  Quad_877: nodes ( Node_680 Node_681 Node_686 Node_685 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=2.026e-17 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=1.183e-12 xy=1.621e-13 zz=0.000e+00
@@ -412,7 +419,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=1.185e-12 xy=-4.932e-14 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=-1.247e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=8.291e-12 xy=-9.975e-13 zz=0.000e+00
-  Quad_869: nodes ( Node_632 Node_633 Node_638 Node_637 )
+  Quad_878: nodes ( Node_681 Node_682 Node_687 Node_686 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=1.100e-16 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=2.367e-12 xy=8.800e-13 zz=0.000e+00
@@ -422,7 +429,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=-2.369e-12 xy=1.586e-12 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=-2.046e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=3.551e-12 xy=-1.637e-12 zz=0.000e+00
-  Quad_870: nodes ( Node_633 Node_634 Node_639 Node_638 )
+  Quad_879: nodes ( Node_682 Node_683 Node_688 Node_687 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=8.123e-17 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=3.554e-12 xy=6.498e-13 zz=0.000e+00
@@ -432,7 +439,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=-2.369e-12 xy=-2.821e-12 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=1.849e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=7.105e-12 xy=1.479e-12 zz=0.000e+00
-  Quad_871: nodes ( Node_634 Node_635 Node_640 Node_639 )
+  Quad_880: nodes ( Node_683 Node_684 Node_689 Node_688 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=-7.082e-17 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=-1.183e-12 xy=-5.666e-13 zz=0.000e+00
@@ -442,7 +449,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=-1.303e-11 xy=-7.607e-12 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=4.363e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=-3.553e-12 xy=3.490e-12 zz=0.000e+00
-  Quad_872: nodes ( Node_636 Node_637 Node_642 Node_641 )
+  Quad_881: nodes ( Node_685 Node_686 Node_691 Node_690 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=1.015e-17 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=5.921e-12 xy=8.120e-14 zz=0.000e+00
@@ -452,7 +459,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=3.551e-12 xy=1.150e-12 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=5.399e-17 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=8.527e-16 xy=4.319e-13 zz=0.000e+00
-  Quad_873: nodes ( Node_637 Node_638 Node_643 Node_642 )
+  Quad_882: nodes ( Node_686 Node_687 Node_692 Node_691 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=1.955e-17 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=-4.737e-12 xy=1.564e-13 zz=0.000e+00
@@ -462,7 +469,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=3.551e-12 xy=-2.883e-12 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=-3.240e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=-4.738e-12 xy=-2.592e-12 zz=0.000e+00
-  Quad_874: nodes ( Node_638 Node_639 Node_644 Node_643 )
+  Quad_883: nodes ( Node_687 Node_688 Node_693 Node_692 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=1.873e-16 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=-3.554e-12 xy=1.498e-12 zz=0.000e+00
@@ -472,7 +479,7 @@ Elements:
       stress (2): xx=1.000e+02 yy=-2.368e-12 xy=1.627e-13 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=2.146e-16 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=9.472e-12 xy=1.717e-12 zz=0.000e+00
-  Quad_875: nodes ( Node_639 Node_640 Node_645 Node_644 )
+  Quad_884: nodes ( Node_688 Node_689 Node_694 Node_693 )
       material: list
       strain (0): xx=5.000e-03 yy=-1.250e-03 xy=-1.364e-16 zz=-9.375e-04
       stress (0): xx=1.000e+02 yy=1.183e-12 xy=-1.091e-12 zz=0.000e+00
@@ -482,14 +489,9 @@ Elements:
       stress (2): xx=1.000e+02 yy=9.474e-12 xy=1.800e-12 zz=0.000e+00
       strain (3): xx=5.000e-03 yy=-1.250e-03 xy=7.021e-17 zz=-9.375e-04
       stress (3): xx=1.000e+02 yy=1.184e-12 xy=5.617e-13 zz=0.000e+00
-
-/Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/matplotlib/quiver.py:678: RuntimeWarning: Mean of empty slice.
-  amean = a.mean()
-/Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:145: RuntimeWarning: invalid value encountered in scalar divide
-  ret = ret.dtype.type(ret / rcount)
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.189 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.633 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate09-quad-patch-test-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/b00d5e9e4be8b0d33a3369a510aecd92/plot_plate09_quad_patch_test.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate09_quad_patch_test.ipynb</span></code></a></p>
@@ -516,7 +518,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Jan 16, 2025.
+      <span class="lastupdated">Last updated on Jan 17, 2025.
       </span></p>
   </div>
 

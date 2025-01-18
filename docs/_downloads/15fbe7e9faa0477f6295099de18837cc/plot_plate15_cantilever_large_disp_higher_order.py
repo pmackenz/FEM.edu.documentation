@@ -90,8 +90,8 @@ from femedu.examples import Example
 
 from femedu.domain import System
 from femedu.solver import NewtonRaphsonSolver
-#from femedu.elements.linear import Quad9
-from femedu.elements.finite import Quad9
+from femedu.elements.linear import Quad9
+#from femedu.elements.finite import Quad9
 from femedu.materials import PlaneStress
 from femedu.mesher import *
 
@@ -115,7 +115,7 @@ class ExamplePlate15(Example):
         # ========== setting mesh parameters ==============
 
         Nx = 4  # number of elements in the mesh
-        Ny = 1  # number of elements in the mesh
+        Ny = 4  # number of elements in the mesh
         Lx = 120.0  # length of plate in the x-direction
         Ly = 20.0  # length of plate in the y-direction
 
@@ -194,8 +194,8 @@ class ExamplePlate15(Example):
 
         model.plot(factor=1., filename=f"plate11_deformed_lf{lf:.2f}.png", show_bc=1, show_loads=1, show_reactions=1)
 
-        model.valuePlot('ux', filename=f"plate11_ux_lf{lf:.2f}.png")
-        model.valuePlot('uy', show_mesh=True, filename=f"plate11_uy_lf{lf:.2f}.png")
+        model.valuePlot('sxx', show_mesh=True)
+        model.valuePlot('sxy', show_mesh=True)
 
         # create a history plot for the end node
 
