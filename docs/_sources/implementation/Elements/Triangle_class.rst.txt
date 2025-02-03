@@ -7,41 +7,145 @@ Coordinate-free formulation for a finite deformation bi-linear triangle.
 
 .. dropdown:: Theory
 
+    The element uses an  iso-parametric mapping for both the reference and the spatial configuration.
+    In the reference configuration,
+
     .. math::
+        :label: eq-triangle1
 
-        \mathbf{X}=\mathbf{X}_0+\mathbf{G}_i \xi^i \quad i=1,2,3 \quad \xi^i \geqslant 0 ~\&~ \xi^1+\xi^2+\xi^3 \leq 1
+        \mathbf{X}=\mathbf{X}_I \xi^I \quad I=0,1,2\equiv u,s,t \quad \xi^I \ge 0 ~\&~ \xi^0+\xi^1+\xi^2 = 1
+
+    where :math:`\xi^I` are standard triangle coordinates.
+    Alternatively, the mapping may be expressed using just two coordinates, :math:`\xi^1\equiv\xi^s` and
+    :math:`\xi^2\equiv\xi^t`, as
 
     .. math::
+        :label: eq-triangle2
 
+        \mathbf{X}=\mathbf{X}_0+\mathbf{G}_i \xi^i \quad i=1,2 \quad \xi^i \ge 0 ~\&~ \xi^1+\xi^2 \leq 1
+
+    The covariant base vectors follow from :eq:`eq-triangle1` and :eq:`eq-triangle2` as
+
+    .. math::
+        :label: eq-triangle3
+
+        \mathbf{G}_i = \mathbf{X}_{,i} = \mathbf{X}_i - \mathbf{X}_0
+        \quad i=1,2
+
+    We can express differential :math:`d\xi^i` in terms of :math:`d\mathbf{X}` by means of the dual base as
+
+    .. math::
         d\mathbf{X}=\mathbf{G}_i d \xi^i \rightarrow d \xi^i=\mathbf{G}^i \cdot d \mathbf{X} \quad w/ ~~ \mathbf{G}^i \mathbf{G}_j=\delta_j^i
 
-    .. math::
-
-        \mathbf{x}=\mathbf{x}_0+ \mathbf{g}_i \xi^i
+    Similar to the above, we map the spatial configuration as
 
     .. math::
+        \mathbf{x} = \mathbf{x}_I \xi^I = \mathbf{x}_0+ \mathbf{g}_i \xi^i
+        \quad I=0,1,2 \quad i=1,2
 
+    Using :eq:`eq-triangle3` we obtain the deformation gradient as
+
+    .. math::
         d\mathbf{x}=\mathbf{g}_i d \xi^i=\left(\mathbf{g} \otimes \mathbf{G}^i\right) \cdot d \mathbf{X}=\mathbf{F} \cdot d\mathbf{\bar{x}} \Longrightarrow \mathbf{F}=\mathbf{g}_i \otimes \mathbf{G}^i
 
-    .. math::
-
-        \mathbf{F}^t \mathbf{F}=g_{i j} \mathbf{G}^i \otimes \mathbf{G}^j \rightarrow \mathbf{E}=\frac{1}{2}\left(\mathbf{F}^t \mathbf{F}-\mathbf{1}\right)=\frac{1}{2}\left(g_{i j}-G_{i j}\right) \mathbf{G}^i \otimes \mathbf{G}^j
+    Various strain tensors can be computed from it.  We use the right Cauchy-Green deformation tensor,
 
     .. math::
+        \mathbf{C} = \mathbf{F}^t \mathbf{F}=g_{i j} \mathbf{G}^i \otimes \mathbf{G}^j
 
-        \delta \mathbf{E}=\delta\mathbf{g}_i \otimes \mathbf{G}^i=\left(\delta \mathbf{x}_i-\delta \mathbf{x}_0\right) \otimes \mathbf{G}^i=\delta \mathbf{x}_\alpha \otimes \mathbf{G}^\alpha \quad \underline{\text { note }}: \quad \begin{array}{l}
-        i=1,2,3 \\
-        \alpha=0,1,2,3
-        \end{array}
+    or the Green-Lagrange strain tensor
 
-    where :math:`\mathbf{G}^0=-\mathbf{G}^1-\mathbf{G}^2-\mathbf{G}^3` and
+    .. math::
+        \mathbf{E}=\frac{1}{2}\left(\mathbf{F}^t \mathbf{F}-\mathbf{1}\right)=\frac{1}{2}\left(g_{i j}-G_{i j}\right) \mathbf{G}^i \otimes \mathbf{G}^j
+
+    Variation/linearization as needed for the *principle of virtual displacements*  follows as
+
+    .. math::
+        \delta \mathbf{F}=\delta\mathbf{g}_i \otimes \mathbf{G}^i
+        =\left(\delta \mathbf{x}_i-\delta \mathbf{x}_0\right) \otimes \mathbf{G}^i
+        =\delta \mathbf{x}_I \otimes \mathbf{G}^I
+        \quad \underline{\text { note }}: \quad \begin{array}{l}
+                                                    i=1,2 \\
+                                                    I=0,1,2
+                                                \end{array}
+
+    where :math:`\mathbf{G}^0=-\mathbf{G}^1-\mathbf{G}^2` and
+
+    .. math::
+
+        \begin{align}
+        \delta \mathbf{E}
+        &= \frac{1}{2} \left( \delta \mathbf{F}^t \mathbf{F} + \mathbf{F}^t \delta \mathbf{F} \right) \\
+        &= \frac{1}{2} \left( \mathbf{G}^I \otimes \delta \mathbf{x}_I \mathbf{g}_i \otimes \mathbf{G}^i
+            + \mathbf{G}^i \otimes \mathbf{g}_i \delta \mathbf{x}_I \otimes \mathbf{G}^I \right) \\
+        &= \left( \delta \mathbf{x}_I \mathbf{g}_i \right)
+             \frac{1}{2} \left( \mathbf{G}^I \otimes \mathbf{G}^i + \mathbf{G}^i \otimes \mathbf{G}^I \right)
+            \qquad\qquad I=0,1,2 \quad i=1,2 \\
+        &= \left( \delta \mathbf{x}_I \mathbf{x}_i \right)
+             \frac{1}{2} \left( \mathbf{G}^I \otimes \mathbf{G}^i + \mathbf{G}^i \otimes \mathbf{G}^I \right)
+        - \left( \delta \mathbf{x}_I \mathbf{x}_0 \right)
+             \frac{1}{2} \left( \mathbf{G}^I \otimes (\mathbf{G}^1 + \mathbf{G}^2)
+            +  (\mathbf{G}^1 + \mathbf{G}^2) \otimes \mathbf{G}^I \right) \\
+        &= \left( \delta \mathbf{x}_I \mathbf{x}_J \right)
+             \frac{1}{2} \left( \mathbf{G}^I \otimes \mathbf{G}^J + \mathbf{G}^J \otimes \mathbf{G}^I \right)
+        \qquad\qquad I,J=0,1,2
+        \end{align}
+
+    **Application of virtual work**
+
+    The incremental form of the *principle of virtual displacements* (PVD) takes the form
+
+    .. math::
+
+        \int\!\!\!\int\limits_{\mathcal{A}}\left(
+                                \delta\mathbf{E}:\mathbb{C}:d\mathbf{E}
+                                + d\delta \mathbf{E}:\mathbf{S}
+                                \right) d\mathcal{A}
+        = \int\!\!\!\int\limits_{\mathcal{A}} \delta\mathbf{u}\cdot\mathbf{b} \: d\mathcal{A}
+        + \int\limits_{\partial\mathcal{A}_\sigma} \delta\mathbf{u}\cdot\bar{\mathbf{T}} \: d\mathcal{s}
+
+    where :math:`\mathbf{S}` is the :math:`2^{nd}` Piola-Kirchhoff stress tensor,
+    :math:`\mathbb{C}=\partial\mathbf{S}/\partial\mathbf{E}` is the material stiffness tensor,
+    and
+
+    .. math::
+
+        \begin{align}
+        d\delta \mathbf{E}
+        &= \left( \delta \mathbf{x}_I \:d\mathbf{x}_J \right)
+             \frac{1}{2} \left( \mathbf{G}^I \otimes \mathbf{G}^J + \mathbf{G}^J \otimes \mathbf{G}^I \right)
+        \qquad I,J=0,1,2
+        \end{align}
+
+    The left hand term in the PVD yields
+
+    .. math::
+
+        \delta\mathbf{E}:\mathbb{C}:d\mathbf{E}
+            = \delta\mathbf{x}_I \left( \mathbb{C}^{IKLJ} \mathbf{x}_K\otimes\mathbf{x}_L \right) d\mathbf{x}_J
+            =: \delta\mathbf{x}_I \: \mathbb{K}^{IJ}_{m} \:d\mathbf{x}_J
+
+    and
+
+    .. math::
+
+        d\delta\mathbf{E}:\mathbf{S}
+            = \delta\mathbf{x}_I \: S^{IJ} \mathbf{1} \: d\mathbf{x}_J
+
+    leading to the tangent stiffness matrix as
+
+    .. math::
+
+        \mathbf{K}^{IJ} = \int\!\!\!\int_\mathcal{A} \left( \mathbb{K}^{IJ}_{m} + S^{IJ} \mathbf{1} \right) d\mathcal{A}
+
+    **Implementation notes**
 
     .. math::
 
         \delta\mathbf{F}
-        =\left(\mathbf{G}^\alpha \otimes \delta\mathbf{x}_\alpha\right)\left(\mathbf{g}_i \otimes \mathbf{G}^i\right)
-        =\delta\mathbf{x}_\alpha \cdot \underbrace{\mathbf{g}_i \otimes \overbrace{\mathbf{G}^\alpha \otimes \mathbf{G}^i}^{\bar{\mathbf{G}}^a}}_{=: {\mathbf{B}^{\alpha}}^t}
-        =\delta\mathbf{x}_\alpha \cdot{\mathbf{B^{\alpha}}^t}
+        =\left(\mathbf{G}^J \otimes \delta\mathbf{x}_J\right)\left(\mathbf{g}_i \otimes \mathbf{G}^i\right)
+        =\delta\mathbf{x}_J \cdot  \mathbf{g}_i \otimes \mathbf{G}^J \otimes \mathbf{G}^i
+        =:\delta\mathbf{x}_J \cdot{\mathbf{B^{J}}^t}
 
 
 Parent class
