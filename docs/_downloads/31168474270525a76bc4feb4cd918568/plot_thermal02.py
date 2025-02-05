@@ -21,7 +21,7 @@ the outer surface of the wall, :math:`x=10~m`, to :math:`300~K`.
 The thermal equation for the uni-directional problem can be expressed as
 
 .. math::
-    \Delta T = \frac{\partial^2 T}{\partial r^2}  = 0
+    \Delta T = \frac{\partial^2 T}{\partial x^2}  = 0
 
 where :math:`\Delta` is the Laplace operator.
 

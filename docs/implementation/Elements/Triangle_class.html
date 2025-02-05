@@ -122,19 +122,102 @@
 <p>Coordinate-free formulation for a finite deformation bi-linear triangle.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Theory</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Linear Theory (small displacements)</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The element uses an  iso-parametric mapping for both the reference and the spatial configuration.
+In the reference configuration,</p>
+<div class="math notranslate nohighlight" id="equation-eq-triangle-lin1">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-triangle-lin1" title="Link to this equation"></a></span>\[\mathbf{X}=\mathbf{X}_I \xi^I \quad I=0,1,2\equiv u,s,t \quad \xi^I \ge 0 ~\&amp;~ \xi^0+\xi^1+\xi^2 = 1\]</div>
+<p class="sd-card-text">where <span class="math notranslate nohighlight">\(\xi^I\)</span> are standard triangle coordinates.
+Alternatively, the mapping may be expressed using just two coordinates, <span class="math notranslate nohighlight">\(\xi^1\equiv\xi^s\)</span> and
+<span class="math notranslate nohighlight">\(\xi^2\equiv\xi^t\)</span>, as</p>
+<div class="math notranslate nohighlight" id="equation-eq-triangle-lin2">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-triangle-lin2" title="Link to this equation"></a></span>\[\mathbf{X}=\mathbf{X}_0+\mathbf{G}_i \xi^i \quad i=1,2 \quad \xi^i \ge 0 ~\&amp;~ \xi^1+\xi^2 \leq 1\]</div>
+<p class="sd-card-text">The covariant base vectors follow from <a class="reference internal" href="#equation-eq-triangle-lin1">(1)</a> and <a class="reference internal" href="#equation-eq-triangle-lin2">(2)</a> as</p>
+<div class="math notranslate nohighlight" id="equation-eq-triangle-lin3">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-triangle-lin3" title="Link to this equation"></a></span>\[\mathbf{G}_i = \mathbf{X}_{,i} = \mathbf{X}_i - \mathbf{X}_0
+\quad i=1,2\]</div>
+<p class="sd-card-text">We can express differential <span class="math notranslate nohighlight">\(d\xi^i\)</span> in terms of <span class="math notranslate nohighlight">\(d\mathbf{X}\)</span> by means of the dual base as</p>
+<div class="math notranslate nohighlight">
+\[d\mathbf{X}=\mathbf{G}_i d \xi^i \rightarrow d \xi^i=\mathbf{G}^i \cdot d \mathbf{X} \quad w/ ~~ \mathbf{G}^i \mathbf{G}_j=\delta_j^i\]</div>
+<p class="sd-card-text">The displacement field is represented as</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{u} = \mathbf{u}_I \xi^I
+\quad I=0,1,2\]</div>
+<p class="sd-card-text">Using <a class="reference internal" href="#equation-eq-triangle-lin3">(3)</a> we obtain the displacement gradient as</p>
+<div class="math notranslate nohighlight">
+\[d\mathbf{u}=\frac{\partial\mathbf{u}}{\xi^i} d \xi^i=\left(\mathbf{u}_I \otimes \mathbf{G}^I\right) \cdot d \mathbf{X}
+=: \nabla\mathbf{u} \cdot d\mathbf{\bar{X}} \Longrightarrow \nabla\mathbf{u}=\mathbf{u}_I \otimes \mathbf{G}^I\]</div>
+<p class="sd-card-text">where <span class="math notranslate nohighlight">\(d\xi^0+d\xi^1+d\xi^2=0\)</span> and <span class="math notranslate nohighlight">\(\mathbf{G}^0=-\mathbf{G}^1-\mathbf{G}^2\)</span> were used.</p>
+<p class="sd-card-text">The strain tensors follows as</p>
+<div class="math notranslate nohighlight">
+\[\symbf{\varepsilon} = \frac{1}{2} (\nabla\mathbf{u}^t + \nabla\mathbf{u})
+            = \frac{1}{2} (\mathbf{G}^I \otimes \mathbf{u}_I + \mathbf{u}_I \otimes \mathbf{G}^I)\]</div>
+<p class="sd-card-text">The variation of strain is needed for the <em>principle of virtual displacements</em>. It  follows as</p>
+<div class="math notranslate nohighlight">
+\[\delta \symbf{\varepsilon}
+    = \frac{1}{2} (\mathbf{G}^I \otimes \delta \mathbf{u}_I + \delta \mathbf{u}_I \otimes \mathbf{G}^I)
+                                           \qquad I=0,1,2\]</div>
+<p class="sd-card-text"><strong>Application of virtual work</strong></p>
+<p class="sd-card-text">The <em>principle of virtual displacements</em> (PVD) takes the form</p>
+<div class="math notranslate nohighlight">
+\[\int\!\!\!\int\limits_{\mathcal{A}} \delta \symbf{\varepsilon}:\symbf{\sigma}\: d\mathcal{A}
+= \int\!\!\!\int\limits_{\mathcal{A}} \delta\mathbf{u}\cdot\mathbf{b} \: d\mathcal{A}
++ \int\limits_{\partial\mathcal{A}_\sigma} \delta\mathbf{u}\cdot\bar{\mathbf{T}} \: d\mathcal{s}\]</div>
+<p class="sd-card-text">where <span class="math notranslate nohighlight">\(\symbf{\sigma}=\mathbb{C}:d\symbf{\varepsilon}\)</span> is the Cauchy stress tensor,
+and <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> is the material stiffness tensor.</p>
+<p class="sd-card-text">The left hand term in the PVD yields</p>
+<div class="math notranslate nohighlight">
+\[\delta\symbf{\varepsilon}:\symbf{\sigma}
+    = \frac{1}{2} (\mathbf{G}^I \otimes \delta \mathbf{u}_I + \delta \mathbf{u}_I \otimes \mathbf{G}^I):\symbf{\sigma}
+    = \delta \mathbf{u}_I \cdot \symbf{\sigma} \cdot\mathbf{G}^I
+    = \delta \mathbf{u}_I \cdot \mathbf{T}^I\]</div>
+<p class="sd-card-text">where <span class="math notranslate nohighlight">\(\mathbf{T}^I= \symbf{\sigma} \cdot \mathbf{G}^I\)</span> is the traction on the edge opposing node <em>I</em>.</p>
+<p class="sd-card-text">Expressing the stress as <span class="math notranslate nohighlight">\(\symbf{\sigma}=\mathbb{C}:\symbf{\varepsilon}\)</span> yields under consideration of
+symmetries in <span class="math notranslate nohighlight">\(\mathbb{C}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\delta\symbf{\varepsilon}:\mathbb{C}:\symbf{\varepsilon}
+    = \delta\mathbf{u}_I \left( \mathbb{C}^{IKLJ} \mathbf{G}_K\otimes\mathbf{G}_L \right) \mathbf{u}_J
+    =: \delta\mathbf{u}_I \: \mathbb{K}^{IJ} \:\mathbf{u}_J\]</div>
+<p class="sd-card-text">leading to the stiffness matrix as</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{K}^{IJ} = \int\!\!\!\int_\mathcal{A} \mathbb{K}^{IJ} \: d\mathcal{A}\]</div>
+<p class="sd-card-text"><strong>Implementation notes</strong></p>
+<p class="sd-card-text">Writing the kinematic equation in cartesian component form, we obtain</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{\begin{array}{c}
+    \varepsilon_{xx} \\
+    \varepsilon_{yy} \\
+    \gamma_{xy}
+\end{array}\right\}
+= \underbrace{
+  \left[\begin{array}{cc}
+        G^I_x &amp; 0 \\
+        0 &amp; G^I_y  \\
+        G^I_y &amp; G^I_x
+  \end{array}\right]
+    }_{=: [\mathbf{B}^I]}
+\left\{\begin{array}{c}
+    u_{I,x} \\ u_{I,y}
+\end{array}\right\}\end{split}\]</div>
+<p class="sd-card-text">leading to</p>
+<div class="math notranslate nohighlight">
+\[[ \mathbb{K}^{IJ} ] = [\mathbf{B}^I]^t [\mathbb{C}] [\mathbf{B}^J]\]</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Finite deformation theory</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The element uses an  iso-parametric mapping for both the reference and the spatial configuration.
 In the reference configuration,</p>
 <div class="math notranslate nohighlight" id="equation-eq-triangle1">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eq-triangle1" title="Link to this equation"></a></span>\[\mathbf{X}=\mathbf{X}_I \xi^I \quad I=0,1,2\equiv u,s,t \quad \xi^I \ge 0 ~\&amp;~ \xi^0+\xi^1+\xi^2 = 1\]</div>
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-triangle1" title="Link to this equation"></a></span>\[\mathbf{X}=\mathbf{X}_I \xi^I \quad I=0,1,2\equiv u,s,t \quad \xi^I \ge 0 ~\&amp;~ \xi^0+\xi^1+\xi^2 = 1\]</div>
 <p class="sd-card-text">where <span class="math notranslate nohighlight">\(\xi^I\)</span> are standard triangle coordinates.
 Alternatively, the mapping may be expressed using just two coordinates, <span class="math notranslate nohighlight">\(\xi^1\equiv\xi^s\)</span> and
 <span class="math notranslate nohighlight">\(\xi^2\equiv\xi^t\)</span>, as</p>
 <div class="math notranslate nohighlight" id="equation-eq-triangle2">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eq-triangle2" title="Link to this equation"></a></span>\[\mathbf{X}=\mathbf{X}_0+\mathbf{G}_i \xi^i \quad i=1,2 \quad \xi^i \ge 0 ~\&amp;~ \xi^1+\xi^2 \leq 1\]</div>
-<p class="sd-card-text">The covariant base vectors follow from <a class="reference internal" href="#equation-eq-triangle1">(1)</a> and <a class="reference internal" href="#equation-eq-triangle2">(2)</a> as</p>
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-triangle2" title="Link to this equation"></a></span>\[\mathbf{X}=\mathbf{X}_0+\mathbf{G}_i \xi^i \quad i=1,2 \quad \xi^i \ge 0 ~\&amp;~ \xi^1+\xi^2 \leq 1\]</div>
+<p class="sd-card-text">The covariant base vectors follow from <a class="reference internal" href="#equation-eq-triangle1">(4)</a> and <a class="reference internal" href="#equation-eq-triangle2">(5)</a> as</p>
 <div class="math notranslate nohighlight" id="equation-eq-triangle3">
-<span class="eqno">(3)<a class="headerlink" href="#equation-eq-triangle3" title="Link to this equation"></a></span>\[\mathbf{G}_i = \mathbf{X}_{,i} = \mathbf{X}_i - \mathbf{X}_0
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-triangle3" title="Link to this equation"></a></span>\[\mathbf{G}_i = \mathbf{X}_{,i} = \mathbf{X}_i - \mathbf{X}_0
 \quad i=1,2\]</div>
 <p class="sd-card-text">We can express differential <span class="math notranslate nohighlight">\(d\xi^i\)</span> in terms of <span class="math notranslate nohighlight">\(d\mathbf{X}\)</span> by means of the dual base as</p>
 <div class="math notranslate nohighlight">
@@ -143,9 +226,9 @@ Alternatively, the mapping may be expressed using just two coordinates, <span cl
 <div class="math notranslate nohighlight">
 \[\mathbf{x} = \mathbf{x}_I \xi^I = \mathbf{x}_0+ \mathbf{g}_i \xi^i
 \quad I=0,1,2 \quad i=1,2\]</div>
-<p class="sd-card-text">Using <a class="reference internal" href="#equation-eq-triangle3">(3)</a> we obtain the deformation gradient as</p>
+<p class="sd-card-text">Using <a class="reference internal" href="#equation-eq-triangle3">(6)</a> we obtain the deformation gradient as</p>
 <div class="math notranslate nohighlight">
-\[d\mathbf{x}=\mathbf{g}_i d \xi^i=\left(\mathbf{g} \otimes \mathbf{G}^i\right) \cdot d \mathbf{X}=\mathbf{F} \cdot d\mathbf{\bar{x}} \Longrightarrow \mathbf{F}=\mathbf{g}_i \otimes \mathbf{G}^i\]</div>
+\[d\mathbf{x}=\mathbf{g}_i d \xi^i=\left(\mathbf{g}_i \otimes \mathbf{G}^i\right) \cdot d \mathbf{X}=\mathbf{F} \cdot d\mathbf{\bar{x}} \Longrightarrow \mathbf{F}=\mathbf{g}_i \otimes \mathbf{G}^i\]</div>
 <p class="sd-card-text">Various strain tensors can be computed from it.  We use the right Cauchy-Green deformation tensor,</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{C} = \mathbf{F}^t \mathbf{F}=g_{i j} \mathbf{G}^i \otimes \mathbf{G}^j\]</div>
@@ -317,7 +400,7 @@ Calling that method explicitly will cause faulty nodal values.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 03, 2025.
+      <span class="lastupdated">Last updated on Feb 05, 2025.
       </span></p>
   </div>
 
