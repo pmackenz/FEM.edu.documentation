@@ -168,14 +168,15 @@ The are used to store and compute surface loads on elements.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Faces.Faces.setFlux">
-<span class="sig-name descname"><span class="pre">setFlux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">influx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Faces.Faces.setFlux" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setFlux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outflux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Faces.Faces.setFlux" title="Link to this definition"></a></dt>
 <dd><p>Defines a scalar surface flux on this Face.
-Coordinates n is the outward normal.</p>
+Coordinates n is the outward normal.
+<strong>qn</strong> is positive if it is an in-flux</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qn</strong> – normal flux per unit length (or unit area in 3d)</p></li>
-<li><p><strong>influx</strong> – set to <cite>True</cite> if given value is an in-flux. (same as entering a negative out-flux)</p></li>
+<li><p><strong>outflux</strong> – set to <cite>True</cite> if given value is an out-flux. (same as entering a negative in-flux)</p></li>
 </ul>
 </dd>
 </dl>
@@ -212,7 +213,7 @@ The node order for quadratic elements is nodes at <cite>[-1, 0, +1]</cite></p>
 <dt class="sig sig-object py" id="femedu.elements.Face2D.Face2D.computeNodalFlux">
 <span class="sig-name descname"><span class="pre">computeNodalFlux</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Face2D.Face2D.computeNodalFlux" title="Link to this definition"></a></dt>
 <dd><p>Implementation of nodal flux calculation from surface flux.</p>
-<p>Surface out-flux (in-flux) is considered positive (negative).</p>
+<p>Surface in-flux (out-flux) is considered positive (negative).</p>
 <p>The surface is described  as</p>
 <div class="math notranslate nohighlight">
 \[{\boldsymbol\varphi}(s) = \sum_k \phi_k(s) {\bf X}_k\]</div>
@@ -324,7 +325,7 @@ and <span class="math notranslate nohighlight">\({\bf X}_k\)</span> is the coord
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 05, 2025.
+      <span class="lastupdated">Last updated on Feb 07, 2025.
       </span></p>
   </div>
 
