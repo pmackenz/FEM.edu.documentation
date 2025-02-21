@@ -343,7 +343,7 @@ Run the example by creating an instance of the problem and executing it by calli
           u:    [0.000 0.000]
       Node_605:
           x:    [5.000 0.000]
-          u:    [-0.000 -0.000]
+          u:    [-0.000 0.000]
       Node_606:
           x:    [10.000 5.000]
           u:    [-0.000 0.000]
@@ -352,7 +352,7 @@ Run the example by creating an instance of the problem and executing it by calli
           u:    [-0.000 0.000]
       Node_608:
           x:    [0.000 5.000]
-          u:    [-0.000 0.000]
+          u:    [0.000 0.000]
       Node_609:
           x:    [5.000 5.000]
           u:    [-0.000 0.000]
@@ -361,27 +361,27 @@ Run the example by creating an instance of the problem and executing it by calli
     ---------------------
       Triangle6_836: nodes ( Node_601 Node_602 Node_604 Node_605 Node_609 Node_608 )
           material: PlaneStress
-          strain 0: xx=-9.897e-12 yy=3.290e-11 xy=-3.957e-17 zz=-6.900e-12
-          stress 0: xx=-3.070e-13 yy=3.289e-10 xy=-1.522e-16 zz=0.000e+00
-          strain 1: xx=-9.897e-12 yy=3.290e-11 xy=2.220e-16 zz=-6.900e-12
-          stress 1: xx=-3.070e-13 yy=3.289e-10 xy=8.540e-16 zz=0.000e+00
-          strain 2: xx=-9.897e-12 yy=3.290e-11 xy=8.398e-17 zz=-6.900e-12
-          stress 2: xx=-3.053e-13 yy=3.289e-10 xy=3.230e-16 zz=0.000e+00
+          strain 0: xx=-9.897e-12 yy=3.290e-11 xy=1.798e-16 zz=-6.900e-12
+          stress 0: xx=-3.045e-13 yy=3.289e-10 xy=6.914e-16 zz=0.000e+00
+          strain 1: xx=-9.897e-12 yy=3.290e-11 xy=-4.441e-17 zz=-6.900e-12
+          stress 1: xx=-3.089e-13 yy=3.289e-10 xy=-1.708e-16 zz=0.000e+00
+          strain 2: xx=-9.897e-12 yy=3.290e-11 xy=-1.354e-16 zz=-6.900e-12
+          stress 2: xx=-3.077e-13 yy=3.289e-10 xy=-5.206e-16 zz=0.000e+00
       Triangle6_837: nodes ( Node_603 Node_604 Node_602 Node_607 Node_609 Node_606 )
           material: PlaneStress
-          strain 0: xx=-9.898e-12 yy=3.290e-11 xy=-7.105e-16 zz=-6.900e-12
-          stress 0: xx=-3.121e-13 yy=3.289e-10 xy=-2.733e-15 zz=0.000e+00
-          strain 1: xx=-9.897e-12 yy=3.290e-11 xy=-1.776e-16 zz=-6.900e-12
-          stress 1: xx=-3.077e-13 yy=3.289e-10 xy=-6.832e-16 zz=0.000e+00
+          strain 0: xx=-9.897e-12 yy=3.290e-11 xy=-1.155e-15 zz=-6.900e-12
+          stress 0: xx=-3.040e-13 yy=3.289e-10 xy=-4.441e-15 zz=0.000e+00
+          strain 1: xx=-9.897e-12 yy=3.290e-11 xy=8.882e-17 zz=-6.900e-12
+          stress 1: xx=-3.062e-13 yy=3.289e-10 xy=3.416e-16 zz=0.000e+00
           strain 2: xx=-9.897e-12 yy=3.290e-11 xy=-3.553e-16 zz=-6.900e-12
-          stress 2: xx=-3.082e-13 yy=3.289e-10 xy=-1.366e-15 zz=0.000e+00
+          stress 2: xx=-3.053e-13 yy=3.289e-10 xy=-1.366e-15 zz=0.000e+00
 
     /Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/matplotlib/quiver.py:678: RuntimeWarning: Mean of empty slice.
       amean = a.mean()
     /Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:145: RuntimeWarning: invalid value encountered in scalar divide
       ret = ret.dtype.type(ret / rcount)
     norm of the out-of-balance force:   9.7183e+00
-    norm of the out-of-balance force:   9.5873e-11
+    norm of the out-of-balance force:   9.5868e-11
     +
 
     System Analysis Report
@@ -415,7 +415,7 @@ Run the example by creating an instance of the problem and executing it by calli
           u:    [0.500 -0.300]
       Node_608:
           x:    [0.000 5.000]
-          u:    [0.000 -0.150]
+          u:    [-0.000 -0.150]
       Node_609:
           x:    [5.000 5.000]
           u:    [0.500 -0.150]
@@ -424,20 +424,20 @@ Run the example by creating an instance of the problem and executing it by calli
     ---------------------
       Triangle6_836: nodes ( Node_601 Node_602 Node_604 Node_605 Node_609 Node_608 )
           material: PlaneStress
-          strain 0: xx=1.000e-01 yy=-3.000e-02 xy=6.716e-17 zz=-2.100e-02
-          stress 0: xx=1.000e+00 yy=9.865e-12 xy=2.583e-16 zz=0.000e+00
-          strain 1: xx=1.000e-01 yy=-3.000e-02 xy=1.332e-16 zz=-2.100e-02
-          stress 1: xx=1.000e+00 yy=9.866e-12 xy=5.124e-16 zz=0.000e+00
-          strain 2: xx=1.000e-01 yy=-3.000e-02 xy=6.607e-17 zz=-2.100e-02
-          stress 2: xx=1.000e+00 yy=9.869e-12 xy=2.541e-16 zz=0.000e+00
+          strain 0: xx=1.000e-01 yy=-3.000e-02 xy=-5.481e-17 zz=-2.100e-02
+          stress 0: xx=1.000e+00 yy=9.865e-12 xy=-2.108e-16 zz=0.000e+00
+          strain 1: xx=1.000e-01 yy=-3.000e-02 xy=2.665e-16 zz=-2.100e-02
+          stress 1: xx=1.000e+00 yy=9.866e-12 xy=1.025e-15 zz=0.000e+00
+          strain 2: xx=1.000e-01 yy=-3.000e-02 xy=5.481e-17 zz=-2.100e-02
+          stress 2: xx=1.000e+00 yy=9.863e-12 xy=2.108e-16 zz=0.000e+00
       Triangle6_837: nodes ( Node_603 Node_604 Node_602 Node_607 Node_609 Node_606 )
           material: PlaneStress
-          strain 0: xx=1.000e-01 yy=-3.000e-02 xy=7.745e-16 zz=-2.100e-02
-          stress 0: xx=1.000e+00 yy=9.865e-12 xy=2.979e-15 zz=0.000e+00
-          strain 1: xx=1.000e-01 yy=-3.000e-02 xy=5.329e-17 zz=-2.100e-02
-          stress 1: xx=1.000e+00 yy=9.864e-12 xy=2.050e-16 zz=0.000e+00
-          strain 2: xx=1.000e-01 yy=-3.000e-02 xy=3.197e-16 zz=-2.100e-02
-          stress 2: xx=1.000e+00 yy=9.867e-12 xy=1.230e-15 zz=0.000e+00
+          strain 0: xx=1.000e-01 yy=-3.000e-02 xy=8.189e-16 zz=-2.100e-02
+          stress 0: xx=1.000e+00 yy=9.869e-12 xy=3.150e-15 zz=0.000e+00
+          strain 1: xx=1.000e-01 yy=-3.000e-02 xy=9.770e-17 zz=-2.100e-02
+          stress 1: xx=1.000e+00 yy=9.863e-12 xy=3.758e-16 zz=0.000e+00
+          strain 2: xx=1.000e-01 yy=-3.000e-02 xy=-3.553e-17 zz=-2.100e-02
+          stress 2: xx=1.000e+00 yy=9.867e-12 xy=-1.366e-16 zz=0.000e+00
 
 
 
@@ -446,7 +446,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.751 seconds)
+   **Total running time of the script:** (0 minutes 0.158 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate03_triangle_test3.py:

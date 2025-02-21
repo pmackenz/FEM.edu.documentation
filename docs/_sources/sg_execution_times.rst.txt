@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:04.591** total execution time for 45 files **from all galleries**:
+**01:27.425** total execution time for 45 files **from all galleries**:
 
 .. container::
 
@@ -32,138 +32,138 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_auto_examples_diffusion_plot_thermal01.py` (``../../galleries/examples/diffusion/plot_thermal01.py``)
-     - 00:01.804
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_diffusion_plot_thermal03.py` (``../../galleries/examples/diffusion/plot_thermal03.py``)
-     - 00:01.588
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_diffusion_plot_thermal04.py` (``../../galleries/examples/diffusion/plot_thermal04.py``)
-     - 00:00.675
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_diffusion_plot_thermal02.py` (``../../galleries/examples/diffusion/plot_thermal02.py``)
-     - 00:00.523
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_beams_plot_beam01.py` (``../../galleries/examples/beams/plot_beam01.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_beams_plot_beam02.py` (``../../galleries/examples/beams/plot_beam02.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_frames_plot_frame01.py` (``../../galleries/examples/frames/plot_frame01.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_frames_plot_frame02.py` (``../../galleries/examples/frames/plot_frame02.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_frames_plot_frame03.py` (``../../galleries/examples/frames/plot_frame03.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_frames_plot_frame04.py` (``../../galleries/examples/frames/plot_frame04.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_frames_plot_frame05.py` (``../../galleries/examples/frames/plot_frame05.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_mixed_plot_mixed01.py` (``../../galleries/examples/mixed/plot_mixed01.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot09b_quad9_patch_test.py` (``../../galleries/examples/plates/plot09b_quad9_patch_test.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate01_triangle_test1.py` (``../../galleries/examples/plates/plot_plate01_triangle_test1.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate02_triangle_test2.py` (``../../galleries/examples/plates/plot_plate02_triangle_test2.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate03_triangle_test3.py` (``../../galleries/examples/plates/plot_plate03_triangle_test3.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate04_quad_test1.py` (``../../galleries/examples/plates/plot_plate04_quad_test1.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate05_quad_test2.py` (``../../galleries/examples/plates/plot_plate05_quad_test2.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate06_element_modes.py` (``../../galleries/examples/plates/plot_plate06_element_modes.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate07_comparison.py` (``../../galleries/examples/plates/plot_plate07_comparison.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate08_triangle_patch_test.py` (``../../galleries/examples/plates/plot_plate08_triangle_patch_test.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate09_quad_patch_test.py` (``../../galleries/examples/plates/plot_plate09_quad_patch_test.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate10_mixed_mesh_patch_test.py` (``../../galleries/examples/plates/plot_plate10_mixed_mesh_patch_test.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate10_profiler.py` (``../../galleries/examples/plates/plot_plate10_profiler.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate11_plate_w_hole_tri_mesh.py` (``../../galleries/examples/plates/plot_plate11_plate_w_hole_tri_mesh.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate12_plate_w_hole_quad_mesh.py` (``../../galleries/examples/plates/plot_plate12_plate_w_hole_quad_mesh.py``)
-     - 00:00.000
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate21_benchmark01.py` (``../../galleries/examples/plates/plot_plate21_benchmark01.py``)
+     - 00:38.479
      - 0.0
    * - :ref:`sphx_glr_auto_examples_plates_plot_plate14_cantilever_large_disp.py` (``../../galleries/examples/plates/plot_plate14_cantilever_large_disp.py``)
-     - 00:00.000
+     - 00:09.276
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate15_cantilever_large_disp_higher_order.py` (``../../galleries/examples/plates/plot_plate15_cantilever_large_disp_higher_order.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate19_benchmark01.py` (``../../galleries/examples/plates/plot_plate19_benchmark01.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate20_benchmark01.py` (``../../galleries/examples/plates/plot_plate20_benchmark01.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_plates_plot_plate21_benchmark01.py` (``../../galleries/examples/plates/plot_plate21_benchmark01.py``)
-     - 00:00.000
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate10_profiler.py` (``../../galleries/examples/plates/plot_plate10_profiler.py``)
+     - 00:07.957
      - 0.0
    * - :ref:`sphx_glr_auto_examples_springs_plot_spring_system01.py` (``../../galleries/examples/springs/plot_spring_system01.py``)
-     - 00:00.000
+     - 00:07.881
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_springs_plot_spring_system02.py` (``../../galleries/examples/springs/plot_spring_system02.py``)
-     - 00:00.000
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate20_benchmark01.py` (``../../galleries/examples/plates/plot_plate20_benchmark01.py``)
+     - 00:06.302
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss01.py` (``../../galleries/examples/trusses/plot_truss01.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss02.py` (``../../galleries/examples/trusses/plot_truss02.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss03.py` (``../../galleries/examples/trusses/plot_truss03.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss04.py` (``../../galleries/examples/trusses/plot_truss04.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss05.py` (``../../galleries/examples/trusses/plot_truss05.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss06.py` (``../../galleries/examples/trusses/plot_truss06.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss07.py` (``../../galleries/examples/trusses/plot_truss07.py``)
-     - 00:00.000
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss08.py` (``../../galleries/examples/trusses/plot_truss08.py``)
-     - 00:00.000
+   * - :ref:`sphx_glr_auto_examples_diffusion_plot_thermal01.py` (``../../galleries/examples/diffusion/plot_thermal01.py``)
+     - 00:04.259
      - 0.0
    * - :ref:`sphx_glr_auto_examples_trusses_plot_truss09.py` (``../../galleries/examples/trusses/plot_truss09.py``)
-     - 00:00.000
+     - 00:01.964
      - 0.0
-   * - :ref:`sphx_glr_auto_tutorials_model_creation_plot_01_setup.py` (``../../galleries/tutorials/model_creation/plot_01_setup.py``)
-     - 00:00.000
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate15_cantilever_large_disp_higher_order.py` (``../../galleries/examples/plates/plot_plate15_cantilever_large_disp_higher_order.py``)
+     - 00:01.511
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss08.py` (``../../galleries/examples/trusses/plot_truss08.py``)
+     - 00:01.302
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss07.py` (``../../galleries/examples/trusses/plot_truss07.py``)
+     - 00:01.168
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate11_plate_w_hole_tri_mesh.py` (``../../galleries/examples/plates/plot_plate11_plate_w_hole_tri_mesh.py``)
+     - 00:01.126
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate12_plate_w_hole_quad_mesh.py` (``../../galleries/examples/plates/plot_plate12_plate_w_hole_quad_mesh.py``)
+     - 00:01.122
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_frames_plot_frame05.py` (``../../galleries/examples/frames/plot_frame05.py``)
+     - 00:00.667
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate19_benchmark01.py` (``../../galleries/examples/plates/plot_plate19_benchmark01.py``)
+     - 00:00.395
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot09b_quad9_patch_test.py` (``../../galleries/examples/plates/plot09b_quad9_patch_test.py``)
+     - 00:00.314
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_diffusion_plot_thermal03.py` (``../../galleries/examples/diffusion/plot_thermal03.py``)
+     - 00:00.311
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate10_mixed_mesh_patch_test.py` (``../../galleries/examples/plates/plot_plate10_mixed_mesh_patch_test.py``)
+     - 00:00.262
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate06_element_modes.py` (``../../galleries/examples/plates/plot_plate06_element_modes.py``)
+     - 00:00.250
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss06.py` (``../../galleries/examples/trusses/plot_truss06.py``)
+     - 00:00.235
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate05_quad_test2.py` (``../../galleries/examples/plates/plot_plate05_quad_test2.py``)
+     - 00:00.230
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate04_quad_test1.py` (``../../galleries/examples/plates/plot_plate04_quad_test1.py``)
+     - 00:00.209
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_frames_plot_frame01.py` (``../../galleries/examples/frames/plot_frame01.py``)
+     - 00:00.187
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_frames_plot_frame03.py` (``../../galleries/examples/frames/plot_frame03.py``)
+     - 00:00.182
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_mixed_plot_mixed01.py` (``../../galleries/examples/mixed/plot_mixed01.py``)
+     - 00:00.166
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate03_triangle_test3.py` (``../../galleries/examples/plates/plot_plate03_triangle_test3.py``)
+     - 00:00.158
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate08_triangle_patch_test.py` (``../../galleries/examples/plates/plot_plate08_triangle_patch_test.py``)
+     - 00:00.143
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate09_quad_patch_test.py` (``../../galleries/examples/plates/plot_plate09_quad_patch_test.py``)
+     - 00:00.134
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss05.py` (``../../galleries/examples/trusses/plot_truss05.py``)
+     - 00:00.132
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_diffusion_plot_thermal04.py` (``../../galleries/examples/diffusion/plot_thermal04.py``)
+     - 00:00.129
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_frames_plot_frame02.py` (``../../galleries/examples/frames/plot_frame02.py``)
+     - 00:00.099
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate07_comparison.py` (``../../galleries/examples/plates/plot_plate07_comparison.py``)
+     - 00:00.098
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_diffusion_plot_thermal02.py` (``../../galleries/examples/diffusion/plot_thermal02.py``)
+     - 00:00.095
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate02_triangle_test2.py` (``../../galleries/examples/plates/plot_plate02_triangle_test2.py``)
+     - 00:00.094
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_frames_plot_frame04.py` (``../../galleries/examples/frames/plot_frame04.py``)
+     - 00:00.089
      - 0.0
    * - :ref:`sphx_glr_auto_tutorials_model_creation_plot_02_meshing.py` (``../../galleries/tutorials/model_creation/plot_02_meshing.py``)
-     - 00:00.000
+     - 00:00.088
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss02.py` (``../../galleries/examples/trusses/plot_truss02.py``)
+     - 00:00.072
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_beams_plot_beam02.py` (``../../galleries/examples/beams/plot_beam02.py``)
+     - 00:00.056
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_beams_plot_beam01.py` (``../../galleries/examples/beams/plot_beam01.py``)
+     - 00:00.051
+     - 0.0
+   * - :ref:`sphx_glr_auto_tutorials_model_creation_plot_01_setup.py` (``../../galleries/tutorials/model_creation/plot_01_setup.py``)
+     - 00:00.048
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_plates_plot_plate01_triangle_test1.py` (``../../galleries/examples/plates/plot_plate01_triangle_test1.py``)
+     - 00:00.040
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss01.py` (``../../galleries/examples/trusses/plot_truss01.py``)
+     - 00:00.038
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss03.py` (``../../galleries/examples/trusses/plot_truss03.py``)
+     - 00:00.038
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_springs_plot_spring_system02.py` (``../../galleries/examples/springs/plot_spring_system02.py``)
+     - 00:00.026
      - 0.0
    * - :ref:`sphx_glr_auto_tutorials_model_creation_plot_03_loading.py` (``../../galleries/tutorials/model_creation/plot_03_loading.py``)
-     - 00:00.000
+     - 00:00.021
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_trusses_plot_truss04.py` (``../../galleries/examples/trusses/plot_truss04.py``)
+     - 00:00.020
      - 0.0

@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>System class &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -102,7 +102,7 @@
 <span id="id1"></span><h1>System class<a class="headerlink" href="#system-class" title="Link to this heading"></a></h1>
 <dl class="py class" id="module-femedu.domain.System">
 <dt class="sig sig-object py" id="femedu.domain.System.System">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.domain.System.</span></span><span class="sig-name descname"><span class="pre">System</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.domain.System.</span></span><span class="sig-name descname"><span class="pre">System</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.System.System" title="Link to this definition"></a></dt>
 <dd><p>class: representing a System model</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.System.System.addConstraint">
@@ -640,10 +640,13 @@ provided by an element or a node.</p>
 <span class="math notranslate nohighlight">\(\gamma_{yz}=2\varepsilon_{yz}\)</span>,
 <span class="math notranslate nohighlight">\(\gamma_{zx}=2\varepsilon_{zx}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p>‘T’</p></td>
+<tr class="row-even"><td><p>‘nxx’, ‘nyy’, ‘nxy’</p></td>
+<td><p>membrane forces <span class="math notranslate nohighlight">\(n_{xx}=h\sigma_{xx}\)</span>, <span class="math notranslate nohighlight">\(n_{yy}=h\sigma_{yy}\)</span>, <span class="math notranslate nohighlight">\(n_{xy}=h\sigma_{xy}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>‘T’</p></td>
 <td><p>temperature</p></td>
 </tr>
-<tr class="row-odd"><td><p>‘qx’, ‘qy’, ‘qz’</p></td>
+<tr class="row-even"><td><p>‘qx’, ‘qy’, ‘qz’</p></td>
 <td><p><cite>x</cite>, <cite>y</cite> or <cite>z</cite> component of the temperature gradient, <span class="math notranslate nohighlight">\(q_i = \partial T/\partial x_i\)</span></p></td>
 </tr>
 </tbody>
@@ -676,7 +679,7 @@ Use proper file extensions to indicate the desired format (.png, .pdf)</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

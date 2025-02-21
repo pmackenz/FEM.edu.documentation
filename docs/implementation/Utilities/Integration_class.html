@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Integration classes &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -143,7 +143,7 @@ to obatin a list of integration point coordinates or weights or both, respective
 <span class="sd-summary-text">Abstract Integration Class</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <dl class="py class" id="module-femedu.utilities.Integration">
 <dt class="sig sig-object py" id="femedu.utilities.Integration.Integration">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.Integration.</span></span><span class="sig-name descname"><span class="pre">Integration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.Integration.Integration" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.Integration.</span></span><span class="sig-name descname"><span class="pre">Integration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.Integration.Integration" title="Link to this definition"></a></dt>
 <dd><p class="sd-card-text">Abstract interface definition for all Integration classes.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.utilities.Integration.Integration.dunavant">
@@ -202,31 +202,31 @@ to obatin a list of integration point coordinates or weights or both, respective
 <span class="sd-summary-text">Derived Classes</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <dl class="py class" id="module-femedu.utilities.LineIntegration">
 <dt class="sig sig-object py" id="femedu.utilities.LineIntegration.LineIntegration">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.LineIntegration.</span></span><span class="sig-name descname"><span class="pre">LineIntegration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.LineIntegration.LineIntegration" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.LineIntegration.</span></span><span class="sig-name descname"><span class="pre">LineIntegration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.LineIntegration.LineIntegration" title="Link to this definition"></a></dt>
 <dd><p class="sd-card-text">Provides integration points and weights for 1D integration</p>
 </dd></dl>
 
 <dl class="py class" id="module-femedu.utilities.TriangleIntegration">
 <dt class="sig sig-object py" id="femedu.utilities.TriangleIntegration.TriangleIntegration">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.TriangleIntegration.</span></span><span class="sig-name descname"><span class="pre">TriangleIntegration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.TriangleIntegration.TriangleIntegration" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.TriangleIntegration.</span></span><span class="sig-name descname"><span class="pre">TriangleIntegration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.TriangleIntegration.TriangleIntegration" title="Link to this definition"></a></dt>
 <dd><p class="sd-card-text">Provides integration points and weights for a triangular domain (2d)</p>
 </dd></dl>
 
 <dl class="py class" id="module-femedu.utilities.QuadIntegration">
 <dt class="sig sig-object py" id="femedu.utilities.QuadIntegration.QuadIntegration">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.QuadIntegration.</span></span><span class="sig-name descname"><span class="pre">QuadIntegration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.QuadIntegration.QuadIntegration" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.QuadIntegration.</span></span><span class="sig-name descname"><span class="pre">QuadIntegration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.QuadIntegration.QuadIntegration" title="Link to this definition"></a></dt>
 <dd><p class="sd-card-text">Provides integration points and weights for quadrilateral domains (2D)</p>
 </dd></dl>
 
 <dl class="py class" id="module-femedu.utilities.TetraIntegration">
 <dt class="sig sig-object py" id="femedu.utilities.TetraIntegration.TetraIntegration">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.TetraIntegration.</span></span><span class="sig-name descname"><span class="pre">TetraIntegration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.TetraIntegration.TetraIntegration" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.TetraIntegration.</span></span><span class="sig-name descname"><span class="pre">TetraIntegration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.TetraIntegration.TetraIntegration" title="Link to this definition"></a></dt>
 <dd><p class="sd-card-text">Provides integration points and weights for tetrahedral domains</p>
 </dd></dl>
 
 <dl class="py class" id="module-femedu.utilities.BrickIntegration">
 <dt class="sig sig-object py" id="femedu.utilities.BrickIntegration.BrickIntegration">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.BrickIntegration.</span></span><span class="sig-name descname"><span class="pre">BrickIntegration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.BrickIntegration.BrickIntegration" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.BrickIntegration.</span></span><span class="sig-name descname"><span class="pre">BrickIntegration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.BrickIntegration.BrickIntegration" title="Link to this definition"></a></dt>
 <dd><p class="sd-card-text">Provides integration points and weights for brick-like domains (3d)</p>
 </dd></dl>
 
@@ -245,7 +245,7 @@ to obatin a list of integration point coordinates or weights or both, respective
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

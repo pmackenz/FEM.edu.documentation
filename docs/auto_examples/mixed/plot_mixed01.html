@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Braced building frame &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -117,20 +117,20 @@ to download the full example code.</p>
 <span id="sphx-glr-auto-examples-mixed-plot-mixed01-py"></span><h1>Braced building frame<a class="headerlink" href="#braced-building-frame" title="Link to this heading"></a></h1>
 <p>modeled using a 2D frame element for the main structure and a truss element for the brace</p>
 <p>Author: Peter Mackenzie-Helnwein</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">femedu.examples.Example</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.examples.Example</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.solver.NewtonRaphsonSolver</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.finite.Truss</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.finite.Frame2D</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.materials.FiberMaterial</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.materials.ElasticSection</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.solver.NewtonRaphsonSolver</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.finite.Truss</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.finite.Frame2D</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.materials.FiberMaterial</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.materials.ElasticSection</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 
-<span class="k">class</span> <span class="nc">ExampleMixed01</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ExampleMixed01</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># initialize a system model</span>
 
         <span class="n">B</span> <span class="o">=</span> <span class="mf">80.</span>
@@ -305,7 +305,7 @@ norm of the out-of-balance force:   4.2079e+02
 norm of the out-of-balance force:   2.6164e+00
 norm of the out-of-balance force:   3.8196e-03
 norm of the out-of-balance force:   2.1116e-06
-norm of the out-of-balance force:   2.4046e-09
+norm of the out-of-balance force:   2.4083e-09
 +
 
 === next load level ===
@@ -314,7 +314,7 @@ norm of the out-of-balance force:   4.2079e+02
 norm of the out-of-balance force:   5.2938e+00
 norm of the out-of-balance force:   1.6230e-02
 norm of the out-of-balance force:   1.8540e-05
-norm of the out-of-balance force:   4.5230e-08
+norm of the out-of-balance force:   4.5231e-08
 +
 
 === next load level ===
@@ -323,7 +323,7 @@ norm of the out-of-balance force:   4.2079e+02
 norm of the out-of-balance force:   8.0343e+00
 norm of the out-of-balance force:   3.7783e-02
 norm of the out-of-balance force:   6.6350e-05
-norm of the out-of-balance force:   2.4887e-07
+norm of the out-of-balance force:   2.4890e-07
 +
 
 === next load level ===
@@ -332,7 +332,7 @@ norm of the out-of-balance force:   4.2079e+02
 norm of the out-of-balance force:   1.0840e+01
 norm of the out-of-balance force:   6.9061e-02
 norm of the out-of-balance force:   1.6541e-04
-norm of the out-of-balance force:   8.4113e-07
+norm of the out-of-balance force:   8.4114e-07
 +
 
 === next load level ===
@@ -342,7 +342,7 @@ norm of the out-of-balance force:   1.3714e+01
 norm of the out-of-balance force:   1.1068e-01
 norm of the out-of-balance force:   3.3876e-04
 norm of the out-of-balance force:   2.1826e-06
-norm of the out-of-balance force:   1.0892e-08
+norm of the out-of-balance force:   1.0893e-08
 +
 
 === next load level ===
@@ -425,7 +425,7 @@ Elements:
       internal force: 199.27259987842808
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.778 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.166 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-mixed-plot-mixed01-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/9eb8ba2f493e430b3eb75da73ea80c22/plot_mixed01.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_mixed01.ipynb</span></code></a></p>
@@ -452,7 +452,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

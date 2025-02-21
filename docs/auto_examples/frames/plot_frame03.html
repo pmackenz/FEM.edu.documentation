@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buckling of a building frame &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -141,18 +141,18 @@ to download the full example code.</p>
 </tbody>
 </table>
 <p>Author: Peter Mackenzie-Helnwein</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">femedu.examples.Example</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.examples.Example</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.solver.NewtonRaphsonSolver</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.finite.Frame2D</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.materials.ElasticSection</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.solver.NewtonRaphsonSolver</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.finite.Frame2D</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.materials.ElasticSection</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 
-<span class="k">class</span> <span class="nc">ExampleFrame03</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ExampleFrame03</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># initialize a system model</span>
 
         <span class="n">N</span>  <span class="o">=</span> <span class="mi">8</span>     <span class="c1"># number of elements</span>
@@ -340,7 +340,7 @@ norm of the out-of-balance force:   0.0000e+00
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 25.362866066891545
+ ** Stability check: (smallest eigenvalue of Kt) = 25.36286606688344
 
 +
 
@@ -350,14 +350,14 @@ norm of the out-of-balance force:   2.2691e+03
 norm of the out-of-balance force:   2.7690e+01
 norm of the out-of-balance force:   2.5832e-02
 norm of the out-of-balance force:   5.8606e-05
-norm of the out-of-balance force:   1.3304e-07
+norm of the out-of-balance force:   1.3290e-07
 
  ** Stability check: (smallest 1 eigenvalues of Kt)
                         mode 0:       22.55
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 22.55334432269496
+ ** Stability check: (smallest eigenvalue of Kt) = 22.553344322692414
 
 +
 
@@ -367,15 +367,15 @@ norm of the out-of-balance force:   2.2691e+03
 norm of the out-of-balance force:   5.7335e+01
 norm of the out-of-balance force:   1.0732e-01
 norm of the out-of-balance force:   4.9127e-04
-norm of the out-of-balance force:   2.2490e-06
-norm of the out-of-balance force:   1.0102e-08
+norm of the out-of-balance force:   2.2489e-06
+norm of the out-of-balance force:   1.0194e-08
 
  ** Stability check: (smallest 1 eigenvalues of Kt)
                         mode 0:       19.74
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 19.736675218770433
+ ** Stability check: (smallest eigenvalue of Kt) = 19.736675218758077
 
 +
 
@@ -386,14 +386,14 @@ norm of the out-of-balance force:   8.9173e+01
 norm of the out-of-balance force:   2.5073e-01
 norm of the out-of-balance force:   1.7372e-03
 norm of the out-of-balance force:   1.2036e-05
-norm of the out-of-balance force:   8.3344e-08
+norm of the out-of-balance force:   8.3463e-08
 
  ** Stability check: (smallest 1 eigenvalues of Kt)
                         mode 0:       16.91
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 16.912579434902266
+ ** Stability check: (smallest eigenvalue of Kt) = 16.912579434906803
 
 +
 
@@ -404,14 +404,14 @@ norm of the out-of-balance force:   1.2348e+02
 norm of the out-of-balance force:   4.6258e-01
 norm of the out-of-balance force:   4.3136e-03
 norm of the out-of-balance force:   4.0225e-05
-norm of the out-of-balance force:   3.7531e-07
+norm of the out-of-balance force:   3.7546e-07
 
  ** Stability check: (smallest 1 eigenvalues of Kt)
                         mode 0:       14.08
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 14.080761870685262
+ ** Stability check: (smallest eigenvalue of Kt) = 14.080761870685263
 
 +
 
@@ -422,15 +422,15 @@ norm of the out-of-balance force:   1.6058e+02
 norm of the out-of-balance force:   7.4959e-01
 norm of the out-of-balance force:   8.8231e-03
 norm of the out-of-balance force:   1.0385e-04
-norm of the out-of-balance force:   1.2225e-06
-norm of the out-of-balance force:   1.4385e-08
+norm of the out-of-balance force:   1.2223e-06
+norm of the out-of-balance force:   1.4479e-08
 
  ** Stability check: (smallest 1 eigenvalues of Kt)
                         mode 0:       11.24
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 11.24091049371112
+ ** Stability check: (smallest eigenvalue of Kt) = 11.240910493714765
 
 +
 
@@ -441,15 +441,15 @@ norm of the out-of-balance force:   2.0086e+02
 norm of the out-of-balance force:   1.1185e+00
 norm of the out-of-balance force:   1.5960e-02
 norm of the out-of-balance force:   2.2773e-04
-norm of the out-of-balance force:   3.2491e-06
-norm of the out-of-balance force:   4.6476e-08
+norm of the out-of-balance force:   3.2495e-06
+norm of the out-of-balance force:   4.6216e-08
 
  ** Stability check: (smallest 1 eigenvalues of Kt)
                         mode 0:        8.39
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 8.39269508455168
+ ** Stability check: (smallest eigenvalue of Kt) = 8.392695084552255
 
 +
 
@@ -460,15 +460,15 @@ norm of the out-of-balance force:   2.4477e+02
 norm of the out-of-balance force:   1.5757e+00
 norm of the out-of-balance force:   2.6511e-02
 norm of the out-of-balance force:   4.4606e-04
-norm of the out-of-balance force:   7.5050e-06
-norm of the out-of-balance force:   1.2627e-07
+norm of the out-of-balance force:   7.5054e-06
+norm of the out-of-balance force:   1.2618e-07
 
  ** Stability check: (smallest 1 eigenvalues of Kt)
                         mode 0:        5.54
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 5.535765867202627
+ ** Stability check: (smallest eigenvalue of Kt) = 5.535765867207779
 
 +
 
@@ -480,14 +480,14 @@ norm of the out-of-balance force:   2.1268e+00
 norm of the out-of-balance force:   4.1357e-02
 norm of the out-of-balance force:   8.0422e-04
 norm of the out-of-balance force:   1.5639e-05
-norm of the out-of-balance force:   3.0400e-07
+norm of the out-of-balance force:   3.0404e-07
 
  ** Stability check: (smallest 1 eigenvalues of Kt)
                         mode 0:        2.67
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = 2.6697520126339356
+ ** Stability check: (smallest eigenvalue of Kt) = 2.669752012642176
 
 +
 
@@ -499,14 +499,14 @@ norm of the out-of-balance force:   2.7763e+00
 norm of the out-of-balance force:   6.1460e-02
 norm of the out-of-balance force:   1.3605e-03
 norm of the out-of-balance force:   3.0118e-05
-norm of the out-of-balance force:   6.6657e-07
+norm of the out-of-balance force:   6.6658e-07
 
  ** Stability check: (smallest 1 eigenvalues of Kt)
                         mode 0:       -0.21
 
 +
 
- ** Stability check: (smallest eigenvalue of Kt) = -0.20573999904776644
+ ** Stability check: (smallest eigenvalue of Kt) = -0.20573999905200394
 
 +
 
@@ -546,7 +546,7 @@ Elements:
       internal forces: f0=-117.11 V0=0.00 M0=11395.82 fl=-117.11 Vl=0.00 Ml=11395.82 Pw=-1080.00 Mw=-14400.00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.979 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.182 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-frames-plot-frame03-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/6e026a8327aaf7199ddd04976d668792/plot_frame03.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_frame03.ipynb</span></code></a></p>
@@ -573,7 +573,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

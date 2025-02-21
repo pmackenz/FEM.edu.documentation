@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Single span beam under uniform load. &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -119,17 +119,17 @@ to download the full example code.</p>
 <p>The system is statically determined and allows for easy validation of
 calculated deformation, reactions and internal forces.</p>
 <p>Author: Peter Mackenzie-Helnwein</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples.Example</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">femedu.examples.Example</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">femedu.domain.System</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.domain.Node</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Beam2D</span>
-<span class="kn">from</span> <span class="nn">femedu.materials.ElasticSection</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain.System</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain.Node</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Beam2D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.materials.ElasticSection</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 
-<span class="k">class</span> <span class="nc">ExampleBeam01</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ExampleBeam01</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># initialize a system model</span>
         <span class="n">SpanLength</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="o">*</span> <span class="mi">12</span>
         <span class="n">w</span> <span class="o">=</span>  <span class="o">-</span><span class="mf">1.0</span>   <span class="c1"># distributed load (positive if acting in local y-direction</span>
@@ -222,7 +222,7 @@ Nodes:
   Node_14:
       x:    [60.000 0.000]
       P:    [-40.000 0.000]
-      u:    [-1.386 -0.000]
+      u:    [-1.386 0.000]
   Node_15:
       x:    [90.000 0.000]
       u:    [-0.975 0.026]
@@ -235,19 +235,19 @@ Elements:
 ---------------------
   Beam2D: Node_12 to Node_13:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:65.0 Mi:-74.99999999999909 Vj:-65.0 Mj:2024.999999999989
+     nodal forces: Vi:65.0 Mi:-74.99999999999818 Vj:-65.0 Mj:2024.9999999999927
   Beam2D: Node_13 to Node_14:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:34.999999999999886 Mi:-2024.9999999999864 Vj:-34.999999999999886 Mj:3074.999999999981
+     nodal forces: Vi:35.0 Mi:-2024.9999999999952 Vj:-35.0 Mj:3074.9999999999877
   Beam2D: Node_14 to Node_15:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:-34.999999999999716 Mi:-3074.99999999998 Vj:34.999999999999716 Mj:2024.9999999999936
+     nodal forces: Vi:-35.0 Mi:-3074.999999999988 Vj:35.0 Mj:2024.999999999991
   Beam2D: Node_15 to Node_16:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 4.7, &#39;I&#39;: 103, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:-65.00000000000023 Mi:-2024.9999999999936 Vj:65.00000000000023 Mj:74.99999999999818
+     nodal forces: Vi:-64.99999999999977 Mi:-2024.9999999999882 Vj:64.99999999999977 Mj:75.00000000000546
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.336 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.051 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-beams-plot-beam01-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/82d91fdc436177ddf50bd42c32fddf6c/plot_beam01.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_beam01.ipynb</span></code></a></p>
@@ -274,7 +274,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

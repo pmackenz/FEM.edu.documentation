@@ -58,6 +58,13 @@ Initialization
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /Users/pmackenz/Development/Educational/FEM.edu/src/femedu/elements/linear/Frame2D.py:36: SyntaxWarning: invalid escape sequence '\D'
+      """
+
 
 
 
@@ -278,17 +285,17 @@ Performing the analysis
     Elements:
     ---------------------
       Spring Elem_0: Node_0 to Node_1 with c=15
-          length change:  delta = 0.1333333333333333 
-          internal force: force = 1.9999999999999996
+          length change:  delta = 0.13333333333333333 
+          internal force: force = 2.0
       Spring Elem_1: Node_1 to Node_2 with c=10
-          length change:  delta = 0.06666666666666671 
-          internal force: force = 0.6666666666666671
+          length change:  delta = 0.06666666666666668 
+          internal force: force = 0.6666666666666667
       Spring Elem_2: Node_2 to Node_3 with c=10
           length change:  delta = 0.06666666666666665 
           internal force: force = 0.6666666666666665
       Spring Elem_3: Node_1 to Node_3 with c=10
-          length change:  delta = 0.13333333333333336 
-          internal force: force = 1.3333333333333335
+          length change:  delta = 0.13333333333333333 
+          internal force: force = 1.3333333333333333
 
 
 
@@ -319,7 +326,7 @@ We can also create a force plot, though it doesn't look all that nice in 1D
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.558 seconds)
+   **Total running time of the script:** (0 minutes 7.881 seconds)
 
 
 .. _sphx_glr_download_auto_examples_springs_plot_spring_system01.py:

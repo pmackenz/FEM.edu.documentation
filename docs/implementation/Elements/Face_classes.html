@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Face classes &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -125,7 +125,7 @@ The are used to store and compute surface loads on elements.</p>
 <p>The <code class="code docutils literal notranslate"><span class="pre">Faces</span></code> class is an abstract class defining the interface for all face classes.</p>
 <dl class="py class" id="module-femedu.elements.Faces">
 <dt class="sig sig-object py" id="femedu.elements.Faces.Faces">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.Faces.</span></span><span class="sig-name descname"><span class="pre">Faces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">nds</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Faces.Faces" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.Faces.</span></span><span class="sig-name descname"><span class="pre">Faces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">nds</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Faces.Faces" title="Link to this definition"></a></dt>
 <dd><p>abstract class: representing one face of a 2D or 3D element</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.Faces.Faces.computeNodalFlux">
@@ -204,7 +204,7 @@ The local tangent is defined from the first to the second (to the third) node.</
 <span id="derived-classes"></span><h2>Derived Classes<a class="headerlink" href="#module-femedu.elements.Face2D" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="femedu.elements.Face2D.Face2D">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.Face2D.</span></span><span class="sig-name descname"><span class="pre">Face2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">nds</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Face2D.Face2D" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.Face2D.</span></span><span class="sig-name descname"><span class="pre">Face2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">nds</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Face2D.Face2D" title="Link to this definition"></a></dt>
 <dd><p>Implementation representing one face of a 2D element</p>
 <p>The face may be defined by two nodes (liner interpolation)
 or three nodes (quadratic interpolation).
@@ -270,7 +270,7 @@ and <span class="math notranslate nohighlight">\({\bf X}_k\)</span> is the coord
 
 <dl class="py class" id="module-femedu.elements.Face3D">
 <dt class="sig sig-object py" id="femedu.elements.Face3D.Face3D">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.Face3D.</span></span><span class="sig-name descname"><span class="pre">Face3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">nds</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Face3D.Face3D" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.elements.Face3D.</span></span><span class="sig-name descname"><span class="pre">Face3D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">nds</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.Face3D.Face3D" title="Link to this definition"></a></dt>
 <dd><p>Implementation representing one face of a 3D brick or tetrahedral element</p>
 <p>The face may be defined by</p>
 <ul class="simple">
@@ -325,7 +325,7 @@ and <span class="math notranslate nohighlight">\({\bf X}_k\)</span> is the coord
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

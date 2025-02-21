@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tutorial 3 - Loading a Model &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -124,9 +124,9 @@ to download the full example code.</p>
 <p>Before building a model, we need to load the used components.
 Every model needs one <code class="xref py py-class docutils literal notranslate"><span class="pre">System</span></code> instance.  Furthermore,
 we are going to use several <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> instances.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Quad</span><span class="p">,</span> <span class="n">Triangle</span>
-<span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">PlaneStress</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Quad</span><span class="p">,</span> <span class="n">Triangle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.materials</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlaneStress</span>
 
 <span class="c1"># create a model domain</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
@@ -222,7 +222,7 @@ them into nodal forces for the element.</p>
 <section id="surface-loads-in-3d">
 <h1>Surface loads in 3D<a class="headerlink" href="#surface-loads-in-3d" title="Link to this heading"></a></h1>
 <p>These are not yet available in <strong>FEM.edu</strong>.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.120 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.021 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-model-creation-plot-03-loading-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/3cd35ad12182adb08f708c3ad60ed7be/plot_03_loading.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_03_loading.ipynb</span></code></a></p>
@@ -249,7 +249,7 @@ them into nodal forces for the element.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

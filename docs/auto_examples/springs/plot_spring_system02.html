@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A first 1D spring system with nicer plots &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -138,8 +138,8 @@ We are using the concept to move springs apart in plots while maintaining the 1d
 </div>
 <section id="initialization">
 <h2>Initialization<a class="headerlink" href="#initialization" title="Link to this heading"></a></h2>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Spring</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Spring</span>
 </pre></div>
 </div>
 </section>
@@ -272,17 +272,17 @@ Nodes:
 Elements:
 ---------------------
   Spring Elem_4: Node_4 to Node_5 with c=15
-      length change:  delta = 0.1333333333333333
-      internal force: force = 1.9999999999999996
+      length change:  delta = 0.13333333333333333
+      internal force: force = 2.0
   Spring Elem_5: Node_6 to Node_8 with c=10
-      length change:  delta = 0.06666666666666671
-      internal force: force = 0.6666666666666671
+      length change:  delta = 0.06666666666666668
+      internal force: force = 0.6666666666666667
   Spring Elem_6: Node_8 to Node_10 with c=10
       length change:  delta = 0.06666666666666665
       internal force: force = 0.6666666666666665
   Spring Elem_7: Node_7 to Node_11 with c=10
-      length change:  delta = 0.13333333333333336
-      internal force: force = 1.3333333333333335
+      length change:  delta = 0.13333333333333333
+      internal force: force = 1.3333333333333333
 </pre></div>
 </div>
 <p>We can also create a force plot, though it doesn’t look all that nice in 1D</p>
@@ -294,7 +294,7 @@ Elements:
 <li><img src="../../_images/sphx_glr_plot_spring_system02_001.png" srcset="../../_images/sphx_glr_plot_spring_system02_001.png" alt="Axial Forces" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_spring_system02_002.png" srcset="../../_images/sphx_glr_plot_spring_system02_002.png" alt="Deformed System (magnification=10.00)" class = "sphx-glr-multi-img"/></li>
 </ul>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.130 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.026 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-springs-plot-spring-system02-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/0f9d64c55c1785c83e20470d4b0f24c2/plot_spring_system02.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_spring_system02.ipynb</span></code></a></p>
@@ -322,7 +322,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

@@ -472,7 +472,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 1.449865793916187
+     ** Stability check: (smallest eigenvalue of Kt) = 1.4498657937285275
 
     +
 
@@ -480,16 +480,16 @@ Run the example by creating an instance of the problem and executing it by calli
 
     norm of the out-of-balance force:   4.9858e+03
     norm of the out-of-balance force:   2.5683e+01
-    norm of the out-of-balance force:   6.8711e-03
-    norm of the out-of-balance force:   2.4387e-06
-    norm of the out-of-balance force:   1.0062e-07
+    norm of the out-of-balance force:   6.8710e-03
+    norm of the out-of-balance force:   2.4430e-06
+    norm of the out-of-balance force:   1.6512e-07
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        1.30
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 1.3039606865783047
+     ** Stability check: (smallest eigenvalue of Kt) = 1.3039606866245097
 
     +
 
@@ -498,15 +498,15 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   4.9858e+03
     norm of the out-of-balance force:   5.2545e+01
     norm of the out-of-balance force:   2.8485e-02
-    norm of the out-of-balance force:   2.0779e-05
-    norm of the out-of-balance force:   8.3622e-08
+    norm of the out-of-balance force:   2.0784e-05
+    norm of the out-of-balance force:   7.0993e-08
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        1.16
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 1.1558244386097825
+     ** Stability check: (smallest eigenvalue of Kt) = 1.1558244386254235
 
     +
 
@@ -515,15 +515,15 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   4.9858e+03
     norm of the out-of-balance force:   8.0699e+01
     norm of the out-of-balance force:   6.6491e-02
-    norm of the out-of-balance force:   7.4352e-05
-    norm of the out-of-balance force:   8.6463e-08
+    norm of the out-of-balance force:   7.4326e-05
+    norm of the out-of-balance force:   7.1854e-08
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        1.00
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 1.0049715577586738
+     ** Stability check: (smallest eigenvalue of Kt) = 1.0049715576213192
 
     +
 
@@ -533,14 +533,14 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   1.1028e+02
     norm of the out-of-balance force:   1.2275e-01
     norm of the out-of-balance force:   1.8726e-04
-    norm of the out-of-balance force:   2.3192e-07
+    norm of the out-of-balance force:   2.5030e-07
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        0.85
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 0.8507250235819045
+     ** Stability check: (smallest eigenvalue of Kt) = 0.8507250234763356
 
     +
 
@@ -549,15 +549,15 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   4.9858e+03
     norm of the out-of-balance force:   1.4143e+02
     norm of the out-of-balance force:   1.9938e-01
-    norm of the out-of-balance force:   3.8920e-04
-    norm of the out-of-balance force:   6.5474e-07
+    norm of the out-of-balance force:   3.8921e-04
+    norm of the out-of-balance force:   6.6359e-07
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        0.69
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 0.6920949784691565
+     ** Stability check: (smallest eigenvalue of Kt) = 0.6920949784275
 
     +
 
@@ -567,15 +567,15 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   1.7435e+02
     norm of the out-of-balance force:   2.9877e-01
     norm of the out-of-balance force:   7.1689e-04
-    norm of the out-of-balance force:   1.5075e-06
-    norm of the out-of-balance force:   1.7859e-08
+    norm of the out-of-balance force:   1.5020e-06
+    norm of the out-of-balance force:   1.3625e-08
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        0.53
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 0.527539134839068
+     ** Stability check: (smallest eigenvalue of Kt) = 0.5275391348656064
 
     +
 
@@ -585,15 +585,15 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   2.0925e+02
     norm of the out-of-balance force:   4.2361e-01
     norm of the out-of-balance force:   1.2154e-03
-    norm of the out-of-balance force:   3.0838e-06
-    norm of the out-of-balance force:   2.1797e-08
+    norm of the out-of-balance force:   3.0769e-06
+    norm of the out-of-balance force:   2.8825e-08
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        0.35
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 0.3544285721184398
+     ** Stability check: (smallest eigenvalue of Kt) = 0.35442857202021694
 
     +
 
@@ -603,15 +603,15 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   2.4638e+02
     norm of the out-of-balance force:   5.7696e-01
     norm of the out-of-balance force:   1.9401e-03
-    norm of the out-of-balance force:   5.8208e-06
-    norm of the out-of-balance force:   2.0777e-08
+    norm of the out-of-balance force:   5.8237e-06
+    norm of the out-of-balance force:   2.2737e-08
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:        0.17
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = 0.1676343891947249
+     ** Stability check: (smallest eigenvalue of Kt) = 0.1676343891118212
 
     +
 
@@ -621,15 +621,15 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   2.8607e+02
     norm of the out-of-balance force:   7.6225e-01
     norm of the out-of-balance force:   2.9585e-03
-    norm of the out-of-balance force:   1.0386e-05
-    norm of the out-of-balance force:   3.6769e-08
+    norm of the out-of-balance force:   1.0392e-05
+    norm of the out-of-balance force:   3.3931e-08
 
      ** Stability check: (smallest 1 eigenvalues of Kt)
                             mode 0:       -0.05
 
     +
 
-     ** Stability check: (smallest eigenvalue of Kt) = -0.04529626513830582
+     ** Stability check: (smallest eigenvalue of Kt) = -0.04529626517253338
 
     +
 
@@ -779,7 +779,7 @@ Run the example by creating an instance of the problem and executing it by calli
           internal forces: f0=15.17 V0=-36.30 M0=6209.08 fl=15.17 Vl=-36.30 Ml=-2503.48 Pw=-396.00 Mw=-15840.00
       Frame2D_336: nodes ( Node_212 Node_217 )
           material: ElasticSection
-          internal forces: f0=7.08 V0=-0.00 M0=-377.91 fl=7.08 Vl=-0.00 Ml=-377.91 Pw=-396.00 Mw=-15840.00
+          internal forces: f0=7.08 V0=0.00 M0=-377.91 fl=7.08 Vl=0.00 Ml=-377.91 Pw=-396.00 Mw=-15840.00
       Frame2D_337: nodes ( Node_217 Node_222 )
           material: ElasticSection
           internal forces: f0=15.17 V0=36.30 M0=-2503.48 fl=15.17 Vl=36.30 Ml=6209.08 Pw=-396.00 Mw=-15840.00
@@ -788,7 +788,7 @@ Run the example by creating an instance of the problem and executing it by calli
           internal forces: f0=-63.72 V0=-52.87 M0=9679.65 fl=-63.72 Vl=-52.87 Ml=-3007.97 Pw=-396.00 Mw=-15840.00
       Frame2D_339: nodes ( Node_213 Node_218 )
           material: ElasticSection
-          internal forces: f0=-46.47 V0=-0.00 M0=-1229.55 fl=-46.47 Vl=-0.00 Ml=-1229.55 Pw=-396.00 Mw=-15840.00
+          internal forces: f0=-46.47 V0=0.00 M0=-1229.55 fl=-46.47 Vl=0.00 Ml=-1229.55 Pw=-396.00 Mw=-15840.00
       Frame2D_340: nodes ( Node_218 Node_223 )
           material: ElasticSection
           internal forces: f0=-63.72 V0=52.87 M0=-3007.97 fl=-63.72 Vl=52.87 Ml=9679.65 Pw=-396.00 Mw=-15840.00
@@ -800,7 +800,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.955 seconds)
+   **Total running time of the script:** (0 minutes 0.667 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame05.py:

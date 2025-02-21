@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A square patch made of one quadrilateral plate elements &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -162,20 +162,20 @@ to download the full example code.</p>
 </pre></div>
 </div>
 <p>Author: Peter Mackenzie-Helnwein</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">femedu.examples</span> <span class="kn">import</span> <span class="n">Example</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.examples</span><span class="w"> </span><span class="kn">import</span> <span class="n">Example</span>
 
-<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
-<span class="kn">from</span> <span class="nn">femedu.solver</span> <span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Quad</span>
-<span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">PlaneStress</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.solver</span><span class="w"> </span><span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Quad</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.materials</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlaneStress</span>
 
 
-<span class="k">class</span> <span class="nc">ExamplePlate08</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ExamplePlate08</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
 
     <span class="c1"># sphinx_gallery_thumbnail_number = 2</span>
-    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">E</span>  <span class="o">=</span> <span class="mf">10.</span><span class="p">,</span> <span class="c1"># Young&#39;s modulus</span>
@@ -265,7 +265,7 @@ to download the full example code.</p>
 </div>
 <ul class="sphx-glr-horizontal">
 <li><img src="../../_images/sphx_glr_plot_plate05_quad_test2_001.png" srcset="../../_images/sphx_glr_plot_plate05_quad_test2_001.png" alt="Undeformed system" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_plate05_quad_test2_002.png" srcset="../../_images/sphx_glr_plot_plate05_quad_test2_002.png" alt="Mode Shape for $ \lambda = -0.00 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate05_quad_test2_002.png" srcset="../../_images/sphx_glr_plot_plate05_quad_test2_002.png" alt="Mode Shape for $ \lambda = 0.00 $" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate05_quad_test2_003.png" srcset="../../_images/sphx_glr_plot_plate05_quad_test2_003.png" alt="Mode Shape for $ \lambda = 0.00 $" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate05_quad_test2_004.png" srcset="../../_images/sphx_glr_plot_plate05_quad_test2_004.png" alt="Mode Shape for $ \lambda = 0.00 $" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate05_quad_test2_005.png" srcset="../../_images/sphx_glr_plot_plate05_quad_test2_005.png" alt="Mode Shape for $ \lambda = 3.56 $" class = "sphx-glr-multi-img"/></li>
@@ -279,7 +279,7 @@ to download the full example code.</p>
 +
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.236 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.230 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate05-quad-test2-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/07787b46c6068a7624d7508212516c52/plot_plate05_quad_test2.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate05_quad_test2.ipynb</span></code></a></p>
@@ -306,7 +306,7 @@ to download the full example code.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

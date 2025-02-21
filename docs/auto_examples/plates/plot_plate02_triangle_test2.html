@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A square patch made of two triangular plate elements &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -191,17 +191,17 @@ for a <code class="xref py py-func docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 <p>Author: Peter Mackenzie-Helnwein</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples</span> <span class="kn">import</span> <span class="n">Example</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">femedu.examples</span><span class="w"> </span><span class="kn">import</span> <span class="n">Example</span>
 
-<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
-<span class="kn">from</span> <span class="nn">femedu.solver</span> <span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Triangle</span>
-<span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">PlaneStress</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.solver</span><span class="w"> </span><span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Triangle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.materials</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlaneStress</span>
 
 
-<span class="k">class</span> <span class="nc">ExamplePlate02</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ExamplePlate02</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">E</span>  <span class="o">=</span> <span class="mf">10.</span><span class="p">,</span>   <span class="c1"># Young&#39;s modulus</span>
@@ -297,14 +297,14 @@ Elements:
   Triangle_834: nodes ( Node_597 Node_598 Node_600 )
       material: PlaneStress
       strain: xx=1.000e-01 yy=-3.000e-02 xy=0.000e+00 zz=-2.100e-02
-      stress: xx=1.000e+00 yy=4.148e-18 xy=0.000e+00 zz=0.000e+00
+      stress: xx=1.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
   Triangle_835: nodes ( Node_599 Node_600 Node_598 )
       material: PlaneStress
       strain: xx=1.000e-01 yy=-3.000e-02 xy=1.776e-16 zz=-2.100e-02
-      stress: xx=1.000e+00 yy=2.447e-15 xy=6.832e-16 zz=0.000e+00
+      stress: xx=1.000e+00 yy=2.442e-15 xy=6.832e-16 zz=0.000e+00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.546 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.094 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate02-triangle-test2-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/a5749cff2bf3efee28de55a6dceb8ec8/plot_plate02_triangle_test2.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate02_triangle_test2.ipynb</span></code></a></p>
@@ -331,7 +331,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

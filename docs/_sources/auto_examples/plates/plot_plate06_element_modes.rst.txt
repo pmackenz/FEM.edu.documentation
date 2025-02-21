@@ -146,7 +146,7 @@ at the current load level (0.0)
     *
 
       .. image-sg:: /auto_examples/plates/images/sphx_glr_plot_plate06_element_modes_002.png
-         :alt: Mode Shape for $ \lambda = -0.00 $
+         :alt: Mode Shape for $ \lambda = 0.00 $
          :srcset: /auto_examples/plates/images/sphx_glr_plot_plate06_element_modes_002.png
          :class: sphx-glr-multi-img
 
@@ -387,8 +387,8 @@ Let's finish off with a nice plot of the deformed system.
     ---------------------
       Quad9_842: nodes ( Node_620 Node_621 Node_622 Node_623 Node_624 Node_625 Node_626 Node_627 Node_628 )
           material: PlaneStress
-          strain (0): xx=-1.110e-16 yy=-1.110e-16 xy=-5.551e-17 zz=6.661e-17
-          stress (0): xx=-1.586e-15 yy=-1.586e-15 xy=-2.135e-16 zz=0.000e+00
+          strain (0): xx=-1.110e-16 yy=-1.110e-16 xy=5.551e-17 zz=6.661e-17
+          stress (0): xx=-1.586e-15 yy=-1.586e-15 xy=2.135e-16 zz=0.000e+00
           strain (1): xx=2.220e-16 yy=0.000e+00 xy=9.382e-17 zz=-6.661e-17
           stress (1): xx=2.440e-15 yy=7.320e-16 xy=3.609e-16 zz=0.000e+00
           strain (2): xx=2.220e-16 yy=-1.110e-16 xy=2.914e-16 zz=-3.331e-17
@@ -399,12 +399,12 @@ Let's finish off with a nice plot of the deformed system.
           stress (4): xx=0.000e+00 yy=0.000e+00 xy=2.669e-16 zz=0.000e+00
           strain (5): xx=-2.220e-16 yy=2.220e-16 xy=-1.892e-16 zz=-0.000e+00
           stress (5): xx=-1.708e-15 yy=1.708e-15 xy=-7.276e-16 zz=0.000e+00
-          strain (6): xx=0.000e+00 yy=0.000e+00 xy=1.943e-16 zz=-0.000e+00
-          stress (6): xx=0.000e+00 yy=0.000e+00 xy=7.473e-16 zz=0.000e+00
+          strain (6): xx=0.000e+00 yy=8.882e-16 xy=1.943e-16 zz=-2.665e-16
+          stress (6): xx=2.928e-15 yy=9.760e-15 xy=7.473e-16 zz=0.000e+00
           strain (7): xx=-2.220e-16 yy=-2.220e-16 xy=1.949e-16 zz=1.332e-16
           stress (7): xx=-3.172e-15 yy=-3.172e-15 xy=7.495e-16 zz=0.000e+00
-          strain (8): xx=0.000e+00 yy=-2.220e-16 xy=-3.192e-16 zz=6.661e-17
-          stress (8): xx=-7.320e-16 yy=-2.440e-15 xy=-1.228e-15 zz=0.000e+00
+          strain (8): xx=0.000e+00 yy=0.000e+00 xy=1.388e-17 zz=-0.000e+00
+          stress (8): xx=0.000e+00 yy=0.000e+00 xy=5.338e-17 zz=0.000e+00
 
 
 
@@ -413,7 +413,7 @@ Let's finish off with a nice plot of the deformed system.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.376 seconds)
+   **Total running time of the script:** (0 minutes 0.250 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate06_element_modes.py:

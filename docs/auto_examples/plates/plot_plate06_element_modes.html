@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Element Testing: Analyzing Modes and Energy &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -158,15 +158,15 @@ to download the full example code.</p>
 <p>Author: Peter Mackenzie-Helnwein</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 5</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">femedu.examples</span> <span class="kn">import</span> <span class="n">Example</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.examples</span><span class="w"> </span><span class="kn">import</span> <span class="n">Example</span>
 
-<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
-<span class="kn">from</span> <span class="nn">femedu.solver</span> <span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Quad</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Quad9</span>
-<span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">PlaneStress</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.solver</span><span class="w"> </span><span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Quad</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Quad9</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.materials</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlaneStress</span>
 
 <span class="c1"># -------------------------------------------------------------</span>
 <span class="c1">#   Example setup</span>
@@ -225,7 +225,7 @@ at the current load level (0.0)</p>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_002.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_002.png" alt="Mode Shape for $ \lambda = -0.00 $" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_plate06_element_modes_002.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_002.png" alt="Mode Shape for $ \lambda = 0.00 $" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate06_element_modes_003.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_003.png" alt="Mode Shape for $ \lambda = 0.00 $" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate06_element_modes_004.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_004.png" alt="Mode Shape for $ \lambda = 0.00 $" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate06_element_modes_005.png" srcset="../../_images/sphx_glr_plot_plate06_element_modes_005.png" alt="Mode Shape for $ \lambda = 1.73 $" class = "sphx-glr-multi-img"/></li>
@@ -310,8 +310,8 @@ Elements:
 ---------------------
   Quad9_842: nodes ( Node_620 Node_621 Node_622 Node_623 Node_624 Node_625 Node_626 Node_627 Node_628 )
       material: PlaneStress
-      strain (0): xx=-1.110e-16 yy=-1.110e-16 xy=-5.551e-17 zz=6.661e-17
-      stress (0): xx=-1.586e-15 yy=-1.586e-15 xy=-2.135e-16 zz=0.000e+00
+      strain (0): xx=-1.110e-16 yy=-1.110e-16 xy=5.551e-17 zz=6.661e-17
+      stress (0): xx=-1.586e-15 yy=-1.586e-15 xy=2.135e-16 zz=0.000e+00
       strain (1): xx=2.220e-16 yy=0.000e+00 xy=9.382e-17 zz=-6.661e-17
       stress (1): xx=2.440e-15 yy=7.320e-16 xy=3.609e-16 zz=0.000e+00
       strain (2): xx=2.220e-16 yy=-1.110e-16 xy=2.914e-16 zz=-3.331e-17
@@ -322,15 +322,15 @@ Elements:
       stress (4): xx=0.000e+00 yy=0.000e+00 xy=2.669e-16 zz=0.000e+00
       strain (5): xx=-2.220e-16 yy=2.220e-16 xy=-1.892e-16 zz=-0.000e+00
       stress (5): xx=-1.708e-15 yy=1.708e-15 xy=-7.276e-16 zz=0.000e+00
-      strain (6): xx=0.000e+00 yy=0.000e+00 xy=1.943e-16 zz=-0.000e+00
-      stress (6): xx=0.000e+00 yy=0.000e+00 xy=7.473e-16 zz=0.000e+00
+      strain (6): xx=0.000e+00 yy=8.882e-16 xy=1.943e-16 zz=-2.665e-16
+      stress (6): xx=2.928e-15 yy=9.760e-15 xy=7.473e-16 zz=0.000e+00
       strain (7): xx=-2.220e-16 yy=-2.220e-16 xy=1.949e-16 zz=1.332e-16
       stress (7): xx=-3.172e-15 yy=-3.172e-15 xy=7.495e-16 zz=0.000e+00
-      strain (8): xx=0.000e+00 yy=-2.220e-16 xy=-3.192e-16 zz=6.661e-17
-      stress (8): xx=-7.320e-16 yy=-2.440e-15 xy=-1.228e-15 zz=0.000e+00
+      strain (8): xx=0.000e+00 yy=0.000e+00 xy=1.388e-17 zz=-0.000e+00
+      stress (8): xx=0.000e+00 yy=0.000e+00 xy=5.338e-17 zz=0.000e+00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.376 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.250 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate06-element-modes-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/14ff78e68b69d08707f3ae74dd0d669a/plot_plate06_element_modes.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate06_element_modes.ipynb</span></code></a></p>
@@ -357,7 +357,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

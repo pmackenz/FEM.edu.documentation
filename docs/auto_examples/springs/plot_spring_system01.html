@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A first 1D spring system &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -135,8 +135,12 @@ to download the full example code.</p>
 </div>
 <section id="initialization">
 <h2>Initialization<a class="headerlink" href="#initialization" title="Link to this heading"></a></h2>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Spring</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Spring</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/Users/pmackenz/Development/Educational/FEM.edu/src/femedu/elements/linear/Frame2D.py:36: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+  &quot;&quot;&quot;
 </pre></div>
 </div>
 </section>
@@ -260,24 +264,24 @@ Nodes:
 Elements:
 ---------------------
   Spring Elem_0: Node_0 to Node_1 with c=15
-      length change:  delta = 0.1333333333333333
-      internal force: force = 1.9999999999999996
+      length change:  delta = 0.13333333333333333
+      internal force: force = 2.0
   Spring Elem_1: Node_1 to Node_2 with c=10
-      length change:  delta = 0.06666666666666671
-      internal force: force = 0.6666666666666671
+      length change:  delta = 0.06666666666666668
+      internal force: force = 0.6666666666666667
   Spring Elem_2: Node_2 to Node_3 with c=10
       length change:  delta = 0.06666666666666665
       internal force: force = 0.6666666666666665
   Spring Elem_3: Node_1 to Node_3 with c=10
-      length change:  delta = 0.13333333333333336
-      internal force: force = 1.3333333333333335
+      length change:  delta = 0.13333333333333333
+      internal force: force = 1.3333333333333333
 </pre></div>
 </div>
 <p>We can also create a force plot, though it doesn’t look all that nice in 1D</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_spring_system01_001.png" srcset="../../_images/sphx_glr_plot_spring_system01_001.png" alt="Axial Forces" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.558 seconds)</p>
+<img src="../../_images/sphx_glr_plot_spring_system01_001.png" srcset="../../_images/sphx_glr_plot_spring_system01_001.png" alt="Axial Forces" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 7.881 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-springs-plot-spring-system01-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/b49ecf6611163f9dd60fab990fed50ca/plot_spring_system01.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_spring_system01.ipynb</span></code></a></p>
@@ -305,7 +309,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

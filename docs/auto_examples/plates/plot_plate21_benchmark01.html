@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Benchmark problem: Wedged Plate - finite deformations &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -141,20 +141,20 @@ to download the full example code.</p>
 <li><p>finite deformation Triangle6 and Quad9 elements</p></li>
 <li><p>history plot feature</p></li>
 </ul>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">femedu.examples</span> <span class="kn">import</span> <span class="n">Example</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.examples</span><span class="w"> </span><span class="kn">import</span> <span class="n">Example</span>
 
-<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span>
-<span class="kn">from</span> <span class="nn">femedu.solver</span> <span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.finite</span> <span class="kn">import</span> <span class="n">Quad9</span><span class="p">,</span> <span class="n">Triangle6</span>
-<span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">PlaneStress</span>
-<span class="kn">from</span> <span class="nn">femedu.mesher</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.solver</span><span class="w"> </span><span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.finite</span><span class="w"> </span><span class="kn">import</span> <span class="n">Quad9</span><span class="p">,</span> <span class="n">Triangle6</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.materials</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlaneStress</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.mesher</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 
-<span class="k">class</span> <span class="nc">Example21_Benchmark01</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Example21_Benchmark01</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># ========== setting mesh parameters ==============</span>
 
         <span class="n">Nx</span> <span class="o">=</span> <span class="mi">8</span>  <span class="c1"># number of elements in the mesh</span>
@@ -275,530 +275,162 @@ to download the full example code.</p>
 <li><img src="../../_images/sphx_glr_plot_plate21_benchmark01_005.png" srcset="../../_images/sphx_glr_plot_plate21_benchmark01_005.png" alt="Contours of '$\sigma_{xy}$'" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_plate21_benchmark01_006.png" srcset="../../_images/sphx_glr_plot_plate21_benchmark01_006.png" alt="Load History Plot" class = "sphx-glr-multi-img"/></li>
 </ul>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>+ Quad9_7: nodes ( Node_14 Node_16 Node_50 Node_48 Node_15 Node_33 Node_49 Node_31 Node_32 )
-    material: PlaneStress
-    strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad9_7: nodes ( Node_14 Node_16 Node_50 Node_48 Node_15 Node_33 Node_49 Node_31 Node_32 )
-    material: PlaneStress
-    strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad9_7: nodes ( Node_14 Node_16 Node_50 Node_48 Node_15 Node_33 Node_49 Node_31 Node_32 )
-    material: PlaneStress
-    strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad9_15: nodes ( Node_48 Node_50 Node_84 Node_82 Node_49 Node_67 Node_83 Node_65 Node_66 )
-    material: PlaneStress
-    strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad9_15: nodes ( Node_48 Node_50 Node_84 Node_82 Node_49 Node_67 Node_83 Node_65 Node_66 )
-    material: PlaneStress
-    strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad9_15: nodes ( Node_48 Node_50 Node_84 Node_82 Node_49 Node_67 Node_83 Node_65 Node_66 )
-    material: PlaneStress
-    strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad9_23: nodes ( Node_82 Node_84 Node_118 Node_116 Node_83 Node_101 Node_117 Node_99 Node_100 )
-    material: PlaneStress
-    strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad9_23: nodes ( Node_82 Node_84 Node_118 Node_116 Node_83 Node_101 Node_117 Node_99 Node_100 )
-    material: PlaneStress
-    strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad9_23: nodes ( Node_82 Node_84 Node_118 Node_116 Node_83 Node_101 Node_117 Node_99 Node_100 )
-    material: PlaneStress
-    strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad9_31: nodes ( Node_116 Node_118 Node_152 Node_150 Node_117 Node_135 Node_151 Node_133 Node_134 )
-    material: PlaneStress
-    strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad9_31: nodes ( Node_116 Node_118 Node_152 Node_150 Node_117 Node_135 Node_151 Node_133 Node_134 )
-    material: PlaneStress
-    strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Quad9_31: nodes ( Node_116 Node_118 Node_152 Node_150 Node_117 Node_135 Node_151 Node_133 Node_134 )
-    material: PlaneStress
-    strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (4): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (5): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (6): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (7): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress (8): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_46: nodes ( Node_167 Node_169 Node_201 Node_168 Node_185 Node_184 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_47: nodes ( Node_203 Node_201 Node_169 Node_202 Node_185 Node_186 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_47: nodes ( Node_203 Node_201 Node_169 Node_202 Node_185 Node_186 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_47: nodes ( Node_203 Node_201 Node_169 Node_202 Node_185 Node_186 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_62: nodes ( Node_201 Node_203 Node_235 Node_202 Node_219 Node_218 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_63: nodes ( Node_237 Node_235 Node_203 Node_236 Node_219 Node_220 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_63: nodes ( Node_237 Node_235 Node_203 Node_236 Node_219 Node_220 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_63: nodes ( Node_237 Node_235 Node_203 Node_236 Node_219 Node_220 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_78: nodes ( Node_235 Node_237 Node_269 Node_236 Node_253 Node_252 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_79: nodes ( Node_271 Node_269 Node_237 Node_270 Node_253 Node_254 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_79: nodes ( Node_271 Node_269 Node_237 Node_270 Node_253 Node_254 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_79: nodes ( Node_271 Node_269 Node_237 Node_270 Node_253 Node_254 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_94: nodes ( Node_269 Node_271 Node_303 Node_270 Node_287 Node_286 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_95: nodes ( Node_305 Node_303 Node_271 Node_304 Node_287 Node_288 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_95: nodes ( Node_305 Node_303 Node_271 Node_304 Node_287 Node_288 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-+ Triangle6_95: nodes ( Node_305 Node_303 Node_271 Node_304 Node_287 Node_288 )
-    material: PlaneStress
-    strain 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 0: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 1: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    strain 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-    stress 2: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-norm of the out-of-balance force:   1.1372e-10
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>norm of the out-of-balance force:   1.1551e-10
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   4.4148e+00
 norm of the out-of-balance force:   1.7209e-03
-norm of the out-of-balance force:   9.7855e-09
+norm of the out-of-balance force:   9.7896e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   4.2749e+00
 norm of the out-of-balance force:   1.6512e-03
-norm of the out-of-balance force:   9.4793e-09
+norm of the out-of-balance force:   9.4534e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   4.1351e+00
 norm of the out-of-balance force:   1.5809e-03
-norm of the out-of-balance force:   9.0103e-09
+norm of the out-of-balance force:   9.0151e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   3.9960e+00
 norm of the out-of-balance force:   1.5105e-03
-norm of the out-of-balance force:   8.5706e-09
+norm of the out-of-balance force:   8.5447e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   3.8580e+00
 norm of the out-of-balance force:   1.4404e-03
-norm of the out-of-balance force:   8.0254e-09
+norm of the out-of-balance force:   7.9481e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   3.7216e+00
 norm of the out-of-balance force:   1.3709e-03
-norm of the out-of-balance force:   7.4338e-09
+norm of the out-of-balance force:   7.4372e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   3.5873e+00
 norm of the out-of-balance force:   1.3025e-03
-norm of the out-of-balance force:   6.7808e-09
+norm of the out-of-balance force:   6.7946e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   3.4554e+00
 norm of the out-of-balance force:   1.2354e-03
-norm of the out-of-balance force:   6.2301e-09
+norm of the out-of-balance force:   6.2714e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   3.3263e+00
 norm of the out-of-balance force:   1.1699e-03
-norm of the out-of-balance force:   5.6192e-09
+norm of the out-of-balance force:   5.6483e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   3.2001e+00
 norm of the out-of-balance force:   1.1062e-03
-norm of the out-of-balance force:   5.1121e-09
+norm of the out-of-balance force:   5.1036e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   3.0772e+00
 norm of the out-of-balance force:   1.0446e-03
-norm of the out-of-balance force:   4.5933e-09
+norm of the out-of-balance force:   4.5750e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   2.9577e+00
 norm of the out-of-balance force:   9.8513e-04
-norm of the out-of-balance force:   4.1141e-09
+norm of the out-of-balance force:   4.0990e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   2.8417e+00
 norm of the out-of-balance force:   9.2800e-04
-norm of the out-of-balance force:   3.6971e-09
+norm of the out-of-balance force:   3.6260e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   2.7294e+00
 norm of the out-of-balance force:   8.7327e-04
-norm of the out-of-balance force:   3.2329e-09
+norm of the out-of-balance force:   3.2617e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   2.6208e+00
 norm of the out-of-balance force:   8.2098e-04
-norm of the out-of-balance force:   2.8627e-09
+norm of the out-of-balance force:   2.8352e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   2.5159e+00
 norm of the out-of-balance force:   7.7115e-04
-norm of the out-of-balance force:   2.5234e-09
+norm of the out-of-balance force:   2.5197e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   2.4148e+00
 norm of the out-of-balance force:   7.2380e-04
-norm of the out-of-balance force:   2.2656e-09
+norm of the out-of-balance force:   2.2306e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   2.3175e+00
 norm of the out-of-balance force:   6.7890e-04
-norm of the out-of-balance force:   1.9576e-09
+norm of the out-of-balance force:   1.9182e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   2.2238e+00
 norm of the out-of-balance force:   6.3641e-04
-norm of the out-of-balance force:   1.7049e-09
+norm of the out-of-balance force:   1.7175e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   2.1339e+00
 norm of the out-of-balance force:   5.9627e-04
-norm of the out-of-balance force:   1.4794e-09
+norm of the out-of-balance force:   1.4763e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   2.0476e+00
 norm of the out-of-balance force:   5.5842e-04
-norm of the out-of-balance force:   1.3324e-09
+norm of the out-of-balance force:   1.3160e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   1.9648e+00
 norm of the out-of-balance force:   5.2278e-04
-norm of the out-of-balance force:   1.1520e-09
+norm of the out-of-balance force:   1.1624e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   1.8855e+00
 norm of the out-of-balance force:   4.8927e-04
-norm of the out-of-balance force:   1.1128e-09
+norm of the out-of-balance force:   1.0466e-09
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   1.8095e+00
 norm of the out-of-balance force:   4.5780e-04
-norm of the out-of-balance force:   8.8935e-10
+norm of the out-of-balance force:   9.1442e-10
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 norm of the out-of-balance force:   1.0408e+01
 norm of the out-of-balance force:   1.7369e+00
 norm of the out-of-balance force:   4.2829e-04
-norm of the out-of-balance force:   8.2249e-10
+norm of the out-of-balance force:   8.0285e-10
 Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 +
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (2 minutes 19.736 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 38.479 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate21-benchmark01-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/ce264ac7942738a374bee362eb11cb50/plot_plate21_benchmark01.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate21_benchmark01.ipynb</span></code></a></p>
@@ -825,7 +457,7 @@ Recorder.addData: &#39;stability&#39; not initialized by the recorder: ignored
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

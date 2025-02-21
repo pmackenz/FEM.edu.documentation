@@ -512,14 +512,14 @@ At this point, we may just plot the deformed system
     Elements:
     ---------------------
       Truss: Node_4714 to Node_4715:
-          material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': np.float64(-0.0008333333333333333)}   stress:{'axial': np.float64(-0.8333333333333333), 'flexure': 0.0}  
-          internal force: -0.8333333333333333
+          material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': np.float64(-0.0008333333333333332)}   stress:{'axial': np.float64(-0.8333333333333331), 'flexure': 0.0}  
+          internal force: -0.8333333333333331
       Truss: Node_4715 to Node_4716:
-          material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': np.float64(-0.0008333333333333333)}   stress:{'axial': np.float64(-0.8333333333333333), 'flexure': 0.0}  
-          internal force: -0.8333333333333333
+          material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': np.float64(-0.0008333333333333332)}   stress:{'axial': np.float64(-0.8333333333333331), 'flexure': 0.0}  
+          internal force: -0.8333333333333331
       Truss: Node_4714 to Node_4716:
-          material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': np.float64(0.0006666666666666664)}   stress:{'axial': np.float64(0.6666666666666664), 'flexure': 0.0}  
-          internal force: 0.6666666666666664
+          material properties: ElasticSection(Material)({'E': 1000.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30, 'I': 1.0})  strain:{'axial': np.float64(0.0006666666666666666)}   stress:{'axial': np.float64(0.6666666666666666), 'flexure': 0.0}  
+          internal force: 0.6666666666666666
 
 
 
@@ -565,7 +565,7 @@ Valid variables are
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.287 seconds)
+   **Total running time of the script:** (0 minutes 0.048 seconds)
 
 
 .. _sphx_glr_download_auto_tutorials_model_creation_plot_01_setup.py:

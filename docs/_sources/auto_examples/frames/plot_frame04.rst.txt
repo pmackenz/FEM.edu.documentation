@@ -245,7 +245,7 @@ Run the example by creating an instance of the problem and executing it by calli
     ==== perform the analysis ===
 
     norm of the out-of-balance force:   1.1920e+01
-    norm of the out-of-balance force:   2.8602e-13
+    norm of the out-of-balance force:   3.5089e-13
     +
 
     System Analysis Report
@@ -282,10 +282,10 @@ Run the example by creating an instance of the problem and executing it by calli
           internal forces: f0=-0.63 V0=1.20 M0=-0.69 fl=-0.63 Vl=1.20 Ml=71.05 Pw=-0.83 Mw=-8.33
       Frame2D_311: nodes ( Node_201 Node_202 )
           material: ElasticSection
-          internal forces: f0=-0.00 V0=-0.11 M0=71.05 fl=-0.00 Vl=-0.11 Ml=64.66 Pw=-0.83 Mw=-8.33
+          internal forces: f0=0.00 V0=-0.11 M0=71.05 fl=0.00 Vl=-0.11 Ml=64.66 Pw=-0.83 Mw=-8.33
       Frame2D_312: nodes ( Node_202 Node_203 )
           material: ElasticSection
-          internal forces: f0=-0.00 V0=-0.94 M0=56.34 fl=-0.00 Vl=-0.94 Ml=0.00 Pw=0.00 Mw=0.00
+          internal forces: f0=0.00 V0=-0.94 M0=56.34 fl=0.00 Vl=-0.94 Ml=0.00 Pw=0.00 Mw=0.00
 
 
 
@@ -294,7 +294,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.466 seconds)
+   **Total running time of the script:** (0 minutes 0.089 seconds)
 
 
 .. _sphx_glr_download_auto_examples_frames_plot_frame04.py:

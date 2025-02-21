@@ -276,7 +276,7 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   2.6164e+00
     norm of the out-of-balance force:   3.8196e-03
     norm of the out-of-balance force:   2.1116e-06
-    norm of the out-of-balance force:   2.4046e-09
+    norm of the out-of-balance force:   2.4083e-09
     +
 
     === next load level ===
@@ -285,7 +285,7 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   5.2938e+00
     norm of the out-of-balance force:   1.6230e-02
     norm of the out-of-balance force:   1.8540e-05
-    norm of the out-of-balance force:   4.5230e-08
+    norm of the out-of-balance force:   4.5231e-08
     +
 
     === next load level ===
@@ -294,7 +294,7 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   8.0343e+00
     norm of the out-of-balance force:   3.7783e-02
     norm of the out-of-balance force:   6.6350e-05
-    norm of the out-of-balance force:   2.4887e-07
+    norm of the out-of-balance force:   2.4890e-07
     +
 
     === next load level ===
@@ -303,7 +303,7 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   1.0840e+01
     norm of the out-of-balance force:   6.9061e-02
     norm of the out-of-balance force:   1.6541e-04
-    norm of the out-of-balance force:   8.4113e-07
+    norm of the out-of-balance force:   8.4114e-07
     +
 
     === next load level ===
@@ -313,7 +313,7 @@ Run the example by creating an instance of the problem and executing it by calli
     norm of the out-of-balance force:   1.1068e-01
     norm of the out-of-balance force:   3.3876e-04
     norm of the out-of-balance force:   2.1826e-06
-    norm of the out-of-balance force:   1.0892e-08
+    norm of the out-of-balance force:   1.0893e-08
     +
 
     === next load level ===
@@ -402,7 +402,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.778 seconds)
+   **Total running time of the script:** (0 minutes 0.166 seconds)
 
 
 .. _sphx_glr_download_auto_examples_mixed_plot_mixed01.py:

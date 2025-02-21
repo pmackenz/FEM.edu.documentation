@@ -518,24 +518,24 @@ Run the example by creating an instance of the problem and executing it by calli
     ---------------------
       Triangle_849: nodes ( Node_655 Node_656 Node_660 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=-6.436e-17 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=1.185e-12 xy=-5.149e-13 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=-4.559e-17 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=1.187e-12 xy=-3.647e-13 zz=0.000e+00
       Triangle_850: nodes ( Node_656 Node_657 Node_661 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=-6.885e-17 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=8.527e-16 xy=-5.508e-13 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=-7.546e-17 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=0.000e+00 xy=-6.036e-13 zz=0.000e+00
       Triangle_851: nodes ( Node_657 Node_658 Node_662 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=-2.677e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=-1.183e-12 xy=-2.141e-12 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=-2.756e-16 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=-1.183e-12 xy=-2.205e-12 zz=0.000e+00
       Triangle_852: nodes ( Node_658 Node_659 Node_663 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=-1.089e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=-1.185e-12 xy=-8.713e-13 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=-1.035e-16 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=-1.183e-12 xy=-8.279e-13 zz=0.000e+00
       Triangle_853: nodes ( Node_661 Node_660 Node_656 )
           material: PlaneStress
           strain: xx=5.000e-03 yy=-1.250e-03 xy=2.776e-17 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=3.551e-12 xy=2.220e-13 zz=0.000e+00
+          stress: xx=1.000e+02 yy=3.553e-12 xy=2.220e-13 zz=0.000e+00
       Triangle_854: nodes ( Node_662 Node_661 Node_657 )
           material: PlaneStress
           strain: xx=5.000e-03 yy=-1.250e-03 xy=-5.551e-17 zz=-9.375e-04
@@ -547,71 +547,71 @@ Run the example by creating an instance of the problem and executing it by calli
       Triangle_856: nodes ( Node_664 Node_663 Node_659 )
           material: PlaneStress
           strain: xx=5.000e-03 yy=-1.250e-03 xy=-5.551e-17 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=1.184e-12 xy=-4.441e-13 zz=0.000e+00
+          stress: xx=1.000e+02 yy=1.183e-12 xy=-4.441e-13 zz=0.000e+00
       Triangle_857: nodes ( Node_660 Node_661 Node_665 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=3.027e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=-1.185e-12 xy=2.421e-12 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=3.163e-16 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=-1.183e-12 xy=2.530e-12 zz=0.000e+00
       Triangle_858: nodes ( Node_661 Node_662 Node_666 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=-1.665e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=-7.105e-12 xy=-1.332e-12 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=5.551e-17 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=-7.105e-12 xy=4.441e-13 zz=0.000e+00
       Triangle_859: nodes ( Node_662 Node_663 Node_667 )
           material: PlaneStress
           strain: xx=5.000e-03 yy=-1.250e-03 xy=1.110e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=4.737e-12 xy=8.882e-13 zz=0.000e+00
+          stress: xx=1.000e+02 yy=4.736e-12 xy=8.882e-13 zz=0.000e+00
       Triangle_860: nodes ( Node_663 Node_664 Node_668 )
           material: PlaneStress
           strain: xx=5.000e-03 yy=-1.250e-03 xy=3.886e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=2.369e-12 xy=3.109e-12 zz=0.000e+00
+          stress: xx=1.000e+02 yy=2.370e-12 xy=3.109e-12 zz=0.000e+00
       Triangle_861: nodes ( Node_666 Node_665 Node_661 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=-3.886e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=-9.474e-12 xy=-3.109e-12 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=-1.665e-16 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=-8.288e-12 xy=-1.332e-12 zz=0.000e+00
       Triangle_862: nodes ( Node_667 Node_666 Node_662 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=-5.551e-17 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=1.185e-12 xy=-4.441e-13 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=5.551e-17 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=0.000e+00 xy=4.441e-13 zz=0.000e+00
       Triangle_863: nodes ( Node_668 Node_667 Node_663 )
           material: PlaneStress
           strain: xx=5.000e-03 yy=-1.250e-03 xy=2.776e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=2.369e-12 xy=2.220e-12 zz=0.000e+00
+          stress: xx=1.000e+02 yy=2.370e-12 xy=2.220e-12 zz=0.000e+00
       Triangle_864: nodes ( Node_669 Node_668 Node_664 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=5.836e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=1.183e-12 xy=4.668e-12 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=1.395e-16 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=-3.553e-12 xy=1.116e-12 zz=0.000e+00
       Triangle_865: nodes ( Node_665 Node_666 Node_670 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=-2.874e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=-3.554e-12 xy=-2.299e-12 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=-1.008e-16 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=5.922e-12 xy=-8.065e-13 zz=0.000e+00
       Triangle_866: nodes ( Node_666 Node_667 Node_671 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=2.220e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=-3.554e-12 xy=1.776e-12 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=5.551e-17 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=4.736e-12 xy=4.441e-13 zz=0.000e+00
       Triangle_867: nodes ( Node_667 Node_668 Node_672 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=-2.220e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=-2.368e-12 xy=-1.776e-12 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=1.110e-16 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=-1.183e-12 xy=8.882e-13 zz=0.000e+00
       Triangle_868: nodes ( Node_668 Node_669 Node_673 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=1.943e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=1.185e-12 xy=1.554e-12 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=-4.718e-16 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=-3.553e-12 xy=-3.775e-12 zz=0.000e+00
       Triangle_869: nodes ( Node_671 Node_670 Node_666 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=2.599e-17 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=-1.185e-12 xy=2.079e-13 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=-2.952e-17 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=4.736e-12 xy=-2.362e-13 zz=0.000e+00
       Triangle_870: nodes ( Node_672 Node_671 Node_667 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=-1.135e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=-9.474e-12 xy=-9.078e-13 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=-1.268e-16 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=-1.539e-11 xy=-1.014e-12 zz=0.000e+00
       Triangle_871: nodes ( Node_673 Node_672 Node_668 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=-3.331e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=-3.554e-12 xy=-2.665e-12 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=-4.441e-16 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=-4.739e-12 xy=-3.553e-12 zz=0.000e+00
       Triangle_872: nodes ( Node_674 Node_673 Node_669 )
           material: PlaneStress
-          strain: xx=5.000e-03 yy=-1.250e-03 xy=7.105e-16 zz=-9.375e-04
-          stress: xx=1.000e+02 yy=8.289e-12 xy=5.684e-12 zz=0.000e+00
+          strain: xx=5.000e-03 yy=-1.250e-03 xy=-0.000e+00 zz=-9.375e-04
+          stress: xx=1.000e+02 yy=-1.187e-12 xy=0.000e+00 zz=0.000e+00
 
     /Users/pmackenz/Development/Educational/FEM.edu/venv/lib/python3.13/site-packages/matplotlib/quiver.py:678: RuntimeWarning: Mean of empty slice.
       amean = a.mean()
@@ -624,7 +624,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.707 seconds)
+   **Total running time of the script:** (0 minutes 0.143 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate08_triangle_patch_test.py:

@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buckling of a vertical beam with pin-pin support &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -163,17 +163,17 @@ to download the full example code.</p>
 </tbody>
 </table>
 <p>Author: Peter Mackenzie-Helnwein</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples.Example</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">femedu.examples.Example</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.solver.NewtonRaphsonSolver</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.finite.Frame2D</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.materials.ElasticSection</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.solver.NewtonRaphsonSolver</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.finite.Frame2D</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.materials.ElasticSection</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 
-<span class="k">class</span> <span class="nc">ExampleFrame02</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ExampleFrame02</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># initialize a system model</span>
 
         <span class="n">N</span>  <span class="o">=</span> <span class="mi">8</span>     <span class="c1"># number of elements</span>
@@ -263,7 +263,7 @@ Frame2D(Node_192, Node_193, ElasticSection(Material)({&#39;E&#39;: 20000.0, &#39
 Frame2D(Node_193, Node_194, ElasticSection(Material)({&#39;E&#39;: 20000.0, &#39;A&#39;: 100.0, &#39;I&#39;: 10.5, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}))
 norm of the out-of-balance force:   1.0370e+02
 norm of the out-of-balance force:   1.6462e+00
-norm of the out-of-balance force:   1.5490e-10
+norm of the out-of-balance force:   8.2530e-11
 +
 
 System Analysis Report
@@ -286,7 +286,7 @@ Nodes:
       u:    [1.149 -0.002 -0.015]
   Node_190:
       x:    [0.000 50.000]
-      u:    [1.242 -0.003 0.000]
+      u:    [1.242 -0.003 -0.000]
   Node_191:
       x:    [0.000 62.500]
       u:    [1.149 -0.003 0.015]
@@ -306,31 +306,31 @@ Elements:
 ---------------------
   Frame2D_298: nodes ( Node_186 Node_187 )
       material: ElasticSection
-      internal forces: f0=-103.63 V0=4.37 M0=1.30 fl=-103.63 Vl=4.37 Ml=105.64 Pw=-0.62 Mw=-1.30
+      internal forces: f0=-103.63 V0=4.38 M0=1.30 fl=-103.63 Vl=4.38 Ml=105.64 Pw=-0.62 Mw=-1.30
   Frame2D_299: nodes ( Node_187 Node_188 )
       material: ElasticSection
-      internal forces: f0=-103.63 V0=3.12 M0=105.64 fl=-103.63 Vl=3.12 Ml=186.45 Pw=-0.62 Mw=-1.30
+      internal forces: f0=-103.63 V0=3.13 M0=105.64 fl=-103.63 Vl=3.13 Ml=186.45 Pw=-0.62 Mw=-1.30
   Frame2D_300: nodes ( Node_188 Node_189 )
       material: ElasticSection
-      internal forces: f0=-103.63 V0=1.87 M0=186.45 fl=-103.63 Vl=1.87 Ml=237.56 Pw=-0.62 Mw=-1.30
+      internal forces: f0=-103.63 V0=1.88 M0=186.45 fl=-103.63 Vl=1.88 Ml=237.56 Pw=-0.62 Mw=-1.30
   Frame2D_301: nodes ( Node_189 Node_190 )
       material: ElasticSection
-      internal forces: f0=-103.63 V0=0.62 M0=237.56 fl=-103.63 Vl=0.62 Ml=255.04 Pw=-0.62 Mw=-1.30
+      internal forces: f0=-103.63 V0=0.63 M0=237.56 fl=-103.63 Vl=0.63 Ml=255.04 Pw=-0.62 Mw=-1.30
   Frame2D_302: nodes ( Node_190 Node_191 )
       material: ElasticSection
-      internal forces: f0=-103.63 V0=-0.63 M0=255.04 fl=-103.63 Vl=-0.63 Ml=237.56 Pw=-0.62 Mw=-1.30
+      internal forces: f0=-103.63 V0=-0.62 M0=255.04 fl=-103.63 Vl=-0.62 Ml=237.56 Pw=-0.62 Mw=-1.30
   Frame2D_303: nodes ( Node_191 Node_192 )
       material: ElasticSection
-      internal forces: f0=-103.63 V0=-1.88 M0=237.56 fl=-103.63 Vl=-1.88 Ml=186.45 Pw=-0.62 Mw=-1.30
+      internal forces: f0=-103.63 V0=-1.87 M0=237.56 fl=-103.63 Vl=-1.87 Ml=186.45 Pw=-0.62 Mw=-1.30
   Frame2D_304: nodes ( Node_192 Node_193 )
       material: ElasticSection
-      internal forces: f0=-103.63 V0=-3.13 M0=186.45 fl=-103.63 Vl=-3.13 Ml=105.64 Pw=-0.62 Mw=-1.30
+      internal forces: f0=-103.63 V0=-3.12 M0=186.45 fl=-103.63 Vl=-3.12 Ml=105.64 Pw=-0.62 Mw=-1.30
   Frame2D_305: nodes ( Node_193 Node_194 )
       material: ElasticSection
-      internal forces: f0=-103.63 V0=-4.38 M0=105.64 fl=-103.63 Vl=-4.38 Ml=1.30 Pw=-0.62 Mw=-1.30
+      internal forces: f0=-103.63 V0=-4.37 M0=105.64 fl=-103.63 Vl=-4.37 Ml=1.30 Pw=-0.62 Mw=-1.30
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.539 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.099 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-frames-plot-frame02-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/638068e1830f896d7cf88c44cafdab05/plot_frame02.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_frame02.ipynb</span></code></a></p>
@@ -357,7 +357,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

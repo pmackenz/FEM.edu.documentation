@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tutorial 2 - Using Meshers &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -129,18 +129,18 @@ Every model needs one <code class="xref py py-class docutils literal notranslate
 we are going to load several <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> instances for use throughout this tutorial.</p>
 <p>We will load the respective <code class="xref py py-class docutils literal notranslate"><span class="pre">Mesher</span></code> class right where we demonstrate their use.</p>
 <p>Loading those class definitions requires the following:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span>
 <span class="c1"># line-type elements</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Frame2D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Frame2D</span>
 <span class="c1"># triangle plate-type elements</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Triangle</span><span class="p">,</span> <span class="n">Triangle6</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.diffusion</span> <span class="kn">import</span> <span class="n">Triangle</span> <span class="k">as</span> <span class="n">ThermalTriangle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Triangle</span><span class="p">,</span> <span class="n">Triangle6</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.diffusion</span><span class="w"> </span><span class="kn">import</span> <span class="n">Triangle</span> <span class="k">as</span> <span class="n">ThermalTriangle</span>
 <span class="c1"># quadrilateral plate-type elements</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Quad</span><span class="p">,</span> <span class="n">Quad9</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Quad</span><span class="p">,</span> <span class="n">Quad9</span>
 <span class="c1"># elastic materials</span>
-<span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">ElasticSection</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">,</span> <span class="n">PlaneStrain</span><span class="p">,</span> <span class="n">Thermal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.materials</span><span class="w"> </span><span class="kn">import</span> <span class="n">ElasticSection</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">,</span> <span class="n">PlaneStrain</span><span class="p">,</span> <span class="n">Thermal</span>
 </pre></div>
 </div>
 <p>For more detail on the loaded types, read <a class="reference internal" href="../../implementation/Elements/Element_class.html#element-classes"><span class="std std-ref">Element classes</span></a> and <a class="reference internal" href="../../implementation/Materials/Material_class.html#material-classes"><span class="std std-ref">Material class</span></a>.</p>
@@ -149,7 +149,7 @@ we are going to load several <code class="xref py py-class docutils literal notr
 <h2>Curve Meshers<a class="headerlink" href="#curve-meshers" title="Link to this heading"></a></h2>
 <p>This mesher takes two or more points to create an interpolated smooth curve using B-splines.
 The <code class="xref py py-meth docutils literal notranslate"><span class="pre">CurveMesher.mesh()</span></code> generates nodes and elements along that curve and adds them to your model.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.mesher</span> <span class="kn">import</span> <span class="n">CurveMesher</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">femedu.mesher</span><span class="w"> </span><span class="kn">import</span> <span class="n">CurveMesher</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
 <span class="n">mesher</span> <span class="o">=</span> <span class="n">CurveMesher</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">.25</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mf">3.</span><span class="p">,</span><span class="mf">1.5</span><span class="p">))</span>
@@ -169,7 +169,7 @@ Sides and the respective domain will be interpolated using a full quadratic poly
 <p>Entering <cite>None</cite> in place of a point will place a midpoint at the half point along a straight side.</p>
 <p>It makes sense to parametrize any mesh generation to easily perform mesh refinement,
 change dimensions and/or units, or modify material parameters for the entire model.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.mesher</span> <span class="kn">import</span> <span class="n">PatchMesher</span><span class="p">,</span> <span class="n">TriPatchMesher</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">femedu.mesher</span><span class="w"> </span><span class="kn">import</span> <span class="n">PatchMesher</span><span class="p">,</span> <span class="n">TriPatchMesher</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
 
@@ -231,7 +231,7 @@ mid-point along the first (pt0 to pt1),
 second (pt1 to pt2), and third (pt2 to pt0) side, respectively.
 Sides and the respective domain will be interpolated using a full quadratic polynomial.</p>
 <p>Entering <cite>None</cite> in place of a point will place a midpoint at the half point along a straight side.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.mesher</span> <span class="kn">import</span> <span class="n">PatchMesher</span><span class="p">,</span> <span class="n">TriPatchMesher</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">femedu.mesher</span><span class="w"> </span><span class="kn">import</span> <span class="n">PatchMesher</span><span class="p">,</span> <span class="n">TriPatchMesher</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
 
@@ -264,6 +264,13 @@ Each element will receive a unique clone of the provided material object in the 
 <span class="n">nodes1</span><span class="p">,</span> <span class="n">elements1</span> <span class="o">=</span> <span class="n">mesher1</span><span class="o">.</span><span class="n">triangleMesh</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Ny</span><span class="p">,</span> <span class="n">ThermalTriangle</span><span class="p">,</span> <span class="n">Thermal</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
 </pre></div>
 </div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Warning: unknown parameter E found in parameter list - ignored
+Warning: unknown parameter nu found in parameter list - ignored
+Warning: unknown parameter t found in parameter list - ignored
+Warning: unknown parameter A found in parameter list - ignored
+Warning: unknown parameter fy found in parameter list - ignored
+</pre></div>
+</div>
 <p>Let’s generate a second identical domain but mesh it with quadrilaterals instead.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="p">(</span>
     <span class="p">(</span> <span class="n">dX</span><span class="o">+</span><span class="n">Ri</span><span class="p">,</span>  <span class="mi">0</span><span class="p">),</span>  <span class="c1"># 0</span>
@@ -290,7 +297,7 @@ further action by the user.  They are provided for convenience and/or validation
 their return value to local variables.</p>
 </div>
 <p>Read <a class="reference internal" href="../../implementation/Mesher/PatchMesher_class.html#patch-mesher-class"><span class="std std-ref">PatchMesher class</span></a> for more information on this <code class="xref py py-meth docutils literal notranslate"><span class="pre">Mesher()</span></code></p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.507 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.088 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-model-creation-plot-02-meshing-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/8f5c1e5dc20b16fe4a3e1372048fa701/plot_02_meshing.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_02_meshing.ipynb</span></code></a></p>
@@ -318,7 +325,7 @@ their return value to local variables.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

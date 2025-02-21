@@ -234,134 +234,6 @@ Run the example by creating an instance of the problem and executing it by calli
 
  .. code-block:: none
 
-    + Quad_7: nodes ( Node_7 Node_8 Node_17 Node_16 )
-        material: list
-        strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad_7: nodes ( Node_7 Node_8 Node_17 Node_16 )
-        material: list
-        strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad_15: nodes ( Node_16 Node_17 Node_26 Node_25 )
-        material: list
-        strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad_15: nodes ( Node_16 Node_17 Node_26 Node_25 )
-        material: list
-        strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad_23: nodes ( Node_25 Node_26 Node_35 Node_34 )
-        material: list
-        strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad_23: nodes ( Node_25 Node_26 Node_35 Node_34 )
-        material: list
-        strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad_31: nodes ( Node_34 Node_35 Node_44 Node_43 )
-        material: list
-        strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Quad_31: nodes ( Node_34 Node_35 Node_44 Node_43 )
-        material: list
-        strain (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (0): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (1): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (2): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-        strain (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress (3): xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_46: nodes ( Node_52 Node_53 Node_61 )
-        material: PlaneStress
-        strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_47: nodes ( Node_62 Node_61 Node_53 )
-        material: PlaneStress
-        strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_47: nodes ( Node_62 Node_61 Node_53 )
-        material: PlaneStress
-        strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_62: nodes ( Node_61 Node_62 Node_70 )
-        material: PlaneStress
-        strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_63: nodes ( Node_71 Node_70 Node_62 )
-        material: PlaneStress
-        strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_63: nodes ( Node_71 Node_70 Node_62 )
-        material: PlaneStress
-        strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_78: nodes ( Node_70 Node_71 Node_79 )
-        material: PlaneStress
-        strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_79: nodes ( Node_80 Node_79 Node_71 )
-        material: PlaneStress
-        strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_79: nodes ( Node_80 Node_79 Node_71 )
-        material: PlaneStress
-        strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_94: nodes ( Node_79 Node_80 Node_88 )
-        material: PlaneStress
-        strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_95: nodes ( Node_89 Node_88 Node_80 )
-        material: PlaneStress
-        strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
-    + Triangle_95: nodes ( Node_89 Node_88 Node_80 )
-        material: PlaneStress
-        strain: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=-0.000e+00
-        stress: xx=0.000e+00 yy=0.000e+00 xy=0.000e+00 zz=0.000e+00
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     Recorder.addData: 'stability' not initialized by the recorder: ignored
@@ -373,7 +245,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 4.985 seconds)
+   **Total running time of the script:** (0 minutes 0.395 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate19_benchmark01.py:

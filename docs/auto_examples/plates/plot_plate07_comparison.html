@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A square patch: element comparison &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -176,20 +176,20 @@ to download the full example code.</p>
 </pre></div>
 </div>
 <p>Author: Peter Mackenzie-Helnwein</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples</span> <span class="kn">import</span> <span class="n">Example</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">femedu.examples</span><span class="w"> </span><span class="kn">import</span> <span class="n">Example</span>
 
-<span class="kn">from</span> <span class="nn">femedu.domain</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Triangle</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Triangle6</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Quad</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Quad9</span>
-<span class="kn">from</span> <span class="nn">femedu.materials</span> <span class="kn">import</span> <span class="n">PlaneStress</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Triangle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Triangle6</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Quad</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Quad9</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.materials</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlaneStress</span>
 
 
-<span class="k">class</span> <span class="nc">ExamplePlate07</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ExamplePlate07</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
 
     <span class="c1"># sphinx_gallery_thumbnail_number = 2</span>
-    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">E</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span>  <span class="c1"># Young&#39;s modulus</span>
             <span class="n">nu</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>  <span class="c1"># Poisson&#39;s ratio</span>
@@ -482,8 +482,8 @@ Elements:
       stress 2: xx=2.074e-15 yy=-4.880e-16 xy=-1.153e-15 zz=0.000e+00
   Quad9_847: nodes ( Node_642 Node_644 Node_650 Node_648 Node_643 Node_647 Node_649 Node_645 Node_646 )
       material: PlaneStress
-      strain (0): xx=8.882e-16 yy=-3.331e-16 xy=-2.776e-17 zz=-1.665e-16
-      stress (0): xx=8.662e-15 yy=-7.320e-16 xy=-1.068e-16 zz=0.000e+00
+      strain (0): xx=8.882e-16 yy=-3.331e-16 xy=-1.804e-15 zz=-1.665e-16
+      stress (0): xx=8.662e-15 yy=-7.320e-16 xy=-6.939e-15 zz=0.000e+00
       strain (1): xx=2.220e-16 yy=-4.441e-16 xy=-5.888e-16 zz=6.661e-17
       stress (1): xx=9.760e-16 yy=-4.148e-15 xy=-2.265e-15 zz=0.000e+00
       strain (2): xx=0.000e+00 yy=8.882e-16 xy=3.747e-16 zz=-2.665e-16
@@ -494,18 +494,18 @@ Elements:
       stress (4): xx=7.320e-16 yy=2.440e-15 xy=-5.338e-16 zz=0.000e+00
       strain (5): xx=1.554e-15 yy=-1.110e-16 xy=7.499e-17 zz=-4.330e-16
       stress (5): xx=1.671e-14 yy=3.904e-15 xy=2.884e-16 zz=0.000e+00
-      strain (6): xx=6.661e-16 yy=6.661e-16 xy=-1.443e-15 zz=-3.997e-16
-      stress (6): xx=9.516e-15 yy=9.516e-15 xy=-5.551e-15 zz=0.000e+00
+      strain (6): xx=6.661e-16 yy=-6.661e-16 xy=-1.887e-15 zz=-0.000e+00
+      stress (6): xx=5.124e-15 yy=-5.124e-15 xy=-7.259e-15 zz=0.000e+00
       strain (7): xx=-2.220e-16 yy=6.661e-16 xy=2.748e-15 zz=-1.332e-16
       stress (7): xx=-2.440e-16 yy=6.588e-15 xy=1.057e-14 zz=0.000e+00
-      strain (8): xx=-1.776e-15 yy=-2.220e-16 xy=-1.874e-15 zz=5.995e-16
-      stress (8): xx=-2.025e-14 yy=-8.296e-15 xy=-7.206e-15 zz=0.000e+00
+      strain (8): xx=-1.776e-15 yy=1.110e-15 xy=-5.412e-16 zz=1.998e-16
+      stress (8): xx=-1.586e-14 yy=6.344e-15 xy=-2.082e-15 zz=0.000e+00
   Quad_848: nodes ( Node_651 Node_652 Node_654 Node_653 )
       material: list
-      strain (0): xx=0.000e+00 yy=0.000e+00 xy=6.245e-17 zz=-0.000e+00
-      stress (0): xx=0.000e+00 yy=0.000e+00 xy=2.402e-16 zz=0.000e+00
-      strain (1): xx=0.000e+00 yy=0.000e+00 xy=1.249e-16 zz=-0.000e+00
-      stress (1): xx=0.000e+00 yy=0.000e+00 xy=4.804e-16 zz=0.000e+00
+      strain (0): xx=0.000e+00 yy=2.220e-16 xy=6.939e-17 zz=-6.661e-17
+      stress (0): xx=7.320e-16 yy=2.440e-15 xy=2.669e-16 zz=0.000e+00
+      strain (1): xx=0.000e+00 yy=-1.110e-16 xy=1.249e-16 zz=3.331e-17
+      stress (1): xx=-3.660e-16 yy=-1.220e-15 xy=4.804e-16 zz=0.000e+00
       strain (2): xx=0.000e+00 yy=0.000e+00 xy=-1.735e-16 zz=-0.000e+00
       stress (2): xx=0.000e+00 yy=0.000e+00 xy=-6.672e-16 zz=0.000e+00
       strain (3): xx=0.000e+00 yy=0.000e+00 xy=-2.082e-16 zz=-0.000e+00
@@ -624,8 +624,8 @@ Elements:
       stress 2: xx=3.846e+00 yy=-3.846e+00 xy=-1.003e-15 zz=0.000e+00
   Quad9_847: nodes ( Node_642 Node_644 Node_650 Node_648 Node_643 Node_647 Node_649 Node_645 Node_646 )
       material: PlaneStress
-      strain (0): xx=5.000e-01 yy=-5.000e-01 xy=3.053e-16 zz=-3.331e-16
-      stress (0): xx=3.846e+00 yy=-3.846e+00 xy=1.174e-15 zz=0.000e+00
+      strain (0): xx=5.000e-01 yy=-5.000e-01 xy=-1.471e-15 zz=-3.331e-16
+      stress (0): xx=3.846e+00 yy=-3.846e+00 xy=-5.658e-15 zz=0.000e+00
       strain (1): xx=5.000e-01 yy=-5.000e-01 xy=-1.154e-15 zz=-6.661e-17
       stress (1): xx=3.846e+00 yy=-3.846e+00 xy=-4.437e-15 zz=0.000e+00
       strain (2): xx=5.000e-01 yy=-5.000e-01 xy=-1.305e-15 zz=-3.664e-16
@@ -636,17 +636,17 @@ Elements:
       stress (4): xx=3.846e+00 yy=-3.846e+00 xy=-4.270e-16 zz=0.000e+00
       strain (5): xx=5.000e-01 yy=-5.000e-01 xy=-1.300e-16 zz=6.661e-17
       stress (5): xx=3.846e+00 yy=-3.846e+00 xy=-5.000e-16 zz=0.000e+00
-      strain (6): xx=5.000e-01 yy=-5.000e-01 xy=3.400e-16 zz=3.331e-17
-      stress (6): xx=3.846e+00 yy=-3.846e+00 xy=1.308e-15 zz=0.000e+00
+      strain (6): xx=5.000e-01 yy=-5.000e-01 xy=-1.041e-16 zz=4.330e-16
+      stress (6): xx=3.846e+00 yy=-3.846e+00 xy=-4.003e-16 zz=0.000e+00
       strain (7): xx=5.000e-01 yy=-5.000e-01 xy=3.064e-15 zz=-2.665e-16
       stress (7): xx=3.846e+00 yy=-3.846e+00 xy=1.178e-14 zz=0.000e+00
-      strain (8): xx=5.000e-01 yy=-5.000e-01 xy=-1.402e-15 zz=6.328e-16
-      stress (8): xx=3.846e+00 yy=-3.846e+00 xy=-5.391e-15 zz=0.000e+00
+      strain (8): xx=5.000e-01 yy=-5.000e-01 xy=-5.135e-16 zz=4.996e-16
+      stress (8): xx=3.846e+00 yy=-3.846e+00 xy=-1.975e-15 zz=0.000e+00
   Quad_848: nodes ( Node_651 Node_652 Node_654 Node_653 )
       material: list
-      strain (0): xx=5.000e-01 yy=-5.000e-01 xy=4.510e-17 zz=-0.000e+00
-      stress (0): xx=3.846e+00 yy=-3.846e+00 xy=1.735e-16 zz=0.000e+00
-      strain (1): xx=5.000e-01 yy=-5.000e-01 xy=2.082e-16 zz=-0.000e+00
+      strain (0): xx=5.000e-01 yy=-5.000e-01 xy=4.163e-17 zz=-0.000e+00
+      stress (0): xx=3.846e+00 yy=-3.846e+00 xy=1.601e-16 zz=0.000e+00
+      strain (1): xx=5.000e-01 yy=-5.000e-01 xy=2.082e-16 zz=3.331e-17
       stress (1): xx=3.846e+00 yy=-3.846e+00 xy=8.006e-16 zz=0.000e+00
       strain (2): xx=5.000e-01 yy=-5.000e-01 xy=-1.769e-16 zz=-6.661e-17
       stress (2): xx=3.846e+00 yy=-3.846e+00 xy=-6.805e-16 zz=0.000e+00
@@ -654,7 +654,7 @@ Elements:
       stress (3): xx=3.846e+00 yy=-3.846e+00 xy=1.601e-16 zz=0.000e+00
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.487 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.098 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate07-comparison-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/57eb61f5ec65712139e420a73637f953/plot_plate07_comparison.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate07_comparison.ipynb</span></code></a></p>
@@ -681,7 +681,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

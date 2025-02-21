@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Three-span continuous beam under uniform load. &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -119,16 +119,16 @@ to download the full example code.</p>
 <p>The system is statically indeterminate but simple enough to validate
 deformation, reactions and internal forces.</p>
 <p>Author: Peter Mackenzie-Helnwein</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">femedu.examples.Example</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">femedu.examples.Example</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">femedu.domain.System</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.domain.Node</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">femedu.elements.linear</span> <span class="kn">import</span> <span class="n">Beam2D</span>
-<span class="kn">from</span> <span class="nn">femedu.materials.ElasticSection</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain.System</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain.Node</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Beam2D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.materials.ElasticSection</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
-<span class="k">class</span> <span class="nc">ExampleBeam02</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ExampleBeam02</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># initialize a system model</span>
         <span class="n">SpanLengths</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">8.0</span> <span class="o">*</span> <span class="mi">12</span><span class="p">,</span> <span class="mf">10.0</span> <span class="o">*</span> <span class="mi">12</span><span class="p">,</span> <span class="mf">8.0</span> <span class="o">*</span> <span class="mi">12</span> <span class="p">]</span>
         <span class="n">Nelems</span> <span class="o">=</span> <span class="mi">2</span>     <span class="c1"># number of elements</span>
@@ -222,7 +222,7 @@ Nodes:
       u:    [0.000 -0.001]
   Node_20:
       x:    [156.000 0.000]
-      u:    [-0.393 -0.000]
+      u:    [-0.393 0.000]
   Node_21:
       x:    [216.000 0.000]
       fix:  [&#39;uy&#39;]
@@ -242,22 +242,22 @@ Elements:
      nodal forces: Vi:11.673913043478258 Mi:-191.99999999999994 Vj:-11.673913043478258 Mj:752.3478260869563
   Beam2D: Node_18 to Node_19:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:-36.32608695652172 Mi:-752.347826086956 Vj:36.32608695652172 Mj:-991.3043478260865
+     nodal forces: Vi:-36.32608695652174 Mi:-752.3478260869563 Vj:36.32608695652174 Mj:-991.304347826087
   Beam2D: Node_19 to Node_20:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:29.999999999999993 Mi:883.3043478260867 Vj:-29.999999999999993 Mj:916.6956521739128
+     nodal forces: Vi:30.000000000000004 Mi:883.304347826087 Vj:-30.000000000000004 Mj:916.6956521739132
   Beam2D: Node_20 to Node_21:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:-29.99999999999999 Mi:-916.6956521739127 Vj:29.99999999999999 Mj:-883.3043478260865
+     nodal forces: Vi:-30.000000000000004 Mi:-916.6956521739132 Vj:30.000000000000004 Mj:-883.304347826087
   Beam2D: Node_21 to Node_22:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:36.32608695652173 Mi:991.3043478260865 Vj:-36.32608695652173 Mj:752.347826086956
+     nodal forces: Vi:36.326086956521735 Mi:991.3043478260868 Vj:-36.326086956521735 Mj:752.3478260869563
   Beam2D: Node_22 to Node_23:
      material ElasticSection properties: {&#39;E&#39;: 29000.0, &#39;A&#39;: 5, &#39;I&#39;: 50, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30}  strain:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}   stress:{&#39;axial&#39;: 0.0, &#39;flexure&#39;: 0.0}
-     nodal forces: Vi:-11.673913043478258 Mi:-752.347826086956 Vj:11.673913043478258 Mj:192.0
+     nodal forces: Vi:-11.673913043478251 Mi:-752.347826086956 Vj:11.673913043478251 Mj:192.0
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.326 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.056 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-beams-plot-beam02-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/117e65f0ef5f45932d2affe0d74efb0a/plot_beam02.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_beam02.ipynb</span></code></a></p>
@@ -284,7 +284,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 

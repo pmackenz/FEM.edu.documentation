@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shape Function classes &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
       <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
@@ -145,7 +145,7 @@ over a quad-shaped domain, assuming a function
 <span class="sd-summary-text">Abstract Shape Function Class</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <dl class="py class" id="module-femedu.utilities.ShapeFunctions">
 <dt class="sig sig-object py" id="femedu.utilities.ShapeFunctions.ShapeFunctions">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.ShapeFunctions.</span></span><span class="sig-name descname"><span class="pre">ShapeFunctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.ShapeFunctions.ShapeFunctions" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.ShapeFunctions.</span></span><span class="sig-name descname"><span class="pre">ShapeFunctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.utilities.ShapeFunctions.ShapeFunctions" title="Link to this definition"></a></dt>
 <dd><p class="sd-card-text">Abstract parent class for shape functions or their
 n-th (mixed) derivative for various interpolation functions.</p>
 <dl class="py method">
@@ -172,7 +172,7 @@ by any subclass</p>
 Lines</label><div class="sd-tab-content docutils">
 <dl class="py class" id="module-femedu.utilities.LineShapes">
 <dt class="sig sig-object py" id="femedu.utilities.LineShapes.LineShapes">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.LineShapes.</span></span><span class="sig-name descname"><span class="pre">LineShapes</span></span><a class="headerlink" href="#femedu.utilities.LineShapes.LineShapes" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.LineShapes.</span></span><span class="sig-name descname"><span class="pre">LineShapes</span></span><a class="headerlink" href="#femedu.utilities.LineShapes.LineShapes" title="Link to this definition"></a></dt>
 <dd><p class="sd-card-text">Shape functions or their n-th derivative
 for one-dimensional domains <span class="math notranslate nohighlight">\([0,+1]\)</span>.</p>
 <p class="sd-card-text">Derivatives are with respect to the normalized coordinate and need to be scaled accordingly.</p>
@@ -202,7 +202,7 @@ for one-dimensional domains <span class="math notranslate nohighlight">\([0,+1]\
 Triangles</label><div class="sd-tab-content docutils">
 <dl class="py class" id="module-femedu.utilities.TriangleShapes">
 <dt class="sig sig-object py" id="femedu.utilities.TriangleShapes.TriangleShapes">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.TriangleShapes.</span></span><span class="sig-name descname"><span class="pre">TriangleShapes</span></span><a class="headerlink" href="#femedu.utilities.TriangleShapes.TriangleShapes" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.TriangleShapes.</span></span><span class="sig-name descname"><span class="pre">TriangleShapes</span></span><a class="headerlink" href="#femedu.utilities.TriangleShapes.TriangleShapes" title="Link to this definition"></a></dt>
 <dd><p class="sd-card-text">Shape functions or their <cite>*n-th</cite> mixed derivative
 for the unit-triangle (two-dimensional domain <span class="math notranslate nohighlight">\((s,t)\in[0,+1]\times[0,+1]\)</span> with <span class="math notranslate nohighlight">\(s+t\le +1\)</span>).</p>
 <p class="sd-card-text">Derivatives are with respect to the normalized coordinate and need to be scaled accordingly.</p>
@@ -242,7 +242,7 @@ The derivatives are returned as</p>
 Quads</label><div class="sd-tab-content docutils">
 <dl class="py class" id="module-femedu.utilities.QuadShapes">
 <dt class="sig sig-object py" id="femedu.utilities.QuadShapes.QuadShapes">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.QuadShapes.</span></span><span class="sig-name descname"><span class="pre">QuadShapes</span></span><a class="headerlink" href="#femedu.utilities.QuadShapes.QuadShapes" title="Link to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.utilities.QuadShapes.</span></span><span class="sig-name descname"><span class="pre">QuadShapes</span></span><a class="headerlink" href="#femedu.utilities.QuadShapes.QuadShapes" title="Link to this definition"></a></dt>
 <dd><p class="sd-card-text">Shape functions or their <code class="code docutils literal notranslate"><span class="pre">*n-th</span></code> mixed derivative
 for the bi-unit-square (two-dimensional domain <span class="math notranslate nohighlight">\((s,t)\in[-1,+1]\times[-1,+1]\)</span>.</p>
 <p class="sd-card-text">Derivatives are with respect to the normalized coordinate and need to be scaled accordingly.</p>
@@ -300,7 +300,7 @@ Bricks</label><div class="sd-tab-content docutils">
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 07, 2025.
+      <span class="lastupdated">Last updated on Feb 20, 2025.
       </span></p>
   </div>
 
