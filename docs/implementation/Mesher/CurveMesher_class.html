@@ -134,6 +134,22 @@
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">femedu.mesher.CurveMesher.</span></span><span class="sig-name descname"><span class="pre">CurveMesher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">pts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.CurveMesher.CurveMesher" title="Link to this definition"></a></dt>
 <dd><p>Mesher for beams and frame components.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.mesher.CurveMesher.CurveMesher.lineMesh">
+<span class="sig-name descname"><span class="pre">lineMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Ne</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.CurveMesher.CurveMesher.lineMesh" title="Link to this definition"></a></dt>
+<dd><p>nD mesher using line elements</p>
+<p>This is an abstract class - requires implementation in subclass</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Ne</strong> (<em>int</em>) – number of elements along the curve</p></li>
+<li><p><strong>element_type</strong> – compatible element type</p></li>
+<li><p><strong>material</strong> – a material object</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.mesher.CurveMesher.CurveMesher.mesh">
 <span class="sig-name descname"><span class="pre">mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Ne</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.mesher.CurveMesher.CurveMesher.mesh" title="Link to this definition"></a></dt>
 <dd><p>mesh a curve in 2d/3d using any kind of line element.</p>
@@ -174,7 +190,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 20, 2025.
+      <span class="lastupdated">Last updated on Feb 22, 2025.
       </span></p>
   </div>
 

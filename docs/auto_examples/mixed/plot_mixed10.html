@@ -1,0 +1,461 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bending a cantilever beam using a mixed mesh of Quad and Frame2D elements &mdash; FEM.edu FEM.edu-v1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d3aa145f"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tutorials Gallery" href="../../auto_tutorials/index.html" />
+    <link rel="prev" title="Braced building frame" href="plot_mixed01.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            FEM.edu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../general/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/about.html">About the Developers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Example Gallery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#spring-examples">Spring Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#beam-examples">Beam Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#truss-examples">Truss Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#frame-examples">Frame Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#diffusion-examples">Diffusion Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#plate-examples">Plate Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#mixed-structures-examples">Mixed Structures Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../springs/index.html">Spring Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beams/index.html">Beam Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../trusses/index.html">Truss Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../frames/index.html">Frame Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../diffusion/index.html">Diffusion Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../plates/index.html">Plate Examples</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Mixed Structures Examples</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="plot_mixed01.html">Braced building frame</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Bending a cantilever beam using a mixed mesh of Quad and Frame2D elements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">Tutorials Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials (Deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design.html">Program Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/implementation.html">Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../general/revision_log.html">Full Revision Log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FEM.edu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Example Gallery</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Mixed Structures Examples</a></li>
+      <li class="breadcrumb-item active">Bending a cantilever beam using a mixed mesh of Quad and Frame2D elements</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/auto_examples/mixed/plot_mixed10.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="#sphx-glr-download-auto-examples-mixed-plot-mixed10-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code.</p>
+</div>
+<section class="sphx-glr-example-title" id="bending-a-cantilever-beam-using-a-mixed-mesh-of-quad-and-frame2d-elements">
+<span id="sphx-glr-auto-examples-mixed-plot-mixed10-py"></span><h1>Bending a cantilever beam using a mixed mesh of Quad and Frame2D elements<a class="headerlink" href="#bending-a-cantilever-beam-using-a-mixed-mesh-of-quad-and-frame2d-elements" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Using PatchMesher to model the 2d model portion</p></li>
+<li><p>Using Frame2D to model the beam/frame model portion</p></li>
+<li><p>Using BeamSolidLink to connect the two model types</p></li>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Background Theory</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">This problem can be approximately validated using Bernoulli-Euler theory for
+small deformations. The given problem shall be modeled using</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 30.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">parameter</p></th>
+<th class="head"><p class="sd-card-text">value</p></th>
+<th class="head"><p class="sd-card-text">description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(E\)</span></p></td>
+<td><ol class="arabic simple" start="20000">
+<li></li>
+</ol>
+</td>
+<td><p class="sd-card-text">modulus of elasticity (in ksi)</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(I\)</span></p></td>
+<td><p class="sd-card-text">666.667</p></td>
+<td><p class="sd-card-text">area moment of inertia (in <span class="math notranslate nohighlight">\(inches^4\)</span>)</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(L\)</span></p></td>
+<td><ol class="arabic simple" start="120">
+<li></li>
+</ol>
+</td>
+<td><p class="sd-card-text">length of the cantilever (in inches)</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(P\)</span></p></td>
+<td><ol class="arabic simple" start="30">
+<li></li>
+</ol>
+</td>
+<td><p class="sd-card-text">force at <span class="math notranslate nohighlight">\(x=L\)</span> (in kips)</p></td>
+</tr>
+</tbody>
+</table>
+<p class="sd-card-text">The general solution then yields</p>
+<div class="math notranslate nohighlight">
+\[v(x) = -\frac{P L^3}{6 EI}\left( \frac{x}{L} \right)^2\left( 3 - \frac{x}{L} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[\theta(x) = \frac{d}{dx} v(x) = -\frac{P L^2}{2 EI}\left( \frac{x}{L} \right)\left( 2 - \frac{x}{L} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[M(x) = EI \frac{d}{dx} \theta(x) = -\frac{P L}{6} \left( 1 - \frac{x}{L} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[V(x) = \frac{d}{dx} M(x) = P\]</div>
+<p class="sd-card-text">For small displacement theory, the horizontal movement at the centerline is zero.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Reference values for a load factor of <span class="math notranslate nohighlight">\(\lambda=1.0\)</span></span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 30.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">variable</p></th>
+<th class="head"><p class="sd-card-text">value</p></th>
+<th class="head"><p class="sd-card-text">description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(u(L)\)</span></p></td>
+<td><p class="sd-card-text">0.000</p></td>
+<td><p class="sd-card-text">end displacement (in inches). <span class="math notranslate nohighlight">\(u&gt;0\)</span> means moving to the right.</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(v(L)\)</span></p></td>
+<td><p class="sd-card-text">-1.296</p></td>
+<td><p class="sd-card-text">end displacement (in inches). <span class="math notranslate nohighlight">\(v&gt;0\)</span> means moving up.</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\theta(L)\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(-16.20 * 10^{-3}\)</span></p></td>
+<td><p class="sd-card-text">end displacement (in radians). <span class="math notranslate nohighlight">\(\theta &gt;0\)</span> means counter-clockwise rotation.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Reference values for a load factor of <span class="math notranslate nohighlight">\(\lambda=10.0\)</span></span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 30.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">variable</p></th>
+<th class="head"><p class="sd-card-text">value</p></th>
+<th class="head"><p class="sd-card-text">description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(u(L)\)</span></p></td>
+<td><p class="sd-card-text">0.000</p></td>
+<td><p class="sd-card-text">end displacement (in inches). <span class="math notranslate nohighlight">\(u&gt;0\)</span> means moving to the right.</p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(v(L)\)</span></p></td>
+<td><p class="sd-card-text">-12.96</p></td>
+<td><p class="sd-card-text">end displacement (in inches). <span class="math notranslate nohighlight">\(v&gt;0\)</span> means moving up.</p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\theta(L)\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(-162.0 * 10^{-3}\)</span></p></td>
+<td><p class="sd-card-text">end displacement (in radians). <span class="math notranslate nohighlight">\(\theta &gt;0\)</span> means counter-clockwise rotation.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.examples</span><span class="w"> </span><span class="kn">import</span> <span class="n">Example</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.solver</span><span class="w"> </span><span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Quad</span><span class="p">,</span> <span class="n">Frame2D</span><span class="p">,</span> <span class="n">BeamSolidLink</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.materials</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlaneStress</span><span class="p">,</span> <span class="n">ElasticSection</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.mesher</span><span class="w"> </span><span class="kn">import</span> <span class="n">PatchMesher</span><span class="p">,</span> <span class="n">CurveMesher</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ExampleMixed10</span><span class="p">(</span><span class="n">Example</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">problem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># ========== setting mesh parameters ==============</span>
+
+        <span class="n">Nx</span> <span class="o">=</span> <span class="mi">12</span>  <span class="c1"># number of elements in the mesh</span>
+        <span class="n">Ny</span> <span class="o">=</span> <span class="mi">8</span>  <span class="c1"># number of elements in the mesh</span>
+        <span class="n">Lx</span> <span class="o">=</span> <span class="mf">120.0</span>  <span class="c1"># length of plate in the x-direction</span>
+        <span class="n">Ly</span> <span class="o">=</span> <span class="mf">20.0</span>  <span class="c1"># length of plate in the y-direction</span>
+
+        <span class="c1"># ========== setting material parameters ==============</span>
+
+        <span class="n">params2d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">E</span> <span class="o">=</span> <span class="mf">20000.</span><span class="p">,</span> <span class="c1"># Young&#39;s modulus</span>
+            <span class="n">nu</span><span class="o">=</span> <span class="mf">0.250</span><span class="p">,</span>  <span class="c1"># Poisson&#39;s ratio</span>
+            <span class="n">t</span> <span class="o">=</span>  <span class="mf">1.00</span>   <span class="c1"># thickness of the plate</span>
+        <span class="p">)</span>
+
+        <span class="n">beamParams</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">E</span> <span class="o">=</span> <span class="mf">20000.</span><span class="p">,</span>    <span class="c1"># Young&#39;s modulus</span>
+            <span class="n">A</span> <span class="o">=</span> <span class="n">Ly</span><span class="p">,</span>        <span class="c1"># cross section area</span>
+            <span class="n">I</span> <span class="o">=</span> <span class="n">Ly</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mf">12.</span>  <span class="c1"># cross section moment of inertia</span>
+        <span class="p">)</span>
+
+        <span class="c1"># ========== setting load parameters ==============</span>
+
+        <span class="n">px</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># uniform load normal to x=Lx</span>
+        <span class="n">py</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># uniform load normal to y=Ly</span>
+        <span class="n">pxy</span> <span class="o">=</span> <span class="mf">1.5</span>  <span class="c1"># uniform shear load on x=L</span>
+
+        <span class="c1"># ========== setting analysis parameters ==============</span>
+
+        <span class="n">target_load_level</span> <span class="o">=</span> <span class="mf">10.00</span>  <span class="c1"># reference load</span>
+        <span class="n">max_steps</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># number of load steps: 2 -&gt; [0.0, 1.0]</span>
+
+        <span class="c1"># define a list of target load levels</span>
+        <span class="n">load_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">target_load_level</span><span class="p">,</span> <span class="n">max_steps</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1">#</span>
+        <span class="c1"># ==== Build the system model ====</span>
+        <span class="c1">#</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">setSolver</span><span class="p">(</span><span class="n">NewtonRaphsonSolver</span><span class="p">())</span>
+
+        <span class="c1"># create the 2d portion</span>
+        <span class="n">mesher</span> <span class="o">=</span> <span class="n">PatchMesher</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="o">-</span><span class="n">Ly</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">Lx</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="n">Ly</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">Lx</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">Ly</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">Ly</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">nodes</span><span class="p">,</span> <span class="n">quads</span> <span class="o">=</span> <span class="n">mesher</span><span class="o">.</span><span class="n">quadMesh</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Ny</span><span class="p">,</span> <span class="n">Quad</span><span class="p">,</span> <span class="n">PlaneStress</span><span class="p">(</span><span class="n">params2d</span><span class="p">))</span>
+
+        <span class="c1"># create a list of nodes on the interface</span>
+        <span class="c1"># .. we do this before we create the frame elements</span>
+        <span class="c1"># .. to avoid checking for the one frame node along that line</span>
+        <span class="n">section</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">findNodesAlongLine</span><span class="p">((</span><span class="n">Lx</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+
+        <span class="c1"># create the beam portion</span>
+        <span class="n">frameMesher</span> <span class="o">=</span> <span class="n">CurveMesher</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="p">(</span><span class="n">Lx</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+        <span class="n">frameNodes</span><span class="p">,</span> <span class="n">beams</span> <span class="o">=</span> <span class="n">frameMesher</span><span class="o">.</span><span class="n">lineMesh</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Frame2D</span><span class="p">,</span> <span class="n">ElasticSection</span><span class="p">(</span><span class="n">beamParams</span><span class="p">))</span>
+
+        <span class="c1"># find the lead node</span>
+        <span class="k">for</span> <span class="n">lead_node</span> <span class="ow">in</span> <span class="n">frameNodes</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">lead_node</span><span class="o">.</span><span class="n">isClose</span><span class="p">((</span><span class="n">Lx</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)):</span>
+                <span class="k">break</span>
+
+        <span class="c1"># create the links</span>
+        <span class="k">for</span> <span class="n">plate_node</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">section</span><span class="p">:</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">addElement</span><span class="p">(</span><span class="n">BeamSolidLink</span><span class="p">(</span><span class="n">lead_node</span><span class="p">,</span> <span class="n">plate_node</span><span class="p">))</span>
+
+        <span class="c1"># define support(s)</span>
+
+        <span class="c1">## find nodes at x==0</span>
+        <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">findNodesAlongLine</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)):</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">fixDOF</span><span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span> <span class="s1">&#39;uy&#39;</span><span class="p">)</span>
+
+        <span class="c1"># find the node on the beam axis (y==0.0) at the end of the beam (x==Lx)</span>
+        <span class="n">end_node</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">findNodesAt</span><span class="p">((</span><span class="n">Lx</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># ==== complete the reference load ====</span>
+
+        <span class="c1"># the section at the right end (Frame model)</span>
+        <span class="c1"># .. this must be the integral over the end section, i.e., traction multiplied by the height.</span>
+        <span class="n">end_node</span><span class="o">.</span><span class="n">setLoad</span><span class="p">([</span><span class="n">px</span> <span class="o">*</span> <span class="n">Ly</span><span class="p">,</span> <span class="o">-</span><span class="n">pxy</span> <span class="o">*</span> <span class="n">Ly</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span> <span class="s1">&#39;uy&#39;</span><span class="p">])</span>
+
+        <span class="c1"># surface loading on the top face</span>
+        <span class="c1"># .. 2d portion</span>
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">findFacesAlongLine</span><span class="p">((</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Ly</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">orientation</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">face</span><span class="o">.</span><span class="n">setLoad</span><span class="p">(</span><span class="o">-</span><span class="n">py</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="c1"># .. frame portion</span>
+        <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">beams</span><span class="p">:</span>
+            <span class="n">elem</span><span class="o">.</span><span class="n">setDistLoad</span><span class="p">(</span><span class="o">-</span><span class="n">py</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;undeformed system&quot;</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_loads</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">lf</span> <span class="ow">in</span> <span class="n">load_levels</span><span class="p">:</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">setLoadFactor</span><span class="p">(</span><span class="n">lf</span><span class="p">)</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1">#model.report()</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">show_bc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_loads</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">show_reactions</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;sxx&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">valuePlot</span><span class="p">(</span><span class="s1">&#39;sxy&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">beamValuePlot</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">)</span>
+
+        <span class="n">msg</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        The applied load at a load factor of 10.0 is:</span>
+<span class="s2">          * horizontal force at the right end node:             </span><span class="si">{:8.3f}</span><span class="s2"> kips</span>
+<span class="s2">          * vertical force at the right end node:               </span><span class="si">{:8.3f}</span><span class="s2"> kips</span>
+<span class="s2">          * distributed vertical load along the upper boundary: </span><span class="si">{:8.5f}</span><span class="s2"> k/in</span>
+
+<span class="s2">        The end deflection of the cantilever at this load is:</span>
+<span class="s2">          * horizontal displacement: </span><span class="si">{:8.3f}</span><span class="s2"> in</span>
+<span class="s2">          * vertical displacement:   </span><span class="si">{:8.3f}</span><span class="s2"> in</span>
+<span class="s2">          * rotation (CCW): </span><span class="si">{:8.1f}</span><span class="s2"> * 10^-3 rad</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">lf</span><span class="o">*</span><span class="n">px</span><span class="o">*</span><span class="n">Ly</span><span class="p">,</span>
+            <span class="n">lf</span><span class="o">*</span><span class="n">pxy</span><span class="o">*</span><span class="n">Ly</span><span class="p">,</span>
+            <span class="n">py</span><span class="p">,</span>
+            <span class="o">*</span><span class="n">end_node</span><span class="o">.</span><span class="n">getDisp</span><span class="p">([</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span><span class="s1">&#39;uy&#39;</span><span class="p">]),</span>
+            <span class="mf">1.0e3</span><span class="o">*</span><span class="n">end_node</span><span class="o">.</span><span class="n">getDisp</span><span class="p">([</span><span class="s1">&#39;rz&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Run the example by creating an instance of the problem and executing it by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">Example.run()</span></code></p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ex</span> <span class="o">=</span> <span class="n">ExampleMixed10</span><span class="p">()</span>
+    <span class="n">ex</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_mixed10_001.png" srcset="../../_images/sphx_glr_plot_mixed10_001.png" alt="undeformed system" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mixed10_002.png" srcset="../../_images/sphx_glr_plot_mixed10_002.png" alt="Deformed System (magnification=1.00)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mixed10_003.png" srcset="../../_images/sphx_glr_plot_mixed10_003.png" alt="Contours of '$\sigma_{xx}$'" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mixed10_004.png" srcset="../../_images/sphx_glr_plot_mixed10_004.png" alt="Contours of '$\sigma_{xy}$'" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mixed10_005.png" srcset="../../_images/sphx_glr_plot_mixed10_005.png" alt="Bending Moment" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_mixed10_006.png" srcset="../../_images/sphx_glr_plot_mixed10_006.png" alt="Shear Forces" class = "sphx-glr-multi-img"/></li>
+</ul>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>norm of the out-of-balance force:   4.9315e-10
++
+norm of the out-of-balance force:   1.5000e+02
+norm of the out-of-balance force:   7.3680e-09
++
+norm of the out-of-balance force:   1.5000e+02
+norm of the out-of-balance force:   1.4148e-08
++
+/Users/pmackenz/Development/Educational/FEM.edu/src/femedu/elements/Element.py:350: UserWarning: ** WARNING ** Frame2D.mapGaussPoints not implemented
+  warnings.warn(msg)
+/Users/pmackenz/Development/Educational/FEM.edu/src/femedu/elements/Element.py:350: UserWarning: ** WARNING ** BeamSolidLink.mapGaussPoints not implemented
+  warnings.warn(msg)
+/Users/pmackenz/Development/Educational/FEM.edu/src/femedu/elements/Element.py:333: UserWarning: ** WARNING ** Quad.getInternalForce not implemented
+  warnings.warn(msg)
+
+        The applied load at a load factor of 10.0 is:
+          * horizontal force at the right end node:                0.000 kips
+          * vertical force at the right end node:                300.000 kips
+          * distributed vertical load along the upper boundary:  0.00000 k/in
+
+        The end deflection of the cantilever at this load is:
+          * horizontal displacement:   -0.000 in
+          * vertical displacement:    -12.749 in
+          * rotation (CCW):   -158.4 * 10^-3 rad
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.797 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-mixed-plot-mixed10-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/8164ccaef42e99d4c93b2895fc5f8da4/plot_mixed10.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_mixed10.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/fc16e864326a71d2831163a99d20ebf5/plot_mixed10.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_mixed10.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/4c7352cbf5c204722969bc330aabd530/plot_mixed10.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">plot_mixed10.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="plot_mixed01.html" class="btn btn-neutral float-left" title="Braced building frame" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../auto_tutorials/index.html" class="btn btn-neutral float-right" title="Tutorials Gallery" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
+      <span class="lastupdated">Last updated on Feb 22, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -58,13 +58,6 @@ Initialization
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /Users/pmackenz/Development/Educational/FEM.edu/src/femedu/elements/linear/Frame2D.py:36: SyntaxWarning: invalid escape sequence '\D'
-      """
-
 
 
 
@@ -326,7 +319,7 @@ We can also create a force plot, though it doesn't look all that nice in 1D
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 7.881 seconds)
+   **Total running time of the script:** (0 minutes 0.160 seconds)
 
 
 .. _sphx_glr_download_auto_examples_springs_plot_spring_system01.py:
