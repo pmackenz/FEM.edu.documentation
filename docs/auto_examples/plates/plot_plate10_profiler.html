@@ -320,67 +320,67 @@ to download the full example code.</p>
         <span class="n">p</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">SortKey</span><span class="o">.</span><span class="n">TIME</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Fri Feb 21 09:58:42 2025    profile_data_full.txt
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Thu Feb 27 17:54:59 2025    profile_data_full.txt
 
-         21646815 function calls (20989348 primitive calls) in 7.996 seconds
+         21646815 function calls (20989348 primitive calls) in 8.170 seconds
 
    Ordered by: cumulative time
    List reduced from 1350 to 20 due to restriction &lt;20&gt;
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        5    0.000    0.000    4.786    0.957 NewtonRaphsonSolver.py:111(assemble)
-        5    0.402    0.080    4.786    0.957 Solver.py:166(assemble)
-        1    0.000    0.000    4.639    4.639 System.py:504(solve)
-        1    0.000    0.000    4.639    4.639 NewtonRaphsonSolver.py:13(solve)
-     35/3    0.006    0.000    3.211    1.070 text.py:358(_get_layout)
-    43200    1.213    0.000    2.925    0.000 Triangle.py:80(updateState)
-     81/7    0.000    0.000    2.249    0.321 text.py:65(_get_text_metrics_with_cache)
-      9/4    0.000    0.000    2.249    0.562 text.py:73(_get_text_metrics_with_cache_impl)
-     10/4    0.008    0.001    2.248    0.562 backend_agg.py:206(get_text_width_height_descent)
-        2    0.000    0.000    2.173    1.087 Solver.py:395(checkResiduum)
-    24000    0.051    0.000    1.819    0.000 Element.py:273(getForce)
-    19200    0.072    0.000    1.773    0.000 Element.py:352(getStiffness)
-     49/2    0.000    0.000    1.742    0.871 text.py:926(get_window_extent)
-    72000    0.269    0.000    1.161    0.000 Triangle.py:159(computeSurfaceLoads)
-663450/182418    0.369    0.000    0.858    0.000 copy.py:119(deepcopy)
-     4902    0.009    0.000    0.844    0.000 _axes.py:1532(plot)
-   216000    0.315    0.000    0.685    0.000 Face2D.py:54(computeNodalForces)
-    28800    0.046    0.000    0.655    0.000 Element.py:288(getLoad)
-    14706    0.035    0.000    0.612    0.000 lines.py:744(draw)
-        1    0.041    0.041    0.539    0.539 Solver.py:454(getNodalReactions)
+        5    0.000    0.000    4.855    0.971 NewtonRaphsonSolver.py:111(assemble)
+        5    0.408    0.082    4.855    0.971 Solver.py:166(assemble)
+        1    0.000    0.000    4.696    4.696 System.py:504(solve)
+        1    0.000    0.000    4.696    4.696 NewtonRaphsonSolver.py:13(solve)
+     35/3    0.006    0.000    3.310    1.103 text.py:358(_get_layout)
+    43200    1.225    0.000    2.957    0.000 Triangle.py:80(updateState)
+     81/7    0.000    0.000    2.322    0.332 text.py:65(_get_text_metrics_with_cache)
+      9/4    0.000    0.000    2.322    0.580 text.py:73(_get_text_metrics_with_cache_impl)
+     10/4    0.009    0.001    2.321    0.580 backend_agg.py:206(get_text_width_height_descent)
+        2    0.002    0.001    2.194    1.097 Solver.py:395(checkResiduum)
+    24000    0.053    0.000    1.844    0.000 Element.py:273(getForce)
+     49/2    0.000    0.000    1.801    0.900 text.py:926(get_window_extent)
+    19200    0.073    0.000    1.797    0.000 Element.py:352(getStiffness)
+    72000    0.277    0.000    1.186    0.000 Triangle.py:159(computeSurfaceLoads)
+663450/182418    0.381    0.000    0.883    0.000 copy.py:119(deepcopy)
+     4902    0.009    0.000    0.865    0.000 _axes.py:1532(plot)
+   216000    0.319    0.000    0.697    0.000 Face2D.py:54(computeNodalForces)
+    28800    0.047    0.000    0.674    0.000 Element.py:288(getLoad)
+    14706    0.037    0.000    0.635    0.000 lines.py:744(draw)
+        1    0.042    0.042    0.557    0.557 Solver.py:454(getNodalReactions)
 
 
-Fri Feb 21 09:58:42 2025    profile_data_full.txt
+Thu Feb 27 17:54:59 2025    profile_data_full.txt
 
-         21646815 function calls (20989348 primitive calls) in 7.996 seconds
+         21646815 function calls (20989348 primitive calls) in 8.170 seconds
 
    Ordered by: internal time
    List reduced from 1350 to 20 due to restriction &lt;20&gt;
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-    43200    1.213    0.000    2.925    0.000 Triangle.py:80(updateState)
-        5    0.402    0.080    4.786    0.957 Solver.py:166(assemble)
-663450/182418    0.369    0.000    0.858    0.000 copy.py:119(deepcopy)
-   302400    0.341    0.000    0.430    0.000 numeric.py:876(outer)
-        1    0.329    0.329    0.329    0.329 _linalg.py:320(solve)
-  1150018    0.322    0.000    0.322    0.000 {built-in method numpy.array}
-   216000    0.315    0.000    0.685    0.000 Face2D.py:54(computeNodalForces)
-    72000    0.269    0.000    1.161    0.000 Triangle.py:159(computeSurfaceLoads)
-     9806    0.247    0.000    0.403    0.000 backend_agg.py:93(draw_path)
-   192082    0.206    0.000    0.467    0.000 Node.py:455(getDeformedPos)
-    43201    0.197    0.000    0.276    0.000 PlaneStress.py:28(updateState)
-   244800    0.160    0.000    0.211    0.000 Node.py:506(getIdx4Element)
-   192490    0.159    0.000    0.249    0.000 Node.py:341(getDisp)
-   218462    0.144    0.000    0.195    0.000 numeric.py:64(zeros_like)
-  1784484    0.111    0.000    0.111    0.000 {method &#39;append&#39; of &#39;list&#39; objects}
-   470592    0.109    0.000    0.155    0.000 copy.py:232(_keep_alive)
-68760/34414    0.088    0.000    0.176    0.000 transforms.py:2431(get_affine)
-    39338    0.087    0.000    0.097    0.000 __init__.py:65(check_isinstance)
-  1300467    0.081    0.000    0.092    0.000 {built-in method builtins.isinstance}
-    14400    0.075    0.000    0.075    0.000 {method &#39;index&#39; of &#39;list&#39; objects}
+    43200    1.225    0.000    2.957    0.000 Triangle.py:80(updateState)
+        5    0.408    0.082    4.855    0.971 Solver.py:166(assemble)
+663450/182418    0.381    0.000    0.883    0.000 copy.py:119(deepcopy)
+   302400    0.346    0.000    0.437    0.000 numeric.py:876(outer)
+        1    0.332    0.332    0.332    0.332 _linalg.py:320(solve)
+  1150018    0.327    0.000    0.327    0.000 {built-in method numpy.array}
+   216000    0.319    0.000    0.697    0.000 Face2D.py:54(computeNodalForces)
+    72000    0.277    0.000    1.186    0.000 Triangle.py:159(computeSurfaceLoads)
+     9806    0.255    0.000    0.416    0.000 backend_agg.py:93(draw_path)
+   192082    0.209    0.000    0.469    0.000 Node.py:455(getDeformedPos)
+    43201    0.198    0.000    0.278    0.000 PlaneStress.py:28(updateState)
+   244800    0.162    0.000    0.214    0.000 Node.py:506(getIdx4Element)
+   192490    0.160    0.000    0.250    0.000 Node.py:341(getDisp)
+   218462    0.147    0.000    0.198    0.000 numeric.py:64(zeros_like)
+  1784484    0.113    0.000    0.113    0.000 {method &#39;append&#39; of &#39;list&#39; objects}
+   470592    0.112    0.000    0.159    0.000 copy.py:232(_keep_alive)
+    39338    0.092    0.000    0.102    0.000 __init__.py:65(check_isinstance)
+68760/34414    0.091    0.000    0.182    0.000 transforms.py:2431(get_affine)
+  1300467    0.081    0.000    0.093    0.000 {built-in method builtins.isinstance}
+    14400    0.077    0.000    0.077    0.000 {method &#39;index&#39; of &#39;list&#39; objects}
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 7.972 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 8.114 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plates-plot-plate10-profiler-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/8a6d0b1d0f7bc5711fb0251e11436807/plot_plate10_profiler.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_plate10_profiler.ipynb</span></code></a></p>
@@ -407,7 +407,7 @@ Fri Feb 21 09:58:42 2025    profile_data_full.txt
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 22, 2025.
+      <span class="lastupdated">Last updated on Feb 27, 2025.
       </span></p>
   </div>
 

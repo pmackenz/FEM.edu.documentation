@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:00.106** total execution time for 2 files **from auto_examples/beams**:
+**00:00.108** total execution time for 2 files **from auto_examples/beams**:
 
 .. container::
 
@@ -33,7 +33,7 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_auto_examples_beams_plot_beam02.py` (``plot_beam02.py``)
-     - 00:00.056
+     - 00:00.057
      - 0.0
    * - :ref:`sphx_glr_auto_examples_beams_plot_beam01.py` (``plot_beam01.py``)
      - 00:00.051

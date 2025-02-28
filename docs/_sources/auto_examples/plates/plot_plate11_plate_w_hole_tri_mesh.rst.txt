@@ -6439,7 +6439,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.131 seconds)
+   **Total running time of the script:** (0 minutes 1.197 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate11_plate_w_hole_tri_mesh.py:

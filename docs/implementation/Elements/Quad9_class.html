@@ -179,13 +179,16 @@ element supporting surface loads</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="femedu.elements.finite.Quad9.Quad9.mapGaussPoints">
-<span class="sig-name descname"><span class="pre">mapGaussPoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.finite.Quad9.Quad9.mapGaussPoints" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">mapGaussPoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.elements.finite.Quad9.Quad9.mapGaussPoints" title="Link to this definition"></a></dt>
 <dd><p>Initiate mapping of Gauss-point values to nodes.
 This method is an internal method and should not be called by the user.
 Calling that method explicitly will cause faulty nodal values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>var</strong> – variable code for a variable to be mapped from Gauss-points to nodes</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> – variable code for a variable to be mapped from Gauss-points to nodes</p></li>
+<li><p><strong>target_node</strong> – pointer to a node.  If given, the element will map only to that node.  Default is map to all nodes.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -253,7 +256,7 @@ Calling that method explicitly will cause faulty nodal values.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 22, 2025.
+      <span class="lastupdated">Last updated on Feb 27, 2025.
       </span></p>
   </div>
 
