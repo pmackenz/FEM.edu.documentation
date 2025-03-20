@@ -30,7 +30,7 @@ Benchmark problem: Wedged Plate - finite deformations
 * finite deformation Triangle6 and Quad9 elements
 * history plot feature
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-135
+.. GENERATED FROM PYTHON SOURCE LINES 15-136
 
 .. code-block:: Python
 
@@ -39,7 +39,8 @@ Benchmark problem: Wedged Plate - finite deformations
     from femedu.examples import Example
 
     from femedu.domain import System
-    from femedu.solver import NewtonRaphsonSolver
+    # from femedu.solver import NewtonRaphsonSolver
+    from femedu.solver import NewtonRaphsonSolverSparse as NewtonRaphsonSolver
     from femedu.elements.finite import Quad9, Triangle6
     from femedu.materials import PlaneStress
     from femedu.mesher import *
@@ -161,12 +162,12 @@ Benchmark problem: Wedged Plate - finite deformations
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 149-151
+.. GENERATED FROM PYTHON SOURCE LINES 150-152
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-157
+.. GENERATED FROM PYTHON SOURCE LINES 152-158
 
 .. code-block:: Python
 
@@ -229,157 +230,182 @@ Run the example by creating an instance of the problem and executing it by calli
 
  .. code-block:: none
 
-    norm of the out-of-balance force:   1.1551e-10
+    norm of the out-of-balance force:   1.1562e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   4.4148e+00
-    norm of the out-of-balance force:   1.7209e-03
-    norm of the out-of-balance force:   9.7896e-09
+    norm of the out-of-balance force:   4.4288e+00
+    norm of the out-of-balance force:   1.8504e-03
+    norm of the out-of-balance force:   2.1912e-06
+    norm of the out-of-balance force:   4.3933e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   4.2749e+00
-    norm of the out-of-balance force:   1.6512e-03
-    norm of the out-of-balance force:   9.4534e-09
+    norm of the out-of-balance force:   4.2997e+00
+    norm of the out-of-balance force:   2.1512e-03
+    norm of the out-of-balance force:   4.2592e-06
+    norm of the out-of-balance force:   4.6466e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   4.1351e+00
-    norm of the out-of-balance force:   1.5809e-03
-    norm of the out-of-balance force:   9.0151e-09
+    norm of the out-of-balance force:   4.1752e+00
+    norm of the out-of-balance force:   2.6218e-03
+    norm of the out-of-balance force:   6.1816e-06
+    norm of the out-of-balance force:   3.6921e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   3.9960e+00
-    norm of the out-of-balance force:   1.5105e-03
-    norm of the out-of-balance force:   8.5447e-09
+    norm of the out-of-balance force:   4.0559e+00
+    norm of the out-of-balance force:   3.1923e-03
+    norm of the out-of-balance force:   7.9418e-06
+    norm of the out-of-balance force:   4.5753e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   3.8580e+00
-    norm of the out-of-balance force:   1.4404e-03
-    norm of the out-of-balance force:   7.9481e-09
+    norm of the out-of-balance force:   3.9424e+00
+    norm of the out-of-balance force:   3.8177e-03
+    norm of the out-of-balance force:   9.5289e-06
+    norm of the out-of-balance force:   4.2242e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   3.7216e+00
-    norm of the out-of-balance force:   1.3709e-03
-    norm of the out-of-balance force:   7.4372e-09
+    norm of the out-of-balance force:   3.8351e+00
+    norm of the out-of-balance force:   4.4715e-03
+    norm of the out-of-balance force:   1.0937e-05
+    norm of the out-of-balance force:   4.3992e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   3.5873e+00
-    norm of the out-of-balance force:   1.3025e-03
-    norm of the out-of-balance force:   6.7946e-09
+    norm of the out-of-balance force:   3.7342e+00
+    norm of the out-of-balance force:   5.1378e-03
+    norm of the out-of-balance force:   1.2164e-05
+    norm of the out-of-balance force:   4.2938e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   3.4554e+00
-    norm of the out-of-balance force:   1.2354e-03
-    norm of the out-of-balance force:   6.2714e-09
+    norm of the out-of-balance force:   3.6402e+00
+    norm of the out-of-balance force:   5.8059e-03
+    norm of the out-of-balance force:   1.3214e-05
+    norm of the out-of-balance force:   4.4627e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   3.3263e+00
-    norm of the out-of-balance force:   1.1699e-03
-    norm of the out-of-balance force:   5.6483e-09
+    norm of the out-of-balance force:   3.5530e+00
+    norm of the out-of-balance force:   6.4686e-03
+    norm of the out-of-balance force:   1.4090e-05
+    norm of the out-of-balance force:   3.7944e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   3.2001e+00
-    norm of the out-of-balance force:   1.1062e-03
-    norm of the out-of-balance force:   5.1036e-09
+    norm of the out-of-balance force:   3.4730e+00
+    norm of the out-of-balance force:   7.1204e-03
+    norm of the out-of-balance force:   1.4801e-05
+    norm of the out-of-balance force:   5.1315e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   3.0772e+00
-    norm of the out-of-balance force:   1.0446e-03
-    norm of the out-of-balance force:   4.5750e-09
+    norm of the out-of-balance force:   3.4000e+00
+    norm of the out-of-balance force:   7.7573e-03
+    norm of the out-of-balance force:   1.5358e-05
+    norm of the out-of-balance force:   4.1534e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   2.9577e+00
-    norm of the out-of-balance force:   9.8513e-04
-    norm of the out-of-balance force:   4.0990e-09
+    norm of the out-of-balance force:   3.3341e+00
+    norm of the out-of-balance force:   8.3763e-03
+    norm of the out-of-balance force:   1.5770e-05
+    norm of the out-of-balance force:   4.7822e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   2.8417e+00
-    norm of the out-of-balance force:   9.2800e-04
-    norm of the out-of-balance force:   3.6260e-09
+    norm of the out-of-balance force:   3.2752e+00
+    norm of the out-of-balance force:   8.9750e-03
+    norm of the out-of-balance force:   1.6049e-05
+    norm of the out-of-balance force:   4.4194e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   2.7294e+00
-    norm of the out-of-balance force:   8.7327e-04
-    norm of the out-of-balance force:   3.2617e-09
+    norm of the out-of-balance force:   3.2230e+00
+    norm of the out-of-balance force:   9.5518e-03
+    norm of the out-of-balance force:   1.6209e-05
+    norm of the out-of-balance force:   4.3191e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   2.6208e+00
-    norm of the out-of-balance force:   8.2098e-04
-    norm of the out-of-balance force:   2.8352e-09
+    norm of the out-of-balance force:   3.1773e+00
+    norm of the out-of-balance force:   1.0105e-02
+    norm of the out-of-balance force:   1.6262e-05
+    norm of the out-of-balance force:   5.1873e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   2.5159e+00
-    norm of the out-of-balance force:   7.7115e-04
-    norm of the out-of-balance force:   2.5197e-09
+    norm of the out-of-balance force:   3.1379e+00
+    norm of the out-of-balance force:   1.0635e-02
+    norm of the out-of-balance force:   1.6219e-05
+    norm of the out-of-balance force:   4.6965e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   2.4148e+00
-    norm of the out-of-balance force:   7.2380e-04
-    norm of the out-of-balance force:   2.2306e-09
+    norm of the out-of-balance force:   3.1044e+00
+    norm of the out-of-balance force:   1.1140e-02
+    norm of the out-of-balance force:   1.6093e-05
+    norm of the out-of-balance force:   4.7504e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   2.3175e+00
-    norm of the out-of-balance force:   6.7890e-04
-    norm of the out-of-balance force:   1.9182e-09
+    norm of the out-of-balance force:   3.0764e+00
+    norm of the out-of-balance force:   1.1620e-02
+    norm of the out-of-balance force:   1.5895e-05
+    norm of the out-of-balance force:   4.4994e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   2.2238e+00
-    norm of the out-of-balance force:   6.3641e-04
-    norm of the out-of-balance force:   1.7175e-09
+    norm of the out-of-balance force:   3.0536e+00
+    norm of the out-of-balance force:   1.2076e-02
+    norm of the out-of-balance force:   1.5635e-05
+    norm of the out-of-balance force:   4.6813e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   2.1339e+00
-    norm of the out-of-balance force:   5.9627e-04
-    norm of the out-of-balance force:   1.4763e-09
+    norm of the out-of-balance force:   3.0355e+00
+    norm of the out-of-balance force:   1.2506e-02
+    norm of the out-of-balance force:   1.5324e-05
+    norm of the out-of-balance force:   4.6317e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   2.0476e+00
-    norm of the out-of-balance force:   5.5842e-04
-    norm of the out-of-balance force:   1.3160e-09
+    norm of the out-of-balance force:   3.0218e+00
+    norm of the out-of-balance force:   1.2913e-02
+    norm of the out-of-balance force:   1.4970e-05
+    norm of the out-of-balance force:   4.2574e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   1.9648e+00
-    norm of the out-of-balance force:   5.2278e-04
-    norm of the out-of-balance force:   1.1624e-09
+    norm of the out-of-balance force:   3.0121e+00
+    norm of the out-of-balance force:   1.3296e-02
+    norm of the out-of-balance force:   1.4582e-05
+    norm of the out-of-balance force:   4.9222e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   1.8855e+00
-    norm of the out-of-balance force:   4.8927e-04
-    norm of the out-of-balance force:   1.0466e-09
+    norm of the out-of-balance force:   3.0059e+00
+    norm of the out-of-balance force:   1.3655e-02
+    norm of the out-of-balance force:   1.4167e-05
+    norm of the out-of-balance force:   4.4703e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   1.8095e+00
-    norm of the out-of-balance force:   4.5780e-04
-    norm of the out-of-balance force:   9.1442e-10
+    norm of the out-of-balance force:   3.0029e+00
+    norm of the out-of-balance force:   1.3992e-02
+    norm of the out-of-balance force:   1.3731e-05
+    norm of the out-of-balance force:   4.3146e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
     norm of the out-of-balance force:   1.0408e+01
-    norm of the out-of-balance force:   1.7369e+00
-    norm of the out-of-balance force:   4.2829e-04
-    norm of the out-of-balance force:   8.0285e-10
+    norm of the out-of-balance force:   3.0028e+00
+    norm of the out-of-balance force:   1.4307e-02
+    norm of the out-of-balance force:   1.3280e-05
+    norm of the out-of-balance force:   4.6276e-10
     Recorder.addData: 'stability' not initialized by the recorder: ignored
     +
 
@@ -389,7 +415,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 39.885 seconds)
+   **Total running time of the script:** (0 minutes 48.403 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plates_plot_plate21_benchmark01.py:

@@ -16,8 +16,11 @@ Author: Peter Mackenzie-Helnwein
 from femedu.examples import Example
 
 from femedu.domain import System, Node
-from femedu.elements.linear import Truss
+# from femedu.elements.linear import Truss
+from femedu.elements.finite import Truss
 from femedu.materials import FiberMaterial
+
+from femedu.solver import NewtonRaphsonSolver, NewtonRaphsonSolverSparse
 
 # %%
 # Create the example by subclassing the :py:class:`Example`
@@ -44,6 +47,8 @@ class ExampleTruss01(Example):
         params = {'E': 10., 'A': 1., 'nu': 0.0, 'fy': 1.e30}
 
         model = System()
+        # model.setSolver(NewtonRaphsonSolver())
+        model.setSolver(NewtonRaphsonSolverSparse())
 
         # create nodes
         nd0 = Node(0.0, 0.0)
@@ -66,7 +71,7 @@ class ExampleTruss01(Example):
         nd2.setLoad([0.0, -1.0], ('ux', 'uy'))
 
         # analyze the model
-        model.solve()
+        model.solve(verbose=True)
 
         # write out report
         model.report()

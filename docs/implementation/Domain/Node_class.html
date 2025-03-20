@@ -239,6 +239,32 @@ Do not forget the <code class="code docutils literal notranslate"><span class="p
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="femedu.domain.Node.Node.getFixedDisp">
+<span class="sig-name descname"><span class="pre">getFixedDisp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dofs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getFixedDisp" title="Link to this definition"></a></dt>
+<dd><p>return a vector (<cite>nd.array</cite>) of <strong>user-prescribed</strong> (generalized) displacements.</p>
+<p>If a <code class="code docutils literal notranslate"><span class="pre">caller</span></code> is given, the element-specific d.o.f.s will be returned as a sequence
+in the same order as given by the element’s <code class="code docutils literal notranslate"><span class="pre">request()</span></code> call.</p>
+<p>If a <code class="code docutils literal notranslate"><span class="pre">dof_list</span></code> is given, d.o.f.s will be returned as the sequence given by that list.
+A zero value will be returned for all d.o.f.s that do not exist at this node.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A single d.o.f., e.g., “ux”, can be requested using <code class="code docutils literal notranslate"><span class="pre">getFixedDisp(dofs=('ux',))</span></code>.
+Do not forget the <code class="code docutils literal notranslate"><span class="pre">,</span></code> to indicate the definition of a single-element tuple.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>caller</strong> – pointer to element</p></li>
+<li><p><strong>dofs</strong> – tuple or list of d.o.f. keys</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>nodal displacement vector</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="femedu.domain.Node.Node.getFixedDofs">
 <span class="sig-name descname"><span class="pre">getFixedDofs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femedu.domain.Node.Node.getFixedDofs" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
@@ -670,7 +696,7 @@ system such that the <code class="code docutils literal notranslate"><span class
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 27, 2025.
+      <span class="lastupdated">Last updated on Mar 20, 2025.
       </span></p>
   </div>
 

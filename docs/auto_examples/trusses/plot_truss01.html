@@ -130,8 +130,11 @@ calculated deformation, reactions and internal forces.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">femedu.examples</span><span class="w"> </span><span class="kn">import</span> <span class="n">Example</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">femedu.domain</span><span class="w"> </span><span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Node</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.linear</span><span class="w"> </span><span class="kn">import</span> <span class="n">Truss</span>
+<span class="c1"># from femedu.elements.linear import Truss</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.elements.finite</span><span class="w"> </span><span class="kn">import</span> <span class="n">Truss</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">femedu.materials</span><span class="w"> </span><span class="kn">import</span> <span class="n">FiberMaterial</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">femedu.solver</span><span class="w"> </span><span class="kn">import</span> <span class="n">NewtonRaphsonSolver</span><span class="p">,</span> <span class="n">NewtonRaphsonSolverSparse</span>
 </pre></div>
 </div>
 <p>Create the example by subclassing the <code class="xref py py-class docutils literal notranslate"><span class="pre">Example</span></code></p>
@@ -144,6 +147,8 @@ calculated deformation, reactions and internal forces.</p>
         <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="mf">10.</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span> <span class="s1">&#39;nu&#39;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s1">&#39;fy&#39;</span><span class="p">:</span> <span class="mf">1.e30</span><span class="p">}</span>
 
         <span class="n">model</span> <span class="o">=</span> <span class="n">System</span><span class="p">()</span>
+        <span class="c1"># model.setSolver(NewtonRaphsonSolver())</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">setSolver</span><span class="p">(</span><span class="n">NewtonRaphsonSolverSparse</span><span class="p">())</span>
 
         <span class="c1"># create nodes</span>
         <span class="n">nd0</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
@@ -166,7 +171,7 @@ calculated deformation, reactions and internal forces.</p>
         <span class="n">nd2</span><span class="o">.</span><span class="n">setLoad</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">(</span><span class="s1">&#39;ux&#39;</span><span class="p">,</span> <span class="s1">&#39;uy&#39;</span><span class="p">))</span>
 
         <span class="c1"># analyze the model</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="c1"># write out report</span>
         <span class="n">model</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>
@@ -186,7 +191,16 @@ calculated deformation, reactions and internal forces.</p>
 <li><img src="../../_images/sphx_glr_plot_truss01_001.png" srcset="../../_images/sphx_glr_plot_truss01_001.png" alt="Deformed System (magnification=1.00)" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_truss01_002.png" srcset="../../_images/sphx_glr_plot_truss01_002.png" alt="Axial Forces" class = "sphx-glr-multi-img"/></li>
 </ul>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>System Analysis Report
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>norm of the out-of-balance force:   1.0000e+00
+norm of the out-of-balance force:   2.3898e-01
+norm of the out-of-balance force:   8.1640e-02
+norm of the out-of-balance force:   2.0865e-02
+norm of the out-of-balance force:   1.4409e-03
+norm of the out-of-balance force:   8.7150e-06
+norm of the out-of-balance force:   3.2542e-10
++
+
+System Analysis Report
 =======================
 
 Nodes:
@@ -194,30 +208,30 @@ Nodes:
   Node_24:
       x:    [0.000 0.000]
       fix:  [&#39;ux&#39;, &#39;uy&#39;]
-      u:    [0.000 0.000]
+      u:    [0.000 -0.000]
   Node_25:
       x:    [72.000 0.000]
       fix:  [&#39;uy&#39;]
-      u:    [3.600 0.000]
+      u:    [5.693 -0.000]
   Node_26:
       x:    [36.000 36.000]
       P:    [0.000 -1.000]
-      u:    [1.800 -6.891]
+      u:    [2.847 -10.478]
 
 Elements:
 ---------------------
   Truss: Node_24 to Node_25:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.04999999999999999   stress:{&#39;xx&#39;: np.float64(0.4999999999999999), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
-      internal force: 0.4999999999999999
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:0.0761046208575653   stress:{&#39;xx&#39;: np.float64(0.761046208575653), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: 0.761046208575653
   Truss: Node_24 to Node_26:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.07071067811865474   stress:{&#39;xx&#39;: np.float64(-0.7071067811865474), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
-      internal force: -0.7071067811865474
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.0910599435310268   stress:{&#39;xx&#39;: np.float64(-0.910599435310268), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: -0.910599435310268
   Truss: Node_25 to Node_26:
-      material properties: FiberMaterial(Material)({&#39;E&#39;: 10.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.07071067811865472   stress:{&#39;xx&#39;: np.float64(-0.7071067811865472), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
-      internal force: -0.7071067811865472
+      material properties: FiberMaterial(Material)({&#39;E&#39;: 10.0, &#39;A&#39;: 1.0, &#39;nu&#39;: 0.0, &#39;fy&#39;: 1e+30})  strain:-0.0910599435310268   stress:{&#39;xx&#39;: np.float64(-0.910599435310268), &#39;yy&#39;: 0.0, &#39;zz&#39;: 0.0, &#39;xy&#39;: 0.0}
+      internal force: -0.910599435310268
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.045 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.043 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-trusses-plot-truss01-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/10bc747c00013d298ec8be951c6f9b56/plot_truss01.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_truss01.ipynb</span></code></a></p>
@@ -244,7 +258,7 @@ Elements:
 
   <div role="contentinfo">
     <p>&#169; Copyright 2023, 2024, 2025, Peter Mackenzie-Helnwein.
-      <span class="lastupdated">Last updated on Feb 27, 2025.
+      <span class="lastupdated">Last updated on Mar 20, 2025.
       </span></p>
   </div>
 

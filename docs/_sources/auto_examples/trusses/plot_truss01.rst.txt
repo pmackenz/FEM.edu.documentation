@@ -31,7 +31,7 @@ Author: Peter Mackenzie-Helnwein
 
 Setup
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-22
+.. GENERATED FROM PYTHON SOURCE LINES 15-25
 
 .. code-block:: Python
 
@@ -39,9 +39,11 @@ Setup
     from femedu.examples import Example
 
     from femedu.domain import System, Node
-    from femedu.elements.linear import Truss
+    # from femedu.elements.linear import Truss
+    from femedu.elements.finite import Truss
     from femedu.materials import FiberMaterial
 
+    from femedu.solver import NewtonRaphsonSolver, NewtonRaphsonSolverSparse
 
 
 
@@ -49,11 +51,12 @@ Setup
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-24
+
+.. GENERATED FROM PYTHON SOURCE LINES 26-27
 
 Create the example by subclassing the :py:class:`Example`
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-65
+.. GENERATED FROM PYTHON SOURCE LINES 27-70
 
 .. code-block:: Python
 
@@ -67,6 +70,8 @@ Create the example by subclassing the :py:class:`Example`
             params = {'E': 10., 'A': 1., 'nu': 0.0, 'fy': 1.e30}
 
             model = System()
+            # model.setSolver(NewtonRaphsonSolver())
+            model.setSolver(NewtonRaphsonSolverSparse())
 
             # create nodes
             nd0 = Node(0.0, 0.0)
@@ -89,7 +94,7 @@ Create the example by subclassing the :py:class:`Example`
             nd2.setLoad([0.0, -1.0], ('ux', 'uy'))
 
             # analyze the model
-            model.solve()
+            model.solve(verbose=True)
 
             # write out report
             model.report()
@@ -105,12 +110,12 @@ Create the example by subclassing the :py:class:`Example`
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-81
+.. GENERATED FROM PYTHON SOURCE LINES 84-86
 
 Run the example by creating an instance of the problem and executing it by calling :py:meth:`Example.run()`
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-86
+.. GENERATED FROM PYTHON SOURCE LINES 86-91
 
 .. code-block:: Python
 
@@ -144,6 +149,14 @@ Run the example by creating an instance of the problem and executing it by calli
 
  .. code-block:: none
 
+    norm of the out-of-balance force:   1.0000e+00
+    norm of the out-of-balance force:   2.3898e-01
+    norm of the out-of-balance force:   8.1640e-02
+    norm of the out-of-balance force:   2.0865e-02
+    norm of the out-of-balance force:   1.4409e-03
+    norm of the out-of-balance force:   8.7150e-06
+    norm of the out-of-balance force:   3.2542e-10
+    +
 
     System Analysis Report
     =======================
@@ -153,27 +166,27 @@ Run the example by creating an instance of the problem and executing it by calli
       Node_24:
           x:    [0.000 0.000]
           fix:  ['ux', 'uy']
-          u:    [0.000 0.000]
+          u:    [0.000 -0.000]
       Node_25:
           x:    [72.000 0.000]
           fix:  ['uy']
-          u:    [3.600 0.000]
+          u:    [5.693 -0.000]
       Node_26:
           x:    [36.000 36.000]
           P:    [0.000 -1.000]
-          u:    [1.800 -6.891]
+          u:    [2.847 -10.478]
 
     Elements:
     ---------------------
       Truss: Node_24 to Node_25:
-          material properties: FiberMaterial(Material)({'E': 10.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.04999999999999999   stress:{'xx': np.float64(0.4999999999999999), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: 0.4999999999999999
+          material properties: FiberMaterial(Material)({'E': 10.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:0.0761046208575653   stress:{'xx': np.float64(0.761046208575653), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: 0.761046208575653
       Truss: Node_24 to Node_26:
-          material properties: FiberMaterial(Material)({'E': 10.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.07071067811865474   stress:{'xx': np.float64(-0.7071067811865474), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: -0.7071067811865474
+          material properties: FiberMaterial(Material)({'E': 10.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.0910599435310268   stress:{'xx': np.float64(-0.910599435310268), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: -0.910599435310268
       Truss: Node_25 to Node_26:
-          material properties: FiberMaterial(Material)({'E': 10.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.07071067811865472   stress:{'xx': np.float64(-0.7071067811865472), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
-          internal force: -0.7071067811865472
+          material properties: FiberMaterial(Material)({'E': 10.0, 'A': 1.0, 'nu': 0.0, 'fy': 1e+30})  strain:-0.0910599435310268   stress:{'xx': np.float64(-0.910599435310268), 'yy': 0.0, 'zz': 0.0, 'xy': 0.0}  
+          internal force: -0.910599435310268
 
 
 
@@ -182,7 +195,7 @@ Run the example by creating an instance of the problem and executing it by calli
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.045 seconds)
+   **Total running time of the script:** (0 minutes 0.043 seconds)
 
 
 .. _sphx_glr_download_auto_examples_trusses_plot_truss01.py:
