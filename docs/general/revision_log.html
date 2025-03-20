@@ -58,6 +58,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../design.html">Program Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../implementation/implementation.html">Implementation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Full Revision Log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#release-1-0-30">Release 1.0.30</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#release-1-0-29">Release 1.0.29</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#release-1-0-28">Release 1.0.28</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#release-1-0-27">Release 1.0.27</a></li>
@@ -114,6 +115,20 @@
              
   <section id="full-revision-log">
 <span id="id1"></span><h1>Full Revision Log<a class="headerlink" href="#full-revision-log" title="Link to this heading"></a></h1>
+<section id="release-1-0-30">
+<h2>Release 1.0.30<a class="headerlink" href="#release-1-0-30" title="Link to this heading"></a></h2>
+<ul>
+<li><p><strong>Merge remote-tracking branch ‘origin/main’</strong><span> by </span><em>Peter Mackenzie-Helnwein</em><span> at </span><em>2025-03-20 09:00:37</em></p></li>
+<li><p><strong>Adding a sparse solver</strong><span> by </span><em>Peter Mackenzie-Helnwein</em><span> at </span><em>2025-03-20 09:00:29</em></p>
+<p>This solver has not yet been optimized for speed.  Its main purpose at this time is a significant reduction of memory needed for large problems.</p>
+</li>
+<li><p><strong>Fixing missed effect of prescribed temperature or displacement</strong><span> by </span><em>Peter Mackenzie-Helnwein</em><span> at </span><em>2025-03-20 08:54:04</em></p></li>
+<li><p><strong>Change how the Solver handles prescribed displacements to allow for penalty-type boundary conditions.</strong><span> by </span><em>Peter Mackenzie-Helnwein</em><span> at </span><em>2025-03-20 08:31:13</em></p>
+<p>Node.getDisp() now returns the actual displacement for nodes with prescribed displacement values.  The value of the prescribed displacement at the current load level are now obtained through Node.getFixedDisp() instead.</p>
+</li>
+<li><p><strong>make find-functions more robust against sloppy user input</strong><span> by </span><em>Peter Mackenzie-Helnwein</em><span> at </span><em>2025-03-04 19:59:08</em></p></li>
+</ul>
+</section>
 <section id="release-1-0-29">
 <h2>Release 1.0.29<a class="headerlink" href="#release-1-0-29" title="Link to this heading"></a></h2>
 <ul>
